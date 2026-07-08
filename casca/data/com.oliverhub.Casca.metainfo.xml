@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.oliverhub.Casca</id>
+  <name>Casca</name>
+  <summary>Transforme qualquer site num app do GNOME</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <developer id="com.oliverhub">
+    <name>OliverHub</name>
+  </developer>
+
+  <description>
+    <p>
+      Casca transforma qualquer site num app nativo do GNOME: escolha o
+      endereço, o Casca busca o ícone automaticamente e cria um atalho no
+      menu de aplicativos (e, se quiser, na área de trabalho). Cada app
+      abre na própria janela do Casca, sem barra de navegação sobrando —
+      inclusive com a barra de título colorida pela cor do ícone do site.
+    </p>
+    <p>Principais recursos:</p>
+    <ul>
+      <li>Loja com centenas de sites prontos, organizados por empresa, tipo, pacote, marketplace e notícias</li>
+      <li>Pacotes: agrupe vários sites relacionados (ex. Microsoft 365, IA) num único ícone com uma grade de acesso</li>
+      <li>Modo mobile, com simulação de dispositivo e resolução de janela personalizável</li>
+      <li>Importação e exportação de apps via arquivo JSON local ou URL remota</li>
+      <li>Suporte a perfis/contas de navegador para apps que exigem login isolado</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">com.oliverhub.Casca.desktop</launchable>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-info">mild</content_attribute>
+  </content_rating>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#8a6bff</color>
+    <color type="primary" scheme_preference="dark">#4d7dff</color>
+  </branding>
+
+  <!-- TODO: hospedar screenshots reais antes de submeter ao Flathub -->
+  <screenshots>
+    <screenshot type="default">
+      <caption>Lista de web apps criados</caption>
+      <image>https://raw.githubusercontent.com/oliverhubtech-source/casca-webapps/main/screenshots/lista.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Loja de sites prontos</caption>
+      <image>https://raw.githubusercontent.com/oliverhubtech-source/casca-webapps/main/screenshots/loja.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://github.com/oliverhubtech-source/casca-webapps</url>
+  <url type="bugtracker">https://github.com/oliverhubtech-source/casca-webapps/issues</url>
+
+  <releases>
+    <release version="1.0.0" date="2026-07-08">
+      <description>
+        <p>Primeira versão pública do Casca.</p>
+      </description>
+    </release>
+  </releases>
+</component>

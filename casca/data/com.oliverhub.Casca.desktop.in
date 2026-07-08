@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Casca
+Comment=Transforme sites em apps do Linux
+Exec=python3 __PROJECT_DIR__/run.py
+Icon=__PROJECT_DIR__/casca/data/icons/com.oliverhub.Casca.svg
+Terminal=false
+Categories=Utility;GNOME;GTK;
+StartupNotify=true

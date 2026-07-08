@@ -1,0 +1,21 @@
+Ícones de marca incluídos no Casca
+==================================
+
+Os arquivos .svg desta pasta vêm do projeto Simple Icons
+(https://simpleicons.org / https://github.com/simple-icons/simple-icons),
+distribuídos sob a licença CC0 1.0 Universal (domínio público):
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Cada arquivo foi colorido com a cor oficial de marca declarada pelo próprio
+projeto Simple Icons (campo "hex" de cada ícone).
+
+Observação importante: a licença CC0 cobre o desenho do glifo em si — os
+nomes e logotipos continuam sendo marcas registradas de suas respectivas
+empresas. O uso aqui é apenas para identificação visual de cada site dentro
+do Casca (uso nominativo), sem qualquer afiliação, endosso ou patrocínio
+dessas empresas.
+
+Marcas que pediram a remoção de seus ícones do Simple Icons por motivos
+legais (ex.: Microsoft e seus produtos, Amazon, LinkedIn, Yahoo) não estão
+incluídas aqui — o Casca usa um avatar com iniciais ou busca o favicon do
+próprio site automaticamente nesses casos.

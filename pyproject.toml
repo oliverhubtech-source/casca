@@ -1,0 +1,20 @@
+[project]
+name = "casca"
+version = "1.0.0"
+description = "Transforma qualquer site num app nativo do GNOME"
+requires-python = ">=3.11"
+dependencies = [
+    "PyGObject>=3.50",
+    "requests>=2.31,<3",
+    "Pillow>=11,<13",
+]
+
+# Dependências de sistema (não instaláveis via pip — precisam vir do gerenciador de
+# pacotes da distro). Versões abaixo são as testadas neste projeto:
+#   gtk4            >= 4.14   (usado: 4.22.4)
+#   libadwaita      >= 1.5    (usado: 1.9.2)
+#   webkitgtk6.0    >= 2.44   (usado: 2.52.4, opcional — sem ela, cai para navegadores externos)
+#   gobject-introspection
+
+[tool.setuptools]
+packages = ["casca"]

@@ -1,0 +1,47 @@
+app-id: com.oliverhub.Casca
+runtime: org.gnome.Platform
+runtime-version: '48'
+sdk: org.gnome.Sdk
+command: casca
+
+finish-args:
+  # Interface gráfica (Wayland nativo, X11 como fallback), áudio e aceleração de vídeo
+  # pra WebKit (a janela própria de cada web app criado usa WebKitGTK).
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+  - --device=dri
+  - --share=ipc
+  # O WebKitGTK tem seu próprio sandbox interno pros processos de conteúdo web, que
+  # não aninha bem dentro do sandbox do Flatpak — desabilitar evita crash do processo web.
+  - --env=WEBKIT_FORCE_SANDBOX=0
+  # Buscar favicon/ícone dos sites e o catálogo remoto opcional da Loja
+  - --share=network
+  # Cria o atalho .desktop de cada web app/pacote no menu de aplicativos e na área de trabalho
+  - --filesystem=xdg-data/applications:create
+  - --filesystem=xdg-desktop:create
+  # Guarda o registro de apps/pacotes, ícones baixados e perfis (sessão) isolados de cada site
+  - --filesystem=~/.local/share/casca:create
+  - --filesystem=~/.local/share/icons/casca:create
+  # Necessário pra: (1) reabrir a própria janela do Casca via `flatpak run` a partir de um
+  # .desktop criado (que roda no host, fora do sandbox); (2) detectar/listar navegadores
+  # externos (nativos via flatpak-spawn --host, ou outros Flatpaks via `flatpak list`).
+  - --talk-name=org.freedesktop.Flatpak
+
+modules:
+  - python3-requirements.yaml
+
+  - name: casca
+    buildsystem: simple
+    build-commands:
+      - site_packages="$(python3 -c 'import site; print(site.getsitepackages()[0])')"
+        && cp -r casca "$site_packages/"
+      - install -Dm755 run.py /app/bin/casca
+      - install -Dm755 run_webview.py /app/bin/casca-webview
+      - install -Dm755 run_package.py /app/bin/casca-package
+      - install -Dm644 casca/data/com.oliverhub.Casca.desktop /app/share/applications/com.oliverhub.Casca.desktop
+      - install -Dm644 casca/data/com.oliverhub.Casca.metainfo.xml /app/share/metainfo/com.oliverhub.Casca.metainfo.xml
+      - install -Dm644 casca/data/icons/com.oliverhub.Casca.svg /app/share/icons/hicolor/scalable/apps/com.oliverhub.Casca.svg
+    sources:
+      - type: dir
+        path: .
