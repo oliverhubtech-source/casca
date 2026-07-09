@@ -34,8 +34,8 @@
   </content_rating>
 
   <branding>
-    <color type="primary" scheme_preference="light">#8a6bff</color>
-    <color type="primary" scheme_preference="dark">#4d7dff</color>
+    <color type="primary" scheme_preference="light">#f69b65</color>
+    <color type="primary" scheme_preference="dark">#b2a0e6</color>
   </branding>
 
   <!-- TODO: hospedar screenshots reais antes de submeter ao Flathub -->

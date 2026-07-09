@@ -47,7 +47,7 @@ modules:
       - install -Dm755 run_package.py /app/bin/casca-package
       - install -Dm644 casca/data/io.github.oliverhubtech_source.Casca.desktop /app/share/applications/io.github.oliverhubtech_source.Casca.desktop
       - install -Dm644 casca/data/io.github.oliverhubtech_source.Casca.metainfo.xml /app/share/metainfo/io.github.oliverhubtech_source.Casca.metainfo.xml
-      - install -Dm644 casca/data/icons/io.github.oliverhubtech_source.Casca.svg /app/share/icons/hicolor/scalable/apps/io.github.oliverhubtech_source.Casca.svg
+      - install -Dm644 casca/data/icons/io.github.oliverhubtech_source.Casca.png /app/share/icons/hicolor/256x256/apps/io.github.oliverhubtech_source.Casca.png
     sources:
       - type: dir
         path: .
