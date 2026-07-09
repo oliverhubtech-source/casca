@@ -39,7 +39,7 @@ def _package_runner_command() -> str:
     reentra no Flatpak via `flatpak run` quando o próprio Casca está sandboxado,
     já que esse Exec= é executado pelo host, fora do sandbox do Casca."""
     if "FLATPAK_ID" in os.environ:
-        return "flatpak run --command=casca-package com.oliverhub.Casca"
+        return "flatpak run --command=casca-package io.github.oliverhubtech-source.Casca"
     return f"python3 {_PACKAGE_RUNNER}"
 
 
