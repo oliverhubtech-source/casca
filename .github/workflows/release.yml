@@ -1,0 +1,52 @@
+name: Release
+
+on:
+  push:
+    branches: [main, hmg, dev]
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/flathub-infra/flatpak-github-actions:gnome-48
+      options: --privileged
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Determinar canal, tag e versão
+        id: channel
+        run: |
+          BASE_VERSION=$(grep -m1 '^version' pyproject.toml | sed -E 's/version = "(.*)"/\1/')
+          case "${GITHUB_REF_NAME}" in
+            main)
+              echo "channel=release" >> "$GITHUB_OUTPUT"
+              echo "tag=v${BASE_VERSION}" >> "$GITHUB_OUTPUT"
+              echo "prerelease=false" >> "$GITHUB_OUTPUT"
+              ;;
+            hmg)
+              echo "channel=beta" >> "$GITHUB_OUTPUT"
+              echo "tag=v${BASE_VERSION}-beta.${GITHUB_RUN_NUMBER}" >> "$GITHUB_OUTPUT"
+              echo "prerelease=true" >> "$GITHUB_OUTPUT"
+              ;;
+            dev)
+              echo "channel=alpha" >> "$GITHUB_OUTPUT"
+              echo "tag=v${BASE_VERSION}-alpha.${GITHUB_RUN_NUMBER}" >> "$GITHUB_OUTPUT"
+              echo "prerelease=true" >> "$GITHUB_OUTPUT"
+              ;;
+          esac
+
+      - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
+        with:
+          bundle: casca-${{ steps.channel.outputs.channel }}.flatpak
+          manifest-path: com.oliverhub.Casca.yml
+          cache-key: flatpak-builder-${{ github.ref_name }}-${{ github.sha }}
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.channel.outputs.tag }}
+          name: "Casca ${{ steps.channel.outputs.tag }}"
+          prerelease: ${{ steps.channel.outputs.prerelease }}
+          files: casca-${{ steps.channel.outputs.channel }}.flatpak
