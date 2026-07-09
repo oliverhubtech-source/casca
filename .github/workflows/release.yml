@@ -41,7 +41,7 @@ jobs:
       - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
         with:
           bundle: casca-${{ steps.channel.outputs.channel }}.flatpak
-          manifest-path: io.github.oliverhubtech-source.Casca.yml
+          manifest-path: io.github.oliverhubtech_source.Casca.yml
           cache-key: flatpak-builder-${{ github.ref_name }}-${{ github.sha }}
 
       - uses: softprops/action-gh-release@v2

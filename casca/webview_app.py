@@ -47,7 +47,7 @@ def main(argv: list[str] | None = None) -> int:
 
     GLib.set_prgname(args.wm_class)
 
-    app_id = "io.github.oliverhubtech-source.Casca.App" + ascii_app_id_component(args.wm_class)
+    app_id = "io.github.oliverhubtech_source.Casca.App" + ascii_app_id_component(args.wm_class)
     app = Adw.Application(application_id=app_id)
 
     def on_activate(application: Adw.Application) -> None:

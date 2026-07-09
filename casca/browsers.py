@@ -11,7 +11,7 @@ from . import devices
 
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 _WEBVIEW_RUNNER = _PROJECT_ROOT / "run_webview.py"
-_FLATPAK_APP_ID = "io.github.oliverhubtech-source.Casca"
+_FLATPAK_APP_ID = "io.github.oliverhubtech_source.Casca"
 
 
 def _in_flatpak() -> bool:

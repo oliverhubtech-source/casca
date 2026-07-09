@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>io.github.oliverhubtech-source.Casca</id>
+  <id>io.github.oliverhubtech_source.Casca</id>
   <name>Casca</name>
   <summary>Transforme qualquer site num app do GNOME</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MIT</project_license>
-  <developer id="io.github.oliverhubtech-source">
+  <developer id="io.github.oliverhubtech_source">
     <name>OliverHub</name>
   </developer>
 
@@ -27,7 +27,7 @@
     </ul>
   </description>
 
-  <launchable type="desktop-id">io.github.oliverhubtech-source.Casca.desktop</launchable>
+  <launchable type="desktop-id">io.github.oliverhubtech_source.Casca.desktop</launchable>
 
   <content_rating type="oars-1.1">
     <content_attribute id="social-info">mild</content_attribute>

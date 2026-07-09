@@ -7,8 +7,8 @@ Transforma qualquer site num app do GNOME: ícone no menu, janela própria, sem 
 ### Flatpak (recomendado)
 
 ```bash
-flatpak-builder --user --install --force-clean build-dir io.github.oliverhubtech-source.Casca.yml
-flatpak run io.github.oliverhubtech-source.Casca
+flatpak-builder --user --install --force-clean build-dir io.github.oliverhubtech_source.Casca.yml
+flatpak run io.github.oliverhubtech_source.Casca
 ```
 
 Precisa do `flatpak-builder` e do runtime `org.gnome.Platform`/`Sdk` (versão declarada no
@@ -60,7 +60,7 @@ Pra ler sem abrir o app: [`casca/data/help.html`](casca/data/help.html).
 - `casca/presets.py` — catálogo de sites pré-definidos
 - `casca/icons.py` — busca, download e processamento de ícones
 - `casca/data/help.html` — manual de uso embutido
-- `io.github.oliverhubtech-source.Casca.yml` / `python3-requirements.yaml` — manifest do Flatpak
+- `io.github.oliverhubtech_source.Casca.yml` / `python3-requirements.yaml` — manifest do Flatpak
 
 ## Ícones de marca
 
@@ -77,4 +77,4 @@ no sistema (nativos ou outros Flatpaks) — a detecção e o lançamento passam 
 `flatpak-spawn --host` quando necessário. Os `.desktop` que o Casca cria pra cada web app
 são executados pelo GNOME Shell (host), fora do sandbox; quando o motor escolhido é a
 "janela própria" (WebKitGTK), esse `.desktop` reabre o próprio Casca via
-`flatpak run --command=casca-webview io.github.oliverhubtech-source.Casca`.
+`flatpak run --command=casca-webview io.github.oliverhubtech_source.Casca`.

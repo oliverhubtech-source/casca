@@ -106,7 +106,7 @@ def main(argv: list[str] | None = None) -> int:
     config = json.loads(Path(args.config).read_text())
 
     package_name = config.get("package_name", "Pacote")
-    app_id = "io.github.oliverhubtech-source.Casca.Package" + ascii_app_id_component(package_name)
+    app_id = "io.github.oliverhubtech_source.Casca.Package" + ascii_app_id_component(package_name)
     app = Adw.Application(application_id=app_id)
     app.connect("activate", lambda application: build_window(application, config).present())
     return app.run([])

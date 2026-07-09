@@ -10,7 +10,7 @@ from gi.repository import Adw, Gio
 
 from .window import CascaWindow
 
-APP_ID = "io.github.oliverhubtech-source.Casca"
+APP_ID = "io.github.oliverhubtech_source.Casca"
 
 
 class CascaApplication(Adw.Application):

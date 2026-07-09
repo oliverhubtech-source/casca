@@ -1196,7 +1196,7 @@ class ListPage(Adw.NavigationPage):
         toolbar = Adw.ToolbarView()
         header = Adw.HeaderBar()
 
-        app_icon = Gtk.Image.new_from_icon_name("io.github.oliverhubtech-source.Casca")
+        app_icon = Gtk.Image.new_from_icon_name("io.github.oliverhubtech_source.Casca")
         app_icon.set_pixel_size(20)
         header.pack_start(app_icon)
 
@@ -1273,7 +1273,7 @@ class ListPage(Adw.NavigationPage):
     def _on_open_about(self, *_args) -> None:
         about = Adw.AboutDialog(
             application_name="Casca",
-            application_icon="io.github.oliverhubtech-source.Casca",
+            application_icon="io.github.oliverhubtech_source.Casca",
             version="1.0",
             developer_name="OliverHub",
             comments="Transforma qualquer site num app do GNOME.",
@@ -1435,7 +1435,7 @@ class ListPage(Adw.NavigationPage):
 
         if not apps and not packages:
             status = Adw.StatusPage(
-                icon_name="io.github.oliverhubtech-source.Casca",
+                icon_name="io.github.oliverhubtech_source.Casca",
                 title="Nenhum web app ainda",
                 description="Toque em “Criar de predefinido” ou “Criar novo webapp” para começar.",
             )

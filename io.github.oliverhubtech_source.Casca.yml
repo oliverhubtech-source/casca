@@ -1,4 +1,4 @@
-app-id: io.github.oliverhubtech-source.Casca
+app-id: io.github.oliverhubtech_source.Casca
 runtime: org.gnome.Platform
 runtime-version: '48'
 sdk: org.gnome.Sdk
@@ -42,9 +42,9 @@ modules:
       - install -Dm755 run.py /app/bin/casca
       - install -Dm755 run_webview.py /app/bin/casca-webview
       - install -Dm755 run_package.py /app/bin/casca-package
-      - install -Dm644 casca/data/io.github.oliverhubtech-source.Casca.desktop /app/share/applications/io.github.oliverhubtech-source.Casca.desktop
-      - install -Dm644 casca/data/io.github.oliverhubtech-source.Casca.metainfo.xml /app/share/metainfo/io.github.oliverhubtech-source.Casca.metainfo.xml
-      - install -Dm644 casca/data/icons/io.github.oliverhubtech-source.Casca.svg /app/share/icons/hicolor/scalable/apps/io.github.oliverhubtech-source.Casca.svg
+      - install -Dm644 casca/data/io.github.oliverhubtech_source.Casca.desktop /app/share/applications/io.github.oliverhubtech_source.Casca.desktop
+      - install -Dm644 casca/data/io.github.oliverhubtech_source.Casca.metainfo.xml /app/share/metainfo/io.github.oliverhubtech_source.Casca.metainfo.xml
+      - install -Dm644 casca/data/icons/io.github.oliverhubtech_source.Casca.svg /app/share/icons/hicolor/scalable/apps/io.github.oliverhubtech_source.Casca.svg
     sources:
       - type: dir
         path: .
