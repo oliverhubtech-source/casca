@@ -249,6 +249,14 @@ class EditorPage(Adw.NavigationPage):
         if not self._detected_browsers:
             self._browser_row.set_sensitive(False)
             self._custom_browser_expander.set_subtitle("Nenhum navegador compatível foi encontrado no sistema.")
+        if browsers.in_flatpak():
+            # Sandboxado, o Casca não detecta/oferece navegadores externos (ver
+            # browsers.py) — a única opção real já é a janela própria, então o toggle
+            # fica desabilitado em vez de mostrar uma lista com uma opção só.
+            self._custom_browser_expander.set_sensitive(False)
+            self._custom_browser_expander.set_subtitle(
+                "Não disponível na versão Flatpak — use a instalação local para navegadores externos."
+            )
         self._browser_row.connect("notify::selected", self._on_browser_changed)
         self._custom_browser_expander.add_row(self._browser_row)
 

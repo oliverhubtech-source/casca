@@ -14,27 +14,20 @@ _WEBVIEW_RUNNER = _PROJECT_ROOT / "run_webview.py"
 _FLATPAK_APP_ID = "io.github.oliverhubtech_source.Casca"
 
 
-def _in_flatpak() -> bool:
+def in_flatpak() -> bool:
     return "FLATPAK_ID" in os.environ
 
 
 def _host_which(binary: str) -> str | None:
     """Localiza um binário no HOST. Dentro de um Flatpak o sandbox não enxerga os
-    binários do sistema diretamente — precisa pedir pro host via flatpak-spawn
-    (exige a permissão --talk-name=org.freedesktop.Flatpak no manifest)."""
-    if not _in_flatpak():
-        return shutil.which(binary)
-    try:
-        result = subprocess.run(
-            ["flatpak-spawn", "--host", "which", binary],
-            capture_output=True,
-            text=True,
-            timeout=3,
-        )
-    except (subprocess.SubprocessError, OSError):
+    binários do sistema diretamente, e o Casca não pede a permissão de flatpak-spawn
+    (--talk-name=org.freedesktop.Flatpak) de propósito — essa permissão dá acesso a
+    rodar qualquer comando no host e é fortemente escrutinada no review do Flathub.
+    Sandboxado, o Casca só oferece a "janela própria" (WebKitGTK), sem navegadores
+    externos — isso continua funcionando normalmente na instalação local (install.sh)."""
+    if in_flatpak():
         return None
-    path = result.stdout.strip()
-    return path if result.returncode == 0 and path else None
+    return shutil.which(binary)
 
 
 def _webkit_available() -> bool:
@@ -103,7 +96,7 @@ class Browser:
             # Esse comando vai pro Exec= de um .desktop que o HOST (GNOME Shell) executa
             # diretamente — se o próprio Casca estiver rodando como Flatpak, "python3
             # <caminho>" não existe fora do sandbox, então precisa reentrar via `flatpak run`.
-            if _in_flatpak():
+            if in_flatpak():
                 runner = f"flatpak run --command=casca-webview {_FLATPAK_APP_ID}"
             else:
                 runner = f"python3 {shlex.quote(str(_WEBVIEW_RUNNER))}"
@@ -165,14 +158,18 @@ class Browser:
 
 
 def _installed_flatpaks() -> set[str]:
-    command = ["flatpak", "list", "--app", "--columns=application"]
-    if _in_flatpak():
-        # "flatpak list" de dentro do próprio sandbox só veria o Casca; pergunta ao host.
-        command = ["flatpak-spawn", "--host", *command]
-    elif not shutil.which("flatpak"):
+    # Sandboxado, "flatpak list" só veria o próprio Casca — sem flatpak-spawn (ver
+    # _host_which), não tem como perguntar ao host. Nesse caso nunca há Flatpaks externos
+    # candidatos.
+    if in_flatpak():
+        return set()
+    if not shutil.which("flatpak"):
         return set()
     try:
-        result = subprocess.run(command, capture_output=True, text=True, timeout=5, check=True)
+        result = subprocess.run(
+            ["flatpak", "list", "--app", "--columns=application"],
+            capture_output=True, text=True, timeout=5, check=True,
+        )
     except (subprocess.SubprocessError, OSError):
         return set()
     return {line.strip() for line in result.stdout.splitlines() if line.strip()}

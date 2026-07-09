@@ -1,6 +1,6 @@
 app-id: io.github.oliverhubtech_source.Casca
 runtime: org.gnome.Platform
-runtime-version: '48'
+runtime-version: '50'
 sdk: org.gnome.Sdk
 command: casca
 
@@ -23,10 +23,13 @@ finish-args:
   # Guarda o registro de apps/pacotes, ícones baixados e perfis (sessão) isolados de cada site
   - --filesystem=~/.local/share/casca:create
   - --filesystem=~/.local/share/icons/casca:create
-  # Necessário pra: (1) reabrir a própria janela do Casca via `flatpak run` a partir de um
-  # .desktop criado (que roda no host, fora do sandbox); (2) detectar/listar navegadores
-  # externos (nativos via flatpak-spawn --host, ou outros Flatpaks via `flatpak list`).
-  - --talk-name=org.freedesktop.Flatpak
+  # Sem --talk-name=org.freedesktop.Flatpak de propósito: essa permissão dá acesso a
+  # rodar qualquer comando no host (flatpak-spawn --host) e é fortemente escrutinada no
+  # review do Flathub. Sandboxado, o Casca só oferece a "janela própria" (WebKitGTK) —
+  # não detecta nem oferece navegadores externos (isso continua funcional na instalação
+  # local via install.sh, fora do Flatpak). Reabrir a própria janela do Casca a partir de
+  # um .desktop criado usa `flatpak run`, que roda no HOST (GNOME Shell), não precisando
+  # dessa permissão.
 
 modules:
   - python3-requirements.yaml
