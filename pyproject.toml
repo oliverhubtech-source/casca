@@ -2,6 +2,12 @@
 name = "casca"
 version = "1.0.0"
 description = "Transforma qualquer site num app nativo do GNOME"
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "OliverHub" },
+]
+urls = { Homepage = "https://github.com/oliverhubtech-source/casca" }
 requires-python = ">=3.11"
 dependencies = [
     "PyGObject>=3.50",

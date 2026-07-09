@@ -42,16 +42,16 @@
   <screenshots>
     <screenshot type="default">
       <caption>Lista de web apps criados</caption>
-      <image>https://raw.githubusercontent.com/oliverhubtech-source/casca-webapps/main/screenshots/lista.png</image>
+      <image>https://raw.githubusercontent.com/oliverhubtech-source/casca/main/screenshots/lista.png</image>
     </screenshot>
     <screenshot>
       <caption>Loja de sites prontos</caption>
-      <image>https://raw.githubusercontent.com/oliverhubtech-source/casca-webapps/main/screenshots/loja.png</image>
+      <image>https://raw.githubusercontent.com/oliverhubtech-source/casca/main/screenshots/loja.png</image>
     </screenshot>
   </screenshots>
 
-  <url type="homepage">https://github.com/oliverhubtech-source/casca-webapps</url>
-  <url type="bugtracker">https://github.com/oliverhubtech-source/casca-webapps/issues</url>
+  <url type="homepage">https://github.com/oliverhubtech-source/casca</url>
+  <url type="bugtracker">https://github.com/oliverhubtech-source/casca/issues</url>
 
   <releases>
     <release version="1.0.0" date="2026-07-08">
