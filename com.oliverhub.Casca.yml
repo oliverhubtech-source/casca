@@ -34,8 +34,11 @@ modules:
   - name: casca
     buildsystem: simple
     build-commands:
-      - site_packages="$(python3 -c 'import site; print(site.getsitepackages()[0])')"
-        && cp -r casca "$site_packages/"
+      # site.getsitepackages() usa sys.prefix do próprio python3 do runtime (/usr,
+      # somente leitura) — precisa forçar o "base" pra /app via sysconfig, senão o
+      # cp falha com "Read-only file system".
+      - site_packages="$(python3 -c "import sysconfig; print(sysconfig.get_path('purelib', vars={'base': '/app'}))")"
+        && mkdir -p "$site_packages" && cp -r casca "$site_packages/"
       - install -Dm755 run.py /app/bin/casca
       - install -Dm755 run_webview.py /app/bin/casca-webview
       - install -Dm755 run_package.py /app/bin/casca-package
