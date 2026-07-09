@@ -38,15 +38,22 @@
     <color type="primary" scheme_preference="dark">#b2a0e6</color>
   </branding>
 
-  <!-- TODO: hospedar screenshots reais antes de submeter ao Flathub -->
   <screenshots>
     <screenshot type="default">
-      <caption>Lista de web apps criados</caption>
-      <image>https://raw.githubusercontent.com/oliverhubtech-source/casca/main/screenshots/lista.png</image>
+      <caption>Tela inicial do Casca</caption>
+      <image>https://raw.githubusercontent.com/oliverhubtech-source/casca/main/screenshots/inicio.png</image>
     </screenshot>
     <screenshot>
-      <caption>Loja de sites prontos</caption>
+      <caption>Loja com sites e serviços prontos para instalar</caption>
       <image>https://raw.githubusercontent.com/oliverhubtech-source/casca/main/screenshots/loja.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Criando um app a partir de um site</caption>
+      <image>https://raw.githubusercontent.com/oliverhubtech-source/casca/main/screenshots/criar.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Site rodando como app nativo, criado com o Casca</caption>
+      <image>https://raw.githubusercontent.com/oliverhubtech-source/casca/main/screenshots/rodando.png</image>
     </screenshot>
   </screenshots>
 
