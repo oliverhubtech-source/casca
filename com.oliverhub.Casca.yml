@@ -37,7 +37,7 @@ modules:
       # site.getsitepackages() usa sys.prefix do próprio python3 do runtime (/usr,
       # somente leitura) — precisa forçar o "base" pra /app via sysconfig, senão o
       # cp falha com "Read-only file system".
-      - site_packages="$(python3 -c "import sysconfig; print(sysconfig.get_path('purelib', vars={'base': '/app'}))")"
+      - site_packages="$(python3 -c "import sysconfig; print(sysconfig.get_path('purelib', vars=dict(base='/app')))")"
         && mkdir -p "$site_packages" && cp -r casca "$site_packages/"
       - install -Dm755 run.py /app/bin/casca
       - install -Dm755 run_webview.py /app/bin/casca-webview
