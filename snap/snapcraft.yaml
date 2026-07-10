@@ -1,0 +1,81 @@
+name: casca
+title: Casca
+version: '1.2.0'
+summary: Turn any website into a native GNOME app
+description: |
+  Casca turns any website into a native GNOME app: pick the address, Casca
+  fetches the icon automatically and creates a shortcut in the applications
+  menu (and, optionally, on the desktop). Each app opens in its own window,
+  with no leftover browser bar — including a title bar colored to match the
+  site's icon.
+
+  Main features: a store with hundreds of ready-made sites; packages that
+  group several related sites behind one icon; mobile mode with device
+  simulation; import/export of apps via JSON; and per-app browser
+  profiles/accounts for isolated logins.
+
+icon: casca/data/icons/io.github.oliverhubtech_source.Casca.png
+license: MIT
+grade: stable
+confinement: strict
+base: core24
+
+# Casca's headline feature — creating a real .desktop launcher for each
+# generated web app — needs write access to $HOME/.local/share/applications,
+# which isn't covered by any auto-connecting interface. This mirrors the
+# Flatpak manifest's --filesystem=xdg-data/applications:create, but on the
+# Snap Store personal-files needs a manual store review/auto-connect request
+# (see the submission guide) before it works for users without `snap connect`.
+plugs:
+  casca-data:
+    interface: personal-files
+    write:
+      - $HOME/.local/share/applications
+      - $HOME/.local/share/casca
+      - $HOME/.local/share/icons/casca
+      - $HOME/Desktop
+
+apps:
+  casca:
+    extensions: [gnome]
+    command: bin/casca
+    plugs: [network, casca-data]
+  casca-webview:
+    extensions: [gnome]
+    command: bin/casca-webview
+    plugs: [network, casca-data]
+  casca-package:
+    extensions: [gnome]
+    command: bin/casca-package
+    plugs: [network, casca-data]
+
+parts:
+  casca:
+    plugin: nil
+    source: .
+    # PyGObject/Gtk4/Adwaita already ride in on the "gnome" extension's
+    # platform snap (gnome-46-2404) — only WebKitGTK (the "own window" engine)
+    # and the pure-Python deps from pyproject.toml need to be staged here.
+    stage-packages:
+      - python3-gi
+      - python3-requests
+      - python3-pil
+      - libwebkitgtk-6.0-4
+      - gir1.2-webkit-6.0
+    override-build: |
+      set -eu
+      appdir="$CRAFT_PART_INSTALL/lib/casca"
+      mkdir -p "$appdir" "$CRAFT_PART_INSTALL/bin"
+      cp -r casca "$appdir/casca"
+      cp run.py run_webview.py run_package.py "$appdir/"
+      # casca/browsers.py and casca/entries.py locate run_webview.py/
+      # run_package.py as siblings of the installed "casca" package
+      # directory — same layout as a checkout run via install.sh or the
+      # RPM package.
+      for entry in casca:run.py casca-webview:run_webview.py casca-package:run_package.py; do
+        app_name="${entry%%:*}"
+        script_name="${entry##*:}"
+        wrapper="$CRAFT_PART_INSTALL/bin/$app_name"
+        printf '#!/bin/sh\nexec python3 "$SNAP/lib/casca/%s" "$@"\n' "$script_name" > "$wrapper"
+        chmod 755 "$wrapper"
+      done

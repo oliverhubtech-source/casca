@@ -1,0 +1,60 @@
+name: Snap
+
+on:
+  push:
+    branches: [main, hmg, dev]
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Determinar canal, tag e versão
+        id: channel
+        run: |
+          BASE_VERSION=$(grep -m1 '^version' pyproject.toml | sed -E 's/version = "(.*)"/\1/')
+          case "${GITHUB_REF_NAME}" in
+            main)
+              echo "channel=release" >> "$GITHUB_OUTPUT"
+              echo "tag=v${BASE_VERSION}" >> "$GITHUB_OUTPUT"
+              echo "store-channel=stable" >> "$GITHUB_OUTPUT"
+              echo "prerelease=false" >> "$GITHUB_OUTPUT"
+              ;;
+            hmg)
+              echo "channel=beta" >> "$GITHUB_OUTPUT"
+              echo "tag=v${BASE_VERSION}-beta.${GITHUB_RUN_NUMBER}" >> "$GITHUB_OUTPUT"
+              echo "store-channel=beta" >> "$GITHUB_OUTPUT"
+              echo "prerelease=true" >> "$GITHUB_OUTPUT"
+              ;;
+            dev)
+              echo "channel=alpha" >> "$GITHUB_OUTPUT"
+              echo "tag=v${BASE_VERSION}-alpha.${GITHUB_RUN_NUMBER}" >> "$GITHUB_OUTPUT"
+              echo "store-channel=edge" >> "$GITHUB_OUTPUT"
+              echo "prerelease=true" >> "$GITHUB_OUTPUT"
+              ;;
+          esac
+
+      - uses: canonical/action-build@v1
+        id: build
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.channel.outputs.tag }}
+          name: "Casca ${{ steps.channel.outputs.tag }}"
+          prerelease: ${{ steps.channel.outputs.prerelease }}
+          files: ${{ steps.build.outputs.snap }}
+
+      # Publicar na Snap Store exige o secret SNAPCRAFT_STORE_CREDENTIALS (gerado
+      # com `snapcraft export-login`) e, antes disso, a interface personal-files
+      # do snapcraft.yaml aprovada pelo time da loja (ver o guia de submissão).
+      # Comentado até isso existir — até lá, o job só builda e sobe o .snap como
+      # asset do GitHub Release, igual ao workflow do Flatpak.
+      # - uses: canonical/action-publish@v1
+      #   with:
+      #     store_login: ${{ secrets.SNAPCRAFT_STORE_CREDENTIALS }}
+      #     snap: ${{ steps.build.outputs.snap }}
+      #     release: ${{ steps.channel.outputs.store-channel }}

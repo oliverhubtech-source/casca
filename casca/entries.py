@@ -37,10 +37,12 @@ _PACKAGE_RUNNER = _PROJECT_ROOT / "run_package.py"
 
 def _package_runner_command() -> str:
     """Command for the package's .desktop Exec= — same as webkit in browsers.py,
-    re-enters the Flatpak via `flatpak run` when Casca itself is sandboxed,
+    re-enters the packaging's own entrypoint when Casca itself is sandboxed,
     since this Exec= is run by the host, outside Casca's sandbox."""
     if "FLATPAK_ID" in os.environ:
         return "flatpak run --command=casca-package io.github.oliverhubtech_source.Casca"
+    if "SNAP_NAME" in os.environ:
+        return f"{os.environ['SNAP_NAME']}.casca-package"
     return f"python3 {_PACKAGE_RUNNER}"
 
 

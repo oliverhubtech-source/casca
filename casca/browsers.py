@@ -19,14 +19,19 @@ def in_flatpak() -> bool:
     return "FLATPAK_ID" in os.environ
 
 
+def in_snap() -> bool:
+    return "SNAP_NAME" in os.environ
+
+
 def _host_which(binary: str) -> str | None:
-    """Locate a binary on the HOST. Inside a Flatpak the sandbox doesn't see the
-    system's binaries directly, and Casca deliberately doesn't request the flatpak-spawn
-    permission (--talk-name=org.freedesktop.Flatpak) — that permission grants access to
-    run arbitrary commands on the host and is heavily scrutinized in Flathub review.
-    Sandboxed, Casca only offers its "own window" (WebKitGTK), no external browsers —
-    this keeps working normally in the local install (install.sh)."""
-    if in_flatpak():
+    """Locate a binary on the HOST. Inside a Flatpak or a Snap the sandbox doesn't see
+    the system's binaries directly, and Casca deliberately doesn't request the
+    flatpak-spawn permission (--talk-name=org.freedesktop.Flatpak) or an equivalent
+    snap interface — that kind of permission grants access to run arbitrary commands
+    on the host and is heavily scrutinized in store review. Sandboxed, Casca only
+    offers its "own window" (WebKitGTK), no external browsers — this keeps working
+    normally in the local install (install.sh) and the RPM package."""
+    if in_flatpak() or in_snap():
         return None
     return shutil.which(binary)
 
@@ -95,10 +100,15 @@ class Browser:
     ) -> str:
         if self.app_mode == "webkit":
             # This command goes into the Exec= of a .desktop that the HOST (GNOME Shell)
-            # runs directly — if Casca itself is running as a Flatpak, "python3 <path>"
-            # doesn't exist outside the sandbox, so it needs to re-enter via `flatpak run`.
+            # runs directly — if Casca itself is running sandboxed, "python3 <path>"
+            # doesn't exist outside the sandbox (or wouldn't have PyGObject/WebKitGTK
+            # available even if it did), so it needs to re-enter through the packaging's
+            # own entrypoint: `flatpak run` for Flatpak, or the snapd-generated
+            # `<snap-name>.casca-webview` wrapper (on PATH via /snap/bin) for Snap.
             if in_flatpak():
                 runner = f"flatpak run --command=casca-webview {_FLATPAK_APP_ID}"
+            elif in_snap():
+                runner = f"{os.environ['SNAP_NAME']}.casca-webview"
             else:
                 runner = f"python3 {shlex.quote(str(_WEBVIEW_RUNNER))}"
             command = (

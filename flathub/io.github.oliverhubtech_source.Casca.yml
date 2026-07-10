@@ -1,0 +1,57 @@
+app-id: io.github.oliverhubtech_source.Casca
+runtime: org.gnome.Platform
+runtime-version: '50'
+sdk: org.gnome.Sdk
+command: casca
+
+finish-args:
+  # Graphical interface (native Wayland, X11 as a fallback), audio and video
+  # acceleration for WebKit (each created web app's own window uses WebKitGTK).
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+  - --device=dri
+  - --share=ipc
+  # WebKitGTK has its own internal sandbox for web content processes, which doesn't
+  # nest well inside the Flatpak sandbox — disabling it avoids the web process crashing.
+  - --env=WEBKIT_FORCE_SANDBOX=0
+  # Fetch each site's favicon/icon and the Store's optional remote catalog
+  - --share=network
+  # Creates each web app's/package's .desktop shortcut in the applications menu and on the desktop
+  - --filesystem=xdg-data/applications:create
+  - --filesystem=xdg-desktop:create
+  # Holds the app/package registry, downloaded icons and each site's isolated (session) profiles
+  - --filesystem=~/.local/share/casca:create
+  - --filesystem=~/.local/share/icons/casca:create
+  # No --talk-name=org.freedesktop.Flatpak on purpose: that permission grants access to
+  # running arbitrary commands on the host and is heavily scrutinized in Flathub review.
+  # Sandboxed, Casca only offers its "own window" (WebKitGTK) — it doesn't detect nor
+  # offer external browsers (that keeps working in the local install via install.sh,
+  # outside the Flatpak). Reopening Casca's own window from a created .desktop uses
+  # `flatpak run`, which runs on the HOST (GNOME Shell), so it doesn't need this permission.
+
+modules:
+  - python3-requirements.yaml
+
+  - name: casca
+    buildsystem: simple
+    build-commands:
+      # site.getsitepackages() uses the runtime's own python3 sys.prefix (/usr,
+      # read-only) — the "base" has to be forced to /app via sysconfig, or the
+      # cp fails with "Read-only file system".
+      - site_packages="$(python3 -c "import sysconfig; print(sysconfig.get_path('purelib', vars=dict(base='/app')))")"
+        && mkdir -p "$site_packages" && cp -r casca "$site_packages/"
+      - install -Dm755 run.py /app/bin/casca
+      - install -Dm755 run_webview.py /app/bin/casca-webview
+      - install -Dm755 run_package.py /app/bin/casca-package
+      - install -Dm644 casca/data/io.github.oliverhubtech_source.Casca.desktop /app/share/applications/io.github.oliverhubtech_source.Casca.desktop
+      - install -Dm644 casca/data/io.github.oliverhubtech_source.Casca.metainfo.xml /app/share/metainfo/io.github.oliverhubtech_source.Casca.metainfo.xml
+      - install -Dm644 casca/data/icons/io.github.oliverhubtech_source.Casca.png /app/share/icons/hicolor/256x256/apps/io.github.oliverhubtech_source.Casca.png
+    sources:
+      # Unlike the root manifest (used by our own CI, which builds straight from the
+      # checked-out worktree via `type: dir`), the dedicated flathub/<app-id> repo only
+      # holds this manifest — it needs to fetch the actual source from a published,
+      # pinned release instead.
+      - type: archive
+        url: https://github.com/oliverhubtech-source/casca/archive/refs/tags/v1.1.0.tar.gz
+        sha256: 44d3a8235b9ca6ed5dd8bc5ff7b16fff9ee024075f2cde1e2cea5c97f17d8283
