@@ -1,16 +1,21 @@
 """Builds the help.html shown in HelpWindow, with text translated via gettext.
 
-The page's HTML/CSS/JS structure is a static template (kept in
-``data/help_template.html``, with ``{...}`` placeholders); only the visible
-text is filled in here at render time, in whatever language is active.
+The page's HTML/CSS (Tailwind, precompiled — see po/../data/help_template.html)
+is a static template with ``$placeholder`` tokens (string.Template, not
+str.format, since the compiled CSS is full of literal ``{``/``}``); only the
+visible text is filled in here at render time, in whatever language is active.
 """
 
 import os
 from pathlib import Path
+from string import Template
 
 from .i18n import _
 
 _TEMPLATE_PATH = Path(__file__).parent / "data" / "help_template.html"
+
+
+_RTL_LANGS = {"ar", "he", "fa", "ur"}
 
 
 def _active_lang() -> str:
@@ -19,12 +24,15 @@ def _active_lang() -> str:
 
 
 def render_help_html() -> str:
-    template = _TEMPLATE_PATH.read_text(encoding="utf-8")
+    template = Template(_TEMPLATE_PATH.read_text(encoding="utf-8"))
 
     user_guide = _("User Guide")
+    lang = _active_lang()
+    text_dir = "rtl" if lang.split("-")[0].lower() in _RTL_LANGS else "ltr"
 
-    return template.format(
-        lang=_active_lang(),
+    return template.substitute(
+        lang=lang,
+        dir=text_dir,
         title=_("Casca — User Guide"),
         casca_icon_alt=_("Casca icon"),
         eyebrow=user_guide,
@@ -58,9 +66,10 @@ def render_help_html() -> str:
         presets_title=_("Preset sites"),
         presets_intro=_(
             'A search field at the top filters by site name (<code class="eyebrow text-[13px] '
-            'bg-shell-mist dark:bg-[#2a2836] px-1.5 py-0.5 rounded">gmail</code>) or by category '
-            '(<code class="eyebrow text-[13px] bg-shell-mist dark:bg-[#2a2836] px-1.5 py-0.5 '
-            'rounded">microsoft</code>). Categories start collapsed — tap one to expand it.'
+            'bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 py-0.5 rounded">gmail</code>) '
+            'or by category (<code class="eyebrow text-[13px] bg-lav-soft dark:bg-[#2c2740] '
+            'text-lav dark:text-lav-dark px-1.5 py-0.5 rounded">microsoft</code>). Categories start '
+            'collapsed — tap one to expand it.'
         ),
         cat_google=_("Google Products"),
         cat_microsoft=_("Microsoft Products"),
@@ -92,6 +101,13 @@ def render_help_html() -> str:
             "Without checking anything, Casca fetches an icon automatically on save — or uses "
             "the icon that's already set, if the app came from a preset."
         ),
+        label_example=_("Example"),
+        icon_example=_(
+            "Your bank's site favicon looks blurry at a larger size — pick <strong>From gallery</strong> "
+            "for a clean pre-made icon, or <strong>From computer</strong> if you already have a nicer logo "
+            "saved. Whatever you choose gets normalized to a crisp 256×256 image (SVGs are kept as-is, "
+            "since they scale perfectly)."
+        ),
         shortcut_title=_("Desktop Shortcut"),
         shortcut_body=_(
             "Every app already shows up in the GNOME applications menu. To also get an icon on "
@@ -115,11 +131,23 @@ def render_help_html() -> str:
             "— choose which already-logged-in account opens the app, instead of a new profile with "
             "no login."
         ),
+        browser_example=_(
+            "You use Chrome for everyday browsing and want Gmail to open already signed into your "
+            "work account instead of asking you to log in again. Turn on <strong>Use a custom "
+            "browser</strong>, pick Chrome, then choose your account under <strong>Browser "
+            "account</strong> — Gmail opens straight into that inbox."
+        ),
         mobile_title=_("Mobile mode"),
         mobile_body=_(
             "Check <strong>Open in mobile mode</strong> and pick a device — Google Pixel, iPhone, "
             "Galaxy, iPad. The app identifies itself to the site as that device, unlocking the "
             "mobile layout (usually simpler and faster)."
+        ),
+        mobile_example=_(
+            "Pick <strong>iPhone 15 Pro</strong> for a site like X (Twitter) and it serves the same "
+            "stripped-down layout you'd get on a real phone — fewer side panels, a simpler timeline. "
+            "This changes the identification the app sends to the site, not just the window's size, "
+            "so pair it with a custom resolution below to also match the phone's screen shape."
         ),
         resolution_title=_("Window resolution"),
         resolution_intro=_(
@@ -131,6 +159,10 @@ def render_help_html() -> str:
         ),
         resolution_li_default=_("<strong>Default size</strong> — common resolutions (laptop, Full HD…)."),
         resolution_li_custom=_("<strong>Custom</strong> — you type in width and height in pixels."),
+        resolution_example=_(
+            "You want a WhatsApp Web window that's tall and narrow, like a phone propped up next to "
+            "your monitor — pick <strong>Custom</strong> and set it to 400 × 900."
+        ),
         edit_title=_("Edit and delete"),
         edit_body=_(
             "On the home screen, every app has a pencil to <strong>edit</strong> (changes any "

@@ -260,6 +260,9 @@ class EditorPage(Adw.NavigationPage):
             )
         self._browser_row.connect("notify::selected", self._on_browser_changed)
         self._custom_browser_expander.add_row(self._browser_row)
+        self._custom_browser_expander.add_suffix(
+            self._help_button("navegador", _("Learn more about custom browsers"))
+        )
 
         self._profile_row = Adw.ComboRow(title=_("Browser account"))
         self._profile_options: list[str | None] = [None]
@@ -281,6 +284,7 @@ class EditorPage(Adw.NavigationPage):
             device_labels.append(device.label)
         self._device_row.set_model(device_labels)
         self._mobile_expander.add_row(self._device_row)
+        self._mobile_expander.add_suffix(self._help_button("mobile", _("Learn more about mobile mode")))
 
         browser_group.add(self._mobile_expander)
         page.add(browser_group)
@@ -322,6 +326,9 @@ class EditorPage(Adw.NavigationPage):
         )
         self._resolution_expander.add_row(self._resolution_width_row)
         self._resolution_expander.add_row(self._resolution_height_row)
+        self._resolution_expander.add_suffix(
+            self._help_button("resolucao", _("Learn more about window resolution"))
+        )
 
         resolution_group.add(self._resolution_expander)
         page.add(resolution_group)
@@ -361,6 +368,9 @@ class EditorPage(Adw.NavigationPage):
 
         self._desktop_switch_row = Adw.SwitchRow(title=_("Also create on the Desktop"))
         self._icon_expander.add_row(self._desktop_switch_row)
+        self._icon_expander.add_suffix(
+            self._help_button("icone", _("Learn more about icons and shortcuts"))
+        )
 
         icon_group.add(self._icon_expander)
         page.add(icon_group)
@@ -580,6 +590,19 @@ class EditorPage(Adw.NavigationPage):
         root = self.get_ancestor(Gtk.Window)
         if isinstance(root, CascaWindow):
             root.toast_overlay.add_toast(toast)
+
+    def _help_button(self, anchor: str, tooltip: str) -> Gtk.Button:
+        """Small "i" button: hovering shows a short tooltip, clicking opens the
+        manual scrolled to the matching section — a bit of inline, interactive docs."""
+        button = Gtk.Button(icon_name="help-about-symbolic", valign=Gtk.Align.CENTER)
+        button.add_css_class("flat")
+        button.set_tooltip_text(tooltip)
+        button.connect("clicked", self._on_help_button_clicked, anchor)
+        return button
+
+    def _on_help_button_clicked(self, _button: Gtk.Button, anchor: str) -> None:
+        window = HelpWindow(self.get_ancestor(Gtk.Window), anchor=anchor)
+        window.present()
 
     def _on_save(self, _button: Gtk.Button) -> None:
         name = self._name_row.get_text().strip()
@@ -1133,7 +1156,7 @@ class StoreWindow(Adw.ApplicationWindow):
 class HelpWindow(Adw.ApplicationWindow):
     """Casca's user guide, rendered from help_content.py in the app's active language."""
 
-    def __init__(self, parent: Adw.ApplicationWindow):
+    def __init__(self, parent: Adw.ApplicationWindow, anchor: str | None = None):
         super().__init__(
             application=parent.get_application(),
             transient_for=parent,
@@ -1141,6 +1164,7 @@ class HelpWindow(Adw.ApplicationWindow):
             default_height=760,
             title=_("Casca Manual"),
         )
+        self._anchor = anchor
 
         toolbar = Adw.ToolbarView()
         toolbar.add_top_bar(Adw.HeaderBar())
@@ -1151,6 +1175,8 @@ class HelpWindow(Adw.ApplicationWindow):
             from gi.repository import WebKit
 
             web_view = WebKit.WebView()
+            if anchor:
+                web_view.connect("load-changed", self._on_load_changed)
             web_view.load_html(help_content.render_help_html(), f"file://{data_dir}/")
             toolbar.set_content(web_view)
         except (ValueError, ImportError):
@@ -1161,6 +1187,13 @@ class HelpWindow(Adw.ApplicationWindow):
             toolbar.set_content(status)
 
         self.set_content(toolbar)
+
+    def _on_load_changed(self, web_view, load_event) -> None:
+        from gi.repository import WebKit
+
+        if load_event == WebKit.LoadEvent.FINISHED:
+            script = f"document.getElementById({self._anchor!r})?.scrollIntoView();"
+            web_view.evaluate_javascript(script, -1, None, None, None, None, None)
 
 
 class ImportSelectionDialog(Adw.Dialog):
