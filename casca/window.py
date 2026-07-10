@@ -15,7 +15,7 @@ from gi.repository import Adw, Gdk, Gio, GLib, Gtk
 
 _header_class_counter = itertools.count()
 
-from . import browsers, devices, entries, help_content, icons, presets, profiles, social_icons, store
+from . import __version__, browsers, devices, entries, help_content, icons, presets, profiles, social_icons, store, updater
 from .fileutils import has_dangerous_scheme
 from .headerbar_css import build_header_css
 from .i18n import _, ngettext
@@ -1327,13 +1327,44 @@ class ListPage(Adw.NavigationPage):
         window.present()
 
     def _on_open_about(self, *_args) -> None:
+        app = self.get_root().get_application()
+        updater.check_and_notify(app)
+
+        # Channel word to the left of the number ("Beta 1.2.0") — packaged installs
+        # (Flatpak/Snap/RPM/COPR) have no branch info, so they're always "Release".
+        version_label = f"{updater.release_channel()} {__version__}"
+
+        comments = _("Turns any website into a GNOME app.")
+        latest = updater.cached_latest_version()
+        if latest and updater.is_newer(latest, __version__):
+            comments += "\n\n" + _(
+                "Version %(latest)s is available — an update notification with a way to update just popped up."
+            ) % {"latest": latest}
+
         about = Adw.AboutDialog(
             application_name="Casca",
             application_icon="io.github.oliverhubtech_source.Casca",
-            version="1.0",
+            version=version_label,
             developer_name="OliverHub",
-            comments=_("Turns any website into a GNOME app."),
+            comments=comments,
+            website="https://github.com/oliverhubtech-source/casca",
+            issue_url="https://github.com/oliverhubtech-source/casca/issues",
+            license_type=Gtk.License.MIT_X11,
+            release_notes_version="1.2.0",
+            release_notes=(
+                "<p>" + _(
+                    "Casca now checks for new releases in the background (once a day at most) and "
+                    "lets you know with a system notification — no action needed for Flatpak/Snap "
+                    "installs, which already update themselves."
+                ) + "</p>"
+                "<p>" + _(
+                    "The About dialog now shows the license, a link to the source code, whether "
+                    "you're on a release/beta/alpha build, and a proper “What's New” page "
+                    "with each version's changelog."
+                ) + "</p>"
+            ),
         )
+        about.add_link(_("Source Code"), "https://github.com/oliverhubtech-source/casca")
         about.present(self)
 
     def _toast(self, message: str) -> None:
