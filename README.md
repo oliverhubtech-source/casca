@@ -1,80 +1,83 @@
 # Casca
 
-Transforma qualquer site num app do GNOME: ícone no menu, janela própria, sem barra de navegação sobrando.
+*Read this in: **English** | [Português (Brasil)](README.pt-BR.md)*
 
-## Instalação
+Turns any website into a native GNOME app: icon in the menu, its own window, no leftover browser bar.
 
-### Flatpak (recomendado)
+## Installation
+
+### Flatpak (recommended)
 
 ```bash
 flatpak-builder --user --install --force-clean build-dir io.github.oliverhubtech_source.Casca.yml
 flatpak run io.github.oliverhubtech_source.Casca
 ```
 
-Precisa do `flatpak-builder` e do runtime `org.gnome.Platform`/`Sdk` (versão declarada no
-manifest). Se ainda não tiver o Flathub configurado:
+Needs `flatpak-builder` and the `org.gnome.Platform`/`Sdk` runtime (version declared in the
+manifest). If you don't have Flathub set up yet:
 
 ```bash
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gnome.Platform//48 org.gnome.Sdk//48
+flatpak install flathub org.gnome.Platform//50 org.gnome.Sdk//50
 ```
 
-### Direto da pasta do projeto (sem Flatpak)
+### Straight from the project folder (no Flatpak)
 
 ```bash
 ./install.sh
 ```
 
-Isso registra o Casca no menu de aplicativos do GNOME. Se você mover a pasta do projeto, rode o script de novo.
+This registers Casca in the GNOME applications menu. If you move the project folder, run the
+script again.
 
-## Rodar sem instalar
+## Running without installing
 
 ```bash
 python3 run.py
 ```
 
-## Manual de uso
+## User manual
 
-O manual completo (com todas as opções: predefinidos, ícone, atalho, navegador personalizado, modo mobile,
-resolução) está embutido no próprio app — abra o Casca e toque no botão de ajuda (ícone de "?") no canto
-superior direito da tela inicial.
+The full manual (covering every option: presets, icon, shortcut, custom browser, mobile mode,
+resolution) is built into the app itself — open Casca and tap the help button ("?" icon) in the
+top-right corner of the home screen.
 
-Pra ler sem abrir o app: [`casca/data/help.html`](casca/data/help.html).
-
-## Requisitos
+## Requirements
 
 - Python 3.11+
-- GTK4 e libadwaita 1.4+ (`python3-gi`, `gir1.2-adw-1`)
-- WebKitGTK 6.0 (`gir1.2-webkit-6.0`) — usado pela janela própria de cada app e pelo manual embutido.
-  Sem ele, o Casca ainda funciona normalmente abrindo apps num navegador externo (Chrome, Chromium,
-  GNOME Web, Firefox…), só perde a opção de janela própria colorida.
-- Dependências Python (`PyGObject`, `requests`, `Pillow`) estão declaradas em `pyproject.toml`;
-  instale com `pip install -e .` se preferir um ambiente isolado (ex.: venv).
+- GTK4 and libadwaita 1.5+ (`python3-gi`, `gir1.2-adw-1`)
+- WebKitGTK 6.0 (`gir1.2-webkit-6.0`) — used by each app's own window and the built-in manual.
+  Without it, Casca still works normally, opening apps in an external browser (Chrome, Chromium,
+  GNOME Web, Firefox…), it just loses the colored own-window option.
+- Python dependencies (`PyGObject`, `requests`, `Pillow`) are declared in `pyproject.toml`;
+  install with `pip install -e .` if you'd rather use an isolated environment (e.g. a venv).
 
-## Estrutura do projeto
+## Project structure
 
-- `casca/window.py` — interface (GTK4 + libadwaita)
-- `casca/browsers.py` — detecção de navegadores instalados e montagem do comando de cada app
-- `casca/webview_app.py` — motor de janela própria (WebKitGTK), executado via `run_webview.py`
-- `casca/entries.py` — criação/edição/remoção dos apps (registro + arquivos `.desktop`)
-- `casca/presets.py` — catálogo de sites pré-definidos
-- `casca/icons.py` — busca, download e processamento de ícones
-- `casca/data/help.html` — manual de uso embutido
-- `io.github.oliverhubtech_source.Casca.yml` / `python3-requirements.yaml` — manifest do Flatpak
+- `casca/window.py` — the UI (GTK4 + libadwaita)
+- `casca/browsers.py` — detection of installed browsers and building each app's launch command
+- `casca/webview_app.py` — the own-window engine (WebKitGTK), run via `run_webview.py`
+- `casca/entries.py` — creating/editing/removing apps (registry + `.desktop` files)
+- `casca/presets.py` — the catalog of ready-made sites
+- `casca/icons.py` — fetching, downloading and processing icons
+- `casca/data/help_template.html` / `casca/help_content.py` — the built-in user manual
+- `io.github.oliverhubtech_source.Casca.yml` / `python3-requirements.yaml` — the Flatpak manifest
 
-## Ícones de marca
+## Brand icons
 
-A galeria de ícones em `casca/data/social_icons/` usa arquivos do projeto
-[Simple Icons](https://simpleicons.org) (licença CC0 — ver `LICENSE.txt` na própria pasta).
-Marcas que pediram remoção do Simple Icons por motivos legais (Microsoft e seus produtos,
-Amazon, LinkedIn, Yahoo) não têm ícone embutido — o Casca busca o favicon do site
-automaticamente ou mostra um avatar com iniciais nesses casos.
+The icon gallery in `casca/data/social_icons/` uses files from the
+[Simple Icons](https://simpleicons.org) project (CC0 license — see `LICENSE.txt` in that same
+folder). Brands that asked to be removed from Simple Icons for legal reasons (Microsoft and its
+products, Amazon, LinkedIn, Yahoo) don't have a bundled icon — Casca fetches the site's favicon
+automatically or shows an initials avatar in those cases.
 
 ## Sandboxing (Flatpak)
 
-Rodando como Flatpak, o Casca ainda consegue abrir apps em navegadores externos instalados
-no sistema (nativos ou outros Flatpaks) — a detecção e o lançamento passam por
-`flatpak-spawn --host` quando necessário. Os `.desktop` que o Casca cria pra cada web app
-são executados pelo GNOME Shell (host), fora do sandbox; quando o motor escolhido é a
-"janela própria" (WebKitGTK), esse `.desktop` reabre o próprio Casca via
+Running as a Flatpak, Casca deliberately doesn't request the `flatpak-spawn` permission
+(`--talk-name=org.freedesktop.Flatpak`) — that permission grants access to running arbitrary
+commands on the host and is heavily scrutinized in Flathub review. Sandboxed, Casca only offers
+its "own window" (WebKitGTK); it doesn't detect or offer external browsers (that keeps working
+normally in the local install via `install.sh`, outside the Flatpak). The `.desktop` files Casca
+creates for each web app are run by GNOME Shell (the host), outside the sandbox — when the chosen
+engine is the "own window", that `.desktop` reopens Casca itself via
 `flatpak run --command=casca-webview io.github.oliverhubtech_source.Casca`.
