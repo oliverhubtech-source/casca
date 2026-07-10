@@ -1,0 +1,31 @@
+Source: casca
+Section: gnome
+Priority: optional
+Maintainer: OliverHub <282591028+oliverhubtech-source@users.noreply.github.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+Homepage: https://github.com/oliverhubtech-source/casca
+Rules-Requires-Root: no
+
+Package: casca
+Architecture: all
+Depends: ${misc:Depends},
+         python3 (>= 3.11),
+         python3-gi,
+         python3-requests,
+         python3-pil,
+         gir1.2-gtk-4.0,
+         gir1.2-adw-1,
+         gir1.2-glib-2.0,
+Recommends: gir1.2-webkit-6.0
+Description: Turn any website into a native GNOME app
+ Casca turns any website into a native GNOME app: pick the address, Casca
+ fetches the icon automatically and creates a shortcut in the applications
+ menu (and, optionally, on the desktop). Each app opens in its own window,
+ with no leftover browser bar — including a title bar colored to match the
+ site's icon.
+ .
+ Main features: a store with hundreds of ready-made sites; packages that
+ group several related sites behind one icon; mobile mode with device
+ simulation; import/export of apps via JSON; and per-app browser
+ profiles/accounts for isolated logins.

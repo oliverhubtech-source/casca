@@ -1,0 +1,59 @@
+name: Deb
+
+on:
+  push:
+    branches: [main, hmg, dev]
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Determinar canal, tag e versão
+        id: channel
+        run: |
+          BASE_VERSION=$(grep -m1 '^version' pyproject.toml | sed -E 's/version = "(.*)"/\1/')
+          case "${GITHUB_REF_NAME}" in
+            main)
+              echo "channel=release" >> "$GITHUB_OUTPUT"
+              echo "tag=v${BASE_VERSION}" >> "$GITHUB_OUTPUT"
+              echo "prerelease=false" >> "$GITHUB_OUTPUT"
+              ;;
+            hmg)
+              echo "channel=beta" >> "$GITHUB_OUTPUT"
+              echo "tag=v${BASE_VERSION}-beta.${GITHUB_RUN_NUMBER}" >> "$GITHUB_OUTPUT"
+              echo "prerelease=true" >> "$GITHUB_OUTPUT"
+              ;;
+            dev)
+              echo "channel=alpha" >> "$GITHUB_OUTPUT"
+              echo "tag=v${BASE_VERSION}-alpha.${GITHUB_RUN_NUMBER}" >> "$GITHUB_OUTPUT"
+              echo "prerelease=true" >> "$GITHUB_OUTPUT"
+              ;;
+          esac
+
+      - name: Instalar ferramentas de empacotamento Debian
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends debhelper dpkg-dev fakeroot
+
+      - name: Buildar o .deb
+        run: dpkg-buildpackage -us -uc -b
+
+      - name: Renomear o pacote com o canal
+        id: pkg
+        run: |
+          deb_file=$(ls ../casca_*.deb | head -1)
+          new_name="casca-${{ steps.channel.outputs.channel }}.deb"
+          mv "$deb_file" "$new_name"
+          echo "path=$new_name" >> "$GITHUB_OUTPUT"
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.channel.outputs.tag }}
+          name: "Casca ${{ steps.channel.outputs.tag }}"
+          prerelease: ${{ steps.channel.outputs.prerelease }}
+          files: ${{ steps.pkg.outputs.path }}

@@ -1,0 +1,21 @@
+casca (1.2.0) unstable; urgency=medium
+
+  * Background check for new releases (throttled, once a day at most), with
+    a system notification and a one-click update for git-checkout installs.
+  * About dialog now shows the license, a source code link, the release
+    channel (release/beta/alpha), and a proper "What's New" page.
+
+ -- OliverHub <282591028+oliverhubtech-source@users.noreply.github.com>  Fri, 10 Jul 2026 00:00:00 -0300
+
+casca (1.1.0) unstable; urgency=medium
+
+  * 20-language i18n (gettext).
+  * Contextual help buttons and a redesigned, Tailwind-based manual.
+
+ -- OliverHub <282591028+oliverhubtech-source@users.noreply.github.com>  Thu, 09 Jul 2026 00:00:00 -0300
+
+casca (1.0.0) unstable; urgency=medium
+
+  * First public release of Casca.
+
+ -- OliverHub <282591028+oliverhubtech-source@users.noreply.github.com>  Wed, 08 Jul 2026 00:00:00 -0300
