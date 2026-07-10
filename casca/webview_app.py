@@ -18,6 +18,7 @@ gi.require_version("Gdk", "4.0")
 gi.require_version("WebKit", "6.0")
 from gi.repository import Adw, Gdk, GLib, Gtk, WebKit
 
+from . import updater
 from .fileutils import ascii_app_id_component
 from .headerbar_css import build_header_css
 
@@ -80,6 +81,7 @@ def main(argv: list[str] | None = None) -> int:
         toolbar.set_content(web_view)
         window.set_content(toolbar)
         window.present()
+        updater.check_and_notify(application)
 
     app.connect("activate", on_activate)
     return app.run([])

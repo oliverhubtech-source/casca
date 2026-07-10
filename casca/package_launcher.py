@@ -20,6 +20,7 @@ gi.require_version("Adw", "1")
 gi.require_version("Gdk", "4.0")
 from gi.repository import Adw, Gdk, Gtk
 
+from . import updater
 from .fileutils import ascii_app_id_component
 from .headerbar_css import build_header_css
 from .i18n import _
@@ -106,6 +107,11 @@ def build_window(application: Adw.Application, config: dict) -> Adw.ApplicationW
     return window
 
 
+def _on_activate(application: Adw.Application, config: dict) -> None:
+    build_window(application, config).present()
+    updater.check_and_notify(application)
+
+
 def main(argv: list[str] | None = None) -> int:
     args = _parse_args(argv if argv is not None else sys.argv[1:])
     config = json.loads(Path(args.config).read_text())
@@ -113,7 +119,7 @@ def main(argv: list[str] | None = None) -> int:
     package_name = config.get("package_name", _("Package"))
     app_id = "io.github.oliverhubtech_source.Casca.Package" + ascii_app_id_component(package_name)
     app = Adw.Application(application_id=app_id)
-    app.connect("activate", lambda application: build_window(application, config).present())
+    app.connect("activate", _on_activate, config)
     return app.run([])
 
 

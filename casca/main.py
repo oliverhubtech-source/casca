@@ -12,6 +12,7 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Adw, Gio
 
+from . import updater
 from .window import CascaWindow
 
 APP_ID = "io.github.oliverhubtech_source.Casca"
@@ -26,6 +27,7 @@ class CascaApplication(Adw.Application):
         if not window:
             window = CascaWindow(self)
         window.present()
+        updater.check_and_notify(self)
 
 
 def main() -> int:
