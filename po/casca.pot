@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Casca 1.0.0\n"
+"Project-Id-Version: Casca 1.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/oliverhubtech-source/casca/issues\n"
-"POT-Creation-Date: 2026-07-09 22:51-0300\n"
+"POT-Creation-Date: 2026-07-10 16:23-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: casca/browsers.py:199
+#: casca/browsers.py:209
 msgid "Casca's own window"
 msgstr ""
 
@@ -190,60 +190,60 @@ msgstr ""
 msgid "Full HD (1920×1080)"
 msgstr ""
 
-#: casca/entries.py:203 casca/entries.py:245
+#: casca/entries.py:205 casca/entries.py:247
 #, python-format
 msgid "Browser not found: %(key)s"
 msgstr ""
 
-#: casca/entries.py:249
+#: casca/entries.py:251
 #, python-format
 msgid "App not found: %(slug)s"
 msgstr ""
 
-#: casca/entries.py:337
+#: casca/entries.py:339
 msgid "remote file too large"
 msgstr ""
 
-#: casca/entries.py:341
+#: casca/entries.py:343
 #, python-format
 msgid "could not download the file (%(error)s)"
 msgstr ""
 
-#: casca/entries.py:350
+#: casca/entries.py:352
 #, python-format
 msgid "could not read the file (%(error)s)"
 msgstr ""
 
-#: casca/entries.py:354
+#: casca/entries.py:356
 msgid "unexpected format: no 'apps' list found"
 msgstr ""
 
-#: casca/entries.py:388
+#: casca/entries.py:390
 #, python-format
 msgid "item %(n)d"
 msgstr ""
 
-#: casca/entries.py:390
+#: casca/entries.py:392
 msgid "missing name or URL"
 msgstr ""
 
-#: casca/entries.py:393 casca/entries.py:398
+#: casca/entries.py:395 casca/entries.py:400
 msgid "unsupported URL scheme"
 msgstr ""
 
-#: casca/entries.py:404
+#: casca/entries.py:406
 msgid "no browser available"
 msgstr ""
 
-#: casca/entries.py:423
+#: casca/entries.py:425
 msgid "could not get an icon"
 msgstr ""
 
-#: casca/entries.py:481
+#: casca/entries.py:483
 msgid "No browser available to assemble the package."
 msgstr ""
 
-#: casca/entries.py:553
+#: casca/entries.py:555
 msgid "Package of web apps created by Casca"
 msgstr ""
 
@@ -570,7 +570,7 @@ msgstr ""
 msgid "PWA Manifest"
 msgstr ""
 
-#: casca/package_launcher.py:72 casca/package_launcher.py:113
+#: casca/package_launcher.py:73 casca/package_launcher.py:119
 #: casca/window.py:934
 msgid "Package"
 msgstr ""
@@ -589,6 +589,47 @@ msgstr ""
 
 #: casca/store.py:92
 msgid "Global"
+msgstr ""
+
+#: casca/updater.py:90 casca/updater.py:91
+msgid "Release"
+msgstr ""
+
+#: casca/updater.py:90
+msgid "Beta"
+msgstr ""
+
+#: casca/updater.py:90
+msgid "Alpha"
+msgstr ""
+
+#: casca/updater.py:90
+msgid "Development"
+msgstr ""
+
+#: casca/updater.py:106
+msgid "Casca"
+msgstr ""
+
+#: casca/updater.py:109
+msgid "Updated — restart Casca to use the new version."
+msgstr ""
+
+#: casca/updater.py:110
+msgid "Couldn't update automatically — check for updates manually."
+msgstr ""
+
+#: casca/updater.py:125
+msgid "Casca update available"
+msgstr ""
+
+#: casca/updater.py:128
+#, python-format
+msgid "Version %(latest)s is available (you're on %(current)s)."
+msgstr ""
+
+#: casca/updater.py:138
+msgid "Update now"
 msgstr ""
 
 #: casca/window.py:86
@@ -904,116 +945,141 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: casca/window.py:1302 casca/window.py:1398
+#: casca/window.py:1302 casca/window.py:1429
 msgid "Import apps"
 msgstr ""
 
-#: casca/window.py:1306 casca/window.py:1348
+#: casca/window.py:1306 casca/window.py:1379
 msgid "Export apps"
 msgstr ""
 
-#: casca/window.py:1335
+#: casca/window.py:1337
 msgid "Turns any website into a GNOME app."
 msgstr ""
 
-#: casca/window.py:1346
+#: casca/window.py:1341
+#, python-format
+msgid ""
+"Version %(latest)s is available — an update notification with a way to "
+"update just popped up."
+msgstr ""
+
+#: casca/window.py:1356
+msgid ""
+"Casca now checks for new releases in the background (once a day at most) and "
+"lets you know with a system notification — no action needed for Flatpak/Snap "
+"installs, which already update themselves."
+msgstr ""
+
+#: casca/window.py:1361
+msgid ""
+"The About dialog now shows the license, a link to the source code, whether "
+"you're on a release/beta/alpha build, and a proper “What's New” page with "
+"each version's changelog."
+msgstr ""
+
+#: casca/window.py:1367
+msgid "Source Code"
+msgstr ""
+
+#: casca/window.py:1377
 msgid "No app created yet to export."
 msgstr ""
 
-#: casca/window.py:1370
+#: casca/window.py:1401
 #, python-format
 msgid "Error exporting: %(error)s"
 msgstr ""
 
-#: casca/window.py:1373
+#: casca/window.py:1404
 #, python-format
 msgid "%(count)d app exported to %(name)s."
 msgid_plural "%(count)d apps exported to %(name)s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: casca/window.py:1379
+#: casca/window.py:1410
 msgid "Import from where?"
 msgstr ""
 
-#: casca/window.py:1380
+#: casca/window.py:1411
 msgid "Choose a local .json file or a URL (e.g. a GitHub \"raw\" link)."
 msgstr ""
 
-#: casca/window.py:1382 casca/window.py:1428 casca/window.py:1561
-#: casca/window.py:1584
+#: casca/window.py:1413 casca/window.py:1459 casca/window.py:1592
+#: casca/window.py:1615
 msgid "Cancel"
 msgstr ""
 
-#: casca/window.py:1383
+#: casca/window.py:1414
 msgid "From a URL"
 msgstr ""
 
-#: casca/window.py:1384
+#: casca/window.py:1415
 msgid "Local file"
 msgstr ""
 
-#: casca/window.py:1417
+#: casca/window.py:1448
 #, python-format
 msgid "Error reading the file: %(error)s"
 msgstr ""
 
-#: casca/window.py:1423
+#: casca/window.py:1454
 msgid "Import from a URL"
 msgstr ""
 
-#: casca/window.py:1424
+#: casca/window.py:1455
 msgid "Paste the JSON file's \"raw\" link (e.g. from a GitHub repository)."
 msgstr ""
 
-#: casca/window.py:1429
+#: casca/window.py:1460
 msgid "Fetch"
 msgstr ""
 
-#: casca/window.py:1441
+#: casca/window.py:1472
 msgid "Enter a URL."
 msgstr ""
 
-#: casca/window.py:1443
+#: casca/window.py:1474
 msgid "Fetching file…"
 msgstr ""
 
-#: casca/window.py:1450
+#: casca/window.py:1481
 #, python-format
 msgid "Error downloading: %(error)s"
 msgstr ""
 
-#: casca/window.py:1458
+#: casca/window.py:1489
 #, python-format
 msgid "Error importing: %(error)s"
 msgstr ""
 
-#: casca/window.py:1461
+#: casca/window.py:1492
 msgid "No app found in the file."
 msgstr ""
 
-#: casca/window.py:1469
+#: casca/window.py:1500
 msgid "Nothing selected to import."
 msgstr ""
 
-#: casca/window.py:1477
+#: casca/window.py:1508
 #, python-format
 msgid "%(n)d app imported."
 msgid_plural "%(n)d apps imported."
 msgstr[0] ""
 msgstr[1] ""
 
-#: casca/window.py:1483
+#: casca/window.py:1514
 #, python-format
 msgid "• %(name)s: %(reason)s"
 msgstr ""
 
-#: casca/window.py:1487
+#: casca/window.py:1518
 #, python-format
 msgid "%(created)d imported, %(failed)d with errors"
 msgstr ""
 
-#: casca/window.py:1489
+#: casca/window.py:1520
 #, python-format
 msgid ""
 "Review and adjust manually via the \"Create\" button:\n"
@@ -1021,48 +1087,48 @@ msgid ""
 "%(lines)s"
 msgstr ""
 
-#: casca/window.py:1491
+#: casca/window.py:1522
 msgid "Got it"
 msgstr ""
 
-#: casca/window.py:1505
+#: casca/window.py:1536
 msgid "No web apps yet"
 msgstr ""
 
-#: casca/window.py:1506
+#: casca/window.py:1537
 msgid ""
 "Tap “Create” to make your first app, or open the Store for ready-made sites."
 msgstr ""
 
-#: casca/window.py:1515
+#: casca/window.py:1546
 msgid "My web apps"
 msgstr ""
 
-#: casca/window.py:1537
+#: casca/window.py:1568
 msgid "Installed packages"
 msgstr ""
 
-#: casca/window.py:1558
+#: casca/window.py:1589
 #, python-format
 msgid "Delete “%(name)s”?"
 msgstr ""
 
-#: casca/window.py:1559
+#: casca/window.py:1590
 msgid ""
 "The shortcut will be removed from the applications menu and the desktop, if "
 "it exists."
 msgstr ""
 
-#: casca/window.py:1562 casca/window.py:1585
+#: casca/window.py:1593 casca/window.py:1616
 msgid "Delete"
 msgstr ""
 
-#: casca/window.py:1576
+#: casca/window.py:1607
 #, python-format
 msgid "Delete package “%(name)s”?"
 msgstr ""
 
-#: casca/window.py:1578
+#: casca/window.py:1609
 #, python-format
 msgid "Removes the shortcut and the %(n)d app inside it (%(names)s)."
 msgid_plural "Removes the shortcut and the %(n)d apps inside it (%(names)s)."

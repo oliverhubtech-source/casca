@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Casca 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/oliverhubtech-source/casca/issues\n"
-"POT-Creation-Date: 2026-07-09 22:51-0300\n"
+"POT-Creation-Date: 2026-07-10 16:23-0300\n"
 "PO-Revision-Date: 2026-07-09 16:07-0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -11,167 +11,333 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"#: casca/browsers.py:199
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: casca/browsers.py:209
 msgid "Casca's own window"
-msgstr "Casca 자체 창"#: casca/catalog_strings.py:16 casca/help_content.py:76 casca/presets.py:51
+msgstr "Casca 자체 창"
+
+#: casca/catalog_strings.py:16 casca/help_content.py:76 casca/presets.py:51
 msgid "Artificial Intelligence"
-msgstr "인공지능"#: casca/catalog_strings.py:17
+msgstr "인공지능"
+
+#: casca/catalog_strings.py:17
 msgid "Cloud Computing"
-msgstr "클라우드 컴퓨팅"#: casca/catalog_strings.py:18 casca/help_content.py:86 casca/presets.py:166
+msgstr "클라우드 컴퓨팅"
+
+#: casca/catalog_strings.py:18 casca/help_content.py:86 casca/presets.py:166
 msgid "Conversion & Sharing"
-msgstr "변환 및 공유"#: casca/catalog_strings.py:19
+msgstr "변환 및 공유"
+
+#: casca/catalog_strings.py:19
 msgid "Creativity"
-msgstr "창의성"#: casca/catalog_strings.py:20
+msgstr "창의성"
+
+#: casca/catalog_strings.py:20
 msgid "Finance"
-msgstr "금융"#: casca/catalog_strings.py:21 casca/window.py:935
+msgstr "금융"
+
+#: casca/catalog_strings.py:21 casca/window.py:935
 msgid "Marketplace"
-msgstr "마켓플레이스"#: casca/catalog_strings.py:22
+msgstr "마켓플레이스"
+
+#: casca/catalog_strings.py:22
 msgid "Messenger"
-msgstr "메신저"#: casca/catalog_strings.py:23
+msgstr "메신저"
+
+#: casca/catalog_strings.py:23
 msgid "Music Streaming"
-msgstr "음악 스트리밍"#: casca/catalog_strings.py:24 casca/window.py:936
+msgstr "음악 스트리밍"
+
+#: casca/catalog_strings.py:24 casca/window.py:936
 msgid "News"
-msgstr "뉴스"#: casca/catalog_strings.py:25
+msgstr "뉴스"
+
+#: casca/catalog_strings.py:25
 msgid "PDF"
-msgstr "PDF"#: casca/catalog_strings.py:26
+msgstr "PDF"
+
+#: casca/catalog_strings.py:26
 msgid "Productivity"
-msgstr "생산성"#: casca/catalog_strings.py:27
+msgstr "생산성"
+
+#: casca/catalog_strings.py:27
 msgid "Search Engine"
-msgstr "검색 엔진"#: casca/catalog_strings.py:28
+msgstr "검색 엔진"
+
+#: casca/catalog_strings.py:28
 msgid "Security"
-msgstr "보안"#: casca/catalog_strings.py:29
+msgstr "보안"
+
+#: casca/catalog_strings.py:29
 msgid "Social Network"
-msgstr "소셜 네트워크"#: casca/catalog_strings.py:30
+msgstr "소셜 네트워크"
+
+#: casca/catalog_strings.py:30
 msgid "Utility"
-msgstr "유틸리티"#: casca/catalog_strings.py:31
+msgstr "유틸리티"
+
+#: casca/catalog_strings.py:31
 msgid "Video Streaming"
-msgstr "동영상 스트리밍"#: casca/catalog_strings.py:33
+msgstr "동영상 스트리밍"
+
+#: casca/catalog_strings.py:33
 msgid "Argentina"
-msgstr "아르헨티나"#: casca/catalog_strings.py:34
+msgstr "아르헨티나"
+
+#: casca/catalog_strings.py:34
 msgid "Brazil"
-msgstr "브라질"#: casca/catalog_strings.py:35
+msgstr "브라질"
+
+#: casca/catalog_strings.py:35
 msgid "Chile"
-msgstr "칠레"#: casca/catalog_strings.py:36
+msgstr "칠레"
+
+#: casca/catalog_strings.py:36
 msgid "Colombia"
-msgstr "콜롬비아"#: casca/catalog_strings.py:37
+msgstr "콜롬비아"
+
+#: casca/catalog_strings.py:37
 msgid "Europe"
-msgstr "유럽"#: casca/catalog_strings.py:38
+msgstr "유럽"
+
+#: casca/catalog_strings.py:38
 msgid "France"
-msgstr "프랑스"#: casca/catalog_strings.py:39
+msgstr "프랑스"
+
+#: casca/catalog_strings.py:39
 msgid "Germany"
-msgstr "독일"#: casca/catalog_strings.py:40
+msgstr "독일"
+
+#: casca/catalog_strings.py:40
 msgid "International"
-msgstr "국제"#: casca/catalog_strings.py:41
+msgstr "국제"
+
+#: casca/catalog_strings.py:41
 msgid "Mexico"
-msgstr "멕시코"#: casca/catalog_strings.py:42
+msgstr "멕시코"
+
+#: casca/catalog_strings.py:42
 msgid "Netherlands"
-msgstr "네덜란드"#: casca/catalog_strings.py:43
+msgstr "네덜란드"
+
+#: casca/catalog_strings.py:43
 msgid "Paraguay"
-msgstr "파라과이"#: casca/catalog_strings.py:44
+msgstr "파라과이"
+
+#: casca/catalog_strings.py:44
 msgid "Poland"
-msgstr "폴란드"#: casca/catalog_strings.py:45
+msgstr "폴란드"
+
+#: casca/catalog_strings.py:45
 msgid "Spain"
-msgstr "스페인"#: casca/catalog_strings.py:46
+msgstr "스페인"
+
+#: casca/catalog_strings.py:46
 msgid "United Kingdom"
-msgstr "영국"#: casca/catalog_strings.py:47
+msgstr "영국"
+
+#: casca/catalog_strings.py:47
 msgid "United States"
-msgstr "미국"#: casca/catalog_strings.py:48
+msgstr "미국"
+
+#: casca/catalog_strings.py:48
 msgid "Uruguay"
-msgstr "우루과이"#: casca/catalog_strings.py:50
+msgstr "우루과이"
+
+#: casca/catalog_strings.py:50
 msgid "Google Workspace"
-msgstr "Google Workspace"#: casca/catalog_strings.py:51
+msgstr "Google Workspace"
+
+#: casca/catalog_strings.py:51
 msgid "Microsoft 365"
-msgstr "Microsoft 365"#: casca/catalog_strings.py:52
+msgstr "Microsoft 365"
+
+#: casca/catalog_strings.py:52
 msgid "Social Media"
-msgstr "소셜 미디어"#: casca/catalog_strings.py:53
+msgstr "소셜 미디어"
+
+#: casca/catalog_strings.py:53
 msgid "YouTube"
-msgstr "YouTube"#: casca/devices.py:79
+msgstr "YouTube"
+
+#: casca/devices.py:79
 msgid "Small (800×600)"
-msgstr "작음(800×600)"#: casca/devices.py:80
+msgstr "작음(800×600)"
+
+#: casca/devices.py:80
 msgid "Medium (1024×768)"
-msgstr "중간(1024×768)"#: casca/devices.py:81
+msgstr "중간(1024×768)"
+
+#: casca/devices.py:81
 msgid "Laptop (1280×800)"
-msgstr "노트북(1280×800)"#: casca/devices.py:82
+msgstr "노트북(1280×800)"
+
+#: casca/devices.py:82
 msgid "Laptop HD (1366×768)"
-msgstr "노트북 HD(1366×768)"#: casca/devices.py:83
+msgstr "노트북 HD(1366×768)"
+
+#: casca/devices.py:83
 msgid "Large (1600×900)"
-msgstr "큼(1600×900)"#: casca/devices.py:84
+msgstr "큼(1600×900)"
+
+#: casca/devices.py:84
 msgid "Full HD (1920×1080)"
-msgstr "Full HD(1920×1080)"#: casca/entries.py:203 casca/entries.py:245#, python-format
+msgstr "Full HD(1920×1080)"
+
+#: casca/entries.py:205 casca/entries.py:247
+#, python-format
 msgid "Browser not found: %(key)s"
-msgstr "브라우저를 찾을 수 없음: %(key)s"#: casca/entries.py:249#, python-format
+msgstr "브라우저를 찾을 수 없음: %(key)s"
+
+#: casca/entries.py:251
+#, python-format
 msgid "App not found: %(slug)s"
-msgstr "앱을 찾을 수 없음: %(slug)s"#: casca/entries.py:337
+msgstr "앱을 찾을 수 없음: %(slug)s"
+
+#: casca/entries.py:339
 msgid "remote file too large"
-msgstr "원격 파일이 너무 큼"#: casca/entries.py:341#, python-format
+msgstr "원격 파일이 너무 큼"
+
+#: casca/entries.py:343
+#, python-format
 msgid "could not download the file (%(error)s)"
-msgstr "파일을 다운로드할 수 없음(%(error)s)"#: casca/entries.py:350#, python-format
+msgstr "파일을 다운로드할 수 없음(%(error)s)"
+
+#: casca/entries.py:352
+#, python-format
 msgid "could not read the file (%(error)s)"
-msgstr "파일을 읽을 수 없음(%(error)s)"#: casca/entries.py:354
+msgstr "파일을 읽을 수 없음(%(error)s)"
+
+#: casca/entries.py:356
 msgid "unexpected format: no 'apps' list found"
-msgstr "예기치 않은 형식: 'apps' 목록을 찾을 수 없음"#: casca/entries.py:388#, python-format
+msgstr "예기치 않은 형식: 'apps' 목록을 찾을 수 없음"
+
+#: casca/entries.py:390
+#, python-format
 msgid "item %(n)d"
-msgstr "항목 %(n)d"#: casca/entries.py:390
+msgstr "항목 %(n)d"
+
+#: casca/entries.py:392
 msgid "missing name or URL"
-msgstr "이름 또는 URL 누락"#: casca/entries.py:393 casca/entries.py:398
+msgstr "이름 또는 URL 누락"
+
+#: casca/entries.py:395 casca/entries.py:400
 msgid "unsupported URL scheme"
-msgstr "지원되지 않는 URL 스킴"#: casca/entries.py:404
+msgstr "지원되지 않는 URL 스킴"
+
+#: casca/entries.py:406
 msgid "no browser available"
-msgstr "사용 가능한 브라우저 없음"#: casca/entries.py:423
+msgstr "사용 가능한 브라우저 없음"
+
+#: casca/entries.py:425
 msgid "could not get an icon"
-msgstr "아이콘을 가져올 수 없음"#: casca/entries.py:481
+msgstr "아이콘을 가져올 수 없음"
+
+#: casca/entries.py:483
 msgid "No browser available to assemble the package."
-msgstr "패키지를 만들 수 있는 브라우저가 없습니다."#: casca/entries.py:553
+msgstr "패키지를 만들 수 있는 브라우저가 없습니다."
+
+#: casca/entries.py:555
 msgid "Package of web apps created by Casca"
-msgstr "Casca로 만든 웹 앱 패키지"#: casca/help_content.py:29
+msgstr "Casca로 만든 웹 앱 패키지"
+
+#: casca/help_content.py:29
 msgid "User Guide"
-msgstr "사용 설명서"#: casca/help_content.py:36
+msgstr "사용 설명서"
+
+#: casca/help_content.py:36
 msgid "Casca — User Guide"
-msgstr "Casca — 사용 설명서"#: casca/help_content.py:37
+msgstr "Casca — 사용 설명서"
+
+#: casca/help_content.py:37
 msgid "Casca icon"
-msgstr "Casca 아이콘"#: casca/help_content.py:39
+msgstr "Casca 아이콘"
+
+#: casca/help_content.py:39
 msgid "Websites, turned into apps. No fuss."
-msgstr "사이트가 앱으로. 번거로움 없이."#: casca/help_content.py:41
+msgstr "사이트가 앱으로. 번거로움 없이."
+
+#: casca/help_content.py:41
 msgid ""
 "Casca turns any address into a GNOME app: icon in the menu, its own window, "
 "no leftover browser bar. This guide covers every option on the creation "
 "screen."
-msgstr "Casca는 어떤 주소든 GNOME 앱으로 바꿔줍니다 — 메뉴의 아이콘, 자체 창, 불필요한 브라우저 표시줄 없이. 이 안내서는 생성 화면의 모든 옵션을 다룹니다."#: casca/help_content.py:44
+msgstr ""
+"Casca는 어떤 주소든 GNOME 앱으로 바꿔줍니다 — 메뉴의 아이콘, 자체 창, 불필요"
+"한 브라우저 표시줄 없이. 이 안내서는 생성 화면의 모든 옵션을 다룹니다."
+
+#: casca/help_content.py:44
 msgid "First app"
-msgstr "첫 앱"#: casca/help_content.py:45
+msgstr "첫 앱"
+
+#: casca/help_content.py:45
 msgid "Presets"
-msgstr "프리셋"#: casca/help_content.py:46 casca/help_content.py:89
+msgstr "프리셋"
+
+#: casca/help_content.py:46 casca/help_content.py:89
 msgid "Icon"
-msgstr "아이콘"#: casca/help_content.py:47
+msgstr "아이콘"
+
+#: casca/help_content.py:47
 msgid "Shortcut"
-msgstr "바로가기"#: casca/help_content.py:48 casca/window.py:235
+msgstr "바로가기"
+
+#: casca/help_content.py:48 casca/window.py:235
 msgid "Browser"
-msgstr "브라우저"#: casca/help_content.py:49 casca/help_content.py:140
+msgstr "브라우저"
+
+#: casca/help_content.py:49 casca/help_content.py:140
 msgid "Mobile mode"
-msgstr "모바일 모드"#: casca/help_content.py:50
+msgstr "모바일 모드"
+
+#: casca/help_content.py:50
 msgid "Resolution"
-msgstr "해상도"#: casca/help_content.py:51
+msgstr "해상도"
+
+#: casca/help_content.py:51
 msgid "Edit"
-msgstr "편집"#: casca/help_content.py:52
+msgstr "편집"
+
+#: casca/help_content.py:52
 msgid "Creating your first app"
-msgstr "첫 앱 만들기"#: casca/help_content.py:53
+msgstr "첫 앱 만들기"
+
+#: casca/help_content.py:53
 msgid "Two buttons on the home screen, two paths."
-msgstr "홈 화면의 두 개의 버튼, 두 가지 방법."#: casca/help_content.py:55
+msgstr "홈 화면의 두 개의 버튼, 두 가지 방법."
+
+#: casca/help_content.py:55
 msgid ""
 "<strong>Create from preset</strong> — pick an already-cataloged site (Gmail, "
 "WhatsApp, Netflix, ChatGPT…), with name, address and icon ready to go."
-msgstr "<strong>프리셋에서 만들기</strong> — 이미 등록된 사이트(Gmail, WhatsApp, Netflix, ChatGPT 등)를 선택하면 이름, 주소, 아이콘이 바로 준비됩니다."#: casca/help_content.py:59
+msgstr ""
+"<strong>프리셋에서 만들기</strong> — 이미 등록된 사이트(Gmail, WhatsApp, "
+"Netflix, ChatGPT 등)를 선택하면 이름, 주소, 아이콘이 바로 준비됩니다."
+
+#: casca/help_content.py:59
 msgid ""
 "<strong>Create new web app</strong> — start from scratch: you type in the "
 "name and address."
-msgstr "<strong>새 웹 앱 만들기</strong> — 처음부터 시작합니다. 이름과 주소를 직접 입력합니다."#: casca/help_content.py:62
+msgstr ""
+"<strong>새 웹 앱 만들기</strong> — 처음부터 시작합니다. 이름과 주소를 직접 입"
+"력합니다."
+
+#: casca/help_content.py:62
 msgid ""
 "Everything below the name and address is <strong>optional</strong>. Without "
 "touching anything, Casca figures it out on its own: fetches the icon, "
 "doesn't create a Desktop shortcut, opens in its own window at normal size."
-msgstr "이름과 주소 아래의 모든 항목은 <strong>선택 사항</strong>입니다. 아무것도 건드리지 않으면 Casca가 알아서 처리합니다 — 아이콘을 가져오고, 바탕화면 바로가기를 만들지 않으며, 일반 크기의 자체 창으로 열립니다."#: casca/help_content.py:66
+msgstr ""
+"이름과 주소 아래의 모든 항목은 <strong>선택 사항</strong>입니다. 아무것도 건"
+"드리지 않으면 Casca가 알아서 처리합니다 — 아이콘을 가져오고, 바탕화면 바로가"
+"기를 만들지 않으며, 일반 크기의 자체 창으로 열립니다."
+
+#: casca/help_content.py:66
 msgid "Preset sites"
-msgstr "프리셋 사이트"#: casca/help_content.py:68
+msgstr "프리셋 사이트"
+
+#: casca/help_content.py:68
 msgid ""
 "A search field at the top filters by site name (<code class=\"eyebrow text-"
 "[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 "
@@ -179,59 +345,113 @@ msgid ""
 "[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 "
 "py-0.5 rounded\">microsoft</code>). Categories start collapsed — tap one to "
 "expand it."
-msgstr "상단의 검색창은 사이트 이름(<code class=\"eyebrow text-[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 py-0.5 rounded\">gmail</code>) 또는 카테고리(<code class=\"eyebrow text-[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 py-0.5 rounded\">microsoft</code>)로 필터링합니다. 카테고리는 처음에는 접혀 있습니다 — 탭하면 펼쳐집니다."
+msgstr ""
+"상단의 검색창은 사이트 이름(<code class=\"eyebrow text-[13px] bg-lav-soft "
+"dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 py-0.5 rounded\">gmail</"
+"code>) 또는 카테고리(<code class=\"eyebrow text-[13px] bg-lav-soft dark:bg-"
+"[#2c2740] text-lav dark:text-lav-dark px-1.5 py-0.5 rounded\">microsoft</"
+"code>)로 필터링합니다. 카테고리는 처음에는 접혀 있습니다 — 탭하면 펼쳐집니다."
+
 #: casca/help_content.py:74 casca/presets.py:23
 msgid "Google Products"
-msgstr "Google 제품"#: casca/help_content.py:75 casca/presets.py:39
+msgstr "Google 제품"
+
+#: casca/help_content.py:75 casca/presets.py:39
 msgid "Microsoft Products"
-msgstr "Microsoft 제품"#: casca/help_content.py:77 casca/presets.py:66
+msgstr "Microsoft 제품"
+
+#: casca/help_content.py:77 casca/presets.py:66
 msgid "Search Engines"
-msgstr "검색 엔진"#: casca/help_content.py:78 casca/presets.py:78
+msgstr "검색 엔진"
+
+#: casca/help_content.py:78 casca/presets.py:78
 msgid "Messengers"
-msgstr "메신저"#: casca/help_content.py:79 casca/presets.py:88
+msgstr "메신저"
+
+#: casca/help_content.py:79 casca/presets.py:88
 msgid "Social Networks"
-msgstr "소셜 네트워크"#: casca/help_content.py:80 casca/presets.py:99
+msgstr "소셜 네트워크"
+
+#: casca/help_content.py:80 casca/presets.py:99
 msgid "Streaming"
-msgstr "스트리밍"#: casca/help_content.py:81 casca/presets.py:111
+msgstr "스트리밍"
+
+#: casca/help_content.py:81 casca/presets.py:111
 msgid "Music"
-msgstr "음악"#: casca/help_content.py:82 casca/presets.py:123
+msgstr "음악"
+
+#: casca/help_content.py:82 casca/presets.py:123
 msgid "Productivity & Organization"
-msgstr "생산성 및 정리"#: casca/help_content.py:83 casca/presets.py:136
+msgstr "생산성 및 정리"
+
+#: casca/help_content.py:83 casca/presets.py:136
 msgid "PDF Tools"
-msgstr "PDF 도구"#: casca/help_content.py:84 casca/presets.py:145
+msgstr "PDF 도구"
+
+#: casca/help_content.py:84 casca/presets.py:145
 msgid "Calculations & Finance"
-msgstr "계산 및 금융"#: casca/help_content.py:85 casca/presets.py:157
+msgstr "계산 및 금융"
+
+#: casca/help_content.py:85 casca/presets.py:157
 msgid "Generators & Utilities"
-msgstr "생성기 및 유틸리티"#: casca/help_content.py:87 casca/presets.py:176
+msgstr "생성기 및 유틸리티"
+
+#: casca/help_content.py:87 casca/presets.py:176
 msgid "Security & Diagnostics"
-msgstr "보안 및 진단"#: casca/help_content.py:88 casca/presets.py:186
+msgstr "보안 및 진단"
+
+#: casca/help_content.py:88 casca/presets.py:186
 msgid "Creativity & Content"
-msgstr "창의성 및 콘텐츠"#: casca/help_content.py:90
+msgstr "창의성 및 콘텐츠"
+
+#: casca/help_content.py:90
 msgid "Check <strong>Customize icon and shortcut</strong> to choose manually."
 msgstr ""
 "수동으로 선택하려면 <strong>아이콘 및 바로가기 사용자 지정</strong>을 선택하"
-"세요."#: casca/help_content.py:91 casca/window.py:356
+"세요."
+
+#: casca/help_content.py:91 casca/window.py:356
 msgid "Search online"
-msgstr "온라인 검색"#: casca/help_content.py:93
+msgstr "온라인 검색"
+
+#: casca/help_content.py:93
 msgid ""
 "Checks several sources — Google, DuckDuckGo, apple-touch-icon, PWA manifest "
 "— and shows the results in a grid."
-msgstr "Google, DuckDuckGo, apple-touch-icon, PWA 매니페스트 등 여러 소스를 확인하고 결과를 그리드로 보여줍니다."#: casca/help_content.py:96 casca/window.py:358
+msgstr ""
+"Google, DuckDuckGo, apple-touch-icon, PWA 매니페스트 등 여러 소스를 확인하고 "
+"결과를 그리드로 보여줍니다."
+
+#: casca/help_content.py:96 casca/window.py:358
 msgid "From computer"
-msgstr "컴퓨터에서"#: casca/help_content.py:97
+msgstr "컴퓨터에서"
+
+#: casca/help_content.py:97
 msgid "Picks a PNG, JPG or SVG file already saved on your computer."
-msgstr "컴퓨터에 이미 저장된 PNG, JPG 또는 SVG 파일을 선택합니다."#: casca/help_content.py:98 casca/window.py:360
+msgstr "컴퓨터에 이미 저장된 PNG, JPG 또는 SVG 파일을 선택합니다."
+
+#: casca/help_content.py:98 casca/window.py:360
 msgid "From gallery"
-msgstr "갤러리에서"#: casca/help_content.py:99
+msgstr "갤러리에서"
+
+#: casca/help_content.py:99
 msgid "Over 160 brand icons already included, no internet needed."
 msgstr ""
-"160개 이상의 브랜드 아이콘이 이미 포함되어 있어 인터넷이 필요 없습니다."#: casca/help_content.py:101
+"160개 이상의 브랜드 아이콘이 이미 포함되어 있어 인터넷이 필요 없습니다."
+
+#: casca/help_content.py:101
 msgid ""
 "Without checking anything, Casca fetches an icon automatically on save — or "
 "uses the icon that's already set, if the app came from a preset."
-msgstr "아무것도 선택하지 않아도 Casca는 저장할 때 자동으로 아이콘을 가져옵니다 — 또는 앱이 프리셋에서 생성된 경우 이미 설정된 아이콘을 사용합니다."#: casca/help_content.py:104
+msgstr ""
+"아무것도 선택하지 않아도 Casca는 저장할 때 자동으로 아이콘을 가져옵니다 — 또"
+"는 앱이 프리셋에서 생성된 경우 이미 설정된 아이콘을 사용합니다."
+
+#: casca/help_content.py:104
 msgid "Example"
-msgstr "예시"#: casca/help_content.py:106
+msgstr "예시"
+
+#: casca/help_content.py:106
 msgid ""
 "Your bank's site favicon looks blurry at a larger size — pick <strong>From "
 "gallery</strong> for a clean pre-made icon, or <strong>From computer</"
@@ -243,33 +463,62 @@ msgstr ""
 "진 아이콘을 원하면 <strong>갤러리에서</strong>를, 이미 더 나은 로고를 저장해 "
 "두었다면 <strong>컴퓨터에서</strong>를 선택하세요. 무엇을 선택하든 선명한 "
 "256×256 이미지로 정규화됩니다(SVG는 완벽하게 확대/축소되므로 그대로 유지됩니"
-"다)."#: casca/help_content.py:111
+"다)."
+
+#: casca/help_content.py:111
 msgid "Desktop Shortcut"
-msgstr "바탕화면 바로가기"#: casca/help_content.py:113
+msgstr "바탕화면 바로가기"
+
+#: casca/help_content.py:113
 msgid ""
 "Every app already shows up in the GNOME applications menu. To also get an "
 "icon on the Desktop, check <strong>Customize icon and shortcut</strong> and "
 "turn on <strong>Also create on the Desktop</strong>."
-msgstr "모든 앱은 이미 GNOME 애플리케이션 메뉴에 표시됩니다. 바탕화면에도 아이콘을 추가하려면 <strong>아이콘 및 바로 가기 사용자 지정</strong>을 선택하고 <strong>바탕화면에도 만들기</strong>를 켜세요."#: casca/help_content.py:117
+msgstr ""
+"모든 앱은 이미 GNOME 애플리케이션 메뉴에 표시됩니다. 바탕화면에도 아이콘을 추"
+"가하려면 <strong>아이콘 및 바로 가기 사용자 지정</strong>을 선택하고 <strong>"
+"바탕화면에도 만들기</strong>를 켜세요."
+
+#: casca/help_content.py:117
 msgid "Custom browser"
-msgstr "사용자 지정 브라우저"#: casca/help_content.py:119
+msgstr "사용자 지정 브라우저"
+
+#: casca/help_content.py:119
 msgid ""
 "By default, every app opens in <strong>Casca's own window</strong>: lighter, "
 "top bar automatically colored to match the icon, isolated session per app."
-msgstr "기본적으로 모든 앱은 <strong>Casca 자체 창</strong>에서 열립니다 — 더 가볍고, 상단 표시줄은 아이콘에 맞춰 자동으로 색이 지정되며, 앱마다 독립된 세션을 사용합니다."#: casca/help_content.py:123
+msgstr ""
+"기본적으로 모든 앱은 <strong>Casca 자체 창</strong>에서 열립니다 — 더 가볍"
+"고, 상단 표시줄은 아이콘에 맞춰 자동으로 색이 지정되며, 앱마다 독립된 세션을 "
+"사용합니다."
+
+#: casca/help_content.py:123
 msgid ""
 "<strong>Heads up:</strong> sites with Google login (Gmail, Drive, Calendar, "
 "Meet…) tend to refuse login in the built-in window — a Google restriction "
 "against unrecognized browsers, with no workaround. Check <strong>Use a "
 "custom browser</strong> and pick Chrome, Helium, GNOME Web or another "
 "installed browser."
-msgstr "<strong>참고:</strong> Google 로그인을 사용하는 사이트(Gmail, 드라이브, 캘린더, Meet 등)는 내장 창에서 로그인을 거부하는 경우가 많습니다 — 인식되지 않는 브라우저에 대한 Google의 제한으로, 우회 방법이 없습니다. <strong>사용자 지정 브라우저 사용</strong>을 선택하고 Chrome, Helium, GNOME Web 또는 설치된 다른 브라우저를 선택하세요."#: casca/help_content.py:129
+msgstr ""
+"<strong>참고:</strong> Google 로그인을 사용하는 사이트(Gmail, 드라이브, 캘린"
+"더, Meet 등)는 내장 창에서 로그인을 거부하는 경우가 많습니다 — 인식되지 않는 "
+"브라우저에 대한 Google의 제한으로, 우회 방법이 없습니다. <strong>사용자 지정 "
+"브라우저 사용</strong>을 선택하고 Chrome, Helium, GNOME Web 또는 설치된 다른 "
+"브라우저를 선택하세요."
+
+#: casca/help_content.py:129
 msgid ""
 "With a Chromium-based browser (Chrome, Chromium, Brave, Edge, Vivaldi, "
 "Helium…) and more than one account configured in it, <strong>Browser "
 "account</strong> also shows up — choose which already-logged-in account "
 "opens the app, instead of a new profile with no login."
-msgstr "Chromium 기반 브라우저(Chrome, Chromium, Brave, Edge, Vivaldi, Helium 등)에 계정이 두 개 이상 설정되어 있으면 <strong>브라우저 계정</strong>도 표시됩니다 — 로그인되지 않은 새 프로필 대신 이미 로그인된 계정 중 어떤 것으로 앱을 열지 선택하세요."#: casca/help_content.py:135
+msgstr ""
+"Chromium 기반 브라우저(Chrome, Chromium, Brave, Edge, Vivaldi, Helium 등)에 "
+"계정이 두 개 이상 설정되어 있으면 <strong>브라우저 계정</strong>도 표시됩니"
+"다 — 로그인되지 않은 새 프로필 대신 이미 로그인된 계정 중 어떤 것으로 앱을 열"
+"지 선택하세요."
+
+#: casca/help_content.py:135
 msgid ""
 "You use Chrome for everyday browsing and want Gmail to open already signed "
 "into your work account instead of asking you to log in again. Turn on "
@@ -280,12 +529,19 @@ msgstr ""
 "평소에 Chrome을 사용하는데, Gmail을 열 때마다 다시 로그인하라는 대신 이미 업"
 "무용 계정으로 로그인된 상태로 열리길 원한다고 해봅시다. <strong>사용자 지정 "
 "브라우저 사용</strong>을 켜고 Chrome을 선택한 다음, <strong>브라우저 계정</"
-"strong>에서 계정을 선택하세요 — Gmail이 바로 그 받은편지함으로 열립니다."#: casca/help_content.py:142
+"strong>에서 계정을 선택하세요 — Gmail이 바로 그 받은편지함으로 열립니다."
+
+#: casca/help_content.py:142
 msgid ""
 "Check <strong>Open in mobile mode</strong> and pick a device — Google Pixel, "
 "iPhone, Galaxy, iPad. The app identifies itself to the site as that device, "
 "unlocking the mobile layout (usually simpler and faster)."
-msgstr "<strong>모바일 모드로 열기</strong>를 선택하고 기기를 선택하세요 — Google Pixel, iPhone, Galaxy, iPad. 앱은 해당 기기인 것처럼 사이트에 자신을 알려 모바일 레이아웃(보통 더 간단하고 빠름)을 활성화합니다."#: casca/help_content.py:147
+msgstr ""
+"<strong>모바일 모드로 열기</strong>를 선택하고 기기를 선택하세요 — Google "
+"Pixel, iPhone, Galaxy, iPad. 앱은 해당 기기인 것처럼 사이트에 자신을 알려 모"
+"바일 레이아웃(보통 더 간단하고 빠름)을 활성화합니다."
+
+#: casca/help_content.py:147
 msgid ""
 "Pick <strong>iPhone 15 Pro</strong> for a site like X (Twitter) and it "
 "serves the same stripped-down layout you'd get on a real phone — fewer side "
@@ -297,266 +553,593 @@ msgstr ""
 "폰에서 보는 것과 동일한 간소화된 레이아웃을 제공합니다 — 사이드 패널이 적고 "
 "타임라인도 더 단순합니다. 이는 창 크기뿐 아니라 앱이 사이트에 보내는 식별 정"
 "보도 바꾸는 것이므로, 아래의 사용자 지정 해상도와 함께 사용해 휴대폰 화면 비"
-"율에도 맞춰보세요."#: casca/help_content.py:152
+"율에도 맞춰보세요."
+
+#: casca/help_content.py:152
 msgid "Window resolution"
-msgstr "창 해상도"#: casca/help_content.py:154
+msgstr "창 해상도"
+
+#: casca/help_content.py:154
 msgid ""
 "Check <strong>Customize window resolution</strong> — three ways to set the "
 "size, works with or without mobile mode enabled."
-msgstr "<strong>창 해상도 사용자 지정</strong>을 선택하세요 — 크기를 설정하는 세 가지 방법이 있으며, 모바일 모드 활성화 여부와 관계없이 작동합니다."#: casca/help_content.py:158
+msgstr ""
+"<strong>창 해상도 사용자 지정</strong>을 선택하세요 — 크기를 설정하는 세 가"
+"지 방법이 있으며, 모바일 모드 활성화 여부와 관계없이 작동합니다."
+
+#: casca/help_content.py:158
 msgid ""
 "<strong>By device</strong> — uses the screen size of the device chosen in "
 "mobile mode."
-msgstr "<strong>기기별</strong> — 모바일 모드에서 선택한 기기의 화면 크기를 사용합니다."#: casca/help_content.py:160
+msgstr ""
+"<strong>기기별</strong> — 모바일 모드에서 선택한 기기의 화면 크기를 사용합니"
+"다."
+
+#: casca/help_content.py:160
 msgid "<strong>Default size</strong> — common resolutions (laptop, Full HD…)."
-msgstr "<strong>기본 크기</strong> — 일반적인 해상도(노트북, Full HD 등)."#: casca/help_content.py:161
+msgstr "<strong>기본 크기</strong> — 일반적인 해상도(노트북, Full HD 등)."
+
+#: casca/help_content.py:161
 msgid "<strong>Custom</strong> — you type in width and height in pixels."
-msgstr "<strong>사용자 지정</strong> — 너비와 높이를 픽셀 단위로 입력합니다."#: casca/help_content.py:163
+msgstr "<strong>사용자 지정</strong> — 너비와 높이를 픽셀 단위로 입력합니다."
+
+#: casca/help_content.py:163
 msgid ""
 "You want a WhatsApp Web window that's tall and narrow, like a phone propped "
 "up next to your monitor — pick <strong>Custom</strong> and set it to 400 × "
 "900."
 msgstr ""
 "모니터 옆에 세워둔 휴대폰처럼 길고 좁은 WhatsApp Web 창을 원한다면 — <strong>"
-"사용자 지정</strong>을 선택하고 400 × 900으로 설정하세요."#: casca/help_content.py:166
+"사용자 지정</strong>을 선택하고 400 × 900으로 설정하세요."
+
+#: casca/help_content.py:166
 msgid "Edit and delete"
-msgstr "편집 및 삭제"#: casca/help_content.py:168
+msgstr "편집 및 삭제"
+
+#: casca/help_content.py:168
 msgid ""
 "On the home screen, every app has a pencil to <strong>edit</strong> (changes "
 "any setting, including ones that were disabled at creation) and a trash icon "
 "to <strong>delete</strong> (removes the shortcut from the menu, the Desktop, "
 "and the saved icon)."
-msgstr "홈 화면에서 각 앱에는 <strong>편집</strong>용 연필 아이콘(생성 시 비활성화되었던 설정을 포함해 모든 설정 변경 가능)과 <strong>삭제</strong>용 휴지통 아이콘(메뉴, 바탕화면의 바로가기와 저장된 아이콘 제거)이 있습니다."#: casca/help_content.py:173
+msgstr ""
+"홈 화면에서 각 앱에는 <strong>편집</strong>용 연필 아이콘(생성 시 비활성화되"
+"었던 설정을 포함해 모든 설정 변경 가능)과 <strong>삭제</strong>용 휴지통 아이"
+"콘(메뉴, 바탕화면의 바로가기와 저장된 아이콘 제거)이 있습니다."
+
+#: casca/help_content.py:173
 msgid "Casca — built to turn websites into GNOME apps."
-msgstr "Casca — 웹사이트를 GNOME 앱으로 바꾸기 위해 만들어졌습니다."#: casca/icons.py:171
+msgstr "Casca — 웹사이트를 GNOME 앱으로 바꾸기 위해 만들어졌습니다."
+
+#: casca/icons.py:171
 msgid "Site icon (.ico)"
-msgstr "사이트 아이콘(.ico)"#: casca/icons.py:172
+msgstr "사이트 아이콘(.ico)"
+
+#: casca/icons.py:172
 msgid "Site icon (32px)"
-msgstr "사이트 아이콘(32px)"#: casca/icons.py:173
+msgstr "사이트 아이콘(32px)"
+
+#: casca/icons.py:173
 msgid "Apple touch icon"
-msgstr "Apple 터치 아이콘"#: casca/icons.py:179
+msgstr "Apple 터치 아이콘"
+
+#: casca/icons.py:179
 msgid "PWA Manifest"
-msgstr "PWA 매니페스트"#: casca/package_launcher.py:72 casca/package_launcher.py:113#: casca/window.py:934
+msgstr "PWA 매니페스트"
+
+#: casca/package_launcher.py:73 casca/package_launcher.py:119
+#: casca/window.py:934
 msgid "Package"
-msgstr "패키지"#: casca/store.py:80
+msgstr "패키지"
+
+#: casca/store.py:80
 msgid "Independent"
-msgstr "독립형"#: casca/store.py:81 casca/store.py:97
+msgstr "독립형"
+
+#: casca/store.py:81 casca/store.py:97
 msgid "Other"
-msgstr "기타"#: casca/store.py:92 casca/window.py:1038
+msgstr "기타"
+
+#: casca/store.py:92 casca/window.py:1038
 msgid "Independent apps"
-msgstr "독립형 앱"#: casca/store.py:92
+msgstr "독립형 앱"
+
+#: casca/store.py:92
 msgid "Global"
-msgstr "글로벌"#: casca/window.py:86
+msgstr "글로벌"
+
+#: casca/updater.py:90 casca/updater.py:91
+msgid "Release"
+msgstr "정식판"
+
+#: casca/updater.py:90
+msgid "Beta"
+msgstr "베타"
+
+#: casca/updater.py:90
+msgid "Alpha"
+msgstr "알파"
+
+#: casca/updater.py:90
+msgid "Development"
+msgstr "개발판"
+
+#: casca/updater.py:106
+msgid "Casca"
+msgstr "Casca"
+
+#: casca/updater.py:109
+msgid "Updated — restart Casca to use the new version."
+msgstr "업데이트되었습니다 — 새 버전을 사용하려면 Casca를 다시 시작하세요."
+
+#: casca/updater.py:110
+msgid "Couldn't update automatically — check for updates manually."
+msgstr "자동으로 업데이트할 수 없습니다 — 수동으로 업데이트를 확인하세요."
+
+#: casca/updater.py:125
+msgid "Casca update available"
+msgstr "Casca 업데이트 가능"
+
+#: casca/updater.py:128
+#, python-format
+msgid "Version %(latest)s is available (you're on %(current)s)."
+msgstr "%(latest)s 버전을 사용할 수 있습니다(현재 %(current)s)."
+
+#: casca/updater.py:138
+msgid "Update now"
+msgstr "지금 업데이트"
+
+#: casca/window.py:86
 msgid "Choose icon"
-msgstr "아이콘 선택"#: casca/window.py:121
+msgstr "아이콘 선택"
+
+#: casca/window.py:121
 msgid "Icons found"
-msgstr "아이콘 찾음"#: casca/window.py:144
+msgstr "아이콘 찾음"
+
+#: casca/window.py:144
 msgid "Searching for icons online…"
-msgstr "온라인에서 아이콘 검색 중…"#: casca/window.py:155
+msgstr "온라인에서 아이콘 검색 중…"
+
+#: casca/window.py:155
 msgid "No icon found"
-msgstr "아이콘을 찾을 수 없음"#: casca/window.py:156
+msgstr "아이콘을 찾을 수 없음"
+
+#: casca/window.py:156
 msgid "Try choosing an image from your computer or the gallery."
-msgstr "컴퓨터나 갤러리에서 이미지를 선택해 보세요."#: casca/window.py:208 casca/window.py:395
+msgstr "컴퓨터나 갤러리에서 이미지를 선택해 보세요."
+
+#: casca/window.py:208 casca/window.py:395
 msgid "Edit app"
-msgstr "앱 편집"#: casca/window.py:208
+msgstr "앱 편집"
+
+#: casca/window.py:208
 msgid "New app"
-msgstr "새 앱"#: casca/window.py:228
+msgstr "새 앱"
+
+#: casca/window.py:228
 msgid "Site"
-msgstr "사이트"#: casca/window.py:229
+msgstr "사이트"
+
+#: casca/window.py:229
 msgid "App name"
-msgstr "앱 이름"#: casca/window.py:230
+msgstr "앱 이름"
+
+#: casca/window.py:230
 msgid "Address (URL)"
-msgstr "주소(URL)"#: casca/window.py:238
+msgstr "주소(URL)"
+
+#: casca/window.py:238
 msgid "Use a custom browser"
-msgstr "사용자 지정 브라우저 사용"#: casca/window.py:239
+msgstr "사용자 지정 브라우저 사용"
+
+#: casca/window.py:239
 msgid "If disabled, opens in Casca's own window."
-msgstr "비활성화하면 Casca 자체 창에서 엽니다."#: casca/window.py:245
+msgstr "비활성화하면 Casca 자체 창에서 엽니다."
+
+#: casca/window.py:245
 msgid "Open with"
-msgstr "다음으로 열기"#: casca/window.py:252
+msgstr "다음으로 열기"
+
+#: casca/window.py:252
 msgid "No compatible browser was found on the system."
-msgstr "시스템에서 호환되는 브라우저를 찾을 수 없습니다."#: casca/window.py:259
+msgstr "시스템에서 호환되는 브라우저를 찾을 수 없습니다."
+
+#: casca/window.py:259
 msgid ""
 "Not available in the Flatpak version — use the local install for external "
 "browsers."
 msgstr ""
 "Flatpak 버전에서는 사용할 수 없습니다 — 외부 브라우저를 사용하려면 로컬 설치"
-"판을 이용하세요."#: casca/window.py:264
+"판을 이용하세요."
+
+#: casca/window.py:264
 msgid "Learn more about custom browsers"
-msgstr "사용자 지정 브라우저에 대해 자세히 알아보기"#: casca/window.py:267
+msgstr "사용자 지정 브라우저에 대해 자세히 알아보기"
+
+#: casca/window.py:267
 msgid "Browser account"
-msgstr "브라우저 계정"#: casca/window.py:274
+msgstr "브라우저 계정"
+
+#: casca/window.py:274
 msgid "Open in mobile mode"
-msgstr "모바일 모드로 열기"#: casca/window.py:275 casca/window.py:488
+msgstr "모바일 모드로 열기"
+
+#: casca/window.py:275 casca/window.py:488
 msgid "Uses the identification and window of a phone or tablet."
-msgstr "휴대폰이나 태블릿의 식별 정보와 창을 사용합니다."#: casca/window.py:281 casca/window.py:310
+msgstr "휴대폰이나 태블릿의 식별 정보와 창을 사용합니다."
+
+#: casca/window.py:281 casca/window.py:310
 msgid "Device"
-msgstr "기기"#: casca/window.py:287
+msgstr "기기"
+
+#: casca/window.py:287
 msgid "Learn more about mobile mode"
-msgstr "모바일 모드에 대해 자세히 알아보기"#: casca/window.py:296
+msgstr "모바일 모드에 대해 자세히 알아보기"
+
+#: casca/window.py:296
 msgid "Customize window resolution"
-msgstr "창 해상도 사용자 지정"#: casca/window.py:297
+msgstr "창 해상도 사용자 지정"
+
+#: casca/window.py:297
 msgid "If disabled, uses the browser's default size."
-msgstr "비활성화하면 브라우저의 기본 크기를 사용합니다."#: casca/window.py:302
+msgstr "비활성화하면 브라우저의 기본 크기를 사용합니다."
+
+#: casca/window.py:302
 msgid "Window size"
-msgstr "창 크기"#: casca/window.py:304
+msgstr "창 크기"
+
+#: casca/window.py:304
 msgid "By device"
-msgstr "기기별"#: casca/window.py:304
+msgstr "기기별"
+
+#: casca/window.py:304
 msgid "Default size"
-msgstr "기본 크기"#: casca/window.py:304
+msgstr "기본 크기"
+
+#: casca/window.py:304
 msgid "Custom"
-msgstr "사용자 지정"#: casca/window.py:314
+msgstr "사용자 지정"
+
+#: casca/window.py:314
 msgid "Size"
-msgstr "크기"#: casca/window.py:322
+msgstr "크기"
+
+#: casca/window.py:322
 msgid "Width"
-msgstr "너비"#: casca/window.py:325
+msgstr "너비"
+
+#: casca/window.py:325
 msgid "Height"
-msgstr "높이"#: casca/window.py:330
+msgstr "높이"
+
+#: casca/window.py:330
 msgid "Learn more about window resolution"
-msgstr "창 해상도에 대해 자세히 알아보기"#: casca/window.py:339
+msgstr "창 해상도에 대해 자세히 알아보기"
+
+#: casca/window.py:339
 msgid "Customize icon and shortcut"
-msgstr "아이콘 및 바로 가기 사용자 지정"#: casca/window.py:341
+msgstr "아이콘 및 바로 가기 사용자 지정"
+
+#: casca/window.py:341
 msgid ""
 "If disabled, the icon is fetched automatically and no Desktop shortcut is "
 "created."
 msgstr ""
-"비활성화하면 아이콘을 자동으로 가져오며 바탕화면 바로 가기를 만들지 않습니다."#: casca/window.py:369
+"비활성화하면 아이콘을 자동으로 가져오며 바탕화면 바로 가기를 만들지 않습니다."
+
+#: casca/window.py:369
 msgid "Also create on the Desktop"
-msgstr "바탕화면에도 만들기"#: casca/window.py:372
+msgstr "바탕화면에도 만들기"
+
+#: casca/window.py:372
 msgid "Learn more about icons and shortcuts"
-msgstr "아이콘 및 바로가기에 대해 자세히 알아보기"#: casca/window.py:379
+msgstr "아이콘 및 바로가기에 대해 자세히 알아보기"
+
+#: casca/window.py:379
 msgid "Create app"
-msgstr "앱 만들기"#: casca/window.py:396
+msgstr "앱 만들기"
+
+#: casca/window.py:396
 msgid "Save changes"
-msgstr "변경 사항 저장"#: casca/window.py:483#, python-format
+msgstr "변경 사항 저장"
+
+#: casca/window.py:483
+#, python-format
 msgid "%(browser)s doesn't support mobile mode."
-msgstr "%(browser)s은(는) 모바일 모드를 지원하지 않습니다."#: casca/window.py:485 casca/window.py:626
+msgstr "%(browser)s은(는) 모바일 모드를 지원하지 않습니다."
+
+#: casca/window.py:485 casca/window.py:626
 msgid "Choose a browser."
-msgstr "브라우저를 선택하세요."#: casca/window.py:495
+msgstr "브라우저를 선택하세요."
+
+#: casca/window.py:495
 msgid "Isolated profile (new, no login)"
-msgstr "격리된 프로필(새로 생성, 로그인 없음)"#: casca/window.py:508 casca/window.py:523
+msgstr "격리된 프로필(새로 생성, 로그인 없음)"
+
+#: casca/window.py:508 casca/window.py:523
 msgid "Enter the URL before searching for the icon."
-msgstr "아이콘을 검색하기 전에 URL을 입력하세요."#: casca/window.py:512
+msgstr "아이콘을 검색하기 전에 URL을 입력하세요."
+
+#: casca/window.py:512
 msgid "Could not fetch the icon automatically."
-msgstr "아이콘을 자동으로 가져올 수 없습니다."#: casca/window.py:534
+msgstr "아이콘을 자동으로 가져올 수 없습니다."
+
+#: casca/window.py:534
 msgid "Choose icon image"
-msgstr "아이콘 이미지 선택"#: casca/window.py:536
+msgstr "아이콘 이미지 선택"
+
+#: casca/window.py:536
 msgid "Images"
-msgstr "이미지"#: casca/window.py:612
+msgstr "이미지"
+
+#: casca/window.py:612
 msgid "Fill in the site's name and URL."
-msgstr "사이트 이름과 URL을 입력하세요."#: casca/window.py:615 casca/window.py:620
+msgstr "사이트 이름과 URL을 입력하세요."
+
+#: casca/window.py:615 casca/window.py:620
 msgid "Use an http:// or https:// address."
-msgstr "http:// 또는 https:// 주소를 사용하세요."#: casca/window.py:636
+msgstr "http:// 또는 https:// 주소를 사용하세요."
+
+#: casca/window.py:636
 msgid "Casca's own window isn't available. Enable 'Use a custom browser'."
 msgstr ""
 "Casca 자체 창을 사용할 수 없습니다. '사용자 지정 브라우저 사용'을 활성화하세"
-"요."#: casca/window.py:675
+"요."
+
+#: casca/window.py:675
 msgid "Could not set an icon. Choose an image manually."
-msgstr "아이콘을 설정할 수 없습니다. 이미지를 직접 선택하세요."#: casca/window.py:690#, python-format
+msgstr "아이콘을 설정할 수 없습니다. 이미지를 직접 선택하세요."
+
+#: casca/window.py:690
+#, python-format
 msgid "Error saving: %(error)s"
-msgstr "저장 오류: %(error)s"#: casca/window.py:701
+msgstr "저장 오류: %(error)s"
+
+#: casca/window.py:701
 msgid "Preset site"
-msgstr "사전 설정 사이트"#: casca/window.py:708
+msgstr "사전 설정 사이트"
+
+#: casca/window.py:708
 msgid "Search by name or category…"
-msgstr "이름이나 카테고리로 검색…"#: casca/window.py:720 casca/window.py:1035#, python-format
+msgstr "이름이나 카테고리로 검색…"
+
+#: casca/window.py:720 casca/window.py:1035
+#, python-format
 msgid "%(n)d site"
 msgid_plural "%(n)d sites"
-msgstr[0] "사이트 %(n)d개"#: casca/window.py:904 casca/window.py:1287
+msgstr[0] "사이트 %(n)d개"
+
+#: casca/window.py:904 casca/window.py:1287
 msgid "Store"
-msgstr "스토어"#: casca/window.py:932
+msgstr "스토어"
+
+#: casca/window.py:932
 msgid "Company"
-msgstr "회사"#: casca/window.py:933
+msgstr "회사"
+
+#: casca/window.py:933
 msgid "Type"
-msgstr "종류"#: casca/window.py:949
+msgstr "종류"
+
+#: casca/window.py:949
 msgid "Search by name…"
-msgstr "이름으로 검색…"#: casca/window.py:985#, python-format
+msgstr "이름으로 검색…"
+
+#: casca/window.py:985
+#, python-format
 msgid "Could not set an icon for %(name)s."
-msgstr "%(name)s의 아이콘을 설정할 수 없습니다."#: casca/window.py:991#, python-format
+msgstr "%(name)s의 아이콘을 설정할 수 없습니다."
+
+#: casca/window.py:991
+#, python-format
 msgid "Error installing package: %(error)s"
-msgstr "패키지 설치 오류: %(error)s"#: casca/window.py:997#, python-format
+msgstr "패키지 설치 오류: %(error)s"
+
+#: casca/window.py:997
+#, python-format
 msgid "Package “%(name)s” installed with %(n)d app."
 msgid_plural "Package “%(name)s” installed with %(n)d apps."
-msgstr[0] "패키지 “%(name)s”을(를) 앱 %(n)d개와 함께 설치했습니다."#: casca/window.py:1023
+msgstr[0] "패키지 “%(name)s”을(를) 앱 %(n)d개와 함께 설치했습니다."
+
+#: casca/window.py:1023
 msgid "Nothing here yet"
-msgstr "아직 아무것도 없습니다"#: casca/window.py:1024
+msgstr "아직 아무것도 없습니다"
+
+#: casca/window.py:1024
 msgid "Check the local catalog or your internet connection."
-msgstr "로컬 카탈로그나 인터넷 연결을 확인하세요."#: casca/window.py:1040
+msgstr "로컬 카탈로그나 인터넷 연결을 확인하세요."
+
+#: casca/window.py:1040
 msgid "Install full package"
-msgstr "전체 패키지 설치"#: casca/window.py:1165
+msgstr "전체 패키지 설치"
+
+#: casca/window.py:1165
 msgid "Casca Manual"
-msgstr "Casca 설명서"#: casca/window.py:1185
+msgstr "Casca 설명서"
+
+#: casca/window.py:1185
 msgid "Could not open the built-in manual"
-msgstr "내장 설명서를 열 수 없습니다"#: casca/window.py:1204
+msgstr "내장 설명서를 열 수 없습니다"
+
+#: casca/window.py:1204
 msgid "Choose what to import"
-msgstr "가져올 항목 선택"#: casca/window.py:1213#, python-format
+msgstr "가져올 항목 선택"
+
+#: casca/window.py:1213
+#, python-format
 msgid "%(n)d site found"
 msgid_plural "%(n)d sites found"
-msgstr[0] "사이트 %(n)d개 찾음"#: casca/window.py:1216
+msgstr[0] "사이트 %(n)d개 찾음"
+
+#: casca/window.py:1216
 msgid "Uncheck anything you don't want to import."
-msgstr "가져오지 않을 항목의 선택을 해제하세요."#: casca/window.py:1219
+msgstr "가져오지 않을 항목의 선택을 해제하세요."
+
+#: casca/window.py:1219
 msgid "(no name)"
-msgstr "(이름 없음)"#: casca/window.py:1227
+msgstr "(이름 없음)"
+
+#: casca/window.py:1227
 msgid "Import selected"
-msgstr "선택 항목 가져오기"#: casca/window.py:1260
+msgstr "선택 항목 가져오기"
+
+#: casca/window.py:1260
 msgid "User guide"
-msgstr "사용자 안내서"#: casca/window.py:1261
+msgstr "사용자 안내서"
+
+#: casca/window.py:1261
 msgid "About Casca"
-msgstr "Casca 정보"#: casca/window.py:1262
+msgstr "Casca 정보"
+
+#: casca/window.py:1262
 msgid "Menu"
-msgstr "메뉴"#: casca/window.py:1292
+msgstr "메뉴"
+
+#: casca/window.py:1292
 msgid "Create a new web app"
-msgstr "새 웹 앱 만들기"#: casca/window.py:1293
+msgstr "새 웹 앱 만들기"
+
+#: casca/window.py:1293
 msgid "Create"
-msgstr "만들기"#: casca/window.py:1302 casca/window.py:1398
+msgstr "만들기"
+
+#: casca/window.py:1302 casca/window.py:1429
 msgid "Import apps"
-msgstr "앱 가져오기"#: casca/window.py:1306 casca/window.py:1348
+msgstr "앱 가져오기"
+
+#: casca/window.py:1306 casca/window.py:1379
 msgid "Export apps"
-msgstr "앱 내보내기"#: casca/window.py:1335
+msgstr "앱 내보내기"
+
+#: casca/window.py:1337
 msgid "Turns any website into a GNOME app."
-msgstr "모든 웹사이트를 GNOME 앱으로 만들어 줍니다."#: casca/window.py:1346
+msgstr "모든 웹사이트를 GNOME 앱으로 만들어 줍니다."
+
+#: casca/window.py:1341
+#, python-format
+msgid ""
+"Version %(latest)s is available — an update notification with a way to "
+"update just popped up."
+msgstr ""
+"%(latest)s 버전을 사용할 수 있습니다 — 업데이트할 수 있는 알림이 방금 떴습니"
+"다."
+
+#: casca/window.py:1356
+msgid ""
+"Casca now checks for new releases in the background (once a day at most) and "
+"lets you know with a system notification — no action needed for Flatpak/Snap "
+"installs, which already update themselves."
+msgstr "Casca가 이제 백그라운드에서 새 버전을 확인합니다(최대 하루에 한 번). 새 버전이 있으면 시스템 알림으로 알려드립니다 — Flatpak/Snap 설치판은 이미 자동으로 업데이트되므로 별도 조치가 필요 없습니다."
+
+#: casca/window.py:1361
+msgid ""
+"The About dialog now shows the license, a link to the source code, whether "
+"you're on a release/beta/alpha build, and a proper “What's New” page with "
+"each version's changelog."
+msgstr "Casca 정보 대화상자에 라이선스, 소스 코드 링크, 정식판/베타/알파 빌드 여부, 그리고 각 버전의 변경 사항을 담은 제대로 된 “새로운 기능” 페이지가 표시됩니다."
+
+#: casca/window.py:1367
+msgid "Source Code"
+msgstr "소스 코드"
+
+#: casca/window.py:1377
 msgid "No app created yet to export."
-msgstr "내보낼 앱이 아직 없습니다."#: casca/window.py:1370#, python-format
+msgstr "내보낼 앱이 아직 없습니다."
+
+#: casca/window.py:1401
+#, python-format
 msgid "Error exporting: %(error)s"
-msgstr "내보내기 오류: %(error)s"#: casca/window.py:1373#, python-format
+msgstr "내보내기 오류: %(error)s"
+
+#: casca/window.py:1404
+#, python-format
 msgid "%(count)d app exported to %(name)s."
 msgid_plural "%(count)d apps exported to %(name)s."
-msgstr[0] "%(name)s(으)로 앱 %(count)d개를 내보냈습니다."#: casca/window.py:1379
+msgstr[0] "%(name)s(으)로 앱 %(count)d개를 내보냈습니다."
+
+#: casca/window.py:1410
 msgid "Import from where?"
-msgstr "어디서 가져올까요?"#: casca/window.py:1380
+msgstr "어디서 가져올까요?"
+
+#: casca/window.py:1411
 msgid "Choose a local .json file or a URL (e.g. a GitHub \"raw\" link)."
-msgstr "로컬 .json 파일이나 URL을 선택하세요(예: GitHub \"raw\" 링크)."#: casca/window.py:1382 casca/window.py:1428 casca/window.py:1561#: casca/window.py:1584
+msgstr "로컬 .json 파일이나 URL을 선택하세요(예: GitHub \"raw\" 링크)."
+
+#: casca/window.py:1413 casca/window.py:1459 casca/window.py:1592
+#: casca/window.py:1615
 msgid "Cancel"
-msgstr "취소"#: casca/window.py:1383
+msgstr "취소"
+
+#: casca/window.py:1414
 msgid "From a URL"
-msgstr "URL에서"#: casca/window.py:1384
+msgstr "URL에서"
+
+#: casca/window.py:1415
 msgid "Local file"
-msgstr "로컬 파일"#: casca/window.py:1417#, python-format
+msgstr "로컬 파일"
+
+#: casca/window.py:1448
+#, python-format
 msgid "Error reading the file: %(error)s"
-msgstr "파일 읽기 오류: %(error)s"#: casca/window.py:1423
+msgstr "파일 읽기 오류: %(error)s"
+
+#: casca/window.py:1454
 msgid "Import from a URL"
-msgstr "URL에서 가져오기"#: casca/window.py:1424
+msgstr "URL에서 가져오기"
+
+#: casca/window.py:1455
 msgid "Paste the JSON file's \"raw\" link (e.g. from a GitHub repository)."
-msgstr "JSON 파일의 \"raw\" 링크를 붙여넣으세요(예: GitHub 저장소에서)."#: casca/window.py:1429
+msgstr "JSON 파일의 \"raw\" 링크를 붙여넣으세요(예: GitHub 저장소에서)."
+
+#: casca/window.py:1460
 msgid "Fetch"
-msgstr "가져오기"#: casca/window.py:1441
+msgstr "가져오기"
+
+#: casca/window.py:1472
 msgid "Enter a URL."
-msgstr "URL을 입력하세요."#: casca/window.py:1443
+msgstr "URL을 입력하세요."
+
+#: casca/window.py:1474
 msgid "Fetching file…"
-msgstr "파일 가져오는 중…"#: casca/window.py:1450#, python-format
+msgstr "파일 가져오는 중…"
+
+#: casca/window.py:1481
+#, python-format
 msgid "Error downloading: %(error)s"
-msgstr "다운로드 오류: %(error)s"#: casca/window.py:1458#, python-format
+msgstr "다운로드 오류: %(error)s"
+
+#: casca/window.py:1489
+#, python-format
 msgid "Error importing: %(error)s"
-msgstr "가져오기 오류: %(error)s"#: casca/window.py:1461
+msgstr "가져오기 오류: %(error)s"
+
+#: casca/window.py:1492
 msgid "No app found in the file."
-msgstr "파일에서 앱을 찾을 수 없습니다."#: casca/window.py:1469
+msgstr "파일에서 앱을 찾을 수 없습니다."
+
+#: casca/window.py:1500
 msgid "Nothing selected to import."
-msgstr "가져올 항목이 선택되지 않았습니다."#: casca/window.py:1477#, python-format
+msgstr "가져올 항목이 선택되지 않았습니다."
+
+#: casca/window.py:1508
+#, python-format
 msgid "%(n)d app imported."
 msgid_plural "%(n)d apps imported."
-msgstr[0] "앱 %(n)d개를 가져왔습니다."#: casca/window.py:1483#, python-format
+msgstr[0] "앱 %(n)d개를 가져왔습니다."
+
+#: casca/window.py:1514
+#, python-format
 msgid "• %(name)s: %(reason)s"
-msgstr "• %(name)s: %(reason)s"#: casca/window.py:1487#, python-format
+msgstr "• %(name)s: %(reason)s"
+
+#: casca/window.py:1518
+#, python-format
 msgid "%(created)d imported, %(failed)d with errors"
-msgstr "%(created)d개 가져옴, %(failed)d개는 오류 발생"#: casca/window.py:1489#, python-format
+msgstr "%(created)d개 가져옴, %(failed)d개는 오류 발생"
+
+#: casca/window.py:1520
+#, python-format
 msgid ""
 "Review and adjust manually via the \"Create\" button:\n"
 "\n"
@@ -564,30 +1147,73 @@ msgid ""
 msgstr ""
 "\"만들기\" 버튼으로 직접 검토하고 조정하세요:\n"
 "\n"
-"%(lines)s"#: casca/window.py:1491
+"%(lines)s"
+
+#: casca/window.py:1522
 msgid "Got it"
-msgstr "확인"#: casca/window.py:1505
+msgstr "확인"
+
+#: casca/window.py:1536
 msgid "No web apps yet"
-msgstr "아직 웹 앱이 없습니다"#: casca/window.py:1506
+msgstr "아직 웹 앱이 없습니다"
+
+#: casca/window.py:1537
 msgid ""
 "Tap “Create” to make your first app, or open the Store for ready-made sites."
 msgstr ""
 "“만들기”를 눌러 첫 앱을 만들거나, 스토어에서 미리 만들어진 사이트를 확인해 보"
-"세요."#: casca/window.py:1515
+"세요."
+
+#: casca/window.py:1546
 msgid "My web apps"
-msgstr "내 웹 앱"#: casca/window.py:1537
+msgstr "내 웹 앱"
+
+#: casca/window.py:1568
 msgid "Installed packages"
-msgstr "설치된 패키지"#: casca/window.py:1558#, python-format
+msgstr "설치된 패키지"
+
+#: casca/window.py:1589
+#, python-format
 msgid "Delete “%(name)s”?"
-msgstr "“%(name)s”을(를) 삭제할까요?"#: casca/window.py:1559
+msgstr "“%(name)s”을(를) 삭제할까요?"
+
+#: casca/window.py:1590
 msgid ""
 "The shortcut will be removed from the applications menu and the desktop, if "
 "it exists."
-msgstr "바로 가기가 있다면 프로그램 메뉴와 바탕화면에서 제거됩니다."#: casca/window.py:1562 casca/window.py:1585
+msgstr "바로 가기가 있다면 프로그램 메뉴와 바탕화면에서 제거됩니다."
+
+#: casca/window.py:1593 casca/window.py:1616
 msgid "Delete"
-msgstr "삭제"#: casca/window.py:1576#, python-format
+msgstr "삭제"
+
+#: casca/window.py:1607
+#, python-format
 msgid "Delete package “%(name)s”?"
-msgstr "패키지 “%(name)s”을(를) 삭제할까요?"#: casca/window.py:1578#, python-format
+msgstr "패키지 “%(name)s”을(를) 삭제할까요?"
+
+#: casca/window.py:1609
+#, python-format
 msgid "Removes the shortcut and the %(n)d app inside it (%(names)s)."
 msgid_plural "Removes the shortcut and the %(n)d apps inside it (%(names)s)."
 msgstr[0] "바로 가기와 그 안의 앱 %(n)d개(%(names)s)를 제거합니다."
+
+#~ msgid ""
+#~ "Casca now speaks 20 languages, picked automatically from the system "
+#~ "locale: English, Portuguese (Brazil), Spanish, French, Italian, German, "
+#~ "Russian, Ukrainian, Polish, Dutch, Turkish, Simplified Chinese, Japanese, "
+#~ "Korean, Vietnamese, Indonesian, Hindi, Arabic, Bengali and Thai."
+#~ msgstr ""
+#~ "Casca는 이제 시스템 언어에 따라 자동으로 선택되는 20개 언어를 지원합니다: "
+#~ "영어, 포르투갈어(브라질), 스페인어, 프랑스어, 이탈리아어, 독일어, 러시아"
+#~ "어, 우크라이나어, 폴란드어, 네덜란드어, 터키어, 중국어 간체, 일본어, 한국"
+#~ "어, 베트남어, 인도네시아어, 힌디어, 아랍어, 벵골어, 태국어."
+
+#~ msgid ""
+#~ "The creation screen's browser, mobile mode, resolution and icon sections "
+#~ "now have an inline help button — hover for a quick tip, click to jump "
+#~ "straight to that topic in a redesigned, example-filled manual."
+#~ msgstr ""
+#~ "생성 화면의 브라우저, 모바일 모드, 해상도, 아이콘 섹션에 인라인 도움말 버"
+#~ "튼이 추가되었습니다 — 마우스를 올리면 간단한 팁이 나타나고, 클릭하면 예시"
+#~ "가 가득한 새로 디자인된 설명서의 해당 항목으로 바로 이동합니다."

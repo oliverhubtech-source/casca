@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Casca 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/oliverhubtech-source/casca/issues\n"
-"POT-Creation-Date: 2026-07-09 22:51-0300\n"
+"POT-Creation-Date: 2026-07-10 16:23-0300\n"
 "PO-Revision-Date: 2026-07-09 16:07-0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -11,167 +11,336 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"#: casca/browsers.py:199
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: casca/browsers.py:209
 msgid "Casca's own window"
-msgstr "Casca's eigen venster"#: casca/catalog_strings.py:16 casca/help_content.py:76 casca/presets.py:51
+msgstr "Casca's eigen venster"
+
+#: casca/catalog_strings.py:16 casca/help_content.py:76 casca/presets.py:51
 msgid "Artificial Intelligence"
-msgstr "Kunstmatige intelligentie"#: casca/catalog_strings.py:17
+msgstr "Kunstmatige intelligentie"
+
+#: casca/catalog_strings.py:17
 msgid "Cloud Computing"
-msgstr "Cloud computing"#: casca/catalog_strings.py:18 casca/help_content.py:86 casca/presets.py:166
+msgstr "Cloud computing"
+
+#: casca/catalog_strings.py:18 casca/help_content.py:86 casca/presets.py:166
 msgid "Conversion & Sharing"
-msgstr "Conversie & Delen"#: casca/catalog_strings.py:19
+msgstr "Conversie & Delen"
+
+#: casca/catalog_strings.py:19
 msgid "Creativity"
-msgstr "Creativiteit"#: casca/catalog_strings.py:20
+msgstr "Creativiteit"
+
+#: casca/catalog_strings.py:20
 msgid "Finance"
-msgstr "Financiën"#: casca/catalog_strings.py:21 casca/window.py:935
+msgstr "Financiën"
+
+#: casca/catalog_strings.py:21 casca/window.py:935
 msgid "Marketplace"
-msgstr "Marktplaats"#: casca/catalog_strings.py:22
+msgstr "Marktplaats"
+
+#: casca/catalog_strings.py:22
 msgid "Messenger"
-msgstr "Chat"#: casca/catalog_strings.py:23
+msgstr "Chat"
+
+#: casca/catalog_strings.py:23
 msgid "Music Streaming"
-msgstr "Muziekstreaming"#: casca/catalog_strings.py:24 casca/window.py:936
+msgstr "Muziekstreaming"
+
+#: casca/catalog_strings.py:24 casca/window.py:936
 msgid "News"
-msgstr "Nieuws"#: casca/catalog_strings.py:25
+msgstr "Nieuws"
+
+#: casca/catalog_strings.py:25
 msgid "PDF"
-msgstr "PDF"#: casca/catalog_strings.py:26
+msgstr "PDF"
+
+#: casca/catalog_strings.py:26
 msgid "Productivity"
-msgstr "Productiviteit"#: casca/catalog_strings.py:27
+msgstr "Productiviteit"
+
+#: casca/catalog_strings.py:27
 msgid "Search Engine"
-msgstr "Zoekmachine"#: casca/catalog_strings.py:28
+msgstr "Zoekmachine"
+
+#: casca/catalog_strings.py:28
 msgid "Security"
-msgstr "Beveiliging"#: casca/catalog_strings.py:29
+msgstr "Beveiliging"
+
+#: casca/catalog_strings.py:29
 msgid "Social Network"
-msgstr "Sociaal netwerk"#: casca/catalog_strings.py:30
+msgstr "Sociaal netwerk"
+
+#: casca/catalog_strings.py:30
 msgid "Utility"
-msgstr "Hulpprogramma"#: casca/catalog_strings.py:31
+msgstr "Hulpprogramma"
+
+#: casca/catalog_strings.py:31
 msgid "Video Streaming"
-msgstr "Videostreaming"#: casca/catalog_strings.py:33
+msgstr "Videostreaming"
+
+#: casca/catalog_strings.py:33
 msgid "Argentina"
-msgstr "Argentinië"#: casca/catalog_strings.py:34
+msgstr "Argentinië"
+
+#: casca/catalog_strings.py:34
 msgid "Brazil"
-msgstr "Brazilië"#: casca/catalog_strings.py:35
+msgstr "Brazilië"
+
+#: casca/catalog_strings.py:35
 msgid "Chile"
-msgstr "Chili"#: casca/catalog_strings.py:36
+msgstr "Chili"
+
+#: casca/catalog_strings.py:36
 msgid "Colombia"
-msgstr "Colombia"#: casca/catalog_strings.py:37
+msgstr "Colombia"
+
+#: casca/catalog_strings.py:37
 msgid "Europe"
-msgstr "Europa"#: casca/catalog_strings.py:38
+msgstr "Europa"
+
+#: casca/catalog_strings.py:38
 msgid "France"
-msgstr "Frankrijk"#: casca/catalog_strings.py:39
+msgstr "Frankrijk"
+
+#: casca/catalog_strings.py:39
 msgid "Germany"
-msgstr "Duitsland"#: casca/catalog_strings.py:40
+msgstr "Duitsland"
+
+#: casca/catalog_strings.py:40
 msgid "International"
-msgstr "Internationaal"#: casca/catalog_strings.py:41
+msgstr "Internationaal"
+
+#: casca/catalog_strings.py:41
 msgid "Mexico"
-msgstr "Mexico"#: casca/catalog_strings.py:42
+msgstr "Mexico"
+
+#: casca/catalog_strings.py:42
 msgid "Netherlands"
-msgstr "Nederland"#: casca/catalog_strings.py:43
+msgstr "Nederland"
+
+#: casca/catalog_strings.py:43
 msgid "Paraguay"
-msgstr "Paraguay"#: casca/catalog_strings.py:44
+msgstr "Paraguay"
+
+#: casca/catalog_strings.py:44
 msgid "Poland"
-msgstr "Polen"#: casca/catalog_strings.py:45
+msgstr "Polen"
+
+#: casca/catalog_strings.py:45
 msgid "Spain"
-msgstr "Spanje"#: casca/catalog_strings.py:46
+msgstr "Spanje"
+
+#: casca/catalog_strings.py:46
 msgid "United Kingdom"
-msgstr "Verenigd Koninkrijk"#: casca/catalog_strings.py:47
+msgstr "Verenigd Koninkrijk"
+
+#: casca/catalog_strings.py:47
 msgid "United States"
-msgstr "Verenigde Staten"#: casca/catalog_strings.py:48
+msgstr "Verenigde Staten"
+
+#: casca/catalog_strings.py:48
 msgid "Uruguay"
-msgstr "Uruguay"#: casca/catalog_strings.py:50
+msgstr "Uruguay"
+
+#: casca/catalog_strings.py:50
 msgid "Google Workspace"
-msgstr "Google Workspace"#: casca/catalog_strings.py:51
+msgstr "Google Workspace"
+
+#: casca/catalog_strings.py:51
 msgid "Microsoft 365"
-msgstr "Microsoft 365"#: casca/catalog_strings.py:52
+msgstr "Microsoft 365"
+
+#: casca/catalog_strings.py:52
 msgid "Social Media"
-msgstr "Sociale media"#: casca/catalog_strings.py:53
+msgstr "Sociale media"
+
+#: casca/catalog_strings.py:53
 msgid "YouTube"
-msgstr "YouTube"#: casca/devices.py:79
+msgstr "YouTube"
+
+#: casca/devices.py:79
 msgid "Small (800×600)"
-msgstr "Klein (800×600)"#: casca/devices.py:80
+msgstr "Klein (800×600)"
+
+#: casca/devices.py:80
 msgid "Medium (1024×768)"
-msgstr "Middelgroot (1024×768)"#: casca/devices.py:81
+msgstr "Middelgroot (1024×768)"
+
+#: casca/devices.py:81
 msgid "Laptop (1280×800)"
-msgstr "Laptop (1280×800)"#: casca/devices.py:82
+msgstr "Laptop (1280×800)"
+
+#: casca/devices.py:82
 msgid "Laptop HD (1366×768)"
-msgstr "Laptop HD (1366×768)"#: casca/devices.py:83
+msgstr "Laptop HD (1366×768)"
+
+#: casca/devices.py:83
 msgid "Large (1600×900)"
-msgstr "Groot (1600×900)"#: casca/devices.py:84
+msgstr "Groot (1600×900)"
+
+#: casca/devices.py:84
 msgid "Full HD (1920×1080)"
-msgstr "Full HD (1920×1080)"#: casca/entries.py:203 casca/entries.py:245#, python-format
+msgstr "Full HD (1920×1080)"
+
+#: casca/entries.py:205 casca/entries.py:247
+#, python-format
 msgid "Browser not found: %(key)s"
-msgstr "Browser niet gevonden: %(key)s"#: casca/entries.py:249#, python-format
+msgstr "Browser niet gevonden: %(key)s"
+
+#: casca/entries.py:251
+#, python-format
 msgid "App not found: %(slug)s"
-msgstr "App niet gevonden: %(slug)s"#: casca/entries.py:337
+msgstr "App niet gevonden: %(slug)s"
+
+#: casca/entries.py:339
 msgid "remote file too large"
-msgstr "extern bestand te groot"#: casca/entries.py:341#, python-format
+msgstr "extern bestand te groot"
+
+#: casca/entries.py:343
+#, python-format
 msgid "could not download the file (%(error)s)"
-msgstr "kon het bestand niet downloaden (%(error)s)"#: casca/entries.py:350#, python-format
+msgstr "kon het bestand niet downloaden (%(error)s)"
+
+#: casca/entries.py:352
+#, python-format
 msgid "could not read the file (%(error)s)"
-msgstr "kon het bestand niet lezen (%(error)s)"#: casca/entries.py:354
+msgstr "kon het bestand niet lezen (%(error)s)"
+
+#: casca/entries.py:356
 msgid "unexpected format: no 'apps' list found"
-msgstr "onverwacht formaat: geen 'apps'-lijst gevonden"#: casca/entries.py:388#, python-format
+msgstr "onverwacht formaat: geen 'apps'-lijst gevonden"
+
+#: casca/entries.py:390
+#, python-format
 msgid "item %(n)d"
-msgstr "item %(n)d"#: casca/entries.py:390
+msgstr "item %(n)d"
+
+#: casca/entries.py:392
 msgid "missing name or URL"
-msgstr "naam of URL ontbreekt"#: casca/entries.py:393 casca/entries.py:398
+msgstr "naam of URL ontbreekt"
+
+#: casca/entries.py:395 casca/entries.py:400
 msgid "unsupported URL scheme"
-msgstr "niet-ondersteund URL-schema"#: casca/entries.py:404
+msgstr "niet-ondersteund URL-schema"
+
+#: casca/entries.py:406
 msgid "no browser available"
-msgstr "geen browser beschikbaar"#: casca/entries.py:423
+msgstr "geen browser beschikbaar"
+
+#: casca/entries.py:425
 msgid "could not get an icon"
-msgstr "kon geen pictogram ophalen"#: casca/entries.py:481
+msgstr "kon geen pictogram ophalen"
+
+#: casca/entries.py:483
 msgid "No browser available to assemble the package."
-msgstr "Geen browser beschikbaar om het pakket samen te stellen."#: casca/entries.py:553
+msgstr "Geen browser beschikbaar om het pakket samen te stellen."
+
+#: casca/entries.py:555
 msgid "Package of web apps created by Casca"
-msgstr "Pakket met webapps gemaakt door Casca"#: casca/help_content.py:29
+msgstr "Pakket met webapps gemaakt door Casca"
+
+#: casca/help_content.py:29
 msgid "User Guide"
-msgstr "Gebruikershandleiding"#: casca/help_content.py:36
+msgstr "Gebruikershandleiding"
+
+#: casca/help_content.py:36
 msgid "Casca — User Guide"
-msgstr "Casca — Gebruikershandleiding"#: casca/help_content.py:37
+msgstr "Casca — Gebruikershandleiding"
+
+#: casca/help_content.py:37
 msgid "Casca icon"
-msgstr "Casca-pictogram"#: casca/help_content.py:39
+msgstr "Casca-pictogram"
+
+#: casca/help_content.py:39
 msgid "Websites, turned into apps. No fuss."
-msgstr "Websites, omgetoverd tot apps. Zonder poespas."#: casca/help_content.py:41
+msgstr "Websites, omgetoverd tot apps. Zonder poespas."
+
+#: casca/help_content.py:41
 msgid ""
 "Casca turns any address into a GNOME app: icon in the menu, its own window, "
 "no leftover browser bar. This guide covers every option on the creation "
 "screen."
-msgstr "Casca verandert elk adres in een GNOME-app: pictogram in het menu, eigen venster, zonder overbodige browserbalk. Deze handleiding behandelt elke optie van het aanmaakscherm."#: casca/help_content.py:44
+msgstr ""
+"Casca verandert elk adres in een GNOME-app: pictogram in het menu, eigen "
+"venster, zonder overbodige browserbalk. Deze handleiding behandelt elke "
+"optie van het aanmaakscherm."
+
+#: casca/help_content.py:44
 msgid "First app"
-msgstr "Eerste app"#: casca/help_content.py:45
+msgstr "Eerste app"
+
+#: casca/help_content.py:45
 msgid "Presets"
-msgstr "Voorinstellingen"#: casca/help_content.py:46 casca/help_content.py:89
+msgstr "Voorinstellingen"
+
+#: casca/help_content.py:46 casca/help_content.py:89
 msgid "Icon"
-msgstr "Pictogram"#: casca/help_content.py:47
+msgstr "Pictogram"
+
+#: casca/help_content.py:47
 msgid "Shortcut"
-msgstr "Snelkoppeling"#: casca/help_content.py:48 casca/window.py:235
+msgstr "Snelkoppeling"
+
+#: casca/help_content.py:48 casca/window.py:235
 msgid "Browser"
-msgstr "Browser"#: casca/help_content.py:49 casca/help_content.py:140
+msgstr "Browser"
+
+#: casca/help_content.py:49 casca/help_content.py:140
 msgid "Mobile mode"
-msgstr "Mobiele modus"#: casca/help_content.py:50
+msgstr "Mobiele modus"
+
+#: casca/help_content.py:50
 msgid "Resolution"
-msgstr "Resolutie"#: casca/help_content.py:51
+msgstr "Resolutie"
+
+#: casca/help_content.py:51
 msgid "Edit"
-msgstr "Bewerken"#: casca/help_content.py:52
+msgstr "Bewerken"
+
+#: casca/help_content.py:52
 msgid "Creating your first app"
-msgstr "Je eerste app maken"#: casca/help_content.py:53
+msgstr "Je eerste app maken"
+
+#: casca/help_content.py:53
 msgid "Two buttons on the home screen, two paths."
-msgstr "Twee knoppen op het startscherm, twee wegen."#: casca/help_content.py:55
+msgstr "Twee knoppen op het startscherm, twee wegen."
+
+#: casca/help_content.py:55
 msgid ""
 "<strong>Create from preset</strong> — pick an already-cataloged site (Gmail, "
 "WhatsApp, Netflix, ChatGPT…), with name, address and icon ready to go."
-msgstr "<strong>Aanmaken vanuit voorinstelling</strong> — kies een al-gecatalogiseerde site (Gmail, WhatsApp, Netflix, ChatGPT…), met kant-en-klare naam, adres en pictogram."#: casca/help_content.py:59
+msgstr ""
+"<strong>Aanmaken vanuit voorinstelling</strong> — kies een al-"
+"gecatalogiseerde site (Gmail, WhatsApp, Netflix, ChatGPT…), met kant-en-"
+"klare naam, adres en pictogram."
+
+#: casca/help_content.py:59
 msgid ""
 "<strong>Create new web app</strong> — start from scratch: you type in the "
 "name and address."
-msgstr "<strong>Nieuwe webapp maken</strong> — begin vanaf nul: je typt de naam en het adres in."#: casca/help_content.py:62
+msgstr ""
+"<strong>Nieuwe webapp maken</strong> — begin vanaf nul: je typt de naam en "
+"het adres in."
+
+#: casca/help_content.py:62
 msgid ""
 "Everything below the name and address is <strong>optional</strong>. Without "
 "touching anything, Casca figures it out on its own: fetches the icon, "
 "doesn't create a Desktop shortcut, opens in its own window at normal size."
-msgstr "Alles onder de naam en het adres is <strong>optioneel</strong>. Zonder iets aan te raken, lost Casca het zelf op: haalt het pictogram op, maakt geen snelkoppeling op het bureaublad, opent in zijn eigen venster op normale grootte."#: casca/help_content.py:66
+msgstr ""
+"Alles onder de naam en het adres is <strong>optioneel</strong>. Zonder iets "
+"aan te raken, lost Casca het zelf op: haalt het pictogram op, maakt geen "
+"snelkoppeling op het bureaublad, opent in zijn eigen venster op normale "
+"grootte."
+
+#: casca/help_content.py:66
 msgid "Preset sites"
-msgstr "Vooraf ingestelde sites"#: casca/help_content.py:68
+msgstr "Vooraf ingestelde sites"
+
+#: casca/help_content.py:68
 msgid ""
 "A search field at the top filters by site name (<code class=\"eyebrow text-"
 "[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 "
@@ -179,58 +348,114 @@ msgid ""
 "[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 "
 "py-0.5 rounded\">microsoft</code>). Categories start collapsed — tap one to "
 "expand it."
-msgstr "Een zoekveld bovenaan filtert op sitenaam (<code class=\"eyebrow text-[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 py-0.5 rounded\">gmail</code>) of op categorie (<code class=\"eyebrow text-[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 py-0.5 rounded\">microsoft</code>). Categorieën beginnen ingeklapt — tik op een om uit te klappen."
+msgstr ""
+"Een zoekveld bovenaan filtert op sitenaam (<code class=\"eyebrow text-[13px] "
+"bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 py-0.5 "
+"rounded\">gmail</code>) of op categorie (<code class=\"eyebrow text-[13px] "
+"bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 py-0.5 "
+"rounded\">microsoft</code>). Categorieën beginnen ingeklapt — tik op een om "
+"uit te klappen."
+
 #: casca/help_content.py:74 casca/presets.py:23
 msgid "Google Products"
-msgstr "Google-producten"#: casca/help_content.py:75 casca/presets.py:39
+msgstr "Google-producten"
+
+#: casca/help_content.py:75 casca/presets.py:39
 msgid "Microsoft Products"
-msgstr "Microsoft-producten"#: casca/help_content.py:77 casca/presets.py:66
+msgstr "Microsoft-producten"
+
+#: casca/help_content.py:77 casca/presets.py:66
 msgid "Search Engines"
-msgstr "Zoekmachines"#: casca/help_content.py:78 casca/presets.py:78
+msgstr "Zoekmachines"
+
+#: casca/help_content.py:78 casca/presets.py:78
 msgid "Messengers"
-msgstr "Chatapps"#: casca/help_content.py:79 casca/presets.py:88
+msgstr "Chatapps"
+
+#: casca/help_content.py:79 casca/presets.py:88
 msgid "Social Networks"
-msgstr "Sociale netwerken"#: casca/help_content.py:80 casca/presets.py:99
+msgstr "Sociale netwerken"
+
+#: casca/help_content.py:80 casca/presets.py:99
 msgid "Streaming"
-msgstr "Streaming"#: casca/help_content.py:81 casca/presets.py:111
+msgstr "Streaming"
+
+#: casca/help_content.py:81 casca/presets.py:111
 msgid "Music"
-msgstr "Muziek"#: casca/help_content.py:82 casca/presets.py:123
+msgstr "Muziek"
+
+#: casca/help_content.py:82 casca/presets.py:123
 msgid "Productivity & Organization"
-msgstr "Productiviteit & Organisatie"#: casca/help_content.py:83 casca/presets.py:136
+msgstr "Productiviteit & Organisatie"
+
+#: casca/help_content.py:83 casca/presets.py:136
 msgid "PDF Tools"
-msgstr "PDF-hulpmiddelen"#: casca/help_content.py:84 casca/presets.py:145
+msgstr "PDF-hulpmiddelen"
+
+#: casca/help_content.py:84 casca/presets.py:145
 msgid "Calculations & Finance"
-msgstr "Berekeningen & Financiën"#: casca/help_content.py:85 casca/presets.py:157
+msgstr "Berekeningen & Financiën"
+
+#: casca/help_content.py:85 casca/presets.py:157
 msgid "Generators & Utilities"
-msgstr "Generators & Hulpprogramma's"#: casca/help_content.py:87 casca/presets.py:176
+msgstr "Generators & Hulpprogramma's"
+
+#: casca/help_content.py:87 casca/presets.py:176
 msgid "Security & Diagnostics"
-msgstr "Beveiliging & Diagnostiek"#: casca/help_content.py:88 casca/presets.py:186
+msgstr "Beveiliging & Diagnostiek"
+
+#: casca/help_content.py:88 casca/presets.py:186
 msgid "Creativity & Content"
-msgstr "Creativiteit & Inhoud"#: casca/help_content.py:90
+msgstr "Creativiteit & Inhoud"
+
+#: casca/help_content.py:90
 msgid "Check <strong>Customize icon and shortcut</strong> to choose manually."
 msgstr ""
 "Schakel <strong>Pictogram en snelkoppeling aanpassen</strong> in om "
-"handmatig te kiezen."#: casca/help_content.py:91 casca/window.py:356
+"handmatig te kiezen."
+
+#: casca/help_content.py:91 casca/window.py:356
 msgid "Search online"
-msgstr "Online zoeken"#: casca/help_content.py:93
+msgstr "Online zoeken"
+
+#: casca/help_content.py:93
 msgid ""
 "Checks several sources — Google, DuckDuckGo, apple-touch-icon, PWA manifest "
 "— and shows the results in a grid."
-msgstr "Controleert meerdere bronnen — Google, DuckDuckGo, apple-touch-icon, PWA-manifest — en toont de resultaten in een raster."#: casca/help_content.py:96 casca/window.py:358
+msgstr ""
+"Controleert meerdere bronnen — Google, DuckDuckGo, apple-touch-icon, PWA-"
+"manifest — en toont de resultaten in een raster."
+
+#: casca/help_content.py:96 casca/window.py:358
 msgid "From computer"
-msgstr "Vanaf computer"#: casca/help_content.py:97
+msgstr "Vanaf computer"
+
+#: casca/help_content.py:97
 msgid "Picks a PNG, JPG or SVG file already saved on your computer."
-msgstr "Kiest een PNG-, JPG- of SVG-bestand dat al op je computer staat."#: casca/help_content.py:98 casca/window.py:360
+msgstr "Kiest een PNG-, JPG- of SVG-bestand dat al op je computer staat."
+
+#: casca/help_content.py:98 casca/window.py:360
 msgid "From gallery"
-msgstr "Uit galerij"#: casca/help_content.py:99
+msgstr "Uit galerij"
+
+#: casca/help_content.py:99
 msgid "Over 160 brand icons already included, no internet needed."
-msgstr "Meer dan 160 merkpictogrammen al inbegrepen, geen internet nodig."#: casca/help_content.py:101
+msgstr "Meer dan 160 merkpictogrammen al inbegrepen, geen internet nodig."
+
+#: casca/help_content.py:101
 msgid ""
 "Without checking anything, Casca fetches an icon automatically on save — or "
 "uses the icon that's already set, if the app came from a preset."
-msgstr "Zonder iets aan te vinken, haalt Casca automatisch een pictogram op bij het opslaan — of gebruikt het pictogram dat al is ingesteld, als de app van een voorinstelling komt."#: casca/help_content.py:104
+msgstr ""
+"Zonder iets aan te vinken, haalt Casca automatisch een pictogram op bij het "
+"opslaan — of gebruikt het pictogram dat al is ingesteld, als de app van een "
+"voorinstelling komt."
+
+#: casca/help_content.py:104
 msgid "Example"
-msgstr "Voorbeeld"#: casca/help_content.py:106
+msgstr "Voorbeeld"
+
+#: casca/help_content.py:106
 msgid ""
 "Your bank's site favicon looks blurry at a larger size — pick <strong>From "
 "gallery</strong> for a clean pre-made icon, or <strong>From computer</"
@@ -242,33 +467,63 @@ msgstr ""
 "kies <strong>Uit galerij</strong> voor een nette, kant-en-klare icoon, of "
 "<strong>Vanaf computer</strong> als je al een mooier logo hebt opgeslagen. "
 "Wat je ook kiest, het wordt genormaliseerd naar een scherpe 256×256-"
-"afbeelding (SVG's blijven ongewijzigd, omdat ze perfect schalen)."#: casca/help_content.py:111
+"afbeelding (SVG's blijven ongewijzigd, omdat ze perfect schalen)."
+
+#: casca/help_content.py:111
 msgid "Desktop Shortcut"
-msgstr "Snelkoppeling op het bureaublad"#: casca/help_content.py:113
+msgstr "Snelkoppeling op het bureaublad"
+
+#: casca/help_content.py:113
 msgid ""
 "Every app already shows up in the GNOME applications menu. To also get an "
 "icon on the Desktop, check <strong>Customize icon and shortcut</strong> and "
 "turn on <strong>Also create on the Desktop</strong>."
-msgstr "Elke app verschijnt al in het GNOME-toepassingenmenu. Om ook een pictogram op het bureaublad te krijgen, schakel <strong>Pictogram en snelkoppeling aanpassen</strong> in en zet <strong>Ook op het bureaublad aanmaken</strong> aan."#: casca/help_content.py:117
+msgstr ""
+"Elke app verschijnt al in het GNOME-toepassingenmenu. Om ook een pictogram "
+"op het bureaublad te krijgen, schakel <strong>Pictogram en snelkoppeling "
+"aanpassen</strong> in en zet <strong>Ook op het bureaublad aanmaken</strong> "
+"aan."
+
+#: casca/help_content.py:117
 msgid "Custom browser"
-msgstr "Aangepaste browser"#: casca/help_content.py:119
+msgstr "Aangepaste browser"
+
+#: casca/help_content.py:119
 msgid ""
 "By default, every app opens in <strong>Casca's own window</strong>: lighter, "
 "top bar automatically colored to match the icon, isolated session per app."
-msgstr "Standaard opent elke app in <strong>Casca's eigen venster</strong>: lichter, bovenbalk automatisch gekleurd passend bij het pictogram, geïsoleerde sessie per app."#: casca/help_content.py:123
+msgstr ""
+"Standaard opent elke app in <strong>Casca's eigen venster</strong>: lichter, "
+"bovenbalk automatisch gekleurd passend bij het pictogram, geïsoleerde sessie "
+"per app."
+
+#: casca/help_content.py:123
 msgid ""
 "<strong>Heads up:</strong> sites with Google login (Gmail, Drive, Calendar, "
 "Meet…) tend to refuse login in the built-in window — a Google restriction "
 "against unrecognized browsers, with no workaround. Check <strong>Use a "
 "custom browser</strong> and pick Chrome, Helium, GNOME Web or another "
 "installed browser."
-msgstr "<strong>Let op:</strong> sites met Google-login (Gmail, Drive, Agenda, Meet…) weigeren meestal in te loggen in het ingebouwde venster — een Google-beperking tegen niet-herkende browsers, zonder omweg. Schakel <strong>Aangepaste browser gebruiken</strong> in en kies Chrome, Helium, GNOME Web of een andere geïnstalleerde browser."#: casca/help_content.py:129
+msgstr ""
+"<strong>Let op:</strong> sites met Google-login (Gmail, Drive, Agenda, "
+"Meet…) weigeren meestal in te loggen in het ingebouwde venster — een Google-"
+"beperking tegen niet-herkende browsers, zonder omweg. Schakel "
+"<strong>Aangepaste browser gebruiken</strong> in en kies Chrome, Helium, "
+"GNOME Web of een andere geïnstalleerde browser."
+
+#: casca/help_content.py:129
 msgid ""
 "With a Chromium-based browser (Chrome, Chromium, Brave, Edge, Vivaldi, "
 "Helium…) and more than one account configured in it, <strong>Browser "
 "account</strong> also shows up — choose which already-logged-in account "
 "opens the app, instead of a new profile with no login."
-msgstr "Bij een op Chromium gebaseerde browser (Chrome, Chromium, Brave, Edge, Vivaldi, Helium…) met meer dan één geconfigureerd account verschijnt ook <strong>Browseraccount</strong> — kies welk al ingelogd account de app opent, in plaats van een nieuw profiel zonder login."#: casca/help_content.py:135
+msgstr ""
+"Bij een op Chromium gebaseerde browser (Chrome, Chromium, Brave, Edge, "
+"Vivaldi, Helium…) met meer dan één geconfigureerd account verschijnt ook "
+"<strong>Browseraccount</strong> — kies welk al ingelogd account de app "
+"opent, in plaats van een nieuw profiel zonder login."
+
+#: casca/help_content.py:135
 msgid ""
 "You use Chrome for everyday browsing and want Gmail to open already signed "
 "into your work account instead of asking you to log in again. Turn on "
@@ -280,12 +535,20 @@ msgstr ""
 "je werkaccount opent, in plaats van opnieuw om inloggen te vragen. Zet "
 "<strong>Aangepaste browser gebruiken</strong> aan, kies Chrome en selecteer "
 "vervolgens je account bij <strong>Browseraccount</strong> — Gmail opent "
-"direct in die inbox."#: casca/help_content.py:142
+"direct in die inbox."
+
+#: casca/help_content.py:142
 msgid ""
 "Check <strong>Open in mobile mode</strong> and pick a device — Google Pixel, "
 "iPhone, Galaxy, iPad. The app identifies itself to the site as that device, "
 "unlocking the mobile layout (usually simpler and faster)."
-msgstr "Schakel <strong>Openen in mobiele modus</strong> in en kies een apparaat — Google Pixel, iPhone, Galaxy, iPad. De app identificeert zich bij de site als dat apparaat, waardoor de mobiele lay-out wordt ontgrendeld (meestal eenvoudiger en sneller)."#: casca/help_content.py:147
+msgstr ""
+"Schakel <strong>Openen in mobiele modus</strong> in en kies een apparaat — "
+"Google Pixel, iPhone, Galaxy, iPad. De app identificeert zich bij de site "
+"als dat apparaat, waardoor de mobiele lay-out wordt ontgrendeld (meestal "
+"eenvoudiger en sneller)."
+
+#: casca/help_content.py:147
 msgid ""
 "Pick <strong>iPhone 15 Pro</strong> for a site like X (Twitter) and it "
 "serves the same stripped-down layout you'd get on a real phone — fewer side "
@@ -298,277 +561,606 @@ msgstr ""
 "zijpanelen, een eenvoudigere tijdlijn. Dit verandert de identificatie die de "
 "app naar de site stuurt, niet alleen de venstergrootte, dus combineer het "
 "met een aangepaste resolutie hieronder om ook de schermvorm van de telefoon "
-"te evenaren."#: casca/help_content.py:152
+"te evenaren."
+
+#: casca/help_content.py:152
 msgid "Window resolution"
-msgstr "Vensterresolutie"#: casca/help_content.py:154
+msgstr "Vensterresolutie"
+
+#: casca/help_content.py:154
 msgid ""
 "Check <strong>Customize window resolution</strong> — three ways to set the "
 "size, works with or without mobile mode enabled."
-msgstr "Schakel <strong>Vensterresolutie aanpassen</strong> in — drie manieren om de grootte in te stellen, werkt met of zonder mobiele modus."#: casca/help_content.py:158
+msgstr ""
+"Schakel <strong>Vensterresolutie aanpassen</strong> in — drie manieren om de "
+"grootte in te stellen, werkt met of zonder mobiele modus."
+
+#: casca/help_content.py:158
 msgid ""
 "<strong>By device</strong> — uses the screen size of the device chosen in "
 "mobile mode."
-msgstr "<strong>Op apparaat</strong> — gebruikt de schermgrootte van het apparaat gekozen in mobiele modus."#: casca/help_content.py:160
+msgstr ""
+"<strong>Op apparaat</strong> — gebruikt de schermgrootte van het apparaat "
+"gekozen in mobiele modus."
+
+#: casca/help_content.py:160
 msgid "<strong>Default size</strong> — common resolutions (laptop, Full HD…)."
 msgstr ""
 "<strong>Standaardgrootte</strong> — veelvoorkomende resoluties (laptop, Full "
-"HD…)."#: casca/help_content.py:161
+"HD…)."
+
+#: casca/help_content.py:161
 msgid "<strong>Custom</strong> — you type in width and height in pixels."
-msgstr "<strong>Aangepast</strong> — je voert breedte en hoogte in pixels in."#: casca/help_content.py:163
+msgstr "<strong>Aangepast</strong> — je voert breedte en hoogte in pixels in."
+
+#: casca/help_content.py:163
 msgid ""
 "You want a WhatsApp Web window that's tall and narrow, like a phone propped "
 "up next to your monitor — pick <strong>Custom</strong> and set it to 400 × "
 "900."
 msgstr ""
 "Je wilt een hoog, smal WhatsApp Web-venster, als een telefoon naast je "
-"monitor — kies <strong>Aangepast</strong> en stel 400 × 900 in."#: casca/help_content.py:166
+"monitor — kies <strong>Aangepast</strong> en stel 400 × 900 in."
+
+#: casca/help_content.py:166
 msgid "Edit and delete"
-msgstr "Bewerken en verwijderen"#: casca/help_content.py:168
+msgstr "Bewerken en verwijderen"
+
+#: casca/help_content.py:168
 msgid ""
 "On the home screen, every app has a pencil to <strong>edit</strong> (changes "
 "any setting, including ones that were disabled at creation) and a trash icon "
 "to <strong>delete</strong> (removes the shortcut from the menu, the Desktop, "
 "and the saved icon)."
-msgstr "Op het startscherm heeft elke app een potlood om te <strong>bewerken</strong> (wijzigt elke instelling, ook die bij het aanmaken waren uitgeschakeld) en een prullenbakpictogram om te <strong>verwijderen</strong> (verwijdert de snelkoppeling uit het menu, het bureaublad en het opgeslagen pictogram)."#: casca/help_content.py:173
+msgstr ""
+"Op het startscherm heeft elke app een potlood om te <strong>bewerken</"
+"strong> (wijzigt elke instelling, ook die bij het aanmaken waren "
+"uitgeschakeld) en een prullenbakpictogram om te <strong>verwijderen</strong> "
+"(verwijdert de snelkoppeling uit het menu, het bureaublad en het opgeslagen "
+"pictogram)."
+
+#: casca/help_content.py:173
 msgid "Casca — built to turn websites into GNOME apps."
-msgstr "Casca — gemaakt om websites in GNOME-apps te veranderen."#: casca/icons.py:171
+msgstr "Casca — gemaakt om websites in GNOME-apps te veranderen."
+
+#: casca/icons.py:171
 msgid "Site icon (.ico)"
-msgstr "Site-pictogram (.ico)"#: casca/icons.py:172
+msgstr "Site-pictogram (.ico)"
+
+#: casca/icons.py:172
 msgid "Site icon (32px)"
-msgstr "Site-pictogram (32px)"#: casca/icons.py:173
+msgstr "Site-pictogram (32px)"
+
+#: casca/icons.py:173
 msgid "Apple touch icon"
-msgstr "Apple-touchpictogram"#: casca/icons.py:179
+msgstr "Apple-touchpictogram"
+
+#: casca/icons.py:179
 msgid "PWA Manifest"
-msgstr "PWA-manifest"#: casca/package_launcher.py:72 casca/package_launcher.py:113#: casca/window.py:934
+msgstr "PWA-manifest"
+
+#: casca/package_launcher.py:73 casca/package_launcher.py:119
+#: casca/window.py:934
 msgid "Package"
-msgstr "Pakket"#: casca/store.py:80
+msgstr "Pakket"
+
+#: casca/store.py:80
 msgid "Independent"
-msgstr "Onafhankelijk"#: casca/store.py:81 casca/store.py:97
+msgstr "Onafhankelijk"
+
+#: casca/store.py:81 casca/store.py:97
 msgid "Other"
-msgstr "Overig"#: casca/store.py:92 casca/window.py:1038
+msgstr "Overig"
+
+#: casca/store.py:92 casca/window.py:1038
 msgid "Independent apps"
-msgstr "Onafhankelijke apps"#: casca/store.py:92
+msgstr "Onafhankelijke apps"
+
+#: casca/store.py:92
 msgid "Global"
-msgstr "Wereldwijd"#: casca/window.py:86
+msgstr "Wereldwijd"
+
+#: casca/updater.py:90 casca/updater.py:91
+msgid "Release"
+msgstr "Release"
+
+#: casca/updater.py:90
+msgid "Beta"
+msgstr "Beta"
+
+#: casca/updater.py:90
+msgid "Alpha"
+msgstr "Alpha"
+
+#: casca/updater.py:90
+msgid "Development"
+msgstr "Ontwikkeling"
+
+#: casca/updater.py:106
+msgid "Casca"
+msgstr "Casca"
+
+#: casca/updater.py:109
+msgid "Updated — restart Casca to use the new version."
+msgstr "Bijgewerkt — herstart Casca om de nieuwe versie te gebruiken."
+
+#: casca/updater.py:110
+msgid "Couldn't update automatically — check for updates manually."
+msgstr "Kon niet automatisch bijwerken — controleer handmatig op updates."
+
+#: casca/updater.py:125
+msgid "Casca update available"
+msgstr "Casca-update beschikbaar"
+
+#: casca/updater.py:128
+#, python-format
+msgid "Version %(latest)s is available (you're on %(current)s)."
+msgstr "Versie %(latest)s is beschikbaar (je hebt %(current)s)."
+
+#: casca/updater.py:138
+msgid "Update now"
+msgstr "Nu bijwerken"
+
+#: casca/window.py:86
 msgid "Choose icon"
-msgstr "Pictogram kiezen"#: casca/window.py:121
+msgstr "Pictogram kiezen"
+
+#: casca/window.py:121
 msgid "Icons found"
-msgstr "Gevonden pictogrammen"#: casca/window.py:144
+msgstr "Gevonden pictogrammen"
+
+#: casca/window.py:144
 msgid "Searching for icons online…"
-msgstr "Pictogrammen online zoeken…"#: casca/window.py:155
+msgstr "Pictogrammen online zoeken…"
+
+#: casca/window.py:155
 msgid "No icon found"
-msgstr "Geen pictogram gevonden"#: casca/window.py:156
+msgstr "Geen pictogram gevonden"
+
+#: casca/window.py:156
 msgid "Try choosing an image from your computer or the gallery."
-msgstr "Probeer een afbeelding te kiezen van je computer of de galerij."#: casca/window.py:208 casca/window.py:395
+msgstr "Probeer een afbeelding te kiezen van je computer of de galerij."
+
+#: casca/window.py:208 casca/window.py:395
 msgid "Edit app"
-msgstr "App bewerken"#: casca/window.py:208
+msgstr "App bewerken"
+
+#: casca/window.py:208
 msgid "New app"
-msgstr "Nieuwe app"#: casca/window.py:228
+msgstr "Nieuwe app"
+
+#: casca/window.py:228
 msgid "Site"
-msgstr "Site"#: casca/window.py:229
+msgstr "Site"
+
+#: casca/window.py:229
 msgid "App name"
-msgstr "Naam van de app"#: casca/window.py:230
+msgstr "Naam van de app"
+
+#: casca/window.py:230
 msgid "Address (URL)"
-msgstr "Adres (URL)"#: casca/window.py:238
+msgstr "Adres (URL)"
+
+#: casca/window.py:238
 msgid "Use a custom browser"
-msgstr "Aangepaste browser gebruiken"#: casca/window.py:239
+msgstr "Aangepaste browser gebruiken"
+
+#: casca/window.py:239
 msgid "If disabled, opens in Casca's own window."
-msgstr "Indien uitgeschakeld, wordt geopend in Casca's eigen venster."#: casca/window.py:245
+msgstr "Indien uitgeschakeld, wordt geopend in Casca's eigen venster."
+
+#: casca/window.py:245
 msgid "Open with"
-msgstr "Openen met"#: casca/window.py:252
+msgstr "Openen met"
+
+#: casca/window.py:252
 msgid "No compatible browser was found on the system."
-msgstr "Er is geen compatibele browser gevonden op het systeem."#: casca/window.py:259
+msgstr "Er is geen compatibele browser gevonden op het systeem."
+
+#: casca/window.py:259
 msgid ""
 "Not available in the Flatpak version — use the local install for external "
 "browsers."
 msgstr ""
 "Niet beschikbaar in de Flatpak-versie — gebruik de lokale installatie voor "
-"externe browsers."#: casca/window.py:264
+"externe browsers."
+
+#: casca/window.py:264
 msgid "Learn more about custom browsers"
-msgstr "Meer informatie over aangepaste browsers"#: casca/window.py:267
+msgstr "Meer informatie over aangepaste browsers"
+
+#: casca/window.py:267
 msgid "Browser account"
-msgstr "Browseraccount"#: casca/window.py:274
+msgstr "Browseraccount"
+
+#: casca/window.py:274
 msgid "Open in mobile mode"
-msgstr "Openen in mobiele modus"#: casca/window.py:275 casca/window.py:488
+msgstr "Openen in mobiele modus"
+
+#: casca/window.py:275 casca/window.py:488
 msgid "Uses the identification and window of a phone or tablet."
-msgstr "Gebruikt de identificatie en het venster van een telefoon of tablet."#: casca/window.py:281 casca/window.py:310
+msgstr "Gebruikt de identificatie en het venster van een telefoon of tablet."
+
+#: casca/window.py:281 casca/window.py:310
 msgid "Device"
-msgstr "Apparaat"#: casca/window.py:287
+msgstr "Apparaat"
+
+#: casca/window.py:287
 msgid "Learn more about mobile mode"
-msgstr "Meer informatie over mobiele modus"#: casca/window.py:296
+msgstr "Meer informatie over mobiele modus"
+
+#: casca/window.py:296
 msgid "Customize window resolution"
-msgstr "Vensterresolutie aanpassen"#: casca/window.py:297
+msgstr "Vensterresolutie aanpassen"
+
+#: casca/window.py:297
 msgid "If disabled, uses the browser's default size."
 msgstr ""
-"Indien uitgeschakeld, wordt de standaardgrootte van de browser gebruikt."#: casca/window.py:302
+"Indien uitgeschakeld, wordt de standaardgrootte van de browser gebruikt."
+
+#: casca/window.py:302
 msgid "Window size"
-msgstr "Venstergrootte"#: casca/window.py:304
+msgstr "Venstergrootte"
+
+#: casca/window.py:304
 msgid "By device"
-msgstr "Op apparaat"#: casca/window.py:304
+msgstr "Op apparaat"
+
+#: casca/window.py:304
 msgid "Default size"
-msgstr "Standaardgrootte"#: casca/window.py:304
+msgstr "Standaardgrootte"
+
+#: casca/window.py:304
 msgid "Custom"
-msgstr "Aangepast"#: casca/window.py:314
+msgstr "Aangepast"
+
+#: casca/window.py:314
 msgid "Size"
-msgstr "Grootte"#: casca/window.py:322
+msgstr "Grootte"
+
+#: casca/window.py:322
 msgid "Width"
-msgstr "Breedte"#: casca/window.py:325
+msgstr "Breedte"
+
+#: casca/window.py:325
 msgid "Height"
-msgstr "Hoogte"#: casca/window.py:330
+msgstr "Hoogte"
+
+#: casca/window.py:330
 msgid "Learn more about window resolution"
-msgstr "Meer informatie over vensterresolutie"#: casca/window.py:339
+msgstr "Meer informatie over vensterresolutie"
+
+#: casca/window.py:339
 msgid "Customize icon and shortcut"
-msgstr "Pictogram en snelkoppeling aanpassen"#: casca/window.py:341
+msgstr "Pictogram en snelkoppeling aanpassen"
+
+#: casca/window.py:341
 msgid ""
 "If disabled, the icon is fetched automatically and no Desktop shortcut is "
 "created."
 msgstr ""
 "Indien uitgeschakeld, wordt het pictogram automatisch opgehaald en wordt er "
-"geen snelkoppeling op het bureaublad aangemaakt."#: casca/window.py:369
+"geen snelkoppeling op het bureaublad aangemaakt."
+
+#: casca/window.py:369
 msgid "Also create on the Desktop"
-msgstr "Ook op het bureaublad aanmaken"#: casca/window.py:372
+msgstr "Ook op het bureaublad aanmaken"
+
+#: casca/window.py:372
 msgid "Learn more about icons and shortcuts"
-msgstr "Meer informatie over pictogrammen en snelkoppelingen"#: casca/window.py:379
+msgstr "Meer informatie over pictogrammen en snelkoppelingen"
+
+#: casca/window.py:379
 msgid "Create app"
-msgstr "App aanmaken"#: casca/window.py:396
+msgstr "App aanmaken"
+
+#: casca/window.py:396
 msgid "Save changes"
-msgstr "Wijzigingen opslaan"#: casca/window.py:483#, python-format
+msgstr "Wijzigingen opslaan"
+
+#: casca/window.py:483
+#, python-format
 msgid "%(browser)s doesn't support mobile mode."
-msgstr "%(browser)s ondersteunt geen mobiele modus."#: casca/window.py:485 casca/window.py:626
+msgstr "%(browser)s ondersteunt geen mobiele modus."
+
+#: casca/window.py:485 casca/window.py:626
 msgid "Choose a browser."
-msgstr "Kies een browser."#: casca/window.py:495
+msgstr "Kies een browser."
+
+#: casca/window.py:495
 msgid "Isolated profile (new, no login)"
-msgstr "Geïsoleerd profiel (nieuw, niet aangemeld)"#: casca/window.py:508 casca/window.py:523
+msgstr "Geïsoleerd profiel (nieuw, niet aangemeld)"
+
+#: casca/window.py:508 casca/window.py:523
 msgid "Enter the URL before searching for the icon."
-msgstr "Voer de URL in voordat je naar het pictogram zoekt."#: casca/window.py:512
+msgstr "Voer de URL in voordat je naar het pictogram zoekt."
+
+#: casca/window.py:512
 msgid "Could not fetch the icon automatically."
-msgstr "Het pictogram kon niet automatisch worden opgehaald."#: casca/window.py:534
+msgstr "Het pictogram kon niet automatisch worden opgehaald."
+
+#: casca/window.py:534
 msgid "Choose icon image"
-msgstr "Afbeelding voor pictogram kiezen"#: casca/window.py:536
+msgstr "Afbeelding voor pictogram kiezen"
+
+#: casca/window.py:536
 msgid "Images"
-msgstr "Afbeeldingen"#: casca/window.py:612
+msgstr "Afbeeldingen"
+
+#: casca/window.py:612
 msgid "Fill in the site's name and URL."
-msgstr "Vul de naam en URL van de site in."#: casca/window.py:615 casca/window.py:620
+msgstr "Vul de naam en URL van de site in."
+
+#: casca/window.py:615 casca/window.py:620
 msgid "Use an http:// or https:// address."
-msgstr "Gebruik een http://- of https://-adres."#: casca/window.py:636
+msgstr "Gebruik een http://- of https://-adres."
+
+#: casca/window.py:636
 msgid "Casca's own window isn't available. Enable 'Use a custom browser'."
 msgstr ""
 "Casca's eigen venster is niet beschikbaar. Schakel 'Aangepaste browser "
-"gebruiken' in."#: casca/window.py:675
+"gebruiken' in."
+
+#: casca/window.py:675
 msgid "Could not set an icon. Choose an image manually."
-msgstr "Er kon geen pictogram worden ingesteld. Kies handmatig een afbeelding."#: casca/window.py:690#, python-format
+msgstr "Er kon geen pictogram worden ingesteld. Kies handmatig een afbeelding."
+
+#: casca/window.py:690
+#, python-format
 msgid "Error saving: %(error)s"
-msgstr "Fout bij opslaan: %(error)s"#: casca/window.py:701
+msgstr "Fout bij opslaan: %(error)s"
+
+#: casca/window.py:701
 msgid "Preset site"
-msgstr "Vooraf ingestelde site"#: casca/window.py:708
+msgstr "Vooraf ingestelde site"
+
+#: casca/window.py:708
 msgid "Search by name or category…"
-msgstr "Zoeken op naam of categorie…"#: casca/window.py:720 casca/window.py:1035#, python-format
+msgstr "Zoeken op naam of categorie…"
+
+#: casca/window.py:720 casca/window.py:1035
+#, python-format
 msgid "%(n)d site"
 msgid_plural "%(n)d sites"
 msgstr[0] "%(n)d site"
-msgstr[1] "%(n)d sites"#: casca/window.py:904 casca/window.py:1287
+msgstr[1] "%(n)d sites"
+
+#: casca/window.py:904 casca/window.py:1287
 msgid "Store"
-msgstr "Winkel"#: casca/window.py:932
+msgstr "Winkel"
+
+#: casca/window.py:932
 msgid "Company"
-msgstr "Bedrijf"#: casca/window.py:933
+msgstr "Bedrijf"
+
+#: casca/window.py:933
 msgid "Type"
-msgstr "Type"#: casca/window.py:949
+msgstr "Type"
+
+#: casca/window.py:949
 msgid "Search by name…"
-msgstr "Zoeken op naam…"#: casca/window.py:985#, python-format
+msgstr "Zoeken op naam…"
+
+#: casca/window.py:985
+#, python-format
 msgid "Could not set an icon for %(name)s."
-msgstr "Er kon geen pictogram worden ingesteld voor %(name)s."#: casca/window.py:991#, python-format
+msgstr "Er kon geen pictogram worden ingesteld voor %(name)s."
+
+#: casca/window.py:991
+#, python-format
 msgid "Error installing package: %(error)s"
-msgstr "Fout bij installeren van pakket: %(error)s"#: casca/window.py:997#, python-format
+msgstr "Fout bij installeren van pakket: %(error)s"
+
+#: casca/window.py:997
+#, python-format
 msgid "Package “%(name)s” installed with %(n)d app."
 msgid_plural "Package “%(name)s” installed with %(n)d apps."
 msgstr[0] "Pakket “%(name)s” geïnstalleerd met %(n)d app."
-msgstr[1] "Pakket “%(name)s” geïnstalleerd met %(n)d apps."#: casca/window.py:1023
+msgstr[1] "Pakket “%(name)s” geïnstalleerd met %(n)d apps."
+
+#: casca/window.py:1023
 msgid "Nothing here yet"
-msgstr "Hier is nog niets"#: casca/window.py:1024
+msgstr "Hier is nog niets"
+
+#: casca/window.py:1024
 msgid "Check the local catalog or your internet connection."
-msgstr "Controleer de lokale catalogus of je internetverbinding."#: casca/window.py:1040
+msgstr "Controleer de lokale catalogus of je internetverbinding."
+
+#: casca/window.py:1040
 msgid "Install full package"
-msgstr "Volledig pakket installeren"#: casca/window.py:1165
+msgstr "Volledig pakket installeren"
+
+#: casca/window.py:1165
 msgid "Casca Manual"
-msgstr "Casca-handleiding"#: casca/window.py:1185
+msgstr "Casca-handleiding"
+
+#: casca/window.py:1185
 msgid "Could not open the built-in manual"
-msgstr "De ingebouwde handleiding kon niet worden geopend"#: casca/window.py:1204
+msgstr "De ingebouwde handleiding kon niet worden geopend"
+
+#: casca/window.py:1204
 msgid "Choose what to import"
-msgstr "Kies wat je wilt importeren"#: casca/window.py:1213#, python-format
+msgstr "Kies wat je wilt importeren"
+
+#: casca/window.py:1213
+#, python-format
 msgid "%(n)d site found"
 msgid_plural "%(n)d sites found"
 msgstr[0] "%(n)d site gevonden"
-msgstr[1] "%(n)d sites gevonden"#: casca/window.py:1216
+msgstr[1] "%(n)d sites gevonden"
+
+#: casca/window.py:1216
 msgid "Uncheck anything you don't want to import."
-msgstr "Vink alles uit wat je niet wilt importeren."#: casca/window.py:1219
+msgstr "Vink alles uit wat je niet wilt importeren."
+
+#: casca/window.py:1219
 msgid "(no name)"
-msgstr "(geen naam)"#: casca/window.py:1227
+msgstr "(geen naam)"
+
+#: casca/window.py:1227
 msgid "Import selected"
-msgstr "Selectie importeren"#: casca/window.py:1260
+msgstr "Selectie importeren"
+
+#: casca/window.py:1260
 msgid "User guide"
-msgstr "Gebruikershandleiding"#: casca/window.py:1261
+msgstr "Gebruikershandleiding"
+
+#: casca/window.py:1261
 msgid "About Casca"
-msgstr "Over Casca"#: casca/window.py:1262
+msgstr "Over Casca"
+
+#: casca/window.py:1262
 msgid "Menu"
-msgstr "Menu"#: casca/window.py:1292
+msgstr "Menu"
+
+#: casca/window.py:1292
 msgid "Create a new web app"
-msgstr "Een nieuwe webapp aanmaken"#: casca/window.py:1293
+msgstr "Een nieuwe webapp aanmaken"
+
+#: casca/window.py:1293
 msgid "Create"
-msgstr "Aanmaken"#: casca/window.py:1302 casca/window.py:1398
+msgstr "Aanmaken"
+
+#: casca/window.py:1302 casca/window.py:1429
 msgid "Import apps"
-msgstr "Apps importeren"#: casca/window.py:1306 casca/window.py:1348
+msgstr "Apps importeren"
+
+#: casca/window.py:1306 casca/window.py:1379
 msgid "Export apps"
-msgstr "Apps exporteren"#: casca/window.py:1335
+msgstr "Apps exporteren"
+
+#: casca/window.py:1337
 msgid "Turns any website into a GNOME app."
-msgstr "Maakt van elke website een GNOME-app."#: casca/window.py:1346
+msgstr "Maakt van elke website een GNOME-app."
+
+#: casca/window.py:1341
+#, python-format
+msgid ""
+"Version %(latest)s is available — an update notification with a way to "
+"update just popped up."
+msgstr ""
+"Versie %(latest)s is beschikbaar — er verscheen zojuist een melding met een "
+"manier om bij te werken."
+
+#: casca/window.py:1356
+msgid ""
+"Casca now checks for new releases in the background (once a day at most) and "
+"lets you know with a system notification — no action needed for Flatpak/Snap "
+"installs, which already update themselves."
+msgstr "Casca controleert nu op de achtergrond op nieuwe versies (hooguit één keer per dag) en laat het je weten met een systeemmelding — geen actie nodig bij Flatpak-/Snap-installaties, die zichzelf al bijwerken."
+
+#: casca/window.py:1361
+msgid ""
+"The About dialog now shows the license, a link to the source code, whether "
+"you're on a release/beta/alpha build, and a proper “What's New” page with "
+"each version's changelog."
+msgstr "Het Info-venster toont nu de licentie, een link naar de broncode, of je een release-, beta- of alpha-versie gebruikt, en een echte “Wat is er nieuw”-pagina met de wijzigingen van elke versie."
+
+#: casca/window.py:1367
+msgid "Source Code"
+msgstr "Broncode"
+
+#: casca/window.py:1377
 msgid "No app created yet to export."
-msgstr "Er is nog geen app aangemaakt om te exporteren."#: casca/window.py:1370#, python-format
+msgstr "Er is nog geen app aangemaakt om te exporteren."
+
+#: casca/window.py:1401
+#, python-format
 msgid "Error exporting: %(error)s"
-msgstr "Fout bij exporteren: %(error)s"#: casca/window.py:1373#, python-format
+msgstr "Fout bij exporteren: %(error)s"
+
+#: casca/window.py:1404
+#, python-format
 msgid "%(count)d app exported to %(name)s."
 msgid_plural "%(count)d apps exported to %(name)s."
 msgstr[0] "%(count)d app geëxporteerd naar %(name)s."
-msgstr[1] "%(count)d apps geëxporteerd naar %(name)s."#: casca/window.py:1379
+msgstr[1] "%(count)d apps geëxporteerd naar %(name)s."
+
+#: casca/window.py:1410
 msgid "Import from where?"
-msgstr "Vanaf waar importeren?"#: casca/window.py:1380
+msgstr "Vanaf waar importeren?"
+
+#: casca/window.py:1411
 msgid "Choose a local .json file or a URL (e.g. a GitHub \"raw\" link)."
 msgstr ""
-"Kies een lokaal .json-bestand of een URL (bijv. een \"raw\"-link van GitHub)."#: casca/window.py:1382 casca/window.py:1428 casca/window.py:1561#: casca/window.py:1584
+"Kies een lokaal .json-bestand of een URL (bijv. een \"raw\"-link van GitHub)."
+
+#: casca/window.py:1413 casca/window.py:1459 casca/window.py:1592
+#: casca/window.py:1615
 msgid "Cancel"
-msgstr "Annuleren"#: casca/window.py:1383
+msgstr "Annuleren"
+
+#: casca/window.py:1414
 msgid "From a URL"
-msgstr "Van een URL"#: casca/window.py:1384
+msgstr "Van een URL"
+
+#: casca/window.py:1415
 msgid "Local file"
-msgstr "Lokaal bestand"#: casca/window.py:1417#, python-format
+msgstr "Lokaal bestand"
+
+#: casca/window.py:1448
+#, python-format
 msgid "Error reading the file: %(error)s"
-msgstr "Fout bij lezen van het bestand: %(error)s"#: casca/window.py:1423
+msgstr "Fout bij lezen van het bestand: %(error)s"
+
+#: casca/window.py:1454
 msgid "Import from a URL"
-msgstr "Importeren vanaf een URL"#: casca/window.py:1424
+msgstr "Importeren vanaf een URL"
+
+#: casca/window.py:1455
 msgid "Paste the JSON file's \"raw\" link (e.g. from a GitHub repository)."
 msgstr ""
-"Plak de \"raw\"-link van het JSON-bestand (bijv. van een GitHub-repository)."#: casca/window.py:1429
+"Plak de \"raw\"-link van het JSON-bestand (bijv. van een GitHub-repository)."
+
+#: casca/window.py:1460
 msgid "Fetch"
-msgstr "Ophalen"#: casca/window.py:1441
+msgstr "Ophalen"
+
+#: casca/window.py:1472
 msgid "Enter a URL."
-msgstr "Voer een URL in."#: casca/window.py:1443
+msgstr "Voer een URL in."
+
+#: casca/window.py:1474
 msgid "Fetching file…"
-msgstr "Bestand ophalen…"#: casca/window.py:1450#, python-format
+msgstr "Bestand ophalen…"
+
+#: casca/window.py:1481
+#, python-format
 msgid "Error downloading: %(error)s"
-msgstr "Fout bij downloaden: %(error)s"#: casca/window.py:1458#, python-format
+msgstr "Fout bij downloaden: %(error)s"
+
+#: casca/window.py:1489
+#, python-format
 msgid "Error importing: %(error)s"
-msgstr "Fout bij importeren: %(error)s"#: casca/window.py:1461
+msgstr "Fout bij importeren: %(error)s"
+
+#: casca/window.py:1492
 msgid "No app found in the file."
-msgstr "Geen app gevonden in het bestand."#: casca/window.py:1469
+msgstr "Geen app gevonden in het bestand."
+
+#: casca/window.py:1500
 msgid "Nothing selected to import."
-msgstr "Niets geselecteerd om te importeren."#: casca/window.py:1477#, python-format
+msgstr "Niets geselecteerd om te importeren."
+
+#: casca/window.py:1508
+#, python-format
 msgid "%(n)d app imported."
 msgid_plural "%(n)d apps imported."
 msgstr[0] "%(n)d app geïmporteerd."
-msgstr[1] "%(n)d apps geïmporteerd."#: casca/window.py:1483#, python-format
+msgstr[1] "%(n)d apps geïmporteerd."
+
+#: casca/window.py:1514
+#, python-format
 msgid "• %(name)s: %(reason)s"
-msgstr "• %(name)s: %(reason)s"#: casca/window.py:1487#, python-format
+msgstr "• %(name)s: %(reason)s"
+
+#: casca/window.py:1518
+#, python-format
 msgid "%(created)d imported, %(failed)d with errors"
-msgstr "%(created)d geïmporteerd, %(failed)d met fouten"#: casca/window.py:1489#, python-format
+msgstr "%(created)d geïmporteerd, %(failed)d met fouten"
+
+#: casca/window.py:1520
+#, python-format
 msgid ""
 "Review and adjust manually via the \"Create\" button:\n"
 "\n"
@@ -576,33 +1168,78 @@ msgid ""
 msgstr ""
 "Bekijk en pas dit handmatig aan via de knop \"Aanmaken\":\n"
 "\n"
-"%(lines)s"#: casca/window.py:1491
+"%(lines)s"
+
+#: casca/window.py:1522
 msgid "Got it"
-msgstr "Begrepen"#: casca/window.py:1505
+msgstr "Begrepen"
+
+#: casca/window.py:1536
 msgid "No web apps yet"
-msgstr "Nog geen webapps"#: casca/window.py:1506
+msgstr "Nog geen webapps"
+
+#: casca/window.py:1537
 msgid ""
 "Tap “Create” to make your first app, or open the Store for ready-made sites."
 msgstr ""
 "Tik op “Aanmaken” om je eerste app te maken, of open de Winkel voor kant-en-"
-"klare sites."#: casca/window.py:1515
+"klare sites."
+
+#: casca/window.py:1546
 msgid "My web apps"
-msgstr "Mijn webapps"#: casca/window.py:1537
+msgstr "Mijn webapps"
+
+#: casca/window.py:1568
 msgid "Installed packages"
-msgstr "Geïnstalleerde pakketten"#: casca/window.py:1558#, python-format
+msgstr "Geïnstalleerde pakketten"
+
+#: casca/window.py:1589
+#, python-format
 msgid "Delete “%(name)s”?"
-msgstr "“%(name)s” verwijderen?"#: casca/window.py:1559
+msgstr "“%(name)s” verwijderen?"
+
+#: casca/window.py:1590
 msgid ""
 "The shortcut will be removed from the applications menu and the desktop, if "
 "it exists."
 msgstr ""
 "De snelkoppeling wordt verwijderd uit het toepassingenmenu en van het "
-"bureaublad, indien aanwezig."#: casca/window.py:1562 casca/window.py:1585
+"bureaublad, indien aanwezig."
+
+#: casca/window.py:1593 casca/window.py:1616
 msgid "Delete"
-msgstr "Verwijderen"#: casca/window.py:1576#, python-format
+msgstr "Verwijderen"
+
+#: casca/window.py:1607
+#, python-format
 msgid "Delete package “%(name)s”?"
-msgstr "Pakket “%(name)s” verwijderen?"#: casca/window.py:1578#, python-format
+msgstr "Pakket “%(name)s” verwijderen?"
+
+#: casca/window.py:1609
+#, python-format
 msgid "Removes the shortcut and the %(n)d app inside it (%(names)s)."
 msgid_plural "Removes the shortcut and the %(n)d apps inside it (%(names)s)."
 msgstr[0] "Verwijdert de snelkoppeling en de %(n)d app erin (%(names)s)."
 msgstr[1] "Verwijdert de snelkoppeling en de %(n)d apps erin (%(names)s)."
+
+#~ msgid ""
+#~ "Casca now speaks 20 languages, picked automatically from the system "
+#~ "locale: English, Portuguese (Brazil), Spanish, French, Italian, German, "
+#~ "Russian, Ukrainian, Polish, Dutch, Turkish, Simplified Chinese, Japanese, "
+#~ "Korean, Vietnamese, Indonesian, Hindi, Arabic, Bengali and Thai."
+#~ msgstr ""
+#~ "Casca spreekt nu 20 talen, automatisch gekozen op basis van de "
+#~ "systeemtaal: Engels, Portugees (Brazilië), Spaans, Frans, Italiaans, "
+#~ "Duits, Russisch, Oekraïens, Pools, Nederlands, Turks, Vereenvoudigd "
+#~ "Chinees, Japans, Koreaans, Vietnamees, Indonesisch, Hindi, Arabisch, "
+#~ "Bengaals en Thai."
+
+#~ msgid ""
+#~ "The creation screen's browser, mobile mode, resolution and icon sections "
+#~ "now have an inline help button — hover for a quick tip, click to jump "
+#~ "straight to that topic in a redesigned, example-filled manual."
+#~ msgstr ""
+#~ "De secties browser, mobiele modus, resolutie en pictogram op het "
+#~ "aanmaakscherm hebben nu een ingebouwde helpknop — beweeg erover voor een "
+#~ "snelle tip, klik om direct naar dat onderwerp te gaan in een opnieuw "
+#~ "ontworpen handleiding vol voorbeelden."

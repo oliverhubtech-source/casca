@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Casca 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/oliverhubtech-source/casca/issues\n"
-"POT-Creation-Date: 2026-07-09 22:51-0300\n"
+"POT-Creation-Date: 2026-07-10 16:23-0300\n"
 "PO-Revision-Date: 2026-07-09 16:07-0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: casca/browsers.py:199
+#: casca/browsers.py:209
 msgid "Casca's own window"
 msgstr "Casca-এর নিজস্ব উইন্ডো"
 
@@ -185,55 +185,60 @@ msgstr "বড় (1600×900)"
 msgid "Full HD (1920×1080)"
 msgstr "ফুল এইচডি (1920×1080)"
 
-#: casca/entries.py:203 casca/entries.py:245#, python-format
+#: casca/entries.py:205 casca/entries.py:247
+#, python-format
 msgid "Browser not found: %(key)s"
 msgstr "ব্রাউজার পাওয়া যায়নি: %(key)s"
 
-#: casca/entries.py:249#, python-format
+#: casca/entries.py:251
+#, python-format
 msgid "App not found: %(slug)s"
 msgstr "অ্যাপ পাওয়া যায়নি: %(slug)s"
 
-#: casca/entries.py:337
+#: casca/entries.py:339
 msgid "remote file too large"
 msgstr "রিমোট ফাইল খুব বড়"
 
-#: casca/entries.py:341#, python-format
+#: casca/entries.py:343
+#, python-format
 msgid "could not download the file (%(error)s)"
 msgstr "ফাইল ডাউনলোড করা যায়নি (%(error)s)"
 
-#: casca/entries.py:350#, python-format
+#: casca/entries.py:352
+#, python-format
 msgid "could not read the file (%(error)s)"
 msgstr "ফাইল পড়া যায়নি (%(error)s)"
 
-#: casca/entries.py:354
+#: casca/entries.py:356
 msgid "unexpected format: no 'apps' list found"
 msgstr "অপ্রত্যাশিত ফরম্যাট: কোনো 'apps' তালিকা পাওয়া যায়নি"
 
-#: casca/entries.py:388#, python-format
+#: casca/entries.py:390
+#, python-format
 msgid "item %(n)d"
 msgstr "আইটেম %(n)d"
 
-#: casca/entries.py:390
+#: casca/entries.py:392
 msgid "missing name or URL"
 msgstr "নাম বা URL অনুপস্থিত"
 
-#: casca/entries.py:393 casca/entries.py:398
+#: casca/entries.py:395 casca/entries.py:400
 msgid "unsupported URL scheme"
 msgstr "অসমর্থিত URL স্কিম"
 
-#: casca/entries.py:404
+#: casca/entries.py:406
 msgid "no browser available"
 msgstr "কোনো ব্রাউজার উপলব্ধ নেই"
 
-#: casca/entries.py:423
+#: casca/entries.py:425
 msgid "could not get an icon"
 msgstr "আইকন পাওয়া যায়নি"
 
-#: casca/entries.py:481
+#: casca/entries.py:483
 msgid "No browser available to assemble the package."
 msgstr "প্যাকেজ তৈরি করার জন্য কোনো ব্রাউজার উপলব্ধ নেই।"
 
-#: casca/entries.py:553
+#: casca/entries.py:555
 msgid "Package of web apps created by Casca"
 msgstr "Casca দ্বারা তৈরি ওয়েব অ্যাপের প্যাকেজ"
 
@@ -623,7 +628,7 @@ msgstr "Apple টাচ আইকন"
 msgid "PWA Manifest"
 msgstr "PWA ম্যানিফেস্ট"
 
-#: casca/package_launcher.py:72 casca/package_launcher.py:113#:
+#: casca/package_launcher.py:73 casca/package_launcher.py:119
 #: casca/window.py:934
 msgid "Package"
 msgstr "প্যাকেজ"
@@ -643,6 +648,47 @@ msgstr "স্বতন্ত্র অ্যাপ"
 #: casca/store.py:92
 msgid "Global"
 msgstr "বৈশ্বিক"
+
+#: casca/updater.py:90 casca/updater.py:91
+msgid "Release"
+msgstr "রিলিজ"
+
+#: casca/updater.py:90
+msgid "Beta"
+msgstr "বিটা"
+
+#: casca/updater.py:90
+msgid "Alpha"
+msgstr "আলফা"
+
+#: casca/updater.py:90
+msgid "Development"
+msgstr "ডেভেলপমেন্ট"
+
+#: casca/updater.py:106
+msgid "Casca"
+msgstr "Casca"
+
+#: casca/updater.py:109
+msgid "Updated — restart Casca to use the new version."
+msgstr "আপডেট হয়েছে — নতুন সংস্করণ ব্যবহার করতে Casca পুনরায় চালু করুন।"
+
+#: casca/updater.py:110
+msgid "Couldn't update automatically — check for updates manually."
+msgstr "স্বয়ংক্রিয়ভাবে আপডেট করা যায়নি — ম্যানুয়ালি আপডেট পরীক্ষা করুন।"
+
+#: casca/updater.py:125
+msgid "Casca update available"
+msgstr "Casca-এর নতুন আপডেট উপলব্ধ"
+
+#: casca/updater.py:128
+#, python-format
+msgid "Version %(latest)s is available (you're on %(current)s)."
+msgstr "সংস্করণ %(latest)s উপলব্ধ (আপনি এখন %(current)s ব্যবহার করছেন)।"
+
+#: casca/updater.py:138
+msgid "Update now"
+msgstr "এখনই আপডেট করুন"
 
 #: casca/window.py:86
 msgid "Choose icon"
@@ -798,7 +844,8 @@ msgstr "অ্যাপ তৈরি করুন"
 msgid "Save changes"
 msgstr "পরিবর্তন সংরক্ষণ করুন"
 
-#: casca/window.py:483#, python-format
+#: casca/window.py:483
+#, python-format
 msgid "%(browser)s doesn't support mobile mode."
 msgstr "%(browser)s মোবাইল মোড সমর্থন করে না।"
 
@@ -842,7 +889,8 @@ msgstr "Casca-এর নিজস্ব উইন্ডো উপলব্ধ �
 msgid "Could not set an icon. Choose an image manually."
 msgstr "আইকন সেট করা যায়নি। ম্যানুয়ালি একটি ছবি নির্বাচন করুন।"
 
-#: casca/window.py:690#, python-format
+#: casca/window.py:690
+#, python-format
 msgid "Error saving: %(error)s"
 msgstr "সংরক্ষণ করতে ত্রুটি: %(error)s"
 
@@ -854,7 +902,8 @@ msgstr "প্রিসেট সাইট"
 msgid "Search by name or category…"
 msgstr "নাম বা বিভাগ অনুযায়ী অনুসন্ধান করুন…"
 
-#: casca/window.py:720 casca/window.py:1035#, python-format
+#: casca/window.py:720 casca/window.py:1035
+#, python-format
 msgid "%(n)d site"
 msgid_plural "%(n)d sites"
 msgstr[0] "%(n)d টি সাইট"
@@ -876,15 +925,18 @@ msgstr "ধরন"
 msgid "Search by name…"
 msgstr "নাম অনুযায়ী অনুসন্ধান করুন…"
 
-#: casca/window.py:985#, python-format
+#: casca/window.py:985
+#, python-format
 msgid "Could not set an icon for %(name)s."
 msgstr "%(name)s-এর জন্য আইকন সেট করা যায়নি।"
 
-#: casca/window.py:991#, python-format
+#: casca/window.py:991
+#, python-format
 msgid "Error installing package: %(error)s"
 msgstr "প্যাকেজ ইনস্টল করতে ত্রুটি: %(error)s"
 
-#: casca/window.py:997#, python-format
+#: casca/window.py:997
+#, python-format
 msgid "Package “%(name)s” installed with %(n)d app."
 msgid_plural "Package “%(name)s” installed with %(n)d apps."
 msgstr[0] "প্যাকেজ “%(name)s” %(n)d টি অ্যাপ সহ ইনস্টল করা হয়েছে।"
@@ -914,7 +966,8 @@ msgstr "অন্তর্নির্মিত ম্যানুয়াল �
 msgid "Choose what to import"
 msgstr "কী আমদানি করবেন তা নির্বাচন করুন"
 
-#: casca/window.py:1213#, python-format
+#: casca/window.py:1213
+#, python-format
 msgid "%(n)d site found"
 msgid_plural "%(n)d sites found"
 msgstr[0] "%(n)d টি সাইট পাওয়া গেছে"
@@ -952,109 +1005,144 @@ msgstr "একটি নতুন ওয়েব অ্যাপ তৈরি �
 msgid "Create"
 msgstr "তৈরি করুন"
 
-#: casca/window.py:1302 casca/window.py:1398
+#: casca/window.py:1302 casca/window.py:1429
 msgid "Import apps"
 msgstr "অ্যাপ আমদানি করুন"
 
-#: casca/window.py:1306 casca/window.py:1348
+#: casca/window.py:1306 casca/window.py:1379
 msgid "Export apps"
 msgstr "অ্যাপ রপ্তানি করুন"
 
-#: casca/window.py:1335
+#: casca/window.py:1337
 msgid "Turns any website into a GNOME app."
 msgstr "যেকোনো ওয়েবসাইটকে GNOME অ্যাপে পরিণত করে।"
 
-#: casca/window.py:1346
+#: casca/window.py:1341
+#, python-format
+msgid ""
+"Version %(latest)s is available — an update notification with a way to "
+"update just popped up."
+msgstr ""
+"সংস্করণ %(latest)s উপলব্ধ — আপডেট করার উপায়সহ একটি বিজ্ঞপ্তি এইমাত্র দেখানো হয়েছে।"
+
+#: casca/window.py:1356
+msgid ""
+"Casca now checks for new releases in the background (once a day at most) and "
+"lets you know with a system notification — no action needed for Flatpak/Snap "
+"installs, which already update themselves."
+msgstr "Casca এখন ব্যাকগ্রাউন্ডে নতুন সংস্করণ পরীক্ষা করে (দিনে সর্বোচ্চ একবার) এবং একটি সিস্টেম বিজ্ঞপ্তির মাধ্যমে আপনাকে জানায় — Flatpak/Snap ইনস্টলেশনে কোনো পদক্ষেপের দরকার নেই, কারণ সেগুলো এমনিতেই নিজে থেকে আপডেট হয়।"
+
+#: casca/window.py:1361
+msgid ""
+"The About dialog now shows the license, a link to the source code, whether "
+"you're on a release/beta/alpha build, and a proper “What's New” page with "
+"each version's changelog."
+msgstr "Casca সম্পর্কে ডায়ালগে এখন লাইসেন্স, সোর্স কোডের লিঙ্ক, আপনি রিলিজ/বিটা/আলফা বিল্ডে আছেন কিনা, এবং প্রতিটি সংস্করণের পরিবর্তন-তালিকাসহ একটি প্রকৃত “নতুন কী আছে” পাতা দেখা যায়।"
+
+#: casca/window.py:1367
+msgid "Source Code"
+msgstr "সোর্স কোড"
+
+#: casca/window.py:1377
 msgid "No app created yet to export."
 msgstr "রপ্তানি করার মতো এখনও কোনো অ্যাপ তৈরি হয়নি।"
 
-#: casca/window.py:1370#, python-format
+#: casca/window.py:1401
+#, python-format
 msgid "Error exporting: %(error)s"
 msgstr "রপ্তানি করতে ত্রুটি: %(error)s"
 
-#: casca/window.py:1373#, python-format
+#: casca/window.py:1404
+#, python-format
 msgid "%(count)d app exported to %(name)s."
 msgid_plural "%(count)d apps exported to %(name)s."
 msgstr[0] "%(count)d টি অ্যাপ %(name)s-এ রপ্তানি করা হয়েছে।"
 msgstr[1] "%(count)d টি অ্যাপ %(name)s-এ রপ্তানি করা হয়েছে।"
 
-#: casca/window.py:1379
+#: casca/window.py:1410
 msgid "Import from where?"
 msgstr "কোথা থেকে আমদানি করবেন?"
 
-#: casca/window.py:1380
+#: casca/window.py:1411
 msgid "Choose a local .json file or a URL (e.g. a GitHub \"raw\" link)."
 msgstr ""
 "একটি স্থানীয় .json ফাইল বা URL নির্বাচন করুন (যেমন, GitHub-এর \"raw\" লিঙ্ক)।"
 
-#: casca/window.py:1382 casca/window.py:1428 casca/window.py:1561#:
-#: casca/window.py:1584
+#: casca/window.py:1413 casca/window.py:1459 casca/window.py:1592
+#: casca/window.py:1615
 msgid "Cancel"
 msgstr "বাতিল করুন"
 
-#: casca/window.py:1383
+#: casca/window.py:1414
 msgid "From a URL"
 msgstr "একটি URL থেকে"
 
-#: casca/window.py:1384
+#: casca/window.py:1415
 msgid "Local file"
 msgstr "স্থানীয় ফাইল"
 
-#: casca/window.py:1417#, python-format
+#: casca/window.py:1448
+#, python-format
 msgid "Error reading the file: %(error)s"
 msgstr "ফাইল পড়তে ত্রুটি: %(error)s"
 
-#: casca/window.py:1423
+#: casca/window.py:1454
 msgid "Import from a URL"
 msgstr "একটি URL থেকে আমদানি করুন"
 
-#: casca/window.py:1424
+#: casca/window.py:1455
 msgid "Paste the JSON file's \"raw\" link (e.g. from a GitHub repository)."
 msgstr "JSON ফাইলের \"raw\" লিঙ্ক পেস্ট করুন (যেমন, কোনো GitHub রিপোজিটরি থেকে)।"
 
-#: casca/window.py:1429
+#: casca/window.py:1460
 msgid "Fetch"
 msgstr "আনুন"
 
-#: casca/window.py:1441
+#: casca/window.py:1472
 msgid "Enter a URL."
 msgstr "একটি URL লিখুন।"
 
-#: casca/window.py:1443
+#: casca/window.py:1474
 msgid "Fetching file…"
 msgstr "ফাইল আনা হচ্ছে…"
 
-#: casca/window.py:1450#, python-format
+#: casca/window.py:1481
+#, python-format
 msgid "Error downloading: %(error)s"
 msgstr "ডাউনলোড করতে ত্রুটি: %(error)s"
 
-#: casca/window.py:1458#, python-format
+#: casca/window.py:1489
+#, python-format
 msgid "Error importing: %(error)s"
 msgstr "আমদানি করতে ত্রুটি: %(error)s"
 
-#: casca/window.py:1461
+#: casca/window.py:1492
 msgid "No app found in the file."
 msgstr "ফাইলে কোনো অ্যাপ পাওয়া যায়নি।"
 
-#: casca/window.py:1469
+#: casca/window.py:1500
 msgid "Nothing selected to import."
 msgstr "আমদানি করার জন্য কিছু নির্বাচিত হয়নি।"
 
-#: casca/window.py:1477#, python-format
+#: casca/window.py:1508
+#, python-format
 msgid "%(n)d app imported."
 msgid_plural "%(n)d apps imported."
 msgstr[0] "%(n)d টি অ্যাপ আমদানি করা হয়েছে।"
 msgstr[1] "%(n)d টি অ্যাপ আমদানি করা হয়েছে।"
 
-#: casca/window.py:1483#, python-format
+#: casca/window.py:1514
+#, python-format
 msgid "• %(name)s: %(reason)s"
 msgstr "• %(name)s: %(reason)s"
 
-#: casca/window.py:1487#, python-format
+#: casca/window.py:1518
+#, python-format
 msgid "%(created)d imported, %(failed)d with errors"
 msgstr "%(created)d টি আমদানি করা হয়েছে, %(failed)d টিতে ত্রুটি হয়েছে"
 
-#: casca/window.py:1489#, python-format
+#: casca/window.py:1520
+#, python-format
 msgid ""
 "Review and adjust manually via the \"Create\" button:\n"
 "\n"
@@ -1064,49 +1152,72 @@ msgstr ""
 "\n"
 "%(lines)s"
 
-#: casca/window.py:1491
+#: casca/window.py:1522
 msgid "Got it"
 msgstr "বুঝেছি"
 
-#: casca/window.py:1505
+#: casca/window.py:1536
 msgid "No web apps yet"
 msgstr "এখনও কোনো ওয়েব অ্যাপ নেই"
 
-#: casca/window.py:1506
+#: casca/window.py:1537
 msgid ""
 "Tap “Create” to make your first app, or open the Store for ready-made sites."
 msgstr ""
 "আপনার প্রথম অ্যাপ তৈরি করতে “তৈরি করুন”-এ ট্যাপ করুন, অথবা তৈরি-করা সাইটের জন্য "
 "স্টোর খুলুন।"
 
-#: casca/window.py:1515
+#: casca/window.py:1546
 msgid "My web apps"
 msgstr "আমার ওয়েব অ্যাপ"
 
-#: casca/window.py:1537
+#: casca/window.py:1568
 msgid "Installed packages"
 msgstr "ইনস্টল করা প্যাকেজ"
 
-#: casca/window.py:1558#, python-format
+#: casca/window.py:1589
+#, python-format
 msgid "Delete “%(name)s”?"
 msgstr "“%(name)s” মুছবেন?"
 
-#: casca/window.py:1559
+#: casca/window.py:1590
 msgid ""
 "The shortcut will be removed from the applications menu and the desktop, if "
 "it exists."
 msgstr "শর্টকাটটি অ্যাপ্লিকেশন মেনু এবং ডেস্কটপ থেকে সরিয়ে ফেলা হবে, যদি তা থাকে।"
 
-#: casca/window.py:1562 casca/window.py:1585
+#: casca/window.py:1593 casca/window.py:1616
 msgid "Delete"
 msgstr "মুছুন"
 
-#: casca/window.py:1576#, python-format
+#: casca/window.py:1607
+#, python-format
 msgid "Delete package “%(name)s”?"
 msgstr "প্যাকেজ “%(name)s” মুছবেন?"
 
-#: casca/window.py:1578#, python-format
+#: casca/window.py:1609
+#, python-format
 msgid "Removes the shortcut and the %(n)d app inside it (%(names)s)."
 msgid_plural "Removes the shortcut and the %(n)d apps inside it (%(names)s)."
 msgstr[0] "শর্টকাট এবং এর ভেতরের %(n)d টি অ্যাপ (%(names)s) মুছে ফেলে।"
 msgstr[1] "শর্টকাট এবং এর ভেতরের %(n)d টি অ্যাপ (%(names)s) মুছে ফেলে।"
+
+#~ msgid ""
+#~ "Casca now speaks 20 languages, picked automatically from the system "
+#~ "locale: English, Portuguese (Brazil), Spanish, French, Italian, German, "
+#~ "Russian, Ukrainian, Polish, Dutch, Turkish, Simplified Chinese, Japanese, "
+#~ "Korean, Vietnamese, Indonesian, Hindi, Arabic, Bengali and Thai."
+#~ msgstr ""
+#~ "Casca এখন সিস্টেমের ভাষা অনুযায়ী স্বয়ংক্রিয়ভাবে বেছে নেওয়া ২০টি ভাষায় কথা "
+#~ "বলে: ইংরেজি, পর্তুগিজ (ব্রাজিল), স্প্যানিশ, ফরাসি, ইতালীয়, জার্মান, রুশ, "
+#~ "ইউক্রেনীয়, পোলিশ, ডাচ, তুর্কি, সরলীকৃত চীনা, জাপানি, কোরিয়ান, ভিয়েতনামী, "
+#~ "ইন্দোনেশীয়, হিন্দি, আরবি, বাংলা এবং থাই।"
+
+#~ msgid ""
+#~ "The creation screen's browser, mobile mode, resolution and icon sections "
+#~ "now have an inline help button — hover for a quick tip, click to jump "
+#~ "straight to that topic in a redesigned, example-filled manual."
+#~ msgstr ""
+#~ "তৈরির স্ক্রিনের ব্রাউজার, মোবাইল মোড, রেজোলিউশন এবং আইকন অংশে এখন একটি "
+#~ "ইনলাইন সহায়তা বোতাম আছে — দ্রুত পরামর্শের জন্য হোভার করুন, উদাহরণে ভরা নতুনভাবে "
+#~ "ডিজাইন করা ম্যানুয়ালে সরাসরি সেই বিষয়ে যেতে ক্লিক করুন।"

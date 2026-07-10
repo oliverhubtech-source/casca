@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Casca 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/oliverhubtech-source/casca/issues\n"
-"POT-Creation-Date: 2026-07-09 22:51-0300\n"
+"POT-Creation-Date: 2026-07-10 16:23-0300\n"
 "PO-Revision-Date: 2026-07-09 16:07-0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -11,167 +11,335 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"#: casca/browsers.py:199
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: casca/browsers.py:209
 msgid "Casca's own window"
-msgstr "Cửa sổ riêng của Casca"#: casca/catalog_strings.py:16 casca/help_content.py:76 casca/presets.py:51
+msgstr "Cửa sổ riêng của Casca"
+
+#: casca/catalog_strings.py:16 casca/help_content.py:76 casca/presets.py:51
 msgid "Artificial Intelligence"
-msgstr "Trí tuệ nhân tạo"#: casca/catalog_strings.py:17
+msgstr "Trí tuệ nhân tạo"
+
+#: casca/catalog_strings.py:17
 msgid "Cloud Computing"
-msgstr "Điện toán đám mây"#: casca/catalog_strings.py:18 casca/help_content.py:86 casca/presets.py:166
+msgstr "Điện toán đám mây"
+
+#: casca/catalog_strings.py:18 casca/help_content.py:86 casca/presets.py:166
 msgid "Conversion & Sharing"
-msgstr "Chuyển đổi & Chia sẻ"#: casca/catalog_strings.py:19
+msgstr "Chuyển đổi & Chia sẻ"
+
+#: casca/catalog_strings.py:19
 msgid "Creativity"
-msgstr "Sáng tạo"#: casca/catalog_strings.py:20
+msgstr "Sáng tạo"
+
+#: casca/catalog_strings.py:20
 msgid "Finance"
-msgstr "Tài chính"#: casca/catalog_strings.py:21 casca/window.py:935
+msgstr "Tài chính"
+
+#: casca/catalog_strings.py:21 casca/window.py:935
 msgid "Marketplace"
-msgstr "Chợ ứng dụng"#: casca/catalog_strings.py:22
+msgstr "Chợ ứng dụng"
+
+#: casca/catalog_strings.py:22
 msgid "Messenger"
-msgstr "Ứng dụng nhắn tin"#: casca/catalog_strings.py:23
+msgstr "Ứng dụng nhắn tin"
+
+#: casca/catalog_strings.py:23
 msgid "Music Streaming"
-msgstr "Phát nhạc trực tuyến"#: casca/catalog_strings.py:24 casca/window.py:936
+msgstr "Phát nhạc trực tuyến"
+
+#: casca/catalog_strings.py:24 casca/window.py:936
 msgid "News"
-msgstr "Tin tức"#: casca/catalog_strings.py:25
+msgstr "Tin tức"
+
+#: casca/catalog_strings.py:25
 msgid "PDF"
-msgstr "PDF"#: casca/catalog_strings.py:26
+msgstr "PDF"
+
+#: casca/catalog_strings.py:26
 msgid "Productivity"
-msgstr "Năng suất"#: casca/catalog_strings.py:27
+msgstr "Năng suất"
+
+#: casca/catalog_strings.py:27
 msgid "Search Engine"
-msgstr "Công cụ tìm kiếm"#: casca/catalog_strings.py:28
+msgstr "Công cụ tìm kiếm"
+
+#: casca/catalog_strings.py:28
 msgid "Security"
-msgstr "Bảo mật"#: casca/catalog_strings.py:29
+msgstr "Bảo mật"
+
+#: casca/catalog_strings.py:29
 msgid "Social Network"
-msgstr "Mạng xã hội"#: casca/catalog_strings.py:30
+msgstr "Mạng xã hội"
+
+#: casca/catalog_strings.py:30
 msgid "Utility"
-msgstr "Tiện ích"#: casca/catalog_strings.py:31
+msgstr "Tiện ích"
+
+#: casca/catalog_strings.py:31
 msgid "Video Streaming"
-msgstr "Phát video trực tuyến"#: casca/catalog_strings.py:33
+msgstr "Phát video trực tuyến"
+
+#: casca/catalog_strings.py:33
 msgid "Argentina"
-msgstr "Argentina"#: casca/catalog_strings.py:34
+msgstr "Argentina"
+
+#: casca/catalog_strings.py:34
 msgid "Brazil"
-msgstr "Brazil"#: casca/catalog_strings.py:35
+msgstr "Brazil"
+
+#: casca/catalog_strings.py:35
 msgid "Chile"
-msgstr "Chile"#: casca/catalog_strings.py:36
+msgstr "Chile"
+
+#: casca/catalog_strings.py:36
 msgid "Colombia"
-msgstr "Colombia"#: casca/catalog_strings.py:37
+msgstr "Colombia"
+
+#: casca/catalog_strings.py:37
 msgid "Europe"
-msgstr "Châu Âu"#: casca/catalog_strings.py:38
+msgstr "Châu Âu"
+
+#: casca/catalog_strings.py:38
 msgid "France"
-msgstr "Pháp"#: casca/catalog_strings.py:39
+msgstr "Pháp"
+
+#: casca/catalog_strings.py:39
 msgid "Germany"
-msgstr "Đức"#: casca/catalog_strings.py:40
+msgstr "Đức"
+
+#: casca/catalog_strings.py:40
 msgid "International"
-msgstr "Quốc tế"#: casca/catalog_strings.py:41
+msgstr "Quốc tế"
+
+#: casca/catalog_strings.py:41
 msgid "Mexico"
-msgstr "Mexico"#: casca/catalog_strings.py:42
+msgstr "Mexico"
+
+#: casca/catalog_strings.py:42
 msgid "Netherlands"
-msgstr "Hà Lan"#: casca/catalog_strings.py:43
+msgstr "Hà Lan"
+
+#: casca/catalog_strings.py:43
 msgid "Paraguay"
-msgstr "Paraguay"#: casca/catalog_strings.py:44
+msgstr "Paraguay"
+
+#: casca/catalog_strings.py:44
 msgid "Poland"
-msgstr "Ba Lan"#: casca/catalog_strings.py:45
+msgstr "Ba Lan"
+
+#: casca/catalog_strings.py:45
 msgid "Spain"
-msgstr "Tây Ban Nha"#: casca/catalog_strings.py:46
+msgstr "Tây Ban Nha"
+
+#: casca/catalog_strings.py:46
 msgid "United Kingdom"
-msgstr "Vương quốc Anh"#: casca/catalog_strings.py:47
+msgstr "Vương quốc Anh"
+
+#: casca/catalog_strings.py:47
 msgid "United States"
-msgstr "Hoa Kỳ"#: casca/catalog_strings.py:48
+msgstr "Hoa Kỳ"
+
+#: casca/catalog_strings.py:48
 msgid "Uruguay"
-msgstr "Uruguay"#: casca/catalog_strings.py:50
+msgstr "Uruguay"
+
+#: casca/catalog_strings.py:50
 msgid "Google Workspace"
-msgstr "Google Workspace"#: casca/catalog_strings.py:51
+msgstr "Google Workspace"
+
+#: casca/catalog_strings.py:51
 msgid "Microsoft 365"
-msgstr "Microsoft 365"#: casca/catalog_strings.py:52
+msgstr "Microsoft 365"
+
+#: casca/catalog_strings.py:52
 msgid "Social Media"
-msgstr "Mạng xã hội"#: casca/catalog_strings.py:53
+msgstr "Mạng xã hội"
+
+#: casca/catalog_strings.py:53
 msgid "YouTube"
-msgstr "YouTube"#: casca/devices.py:79
+msgstr "YouTube"
+
+#: casca/devices.py:79
 msgid "Small (800×600)"
-msgstr "Nhỏ (800×600)"#: casca/devices.py:80
+msgstr "Nhỏ (800×600)"
+
+#: casca/devices.py:80
 msgid "Medium (1024×768)"
-msgstr "Vừa (1024×768)"#: casca/devices.py:81
+msgstr "Vừa (1024×768)"
+
+#: casca/devices.py:81
 msgid "Laptop (1280×800)"
-msgstr "Laptop (1280×800)"#: casca/devices.py:82
+msgstr "Laptop (1280×800)"
+
+#: casca/devices.py:82
 msgid "Laptop HD (1366×768)"
-msgstr "Laptop HD (1366×768)"#: casca/devices.py:83
+msgstr "Laptop HD (1366×768)"
+
+#: casca/devices.py:83
 msgid "Large (1600×900)"
-msgstr "Lớn (1600×900)"#: casca/devices.py:84
+msgstr "Lớn (1600×900)"
+
+#: casca/devices.py:84
 msgid "Full HD (1920×1080)"
-msgstr "Full HD (1920×1080)"#: casca/entries.py:203 casca/entries.py:245#, python-format
+msgstr "Full HD (1920×1080)"
+
+#: casca/entries.py:205 casca/entries.py:247
+#, python-format
 msgid "Browser not found: %(key)s"
-msgstr "Không tìm thấy trình duyệt: %(key)s"#: casca/entries.py:249#, python-format
+msgstr "Không tìm thấy trình duyệt: %(key)s"
+
+#: casca/entries.py:251
+#, python-format
 msgid "App not found: %(slug)s"
-msgstr "Không tìm thấy ứng dụng: %(slug)s"#: casca/entries.py:337
+msgstr "Không tìm thấy ứng dụng: %(slug)s"
+
+#: casca/entries.py:339
 msgid "remote file too large"
-msgstr "tệp từ xa quá lớn"#: casca/entries.py:341#, python-format
+msgstr "tệp từ xa quá lớn"
+
+#: casca/entries.py:343
+#, python-format
 msgid "could not download the file (%(error)s)"
-msgstr "không thể tải tệp xuống (%(error)s)"#: casca/entries.py:350#, python-format
+msgstr "không thể tải tệp xuống (%(error)s)"
+
+#: casca/entries.py:352
+#, python-format
 msgid "could not read the file (%(error)s)"
-msgstr "không thể đọc tệp (%(error)s)"#: casca/entries.py:354
+msgstr "không thể đọc tệp (%(error)s)"
+
+#: casca/entries.py:356
 msgid "unexpected format: no 'apps' list found"
-msgstr "định dạng không hợp lệ: không tìm thấy danh sách 'apps'"#: casca/entries.py:388#, python-format
+msgstr "định dạng không hợp lệ: không tìm thấy danh sách 'apps'"
+
+#: casca/entries.py:390
+#, python-format
 msgid "item %(n)d"
-msgstr "mục %(n)d"#: casca/entries.py:390
+msgstr "mục %(n)d"
+
+#: casca/entries.py:392
 msgid "missing name or URL"
-msgstr "thiếu tên hoặc URL"#: casca/entries.py:393 casca/entries.py:398
+msgstr "thiếu tên hoặc URL"
+
+#: casca/entries.py:395 casca/entries.py:400
 msgid "unsupported URL scheme"
-msgstr "giao thức URL không được hỗ trợ"#: casca/entries.py:404
+msgstr "giao thức URL không được hỗ trợ"
+
+#: casca/entries.py:406
 msgid "no browser available"
-msgstr "không có trình duyệt khả dụng"#: casca/entries.py:423
+msgstr "không có trình duyệt khả dụng"
+
+#: casca/entries.py:425
 msgid "could not get an icon"
-msgstr "không thể lấy biểu tượng"#: casca/entries.py:481
+msgstr "không thể lấy biểu tượng"
+
+#: casca/entries.py:483
 msgid "No browser available to assemble the package."
-msgstr "Không có trình duyệt nào khả dụng để đóng gói."#: casca/entries.py:553
+msgstr "Không có trình duyệt nào khả dụng để đóng gói."
+
+#: casca/entries.py:555
 msgid "Package of web apps created by Casca"
-msgstr "Gói ứng dụng web được tạo bởi Casca"#: casca/help_content.py:29
+msgstr "Gói ứng dụng web được tạo bởi Casca"
+
+#: casca/help_content.py:29
 msgid "User Guide"
-msgstr "Hướng dẫn sử dụng"#: casca/help_content.py:36
+msgstr "Hướng dẫn sử dụng"
+
+#: casca/help_content.py:36
 msgid "Casca — User Guide"
-msgstr "Casca — Hướng dẫn sử dụng"#: casca/help_content.py:37
+msgstr "Casca — Hướng dẫn sử dụng"
+
+#: casca/help_content.py:37
 msgid "Casca icon"
-msgstr "Biểu tượng Casca"#: casca/help_content.py:39
+msgstr "Biểu tượng Casca"
+
+#: casca/help_content.py:39
 msgid "Websites, turned into apps. No fuss."
-msgstr "Trang web biến thành ứng dụng. Không rườm rà."#: casca/help_content.py:41
+msgstr "Trang web biến thành ứng dụng. Không rườm rà."
+
+#: casca/help_content.py:41
 msgid ""
 "Casca turns any address into a GNOME app: icon in the menu, its own window, "
 "no leftover browser bar. This guide covers every option on the creation "
 "screen."
-msgstr "Casca biến bất kỳ địa chỉ nào thành ứng dụng GNOME: biểu tượng trong menu, cửa sổ riêng, không có thanh trình duyệt thừa. Hướng dẫn này bao gồm mọi tùy chọn trên màn hình tạo."#: casca/help_content.py:44
+msgstr ""
+"Casca biến bất kỳ địa chỉ nào thành ứng dụng GNOME: biểu tượng trong menu, "
+"cửa sổ riêng, không có thanh trình duyệt thừa. Hướng dẫn này bao gồm mọi tùy "
+"chọn trên màn hình tạo."
+
+#: casca/help_content.py:44
 msgid "First app"
-msgstr "Ứng dụng đầu tiên"#: casca/help_content.py:45
+msgstr "Ứng dụng đầu tiên"
+
+#: casca/help_content.py:45
 msgid "Presets"
-msgstr "Có sẵn"#: casca/help_content.py:46 casca/help_content.py:89
+msgstr "Có sẵn"
+
+#: casca/help_content.py:46 casca/help_content.py:89
 msgid "Icon"
-msgstr "Biểu tượng"#: casca/help_content.py:47
+msgstr "Biểu tượng"
+
+#: casca/help_content.py:47
 msgid "Shortcut"
-msgstr "Lối tắt"#: casca/help_content.py:48 casca/window.py:235
+msgstr "Lối tắt"
+
+#: casca/help_content.py:48 casca/window.py:235
 msgid "Browser"
-msgstr "Trình duyệt"#: casca/help_content.py:49 casca/help_content.py:140
+msgstr "Trình duyệt"
+
+#: casca/help_content.py:49 casca/help_content.py:140
 msgid "Mobile mode"
-msgstr "Chế độ di động"#: casca/help_content.py:50
+msgstr "Chế độ di động"
+
+#: casca/help_content.py:50
 msgid "Resolution"
-msgstr "Độ phân giải"#: casca/help_content.py:51
+msgstr "Độ phân giải"
+
+#: casca/help_content.py:51
 msgid "Edit"
-msgstr "Chỉnh sửa"#: casca/help_content.py:52
+msgstr "Chỉnh sửa"
+
+#: casca/help_content.py:52
 msgid "Creating your first app"
-msgstr "Tạo ứng dụng đầu tiên của bạn"#: casca/help_content.py:53
+msgstr "Tạo ứng dụng đầu tiên của bạn"
+
+#: casca/help_content.py:53
 msgid "Two buttons on the home screen, two paths."
-msgstr "Hai nút trên màn hình chính, hai cách."#: casca/help_content.py:55
+msgstr "Hai nút trên màn hình chính, hai cách."
+
+#: casca/help_content.py:55
 msgid ""
 "<strong>Create from preset</strong> — pick an already-cataloged site (Gmail, "
 "WhatsApp, Netflix, ChatGPT…), with name, address and icon ready to go."
-msgstr "<strong>Tạo từ mẫu có sẵn</strong> — chọn một trang web đã có trong danh mục (Gmail, WhatsApp, Netflix, ChatGPT…), với tên, địa chỉ và biểu tượng đã sẵn sàng."#: casca/help_content.py:59
+msgstr ""
+"<strong>Tạo từ mẫu có sẵn</strong> — chọn một trang web đã có trong danh mục "
+"(Gmail, WhatsApp, Netflix, ChatGPT…), với tên, địa chỉ và biểu tượng đã sẵn "
+"sàng."
+
+#: casca/help_content.py:59
 msgid ""
 "<strong>Create new web app</strong> — start from scratch: you type in the "
 "name and address."
-msgstr "<strong>Tạo ứng dụng web mới</strong> — bắt đầu từ đầu: bạn tự nhập tên và địa chỉ."#: casca/help_content.py:62
+msgstr ""
+"<strong>Tạo ứng dụng web mới</strong> — bắt đầu từ đầu: bạn tự nhập tên và "
+"địa chỉ."
+
+#: casca/help_content.py:62
 msgid ""
 "Everything below the name and address is <strong>optional</strong>. Without "
 "touching anything, Casca figures it out on its own: fetches the icon, "
 "doesn't create a Desktop shortcut, opens in its own window at normal size."
-msgstr "Mọi thứ bên dưới tên và địa chỉ đều là <strong>tùy chọn</strong>. Không cần chạm vào gì, Casca sẽ tự xử lý: lấy biểu tượng, không tạo lối tắt trên Màn hình nền, mở trong cửa sổ riêng ở kích thước bình thường."#: casca/help_content.py:66
+msgstr ""
+"Mọi thứ bên dưới tên và địa chỉ đều là <strong>tùy chọn</strong>. Không cần "
+"chạm vào gì, Casca sẽ tự xử lý: lấy biểu tượng, không tạo lối tắt trên Màn "
+"hình nền, mở trong cửa sổ riêng ở kích thước bình thường."
+
+#: casca/help_content.py:66
 msgid "Preset sites"
-msgstr "Trang web có sẵn"#: casca/help_content.py:68
+msgstr "Trang web có sẵn"
+
+#: casca/help_content.py:68
 msgid ""
 "A search field at the top filters by site name (<code class=\"eyebrow text-"
 "[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 "
@@ -179,57 +347,112 @@ msgid ""
 "[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 "
 "py-0.5 rounded\">microsoft</code>). Categories start collapsed — tap one to "
 "expand it."
-msgstr "Ô tìm kiếm ở trên lọc theo tên trang web (<code class=\"eyebrow text-[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 py-0.5 rounded\">gmail</code>) hoặc theo danh mục (<code class=\"eyebrow text-[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 py-0.5 rounded\">microsoft</code>). Các danh mục bắt đầu ở trạng thái thu gọn — chạm vào một danh mục để mở rộng."
+msgstr ""
+"Ô tìm kiếm ở trên lọc theo tên trang web (<code class=\"eyebrow text-[13px] "
+"bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 py-0.5 "
+"rounded\">gmail</code>) hoặc theo danh mục (<code class=\"eyebrow text-"
+"[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 "
+"py-0.5 rounded\">microsoft</code>). Các danh mục bắt đầu ở trạng thái thu "
+"gọn — chạm vào một danh mục để mở rộng."
+
 #: casca/help_content.py:74 casca/presets.py:23
 msgid "Google Products"
-msgstr "Sản phẩm Google"#: casca/help_content.py:75 casca/presets.py:39
+msgstr "Sản phẩm Google"
+
+#: casca/help_content.py:75 casca/presets.py:39
 msgid "Microsoft Products"
-msgstr "Sản phẩm Microsoft"#: casca/help_content.py:77 casca/presets.py:66
+msgstr "Sản phẩm Microsoft"
+
+#: casca/help_content.py:77 casca/presets.py:66
 msgid "Search Engines"
-msgstr "Công cụ tìm kiếm"#: casca/help_content.py:78 casca/presets.py:78
+msgstr "Công cụ tìm kiếm"
+
+#: casca/help_content.py:78 casca/presets.py:78
 msgid "Messengers"
-msgstr "Ứng dụng nhắn tin"#: casca/help_content.py:79 casca/presets.py:88
+msgstr "Ứng dụng nhắn tin"
+
+#: casca/help_content.py:79 casca/presets.py:88
 msgid "Social Networks"
-msgstr "Mạng xã hội"#: casca/help_content.py:80 casca/presets.py:99
+msgstr "Mạng xã hội"
+
+#: casca/help_content.py:80 casca/presets.py:99
 msgid "Streaming"
-msgstr "Phát trực tuyến"#: casca/help_content.py:81 casca/presets.py:111
+msgstr "Phát trực tuyến"
+
+#: casca/help_content.py:81 casca/presets.py:111
 msgid "Music"
-msgstr "Âm nhạc"#: casca/help_content.py:82 casca/presets.py:123
+msgstr "Âm nhạc"
+
+#: casca/help_content.py:82 casca/presets.py:123
 msgid "Productivity & Organization"
-msgstr "Năng suất & Tổ chức"#: casca/help_content.py:83 casca/presets.py:136
+msgstr "Năng suất & Tổ chức"
+
+#: casca/help_content.py:83 casca/presets.py:136
 msgid "PDF Tools"
-msgstr "Công cụ PDF"#: casca/help_content.py:84 casca/presets.py:145
+msgstr "Công cụ PDF"
+
+#: casca/help_content.py:84 casca/presets.py:145
 msgid "Calculations & Finance"
-msgstr "Tính toán & Tài chính"#: casca/help_content.py:85 casca/presets.py:157
+msgstr "Tính toán & Tài chính"
+
+#: casca/help_content.py:85 casca/presets.py:157
 msgid "Generators & Utilities"
-msgstr "Công cụ tạo & Tiện ích"#: casca/help_content.py:87 casca/presets.py:176
+msgstr "Công cụ tạo & Tiện ích"
+
+#: casca/help_content.py:87 casca/presets.py:176
 msgid "Security & Diagnostics"
-msgstr "Bảo mật & Chẩn đoán"#: casca/help_content.py:88 casca/presets.py:186
+msgstr "Bảo mật & Chẩn đoán"
+
+#: casca/help_content.py:88 casca/presets.py:186
 msgid "Creativity & Content"
-msgstr "Sáng tạo & Nội dung"#: casca/help_content.py:90
+msgstr "Sáng tạo & Nội dung"
+
+#: casca/help_content.py:90
 msgid "Check <strong>Customize icon and shortcut</strong> to choose manually."
 msgstr ""
-"Chọn <strong>Tùy chỉnh biểu tượng và lối tắt</strong> để chọn thủ công."#: casca/help_content.py:91 casca/window.py:356
+"Chọn <strong>Tùy chỉnh biểu tượng và lối tắt</strong> để chọn thủ công."
+
+#: casca/help_content.py:91 casca/window.py:356
 msgid "Search online"
-msgstr "Tìm kiếm trực tuyến"#: casca/help_content.py:93
+msgstr "Tìm kiếm trực tuyến"
+
+#: casca/help_content.py:93
 msgid ""
 "Checks several sources — Google, DuckDuckGo, apple-touch-icon, PWA manifest "
 "— and shows the results in a grid."
-msgstr "Kiểm tra nhiều nguồn — Google, DuckDuckGo, apple-touch-icon, tệp kê khai PWA — và hiển thị kết quả dưới dạng lưới."#: casca/help_content.py:96 casca/window.py:358
+msgstr ""
+"Kiểm tra nhiều nguồn — Google, DuckDuckGo, apple-touch-icon, tệp kê khai PWA "
+"— và hiển thị kết quả dưới dạng lưới."
+
+#: casca/help_content.py:96 casca/window.py:358
 msgid "From computer"
-msgstr "Từ máy tính"#: casca/help_content.py:97
+msgstr "Từ máy tính"
+
+#: casca/help_content.py:97
 msgid "Picks a PNG, JPG or SVG file already saved on your computer."
-msgstr "Chọn một tệp PNG, JPG hoặc SVG đã lưu sẵn trên máy tính của bạn."#: casca/help_content.py:98 casca/window.py:360
+msgstr "Chọn một tệp PNG, JPG hoặc SVG đã lưu sẵn trên máy tính của bạn."
+
+#: casca/help_content.py:98 casca/window.py:360
 msgid "From gallery"
-msgstr "Từ thư viện ảnh"#: casca/help_content.py:99
+msgstr "Từ thư viện ảnh"
+
+#: casca/help_content.py:99
 msgid "Over 160 brand icons already included, no internet needed."
-msgstr "Hơn 160 biểu tượng thương hiệu đã có sẵn, không cần internet."#: casca/help_content.py:101
+msgstr "Hơn 160 biểu tượng thương hiệu đã có sẵn, không cần internet."
+
+#: casca/help_content.py:101
 msgid ""
 "Without checking anything, Casca fetches an icon automatically on save — or "
 "uses the icon that's already set, if the app came from a preset."
-msgstr "Không cần chọn gì, Casca sẽ tự động lấy biểu tượng khi lưu — hoặc dùng biểu tượng đã có sẵn, nếu ứng dụng đến từ một mẫu có sẵn."#: casca/help_content.py:104
+msgstr ""
+"Không cần chọn gì, Casca sẽ tự động lấy biểu tượng khi lưu — hoặc dùng biểu "
+"tượng đã có sẵn, nếu ứng dụng đến từ một mẫu có sẵn."
+
+#: casca/help_content.py:104
 msgid "Example"
-msgstr "Ví dụ"#: casca/help_content.py:106
+msgstr "Ví dụ"
+
+#: casca/help_content.py:106
 msgid ""
 "Your bank's site favicon looks blurry at a larger size — pick <strong>From "
 "gallery</strong> for a clean pre-made icon, or <strong>From computer</"
@@ -241,33 +464,62 @@ msgstr ""
 "chọn <strong>Từ thư viện ảnh</strong> để có biểu tượng có sẵn gọn gàng, hoặc "
 "<strong>Từ máy tính</strong> nếu bạn đã lưu sẵn logo đẹp hơn. Dù bạn chọn "
 "gì, nó cũng sẽ được chuẩn hóa thành ảnh 256×256 sắc nét (tệp SVG được giữ "
-"nguyên vì chúng co giãn hoàn hảo)."#: casca/help_content.py:111
+"nguyên vì chúng co giãn hoàn hảo)."
+
+#: casca/help_content.py:111
 msgid "Desktop Shortcut"
-msgstr "Lối tắt trên màn hình nền"#: casca/help_content.py:113
+msgstr "Lối tắt trên màn hình nền"
+
+#: casca/help_content.py:113
 msgid ""
 "Every app already shows up in the GNOME applications menu. To also get an "
 "icon on the Desktop, check <strong>Customize icon and shortcut</strong> and "
 "turn on <strong>Also create on the Desktop</strong>."
-msgstr "Mọi ứng dụng đều đã hiện trong menu ứng dụng của GNOME. Để có thêm biểu tượng trên Màn hình nền, hãy chọn <strong>Tùy chỉnh biểu tượng và lối tắt</strong> rồi bật <strong>Cũng tạo trên Màn hình nền</strong>."#: casca/help_content.py:117
+msgstr ""
+"Mọi ứng dụng đều đã hiện trong menu ứng dụng của GNOME. Để có thêm biểu "
+"tượng trên Màn hình nền, hãy chọn <strong>Tùy chỉnh biểu tượng và lối tắt</"
+"strong> rồi bật <strong>Cũng tạo trên Màn hình nền</strong>."
+
+#: casca/help_content.py:117
 msgid "Custom browser"
-msgstr "Trình duyệt tùy chỉnh"#: casca/help_content.py:119
+msgstr "Trình duyệt tùy chỉnh"
+
+#: casca/help_content.py:119
 msgid ""
 "By default, every app opens in <strong>Casca's own window</strong>: lighter, "
 "top bar automatically colored to match the icon, isolated session per app."
-msgstr "Theo mặc định, mọi ứng dụng đều mở trong <strong>cửa sổ riêng của Casca</strong>: nhẹ hơn, thanh trên cùng tự động đổi màu theo biểu tượng, phiên làm việc riêng biệt cho từng ứng dụng."#: casca/help_content.py:123
+msgstr ""
+"Theo mặc định, mọi ứng dụng đều mở trong <strong>cửa sổ riêng của Casca</"
+"strong>: nhẹ hơn, thanh trên cùng tự động đổi màu theo biểu tượng, phiên làm "
+"việc riêng biệt cho từng ứng dụng."
+
+#: casca/help_content.py:123
 msgid ""
 "<strong>Heads up:</strong> sites with Google login (Gmail, Drive, Calendar, "
 "Meet…) tend to refuse login in the built-in window — a Google restriction "
 "against unrecognized browsers, with no workaround. Check <strong>Use a "
 "custom browser</strong> and pick Chrome, Helium, GNOME Web or another "
 "installed browser."
-msgstr "<strong>Lưu ý:</strong> các trang có đăng nhập Google (Gmail, Drive, Lịch, Meet…) thường từ chối đăng nhập trong cửa sổ tích hợp — đây là hạn chế của Google đối với các trình duyệt không được nhận diện, không có cách khắc phục. Hãy chọn <strong>Dùng trình duyệt tùy chỉnh</strong> và chọn Chrome, Helium, GNOME Web hoặc trình duyệt khác đã cài đặt."#: casca/help_content.py:129
+msgstr ""
+"<strong>Lưu ý:</strong> các trang có đăng nhập Google (Gmail, Drive, Lịch, "
+"Meet…) thường từ chối đăng nhập trong cửa sổ tích hợp — đây là hạn chế của "
+"Google đối với các trình duyệt không được nhận diện, không có cách khắc "
+"phục. Hãy chọn <strong>Dùng trình duyệt tùy chỉnh</strong> và chọn Chrome, "
+"Helium, GNOME Web hoặc trình duyệt khác đã cài đặt."
+
+#: casca/help_content.py:129
 msgid ""
 "With a Chromium-based browser (Chrome, Chromium, Brave, Edge, Vivaldi, "
 "Helium…) and more than one account configured in it, <strong>Browser "
 "account</strong> also shows up — choose which already-logged-in account "
 "opens the app, instead of a new profile with no login."
-msgstr "Với trình duyệt dựa trên Chromium (Chrome, Chromium, Brave, Edge, Vivaldi, Helium…) có từ hai tài khoản trở lên, mục <strong>Tài khoản trình duyệt</strong> cũng xuất hiện — chọn tài khoản đã đăng nhập nào sẽ mở ứng dụng, thay vì một hồ sơ mới chưa đăng nhập."#: casca/help_content.py:135
+msgstr ""
+"Với trình duyệt dựa trên Chromium (Chrome, Chromium, Brave, Edge, Vivaldi, "
+"Helium…) có từ hai tài khoản trở lên, mục <strong>Tài khoản trình duyệt</"
+"strong> cũng xuất hiện — chọn tài khoản đã đăng nhập nào sẽ mở ứng dụng, "
+"thay vì một hồ sơ mới chưa đăng nhập."
+
+#: casca/help_content.py:135
 msgid ""
 "You use Chrome for everyday browsing and want Gmail to open already signed "
 "into your work account instead of asking you to log in again. Turn on "
@@ -279,12 +531,19 @@ msgstr ""
 "vào tài khoản công việc, thay vì yêu cầu đăng nhập lại. Bật <strong>Dùng "
 "trình duyệt tùy chỉnh</strong>, chọn Chrome, rồi chọn tài khoản của bạn "
 "trong <strong>Tài khoản trình duyệt</strong> — Gmail sẽ mở thẳng vào hộp thư "
-"đó."#: casca/help_content.py:142
+"đó."
+
+#: casca/help_content.py:142
 msgid ""
 "Check <strong>Open in mobile mode</strong> and pick a device — Google Pixel, "
 "iPhone, Galaxy, iPad. The app identifies itself to the site as that device, "
 "unlocking the mobile layout (usually simpler and faster)."
-msgstr "Chọn <strong>Mở ở chế độ di động</strong> và chọn một thiết bị — Google Pixel, iPhone, Galaxy, iPad. Ứng dụng sẽ tự nhận diện với trang web như thiết bị đó, mở khóa giao diện di động (thường đơn giản và nhanh hơn)."#: casca/help_content.py:147
+msgstr ""
+"Chọn <strong>Mở ở chế độ di động</strong> và chọn một thiết bị — Google "
+"Pixel, iPhone, Galaxy, iPad. Ứng dụng sẽ tự nhận diện với trang web như "
+"thiết bị đó, mở khóa giao diện di động (thường đơn giản và nhanh hơn)."
+
+#: casca/help_content.py:147
 msgid ""
 "Pick <strong>iPhone 15 Pro</strong> for a site like X (Twitter) and it "
 "serves the same stripped-down layout you'd get on a real phone — fewer side "
@@ -296,271 +555,598 @@ msgstr ""
 "hiển thị giao diện rút gọn giống như trên điện thoại thật — ít bảng bên hơn, "
 "dòng thời gian đơn giản hơn. Điều này thay đổi thông tin nhận dạng mà ứng "
 "dụng gửi đến trang web, không chỉ kích thước cửa sổ, vì vậy hãy kết hợp với "
-"độ phân giải tùy chỉnh bên dưới để khớp cả hình dạng màn hình điện thoại."#: casca/help_content.py:152
+"độ phân giải tùy chỉnh bên dưới để khớp cả hình dạng màn hình điện thoại."
+
+#: casca/help_content.py:152
 msgid "Window resolution"
-msgstr "Độ phân giải cửa sổ"#: casca/help_content.py:154
+msgstr "Độ phân giải cửa sổ"
+
+#: casca/help_content.py:154
 msgid ""
 "Check <strong>Customize window resolution</strong> — three ways to set the "
 "size, works with or without mobile mode enabled."
-msgstr "Chọn <strong>Tùy chỉnh độ phân giải cửa sổ</strong> — có ba cách để đặt kích thước, hoạt động dù bật hay tắt chế độ di động."#: casca/help_content.py:158
+msgstr ""
+"Chọn <strong>Tùy chỉnh độ phân giải cửa sổ</strong> — có ba cách để đặt kích "
+"thước, hoạt động dù bật hay tắt chế độ di động."
+
+#: casca/help_content.py:158
 msgid ""
 "<strong>By device</strong> — uses the screen size of the device chosen in "
 "mobile mode."
-msgstr "<strong>Theo thiết bị</strong> — dùng kích thước màn hình của thiết bị đã chọn ở chế độ di động."#: casca/help_content.py:160
+msgstr ""
+"<strong>Theo thiết bị</strong> — dùng kích thước màn hình của thiết bị đã "
+"chọn ở chế độ di động."
+
+#: casca/help_content.py:160
 msgid "<strong>Default size</strong> — common resolutions (laptop, Full HD…)."
 msgstr ""
 "<strong>Kích thước mặc định</strong> — độ phân giải phổ biến (laptop, Full "
-"HD…)."#: casca/help_content.py:161
+"HD…)."
+
+#: casca/help_content.py:161
 msgid "<strong>Custom</strong> — you type in width and height in pixels."
 msgstr ""
-"<strong>Tùy chỉnh</strong> — bạn nhập chiều rộng và chiều cao theo pixel."#: casca/help_content.py:163
+"<strong>Tùy chỉnh</strong> — bạn nhập chiều rộng và chiều cao theo pixel."
+
+#: casca/help_content.py:163
 msgid ""
 "You want a WhatsApp Web window that's tall and narrow, like a phone propped "
 "up next to your monitor — pick <strong>Custom</strong> and set it to 400 × "
 "900."
 msgstr ""
 "Bạn muốn một cửa sổ WhatsApp Web cao và hẹp, giống như điện thoại dựng cạnh "
-"màn hình — chọn <strong>Tùy chỉnh</strong> và đặt thành 400 × 900."#: casca/help_content.py:166
+"màn hình — chọn <strong>Tùy chỉnh</strong> và đặt thành 400 × 900."
+
+#: casca/help_content.py:166
 msgid "Edit and delete"
-msgstr "Chỉnh sửa và xóa"#: casca/help_content.py:168
+msgstr "Chỉnh sửa và xóa"
+
+#: casca/help_content.py:168
 msgid ""
 "On the home screen, every app has a pencil to <strong>edit</strong> (changes "
 "any setting, including ones that were disabled at creation) and a trash icon "
 "to <strong>delete</strong> (removes the shortcut from the menu, the Desktop, "
 "and the saved icon)."
-msgstr "Trên màn hình chính, mỗi ứng dụng có một biểu tượng bút chì để <strong>chỉnh sửa</strong> (thay đổi bất kỳ cài đặt nào, kể cả những cài đặt đã tắt lúc tạo) và một biểu tượng thùng rác để <strong>xóa</strong> (xóa lối tắt khỏi menu, khỏi Màn hình nền và biểu tượng đã lưu)."#: casca/help_content.py:173
+msgstr ""
+"Trên màn hình chính, mỗi ứng dụng có một biểu tượng bút chì để <strong>chỉnh "
+"sửa</strong> (thay đổi bất kỳ cài đặt nào, kể cả những cài đặt đã tắt lúc "
+"tạo) và một biểu tượng thùng rác để <strong>xóa</strong> (xóa lối tắt khỏi "
+"menu, khỏi Màn hình nền và biểu tượng đã lưu)."
+
+#: casca/help_content.py:173
 msgid "Casca — built to turn websites into GNOME apps."
-msgstr "Casca — được tạo ra để biến trang web thành ứng dụng GNOME."#: casca/icons.py:171
+msgstr "Casca — được tạo ra để biến trang web thành ứng dụng GNOME."
+
+#: casca/icons.py:171
 msgid "Site icon (.ico)"
-msgstr "Biểu tượng trang web (.ico)"#: casca/icons.py:172
+msgstr "Biểu tượng trang web (.ico)"
+
+#: casca/icons.py:172
 msgid "Site icon (32px)"
-msgstr "Biểu tượng trang web (32px)"#: casca/icons.py:173
+msgstr "Biểu tượng trang web (32px)"
+
+#: casca/icons.py:173
 msgid "Apple touch icon"
-msgstr "Biểu tượng Apple Touch"#: casca/icons.py:179
+msgstr "Biểu tượng Apple Touch"
+
+#: casca/icons.py:179
 msgid "PWA Manifest"
-msgstr "PWA Manifest"#: casca/package_launcher.py:72 casca/package_launcher.py:113#: casca/window.py:934
+msgstr "PWA Manifest"
+
+#: casca/package_launcher.py:73 casca/package_launcher.py:119
+#: casca/window.py:934
 msgid "Package"
-msgstr "Gói"#: casca/store.py:80
+msgstr "Gói"
+
+#: casca/store.py:80
 msgid "Independent"
-msgstr "Độc lập"#: casca/store.py:81 casca/store.py:97
+msgstr "Độc lập"
+
+#: casca/store.py:81 casca/store.py:97
 msgid "Other"
-msgstr "Khác"#: casca/store.py:92 casca/window.py:1038
+msgstr "Khác"
+
+#: casca/store.py:92 casca/window.py:1038
 msgid "Independent apps"
-msgstr "Ứng dụng độc lập"#: casca/store.py:92
+msgstr "Ứng dụng độc lập"
+
+#: casca/store.py:92
 msgid "Global"
-msgstr "Toàn cầu"#: casca/window.py:86
+msgstr "Toàn cầu"
+
+#: casca/updater.py:90 casca/updater.py:91
+msgid "Release"
+msgstr "Bản phát hành"
+
+#: casca/updater.py:90
+msgid "Beta"
+msgstr "Beta"
+
+#: casca/updater.py:90
+msgid "Alpha"
+msgstr "Alpha"
+
+#: casca/updater.py:90
+msgid "Development"
+msgstr "Phát triển"
+
+#: casca/updater.py:106
+msgid "Casca"
+msgstr "Casca"
+
+#: casca/updater.py:109
+msgid "Updated — restart Casca to use the new version."
+msgstr "Đã cập nhật — khởi động lại Casca để dùng phiên bản mới."
+
+#: casca/updater.py:110
+msgid "Couldn't update automatically — check for updates manually."
+msgstr "Không thể tự động cập nhật — hãy kiểm tra cập nhật thủ công."
+
+#: casca/updater.py:125
+msgid "Casca update available"
+msgstr "Đã có bản cập nhật Casca"
+
+#: casca/updater.py:128
+#, python-format
+msgid "Version %(latest)s is available (you're on %(current)s)."
+msgstr "Đã có phiên bản %(latest)s (bạn đang dùng %(current)s)."
+
+#: casca/updater.py:138
+msgid "Update now"
+msgstr "Cập nhật ngay"
+
+#: casca/window.py:86
 msgid "Choose icon"
-msgstr "Chọn biểu tượng"#: casca/window.py:121
+msgstr "Chọn biểu tượng"
+
+#: casca/window.py:121
 msgid "Icons found"
-msgstr "Đã tìm thấy biểu tượng"#: casca/window.py:144
+msgstr "Đã tìm thấy biểu tượng"
+
+#: casca/window.py:144
 msgid "Searching for icons online…"
-msgstr "Đang tìm biểu tượng trực tuyến…"#: casca/window.py:155
+msgstr "Đang tìm biểu tượng trực tuyến…"
+
+#: casca/window.py:155
 msgid "No icon found"
-msgstr "Không tìm thấy biểu tượng"#: casca/window.py:156
+msgstr "Không tìm thấy biểu tượng"
+
+#: casca/window.py:156
 msgid "Try choosing an image from your computer or the gallery."
-msgstr "Hãy thử chọn hình ảnh từ máy tính hoặc thư viện ảnh của bạn."#: casca/window.py:208 casca/window.py:395
+msgstr "Hãy thử chọn hình ảnh từ máy tính hoặc thư viện ảnh của bạn."
+
+#: casca/window.py:208 casca/window.py:395
 msgid "Edit app"
-msgstr "Sửa ứng dụng"#: casca/window.py:208
+msgstr "Sửa ứng dụng"
+
+#: casca/window.py:208
 msgid "New app"
-msgstr "Ứng dụng mới"#: casca/window.py:228
+msgstr "Ứng dụng mới"
+
+#: casca/window.py:228
 msgid "Site"
-msgstr "Trang web"#: casca/window.py:229
+msgstr "Trang web"
+
+#: casca/window.py:229
 msgid "App name"
-msgstr "Tên ứng dụng"#: casca/window.py:230
+msgstr "Tên ứng dụng"
+
+#: casca/window.py:230
 msgid "Address (URL)"
-msgstr "Địa chỉ (URL)"#: casca/window.py:238
+msgstr "Địa chỉ (URL)"
+
+#: casca/window.py:238
 msgid "Use a custom browser"
-msgstr "Dùng trình duyệt tùy chỉnh"#: casca/window.py:239
+msgstr "Dùng trình duyệt tùy chỉnh"
+
+#: casca/window.py:239
 msgid "If disabled, opens in Casca's own window."
-msgstr "Nếu tắt, sẽ mở trong cửa sổ riêng của Casca."#: casca/window.py:245
+msgstr "Nếu tắt, sẽ mở trong cửa sổ riêng của Casca."
+
+#: casca/window.py:245
 msgid "Open with"
-msgstr "Mở bằng"#: casca/window.py:252
+msgstr "Mở bằng"
+
+#: casca/window.py:252
 msgid "No compatible browser was found on the system."
-msgstr "Không tìm thấy trình duyệt tương thích nào trên hệ thống."#: casca/window.py:259
+msgstr "Không tìm thấy trình duyệt tương thích nào trên hệ thống."
+
+#: casca/window.py:259
 msgid ""
 "Not available in the Flatpak version — use the local install for external "
 "browsers."
 msgstr ""
 "Không khả dụng trong phiên bản Flatpak — hãy dùng bản cài đặt cục bộ để sử "
-"dụng trình duyệt bên ngoài."#: casca/window.py:264
+"dụng trình duyệt bên ngoài."
+
+#: casca/window.py:264
 msgid "Learn more about custom browsers"
-msgstr "Tìm hiểu thêm về trình duyệt tùy chỉnh"#: casca/window.py:267
+msgstr "Tìm hiểu thêm về trình duyệt tùy chỉnh"
+
+#: casca/window.py:267
 msgid "Browser account"
-msgstr "Tài khoản trình duyệt"#: casca/window.py:274
+msgstr "Tài khoản trình duyệt"
+
+#: casca/window.py:274
 msgid "Open in mobile mode"
-msgstr "Mở ở chế độ di động"#: casca/window.py:275 casca/window.py:488
+msgstr "Mở ở chế độ di động"
+
+#: casca/window.py:275 casca/window.py:488
 msgid "Uses the identification and window of a phone or tablet."
 msgstr ""
-"Sử dụng thông tin nhận dạng và cửa sổ của điện thoại hoặc máy tính bảng."#: casca/window.py:281 casca/window.py:310
+"Sử dụng thông tin nhận dạng và cửa sổ của điện thoại hoặc máy tính bảng."
+
+#: casca/window.py:281 casca/window.py:310
 msgid "Device"
-msgstr "Thiết bị"#: casca/window.py:287
+msgstr "Thiết bị"
+
+#: casca/window.py:287
 msgid "Learn more about mobile mode"
-msgstr "Tìm hiểu thêm về chế độ di động"#: casca/window.py:296
+msgstr "Tìm hiểu thêm về chế độ di động"
+
+#: casca/window.py:296
 msgid "Customize window resolution"
-msgstr "Tùy chỉnh độ phân giải cửa sổ"#: casca/window.py:297
+msgstr "Tùy chỉnh độ phân giải cửa sổ"
+
+#: casca/window.py:297
 msgid "If disabled, uses the browser's default size."
-msgstr "Nếu tắt, sẽ dùng kích thước mặc định của trình duyệt."#: casca/window.py:302
+msgstr "Nếu tắt, sẽ dùng kích thước mặc định của trình duyệt."
+
+#: casca/window.py:302
 msgid "Window size"
-msgstr "Kích thước cửa sổ"#: casca/window.py:304
+msgstr "Kích thước cửa sổ"
+
+#: casca/window.py:304
 msgid "By device"
-msgstr "Theo thiết bị"#: casca/window.py:304
+msgstr "Theo thiết bị"
+
+#: casca/window.py:304
 msgid "Default size"
-msgstr "Kích thước mặc định"#: casca/window.py:304
+msgstr "Kích thước mặc định"
+
+#: casca/window.py:304
 msgid "Custom"
-msgstr "Tùy chỉnh"#: casca/window.py:314
+msgstr "Tùy chỉnh"
+
+#: casca/window.py:314
 msgid "Size"
-msgstr "Kích thước"#: casca/window.py:322
+msgstr "Kích thước"
+
+#: casca/window.py:322
 msgid "Width"
-msgstr "Chiều rộng"#: casca/window.py:325
+msgstr "Chiều rộng"
+
+#: casca/window.py:325
 msgid "Height"
-msgstr "Chiều cao"#: casca/window.py:330
+msgstr "Chiều cao"
+
+#: casca/window.py:330
 msgid "Learn more about window resolution"
-msgstr "Tìm hiểu thêm về độ phân giải cửa sổ"#: casca/window.py:339
+msgstr "Tìm hiểu thêm về độ phân giải cửa sổ"
+
+#: casca/window.py:339
 msgid "Customize icon and shortcut"
-msgstr "Tùy chỉnh biểu tượng và lối tắt"#: casca/window.py:341
+msgstr "Tùy chỉnh biểu tượng và lối tắt"
+
+#: casca/window.py:341
 msgid ""
 "If disabled, the icon is fetched automatically and no Desktop shortcut is "
 "created."
 msgstr ""
 "Nếu tắt, biểu tượng sẽ được tải tự động và không tạo lối tắt trên Màn hình "
-"nền."#: casca/window.py:369
+"nền."
+
+#: casca/window.py:369
 msgid "Also create on the Desktop"
-msgstr "Cũng tạo trên Màn hình nền"#: casca/window.py:372
+msgstr "Cũng tạo trên Màn hình nền"
+
+#: casca/window.py:372
 msgid "Learn more about icons and shortcuts"
-msgstr "Tìm hiểu thêm về biểu tượng và lối tắt"#: casca/window.py:379
+msgstr "Tìm hiểu thêm về biểu tượng và lối tắt"
+
+#: casca/window.py:379
 msgid "Create app"
-msgstr "Tạo ứng dụng"#: casca/window.py:396
+msgstr "Tạo ứng dụng"
+
+#: casca/window.py:396
 msgid "Save changes"
-msgstr "Lưu thay đổi"#: casca/window.py:483#, python-format
+msgstr "Lưu thay đổi"
+
+#: casca/window.py:483
+#, python-format
 msgid "%(browser)s doesn't support mobile mode."
-msgstr "%(browser)s không hỗ trợ chế độ di động."#: casca/window.py:485 casca/window.py:626
+msgstr "%(browser)s không hỗ trợ chế độ di động."
+
+#: casca/window.py:485 casca/window.py:626
 msgid "Choose a browser."
-msgstr "Chọn một trình duyệt."#: casca/window.py:495
+msgstr "Chọn một trình duyệt."
+
+#: casca/window.py:495
 msgid "Isolated profile (new, no login)"
-msgstr "Hồ sơ độc lập (mới, chưa đăng nhập)"#: casca/window.py:508 casca/window.py:523
+msgstr "Hồ sơ độc lập (mới, chưa đăng nhập)"
+
+#: casca/window.py:508 casca/window.py:523
 msgid "Enter the URL before searching for the icon."
-msgstr "Nhập URL trước khi tìm biểu tượng."#: casca/window.py:512
+msgstr "Nhập URL trước khi tìm biểu tượng."
+
+#: casca/window.py:512
 msgid "Could not fetch the icon automatically."
-msgstr "Không thể tự động tải biểu tượng."#: casca/window.py:534
+msgstr "Không thể tự động tải biểu tượng."
+
+#: casca/window.py:534
 msgid "Choose icon image"
-msgstr "Chọn hình ảnh biểu tượng"#: casca/window.py:536
+msgstr "Chọn hình ảnh biểu tượng"
+
+#: casca/window.py:536
 msgid "Images"
-msgstr "Hình ảnh"#: casca/window.py:612
+msgstr "Hình ảnh"
+
+#: casca/window.py:612
 msgid "Fill in the site's name and URL."
-msgstr "Điền tên và URL của trang web."#: casca/window.py:615 casca/window.py:620
+msgstr "Điền tên và URL của trang web."
+
+#: casca/window.py:615 casca/window.py:620
 msgid "Use an http:// or https:// address."
-msgstr "Dùng địa chỉ http:// hoặc https://."#: casca/window.py:636
+msgstr "Dùng địa chỉ http:// hoặc https://."
+
+#: casca/window.py:636
 msgid "Casca's own window isn't available. Enable 'Use a custom browser'."
 msgstr ""
-"Cửa sổ riêng của Casca không khả dụng. Hãy bật 'Dùng trình duyệt tùy chỉnh'."#: casca/window.py:675
+"Cửa sổ riêng của Casca không khả dụng. Hãy bật 'Dùng trình duyệt tùy chỉnh'."
+
+#: casca/window.py:675
 msgid "Could not set an icon. Choose an image manually."
-msgstr "Không thể đặt biểu tượng. Hãy chọn hình ảnh theo cách thủ công."#: casca/window.py:690#, python-format
+msgstr "Không thể đặt biểu tượng. Hãy chọn hình ảnh theo cách thủ công."
+
+#: casca/window.py:690
+#, python-format
 msgid "Error saving: %(error)s"
-msgstr "Lỗi khi lưu: %(error)s"#: casca/window.py:701
+msgstr "Lỗi khi lưu: %(error)s"
+
+#: casca/window.py:701
 msgid "Preset site"
-msgstr "Trang web dựng sẵn"#: casca/window.py:708
+msgstr "Trang web dựng sẵn"
+
+#: casca/window.py:708
 msgid "Search by name or category…"
-msgstr "Tìm theo tên hoặc danh mục…"#: casca/window.py:720 casca/window.py:1035#, python-format
+msgstr "Tìm theo tên hoặc danh mục…"
+
+#: casca/window.py:720 casca/window.py:1035
+#, python-format
 msgid "%(n)d site"
 msgid_plural "%(n)d sites"
-msgstr[0] "%(n)d trang web"#: casca/window.py:904 casca/window.py:1287
+msgstr[0] "%(n)d trang web"
+
+#: casca/window.py:904 casca/window.py:1287
 msgid "Store"
-msgstr "Cửa hàng"#: casca/window.py:932
+msgstr "Cửa hàng"
+
+#: casca/window.py:932
 msgid "Company"
-msgstr "Công ty"#: casca/window.py:933
+msgstr "Công ty"
+
+#: casca/window.py:933
 msgid "Type"
-msgstr "Loại"#: casca/window.py:949
+msgstr "Loại"
+
+#: casca/window.py:949
 msgid "Search by name…"
-msgstr "Tìm theo tên…"#: casca/window.py:985#, python-format
+msgstr "Tìm theo tên…"
+
+#: casca/window.py:985
+#, python-format
 msgid "Could not set an icon for %(name)s."
-msgstr "Không thể đặt biểu tượng cho %(name)s."#: casca/window.py:991#, python-format
+msgstr "Không thể đặt biểu tượng cho %(name)s."
+
+#: casca/window.py:991
+#, python-format
 msgid "Error installing package: %(error)s"
-msgstr "Lỗi khi cài đặt gói: %(error)s"#: casca/window.py:997#, python-format
+msgstr "Lỗi khi cài đặt gói: %(error)s"
+
+#: casca/window.py:997
+#, python-format
 msgid "Package “%(name)s” installed with %(n)d app."
 msgid_plural "Package “%(name)s” installed with %(n)d apps."
-msgstr[0] "Đã cài đặt gói \"%(name)s\" với %(n)d ứng dụng."#: casca/window.py:1023
+msgstr[0] "Đã cài đặt gói \"%(name)s\" với %(n)d ứng dụng."
+
+#: casca/window.py:1023
 msgid "Nothing here yet"
-msgstr "Chưa có gì ở đây"#: casca/window.py:1024
+msgstr "Chưa có gì ở đây"
+
+#: casca/window.py:1024
 msgid "Check the local catalog or your internet connection."
-msgstr "Kiểm tra danh mục cục bộ hoặc kết nối internet của bạn."#: casca/window.py:1040
+msgstr "Kiểm tra danh mục cục bộ hoặc kết nối internet của bạn."
+
+#: casca/window.py:1040
 msgid "Install full package"
-msgstr "Cài đặt toàn bộ gói"#: casca/window.py:1165
+msgstr "Cài đặt toàn bộ gói"
+
+#: casca/window.py:1165
 msgid "Casca Manual"
-msgstr "Hướng dẫn sử dụng Casca"#: casca/window.py:1185
+msgstr "Hướng dẫn sử dụng Casca"
+
+#: casca/window.py:1185
 msgid "Could not open the built-in manual"
-msgstr "Không thể mở hướng dẫn sử dụng tích hợp"#: casca/window.py:1204
+msgstr "Không thể mở hướng dẫn sử dụng tích hợp"
+
+#: casca/window.py:1204
 msgid "Choose what to import"
-msgstr "Chọn nội dung cần nhập"#: casca/window.py:1213#, python-format
+msgstr "Chọn nội dung cần nhập"
+
+#: casca/window.py:1213
+#, python-format
 msgid "%(n)d site found"
 msgid_plural "%(n)d sites found"
-msgstr[0] "Tìm thấy %(n)d trang web"#: casca/window.py:1216
+msgstr[0] "Tìm thấy %(n)d trang web"
+
+#: casca/window.py:1216
 msgid "Uncheck anything you don't want to import."
-msgstr "Bỏ chọn những mục bạn không muốn nhập."#: casca/window.py:1219
+msgstr "Bỏ chọn những mục bạn không muốn nhập."
+
+#: casca/window.py:1219
 msgid "(no name)"
-msgstr "(không có tên)"#: casca/window.py:1227
+msgstr "(không có tên)"
+
+#: casca/window.py:1227
 msgid "Import selected"
-msgstr "Nhập mục đã chọn"#: casca/window.py:1260
+msgstr "Nhập mục đã chọn"
+
+#: casca/window.py:1260
 msgid "User guide"
-msgstr "Hướng dẫn sử dụng"#: casca/window.py:1261
+msgstr "Hướng dẫn sử dụng"
+
+#: casca/window.py:1261
 msgid "About Casca"
-msgstr "Giới thiệu về Casca"#: casca/window.py:1262
+msgstr "Giới thiệu về Casca"
+
+#: casca/window.py:1262
 msgid "Menu"
-msgstr "Trình đơn"#: casca/window.py:1292
+msgstr "Trình đơn"
+
+#: casca/window.py:1292
 msgid "Create a new web app"
-msgstr "Tạo ứng dụng web mới"#: casca/window.py:1293
+msgstr "Tạo ứng dụng web mới"
+
+#: casca/window.py:1293
 msgid "Create"
-msgstr "Tạo"#: casca/window.py:1302 casca/window.py:1398
+msgstr "Tạo"
+
+#: casca/window.py:1302 casca/window.py:1429
 msgid "Import apps"
-msgstr "Nhập ứng dụng"#: casca/window.py:1306 casca/window.py:1348
+msgstr "Nhập ứng dụng"
+
+#: casca/window.py:1306 casca/window.py:1379
 msgid "Export apps"
-msgstr "Xuất ứng dụng"#: casca/window.py:1335
+msgstr "Xuất ứng dụng"
+
+#: casca/window.py:1337
 msgid "Turns any website into a GNOME app."
-msgstr "Biến bất kỳ trang web nào thành ứng dụng GNOME."#: casca/window.py:1346
+msgstr "Biến bất kỳ trang web nào thành ứng dụng GNOME."
+
+#: casca/window.py:1341
+#, python-format
+msgid ""
+"Version %(latest)s is available — an update notification with a way to "
+"update just popped up."
+msgstr ""
+"Đã có phiên bản %(latest)s — một thông báo kèm cách cập nhật vừa xuất hiện."
+
+#: casca/window.py:1356
+msgid ""
+"Casca now checks for new releases in the background (once a day at most) and "
+"lets you know with a system notification — no action needed for Flatpak/Snap "
+"installs, which already update themselves."
+msgstr "Casca giờ đây kiểm tra phiên bản mới trong nền (tối đa mỗi ngày một lần) và báo cho bạn biết bằng thông báo hệ thống — không cần thao tác gì với bản cài qua Flatpak/Snap, vì các bản đó đã tự cập nhật."
+
+#: casca/window.py:1361
+msgid ""
+"The About dialog now shows the license, a link to the source code, whether "
+"you're on a release/beta/alpha build, and a proper “What's New” page with "
+"each version's changelog."
+msgstr "Hộp thoại Giới thiệu giờ đây hiển thị giấy phép, liên kết đến mã nguồn, cho biết bạn đang dùng bản phát hành/beta/alpha, và một trang “Có gì mới” thực sự với nhật ký thay đổi của từng phiên bản."
+
+#: casca/window.py:1367
+msgid "Source Code"
+msgstr "Mã nguồn"
+
+#: casca/window.py:1377
 msgid "No app created yet to export."
-msgstr "Chưa có ứng dụng nào được tạo để xuất."#: casca/window.py:1370#, python-format
+msgstr "Chưa có ứng dụng nào được tạo để xuất."
+
+#: casca/window.py:1401
+#, python-format
 msgid "Error exporting: %(error)s"
-msgstr "Lỗi khi xuất: %(error)s"#: casca/window.py:1373#, python-format
+msgstr "Lỗi khi xuất: %(error)s"
+
+#: casca/window.py:1404
+#, python-format
 msgid "%(count)d app exported to %(name)s."
 msgid_plural "%(count)d apps exported to %(name)s."
-msgstr[0] "Đã xuất %(count)d ứng dụng sang %(name)s."#: casca/window.py:1379
+msgstr[0] "Đã xuất %(count)d ứng dụng sang %(name)s."
+
+#: casca/window.py:1410
 msgid "Import from where?"
-msgstr "Nhập từ đâu?"#: casca/window.py:1380
+msgstr "Nhập từ đâu?"
+
+#: casca/window.py:1411
 msgid "Choose a local .json file or a URL (e.g. a GitHub \"raw\" link)."
 msgstr ""
-"Chọn một tệp .json cục bộ hoặc một URL (ví dụ: liên kết \"raw\" trên GitHub)."#: casca/window.py:1382 casca/window.py:1428 casca/window.py:1561#: casca/window.py:1584
+"Chọn một tệp .json cục bộ hoặc một URL (ví dụ: liên kết \"raw\" trên GitHub)."
+
+#: casca/window.py:1413 casca/window.py:1459 casca/window.py:1592
+#: casca/window.py:1615
 msgid "Cancel"
-msgstr "Hủy"#: casca/window.py:1383
+msgstr "Hủy"
+
+#: casca/window.py:1414
 msgid "From a URL"
-msgstr "Từ một URL"#: casca/window.py:1384
+msgstr "Từ một URL"
+
+#: casca/window.py:1415
 msgid "Local file"
-msgstr "Tệp cục bộ"#: casca/window.py:1417#, python-format
+msgstr "Tệp cục bộ"
+
+#: casca/window.py:1448
+#, python-format
 msgid "Error reading the file: %(error)s"
-msgstr "Lỗi khi đọc tệp: %(error)s"#: casca/window.py:1423
+msgstr "Lỗi khi đọc tệp: %(error)s"
+
+#: casca/window.py:1454
 msgid "Import from a URL"
-msgstr "Nhập từ URL"#: casca/window.py:1424
+msgstr "Nhập từ URL"
+
+#: casca/window.py:1455
 msgid "Paste the JSON file's \"raw\" link (e.g. from a GitHub repository)."
-msgstr "Dán liên kết \"raw\" của tệp JSON (ví dụ: từ một kho lưu trữ GitHub)."#: casca/window.py:1429
+msgstr "Dán liên kết \"raw\" của tệp JSON (ví dụ: từ một kho lưu trữ GitHub)."
+
+#: casca/window.py:1460
 msgid "Fetch"
-msgstr "Tải về"#: casca/window.py:1441
+msgstr "Tải về"
+
+#: casca/window.py:1472
 msgid "Enter a URL."
-msgstr "Nhập một URL."#: casca/window.py:1443
+msgstr "Nhập một URL."
+
+#: casca/window.py:1474
 msgid "Fetching file…"
-msgstr "Đang tải tệp…"#: casca/window.py:1450#, python-format
+msgstr "Đang tải tệp…"
+
+#: casca/window.py:1481
+#, python-format
 msgid "Error downloading: %(error)s"
-msgstr "Lỗi khi tải xuống: %(error)s"#: casca/window.py:1458#, python-format
+msgstr "Lỗi khi tải xuống: %(error)s"
+
+#: casca/window.py:1489
+#, python-format
 msgid "Error importing: %(error)s"
-msgstr "Lỗi khi nhập: %(error)s"#: casca/window.py:1461
+msgstr "Lỗi khi nhập: %(error)s"
+
+#: casca/window.py:1492
 msgid "No app found in the file."
-msgstr "Không tìm thấy ứng dụng nào trong tệp."#: casca/window.py:1469
+msgstr "Không tìm thấy ứng dụng nào trong tệp."
+
+#: casca/window.py:1500
 msgid "Nothing selected to import."
-msgstr "Chưa chọn gì để nhập."#: casca/window.py:1477#, python-format
+msgstr "Chưa chọn gì để nhập."
+
+#: casca/window.py:1508
+#, python-format
 msgid "%(n)d app imported."
 msgid_plural "%(n)d apps imported."
-msgstr[0] "Đã nhập %(n)d ứng dụng."#: casca/window.py:1483#, python-format
+msgstr[0] "Đã nhập %(n)d ứng dụng."
+
+#: casca/window.py:1514
+#, python-format
 msgid "• %(name)s: %(reason)s"
-msgstr "• %(name)s: %(reason)s"#: casca/window.py:1487#, python-format
+msgstr "• %(name)s: %(reason)s"
+
+#: casca/window.py:1518
+#, python-format
 msgid "%(created)d imported, %(failed)d with errors"
-msgstr "Đã nhập %(created)d, %(failed)d bị lỗi"#: casca/window.py:1489#, python-format
+msgstr "Đã nhập %(created)d, %(failed)d bị lỗi"
+
+#: casca/window.py:1520
+#, python-format
 msgid ""
 "Review and adjust manually via the \"Create\" button:\n"
 "\n"
@@ -568,30 +1154,76 @@ msgid ""
 msgstr ""
 "Xem lại và điều chỉnh thủ công qua nút \"Tạo\":\n"
 "\n"
-"%(lines)s"#: casca/window.py:1491
+"%(lines)s"
+
+#: casca/window.py:1522
 msgid "Got it"
-msgstr "Đã hiểu"#: casca/window.py:1505
+msgstr "Đã hiểu"
+
+#: casca/window.py:1536
 msgid "No web apps yet"
-msgstr "Chưa có ứng dụng web nào"#: casca/window.py:1506
+msgstr "Chưa có ứng dụng web nào"
+
+#: casca/window.py:1537
 msgid ""
 "Tap “Create” to make your first app, or open the Store for ready-made sites."
 msgstr ""
 "Nhấn \"Tạo\" để tạo ứng dụng đầu tiên của bạn, hoặc mở Cửa hàng để xem các "
-"trang web dựng sẵn."#: casca/window.py:1515
+"trang web dựng sẵn."
+
+#: casca/window.py:1546
 msgid "My web apps"
-msgstr "Ứng dụng web của tôi"#: casca/window.py:1537
+msgstr "Ứng dụng web của tôi"
+
+#: casca/window.py:1568
 msgid "Installed packages"
-msgstr "Các gói đã cài đặt"#: casca/window.py:1558#, python-format
+msgstr "Các gói đã cài đặt"
+
+#: casca/window.py:1589
+#, python-format
 msgid "Delete “%(name)s”?"
-msgstr "Xóa \"%(name)s\"?"#: casca/window.py:1559
+msgstr "Xóa \"%(name)s\"?"
+
+#: casca/window.py:1590
 msgid ""
 "The shortcut will be removed from the applications menu and the desktop, if "
 "it exists."
-msgstr "Lối tắt sẽ bị xóa khỏi trình đơn ứng dụng và màn hình nền, nếu có."#: casca/window.py:1562 casca/window.py:1585
+msgstr "Lối tắt sẽ bị xóa khỏi trình đơn ứng dụng và màn hình nền, nếu có."
+
+#: casca/window.py:1593 casca/window.py:1616
 msgid "Delete"
-msgstr "Xóa"#: casca/window.py:1576#, python-format
+msgstr "Xóa"
+
+#: casca/window.py:1607
+#, python-format
 msgid "Delete package “%(name)s”?"
-msgstr "Xóa gói \"%(name)s\"?"#: casca/window.py:1578#, python-format
+msgstr "Xóa gói \"%(name)s\"?"
+
+#: casca/window.py:1609
+#, python-format
 msgid "Removes the shortcut and the %(n)d app inside it (%(names)s)."
 msgid_plural "Removes the shortcut and the %(n)d apps inside it (%(names)s)."
 msgstr[0] "Xóa lối tắt và %(n)d ứng dụng bên trong (%(names)s)."
+
+#~ msgid ""
+#~ "Casca now speaks 20 languages, picked automatically from the system "
+#~ "locale: English, Portuguese (Brazil), Spanish, French, Italian, German, "
+#~ "Russian, Ukrainian, Polish, Dutch, Turkish, Simplified Chinese, Japanese, "
+#~ "Korean, Vietnamese, Indonesian, Hindi, Arabic, Bengali and Thai."
+#~ msgstr ""
+#~ "Casca giờ đây hỗ trợ 20 ngôn ngữ, được chọn tự động theo ngôn ngữ hệ "
+#~ "thống: tiếng Anh, tiếng Bồ Đào Nha (Brazil), tiếng Tây Ban Nha, tiếng "
+#~ "Pháp, tiếng Ý, tiếng Đức, tiếng Nga, tiếng Ukraina, tiếng Ba Lan, tiếng "
+#~ "Hà Lan, tiếng Thổ Nhĩ Kỳ, tiếng Trung giản thể, tiếng Nhật, tiếng Hàn, "
+#~ "tiếng Việt, tiếng Indonesia, tiếng Hindi, tiếng Ả Rập, tiếng Bengal và "
+#~ "tiếng Thái."
+
+#~ msgid ""
+#~ "The creation screen's browser, mobile mode, resolution and icon sections "
+#~ "now have an inline help button — hover for a quick tip, click to jump "
+#~ "straight to that topic in a redesigned, example-filled manual."
+#~ msgstr ""
+#~ "Các phần trình duyệt, chế độ di động, độ phân giải và biểu tượng trên màn "
+#~ "hình tạo giờ đây có nút trợ giúp ngay trong giao diện — di chuột để xem "
+#~ "mẹo nhanh, nhấp để chuyển thẳng đến chủ đề đó trong sổ tay được thiết kế "
+#~ "lại, đầy ví dụ minh họa."

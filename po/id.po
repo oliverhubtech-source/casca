@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Casca 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/oliverhubtech-source/casca/issues\n"
-"POT-Creation-Date: 2026-07-09 22:51-0300\n"
+"POT-Creation-Date: 2026-07-10 16:23-0300\n"
 "PO-Revision-Date: 2026-07-09 16:07-0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -11,167 +11,336 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"#: casca/browsers.py:199
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: casca/browsers.py:209
 msgid "Casca's own window"
-msgstr "Jendela bawaan Casca"#: casca/catalog_strings.py:16 casca/help_content.py:76 casca/presets.py:51
+msgstr "Jendela bawaan Casca"
+
+#: casca/catalog_strings.py:16 casca/help_content.py:76 casca/presets.py:51
 msgid "Artificial Intelligence"
-msgstr "Kecerdasan Buatan"#: casca/catalog_strings.py:17
+msgstr "Kecerdasan Buatan"
+
+#: casca/catalog_strings.py:17
 msgid "Cloud Computing"
-msgstr "Komputasi Awan"#: casca/catalog_strings.py:18 casca/help_content.py:86 casca/presets.py:166
+msgstr "Komputasi Awan"
+
+#: casca/catalog_strings.py:18 casca/help_content.py:86 casca/presets.py:166
 msgid "Conversion & Sharing"
-msgstr "Konversi & Berbagi"#: casca/catalog_strings.py:19
+msgstr "Konversi & Berbagi"
+
+#: casca/catalog_strings.py:19
 msgid "Creativity"
-msgstr "Kreativitas"#: casca/catalog_strings.py:20
+msgstr "Kreativitas"
+
+#: casca/catalog_strings.py:20
 msgid "Finance"
-msgstr "Keuangan"#: casca/catalog_strings.py:21 casca/window.py:935
+msgstr "Keuangan"
+
+#: casca/catalog_strings.py:21 casca/window.py:935
 msgid "Marketplace"
-msgstr "Marketplace"#: casca/catalog_strings.py:22
+msgstr "Marketplace"
+
+#: casca/catalog_strings.py:22
 msgid "Messenger"
-msgstr "Perpesanan"#: casca/catalog_strings.py:23
+msgstr "Perpesanan"
+
+#: casca/catalog_strings.py:23
 msgid "Music Streaming"
-msgstr "Streaming Musik"#: casca/catalog_strings.py:24 casca/window.py:936
+msgstr "Streaming Musik"
+
+#: casca/catalog_strings.py:24 casca/window.py:936
 msgid "News"
-msgstr "Berita"#: casca/catalog_strings.py:25
+msgstr "Berita"
+
+#: casca/catalog_strings.py:25
 msgid "PDF"
-msgstr "PDF"#: casca/catalog_strings.py:26
+msgstr "PDF"
+
+#: casca/catalog_strings.py:26
 msgid "Productivity"
-msgstr "Produktivitas"#: casca/catalog_strings.py:27
+msgstr "Produktivitas"
+
+#: casca/catalog_strings.py:27
 msgid "Search Engine"
-msgstr "Mesin Pencari"#: casca/catalog_strings.py:28
+msgstr "Mesin Pencari"
+
+#: casca/catalog_strings.py:28
 msgid "Security"
-msgstr "Keamanan"#: casca/catalog_strings.py:29
+msgstr "Keamanan"
+
+#: casca/catalog_strings.py:29
 msgid "Social Network"
-msgstr "Jejaring Sosial"#: casca/catalog_strings.py:30
+msgstr "Jejaring Sosial"
+
+#: casca/catalog_strings.py:30
 msgid "Utility"
-msgstr "Utilitas"#: casca/catalog_strings.py:31
+msgstr "Utilitas"
+
+#: casca/catalog_strings.py:31
 msgid "Video Streaming"
-msgstr "Streaming Video"#: casca/catalog_strings.py:33
+msgstr "Streaming Video"
+
+#: casca/catalog_strings.py:33
 msgid "Argentina"
-msgstr "Argentina"#: casca/catalog_strings.py:34
+msgstr "Argentina"
+
+#: casca/catalog_strings.py:34
 msgid "Brazil"
-msgstr "Brasil"#: casca/catalog_strings.py:35
+msgstr "Brasil"
+
+#: casca/catalog_strings.py:35
 msgid "Chile"
-msgstr "Chili"#: casca/catalog_strings.py:36
+msgstr "Chili"
+
+#: casca/catalog_strings.py:36
 msgid "Colombia"
-msgstr "Kolombia"#: casca/catalog_strings.py:37
+msgstr "Kolombia"
+
+#: casca/catalog_strings.py:37
 msgid "Europe"
-msgstr "Eropa"#: casca/catalog_strings.py:38
+msgstr "Eropa"
+
+#: casca/catalog_strings.py:38
 msgid "France"
-msgstr "Prancis"#: casca/catalog_strings.py:39
+msgstr "Prancis"
+
+#: casca/catalog_strings.py:39
 msgid "Germany"
-msgstr "Jerman"#: casca/catalog_strings.py:40
+msgstr "Jerman"
+
+#: casca/catalog_strings.py:40
 msgid "International"
-msgstr "Internasional"#: casca/catalog_strings.py:41
+msgstr "Internasional"
+
+#: casca/catalog_strings.py:41
 msgid "Mexico"
-msgstr "Meksiko"#: casca/catalog_strings.py:42
+msgstr "Meksiko"
+
+#: casca/catalog_strings.py:42
 msgid "Netherlands"
-msgstr "Belanda"#: casca/catalog_strings.py:43
+msgstr "Belanda"
+
+#: casca/catalog_strings.py:43
 msgid "Paraguay"
-msgstr "Paraguay"#: casca/catalog_strings.py:44
+msgstr "Paraguay"
+
+#: casca/catalog_strings.py:44
 msgid "Poland"
-msgstr "Polandia"#: casca/catalog_strings.py:45
+msgstr "Polandia"
+
+#: casca/catalog_strings.py:45
 msgid "Spain"
-msgstr "Spanyol"#: casca/catalog_strings.py:46
+msgstr "Spanyol"
+
+#: casca/catalog_strings.py:46
 msgid "United Kingdom"
-msgstr "Inggris"#: casca/catalog_strings.py:47
+msgstr "Inggris"
+
+#: casca/catalog_strings.py:47
 msgid "United States"
-msgstr "Amerika Serikat"#: casca/catalog_strings.py:48
+msgstr "Amerika Serikat"
+
+#: casca/catalog_strings.py:48
 msgid "Uruguay"
-msgstr "Uruguay"#: casca/catalog_strings.py:50
+msgstr "Uruguay"
+
+#: casca/catalog_strings.py:50
 msgid "Google Workspace"
-msgstr "Google Workspace"#: casca/catalog_strings.py:51
+msgstr "Google Workspace"
+
+#: casca/catalog_strings.py:51
 msgid "Microsoft 365"
-msgstr "Microsoft 365"#: casca/catalog_strings.py:52
+msgstr "Microsoft 365"
+
+#: casca/catalog_strings.py:52
 msgid "Social Media"
-msgstr "Media Sosial"#: casca/catalog_strings.py:53
+msgstr "Media Sosial"
+
+#: casca/catalog_strings.py:53
 msgid "YouTube"
-msgstr "YouTube"#: casca/devices.py:79
+msgstr "YouTube"
+
+#: casca/devices.py:79
 msgid "Small (800×600)"
-msgstr "Kecil (800×600)"#: casca/devices.py:80
+msgstr "Kecil (800×600)"
+
+#: casca/devices.py:80
 msgid "Medium (1024×768)"
-msgstr "Sedang (1024×768)"#: casca/devices.py:81
+msgstr "Sedang (1024×768)"
+
+#: casca/devices.py:81
 msgid "Laptop (1280×800)"
-msgstr "Laptop (1280×800)"#: casca/devices.py:82
+msgstr "Laptop (1280×800)"
+
+#: casca/devices.py:82
 msgid "Laptop HD (1366×768)"
-msgstr "Laptop HD (1366×768)"#: casca/devices.py:83
+msgstr "Laptop HD (1366×768)"
+
+#: casca/devices.py:83
 msgid "Large (1600×900)"
-msgstr "Besar (1600×900)"#: casca/devices.py:84
+msgstr "Besar (1600×900)"
+
+#: casca/devices.py:84
 msgid "Full HD (1920×1080)"
-msgstr "Full HD (1920×1080)"#: casca/entries.py:203 casca/entries.py:245#, python-format
+msgstr "Full HD (1920×1080)"
+
+#: casca/entries.py:205 casca/entries.py:247
+#, python-format
 msgid "Browser not found: %(key)s"
-msgstr "Peramban tidak ditemukan: %(key)s"#: casca/entries.py:249#, python-format
+msgstr "Peramban tidak ditemukan: %(key)s"
+
+#: casca/entries.py:251
+#, python-format
 msgid "App not found: %(slug)s"
-msgstr "Aplikasi tidak ditemukan: %(slug)s"#: casca/entries.py:337
+msgstr "Aplikasi tidak ditemukan: %(slug)s"
+
+#: casca/entries.py:339
 msgid "remote file too large"
-msgstr "berkas jarak jauh terlalu besar"#: casca/entries.py:341#, python-format
+msgstr "berkas jarak jauh terlalu besar"
+
+#: casca/entries.py:343
+#, python-format
 msgid "could not download the file (%(error)s)"
-msgstr "tidak dapat mengunduh berkas (%(error)s)"#: casca/entries.py:350#, python-format
+msgstr "tidak dapat mengunduh berkas (%(error)s)"
+
+#: casca/entries.py:352
+#, python-format
 msgid "could not read the file (%(error)s)"
-msgstr "tidak dapat membaca berkas (%(error)s)"#: casca/entries.py:354
+msgstr "tidak dapat membaca berkas (%(error)s)"
+
+#: casca/entries.py:356
 msgid "unexpected format: no 'apps' list found"
-msgstr "format tak terduga: daftar 'apps' tidak ditemukan"#: casca/entries.py:388#, python-format
+msgstr "format tak terduga: daftar 'apps' tidak ditemukan"
+
+#: casca/entries.py:390
+#, python-format
 msgid "item %(n)d"
-msgstr "item %(n)d"#: casca/entries.py:390
+msgstr "item %(n)d"
+
+#: casca/entries.py:392
 msgid "missing name or URL"
-msgstr "nama atau URL tidak ada"#: casca/entries.py:393 casca/entries.py:398
+msgstr "nama atau URL tidak ada"
+
+#: casca/entries.py:395 casca/entries.py:400
 msgid "unsupported URL scheme"
-msgstr "skema URL tidak didukung"#: casca/entries.py:404
+msgstr "skema URL tidak didukung"
+
+#: casca/entries.py:406
 msgid "no browser available"
-msgstr "tidak ada peramban yang tersedia"#: casca/entries.py:423
+msgstr "tidak ada peramban yang tersedia"
+
+#: casca/entries.py:425
 msgid "could not get an icon"
-msgstr "tidak dapat memperoleh ikon"#: casca/entries.py:481
+msgstr "tidak dapat memperoleh ikon"
+
+#: casca/entries.py:483
 msgid "No browser available to assemble the package."
-msgstr "Tidak ada peramban yang tersedia untuk menyusun paket."#: casca/entries.py:553
+msgstr "Tidak ada peramban yang tersedia untuk menyusun paket."
+
+#: casca/entries.py:555
 msgid "Package of web apps created by Casca"
-msgstr "Paket aplikasi web yang dibuat oleh Casca"#: casca/help_content.py:29
+msgstr "Paket aplikasi web yang dibuat oleh Casca"
+
+#: casca/help_content.py:29
 msgid "User Guide"
-msgstr "Panduan Pengguna"#: casca/help_content.py:36
+msgstr "Panduan Pengguna"
+
+#: casca/help_content.py:36
 msgid "Casca — User Guide"
-msgstr "Casca — Panduan Pengguna"#: casca/help_content.py:37
+msgstr "Casca — Panduan Pengguna"
+
+#: casca/help_content.py:37
 msgid "Casca icon"
-msgstr "Ikon Casca"#: casca/help_content.py:39
+msgstr "Ikon Casca"
+
+#: casca/help_content.py:39
 msgid "Websites, turned into apps. No fuss."
-msgstr "Situs web, diubah menjadi aplikasi. Tanpa ribet."#: casca/help_content.py:41
+msgstr "Situs web, diubah menjadi aplikasi. Tanpa ribet."
+
+#: casca/help_content.py:41
 msgid ""
 "Casca turns any address into a GNOME app: icon in the menu, its own window, "
 "no leftover browser bar. This guide covers every option on the creation "
 "screen."
-msgstr "Casca mengubah alamat apa pun menjadi aplikasi GNOME: ikon di menu, jendela sendiri, tanpa bilah peramban yang tersisa. Panduan ini mencakup setiap opsi di layar pembuatan."#: casca/help_content.py:44
+msgstr ""
+"Casca mengubah alamat apa pun menjadi aplikasi GNOME: ikon di menu, jendela "
+"sendiri, tanpa bilah peramban yang tersisa. Panduan ini mencakup setiap opsi "
+"di layar pembuatan."
+
+#: casca/help_content.py:44
 msgid "First app"
-msgstr "Aplikasi pertama"#: casca/help_content.py:45
+msgstr "Aplikasi pertama"
+
+#: casca/help_content.py:45
 msgid "Presets"
-msgstr "Preset"#: casca/help_content.py:46 casca/help_content.py:89
+msgstr "Preset"
+
+#: casca/help_content.py:46 casca/help_content.py:89
 msgid "Icon"
-msgstr "Ikon"#: casca/help_content.py:47
+msgstr "Ikon"
+
+#: casca/help_content.py:47
 msgid "Shortcut"
-msgstr "Pintasan"#: casca/help_content.py:48 casca/window.py:235
+msgstr "Pintasan"
+
+#: casca/help_content.py:48 casca/window.py:235
 msgid "Browser"
-msgstr "Peramban"#: casca/help_content.py:49 casca/help_content.py:140
+msgstr "Peramban"
+
+#: casca/help_content.py:49 casca/help_content.py:140
 msgid "Mobile mode"
-msgstr "Mode seluler"#: casca/help_content.py:50
+msgstr "Mode seluler"
+
+#: casca/help_content.py:50
 msgid "Resolution"
-msgstr "Resolusi"#: casca/help_content.py:51
+msgstr "Resolusi"
+
+#: casca/help_content.py:51
 msgid "Edit"
-msgstr "Edit"#: casca/help_content.py:52
+msgstr "Edit"
+
+#: casca/help_content.py:52
 msgid "Creating your first app"
-msgstr "Membuat aplikasi pertama Anda"#: casca/help_content.py:53
+msgstr "Membuat aplikasi pertama Anda"
+
+#: casca/help_content.py:53
 msgid "Two buttons on the home screen, two paths."
-msgstr "Dua tombol di layar utama, dua cara."#: casca/help_content.py:55
+msgstr "Dua tombol di layar utama, dua cara."
+
+#: casca/help_content.py:55
 msgid ""
 "<strong>Create from preset</strong> — pick an already-cataloged site (Gmail, "
 "WhatsApp, Netflix, ChatGPT…), with name, address and icon ready to go."
-msgstr "<strong>Buat dari preset</strong> — pilih situs yang sudah ada di katalog (Gmail, WhatsApp, Netflix, ChatGPT…), dengan nama, alamat, dan ikon yang sudah siap."#: casca/help_content.py:59
+msgstr ""
+"<strong>Buat dari preset</strong> — pilih situs yang sudah ada di katalog "
+"(Gmail, WhatsApp, Netflix, ChatGPT…), dengan nama, alamat, dan ikon yang "
+"sudah siap."
+
+#: casca/help_content.py:59
 msgid ""
 "<strong>Create new web app</strong> — start from scratch: you type in the "
 "name and address."
-msgstr "<strong>Buat aplikasi web baru</strong> — mulai dari nol: Anda mengetik nama dan alamat sendiri."#: casca/help_content.py:62
+msgstr ""
+"<strong>Buat aplikasi web baru</strong> — mulai dari nol: Anda mengetik nama "
+"dan alamat sendiri."
+
+#: casca/help_content.py:62
 msgid ""
 "Everything below the name and address is <strong>optional</strong>. Without "
 "touching anything, Casca figures it out on its own: fetches the icon, "
 "doesn't create a Desktop shortcut, opens in its own window at normal size."
-msgstr "Semua yang ada di bawah nama dan alamat bersifat <strong>opsional</strong>. Tanpa menyentuh apa pun, Casca akan menanganinya sendiri: mengambil ikon, tidak membuat pintasan Desktop, terbuka di jendela sendiri dengan ukuran normal."#: casca/help_content.py:66
+msgstr ""
+"Semua yang ada di bawah nama dan alamat bersifat <strong>opsional</strong>. "
+"Tanpa menyentuh apa pun, Casca akan menanganinya sendiri: mengambil ikon, "
+"tidak membuat pintasan Desktop, terbuka di jendela sendiri dengan ukuran "
+"normal."
+
+#: casca/help_content.py:66
 msgid "Preset sites"
-msgstr "Situs preset"#: casca/help_content.py:68
+msgstr "Situs preset"
+
+#: casca/help_content.py:68
 msgid ""
 "A search field at the top filters by site name (<code class=\"eyebrow text-"
 "[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 "
@@ -179,59 +348,115 @@ msgid ""
 "[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 "
 "py-0.5 rounded\">microsoft</code>). Categories start collapsed — tap one to "
 "expand it."
-msgstr "Kolom pencarian di atas menyaring berdasarkan nama situs (<code class=\"eyebrow text-[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 py-0.5 rounded\">gmail</code>) atau kategori (<code class=\"eyebrow text-[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 py-0.5 rounded\">microsoft</code>). Kategori dimulai dalam keadaan tertutup — ketuk salah satu untuk membukanya."
+msgstr ""
+"Kolom pencarian di atas menyaring berdasarkan nama situs (<code "
+"class=\"eyebrow text-[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-"
+"lav-dark px-1.5 py-0.5 rounded\">gmail</code>) atau kategori (<code "
+"class=\"eyebrow text-[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-"
+"lav-dark px-1.5 py-0.5 rounded\">microsoft</code>). Kategori dimulai dalam "
+"keadaan tertutup — ketuk salah satu untuk membukanya."
+
 #: casca/help_content.py:74 casca/presets.py:23
 msgid "Google Products"
-msgstr "Produk Google"#: casca/help_content.py:75 casca/presets.py:39
+msgstr "Produk Google"
+
+#: casca/help_content.py:75 casca/presets.py:39
 msgid "Microsoft Products"
-msgstr "Produk Microsoft"#: casca/help_content.py:77 casca/presets.py:66
+msgstr "Produk Microsoft"
+
+#: casca/help_content.py:77 casca/presets.py:66
 msgid "Search Engines"
-msgstr "Mesin Pencari"#: casca/help_content.py:78 casca/presets.py:78
+msgstr "Mesin Pencari"
+
+#: casca/help_content.py:78 casca/presets.py:78
 msgid "Messengers"
-msgstr "Perpesanan"#: casca/help_content.py:79 casca/presets.py:88
+msgstr "Perpesanan"
+
+#: casca/help_content.py:79 casca/presets.py:88
 msgid "Social Networks"
-msgstr "Jejaring Sosial"#: casca/help_content.py:80 casca/presets.py:99
+msgstr "Jejaring Sosial"
+
+#: casca/help_content.py:80 casca/presets.py:99
 msgid "Streaming"
-msgstr "Streaming"#: casca/help_content.py:81 casca/presets.py:111
+msgstr "Streaming"
+
+#: casca/help_content.py:81 casca/presets.py:111
 msgid "Music"
-msgstr "Musik"#: casca/help_content.py:82 casca/presets.py:123
+msgstr "Musik"
+
+#: casca/help_content.py:82 casca/presets.py:123
 msgid "Productivity & Organization"
-msgstr "Produktivitas & Organisasi"#: casca/help_content.py:83 casca/presets.py:136
+msgstr "Produktivitas & Organisasi"
+
+#: casca/help_content.py:83 casca/presets.py:136
 msgid "PDF Tools"
-msgstr "Alat PDF"#: casca/help_content.py:84 casca/presets.py:145
+msgstr "Alat PDF"
+
+#: casca/help_content.py:84 casca/presets.py:145
 msgid "Calculations & Finance"
-msgstr "Kalkulasi & Keuangan"#: casca/help_content.py:85 casca/presets.py:157
+msgstr "Kalkulasi & Keuangan"
+
+#: casca/help_content.py:85 casca/presets.py:157
 msgid "Generators & Utilities"
-msgstr "Generator & Utilitas"#: casca/help_content.py:87 casca/presets.py:176
+msgstr "Generator & Utilitas"
+
+#: casca/help_content.py:87 casca/presets.py:176
 msgid "Security & Diagnostics"
-msgstr "Keamanan & Diagnostik"#: casca/help_content.py:88 casca/presets.py:186
+msgstr "Keamanan & Diagnostik"
+
+#: casca/help_content.py:88 casca/presets.py:186
 msgid "Creativity & Content"
-msgstr "Kreativitas & Konten"#: casca/help_content.py:90
+msgstr "Kreativitas & Konten"
+
+#: casca/help_content.py:90
 msgid "Check <strong>Customize icon and shortcut</strong> to choose manually."
 msgstr ""
 "Centang <strong>Sesuaikan ikon dan pintasan</strong> untuk memilih secara "
-"manual."#: casca/help_content.py:91 casca/window.py:356
+"manual."
+
+#: casca/help_content.py:91 casca/window.py:356
 msgid "Search online"
-msgstr "Cari daring"#: casca/help_content.py:93
+msgstr "Cari daring"
+
+#: casca/help_content.py:93
 msgid ""
 "Checks several sources — Google, DuckDuckGo, apple-touch-icon, PWA manifest "
 "— and shows the results in a grid."
-msgstr "Memeriksa beberapa sumber — Google, DuckDuckGo, apple-touch-icon, manifes PWA — dan menampilkan hasilnya dalam bentuk kisi."#: casca/help_content.py:96 casca/window.py:358
+msgstr ""
+"Memeriksa beberapa sumber — Google, DuckDuckGo, apple-touch-icon, manifes "
+"PWA — dan menampilkan hasilnya dalam bentuk kisi."
+
+#: casca/help_content.py:96 casca/window.py:358
 msgid "From computer"
-msgstr "Dari komputer"#: casca/help_content.py:97
+msgstr "Dari komputer"
+
+#: casca/help_content.py:97
 msgid "Picks a PNG, JPG or SVG file already saved on your computer."
 msgstr ""
-"Memilih berkas PNG, JPG, atau SVG yang sudah tersimpan di komputer Anda."#: casca/help_content.py:98 casca/window.py:360
+"Memilih berkas PNG, JPG, atau SVG yang sudah tersimpan di komputer Anda."
+
+#: casca/help_content.py:98 casca/window.py:360
 msgid "From gallery"
-msgstr "Dari galeri"#: casca/help_content.py:99
+msgstr "Dari galeri"
+
+#: casca/help_content.py:99
 msgid "Over 160 brand icons already included, no internet needed."
-msgstr "Lebih dari 160 ikon merek sudah disertakan, tidak perlu internet."#: casca/help_content.py:101
+msgstr "Lebih dari 160 ikon merek sudah disertakan, tidak perlu internet."
+
+#: casca/help_content.py:101
 msgid ""
 "Without checking anything, Casca fetches an icon automatically on save — or "
 "uses the icon that's already set, if the app came from a preset."
-msgstr "Tanpa mencentang apa pun, Casca akan mengambil ikon secara otomatis saat menyimpan — atau menggunakan ikon yang sudah ditetapkan, jika aplikasi berasal dari preset."#: casca/help_content.py:104
+msgstr ""
+"Tanpa mencentang apa pun, Casca akan mengambil ikon secara otomatis saat "
+"menyimpan — atau menggunakan ikon yang sudah ditetapkan, jika aplikasi "
+"berasal dari preset."
+
+#: casca/help_content.py:104
 msgid "Example"
-msgstr "Contoh"#: casca/help_content.py:106
+msgstr "Contoh"
+
+#: casca/help_content.py:106
 msgid ""
 "Your bank's site favicon looks blurry at a larger size — pick <strong>From "
 "gallery</strong> for a clean pre-made icon, or <strong>From computer</"
@@ -243,33 +468,62 @@ msgstr ""
 "<strong>Dari galeri</strong> untuk ikon bersih yang sudah jadi, atau "
 "<strong>Dari komputer</strong> jika Anda sudah menyimpan logo yang lebih "
 "bagus. Apa pun yang Anda pilih akan dinormalisasi menjadi gambar 256×256 "
-"yang tajam (SVG dibiarkan apa adanya, karena skalanya sempurna)."#: casca/help_content.py:111
+"yang tajam (SVG dibiarkan apa adanya, karena skalanya sempurna)."
+
+#: casca/help_content.py:111
 msgid "Desktop Shortcut"
-msgstr "Pintasan Desktop"#: casca/help_content.py:113
+msgstr "Pintasan Desktop"
+
+#: casca/help_content.py:113
 msgid ""
 "Every app already shows up in the GNOME applications menu. To also get an "
 "icon on the Desktop, check <strong>Customize icon and shortcut</strong> and "
 "turn on <strong>Also create on the Desktop</strong>."
-msgstr "Setiap aplikasi sudah muncul di menu aplikasi GNOME. Untuk juga mendapatkan ikon di Desktop, centang <strong>Sesuaikan ikon dan pintasan</strong> lalu aktifkan <strong>Juga buat di Desktop</strong>."#: casca/help_content.py:117
+msgstr ""
+"Setiap aplikasi sudah muncul di menu aplikasi GNOME. Untuk juga mendapatkan "
+"ikon di Desktop, centang <strong>Sesuaikan ikon dan pintasan</strong> lalu "
+"aktifkan <strong>Juga buat di Desktop</strong>."
+
+#: casca/help_content.py:117
 msgid "Custom browser"
-msgstr "Peramban khusus"#: casca/help_content.py:119
+msgstr "Peramban khusus"
+
+#: casca/help_content.py:119
 msgid ""
 "By default, every app opens in <strong>Casca's own window</strong>: lighter, "
 "top bar automatically colored to match the icon, isolated session per app."
-msgstr "Secara default, setiap aplikasi terbuka di <strong>jendela bawaan Casca</strong>: lebih ringan, bilah atas otomatis berwarna sesuai ikon, sesi terisolasi per aplikasi."#: casca/help_content.py:123
+msgstr ""
+"Secara default, setiap aplikasi terbuka di <strong>jendela bawaan Casca</"
+"strong>: lebih ringan, bilah atas otomatis berwarna sesuai ikon, sesi "
+"terisolasi per aplikasi."
+
+#: casca/help_content.py:123
 msgid ""
 "<strong>Heads up:</strong> sites with Google login (Gmail, Drive, Calendar, "
 "Meet…) tend to refuse login in the built-in window — a Google restriction "
 "against unrecognized browsers, with no workaround. Check <strong>Use a "
 "custom browser</strong> and pick Chrome, Helium, GNOME Web or another "
 "installed browser."
-msgstr "<strong>Perhatian:</strong> situs dengan login Google (Gmail, Drive, Kalender, Meet…) cenderung menolak login di jendela bawaan — ini adalah pembatasan Google terhadap peramban yang tidak dikenali, tanpa cara mengatasinya. Centang <strong>Gunakan peramban khusus</strong> dan pilih Chrome, Helium, GNOME Web, atau peramban lain yang terpasang."#: casca/help_content.py:129
+msgstr ""
+"<strong>Perhatian:</strong> situs dengan login Google (Gmail, Drive, "
+"Kalender, Meet…) cenderung menolak login di jendela bawaan — ini adalah "
+"pembatasan Google terhadap peramban yang tidak dikenali, tanpa cara "
+"mengatasinya. Centang <strong>Gunakan peramban khusus</strong> dan pilih "
+"Chrome, Helium, GNOME Web, atau peramban lain yang terpasang."
+
+#: casca/help_content.py:129
 msgid ""
 "With a Chromium-based browser (Chrome, Chromium, Brave, Edge, Vivaldi, "
 "Helium…) and more than one account configured in it, <strong>Browser "
 "account</strong> also shows up — choose which already-logged-in account "
 "opens the app, instead of a new profile with no login."
-msgstr "Dengan peramban berbasis Chromium (Chrome, Chromium, Brave, Edge, Vivaldi, Helium…) dan lebih dari satu akun yang dikonfigurasi, <strong>Akun peramban</strong> juga akan muncul — pilih akun mana yang sudah masuk untuk membuka aplikasi, alih-alih profil baru tanpa login."#: casca/help_content.py:135
+msgstr ""
+"Dengan peramban berbasis Chromium (Chrome, Chromium, Brave, Edge, Vivaldi, "
+"Helium…) dan lebih dari satu akun yang dikonfigurasi, <strong>Akun peramban</"
+"strong> juga akan muncul — pilih akun mana yang sudah masuk untuk membuka "
+"aplikasi, alih-alih profil baru tanpa login."
+
+#: casca/help_content.py:135
 msgid ""
 "You use Chrome for everyday browsing and want Gmail to open already signed "
 "into your work account instead of asking you to log in again. Turn on "
@@ -281,12 +535,20 @@ msgstr ""
 "dengan akun kerja yang sudah masuk, alih-alih meminta login lagi. Aktifkan "
 "<strong>Gunakan peramban khusus</strong>, pilih Chrome, lalu pilih akun Anda "
 "di <strong>Akun peramban</strong> — Gmail terbuka langsung ke kotak masuk "
-"itu."#: casca/help_content.py:142
+"itu."
+
+#: casca/help_content.py:142
 msgid ""
 "Check <strong>Open in mobile mode</strong> and pick a device — Google Pixel, "
 "iPhone, Galaxy, iPad. The app identifies itself to the site as that device, "
 "unlocking the mobile layout (usually simpler and faster)."
-msgstr "Centang <strong>Buka dalam mode seluler</strong> dan pilih perangkat — Google Pixel, iPhone, Galaxy, iPad. Aplikasi akan mengidentifikasi dirinya ke situs sebagai perangkat tersebut, membuka tata letak seluler (biasanya lebih sederhana dan cepat)."#: casca/help_content.py:147
+msgstr ""
+"Centang <strong>Buka dalam mode seluler</strong> dan pilih perangkat — "
+"Google Pixel, iPhone, Galaxy, iPad. Aplikasi akan mengidentifikasi dirinya "
+"ke situs sebagai perangkat tersebut, membuka tata letak seluler (biasanya "
+"lebih sederhana dan cepat)."
+
+#: casca/help_content.py:147
 msgid ""
 "Pick <strong>iPhone 15 Pro</strong> for a site like X (Twitter) and it "
 "serves the same stripped-down layout you'd get on a real phone — fewer side "
@@ -299,21 +561,37 @@ msgstr ""
 "asli — lebih sedikit panel samping, linimasa yang lebih sederhana. Ini "
 "mengubah identitas yang dikirim aplikasi ke situs, bukan hanya ukuran "
 "jendela, jadi gabungkan dengan resolusi khusus di bawah agar juga sesuai "
-"dengan bentuk layar ponsel."#: casca/help_content.py:152
+"dengan bentuk layar ponsel."
+
+#: casca/help_content.py:152
 msgid "Window resolution"
-msgstr "Resolusi jendela"#: casca/help_content.py:154
+msgstr "Resolusi jendela"
+
+#: casca/help_content.py:154
 msgid ""
 "Check <strong>Customize window resolution</strong> — three ways to set the "
 "size, works with or without mobile mode enabled."
-msgstr "Centang <strong>Sesuaikan resolusi jendela</strong> — ada tiga cara untuk mengatur ukuran, berfungsi baik dengan atau tanpa mode seluler diaktifkan."#: casca/help_content.py:158
+msgstr ""
+"Centang <strong>Sesuaikan resolusi jendela</strong> — ada tiga cara untuk "
+"mengatur ukuran, berfungsi baik dengan atau tanpa mode seluler diaktifkan."
+
+#: casca/help_content.py:158
 msgid ""
 "<strong>By device</strong> — uses the screen size of the device chosen in "
 "mobile mode."
-msgstr "<strong>Berdasarkan perangkat</strong> — menggunakan ukuran layar perangkat yang dipilih dalam mode seluler."#: casca/help_content.py:160
+msgstr ""
+"<strong>Berdasarkan perangkat</strong> — menggunakan ukuran layar perangkat "
+"yang dipilih dalam mode seluler."
+
+#: casca/help_content.py:160
 msgid "<strong>Default size</strong> — common resolutions (laptop, Full HD…)."
-msgstr "<strong>Ukuran default</strong> — resolusi umum (laptop, Full HD…)."#: casca/help_content.py:161
+msgstr "<strong>Ukuran default</strong> — resolusi umum (laptop, Full HD…)."
+
+#: casca/help_content.py:161
 msgid "<strong>Custom</strong> — you type in width and height in pixels."
-msgstr "<strong>Khusus</strong> — Anda mengetik lebar dan tinggi dalam piksel."#: casca/help_content.py:163
+msgstr "<strong>Khusus</strong> — Anda mengetik lebar dan tinggi dalam piksel."
+
+#: casca/help_content.py:163
 msgid ""
 "You want a WhatsApp Web window that's tall and narrow, like a phone propped "
 "up next to your monitor — pick <strong>Custom</strong> and set it to 400 × "
@@ -321,245 +599,558 @@ msgid ""
 msgstr ""
 "Anda ingin jendela WhatsApp Web yang tinggi dan sempit, seperti ponsel yang "
 "disandarkan di samping monitor — pilih <strong>Khusus</strong> dan atur ke "
-"400 × 900."#: casca/help_content.py:166
+"400 × 900."
+
+#: casca/help_content.py:166
 msgid "Edit and delete"
-msgstr "Edit dan hapus"#: casca/help_content.py:168
+msgstr "Edit dan hapus"
+
+#: casca/help_content.py:168
 msgid ""
 "On the home screen, every app has a pencil to <strong>edit</strong> (changes "
 "any setting, including ones that were disabled at creation) and a trash icon "
 "to <strong>delete</strong> (removes the shortcut from the menu, the Desktop, "
 "and the saved icon)."
-msgstr "Di layar utama, setiap aplikasi memiliki ikon pensil untuk <strong>mengedit</strong> (mengubah pengaturan apa pun, termasuk yang dinonaktifkan saat pembuatan) dan ikon tempat sampah untuk <strong>menghapus</strong> (menghapus pintasan dari menu, Desktop, dan ikon yang tersimpan)."#: casca/help_content.py:173
+msgstr ""
+"Di layar utama, setiap aplikasi memiliki ikon pensil untuk <strong>mengedit</"
+"strong> (mengubah pengaturan apa pun, termasuk yang dinonaktifkan saat "
+"pembuatan) dan ikon tempat sampah untuk <strong>menghapus</strong> "
+"(menghapus pintasan dari menu, Desktop, dan ikon yang tersimpan)."
+
+#: casca/help_content.py:173
 msgid "Casca — built to turn websites into GNOME apps."
-msgstr "Casca — dibuat untuk mengubah situs web menjadi aplikasi GNOME."#: casca/icons.py:171
+msgstr "Casca — dibuat untuk mengubah situs web menjadi aplikasi GNOME."
+
+#: casca/icons.py:171
 msgid "Site icon (.ico)"
-msgstr "Ikon situs (.ico)"#: casca/icons.py:172
+msgstr "Ikon situs (.ico)"
+
+#: casca/icons.py:172
 msgid "Site icon (32px)"
-msgstr "Ikon situs (32px)"#: casca/icons.py:173
+msgstr "Ikon situs (32px)"
+
+#: casca/icons.py:173
 msgid "Apple touch icon"
-msgstr "Ikon sentuh Apple"#: casca/icons.py:179
+msgstr "Ikon sentuh Apple"
+
+#: casca/icons.py:179
 msgid "PWA Manifest"
-msgstr "Manifes PWA"#: casca/package_launcher.py:72 casca/package_launcher.py:113#: casca/window.py:934
+msgstr "Manifes PWA"
+
+#: casca/package_launcher.py:73 casca/package_launcher.py:119
+#: casca/window.py:934
 msgid "Package"
-msgstr "Paket"#: casca/store.py:80
+msgstr "Paket"
+
+#: casca/store.py:80
 msgid "Independent"
-msgstr "Independen"#: casca/store.py:81 casca/store.py:97
+msgstr "Independen"
+
+#: casca/store.py:81 casca/store.py:97
 msgid "Other"
-msgstr "Lainnya"#: casca/store.py:92 casca/window.py:1038
+msgstr "Lainnya"
+
+#: casca/store.py:92 casca/window.py:1038
 msgid "Independent apps"
-msgstr "Aplikasi independen"#: casca/store.py:92
+msgstr "Aplikasi independen"
+
+#: casca/store.py:92
 msgid "Global"
-msgstr "Global"#: casca/window.py:86
+msgstr "Global"
+
+#: casca/updater.py:90 casca/updater.py:91
+msgid "Release"
+msgstr "Rilis"
+
+#: casca/updater.py:90
+msgid "Beta"
+msgstr "Beta"
+
+#: casca/updater.py:90
+msgid "Alpha"
+msgstr "Alfa"
+
+#: casca/updater.py:90
+msgid "Development"
+msgstr "Pengembangan"
+
+#: casca/updater.py:106
+msgid "Casca"
+msgstr "Casca"
+
+#: casca/updater.py:109
+msgid "Updated — restart Casca to use the new version."
+msgstr "Berhasil diperbarui — mulai ulang Casca untuk menggunakan versi baru."
+
+#: casca/updater.py:110
+msgid "Couldn't update automatically — check for updates manually."
+msgstr ""
+"Tidak dapat memperbarui secara otomatis — periksa pembaruan secara manual."
+
+#: casca/updater.py:125
+msgid "Casca update available"
+msgstr "Pembaruan Casca tersedia"
+
+#: casca/updater.py:128
+#, python-format
+msgid "Version %(latest)s is available (you're on %(current)s)."
+msgstr "Versi %(latest)s tersedia (Anda menggunakan %(current)s)."
+
+#: casca/updater.py:138
+msgid "Update now"
+msgstr "Perbarui sekarang"
+
+#: casca/window.py:86
 msgid "Choose icon"
-msgstr "Pilih ikon"#: casca/window.py:121
+msgstr "Pilih ikon"
+
+#: casca/window.py:121
 msgid "Icons found"
-msgstr "Ikon ditemukan"#: casca/window.py:144
+msgstr "Ikon ditemukan"
+
+#: casca/window.py:144
 msgid "Searching for icons online…"
-msgstr "Mencari ikon secara daring…"#: casca/window.py:155
+msgstr "Mencari ikon secara daring…"
+
+#: casca/window.py:155
 msgid "No icon found"
-msgstr "Tidak ada ikon yang ditemukan"#: casca/window.py:156
+msgstr "Tidak ada ikon yang ditemukan"
+
+#: casca/window.py:156
 msgid "Try choosing an image from your computer or the gallery."
-msgstr "Coba pilih gambar dari komputer Anda atau galeri."#: casca/window.py:208 casca/window.py:395
+msgstr "Coba pilih gambar dari komputer Anda atau galeri."
+
+#: casca/window.py:208 casca/window.py:395
 msgid "Edit app"
-msgstr "Sunting aplikasi"#: casca/window.py:208
+msgstr "Sunting aplikasi"
+
+#: casca/window.py:208
 msgid "New app"
-msgstr "Aplikasi baru"#: casca/window.py:228
+msgstr "Aplikasi baru"
+
+#: casca/window.py:228
 msgid "Site"
-msgstr "Situs"#: casca/window.py:229
+msgstr "Situs"
+
+#: casca/window.py:229
 msgid "App name"
-msgstr "Nama aplikasi"#: casca/window.py:230
+msgstr "Nama aplikasi"
+
+#: casca/window.py:230
 msgid "Address (URL)"
-msgstr "Alamat (URL)"#: casca/window.py:238
+msgstr "Alamat (URL)"
+
+#: casca/window.py:238
 msgid "Use a custom browser"
-msgstr "Gunakan peramban khusus"#: casca/window.py:239
+msgstr "Gunakan peramban khusus"
+
+#: casca/window.py:239
 msgid "If disabled, opens in Casca's own window."
-msgstr "Jika dinonaktifkan, terbuka di jendela bawaan Casca."#: casca/window.py:245
+msgstr "Jika dinonaktifkan, terbuka di jendela bawaan Casca."
+
+#: casca/window.py:245
 msgid "Open with"
-msgstr "Buka dengan"#: casca/window.py:252
+msgstr "Buka dengan"
+
+#: casca/window.py:252
 msgid "No compatible browser was found on the system."
-msgstr "Tidak ada peramban yang kompatibel ditemukan di sistem."#: casca/window.py:259
+msgstr "Tidak ada peramban yang kompatibel ditemukan di sistem."
+
+#: casca/window.py:259
 msgid ""
 "Not available in the Flatpak version — use the local install for external "
 "browsers."
 msgstr ""
 "Tidak tersedia dalam versi Flatpak — gunakan pemasangan lokal untuk peramban "
-"eksternal."#: casca/window.py:264
+"eksternal."
+
+#: casca/window.py:264
 msgid "Learn more about custom browsers"
-msgstr "Pelajari lebih lanjut tentang peramban khusus"#: casca/window.py:267
+msgstr "Pelajari lebih lanjut tentang peramban khusus"
+
+#: casca/window.py:267
 msgid "Browser account"
-msgstr "Akun peramban"#: casca/window.py:274
+msgstr "Akun peramban"
+
+#: casca/window.py:274
 msgid "Open in mobile mode"
-msgstr "Buka dalam mode seluler"#: casca/window.py:275 casca/window.py:488
+msgstr "Buka dalam mode seluler"
+
+#: casca/window.py:275 casca/window.py:488
 msgid "Uses the identification and window of a phone or tablet."
-msgstr "Menggunakan identifikasi dan jendela ponsel atau tablet."#: casca/window.py:281 casca/window.py:310
+msgstr "Menggunakan identifikasi dan jendela ponsel atau tablet."
+
+#: casca/window.py:281 casca/window.py:310
 msgid "Device"
-msgstr "Perangkat"#: casca/window.py:287
+msgstr "Perangkat"
+
+#: casca/window.py:287
 msgid "Learn more about mobile mode"
-msgstr "Pelajari lebih lanjut tentang mode seluler"#: casca/window.py:296
+msgstr "Pelajari lebih lanjut tentang mode seluler"
+
+#: casca/window.py:296
 msgid "Customize window resolution"
-msgstr "Sesuaikan resolusi jendela"#: casca/window.py:297
+msgstr "Sesuaikan resolusi jendela"
+
+#: casca/window.py:297
 msgid "If disabled, uses the browser's default size."
-msgstr "Jika dinonaktifkan, menggunakan ukuran bawaan peramban."#: casca/window.py:302
+msgstr "Jika dinonaktifkan, menggunakan ukuran bawaan peramban."
+
+#: casca/window.py:302
 msgid "Window size"
-msgstr "Ukuran jendela"#: casca/window.py:304
+msgstr "Ukuran jendela"
+
+#: casca/window.py:304
 msgid "By device"
-msgstr "Berdasarkan perangkat"#: casca/window.py:304
+msgstr "Berdasarkan perangkat"
+
+#: casca/window.py:304
 msgid "Default size"
-msgstr "Ukuran bawaan"#: casca/window.py:304
+msgstr "Ukuran bawaan"
+
+#: casca/window.py:304
 msgid "Custom"
-msgstr "Khusus"#: casca/window.py:314
+msgstr "Khusus"
+
+#: casca/window.py:314
 msgid "Size"
-msgstr "Ukuran"#: casca/window.py:322
+msgstr "Ukuran"
+
+#: casca/window.py:322
 msgid "Width"
-msgstr "Lebar"#: casca/window.py:325
+msgstr "Lebar"
+
+#: casca/window.py:325
 msgid "Height"
-msgstr "Tinggi"#: casca/window.py:330
+msgstr "Tinggi"
+
+#: casca/window.py:330
 msgid "Learn more about window resolution"
-msgstr "Pelajari lebih lanjut tentang resolusi jendela"#: casca/window.py:339
+msgstr "Pelajari lebih lanjut tentang resolusi jendela"
+
+#: casca/window.py:339
 msgid "Customize icon and shortcut"
-msgstr "Sesuaikan ikon dan pintasan"#: casca/window.py:341
+msgstr "Sesuaikan ikon dan pintasan"
+
+#: casca/window.py:341
 msgid ""
 "If disabled, the icon is fetched automatically and no Desktop shortcut is "
 "created."
 msgstr ""
 "Jika dinonaktifkan, ikon diambil secara otomatis dan tidak ada pintasan "
-"Desktop yang dibuat."#: casca/window.py:369
+"Desktop yang dibuat."
+
+#: casca/window.py:369
 msgid "Also create on the Desktop"
-msgstr "Juga buat di Desktop"#: casca/window.py:372
+msgstr "Juga buat di Desktop"
+
+#: casca/window.py:372
 msgid "Learn more about icons and shortcuts"
-msgstr "Pelajari lebih lanjut tentang ikon dan pintasan"#: casca/window.py:379
+msgstr "Pelajari lebih lanjut tentang ikon dan pintasan"
+
+#: casca/window.py:379
 msgid "Create app"
-msgstr "Buat aplikasi"#: casca/window.py:396
+msgstr "Buat aplikasi"
+
+#: casca/window.py:396
 msgid "Save changes"
-msgstr "Simpan perubahan"#: casca/window.py:483#, python-format
+msgstr "Simpan perubahan"
+
+#: casca/window.py:483
+#, python-format
 msgid "%(browser)s doesn't support mobile mode."
-msgstr "%(browser)s tidak mendukung mode seluler."#: casca/window.py:485 casca/window.py:626
+msgstr "%(browser)s tidak mendukung mode seluler."
+
+#: casca/window.py:485 casca/window.py:626
 msgid "Choose a browser."
-msgstr "Pilih peramban."#: casca/window.py:495
+msgstr "Pilih peramban."
+
+#: casca/window.py:495
 msgid "Isolated profile (new, no login)"
-msgstr "Profil terisolasi (baru, tanpa masuk)"#: casca/window.py:508 casca/window.py:523
+msgstr "Profil terisolasi (baru, tanpa masuk)"
+
+#: casca/window.py:508 casca/window.py:523
 msgid "Enter the URL before searching for the icon."
-msgstr "Masukkan URL sebelum mencari ikon."#: casca/window.py:512
+msgstr "Masukkan URL sebelum mencari ikon."
+
+#: casca/window.py:512
 msgid "Could not fetch the icon automatically."
-msgstr "Tidak dapat mengambil ikon secara otomatis."#: casca/window.py:534
+msgstr "Tidak dapat mengambil ikon secara otomatis."
+
+#: casca/window.py:534
 msgid "Choose icon image"
-msgstr "Pilih gambar ikon"#: casca/window.py:536
+msgstr "Pilih gambar ikon"
+
+#: casca/window.py:536
 msgid "Images"
-msgstr "Gambar"#: casca/window.py:612
+msgstr "Gambar"
+
+#: casca/window.py:612
 msgid "Fill in the site's name and URL."
-msgstr "Isi nama dan URL situs."#: casca/window.py:615 casca/window.py:620
+msgstr "Isi nama dan URL situs."
+
+#: casca/window.py:615 casca/window.py:620
 msgid "Use an http:// or https:// address."
-msgstr "Gunakan alamat http:// atau https://."#: casca/window.py:636
+msgstr "Gunakan alamat http:// atau https://."
+
+#: casca/window.py:636
 msgid "Casca's own window isn't available. Enable 'Use a custom browser'."
 msgstr ""
-"Jendela bawaan Casca tidak tersedia. Aktifkan 'Gunakan peramban khusus'."#: casca/window.py:675
+"Jendela bawaan Casca tidak tersedia. Aktifkan 'Gunakan peramban khusus'."
+
+#: casca/window.py:675
 msgid "Could not set an icon. Choose an image manually."
-msgstr "Tidak dapat mengatur ikon. Pilih gambar secara manual."#: casca/window.py:690#, python-format
+msgstr "Tidak dapat mengatur ikon. Pilih gambar secara manual."
+
+#: casca/window.py:690
+#, python-format
 msgid "Error saving: %(error)s"
-msgstr "Galat saat menyimpan: %(error)s"#: casca/window.py:701
+msgstr "Galat saat menyimpan: %(error)s"
+
+#: casca/window.py:701
 msgid "Preset site"
-msgstr "Situs prasetel"#: casca/window.py:708
+msgstr "Situs prasetel"
+
+#: casca/window.py:708
 msgid "Search by name or category…"
-msgstr "Cari berdasarkan nama atau kategori…"#: casca/window.py:720 casca/window.py:1035#, python-format
+msgstr "Cari berdasarkan nama atau kategori…"
+
+#: casca/window.py:720 casca/window.py:1035
+#, python-format
 msgid "%(n)d site"
 msgid_plural "%(n)d sites"
-msgstr[0] "%(n)d situs"#: casca/window.py:904 casca/window.py:1287
+msgstr[0] "%(n)d situs"
+
+#: casca/window.py:904 casca/window.py:1287
 msgid "Store"
-msgstr "Toko"#: casca/window.py:932
+msgstr "Toko"
+
+#: casca/window.py:932
 msgid "Company"
-msgstr "Perusahaan"#: casca/window.py:933
+msgstr "Perusahaan"
+
+#: casca/window.py:933
 msgid "Type"
-msgstr "Jenis"#: casca/window.py:949
+msgstr "Jenis"
+
+#: casca/window.py:949
 msgid "Search by name…"
-msgstr "Cari berdasarkan nama…"#: casca/window.py:985#, python-format
+msgstr "Cari berdasarkan nama…"
+
+#: casca/window.py:985
+#, python-format
 msgid "Could not set an icon for %(name)s."
-msgstr "Tidak dapat mengatur ikon untuk %(name)s."#: casca/window.py:991#, python-format
+msgstr "Tidak dapat mengatur ikon untuk %(name)s."
+
+#: casca/window.py:991
+#, python-format
 msgid "Error installing package: %(error)s"
-msgstr "Galat saat memasang paket: %(error)s"#: casca/window.py:997#, python-format
+msgstr "Galat saat memasang paket: %(error)s"
+
+#: casca/window.py:997
+#, python-format
 msgid "Package “%(name)s” installed with %(n)d app."
 msgid_plural "Package “%(name)s” installed with %(n)d apps."
-msgstr[0] "Paket \"%(name)s\" terpasang dengan %(n)d aplikasi."#: casca/window.py:1023
+msgstr[0] "Paket \"%(name)s\" terpasang dengan %(n)d aplikasi."
+
+#: casca/window.py:1023
 msgid "Nothing here yet"
-msgstr "Belum ada apa-apa di sini"#: casca/window.py:1024
+msgstr "Belum ada apa-apa di sini"
+
+#: casca/window.py:1024
 msgid "Check the local catalog or your internet connection."
-msgstr "Periksa katalog lokal atau koneksi internet Anda."#: casca/window.py:1040
+msgstr "Periksa katalog lokal atau koneksi internet Anda."
+
+#: casca/window.py:1040
 msgid "Install full package"
-msgstr "Pasang paket lengkap"#: casca/window.py:1165
+msgstr "Pasang paket lengkap"
+
+#: casca/window.py:1165
 msgid "Casca Manual"
-msgstr "Manual Casca"#: casca/window.py:1185
+msgstr "Manual Casca"
+
+#: casca/window.py:1185
 msgid "Could not open the built-in manual"
-msgstr "Tidak dapat membuka manual bawaan"#: casca/window.py:1204
+msgstr "Tidak dapat membuka manual bawaan"
+
+#: casca/window.py:1204
 msgid "Choose what to import"
-msgstr "Pilih yang akan diimpor"#: casca/window.py:1213#, python-format
+msgstr "Pilih yang akan diimpor"
+
+#: casca/window.py:1213
+#, python-format
 msgid "%(n)d site found"
 msgid_plural "%(n)d sites found"
-msgstr[0] "%(n)d situs ditemukan"#: casca/window.py:1216
+msgstr[0] "%(n)d situs ditemukan"
+
+#: casca/window.py:1216
 msgid "Uncheck anything you don't want to import."
-msgstr "Hilangkan centang pada yang tidak ingin Anda impor."#: casca/window.py:1219
+msgstr "Hilangkan centang pada yang tidak ingin Anda impor."
+
+#: casca/window.py:1219
 msgid "(no name)"
-msgstr "(tanpa nama)"#: casca/window.py:1227
+msgstr "(tanpa nama)"
+
+#: casca/window.py:1227
 msgid "Import selected"
-msgstr "Impor yang dipilih"#: casca/window.py:1260
+msgstr "Impor yang dipilih"
+
+#: casca/window.py:1260
 msgid "User guide"
-msgstr "Panduan pengguna"#: casca/window.py:1261
+msgstr "Panduan pengguna"
+
+#: casca/window.py:1261
 msgid "About Casca"
-msgstr "Tentang Casca"#: casca/window.py:1262
+msgstr "Tentang Casca"
+
+#: casca/window.py:1262
 msgid "Menu"
-msgstr "Menu"#: casca/window.py:1292
+msgstr "Menu"
+
+#: casca/window.py:1292
 msgid "Create a new web app"
-msgstr "Buat aplikasi web baru"#: casca/window.py:1293
+msgstr "Buat aplikasi web baru"
+
+#: casca/window.py:1293
 msgid "Create"
-msgstr "Buat"#: casca/window.py:1302 casca/window.py:1398
+msgstr "Buat"
+
+#: casca/window.py:1302 casca/window.py:1429
 msgid "Import apps"
-msgstr "Impor aplikasi"#: casca/window.py:1306 casca/window.py:1348
+msgstr "Impor aplikasi"
+
+#: casca/window.py:1306 casca/window.py:1379
 msgid "Export apps"
-msgstr "Ekspor aplikasi"#: casca/window.py:1335
+msgstr "Ekspor aplikasi"
+
+#: casca/window.py:1337
 msgid "Turns any website into a GNOME app."
-msgstr "Mengubah situs web apa pun menjadi aplikasi GNOME."#: casca/window.py:1346
+msgstr "Mengubah situs web apa pun menjadi aplikasi GNOME."
+
+#: casca/window.py:1341
+#, python-format
+msgid ""
+"Version %(latest)s is available — an update notification with a way to "
+"update just popped up."
+msgstr ""
+"Versi %(latest)s tersedia — notifikasi dengan cara memperbarui baru saja "
+"muncul."
+
+#: casca/window.py:1356
+msgid ""
+"Casca now checks for new releases in the background (once a day at most) and "
+"lets you know with a system notification — no action needed for Flatpak/Snap "
+"installs, which already update themselves."
+msgstr "Casca kini memeriksa rilis baru di latar belakang (paling banyak sekali sehari) dan memberi tahu Anda lewat notifikasi sistem — tidak perlu tindakan apa pun untuk instalasi Flatpak/Snap, yang sudah memperbarui dirinya sendiri."
+
+#: casca/window.py:1361
+msgid ""
+"The About dialog now shows the license, a link to the source code, whether "
+"you're on a release/beta/alpha build, and a proper “What's New” page with "
+"each version's changelog."
+msgstr "Dialog Tentang kini menampilkan lisensi, tautan ke kode sumber, apakah Anda menggunakan build rilis/beta/alfa, dan halaman “Yang Baru” dengan catatan perubahan tiap versi."
+
+#: casca/window.py:1367
+msgid "Source Code"
+msgstr "Kode sumber"
+
+#: casca/window.py:1377
 msgid "No app created yet to export."
-msgstr "Belum ada aplikasi yang dibuat untuk diekspor."#: casca/window.py:1370#, python-format
+msgstr "Belum ada aplikasi yang dibuat untuk diekspor."
+
+#: casca/window.py:1401
+#, python-format
 msgid "Error exporting: %(error)s"
-msgstr "Galat saat mengekspor: %(error)s"#: casca/window.py:1373#, python-format
+msgstr "Galat saat mengekspor: %(error)s"
+
+#: casca/window.py:1404
+#, python-format
 msgid "%(count)d app exported to %(name)s."
 msgid_plural "%(count)d apps exported to %(name)s."
-msgstr[0] "%(count)d aplikasi diekspor ke %(name)s."#: casca/window.py:1379
+msgstr[0] "%(count)d aplikasi diekspor ke %(name)s."
+
+#: casca/window.py:1410
 msgid "Import from where?"
-msgstr "Impor dari mana?"#: casca/window.py:1380
+msgstr "Impor dari mana?"
+
+#: casca/window.py:1411
 msgid "Choose a local .json file or a URL (e.g. a GitHub \"raw\" link)."
-msgstr "Pilih berkas .json lokal atau URL (mis. tautan \"raw\" GitHub)."#: casca/window.py:1382 casca/window.py:1428 casca/window.py:1561#: casca/window.py:1584
+msgstr "Pilih berkas .json lokal atau URL (mis. tautan \"raw\" GitHub)."
+
+#: casca/window.py:1413 casca/window.py:1459 casca/window.py:1592
+#: casca/window.py:1615
 msgid "Cancel"
-msgstr "Batal"#: casca/window.py:1383
+msgstr "Batal"
+
+#: casca/window.py:1414
 msgid "From a URL"
-msgstr "Dari URL"#: casca/window.py:1384
+msgstr "Dari URL"
+
+#: casca/window.py:1415
 msgid "Local file"
-msgstr "Berkas lokal"#: casca/window.py:1417#, python-format
+msgstr "Berkas lokal"
+
+#: casca/window.py:1448
+#, python-format
 msgid "Error reading the file: %(error)s"
-msgstr "Galat saat membaca berkas: %(error)s"#: casca/window.py:1423
+msgstr "Galat saat membaca berkas: %(error)s"
+
+#: casca/window.py:1454
 msgid "Import from a URL"
-msgstr "Impor dari URL"#: casca/window.py:1424
+msgstr "Impor dari URL"
+
+#: casca/window.py:1455
 msgid "Paste the JSON file's \"raw\" link (e.g. from a GitHub repository)."
-msgstr "Tempel tautan \"raw\" berkas JSON (mis. dari repositori GitHub)."#: casca/window.py:1429
+msgstr "Tempel tautan \"raw\" berkas JSON (mis. dari repositori GitHub)."
+
+#: casca/window.py:1460
 msgid "Fetch"
-msgstr "Ambil"#: casca/window.py:1441
+msgstr "Ambil"
+
+#: casca/window.py:1472
 msgid "Enter a URL."
-msgstr "Masukkan URL."#: casca/window.py:1443
+msgstr "Masukkan URL."
+
+#: casca/window.py:1474
 msgid "Fetching file…"
-msgstr "Mengambil berkas…"#: casca/window.py:1450#, python-format
+msgstr "Mengambil berkas…"
+
+#: casca/window.py:1481
+#, python-format
 msgid "Error downloading: %(error)s"
-msgstr "Galat saat mengunduh: %(error)s"#: casca/window.py:1458#, python-format
+msgstr "Galat saat mengunduh: %(error)s"
+
+#: casca/window.py:1489
+#, python-format
 msgid "Error importing: %(error)s"
-msgstr "Galat saat mengimpor: %(error)s"#: casca/window.py:1461
+msgstr "Galat saat mengimpor: %(error)s"
+
+#: casca/window.py:1492
 msgid "No app found in the file."
-msgstr "Tidak ada aplikasi yang ditemukan dalam berkas."#: casca/window.py:1469
+msgstr "Tidak ada aplikasi yang ditemukan dalam berkas."
+
+#: casca/window.py:1500
 msgid "Nothing selected to import."
-msgstr "Tidak ada yang dipilih untuk diimpor."#: casca/window.py:1477#, python-format
+msgstr "Tidak ada yang dipilih untuk diimpor."
+
+#: casca/window.py:1508
+#, python-format
 msgid "%(n)d app imported."
 msgid_plural "%(n)d apps imported."
-msgstr[0] "%(n)d aplikasi diimpor."#: casca/window.py:1483#, python-format
+msgstr[0] "%(n)d aplikasi diimpor."
+
+#: casca/window.py:1514
+#, python-format
 msgid "• %(name)s: %(reason)s"
-msgstr "• %(name)s: %(reason)s"#: casca/window.py:1487#, python-format
+msgstr "• %(name)s: %(reason)s"
+
+#: casca/window.py:1518
+#, python-format
 msgid "%(created)d imported, %(failed)d with errors"
-msgstr "%(created)d diimpor, %(failed)d dengan galat"#: casca/window.py:1489#, python-format
+msgstr "%(created)d diimpor, %(failed)d dengan galat"
+
+#: casca/window.py:1520
+#, python-format
 msgid ""
 "Review and adjust manually via the \"Create\" button:\n"
 "\n"
@@ -567,30 +1158,74 @@ msgid ""
 msgstr ""
 "Tinjau dan sesuaikan secara manual melalui tombol \"Buat\":\n"
 "\n"
-"%(lines)s"#: casca/window.py:1491
+"%(lines)s"
+
+#: casca/window.py:1522
 msgid "Got it"
-msgstr "Mengerti"#: casca/window.py:1505
+msgstr "Mengerti"
+
+#: casca/window.py:1536
 msgid "No web apps yet"
-msgstr "Belum ada aplikasi web"#: casca/window.py:1506
+msgstr "Belum ada aplikasi web"
+
+#: casca/window.py:1537
 msgid ""
 "Tap “Create” to make your first app, or open the Store for ready-made sites."
 msgstr ""
 "Ketuk \"Buat\" untuk membuat aplikasi pertama Anda, atau buka Toko untuk "
-"situs siap pakai."#: casca/window.py:1515
+"situs siap pakai."
+
+#: casca/window.py:1546
 msgid "My web apps"
-msgstr "Aplikasi web saya"#: casca/window.py:1537
+msgstr "Aplikasi web saya"
+
+#: casca/window.py:1568
 msgid "Installed packages"
-msgstr "Paket terpasang"#: casca/window.py:1558#, python-format
+msgstr "Paket terpasang"
+
+#: casca/window.py:1589
+#, python-format
 msgid "Delete “%(name)s”?"
-msgstr "Hapus \"%(name)s\"?"#: casca/window.py:1559
+msgstr "Hapus \"%(name)s\"?"
+
+#: casca/window.py:1590
 msgid ""
 "The shortcut will be removed from the applications menu and the desktop, if "
 "it exists."
-msgstr "Pintasan akan dihapus dari menu aplikasi dan desktop, jika ada."#: casca/window.py:1562 casca/window.py:1585
+msgstr "Pintasan akan dihapus dari menu aplikasi dan desktop, jika ada."
+
+#: casca/window.py:1593 casca/window.py:1616
 msgid "Delete"
-msgstr "Hapus"#: casca/window.py:1576#, python-format
+msgstr "Hapus"
+
+#: casca/window.py:1607
+#, python-format
 msgid "Delete package “%(name)s”?"
-msgstr "Hapus paket \"%(name)s\"?"#: casca/window.py:1578#, python-format
+msgstr "Hapus paket \"%(name)s\"?"
+
+#: casca/window.py:1609
+#, python-format
 msgid "Removes the shortcut and the %(n)d app inside it (%(names)s)."
 msgid_plural "Removes the shortcut and the %(n)d apps inside it (%(names)s)."
 msgstr[0] "Menghapus pintasan dan %(n)d aplikasi di dalamnya (%(names)s)."
+
+#~ msgid ""
+#~ "Casca now speaks 20 languages, picked automatically from the system "
+#~ "locale: English, Portuguese (Brazil), Spanish, French, Italian, German, "
+#~ "Russian, Ukrainian, Polish, Dutch, Turkish, Simplified Chinese, Japanese, "
+#~ "Korean, Vietnamese, Indonesian, Hindi, Arabic, Bengali and Thai."
+#~ msgstr ""
+#~ "Casca kini mendukung 20 bahasa, dipilih otomatis berdasarkan bahasa "
+#~ "sistem: Inggris, Portugis (Brasil), Spanyol, Prancis, Italia, Jerman, "
+#~ "Rusia, Ukraina, Polandia, Belanda, Turki, Tionghoa Sederhana, Jepang, "
+#~ "Korea, Vietnam, Indonesia, Hindi, Arab, Bengali, dan Thailand."
+
+#~ msgid ""
+#~ "The creation screen's browser, mobile mode, resolution and icon sections "
+#~ "now have an inline help button — hover for a quick tip, click to jump "
+#~ "straight to that topic in a redesigned, example-filled manual."
+#~ msgstr ""
+#~ "Bagian browser, mode seluler, resolusi, dan ikon di layar pembuatan kini "
+#~ "memiliki tombol bantuan bawaan — arahkan kursor untuk tip singkat, klik "
+#~ "untuk langsung menuju topik itu di manual yang didesain ulang dan penuh "
+#~ "contoh."

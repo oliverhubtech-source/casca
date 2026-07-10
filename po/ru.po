@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Casca 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/oliverhubtech-source/casca/issues\n"
-"POT-Creation-Date: 2026-07-09 22:51-0300\n"
+"POT-Creation-Date: 2026-07-10 16:23-0300\n"
 "PO-Revision-Date: 2026-07-09 16:07-0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -12,167 +12,335 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"#: casca/browsers.py:199
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: casca/browsers.py:209
 msgid "Casca's own window"
-msgstr "Собственное окно Casca"#: casca/catalog_strings.py:16 casca/help_content.py:76 casca/presets.py:51
+msgstr "Собственное окно Casca"
+
+#: casca/catalog_strings.py:16 casca/help_content.py:76 casca/presets.py:51
 msgid "Artificial Intelligence"
-msgstr "Искусственный интеллект"#: casca/catalog_strings.py:17
+msgstr "Искусственный интеллект"
+
+#: casca/catalog_strings.py:17
 msgid "Cloud Computing"
-msgstr "Облачные вычисления"#: casca/catalog_strings.py:18 casca/help_content.py:86 casca/presets.py:166
+msgstr "Облачные вычисления"
+
+#: casca/catalog_strings.py:18 casca/help_content.py:86 casca/presets.py:166
 msgid "Conversion & Sharing"
-msgstr "Конвертация и обмен"#: casca/catalog_strings.py:19
+msgstr "Конвертация и обмен"
+
+#: casca/catalog_strings.py:19
 msgid "Creativity"
-msgstr "Творчество"#: casca/catalog_strings.py:20
+msgstr "Творчество"
+
+#: casca/catalog_strings.py:20
 msgid "Finance"
-msgstr "Финансы"#: casca/catalog_strings.py:21 casca/window.py:935
+msgstr "Финансы"
+
+#: casca/catalog_strings.py:21 casca/window.py:935
 msgid "Marketplace"
-msgstr "Маркетплейс"#: casca/catalog_strings.py:22
+msgstr "Маркетплейс"
+
+#: casca/catalog_strings.py:22
 msgid "Messenger"
-msgstr "Мессенджер"#: casca/catalog_strings.py:23
+msgstr "Мессенджер"
+
+#: casca/catalog_strings.py:23
 msgid "Music Streaming"
-msgstr "Потоковая музыка"#: casca/catalog_strings.py:24 casca/window.py:936
+msgstr "Потоковая музыка"
+
+#: casca/catalog_strings.py:24 casca/window.py:936
 msgid "News"
-msgstr "Новости"#: casca/catalog_strings.py:25
+msgstr "Новости"
+
+#: casca/catalog_strings.py:25
 msgid "PDF"
-msgstr "PDF"#: casca/catalog_strings.py:26
+msgstr "PDF"
+
+#: casca/catalog_strings.py:26
 msgid "Productivity"
-msgstr "Продуктивность"#: casca/catalog_strings.py:27
+msgstr "Продуктивность"
+
+#: casca/catalog_strings.py:27
 msgid "Search Engine"
-msgstr "Поисковая система"#: casca/catalog_strings.py:28
+msgstr "Поисковая система"
+
+#: casca/catalog_strings.py:28
 msgid "Security"
-msgstr "Безопасность"#: casca/catalog_strings.py:29
+msgstr "Безопасность"
+
+#: casca/catalog_strings.py:29
 msgid "Social Network"
-msgstr "Социальная сеть"#: casca/catalog_strings.py:30
+msgstr "Социальная сеть"
+
+#: casca/catalog_strings.py:30
 msgid "Utility"
-msgstr "Утилита"#: casca/catalog_strings.py:31
+msgstr "Утилита"
+
+#: casca/catalog_strings.py:31
 msgid "Video Streaming"
-msgstr "Видеостриминг"#: casca/catalog_strings.py:33
+msgstr "Видеостриминг"
+
+#: casca/catalog_strings.py:33
 msgid "Argentina"
-msgstr "Аргентина"#: casca/catalog_strings.py:34
+msgstr "Аргентина"
+
+#: casca/catalog_strings.py:34
 msgid "Brazil"
-msgstr "Бразилия"#: casca/catalog_strings.py:35
+msgstr "Бразилия"
+
+#: casca/catalog_strings.py:35
 msgid "Chile"
-msgstr "Чили"#: casca/catalog_strings.py:36
+msgstr "Чили"
+
+#: casca/catalog_strings.py:36
 msgid "Colombia"
-msgstr "Колумбия"#: casca/catalog_strings.py:37
+msgstr "Колумбия"
+
+#: casca/catalog_strings.py:37
 msgid "Europe"
-msgstr "Европа"#: casca/catalog_strings.py:38
+msgstr "Европа"
+
+#: casca/catalog_strings.py:38
 msgid "France"
-msgstr "Франция"#: casca/catalog_strings.py:39
+msgstr "Франция"
+
+#: casca/catalog_strings.py:39
 msgid "Germany"
-msgstr "Германия"#: casca/catalog_strings.py:40
+msgstr "Германия"
+
+#: casca/catalog_strings.py:40
 msgid "International"
-msgstr "Международный"#: casca/catalog_strings.py:41
+msgstr "Международный"
+
+#: casca/catalog_strings.py:41
 msgid "Mexico"
-msgstr "Мексика"#: casca/catalog_strings.py:42
+msgstr "Мексика"
+
+#: casca/catalog_strings.py:42
 msgid "Netherlands"
-msgstr "Нидерланды"#: casca/catalog_strings.py:43
+msgstr "Нидерланды"
+
+#: casca/catalog_strings.py:43
 msgid "Paraguay"
-msgstr "Парагвай"#: casca/catalog_strings.py:44
+msgstr "Парагвай"
+
+#: casca/catalog_strings.py:44
 msgid "Poland"
-msgstr "Польша"#: casca/catalog_strings.py:45
+msgstr "Польша"
+
+#: casca/catalog_strings.py:45
 msgid "Spain"
-msgstr "Испания"#: casca/catalog_strings.py:46
+msgstr "Испания"
+
+#: casca/catalog_strings.py:46
 msgid "United Kingdom"
-msgstr "Великобритания"#: casca/catalog_strings.py:47
+msgstr "Великобритания"
+
+#: casca/catalog_strings.py:47
 msgid "United States"
-msgstr "США"#: casca/catalog_strings.py:48
+msgstr "США"
+
+#: casca/catalog_strings.py:48
 msgid "Uruguay"
-msgstr "Уругвай"#: casca/catalog_strings.py:50
+msgstr "Уругвай"
+
+#: casca/catalog_strings.py:50
 msgid "Google Workspace"
-msgstr "Google Workspace"#: casca/catalog_strings.py:51
+msgstr "Google Workspace"
+
+#: casca/catalog_strings.py:51
 msgid "Microsoft 365"
-msgstr "Microsoft 365"#: casca/catalog_strings.py:52
+msgstr "Microsoft 365"
+
+#: casca/catalog_strings.py:52
 msgid "Social Media"
-msgstr "Социальные медиа"#: casca/catalog_strings.py:53
+msgstr "Социальные медиа"
+
+#: casca/catalog_strings.py:53
 msgid "YouTube"
-msgstr "YouTube"#: casca/devices.py:79
+msgstr "YouTube"
+
+#: casca/devices.py:79
 msgid "Small (800×600)"
-msgstr "Маленький (800×600)"#: casca/devices.py:80
+msgstr "Маленький (800×600)"
+
+#: casca/devices.py:80
 msgid "Medium (1024×768)"
-msgstr "Средний (1024×768)"#: casca/devices.py:81
+msgstr "Средний (1024×768)"
+
+#: casca/devices.py:81
 msgid "Laptop (1280×800)"
-msgstr "Ноутбук (1280×800)"#: casca/devices.py:82
+msgstr "Ноутбук (1280×800)"
+
+#: casca/devices.py:82
 msgid "Laptop HD (1366×768)"
-msgstr "Ноутбук HD (1366×768)"#: casca/devices.py:83
+msgstr "Ноутбук HD (1366×768)"
+
+#: casca/devices.py:83
 msgid "Large (1600×900)"
-msgstr "Большой (1600×900)"#: casca/devices.py:84
+msgstr "Большой (1600×900)"
+
+#: casca/devices.py:84
 msgid "Full HD (1920×1080)"
-msgstr "Full HD (1920×1080)"#: casca/entries.py:203 casca/entries.py:245#, python-format
+msgstr "Full HD (1920×1080)"
+
+#: casca/entries.py:205 casca/entries.py:247
+#, python-format
 msgid "Browser not found: %(key)s"
-msgstr "Браузер не найден: %(key)s"#: casca/entries.py:249#, python-format
+msgstr "Браузер не найден: %(key)s"
+
+#: casca/entries.py:251
+#, python-format
 msgid "App not found: %(slug)s"
-msgstr "Приложение не найдено: %(slug)s"#: casca/entries.py:337
+msgstr "Приложение не найдено: %(slug)s"
+
+#: casca/entries.py:339
 msgid "remote file too large"
-msgstr "удалённый файл слишком большой"#: casca/entries.py:341#, python-format
+msgstr "удалённый файл слишком большой"
+
+#: casca/entries.py:343
+#, python-format
 msgid "could not download the file (%(error)s)"
-msgstr "не удалось загрузить файл (%(error)s)"#: casca/entries.py:350#, python-format
+msgstr "не удалось загрузить файл (%(error)s)"
+
+#: casca/entries.py:352
+#, python-format
 msgid "could not read the file (%(error)s)"
-msgstr "не удалось прочитать файл (%(error)s)"#: casca/entries.py:354
+msgstr "не удалось прочитать файл (%(error)s)"
+
+#: casca/entries.py:356
 msgid "unexpected format: no 'apps' list found"
-msgstr "неожиданный формат: список «apps» не найден"#: casca/entries.py:388#, python-format
+msgstr "неожиданный формат: список «apps» не найден"
+
+#: casca/entries.py:390
+#, python-format
 msgid "item %(n)d"
-msgstr "элемент %(n)d"#: casca/entries.py:390
+msgstr "элемент %(n)d"
+
+#: casca/entries.py:392
 msgid "missing name or URL"
-msgstr "отсутствует имя или URL"#: casca/entries.py:393 casca/entries.py:398
+msgstr "отсутствует имя или URL"
+
+#: casca/entries.py:395 casca/entries.py:400
 msgid "unsupported URL scheme"
-msgstr "неподдерживаемая схема URL"#: casca/entries.py:404
+msgstr "неподдерживаемая схема URL"
+
+#: casca/entries.py:406
 msgid "no browser available"
-msgstr "нет доступного браузера"#: casca/entries.py:423
+msgstr "нет доступного браузера"
+
+#: casca/entries.py:425
 msgid "could not get an icon"
-msgstr "не удалось получить значок"#: casca/entries.py:481
+msgstr "не удалось получить значок"
+
+#: casca/entries.py:483
 msgid "No browser available to assemble the package."
-msgstr "Нет доступного браузера для сборки пакета."#: casca/entries.py:553
+msgstr "Нет доступного браузера для сборки пакета."
+
+#: casca/entries.py:555
 msgid "Package of web apps created by Casca"
-msgstr "Пакет веб-приложений, созданный в Casca"#: casca/help_content.py:29
+msgstr "Пакет веб-приложений, созданный в Casca"
+
+#: casca/help_content.py:29
 msgid "User Guide"
-msgstr "Руководство пользователя"#: casca/help_content.py:36
+msgstr "Руководство пользователя"
+
+#: casca/help_content.py:36
 msgid "Casca — User Guide"
-msgstr "Casca — руководство пользователя"#: casca/help_content.py:37
+msgstr "Casca — руководство пользователя"
+
+#: casca/help_content.py:37
 msgid "Casca icon"
-msgstr "Значок Casca"#: casca/help_content.py:39
+msgstr "Значок Casca"
+
+#: casca/help_content.py:39
 msgid "Websites, turned into apps. No fuss."
-msgstr "Сайты становятся приложениями. Без лишней возни."#: casca/help_content.py:41
+msgstr "Сайты становятся приложениями. Без лишней возни."
+
+#: casca/help_content.py:41
 msgid ""
 "Casca turns any address into a GNOME app: icon in the menu, its own window, "
 "no leftover browser bar. This guide covers every option on the creation "
 "screen."
-msgstr "Casca превращает любой адрес в приложение GNOME: значок в меню, собственное окно, без лишней панели браузера. Это руководство описывает каждый параметр экрана создания."#: casca/help_content.py:44
+msgstr ""
+"Casca превращает любой адрес в приложение GNOME: значок в меню, собственное "
+"окно, без лишней панели браузера. Это руководство описывает каждый параметр "
+"экрана создания."
+
+#: casca/help_content.py:44
 msgid "First app"
-msgstr "Первое приложение"#: casca/help_content.py:45
+msgstr "Первое приложение"
+
+#: casca/help_content.py:45
 msgid "Presets"
-msgstr "Готовые варианты"#: casca/help_content.py:46 casca/help_content.py:89
+msgstr "Готовые варианты"
+
+#: casca/help_content.py:46 casca/help_content.py:89
 msgid "Icon"
-msgstr "Значок"#: casca/help_content.py:47
+msgstr "Значок"
+
+#: casca/help_content.py:47
 msgid "Shortcut"
-msgstr "Ярлык"#: casca/help_content.py:48 casca/window.py:235
+msgstr "Ярлык"
+
+#: casca/help_content.py:48 casca/window.py:235
 msgid "Browser"
-msgstr "Браузер"#: casca/help_content.py:49 casca/help_content.py:140
+msgstr "Браузер"
+
+#: casca/help_content.py:49 casca/help_content.py:140
 msgid "Mobile mode"
-msgstr "Мобильный режим"#: casca/help_content.py:50
+msgstr "Мобильный режим"
+
+#: casca/help_content.py:50
 msgid "Resolution"
-msgstr "Разрешение"#: casca/help_content.py:51
+msgstr "Разрешение"
+
+#: casca/help_content.py:51
 msgid "Edit"
-msgstr "Изменить"#: casca/help_content.py:52
+msgstr "Изменить"
+
+#: casca/help_content.py:52
 msgid "Creating your first app"
-msgstr "Создание первого приложения"#: casca/help_content.py:53
+msgstr "Создание первого приложения"
+
+#: casca/help_content.py:53
 msgid "Two buttons on the home screen, two paths."
-msgstr "Две кнопки на главном экране, два пути."#: casca/help_content.py:55
+msgstr "Две кнопки на главном экране, два пути."
+
+#: casca/help_content.py:55
 msgid ""
 "<strong>Create from preset</strong> — pick an already-cataloged site (Gmail, "
 "WhatsApp, Netflix, ChatGPT…), with name, address and icon ready to go."
-msgstr "<strong>Создать из готового варианта</strong> — выберите уже каталогизированный сайт (Gmail, WhatsApp, Netflix, ChatGPT…) с готовыми названием, адресом и значком."#: casca/help_content.py:59
+msgstr ""
+"<strong>Создать из готового варианта</strong> — выберите уже "
+"каталогизированный сайт (Gmail, WhatsApp, Netflix, ChatGPT…) с готовыми "
+"названием, адресом и значком."
+
+#: casca/help_content.py:59
 msgid ""
 "<strong>Create new web app</strong> — start from scratch: you type in the "
 "name and address."
-msgstr "<strong>Создать новое веб-приложение</strong> — начните с нуля: введите название и адрес."#: casca/help_content.py:62
+msgstr ""
+"<strong>Создать новое веб-приложение</strong> — начните с нуля: введите "
+"название и адрес."
+
+#: casca/help_content.py:62
 msgid ""
 "Everything below the name and address is <strong>optional</strong>. Without "
 "touching anything, Casca figures it out on its own: fetches the icon, "
 "doesn't create a Desktop shortcut, opens in its own window at normal size."
-msgstr "Всё, что ниже названия и адреса, — <strong>необязательно</strong>. Ничего не трогая, Casca справится сам: найдёт значок, не создаст ярлык на рабочем столе, откроется в собственном окне обычного размера."#: casca/help_content.py:66
+msgstr ""
+"Всё, что ниже названия и адреса, — <strong>необязательно</strong>. Ничего не "
+"трогая, Casca справится сам: найдёт значок, не создаст ярлык на рабочем "
+"столе, откроется в собственном окне обычного размера."
+
+#: casca/help_content.py:66
 msgid "Preset sites"
-msgstr "Готовые сайты"#: casca/help_content.py:68
+msgstr "Готовые сайты"
+
+#: casca/help_content.py:68
 msgid ""
 "A search field at the top filters by site name (<code class=\"eyebrow text-"
 "[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 "
@@ -180,57 +348,112 @@ msgid ""
 "[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 "
 "py-0.5 rounded\">microsoft</code>). Categories start collapsed — tap one to "
 "expand it."
-msgstr "Поле поиска сверху фильтрует по названию сайта (<code class=\"eyebrow text-[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 py-0.5 rounded\">gmail</code>) или по категории (<code class=\"eyebrow text-[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 py-0.5 rounded\">microsoft</code>). Категории изначально свёрнуты — коснитесь, чтобы развернуть."
+msgstr ""
+"Поле поиска сверху фильтрует по названию сайта (<code class=\"eyebrow text-"
+"[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 "
+"py-0.5 rounded\">gmail</code>) или по категории (<code class=\"eyebrow text-"
+"[13px] bg-lav-soft dark:bg-[#2c2740] text-lav dark:text-lav-dark px-1.5 "
+"py-0.5 rounded\">microsoft</code>). Категории изначально свёрнуты — "
+"коснитесь, чтобы развернуть."
+
 #: casca/help_content.py:74 casca/presets.py:23
 msgid "Google Products"
-msgstr "Продукты Google"#: casca/help_content.py:75 casca/presets.py:39
+msgstr "Продукты Google"
+
+#: casca/help_content.py:75 casca/presets.py:39
 msgid "Microsoft Products"
-msgstr "Продукты Microsoft"#: casca/help_content.py:77 casca/presets.py:66
+msgstr "Продукты Microsoft"
+
+#: casca/help_content.py:77 casca/presets.py:66
 msgid "Search Engines"
-msgstr "Поисковые системы"#: casca/help_content.py:78 casca/presets.py:78
+msgstr "Поисковые системы"
+
+#: casca/help_content.py:78 casca/presets.py:78
 msgid "Messengers"
-msgstr "Мессенджеры"#: casca/help_content.py:79 casca/presets.py:88
+msgstr "Мессенджеры"
+
+#: casca/help_content.py:79 casca/presets.py:88
 msgid "Social Networks"
-msgstr "Социальные сети"#: casca/help_content.py:80 casca/presets.py:99
+msgstr "Социальные сети"
+
+#: casca/help_content.py:80 casca/presets.py:99
 msgid "Streaming"
-msgstr "Стриминг"#: casca/help_content.py:81 casca/presets.py:111
+msgstr "Стриминг"
+
+#: casca/help_content.py:81 casca/presets.py:111
 msgid "Music"
-msgstr "Музыка"#: casca/help_content.py:82 casca/presets.py:123
+msgstr "Музыка"
+
+#: casca/help_content.py:82 casca/presets.py:123
 msgid "Productivity & Organization"
-msgstr "Продуктивность и организация"#: casca/help_content.py:83 casca/presets.py:136
+msgstr "Продуктивность и организация"
+
+#: casca/help_content.py:83 casca/presets.py:136
 msgid "PDF Tools"
-msgstr "Инструменты PDF"#: casca/help_content.py:84 casca/presets.py:145
+msgstr "Инструменты PDF"
+
+#: casca/help_content.py:84 casca/presets.py:145
 msgid "Calculations & Finance"
-msgstr "Расчёты и финансы"#: casca/help_content.py:85 casca/presets.py:157
+msgstr "Расчёты и финансы"
+
+#: casca/help_content.py:85 casca/presets.py:157
 msgid "Generators & Utilities"
-msgstr "Генераторы и утилиты"#: casca/help_content.py:87 casca/presets.py:176
+msgstr "Генераторы и утилиты"
+
+#: casca/help_content.py:87 casca/presets.py:176
 msgid "Security & Diagnostics"
-msgstr "Безопасность и диагностика"#: casca/help_content.py:88 casca/presets.py:186
+msgstr "Безопасность и диагностика"
+
+#: casca/help_content.py:88 casca/presets.py:186
 msgid "Creativity & Content"
-msgstr "Творчество и контент"#: casca/help_content.py:90
+msgstr "Творчество и контент"
+
+#: casca/help_content.py:90
 msgid "Check <strong>Customize icon and shortcut</strong> to choose manually."
 msgstr ""
-"Отметьте <strong>Настроить значок и ярлык</strong>, чтобы выбрать вручную."#: casca/help_content.py:91 casca/window.py:356
+"Отметьте <strong>Настроить значок и ярлык</strong>, чтобы выбрать вручную."
+
+#: casca/help_content.py:91 casca/window.py:356
 msgid "Search online"
-msgstr "Искать в интернете"#: casca/help_content.py:93
+msgstr "Искать в интернете"
+
+#: casca/help_content.py:93
 msgid ""
 "Checks several sources — Google, DuckDuckGo, apple-touch-icon, PWA manifest "
 "— and shows the results in a grid."
-msgstr "Проверяет несколько источников — Google, DuckDuckGo, apple-touch-icon, манифест PWA — и показывает результаты в сетке."#: casca/help_content.py:96 casca/window.py:358
+msgstr ""
+"Проверяет несколько источников — Google, DuckDuckGo, apple-touch-icon, "
+"манифест PWA — и показывает результаты в сетке."
+
+#: casca/help_content.py:96 casca/window.py:358
 msgid "From computer"
-msgstr "С компьютера"#: casca/help_content.py:97
+msgstr "С компьютера"
+
+#: casca/help_content.py:97
 msgid "Picks a PNG, JPG or SVG file already saved on your computer."
-msgstr "Выбирает файл PNG, JPG или SVG, уже сохранённый на компьютере."#: casca/help_content.py:98 casca/window.py:360
+msgstr "Выбирает файл PNG, JPG или SVG, уже сохранённый на компьютере."
+
+#: casca/help_content.py:98 casca/window.py:360
 msgid "From gallery"
-msgstr "Из галереи"#: casca/help_content.py:99
+msgstr "Из галереи"
+
+#: casca/help_content.py:99
 msgid "Over 160 brand icons already included, no internet needed."
-msgstr "Более 160 значков брендов уже включены, интернет не нужен."#: casca/help_content.py:101
+msgstr "Более 160 значков брендов уже включены, интернет не нужен."
+
+#: casca/help_content.py:101
 msgid ""
 "Without checking anything, Casca fetches an icon automatically on save — or "
 "uses the icon that's already set, if the app came from a preset."
-msgstr "Ничего не отмечая, Casca автоматически находит значок при сохранении — либо использует уже установленный, если приложение создано из готового варианта."#: casca/help_content.py:104
+msgstr ""
+"Ничего не отмечая, Casca автоматически находит значок при сохранении — либо "
+"использует уже установленный, если приложение создано из готового варианта."
+
+#: casca/help_content.py:104
 msgid "Example"
-msgstr "Пример"#: casca/help_content.py:106
+msgstr "Пример"
+
+#: casca/help_content.py:106
 msgid ""
 "Your bank's site favicon looks blurry at a larger size — pick <strong>From "
 "gallery</strong> for a clean pre-made icon, or <strong>From computer</"
@@ -242,33 +465,62 @@ msgstr ""
 "<strong>Из галереи</strong> для чистого готового значка или <strong>С "
 "компьютера</strong>, если у вас уже сохранён логотип получше. Что бы вы ни "
 "выбрали, оно приводится к чёткому изображению 256×256 (SVG остаются как "
-"есть, поскольку они масштабируются идеально)."#: casca/help_content.py:111
+"есть, поскольку они масштабируются идеально)."
+
+#: casca/help_content.py:111
 msgid "Desktop Shortcut"
-msgstr "Ярлык на рабочем столе"#: casca/help_content.py:113
+msgstr "Ярлык на рабочем столе"
+
+#: casca/help_content.py:113
 msgid ""
 "Every app already shows up in the GNOME applications menu. To also get an "
 "icon on the Desktop, check <strong>Customize icon and shortcut</strong> and "
 "turn on <strong>Also create on the Desktop</strong>."
-msgstr "Каждое приложение уже появляется в меню приложений GNOME. Чтобы также получить значок на рабочем столе, включите <strong>Настроить значок и ярлык</strong> и активируйте <strong>Также создать на рабочем столе</strong>."#: casca/help_content.py:117
+msgstr ""
+"Каждое приложение уже появляется в меню приложений GNOME. Чтобы также "
+"получить значок на рабочем столе, включите <strong>Настроить значок и ярлык</"
+"strong> и активируйте <strong>Также создать на рабочем столе</strong>."
+
+#: casca/help_content.py:117
 msgid "Custom browser"
-msgstr "Свой браузер"#: casca/help_content.py:119
+msgstr "Свой браузер"
+
+#: casca/help_content.py:119
 msgid ""
 "By default, every app opens in <strong>Casca's own window</strong>: lighter, "
 "top bar automatically colored to match the icon, isolated session per app."
-msgstr "По умолчанию каждое приложение открывается в <strong>собственном окне Casca</strong>: легче, верхняя панель автоматически окрашивается под цвет значка, отдельная сессия для каждого приложения."#: casca/help_content.py:123
+msgstr ""
+"По умолчанию каждое приложение открывается в <strong>собственном окне Casca</"
+"strong>: легче, верхняя панель автоматически окрашивается под цвет значка, "
+"отдельная сессия для каждого приложения."
+
+#: casca/help_content.py:123
 msgid ""
 "<strong>Heads up:</strong> sites with Google login (Gmail, Drive, Calendar, "
 "Meet…) tend to refuse login in the built-in window — a Google restriction "
 "against unrecognized browsers, with no workaround. Check <strong>Use a "
 "custom browser</strong> and pick Chrome, Helium, GNOME Web or another "
 "installed browser."
-msgstr "<strong>Обратите внимание:</strong> сайты со входом через Google (Gmail, Диск, Календарь, Meet…) обычно отказывают во входе во встроенном окне — это ограничение Google против нераспознанных браузеров, обхода нет. Включите <strong>Использовать другой браузер</strong> и выберите Chrome, Helium, GNOME Web или другой установленный браузер."#: casca/help_content.py:129
+msgstr ""
+"<strong>Обратите внимание:</strong> сайты со входом через Google (Gmail, "
+"Диск, Календарь, Meet…) обычно отказывают во входе во встроенном окне — это "
+"ограничение Google против нераспознанных браузеров, обхода нет. Включите "
+"<strong>Использовать другой браузер</strong> и выберите Chrome, Helium, "
+"GNOME Web или другой установленный браузер."
+
+#: casca/help_content.py:129
 msgid ""
 "With a Chromium-based browser (Chrome, Chromium, Brave, Edge, Vivaldi, "
 "Helium…) and more than one account configured in it, <strong>Browser "
 "account</strong> also shows up — choose which already-logged-in account "
 "opens the app, instead of a new profile with no login."
-msgstr "С браузером на основе Chromium (Chrome, Chromium, Brave, Edge, Vivaldi, Helium…) и более чем одной настроенной учётной записью также появляется <strong>Учётная запись браузера</strong> — выберите, какая уже вошедшая учётная запись откроет приложение, вместо нового профиля без входа."#: casca/help_content.py:135
+msgstr ""
+"С браузером на основе Chromium (Chrome, Chromium, Brave, Edge, Vivaldi, "
+"Helium…) и более чем одной настроенной учётной записью также появляется "
+"<strong>Учётная запись браузера</strong> — выберите, какая уже вошедшая "
+"учётная запись откроет приложение, вместо нового профиля без входа."
+
+#: casca/help_content.py:135
 msgid ""
 "You use Chrome for everyday browsing and want Gmail to open already signed "
 "into your work account instead of asking you to log in again. Turn on "
@@ -280,12 +532,19 @@ msgstr ""
 "открывался сразу с входом в рабочий аккаунт, а не запрашивал повторный вход. "
 "Включите <strong>Использовать другой браузер</strong>, выберите Chrome, "
 "затем выберите свой аккаунт в разделе <strong>Учётная запись браузера</"
-"strong> — Gmail откроется прямо в этом почтовом ящике."#: casca/help_content.py:142
+"strong> — Gmail откроется прямо в этом почтовом ящике."
+
+#: casca/help_content.py:142
 msgid ""
 "Check <strong>Open in mobile mode</strong> and pick a device — Google Pixel, "
 "iPhone, Galaxy, iPad. The app identifies itself to the site as that device, "
 "unlocking the mobile layout (usually simpler and faster)."
-msgstr "Включите <strong>Открывать в мобильном режиме</strong> и выберите устройство — Google Pixel, iPhone, Galaxy, iPad. Приложение представится сайту этим устройством, разблокировав мобильную раскладку (обычно проще и быстрее)."#: casca/help_content.py:147
+msgstr ""
+"Включите <strong>Открывать в мобильном режиме</strong> и выберите устройство "
+"— Google Pixel, iPhone, Galaxy, iPad. Приложение представится сайту этим "
+"устройством, разблокировав мобильную раскладку (обычно проще и быстрее)."
+
+#: casca/help_content.py:147
 msgid ""
 "Pick <strong>iPhone 15 Pro</strong> for a site like X (Twitter) and it "
 "serves the same stripped-down layout you'd get on a real phone — fewer side "
@@ -298,281 +557,609 @@ msgstr ""
 "боковых панелей, более простая лента. Это меняет идентификацию, которую "
 "приложение отправляет сайту, а не только размер окна, поэтому сочетайте это "
 "с настраиваемым разрешением ниже, чтобы также соответствовать форме экрана "
-"телефона."#: casca/help_content.py:152
+"телефона."
+
+#: casca/help_content.py:152
 msgid "Window resolution"
-msgstr "Разрешение окна"#: casca/help_content.py:154
+msgstr "Разрешение окна"
+
+#: casca/help_content.py:154
 msgid ""
 "Check <strong>Customize window resolution</strong> — three ways to set the "
 "size, works with or without mobile mode enabled."
-msgstr "Включите <strong>Настроить разрешение окна</strong> — три способа задать размер, работает как с мобильным режимом, так и без него."#: casca/help_content.py:158
+msgstr ""
+"Включите <strong>Настроить разрешение окна</strong> — три способа задать "
+"размер, работает как с мобильным режимом, так и без него."
+
+#: casca/help_content.py:158
 msgid ""
 "<strong>By device</strong> — uses the screen size of the device chosen in "
 "mobile mode."
-msgstr "<strong>По устройству</strong> — использует размер экрана устройства, выбранного в мобильном режиме."#: casca/help_content.py:160
+msgstr ""
+"<strong>По устройству</strong> — использует размер экрана устройства, "
+"выбранного в мобильном режиме."
+
+#: casca/help_content.py:160
 msgid "<strong>Default size</strong> — common resolutions (laptop, Full HD…)."
 msgstr ""
 "<strong>Стандартный размер</strong> — распространённые разрешения (ноутбук, "
-"Full HD…)."#: casca/help_content.py:161
+"Full HD…)."
+
+#: casca/help_content.py:161
 msgid "<strong>Custom</strong> — you type in width and height in pixels."
-msgstr "<strong>Особый</strong> — вы вводите ширину и высоту в пикселях."#: casca/help_content.py:163
+msgstr "<strong>Особый</strong> — вы вводите ширину и высоту в пикселях."
+
+#: casca/help_content.py:163
 msgid ""
 "You want a WhatsApp Web window that's tall and narrow, like a phone propped "
 "up next to your monitor — pick <strong>Custom</strong> and set it to 400 × "
 "900."
 msgstr ""
 "Вам нужно высокое узкое окно WhatsApp Web, как телефон рядом с монитором — "
-"выберите <strong>Настраиваемый</strong> и укажите 400 × 900."#: casca/help_content.py:166
+"выберите <strong>Настраиваемый</strong> и укажите 400 × 900."
+
+#: casca/help_content.py:166
 msgid "Edit and delete"
-msgstr "Изменить и удалить"#: casca/help_content.py:168
+msgstr "Изменить и удалить"
+
+#: casca/help_content.py:168
 msgid ""
 "On the home screen, every app has a pencil to <strong>edit</strong> (changes "
 "any setting, including ones that were disabled at creation) and a trash icon "
 "to <strong>delete</strong> (removes the shortcut from the menu, the Desktop, "
 "and the saved icon)."
-msgstr "На главном экране у каждого приложения есть карандаш для <strong>редактирования</strong> (меняет любую настройку, включая отключённые при создании) и значок корзины для <strong>удаления</strong> (убирает ярлык из меню, с рабочего стола и сохранённый значок)."#: casca/help_content.py:173
+msgstr ""
+"На главном экране у каждого приложения есть карандаш для "
+"<strong>редактирования</strong> (меняет любую настройку, включая отключённые "
+"при создании) и значок корзины для <strong>удаления</strong> (убирает ярлык "
+"из меню, с рабочего стола и сохранённый значок)."
+
+#: casca/help_content.py:173
 msgid "Casca — built to turn websites into GNOME apps."
-msgstr "Casca — создан, чтобы превращать сайты в приложения GNOME."#: casca/icons.py:171
+msgstr "Casca — создан, чтобы превращать сайты в приложения GNOME."
+
+#: casca/icons.py:171
 msgid "Site icon (.ico)"
-msgstr "Значок сайта (.ico)"#: casca/icons.py:172
+msgstr "Значок сайта (.ico)"
+
+#: casca/icons.py:172
 msgid "Site icon (32px)"
-msgstr "Значок сайта (32px)"#: casca/icons.py:173
+msgstr "Значок сайта (32px)"
+
+#: casca/icons.py:173
 msgid "Apple touch icon"
-msgstr "Значок Apple Touch"#: casca/icons.py:179
+msgstr "Значок Apple Touch"
+
+#: casca/icons.py:179
 msgid "PWA Manifest"
-msgstr "Манифест PWA"#: casca/package_launcher.py:72 casca/package_launcher.py:113#: casca/window.py:934
+msgstr "Манифест PWA"
+
+#: casca/package_launcher.py:73 casca/package_launcher.py:119
+#: casca/window.py:934
 msgid "Package"
-msgstr "Пакет"#: casca/store.py:80
+msgstr "Пакет"
+
+#: casca/store.py:80
 msgid "Independent"
-msgstr "Независимый"#: casca/store.py:81 casca/store.py:97
+msgstr "Независимый"
+
+#: casca/store.py:81 casca/store.py:97
 msgid "Other"
-msgstr "Другое"#: casca/store.py:92 casca/window.py:1038
+msgstr "Другое"
+
+#: casca/store.py:92 casca/window.py:1038
 msgid "Independent apps"
-msgstr "Независимые приложения"#: casca/store.py:92
+msgstr "Независимые приложения"
+
+#: casca/store.py:92
 msgid "Global"
-msgstr "Глобальный"#: casca/window.py:86
+msgstr "Глобальный"
+
+#: casca/updater.py:90 casca/updater.py:91
+msgid "Release"
+msgstr "Релиз"
+
+#: casca/updater.py:90
+msgid "Beta"
+msgstr "Бета"
+
+#: casca/updater.py:90
+msgid "Alpha"
+msgstr "Альфа"
+
+#: casca/updater.py:90
+msgid "Development"
+msgstr "Разработка"
+
+#: casca/updater.py:106
+msgid "Casca"
+msgstr "Casca"
+
+#: casca/updater.py:109
+msgid "Updated — restart Casca to use the new version."
+msgstr "Обновлено — перезапустите Casca, чтобы использовать новую версию."
+
+#: casca/updater.py:110
+msgid "Couldn't update automatically — check for updates manually."
+msgstr "Не удалось обновить автоматически — проверьте обновления вручную."
+
+#: casca/updater.py:125
+msgid "Casca update available"
+msgstr "Доступно обновление Casca"
+
+#: casca/updater.py:128
+#, python-format
+msgid "Version %(latest)s is available (you're on %(current)s)."
+msgstr "Доступна версия %(latest)s (у вас %(current)s)."
+
+#: casca/updater.py:138
+msgid "Update now"
+msgstr "Обновить сейчас"
+
+#: casca/window.py:86
 msgid "Choose icon"
-msgstr "Выбрать значок"#: casca/window.py:121
+msgstr "Выбрать значок"
+
+#: casca/window.py:121
 msgid "Icons found"
-msgstr "Найденные значки"#: casca/window.py:144
+msgstr "Найденные значки"
+
+#: casca/window.py:144
 msgid "Searching for icons online…"
-msgstr "Поиск значков в интернете…"#: casca/window.py:155
+msgstr "Поиск значков в интернете…"
+
+#: casca/window.py:155
 msgid "No icon found"
-msgstr "Значок не найден"#: casca/window.py:156
+msgstr "Значок не найден"
+
+#: casca/window.py:156
 msgid "Try choosing an image from your computer or the gallery."
-msgstr "Попробуйте выбрать изображение с компьютера или из галереи."#: casca/window.py:208 casca/window.py:395
+msgstr "Попробуйте выбрать изображение с компьютера или из галереи."
+
+#: casca/window.py:208 casca/window.py:395
 msgid "Edit app"
-msgstr "Изменить приложение"#: casca/window.py:208
+msgstr "Изменить приложение"
+
+#: casca/window.py:208
 msgid "New app"
-msgstr "Новое приложение"#: casca/window.py:228
+msgstr "Новое приложение"
+
+#: casca/window.py:228
 msgid "Site"
-msgstr "Сайт"#: casca/window.py:229
+msgstr "Сайт"
+
+#: casca/window.py:229
 msgid "App name"
-msgstr "Имя приложения"#: casca/window.py:230
+msgstr "Имя приложения"
+
+#: casca/window.py:230
 msgid "Address (URL)"
-msgstr "Адрес (URL)"#: casca/window.py:238
+msgstr "Адрес (URL)"
+
+#: casca/window.py:238
 msgid "Use a custom browser"
-msgstr "Использовать другой браузер"#: casca/window.py:239
+msgstr "Использовать другой браузер"
+
+#: casca/window.py:239
 msgid "If disabled, opens in Casca's own window."
-msgstr "Если отключено, открывается в собственном окне Casca."#: casca/window.py:245
+msgstr "Если отключено, открывается в собственном окне Casca."
+
+#: casca/window.py:245
 msgid "Open with"
-msgstr "Открыть с помощью"#: casca/window.py:252
+msgstr "Открыть с помощью"
+
+#: casca/window.py:252
 msgid "No compatible browser was found on the system."
-msgstr "В системе не найден совместимый браузер."#: casca/window.py:259
+msgstr "В системе не найден совместимый браузер."
+
+#: casca/window.py:259
 msgid ""
 "Not available in the Flatpak version — use the local install for external "
 "browsers."
 msgstr ""
 "Недоступно в версии Flatpak — используйте локальную установку для внешних "
-"браузеров."#: casca/window.py:264
+"браузеров."
+
+#: casca/window.py:264
 msgid "Learn more about custom browsers"
-msgstr "Подробнее о своих браузерах"#: casca/window.py:267
+msgstr "Подробнее о своих браузерах"
+
+#: casca/window.py:267
 msgid "Browser account"
-msgstr "Учётная запись браузера"#: casca/window.py:274
+msgstr "Учётная запись браузера"
+
+#: casca/window.py:274
 msgid "Open in mobile mode"
-msgstr "Открывать в мобильном режиме"#: casca/window.py:275 casca/window.py:488
+msgstr "Открывать в мобильном режиме"
+
+#: casca/window.py:275 casca/window.py:488
 msgid "Uses the identification and window of a phone or tablet."
-msgstr "Использует идентификацию и окно телефона или планшета."#: casca/window.py:281 casca/window.py:310
+msgstr "Использует идентификацию и окно телефона или планшета."
+
+#: casca/window.py:281 casca/window.py:310
 msgid "Device"
-msgstr "Устройство"#: casca/window.py:287
+msgstr "Устройство"
+
+#: casca/window.py:287
 msgid "Learn more about mobile mode"
-msgstr "Подробнее о мобильном режиме"#: casca/window.py:296
+msgstr "Подробнее о мобильном режиме"
+
+#: casca/window.py:296
 msgid "Customize window resolution"
-msgstr "Настроить разрешение окна"#: casca/window.py:297
+msgstr "Настроить разрешение окна"
+
+#: casca/window.py:297
 msgid "If disabled, uses the browser's default size."
-msgstr "Если отключено, используется размер окна браузера по умолчанию."#: casca/window.py:302
+msgstr "Если отключено, используется размер окна браузера по умолчанию."
+
+#: casca/window.py:302
 msgid "Window size"
-msgstr "Размер окна"#: casca/window.py:304
+msgstr "Размер окна"
+
+#: casca/window.py:304
 msgid "By device"
-msgstr "По устройству"#: casca/window.py:304
+msgstr "По устройству"
+
+#: casca/window.py:304
 msgid "Default size"
-msgstr "Размер по умолчанию"#: casca/window.py:304
+msgstr "Размер по умолчанию"
+
+#: casca/window.py:304
 msgid "Custom"
-msgstr "Настраиваемый"#: casca/window.py:314
+msgstr "Настраиваемый"
+
+#: casca/window.py:314
 msgid "Size"
-msgstr "Размер"#: casca/window.py:322
+msgstr "Размер"
+
+#: casca/window.py:322
 msgid "Width"
-msgstr "Ширина"#: casca/window.py:325
+msgstr "Ширина"
+
+#: casca/window.py:325
 msgid "Height"
-msgstr "Высота"#: casca/window.py:330
+msgstr "Высота"
+
+#: casca/window.py:330
 msgid "Learn more about window resolution"
-msgstr "Подробнее о разрешении окна"#: casca/window.py:339
+msgstr "Подробнее о разрешении окна"
+
+#: casca/window.py:339
 msgid "Customize icon and shortcut"
-msgstr "Настроить значок и ярлык"#: casca/window.py:341
+msgstr "Настроить значок и ярлык"
+
+#: casca/window.py:341
 msgid ""
 "If disabled, the icon is fetched automatically and no Desktop shortcut is "
 "created."
 msgstr ""
 "Если отключено, значок загружается автоматически, а ярлык на рабочем столе "
-"не создаётся."#: casca/window.py:369
+"не создаётся."
+
+#: casca/window.py:369
 msgid "Also create on the Desktop"
-msgstr "Также создать на рабочем столе"#: casca/window.py:372
+msgstr "Также создать на рабочем столе"
+
+#: casca/window.py:372
 msgid "Learn more about icons and shortcuts"
-msgstr "Подробнее о значках и ярлыках"#: casca/window.py:379
+msgstr "Подробнее о значках и ярлыках"
+
+#: casca/window.py:379
 msgid "Create app"
-msgstr "Создать приложение"#: casca/window.py:396
+msgstr "Создать приложение"
+
+#: casca/window.py:396
 msgid "Save changes"
-msgstr "Сохранить изменения"#: casca/window.py:483#, python-format
+msgstr "Сохранить изменения"
+
+#: casca/window.py:483
+#, python-format
 msgid "%(browser)s doesn't support mobile mode."
-msgstr "%(browser)s не поддерживает мобильный режим."#: casca/window.py:485 casca/window.py:626
+msgstr "%(browser)s не поддерживает мобильный режим."
+
+#: casca/window.py:485 casca/window.py:626
 msgid "Choose a browser."
-msgstr "Выберите браузер."#: casca/window.py:495
+msgstr "Выберите браузер."
+
+#: casca/window.py:495
 msgid "Isolated profile (new, no login)"
-msgstr "Изолированный профиль (новый, без входа)"#: casca/window.py:508 casca/window.py:523
+msgstr "Изолированный профиль (новый, без входа)"
+
+#: casca/window.py:508 casca/window.py:523
 msgid "Enter the URL before searching for the icon."
-msgstr "Прежде чем искать значок, введите URL."#: casca/window.py:512
+msgstr "Прежде чем искать значок, введите URL."
+
+#: casca/window.py:512
 msgid "Could not fetch the icon automatically."
-msgstr "Не удалось получить значок автоматически."#: casca/window.py:534
+msgstr "Не удалось получить значок автоматически."
+
+#: casca/window.py:534
 msgid "Choose icon image"
-msgstr "Выбрать изображение значка"#: casca/window.py:536
+msgstr "Выбрать изображение значка"
+
+#: casca/window.py:536
 msgid "Images"
-msgstr "Изображения"#: casca/window.py:612
+msgstr "Изображения"
+
+#: casca/window.py:612
 msgid "Fill in the site's name and URL."
-msgstr "Укажите название и URL сайта."#: casca/window.py:615 casca/window.py:620
+msgstr "Укажите название и URL сайта."
+
+#: casca/window.py:615 casca/window.py:620
 msgid "Use an http:// or https:// address."
-msgstr "Используйте адрес, начинающийся с http:// или https://."#: casca/window.py:636
+msgstr "Используйте адрес, начинающийся с http:// или https://."
+
+#: casca/window.py:636
 msgid "Casca's own window isn't available. Enable 'Use a custom browser'."
 msgstr ""
 "Собственное окно Casca недоступно. Включите параметр «Использовать другой "
-"браузер»."#: casca/window.py:675
+"браузер»."
+
+#: casca/window.py:675
 msgid "Could not set an icon. Choose an image manually."
-msgstr "Не удалось установить значок. Выберите изображение вручную."#: casca/window.py:690#, python-format
+msgstr "Не удалось установить значок. Выберите изображение вручную."
+
+#: casca/window.py:690
+#, python-format
 msgid "Error saving: %(error)s"
-msgstr "Ошибка сохранения: %(error)s"#: casca/window.py:701
+msgstr "Ошибка сохранения: %(error)s"
+
+#: casca/window.py:701
 msgid "Preset site"
-msgstr "Готовый сайт"#: casca/window.py:708
+msgstr "Готовый сайт"
+
+#: casca/window.py:708
 msgid "Search by name or category…"
-msgstr "Поиск по названию или категории…"#: casca/window.py:720 casca/window.py:1035#, python-format
+msgstr "Поиск по названию или категории…"
+
+#: casca/window.py:720 casca/window.py:1035
+#, python-format
 msgid "%(n)d site"
 msgid_plural "%(n)d sites"
 msgstr[0] "%(n)d сайт"
 msgstr[1] "%(n)d сайта"
-msgstr[2] "%(n)d сайтов"#: casca/window.py:904 casca/window.py:1287
+msgstr[2] "%(n)d сайтов"
+
+#: casca/window.py:904 casca/window.py:1287
 msgid "Store"
-msgstr "Магазин"#: casca/window.py:932
+msgstr "Магазин"
+
+#: casca/window.py:932
 msgid "Company"
-msgstr "Компания"#: casca/window.py:933
+msgstr "Компания"
+
+#: casca/window.py:933
 msgid "Type"
-msgstr "Тип"#: casca/window.py:949
+msgstr "Тип"
+
+#: casca/window.py:949
 msgid "Search by name…"
-msgstr "Поиск по названию…"#: casca/window.py:985#, python-format
+msgstr "Поиск по названию…"
+
+#: casca/window.py:985
+#, python-format
 msgid "Could not set an icon for %(name)s."
-msgstr "Не удалось установить значок для %(name)s."#: casca/window.py:991#, python-format
+msgstr "Не удалось установить значок для %(name)s."
+
+#: casca/window.py:991
+#, python-format
 msgid "Error installing package: %(error)s"
-msgstr "Ошибка установки пакета: %(error)s"#: casca/window.py:997#, python-format
+msgstr "Ошибка установки пакета: %(error)s"
+
+#: casca/window.py:997
+#, python-format
 msgid "Package “%(name)s” installed with %(n)d app."
 msgid_plural "Package “%(name)s” installed with %(n)d apps."
 msgstr[0] "Пакет «%(name)s» установлен, %(n)d приложение."
 msgstr[1] "Пакет «%(name)s» установлен, %(n)d приложения."
-msgstr[2] "Пакет «%(name)s» установлен, %(n)d приложений."#: casca/window.py:1023
+msgstr[2] "Пакет «%(name)s» установлен, %(n)d приложений."
+
+#: casca/window.py:1023
 msgid "Nothing here yet"
-msgstr "Здесь пока ничего нет"#: casca/window.py:1024
+msgstr "Здесь пока ничего нет"
+
+#: casca/window.py:1024
 msgid "Check the local catalog or your internet connection."
-msgstr "Проверьте локальный каталог или подключение к интернету."#: casca/window.py:1040
+msgstr "Проверьте локальный каталог или подключение к интернету."
+
+#: casca/window.py:1040
 msgid "Install full package"
-msgstr "Установить полный пакет"#: casca/window.py:1165
+msgstr "Установить полный пакет"
+
+#: casca/window.py:1165
 msgid "Casca Manual"
-msgstr "Руководство Casca"#: casca/window.py:1185
+msgstr "Руководство Casca"
+
+#: casca/window.py:1185
 msgid "Could not open the built-in manual"
-msgstr "Не удалось открыть встроенное руководство"#: casca/window.py:1204
+msgstr "Не удалось открыть встроенное руководство"
+
+#: casca/window.py:1204
 msgid "Choose what to import"
-msgstr "Выберите, что импортировать"#: casca/window.py:1213#, python-format
+msgstr "Выберите, что импортировать"
+
+#: casca/window.py:1213
+#, python-format
 msgid "%(n)d site found"
 msgid_plural "%(n)d sites found"
 msgstr[0] "Найден %(n)d сайт"
 msgstr[1] "Найдено %(n)d сайта"
-msgstr[2] "Найдено %(n)d сайтов"#: casca/window.py:1216
+msgstr[2] "Найдено %(n)d сайтов"
+
+#: casca/window.py:1216
 msgid "Uncheck anything you don't want to import."
-msgstr "Снимите отметки с того, что не нужно импортировать."#: casca/window.py:1219
+msgstr "Снимите отметки с того, что не нужно импортировать."
+
+#: casca/window.py:1219
 msgid "(no name)"
-msgstr "(без имени)"#: casca/window.py:1227
+msgstr "(без имени)"
+
+#: casca/window.py:1227
 msgid "Import selected"
-msgstr "Импортировать выбранное"#: casca/window.py:1260
+msgstr "Импортировать выбранное"
+
+#: casca/window.py:1260
 msgid "User guide"
-msgstr "Руководство пользователя"#: casca/window.py:1261
+msgstr "Руководство пользователя"
+
+#: casca/window.py:1261
 msgid "About Casca"
-msgstr "О Casca"#: casca/window.py:1262
+msgstr "О Casca"
+
+#: casca/window.py:1262
 msgid "Menu"
-msgstr "Меню"#: casca/window.py:1292
+msgstr "Меню"
+
+#: casca/window.py:1292
 msgid "Create a new web app"
-msgstr "Создать новое веб-приложение"#: casca/window.py:1293
+msgstr "Создать новое веб-приложение"
+
+#: casca/window.py:1293
 msgid "Create"
-msgstr "Создать"#: casca/window.py:1302 casca/window.py:1398
+msgstr "Создать"
+
+#: casca/window.py:1302 casca/window.py:1429
 msgid "Import apps"
-msgstr "Импорт приложений"#: casca/window.py:1306 casca/window.py:1348
+msgstr "Импорт приложений"
+
+#: casca/window.py:1306 casca/window.py:1379
 msgid "Export apps"
-msgstr "Экспорт приложений"#: casca/window.py:1335
+msgstr "Экспорт приложений"
+
+#: casca/window.py:1337
 msgid "Turns any website into a GNOME app."
-msgstr "Превращает любой сайт в приложение GNOME."#: casca/window.py:1346
+msgstr "Превращает любой сайт в приложение GNOME."
+
+#: casca/window.py:1341
+#, python-format
+msgid ""
+"Version %(latest)s is available — an update notification with a way to "
+"update just popped up."
+msgstr ""
+"Доступна версия %(latest)s — только что появилось уведомление с возможностью "
+"обновить."
+
+#: casca/window.py:1356
+msgid ""
+"Casca now checks for new releases in the background (once a day at most) and "
+"lets you know with a system notification — no action needed for Flatpak/Snap "
+"installs, which already update themselves."
+msgstr "Теперь Casca проверяет наличие новых версий в фоновом режиме (не чаще раза в день) и сообщает об этом системным уведомлением — для установок через Flatpak/Snap ничего делать не нужно, они уже обновляются сами."
+
+#: casca/window.py:1361
+msgid ""
+"The About dialog now shows the license, a link to the source code, whether "
+"you're on a release/beta/alpha build, and a proper “What's New” page with "
+"each version's changelog."
+msgstr "В диалоговом окне «О программе» теперь отображаются лицензия, ссылка на исходный код, информация о том, используете ли вы релизную, бета- или альфа-версию, а также полноценная страница «Что нового» с изменениями каждой версии."
+
+#: casca/window.py:1367
+msgid "Source Code"
+msgstr "Исходный код"
+
+#: casca/window.py:1377
 msgid "No app created yet to export."
-msgstr "Пока нет ни одного приложения для экспорта."#: casca/window.py:1370#, python-format
+msgstr "Пока нет ни одного приложения для экспорта."
+
+#: casca/window.py:1401
+#, python-format
 msgid "Error exporting: %(error)s"
-msgstr "Ошибка экспорта: %(error)s"#: casca/window.py:1373#, python-format
+msgstr "Ошибка экспорта: %(error)s"
+
+#: casca/window.py:1404
+#, python-format
 msgid "%(count)d app exported to %(name)s."
 msgid_plural "%(count)d apps exported to %(name)s."
 msgstr[0] "Экспортировано %(count)d приложение в %(name)s."
 msgstr[1] "Экспортировано %(count)d приложения в %(name)s."
-msgstr[2] "Экспортировано %(count)d приложений в %(name)s."#: casca/window.py:1379
+msgstr[2] "Экспортировано %(count)d приложений в %(name)s."
+
+#: casca/window.py:1410
 msgid "Import from where?"
-msgstr "Откуда импортировать?"#: casca/window.py:1380
+msgstr "Откуда импортировать?"
+
+#: casca/window.py:1411
 msgid "Choose a local .json file or a URL (e.g. a GitHub \"raw\" link)."
 msgstr ""
 "Выберите локальный файл .json или укажите URL (например, ссылку «raw» с "
-"GitHub)."#: casca/window.py:1382 casca/window.py:1428 casca/window.py:1561#: casca/window.py:1584
+"GitHub)."
+
+#: casca/window.py:1413 casca/window.py:1459 casca/window.py:1592
+#: casca/window.py:1615
 msgid "Cancel"
-msgstr "Отмена"#: casca/window.py:1383
+msgstr "Отмена"
+
+#: casca/window.py:1414
 msgid "From a URL"
-msgstr "По URL"#: casca/window.py:1384
+msgstr "По URL"
+
+#: casca/window.py:1415
 msgid "Local file"
-msgstr "Локальный файл"#: casca/window.py:1417#, python-format
+msgstr "Локальный файл"
+
+#: casca/window.py:1448
+#, python-format
 msgid "Error reading the file: %(error)s"
-msgstr "Ошибка чтения файла: %(error)s"#: casca/window.py:1423
+msgstr "Ошибка чтения файла: %(error)s"
+
+#: casca/window.py:1454
 msgid "Import from a URL"
-msgstr "Импорт по URL"#: casca/window.py:1424
+msgstr "Импорт по URL"
+
+#: casca/window.py:1455
 msgid "Paste the JSON file's \"raw\" link (e.g. from a GitHub repository)."
-msgstr "Вставьте ссылку «raw» на файл JSON (например, из репозитория GitHub)."#: casca/window.py:1429
+msgstr "Вставьте ссылку «raw» на файл JSON (например, из репозитория GitHub)."
+
+#: casca/window.py:1460
 msgid "Fetch"
-msgstr "Получить"#: casca/window.py:1441
+msgstr "Получить"
+
+#: casca/window.py:1472
 msgid "Enter a URL."
-msgstr "Введите URL."#: casca/window.py:1443
+msgstr "Введите URL."
+
+#: casca/window.py:1474
 msgid "Fetching file…"
-msgstr "Получение файла…"#: casca/window.py:1450#, python-format
+msgstr "Получение файла…"
+
+#: casca/window.py:1481
+#, python-format
 msgid "Error downloading: %(error)s"
-msgstr "Ошибка загрузки: %(error)s"#: casca/window.py:1458#, python-format
+msgstr "Ошибка загрузки: %(error)s"
+
+#: casca/window.py:1489
+#, python-format
 msgid "Error importing: %(error)s"
-msgstr "Ошибка импорта: %(error)s"#: casca/window.py:1461
+msgstr "Ошибка импорта: %(error)s"
+
+#: casca/window.py:1492
 msgid "No app found in the file."
-msgstr "В файле не найдено ни одного приложения."#: casca/window.py:1469
+msgstr "В файле не найдено ни одного приложения."
+
+#: casca/window.py:1500
 msgid "Nothing selected to import."
-msgstr "Не выбрано ничего для импорта."#: casca/window.py:1477#, python-format
+msgstr "Не выбрано ничего для импорта."
+
+#: casca/window.py:1508
+#, python-format
 msgid "%(n)d app imported."
 msgid_plural "%(n)d apps imported."
 msgstr[0] "Импортировано %(n)d приложение."
 msgstr[1] "Импортировано %(n)d приложения."
-msgstr[2] "Импортировано %(n)d приложений."#: casca/window.py:1483#, python-format
+msgstr[2] "Импортировано %(n)d приложений."
+
+#: casca/window.py:1514
+#, python-format
 msgid "• %(name)s: %(reason)s"
-msgstr "• %(name)s: %(reason)s"#: casca/window.py:1487#, python-format
+msgstr "• %(name)s: %(reason)s"
+
+#: casca/window.py:1518
+#, python-format
 msgid "%(created)d imported, %(failed)d with errors"
-msgstr "Импортировано: %(created)d, с ошибками: %(failed)d"#: casca/window.py:1489#, python-format
+msgstr "Импортировано: %(created)d, с ошибками: %(failed)d"
+
+#: casca/window.py:1520
+#, python-format
 msgid ""
 "Review and adjust manually via the \"Create\" button:\n"
 "\n"
@@ -580,33 +1167,78 @@ msgid ""
 msgstr ""
 "Просмотрите и настройте вручную с помощью кнопки «Создать»:\n"
 "\n"
-"%(lines)s"#: casca/window.py:1491
+"%(lines)s"
+
+#: casca/window.py:1522
 msgid "Got it"
-msgstr "Понятно"#: casca/window.py:1505
+msgstr "Понятно"
+
+#: casca/window.py:1536
 msgid "No web apps yet"
-msgstr "Пока нет веб-приложений"#: casca/window.py:1506
+msgstr "Пока нет веб-приложений"
+
+#: casca/window.py:1537
 msgid ""
 "Tap “Create” to make your first app, or open the Store for ready-made sites."
 msgstr ""
 "Нажмите «Создать», чтобы добавить первое приложение, или откройте Магазин, "
-"чтобы выбрать готовый сайт."#: casca/window.py:1515
+"чтобы выбрать готовый сайт."
+
+#: casca/window.py:1546
 msgid "My web apps"
-msgstr "Мои веб-приложения"#: casca/window.py:1537
+msgstr "Мои веб-приложения"
+
+#: casca/window.py:1568
 msgid "Installed packages"
-msgstr "Установленные пакеты"#: casca/window.py:1558#, python-format
+msgstr "Установленные пакеты"
+
+#: casca/window.py:1589
+#, python-format
 msgid "Delete “%(name)s”?"
-msgstr "Удалить «%(name)s»?"#: casca/window.py:1559
+msgstr "Удалить «%(name)s»?"
+
+#: casca/window.py:1590
 msgid ""
 "The shortcut will be removed from the applications menu and the desktop, if "
 "it exists."
 msgstr ""
-"Ярлык будет удалён из меню приложений и с рабочего стола, если он там есть."#: casca/window.py:1562 casca/window.py:1585
+"Ярлык будет удалён из меню приложений и с рабочего стола, если он там есть."
+
+#: casca/window.py:1593 casca/window.py:1616
 msgid "Delete"
-msgstr "Удалить"#: casca/window.py:1576#, python-format
+msgstr "Удалить"
+
+#: casca/window.py:1607
+#, python-format
 msgid "Delete package “%(name)s”?"
-msgstr "Удалить пакет «%(name)s»?"#: casca/window.py:1578#, python-format
+msgstr "Удалить пакет «%(name)s»?"
+
+#: casca/window.py:1609
+#, python-format
 msgid "Removes the shortcut and the %(n)d app inside it (%(names)s)."
 msgid_plural "Removes the shortcut and the %(n)d apps inside it (%(names)s)."
 msgstr[0] "Удалит ярлык и %(n)d приложение внутри него (%(names)s)."
 msgstr[1] "Удалит ярлык и %(n)d приложения внутри него (%(names)s)."
 msgstr[2] "Удалит ярлык и %(n)d приложений внутри него (%(names)s)."
+
+#~ msgid ""
+#~ "Casca now speaks 20 languages, picked automatically from the system "
+#~ "locale: English, Portuguese (Brazil), Spanish, French, Italian, German, "
+#~ "Russian, Ukrainian, Polish, Dutch, Turkish, Simplified Chinese, Japanese, "
+#~ "Korean, Vietnamese, Indonesian, Hindi, Arabic, Bengali and Thai."
+#~ msgstr ""
+#~ "Теперь Casca говорит на 20 языках, которые выбираются автоматически по "
+#~ "системному языку: английский, португальский (Бразилия), испанский, "
+#~ "французский, итальянский, немецкий, русский, украинский, польский, "
+#~ "нидерландский, турецкий, упрощённый китайский, японский, корейский, "
+#~ "вьетнамский, индонезийский, хинди, арабский, бенгальский и тайский."
+
+#~ msgid ""
+#~ "The creation screen's browser, mobile mode, resolution and icon sections "
+#~ "now have an inline help button — hover for a quick tip, click to jump "
+#~ "straight to that topic in a redesigned, example-filled manual."
+#~ msgstr ""
+#~ "В разделах браузера, мобильного режима, разрешения и значка на экране "
+#~ "создания появилась встроенная кнопка справки — наведите курсор, чтобы "
+#~ "увидеть краткую подсказку, и нажмите, чтобы перейти прямо к этой теме в "
+#~ "переработанном руководстве, полном примеров."
