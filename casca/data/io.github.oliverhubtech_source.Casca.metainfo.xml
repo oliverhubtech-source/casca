@@ -97,6 +97,14 @@
   <url type="bugtracker">https://github.com/oliverhubtech-source/casca/issues</url>
 
   <releases>
+    <release version="1.1.0" date="2026-07-09">
+      <description>
+        <p>Casca now speaks 20 languages, picked automatically from the system locale: English, Portuguese (Brazil), Spanish, French, Italian, German, Russian, Ukrainian, Polish, Dutch, Turkish, Simplified Chinese, Japanese, Korean, Vietnamese, Indonesian, Hindi, Arabic, Bengali and Thai.</p>
+        <p>The creation screen's browser, mobile mode, resolution and icon sections now have an inline help button — hover for a quick tip, click to jump straight to that topic in a redesigned, example-filled manual.</p>
+        <p xml:lang="pt-BR">O Casca agora fala 20 idiomas, escolhidos automaticamente pelo idioma do sistema: inglês, português (Brasil), espanhol, francês, italiano, alemão, russo, ucraniano, polonês, holandês, turco, chinês simplificado, japonês, coreano, vietnamita, indonésio, hindi, árabe, bengali e tailandês.</p>
+        <p xml:lang="pt-BR">As seções de navegador, modo mobile, resolução e ícone na tela de criação agora têm um botão de ajuda embutido — passe o mouse pra uma dica rápida, clique pra ir direto àquele tópico num manual redesenhado e cheio de exemplos.</p>
+      </description>
+    </release>
     <release version="1.0.0" date="2026-07-08">
       <description>
         <p>First public release of Casca.</p>
