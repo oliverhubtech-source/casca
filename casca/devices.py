@@ -1,6 +1,8 @@
-"""Perfis de dispositivos para simular quando o app abre em modo mobile."""
+"""Device profiles to simulate when the app opens in mobile mode."""
 
 from dataclasses import dataclass
+
+from .i18n import _
 
 
 @dataclass(frozen=True)
@@ -74,12 +76,12 @@ class StandardSize:
 
 
 STANDARD_SIZES: tuple[StandardSize, ...] = (
-    StandardSize("small", "Pequena (800×600)", 800, 600),
-    StandardSize("medium", "Média (1024×768)", 1024, 768),
-    StandardSize("laptop", "Notebook (1280×800)", 1280, 800),
-    StandardSize("laptop-hd", "Notebook HD (1366×768)", 1366, 768),
-    StandardSize("large", "Grande (1600×900)", 1600, 900),
-    StandardSize("full-hd", "Full HD (1920×1080)", 1920, 1080),
+    StandardSize("small", _("Small (800×600)"), 800, 600),
+    StandardSize("medium", _("Medium (1024×768)"), 1024, 768),
+    StandardSize("laptop", _("Laptop (1280×800)"), 1280, 800),
+    StandardSize("laptop-hd", _("Laptop HD (1366×768)"), 1366, 768),
+    StandardSize("large", _("Large (1600×900)"), 1600, 900),
+    StandardSize("full-hd", _("Full HD (1920×1080)"), 1920, 1080),
 )
 
 

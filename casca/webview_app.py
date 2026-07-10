@@ -1,10 +1,14 @@
-"""Runtime de janela própria do Casca: embute o site via WebKitGTK, com barra
-de título colorida pela cor do ícone. Alternativa a abrir num navegador externo —
-sem essa dependência, mas sites com login Google podem recusar o acesso."""
+"""Casca's own window runtime: embeds the site via WebKitGTK, with a title bar
+colored from the icon's dominant color. An alternative to opening in an external
+browser — no such dependency, but sites with Google login may refuse access."""
 
 import argparse
 import sys
 from pathlib import Path
+
+from . import i18n
+
+i18n.install()
 
 import gi
 
@@ -19,13 +23,13 @@ from .headerbar_css import build_header_css
 
 
 def _parse_args(argv: list[str]) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Janela própria do Casca (WebKitGTK)")
+    parser = argparse.ArgumentParser(description="Casca's own window (WebKitGTK)")
     parser.add_argument("--url", required=True)
     parser.add_argument("--title", required=True)
     parser.add_argument("--data-dir", required=True)
     parser.add_argument("--wm-class", required=True)
-    parser.add_argument("--color", default=None, help="Cor de fundo da barra, ex.: #1ed760")
-    parser.add_argument("--text-color", default=None, help="Cor do texto da barra")
+    parser.add_argument("--color", default=None, help="Bar background color, e.g. #1ed760")
+    parser.add_argument("--text-color", default=None, help="Bar text color")
     parser.add_argument("--width", type=int, default=1000)
     parser.add_argument("--height", type=int, default=700)
     parser.add_argument("--user-agent", default=None)

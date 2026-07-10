@@ -1,4 +1,4 @@
-"""Galeria de ícones de marcas conhecidas, incluída no projeto (ver LICENSE.txt)."""
+"""Gallery of well-known brand icons, bundled with the project (see LICENSE.txt)."""
 
 from pathlib import Path
 

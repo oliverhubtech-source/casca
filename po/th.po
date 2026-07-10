@@ -1,0 +1,1063 @@
+# Thai translations for Casca package.
+# Copyright (C) 2026 THE Casca'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Casca package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Casca 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/oliverhubtech-source/casca/issues\n"
+"POT-Creation-Date: 2026-07-09 21:14-0300\n"
+"PO-Revision-Date: 2026-07-09 16:07-0300\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: casca/browsers.py:199
+msgid "Casca's own window"
+msgstr "หน้าต่างของ Casca เอง"
+
+#: casca/catalog_strings.py:16 casca/help_content.py:67 casca/presets.py:51
+msgid "Artificial Intelligence"
+msgstr "ปัญญาประดิษฐ์"
+
+#: casca/catalog_strings.py:17
+msgid "Cloud Computing"
+msgstr "คลาวด์คอมพิวติง"
+
+#: casca/catalog_strings.py:18 casca/help_content.py:77 casca/presets.py:166
+msgid "Conversion & Sharing"
+msgstr "การแปลงและการแชร์"
+
+#: casca/catalog_strings.py:19
+msgid "Creativity"
+msgstr "ความคิดสร้างสรรค์"
+
+#: casca/catalog_strings.py:20
+msgid "Finance"
+msgstr "การเงิน"
+
+#: casca/catalog_strings.py:21 casca/window.py:912
+msgid "Marketplace"
+msgstr "มาร์เก็ตเพลส"
+
+#: casca/catalog_strings.py:22
+msgid "Messenger"
+msgstr "แมสเซนเจอร์"
+
+#: casca/catalog_strings.py:23
+msgid "Music Streaming"
+msgstr "สตรีมมิงเพลง"
+
+#: casca/catalog_strings.py:24 casca/window.py:913
+msgid "News"
+msgstr "ข่าว"
+
+#: casca/catalog_strings.py:25
+msgid "PDF"
+msgstr "PDF"
+
+#: casca/catalog_strings.py:26
+msgid "Productivity"
+msgstr "การทำงานอย่างมีประสิทธิภาพ"
+
+#: casca/catalog_strings.py:27
+msgid "Search Engine"
+msgstr "เครื่องมือค้นหา"
+
+#: casca/catalog_strings.py:28
+msgid "Security"
+msgstr "ความปลอดภัย"
+
+#: casca/catalog_strings.py:29
+msgid "Social Network"
+msgstr "เครือข่ายสังคม"
+
+#: casca/catalog_strings.py:30
+msgid "Utility"
+msgstr "อรรถประโยชน์"
+
+#: casca/catalog_strings.py:31
+msgid "Video Streaming"
+msgstr "สตรีมมิงวิดีโอ"
+
+#: casca/catalog_strings.py:33
+msgid "Argentina"
+msgstr "อาร์เจนตินา"
+
+#: casca/catalog_strings.py:34
+msgid "Brazil"
+msgstr "บราซิล"
+
+#: casca/catalog_strings.py:35
+msgid "Chile"
+msgstr "ชิลี"
+
+#: casca/catalog_strings.py:36
+msgid "Colombia"
+msgstr "โคลอมเบีย"
+
+#: casca/catalog_strings.py:37
+msgid "Europe"
+msgstr "ยุโรป"
+
+#: casca/catalog_strings.py:38
+msgid "France"
+msgstr "ฝรั่งเศส"
+
+#: casca/catalog_strings.py:39
+msgid "Germany"
+msgstr "เยอรมนี"
+
+#: casca/catalog_strings.py:40
+msgid "International"
+msgstr "นานาชาติ"
+
+#: casca/catalog_strings.py:41
+msgid "Mexico"
+msgstr "เม็กซิโก"
+
+#: casca/catalog_strings.py:42
+msgid "Netherlands"
+msgstr "เนเธอร์แลนด์"
+
+#: casca/catalog_strings.py:43
+msgid "Paraguay"
+msgstr "ปารากวัย"
+
+#: casca/catalog_strings.py:44
+msgid "Poland"
+msgstr "โปแลนด์"
+
+#: casca/catalog_strings.py:45
+msgid "Spain"
+msgstr "สเปน"
+
+#: casca/catalog_strings.py:46
+msgid "United Kingdom"
+msgstr "สหราชอาณาจักร"
+
+#: casca/catalog_strings.py:47
+msgid "United States"
+msgstr "สหรัฐอเมริกา"
+
+#: casca/catalog_strings.py:48
+msgid "Uruguay"
+msgstr "อุรุกวัย"
+
+#: casca/catalog_strings.py:50
+msgid "Google Workspace"
+msgstr "Google Workspace"
+
+#: casca/catalog_strings.py:51
+msgid "Microsoft 365"
+msgstr "Microsoft 365"
+
+#: casca/catalog_strings.py:52
+msgid "Social Media"
+msgstr "โซเชียลมีเดีย"
+
+#: casca/catalog_strings.py:53
+msgid "YouTube"
+msgstr "YouTube"
+
+#: casca/devices.py:79
+msgid "Small (800×600)"
+msgstr "เล็ก (800×600)"
+
+#: casca/devices.py:80
+msgid "Medium (1024×768)"
+msgstr "กลาง (1024×768)"
+
+#: casca/devices.py:81
+msgid "Laptop (1280×800)"
+msgstr "แล็ปท็อป (1280×800)"
+
+#: casca/devices.py:82
+msgid "Laptop HD (1366×768)"
+msgstr "แล็ปท็อป HD (1366×768)"
+
+#: casca/devices.py:83
+msgid "Large (1600×900)"
+msgstr "ใหญ่ (1600×900)"
+
+#: casca/devices.py:84
+msgid "Full HD (1920×1080)"
+msgstr "Full HD (1920×1080)"
+
+#: casca/entries.py:203 casca/entries.py:245
+#, python-format
+msgid "Browser not found: %(key)s"
+msgstr "ไม่พบเบราว์เซอร์: %(key)s"
+
+#: casca/entries.py:249
+#, python-format
+msgid "App not found: %(slug)s"
+msgstr "ไม่พบแอป: %(slug)s"
+
+#: casca/entries.py:337
+msgid "remote file too large"
+msgstr "ไฟล์ระยะไกลมีขนาดใหญ่เกินไป"
+
+#: casca/entries.py:341
+#, python-format
+msgid "could not download the file (%(error)s)"
+msgstr "ไม่สามารถดาวน์โหลดไฟล์ได้ (%(error)s)"
+
+#: casca/entries.py:350
+#, python-format
+msgid "could not read the file (%(error)s)"
+msgstr "ไม่สามารถอ่านไฟล์ได้ (%(error)s)"
+
+#: casca/entries.py:354
+msgid "unexpected format: no 'apps' list found"
+msgstr "รูปแบบไม่ถูกต้อง: ไม่พบรายการ 'apps'"
+
+#: casca/entries.py:388
+#, python-format
+msgid "item %(n)d"
+msgstr "รายการที่ %(n)d"
+
+#: casca/entries.py:390
+msgid "missing name or URL"
+msgstr "ไม่มีชื่อหรือ URL"
+
+#: casca/entries.py:393 casca/entries.py:398
+msgid "unsupported URL scheme"
+msgstr "รูปแบบ URL ไม่รองรับ"
+
+#: casca/entries.py:404
+msgid "no browser available"
+msgstr "ไม่มีเบราว์เซอร์ที่ใช้งานได้"
+
+#: casca/entries.py:423
+msgid "could not get an icon"
+msgstr "ไม่สามารถรับไอคอนได้"
+
+#: casca/entries.py:481
+msgid "No browser available to assemble the package."
+msgstr "ไม่มีเบราว์เซอร์ที่ใช้ประกอบแพ็กเกจได้"
+
+#: casca/entries.py:553
+msgid "Package of web apps created by Casca"
+msgstr "แพ็กเกจเว็บแอปที่สร้างโดย Casca"
+
+#: casca/help_content.py:24
+msgid "User Guide"
+msgstr "คู่มือผู้ใช้"
+
+#: casca/help_content.py:28
+msgid "Casca — User Guide"
+msgstr "Casca — คู่มือผู้ใช้"
+
+#: casca/help_content.py:29
+msgid "Casca icon"
+msgstr "ไอคอน Casca"
+
+#: casca/help_content.py:31
+msgid "Websites, turned into apps. No fuss."
+msgstr "เว็บไซต์ แปลงเป็นแอป ไม่ยุ่งยาก"
+
+#: casca/help_content.py:33
+msgid ""
+"Casca turns any address into a GNOME app: icon in the menu, its own window, "
+"no leftover browser bar. This guide covers every option on the creation "
+"screen."
+msgstr ""
+"Casca เปลี่ยนที่อยู่ใด ๆ ให้เป็นแอป GNOME: มีไอคอนในเมนู มีหน้าต่างของตัวเอง"
+" ไม่มีแถบเบราว์เซอร์หลงเหลือ คู่มือนี้ครอบคลุมทุกตัวเลือกในหน้าจอสร้างแอป"
+
+#: casca/help_content.py:36
+msgid "First app"
+msgstr "แอปแรก"
+
+#: casca/help_content.py:37
+msgid "Presets"
+msgstr "ค่าที่กำหนดไว้ล่วงหน้า"
+
+#: casca/help_content.py:38 casca/help_content.py:80
+msgid "Icon"
+msgstr "ไอคอน"
+
+#: casca/help_content.py:39
+msgid "Shortcut"
+msgstr "ทางลัด"
+
+#: casca/help_content.py:40 casca/window.py:235
+msgid "Browser"
+msgstr "เบราว์เซอร์"
+
+#: casca/help_content.py:41 casca/help_content.py:118
+msgid "Mobile mode"
+msgstr "โหมดมือถือ"
+
+#: casca/help_content.py:42
+msgid "Resolution"
+msgstr "ความละเอียด"
+
+#: casca/help_content.py:43
+msgid "Edit"
+msgstr "แก้ไข"
+
+#: casca/help_content.py:44
+msgid "Creating your first app"
+msgstr "การสร้างแอปแรกของคุณ"
+
+#: casca/help_content.py:45
+msgid "Two buttons on the home screen, two paths."
+msgstr "สองปุ่มบนหน้าจอหลัก สองแนวทาง"
+
+#: casca/help_content.py:47
+msgid ""
+"<strong>Create from preset</strong> — pick an already-cataloged site (Gmail,"
+" WhatsApp, Netflix, ChatGPT…), with name, address and icon ready to go."
+msgstr ""
+"<strong>สร้างจากค่าที่กำหนดไว้ล่วงหน้า</strong> — "
+"เลือกเว็บไซต์ที่มีอยู่ในแคตตาล็อกแล้ว (Gmail, WhatsApp, Netflix, ChatGPT "
+"ฯลฯ) พร้อมชื่อ ที่อยู่ และไอคอนที่พร้อมใช้งาน"
+
+#: casca/help_content.py:51
+msgid ""
+"<strong>Create new web app</strong> — start from scratch: you type in the "
+"name and address."
+msgstr ""
+"<strong>สร้างเว็บแอปใหม่</strong> — เริ่มต้นจากศูนย์: "
+"คุณพิมพ์ชื่อและที่อยู่เอง"
+
+#: casca/help_content.py:54
+msgid ""
+"Everything below the name and address is <strong>optional</strong>. Without "
+"touching anything, Casca figures it out on its own: fetches the icon, "
+"doesn't create a Desktop shortcut, opens in its own window at normal size."
+msgstr ""
+"ทุกอย่างที่อยู่ใต้ชื่อและที่อยู่นั้น<strong>เป็นตัวเลือกเสริม</strong> "
+"แม้ไม่ปรับแต่งอะไรเลย Casca ก็จะจัดการเองโดยอัตโนมัติ: ดึงไอคอน "
+"ไม่สร้างทางลัดบนเดสก์ท็อป และเปิดในหน้าต่างของตัวเองด้วยขนาดปกติ"
+
+#: casca/help_content.py:58
+msgid "Preset sites"
+msgstr "เว็บไซต์ที่กำหนดไว้ล่วงหน้า"
+
+#: casca/help_content.py:60
+msgid ""
+"A search field at the top filters by site name (<code class=\"eyebrow "
+"text-[13px] bg-shell-mist dark:bg-[#2a2836] px-1.5 py-0.5 "
+"rounded\">gmail</code>) or by category (<code class=\"eyebrow text-[13px] "
+"bg-shell-mist dark:bg-[#2a2836] px-1.5 py-0.5 rounded\">microsoft</code>). "
+"Categories start collapsed — tap one to expand it."
+msgstr ""
+"ช่องค้นหาด้านบนจะกรองตามชื่อเว็บไซต์ (<code class=\"eyebrow text-[13px] bg-"
+"shell-mist dark:bg-[#2a2836] px-1.5 py-0.5 rounded\">gmail</code>) "
+"หรือตามหมวดหมู่ (<code class=\"eyebrow text-[13px] bg-shell-mist "
+"dark:bg-[#2a2836] px-1.5 py-0.5 rounded\">microsoft</code>) "
+"หมวดหมู่จะยุบไว้ในตอนแรก — แตะเพื่อขยาย"
+
+#: casca/help_content.py:65 casca/presets.py:23
+msgid "Google Products"
+msgstr "ผลิตภัณฑ์ของ Google"
+
+#: casca/help_content.py:66 casca/presets.py:39
+msgid "Microsoft Products"
+msgstr "ผลิตภัณฑ์ของ Microsoft"
+
+#: casca/help_content.py:68 casca/presets.py:66
+msgid "Search Engines"
+msgstr "เครื่องมือค้นหา"
+
+#: casca/help_content.py:69 casca/presets.py:78
+msgid "Messengers"
+msgstr "แมสเซนเจอร์"
+
+#: casca/help_content.py:70 casca/presets.py:88
+msgid "Social Networks"
+msgstr "เครือข่ายสังคม"
+
+#: casca/help_content.py:71 casca/presets.py:99
+msgid "Streaming"
+msgstr "สตรีมมิง"
+
+#: casca/help_content.py:72 casca/presets.py:111
+msgid "Music"
+msgstr "เพลง"
+
+#: casca/help_content.py:73 casca/presets.py:123
+msgid "Productivity & Organization"
+msgstr "การทำงานอย่างมีประสิทธิภาพและการจัดระเบียบ"
+
+#: casca/help_content.py:74 casca/presets.py:136
+msgid "PDF Tools"
+msgstr "เครื่องมือ PDF"
+
+#: casca/help_content.py:75 casca/presets.py:145
+msgid "Calculations & Finance"
+msgstr "การคำนวณและการเงิน"
+
+#: casca/help_content.py:76 casca/presets.py:157
+msgid "Generators & Utilities"
+msgstr "ตัวสร้างและเครื่องมืออรรถประโยชน์"
+
+#: casca/help_content.py:78 casca/presets.py:176
+msgid "Security & Diagnostics"
+msgstr "ความปลอดภัยและการวินิจฉัย"
+
+#: casca/help_content.py:79 casca/presets.py:186
+msgid "Creativity & Content"
+msgstr "ความคิดสร้างสรรค์และเนื้อหา"
+
+#: casca/help_content.py:81
+msgid "Check <strong>Customize icon and shortcut</strong> to choose manually."
+msgstr "เลือกช่อง <strong>ปรับแต่งไอคอนและทางลัด</strong> เพื่อเลือกด้วยตนเอง"
+
+#: casca/help_content.py:82 casca/window.py:349
+msgid "Search online"
+msgstr "ค้นหาออนไลน์"
+
+#: casca/help_content.py:84
+msgid ""
+"Checks several sources — Google, DuckDuckGo, apple-touch-icon, PWA manifest "
+"— and shows the results in a grid."
+msgstr ""
+"ตรวจสอบจากหลายแหล่ง — Google, DuckDuckGo, apple-touch-icon, PWA manifest — "
+"และแสดงผลลัพธ์เป็นตาราง"
+
+#: casca/help_content.py:87 casca/window.py:351
+msgid "From computer"
+msgstr "จากคอมพิวเตอร์"
+
+#: casca/help_content.py:88
+msgid "Picks a PNG, JPG or SVG file already saved on your computer."
+msgstr "เลือกไฟล์ PNG, JPG หรือ SVG ที่บันทึกไว้ในคอมพิวเตอร์ของคุณแล้ว"
+
+#: casca/help_content.py:89 casca/window.py:353
+msgid "From gallery"
+msgstr "จากแกลเลอรี"
+
+#: casca/help_content.py:90
+msgid "Over 160 brand icons already included, no internet needed."
+msgstr "มีไอคอนแบรนด์รวมอยู่แล้วกว่า 160 รายการ ไม่ต้องใช้อินเทอร์เน็ต"
+
+#: casca/help_content.py:92
+msgid ""
+"Without checking anything, Casca fetches an icon automatically on save — or "
+"uses the icon that's already set, if the app came from a preset."
+msgstr ""
+"หากไม่เลือกช่องใด ๆ Casca จะดึงไอคอนโดยอัตโนมัติเมื่อบันทึก — "
+"หรือใช้ไอคอนที่ตั้งไว้แล้ว หากแอปมาจากค่าที่กำหนดไว้ล่วงหน้า"
+
+#: casca/help_content.py:95
+msgid "Desktop Shortcut"
+msgstr "ทางลัดเดสก์ท็อป"
+
+#: casca/help_content.py:97
+msgid ""
+"Every app already shows up in the GNOME applications menu. To also get an "
+"icon on the Desktop, check <strong>Customize icon and shortcut</strong> and "
+"turn on <strong>Also create on the Desktop</strong>."
+msgstr ""
+"ทุกแอปจะปรากฏในเมนูแอปพลิเคชันของ GNOME อยู่แล้ว "
+"หากต้องการให้มีไอคอนบนเดสก์ท็อปด้วย ให้เลือกช่อง "
+"<strong>ปรับแต่งไอคอนและทางลัด</strong> แล้วเปิด "
+"<strong>สร้างบนเดสก์ท็อปด้วย</strong>"
+
+#: casca/help_content.py:101
+msgid "Custom browser"
+msgstr "เบราว์เซอร์ที่กำหนดเอง"
+
+#: casca/help_content.py:103
+msgid ""
+"By default, every app opens in <strong>Casca's own window</strong>: lighter,"
+" top bar automatically colored to match the icon, isolated session per app."
+msgstr ""
+"โดยค่าเริ่มต้น ทุกแอปจะเปิดใน<strong>หน้าต่างของ Casca เอง</strong>: เบากว่า"
+" แถบด้านบนจะเปลี่ยนสีโดยอัตโนมัติให้เข้ากับไอคอน "
+"และแต่ละแอปมีเซสชันแยกจากกัน"
+
+#: casca/help_content.py:107
+msgid ""
+"<strong>Heads up:</strong> sites with Google login (Gmail, Drive, Calendar, "
+"Meet…) tend to refuse login in the built-in window — a Google restriction "
+"against unrecognized browsers, with no workaround. Check <strong>Use a "
+"custom browser</strong> and pick Chrome, Helium, GNOME Web or another "
+"installed browser."
+msgstr ""
+"<strong>ข้อควรทราบ:</strong> เว็บไซต์ที่ต้องเข้าสู่ระบบด้วย Google (Gmail, "
+"Drive, Calendar, Meet ฯลฯ) มักจะปฏิเสธการเข้าสู่ระบบในหน้าต่างในตัว — "
+"เป็นข้อจำกัดของ Google ต่อเบราว์เซอร์ที่ไม่รู้จัก และไม่มีวิธีแก้ไข "
+"โปรดเลือกช่อง <strong>ใช้เบราว์เซอร์ที่กำหนดเอง</strong> แล้วเลือก Chrome, "
+"Helium, GNOME Web หรือเบราว์เซอร์อื่นที่ติดตั้งไว้"
+
+#: casca/help_content.py:113
+msgid ""
+"With a Chromium-based browser (Chrome, Chromium, Brave, Edge, Vivaldi, "
+"Helium…) and more than one account configured in it, <strong>Browser "
+"account</strong> also shows up — choose which already-logged-in account "
+"opens the app, instead of a new profile with no login."
+msgstr ""
+"หากใช้เบราว์เซอร์ที่มีพื้นฐานจาก Chromium (Chrome, Chromium, Brave, Edge, "
+"Vivaldi, Helium ฯลฯ) และมีการตั้งค่ามากกว่าหนึ่งบัญชีไว้ ตัวเลือก "
+"<strong>บัญชีเบราว์เซอร์</strong> จะปรากฏขึ้นด้วย — "
+"เลือกว่าจะใช้บัญชีที่เข้าสู่ระบบไว้แล้วบัญชีใดในการเปิดแอป "
+"แทนที่จะเป็นโปรไฟล์ใหม่ที่ยังไม่ได้เข้าสู่ระบบ"
+
+#: casca/help_content.py:120
+msgid ""
+"Check <strong>Open in mobile mode</strong> and pick a device — Google Pixel,"
+" iPhone, Galaxy, iPad. The app identifies itself to the site as that device,"
+" unlocking the mobile layout (usually simpler and faster)."
+msgstr ""
+"เลือกช่อง <strong>เปิดในโหมดมือถือ</strong> แล้วเลือกอุปกรณ์ — Google Pixel,"
+" iPhone, Galaxy, iPad แอปจะระบุตัวเองต่อเว็บไซต์ว่าเป็นอุปกรณ์นั้น "
+"ซึ่งจะปลดล็อกเลย์เอาต์สำหรับมือถือ (โดยทั่วไปเรียบง่ายและเร็วกว่า)"
+
+#: casca/help_content.py:124
+msgid "Window resolution"
+msgstr "ความละเอียดหน้าต่าง"
+
+#: casca/help_content.py:126
+msgid ""
+"Check <strong>Customize window resolution</strong> — three ways to set the "
+"size, works with or without mobile mode enabled."
+msgstr ""
+"เลือกช่อง <strong>ปรับแต่งความละเอียดหน้าต่าง</strong> — "
+"มีสามวิธีในการตั้งขนาด ใช้ได้ทั้งเปิดหรือปิดโหมดมือถือ"
+
+#: casca/help_content.py:130
+msgid ""
+"<strong>By device</strong> — uses the screen size of the device chosen in "
+"mobile mode."
+msgstr ""
+"<strong>ตามอุปกรณ์</strong> — ใช้ขนาดหน้าจอของอุปกรณ์ที่เลือกไว้ในโหมดมือถือ"
+
+#: casca/help_content.py:132
+msgid "<strong>Default size</strong> — common resolutions (laptop, Full HD…)."
+msgstr ""
+"<strong>ขนาดเริ่มต้น</strong> — ความละเอียดทั่วไป (แล็ปท็อป, Full HD ฯลฯ)"
+
+#: casca/help_content.py:133
+msgid "<strong>Custom</strong> — you type in width and height in pixels."
+msgstr "<strong>กำหนดเอง</strong> — คุณพิมพ์ความกว้างและความสูงเป็นพิกเซลเอง"
+
+#: casca/help_content.py:134
+msgid "Edit and delete"
+msgstr "แก้ไขและลบ"
+
+#: casca/help_content.py:136
+msgid ""
+"On the home screen, every app has a pencil to <strong>edit</strong> (changes"
+" any setting, including ones that were disabled at creation) and a trash "
+"icon to <strong>delete</strong> (removes the shortcut from the menu, the "
+"Desktop, and the saved icon)."
+msgstr ""
+"บนหน้าจอหลัก ทุกแอปจะมีไอคอนดินสอสำหรับ<strong>แก้ไข</strong> "
+"(เปลี่ยนการตั้งค่าใด ๆ ก็ได้ รวมถึงส่วนที่ปิดไว้ตอนสร้าง) "
+"และไอคอนถังขยะสำหรับ<strong>ลบ</strong> (ลบทางลัดออกจากเมนู เดสก์ท็อป "
+"และไอคอนที่บันทึกไว้)"
+
+#: casca/help_content.py:141
+msgid "Casca — built to turn websites into GNOME apps."
+msgstr "Casca — สร้างขึ้นเพื่อเปลี่ยนเว็บไซต์ให้เป็นแอป GNOME"
+
+#: casca/icons.py:171
+msgid "Site icon (.ico)"
+msgstr "ไอคอนเว็บไซต์ (.ico)"
+
+#: casca/icons.py:172
+msgid "Site icon (32px)"
+msgstr "ไอคอนเว็บไซต์ (32px)"
+
+#: casca/icons.py:173
+msgid "Apple touch icon"
+msgstr "ไอคอน Apple touch"
+
+#: casca/icons.py:179
+msgid "PWA Manifest"
+msgstr "PWA Manifest"
+
+#: casca/package_launcher.py:72 casca/package_launcher.py:113
+#: casca/window.py:911
+msgid "Package"
+msgstr "แพ็กเกจ"
+
+#: casca/store.py:80
+msgid "Independent"
+msgstr "อิสระ"
+
+#: casca/store.py:81 casca/store.py:97
+msgid "Other"
+msgstr "อื่น ๆ"
+
+#: casca/store.py:92 casca/window.py:1015
+msgid "Independent apps"
+msgstr "แอปอิสระ"
+
+#: casca/store.py:92
+msgid "Global"
+msgstr "ทั่วโลก"
+
+#: casca/window.py:86
+msgid "Choose icon"
+msgstr "เลือกไอคอน"
+
+#: casca/window.py:121
+msgid "Icons found"
+msgstr "ไอคอนที่พบ"
+
+#: casca/window.py:144
+msgid "Searching for icons online…"
+msgstr "กำลังค้นหาไอคอนออนไลน์…"
+
+#: casca/window.py:155
+msgid "No icon found"
+msgstr "ไม่พบไอคอน"
+
+#: casca/window.py:156
+msgid "Try choosing an image from your computer or the gallery."
+msgstr "ลองเลือกรูปภาพจากคอมพิวเตอร์หรือแกลเลอรีของคุณ"
+
+#: casca/window.py:208 casca/window.py:385
+msgid "Edit app"
+msgstr "แก้ไขแอป"
+
+#: casca/window.py:208
+msgid "New app"
+msgstr "แอปใหม่"
+
+#: casca/window.py:228
+msgid "Site"
+msgstr "เว็บไซต์"
+
+#: casca/window.py:229
+msgid "App name"
+msgstr "ชื่อแอป"
+
+#: casca/window.py:230
+msgid "Address (URL)"
+msgstr "ที่อยู่ (URL)"
+
+#: casca/window.py:238
+msgid "Use a custom browser"
+msgstr "ใช้เบราว์เซอร์ที่กำหนดเอง"
+
+#: casca/window.py:239
+msgid "If disabled, opens in Casca's own window."
+msgstr "หากปิดใช้ จะเปิดในหน้าต่างของ Casca เอง"
+
+#: casca/window.py:245
+msgid "Open with"
+msgstr "เปิดด้วย"
+
+#: casca/window.py:252
+msgid "No compatible browser was found on the system."
+msgstr "ไม่พบเบราว์เซอร์ที่ใช้งานร่วมกันได้ในระบบ"
+
+#: casca/window.py:259
+msgid ""
+"Not available in the Flatpak version — use the local install for external "
+"browsers."
+msgstr ""
+"ไม่พร้อมใช้งานในเวอร์ชัน Flatpak — "
+"โปรดใช้การติดตั้งแบบโลคัลสำหรับเบราว์เซอร์ภายนอก"
+
+#: casca/window.py:264
+msgid "Browser account"
+msgstr "บัญชีเบราว์เซอร์"
+
+#: casca/window.py:271
+msgid "Open in mobile mode"
+msgstr "เปิดในโหมดมือถือ"
+
+#: casca/window.py:272 casca/window.py:478
+msgid "Uses the identification and window of a phone or tablet."
+msgstr "ใช้การระบุตัวตนและหน้าต่างของโทรศัพท์หรือแท็บเล็ต"
+
+#: casca/window.py:278 casca/window.py:306
+msgid "Device"
+msgstr "อุปกรณ์"
+
+#: casca/window.py:292
+msgid "Customize window resolution"
+msgstr "ปรับแต่งความละเอียดหน้าต่าง"
+
+#: casca/window.py:293
+msgid "If disabled, uses the browser's default size."
+msgstr "หากปิดใช้ จะใช้ขนาดเริ่มต้นของเบราว์เซอร์"
+
+#: casca/window.py:298
+msgid "Window size"
+msgstr "ขนาดหน้าต่าง"
+
+#: casca/window.py:300
+msgid "By device"
+msgstr "ตามอุปกรณ์"
+
+#: casca/window.py:300
+msgid "Default size"
+msgstr "ขนาดเริ่มต้น"
+
+#: casca/window.py:300
+msgid "Custom"
+msgstr "กำหนดเอง"
+
+#: casca/window.py:310
+msgid "Size"
+msgstr "ขนาด"
+
+#: casca/window.py:318
+msgid "Width"
+msgstr "ความกว้าง"
+
+#: casca/window.py:321
+msgid "Height"
+msgstr "ความสูง"
+
+#: casca/window.py:332
+msgid "Customize icon and shortcut"
+msgstr "ปรับแต่งไอคอนและทางลัด"
+
+#: casca/window.py:334
+msgid ""
+"If disabled, the icon is fetched automatically and no Desktop shortcut is "
+"created."
+msgstr ""
+"หากปิดใช้ ไอคอนจะถูกดึงมาโดยอัตโนมัติ และจะไม่มีการสร้างทางลัดบนเดสก์ท็อป"
+
+#: casca/window.py:362
+msgid "Also create on the Desktop"
+msgstr "สร้างบนเดสก์ท็อปด้วย"
+
+#: casca/window.py:369
+msgid "Create app"
+msgstr "สร้างแอป"
+
+#: casca/window.py:386
+msgid "Save changes"
+msgstr "บันทึกการเปลี่ยนแปลง"
+
+#: casca/window.py:473
+#, python-format
+msgid "%(browser)s doesn't support mobile mode."
+msgstr "%(browser)s ไม่รองรับโหมดมือถือ"
+
+#: casca/window.py:475 casca/window.py:603
+msgid "Choose a browser."
+msgstr "เลือกเบราว์เซอร์"
+
+#: casca/window.py:485
+msgid "Isolated profile (new, no login)"
+msgstr "โปรไฟล์แยกต่างหาก (ใหม่ ไม่ได้เข้าสู่ระบบ)"
+
+#: casca/window.py:498 casca/window.py:513
+msgid "Enter the URL before searching for the icon."
+msgstr "โปรดป้อน URL ก่อนค้นหาไอคอน"
+
+#: casca/window.py:502
+msgid "Could not fetch the icon automatically."
+msgstr "ไม่สามารถดึงไอคอนโดยอัตโนมัติได้"
+
+#: casca/window.py:524
+msgid "Choose icon image"
+msgstr "เลือกรูปไอคอน"
+
+#: casca/window.py:526
+msgid "Images"
+msgstr "รูปภาพ"
+
+#: casca/window.py:589
+msgid "Fill in the site's name and URL."
+msgstr "โปรดกรอกชื่อเว็บไซต์และ URL"
+
+#: casca/window.py:592 casca/window.py:597
+msgid "Use an http:// or https:// address."
+msgstr "โปรดใช้ที่อยู่ http:// หรือ https://"
+
+#: casca/window.py:613
+msgid "Casca's own window isn't available. Enable 'Use a custom browser'."
+msgstr ""
+"หน้าต่างของ Casca เองไม่พร้อมใช้งาน โปรดเปิดใช้ 'ใช้เบราว์เซอร์ที่กำหนดเอง'"
+
+#: casca/window.py:652
+msgid "Could not set an icon. Choose an image manually."
+msgstr "ไม่สามารถตั้งไอคอนได้ โปรดเลือกรูปภาพด้วยตนเอง"
+
+#: casca/window.py:667
+#, python-format
+msgid "Error saving: %(error)s"
+msgstr "เกิดข้อผิดพลาดขณะบันทึก: %(error)s"
+
+#: casca/window.py:678
+msgid "Preset site"
+msgstr "เว็บไซต์ที่กำหนดไว้ล่วงหน้า"
+
+#: casca/window.py:685
+msgid "Search by name or category…"
+msgstr "ค้นหาตามชื่อหรือหมวดหมู่…"
+
+#: casca/window.py:697 casca/window.py:1012
+#, python-format
+msgid "%(n)d site"
+msgid_plural "%(n)d sites"
+msgstr[0] "%(n)d เว็บไซต์"
+
+#: casca/window.py:881 casca/window.py:1254
+msgid "Store"
+msgstr "ร้านค้า"
+
+#: casca/window.py:909
+msgid "Company"
+msgstr "บริษัท"
+
+#: casca/window.py:910
+msgid "Type"
+msgstr "ประเภท"
+
+#: casca/window.py:926
+msgid "Search by name…"
+msgstr "ค้นหาตามชื่อ…"
+
+#: casca/window.py:962
+#, python-format
+msgid "Could not set an icon for %(name)s."
+msgstr "ไม่สามารถตั้งไอคอนให้ %(name)s ได้"
+
+#: casca/window.py:968
+#, python-format
+msgid "Error installing package: %(error)s"
+msgstr "เกิดข้อผิดพลาดขณะติดตั้งแพ็กเกจ: %(error)s"
+
+#: casca/window.py:974
+#, python-format
+msgid "Package “%(name)s” installed with %(n)d app."
+msgid_plural "Package “%(name)s” installed with %(n)d apps."
+msgstr[0] "ติดตั้งแพ็กเกจ “%(name)s” พร้อมแอป %(n)d รายการแล้ว"
+
+#: casca/window.py:1000
+msgid "Nothing here yet"
+msgstr "ยังไม่มีอะไรที่นี่"
+
+#: casca/window.py:1001
+msgid "Check the local catalog or your internet connection."
+msgstr "โปรดตรวจสอบแคตตาล็อกในเครื่องหรือการเชื่อมต่ออินเทอร์เน็ตของคุณ"
+
+#: casca/window.py:1017
+msgid "Install full package"
+msgstr "ติดตั้งแพ็กเกจแบบเต็ม"
+
+#: casca/window.py:1142
+msgid "Casca Manual"
+msgstr "คู่มือ Casca"
+
+#: casca/window.py:1159
+msgid "Could not open the built-in manual"
+msgstr "ไม่สามารถเปิดคู่มือในตัวได้"
+
+#: casca/window.py:1171
+msgid "Choose what to import"
+msgstr "เลือกสิ่งที่จะนำเข้า"
+
+#: casca/window.py:1180
+#, python-format
+msgid "%(n)d site found"
+msgid_plural "%(n)d sites found"
+msgstr[0] "พบ %(n)d เว็บไซต์"
+
+#: casca/window.py:1183
+msgid "Uncheck anything you don't want to import."
+msgstr "ยกเลิกการเลือกสิ่งที่คุณไม่ต้องการนำเข้า"
+
+#: casca/window.py:1186
+msgid "(no name)"
+msgstr "(ไม่มีชื่อ)"
+
+#: casca/window.py:1194
+msgid "Import selected"
+msgstr "นำเข้ารายการที่เลือก"
+
+#: casca/window.py:1227
+msgid "User guide"
+msgstr "คู่มือผู้ใช้"
+
+#: casca/window.py:1228
+msgid "About Casca"
+msgstr "เกี่ยวกับ Casca"
+
+#: casca/window.py:1229
+msgid "Menu"
+msgstr "เมนู"
+
+#: casca/window.py:1259
+msgid "Create a new web app"
+msgstr "สร้างเว็บแอปใหม่"
+
+#: casca/window.py:1260
+msgid "Create"
+msgstr "สร้าง"
+
+#: casca/window.py:1269 casca/window.py:1365
+msgid "Import apps"
+msgstr "นำเข้าแอป"
+
+#: casca/window.py:1273 casca/window.py:1315
+msgid "Export apps"
+msgstr "ส่งออกแอป"
+
+#: casca/window.py:1302
+msgid "Turns any website into a GNOME app."
+msgstr "เปลี่ยนเว็บไซต์ใด ๆ ให้เป็นแอป GNOME"
+
+#: casca/window.py:1313
+msgid "No app created yet to export."
+msgstr "ยังไม่มีแอปที่สร้างไว้สำหรับส่งออก"
+
+#: casca/window.py:1337
+#, python-format
+msgid "Error exporting: %(error)s"
+msgstr "เกิดข้อผิดพลาดขณะส่งออก: %(error)s"
+
+#: casca/window.py:1340
+#, python-format
+msgid "%(count)d app exported to %(name)s."
+msgid_plural "%(count)d apps exported to %(name)s."
+msgstr[0] "ส่งออกแอป %(count)d รายการไปยัง %(name)s แล้ว"
+
+#: casca/window.py:1346
+msgid "Import from where?"
+msgstr "นำเข้าจากที่ใด?"
+
+#: casca/window.py:1347
+msgid "Choose a local .json file or a URL (e.g. a GitHub \"raw\" link)."
+msgstr "เลือกไฟล์ .json ในเครื่องหรือ URL (เช่น ลิงก์ \"raw\" จาก GitHub)"
+
+#: casca/window.py:1349 casca/window.py:1395 casca/window.py:1528
+#: casca/window.py:1551
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+#: casca/window.py:1350
+msgid "From a URL"
+msgstr "จาก URL"
+
+#: casca/window.py:1351
+msgid "Local file"
+msgstr "ไฟล์ในเครื่อง"
+
+#: casca/window.py:1384
+#, python-format
+msgid "Error reading the file: %(error)s"
+msgstr "เกิดข้อผิดพลาดขณะอ่านไฟล์: %(error)s"
+
+#: casca/window.py:1390
+msgid "Import from a URL"
+msgstr "นำเข้าจาก URL"
+
+#: casca/window.py:1391
+msgid "Paste the JSON file's \"raw\" link (e.g. from a GitHub repository)."
+msgstr "วางลิงก์ \"raw\" ของไฟล์ JSON (เช่น จากที่เก็บ GitHub)"
+
+#: casca/window.py:1396
+msgid "Fetch"
+msgstr "ดึงข้อมูล"
+
+#: casca/window.py:1408
+msgid "Enter a URL."
+msgstr "โปรดป้อน URL"
+
+#: casca/window.py:1410
+msgid "Fetching file…"
+msgstr "กำลังดึงไฟล์…"
+
+#: casca/window.py:1417
+#, python-format
+msgid "Error downloading: %(error)s"
+msgstr "เกิดข้อผิดพลาดขณะดาวน์โหลด: %(error)s"
+
+#: casca/window.py:1425
+#, python-format
+msgid "Error importing: %(error)s"
+msgstr "เกิดข้อผิดพลาดขณะนำเข้า: %(error)s"
+
+#: casca/window.py:1428
+msgid "No app found in the file."
+msgstr "ไม่พบแอปในไฟล์"
+
+#: casca/window.py:1436
+msgid "Nothing selected to import."
+msgstr "ยังไม่ได้เลือกสิ่งที่จะนำเข้า"
+
+#: casca/window.py:1444
+#, python-format
+msgid "%(n)d app imported."
+msgid_plural "%(n)d apps imported."
+msgstr[0] "นำเข้าแอปแล้ว %(n)d รายการ"
+
+#: casca/window.py:1450
+#, python-format
+msgid "• %(name)s: %(reason)s"
+msgstr "• %(name)s: %(reason)s"
+
+#: casca/window.py:1454
+#, python-format
+msgid "%(created)d imported, %(failed)d with errors"
+msgstr "นำเข้าแล้ว %(created)d รายการ ผิดพลาด %(failed)d รายการ"
+
+#: casca/window.py:1456
+#, python-format
+msgid ""
+"Review and adjust manually via the \"Create\" button:\n"
+"\n"
+"%(lines)s"
+msgstr ""
+"ตรวจสอบและปรับแก้ด้วยตนเองผ่านปุ่ม \"สร้าง\":\n"
+"\n"
+"%(lines)s"
+
+#: casca/window.py:1458
+msgid "Got it"
+msgstr "เข้าใจแล้ว"
+
+#: casca/window.py:1472
+msgid "No web apps yet"
+msgstr "ยังไม่มีเว็บแอป"
+
+#: casca/window.py:1473
+msgid ""
+"Tap “Create” to make your first app, or open the Store for ready-made sites."
+msgstr ""
+"แตะ “สร้าง” เพื่อสร้างแอปแรกของคุณ หรือเปิดร้านค้าเพื่อดูเว็บไซต์สำเร็จรูป"
+
+#: casca/window.py:1482
+msgid "My web apps"
+msgstr "เว็บแอปของฉัน"
+
+#: casca/window.py:1504
+msgid "Installed packages"
+msgstr "แพ็กเกจที่ติดตั้งแล้ว"
+
+#: casca/window.py:1525
+#, python-format
+msgid "Delete “%(name)s”?"
+msgstr "ลบ “%(name)s” หรือไม่?"
+
+#: casca/window.py:1526
+msgid ""
+"The shortcut will be removed from the applications menu and the desktop, if "
+"it exists."
+msgstr "ทางลัดจะถูกลบออกจากเมนูแอปพลิเคชันและเดสก์ท็อป หากมีอยู่"
+
+#: casca/window.py:1529 casca/window.py:1552
+msgid "Delete"
+msgstr "ลบ"
+
+#: casca/window.py:1543
+#, python-format
+msgid "Delete package “%(name)s”?"
+msgstr "ลบแพ็กเกจ “%(name)s” หรือไม่?"
+
+#: casca/window.py:1545
+#, python-format
+msgid "Removes the shortcut and the %(n)d app inside it (%(names)s)."
+msgid_plural "Removes the shortcut and the %(n)d apps inside it (%(names)s)."
+msgstr[0] "ลบทางลัดและแอป %(n)d รายการภายใน (%(names)s)"

@@ -1,6 +1,6 @@
-"""Runtime do "pacote": uma janela com grade de ícones dos apps do pacote —
-clicar em um lança o comando daquele app (o mesmo tipo de comando que um app
-normal do Casca usaria)."""
+"""Runtime for a "package": a window with a grid of icons for the package's apps —
+clicking one launches that app's command (the same kind of command a regular
+Casca app would use)."""
 
 import argparse
 import json
@@ -8,6 +8,10 @@ import shlex
 import subprocess
 import sys
 from pathlib import Path
+
+from . import i18n
+
+i18n.install()
 
 import gi
 
@@ -18,10 +22,11 @@ from gi.repository import Adw, Gdk, Gtk
 
 from .fileutils import ascii_app_id_component
 from .headerbar_css import build_header_css
+from .i18n import _
 
 
 def _parse_args(argv: list[str]) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Launcher de pacote do Casca")
+    parser = argparse.ArgumentParser(description="Casca package launcher")
     parser.add_argument("--config", required=True)
     return parser.parse_args(argv)
 
@@ -64,7 +69,7 @@ def build_card(sub_app: dict) -> Gtk.Widget:
 
 
 def build_window(application: Adw.Application, config: dict) -> Adw.ApplicationWindow:
-    package_name = config.get("package_name", "Pacote")
+    package_name = config.get("package_name", _("Package"))
     apps = config.get("apps", [])
     color = config.get("color")
     text_color = config.get("text_color", "#ffffff")
@@ -105,7 +110,7 @@ def main(argv: list[str] | None = None) -> int:
     args = _parse_args(argv if argv is not None else sys.argv[1:])
     config = json.loads(Path(args.config).read_text())
 
-    package_name = config.get("package_name", "Pacote")
+    package_name = config.get("package_name", _("Package"))
     app_id = "io.github.oliverhubtech_source.Casca.Package" + ascii_app_id_component(package_name)
     app = Adw.Application(application_id=app_id)
     app.connect("activate", lambda application: build_window(application, config).present())

@@ -1,4 +1,4 @@
-"""Interface do Casca: lista de web apps e formulário de criação/edição."""
+"""Casca's UI: list of web apps and the creation/edit form."""
 
 import itertools
 import threading
@@ -15,13 +15,14 @@ from gi.repository import Adw, Gdk, Gio, GLib, Gtk
 
 _header_class_counter = itertools.count()
 
-from . import browsers, devices, entries, icons, presets, profiles, social_icons, store
+from . import browsers, devices, entries, help_content, icons, presets, profiles, social_icons, store
 from .fileutils import has_dangerous_scheme
 from .headerbar_css import build_header_css
+from .i18n import _, ngettext
 
 
 def _fold(text: str) -> str:
-    """Normaliza texto para busca: minúsculo e sem acentos."""
+    """Normalize text for search: lowercase and without accents."""
     return unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii").lower()
 
 
@@ -35,7 +36,7 @@ def _row_icon(path_str: str) -> Gtk.Widget:
 
 
 def _color_bar(rgb: tuple[int, int, int]) -> Gtk.Widget:
-    """Faixa vertical fina pintada com a cor dominante do ícone do app."""
+    """Thin vertical stripe painted with the app icon's dominant color."""
     area = Gtk.DrawingArea()
     area.set_content_width(4)
     area.set_vexpand(True)
@@ -52,7 +53,7 @@ def _color_bar(rgb: tuple[int, int, int]) -> Gtk.Widget:
 
 
 def _row_leading_widget(icon_path: str) -> Gtk.Widget:
-    """Faixa colorida + ícone, para usar como prefixo de uma Adw.ActionRow."""
+    """Color stripe + icon, to use as an Adw.ActionRow prefix."""
     box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
     if icon_path and Path(icon_path).exists():
         box.append(_color_bar(icons.dominant_color(Path(icon_path))))
@@ -79,10 +80,10 @@ def _build_icon_card(key: str, path, on_click) -> Gtk.Widget:
 
 
 class IconGalleryDialog(Adw.Dialog):
-    """Grade com os ícones de marcas incluídos no Casca, para usar em sites customizados."""
+    """Grid with the brand icons bundled with Casca, for use on custom sites."""
 
     def __init__(self, on_pick):
-        super().__init__(title="Escolher ícone", content_width=480, content_height=600)
+        super().__init__(title=_("Choose icon"), content_width=480, content_height=600)
 
         toolbar = Adw.ToolbarView()
         toolbar.add_top_bar(Adw.HeaderBar())
@@ -114,10 +115,10 @@ class IconGalleryDialog(Adw.Dialog):
 
 
 class IconSearchDialog(Adw.Dialog):
-    """Busca ícones do site em várias fontes da internet e mostra os resultados numa grade."""
+    """Searches for the site's icon across several sources and shows the results in a grid."""
 
     def __init__(self, url: str, on_pick):
-        super().__init__(title="Ícones encontrados", content_width=460, content_height=420)
+        super().__init__(title=_("Icons found"), content_width=460, content_height=420)
         self._url = url
         self._on_pick = on_pick
 
@@ -140,7 +141,7 @@ class IconSearchDialog(Adw.Dialog):
         spinner.set_halign(Gtk.Align.CENTER)
         spinner.start()
         box.append(spinner)
-        box.append(Gtk.Label(label="Buscando ícones na internet…"))
+        box.append(Gtk.Label(label=_("Searching for icons online…")))
         self._toolbar.set_content(box)
 
     def _search_worker(self) -> None:
@@ -151,8 +152,8 @@ class IconSearchDialog(Adw.Dialog):
         if not results:
             status = Adw.StatusPage(
                 icon_name="dialog-warning-symbolic",
-                title="Nenhum ícone encontrado",
-                description="Tente escolher uma imagem do computador ou da galeria.",
+                title=_("No icon found"),
+                description=_("Try choosing an image from your computer or the gallery."),
             )
             self._toolbar.set_content(status)
             return False
@@ -201,10 +202,10 @@ class IconSearchDialog(Adw.Dialog):
 
 
 class EditorPage(Adw.NavigationPage):
-    """Formulário de criação/edição de um web app."""
+    """Web app creation/edit form."""
 
     def __init__(self, nav_view: Adw.NavigationView, on_saved, existing: entries.WebApp | None = None):
-        super().__init__(title="Editar app" if existing else "Novo app")
+        super().__init__(title=_("Edit app") if existing else _("New app"))
         self._nav_view = nav_view
         self._on_saved = on_saved
         self._existing = existing
@@ -224,57 +225,57 @@ class EditorPage(Adw.NavigationPage):
 
         page = Adw.PreferencesPage()
 
-        site_group = Adw.PreferencesGroup(title="Site")
-        self._name_row = Adw.EntryRow(title="Nome do app")
-        self._url_row = Adw.EntryRow(title="Endereço (URL)")
+        site_group = Adw.PreferencesGroup(title=_("Site"))
+        self._name_row = Adw.EntryRow(title=_("App name"))
+        self._url_row = Adw.EntryRow(title=_("Address (URL)"))
         site_group.add(self._name_row)
         site_group.add(self._url_row)
         page.add(site_group)
 
-        browser_group = Adw.PreferencesGroup(title="Navegador")
+        browser_group = Adw.PreferencesGroup(title=_("Browser"))
 
         self._custom_browser_expander = Adw.ExpanderRow(
-            title="Usar navegador personalizado",
-            subtitle="Se desativado, abre na janela própria do Casca.",
+            title=_("Use a custom browser"),
+            subtitle=_("If disabled, opens in Casca's own window."),
         )
         self._custom_browser_expander.set_show_enable_switch(True)
         self._custom_browser_expander.set_enable_expansion(False)
         self._custom_browser_expander.connect("notify::enable-expansion", self._on_browser_changed)
 
-        self._browser_row = Adw.ComboRow(title="Abrir com")
+        self._browser_row = Adw.ComboRow(title=_("Open with"))
         labels = Gtk.StringList()
         for browser in self._detected_browsers:
             labels.append(browser.label)
         self._browser_row.set_model(labels)
         if not self._detected_browsers:
             self._browser_row.set_sensitive(False)
-            self._custom_browser_expander.set_subtitle("Nenhum navegador compatível foi encontrado no sistema.")
+            self._custom_browser_expander.set_subtitle(_("No compatible browser was found on the system."))
         if browsers.in_flatpak():
-            # Sandboxado, o Casca não detecta/oferece navegadores externos (ver
-            # browsers.py) — a única opção real já é a janela própria, então o toggle
-            # fica desabilitado em vez de mostrar uma lista com uma opção só.
+            # Sandboxed, Casca doesn't detect/offer external browsers (see
+            # browsers.py) — the only real option is already its own window, so the
+            # toggle is disabled instead of showing a list with a single option.
             self._custom_browser_expander.set_sensitive(False)
             self._custom_browser_expander.set_subtitle(
-                "Não disponível na versão Flatpak — use a instalação local para navegadores externos."
+                _("Not available in the Flatpak version — use the local install for external browsers.")
             )
         self._browser_row.connect("notify::selected", self._on_browser_changed)
         self._custom_browser_expander.add_row(self._browser_row)
 
-        self._profile_row = Adw.ComboRow(title="Conta do navegador")
+        self._profile_row = Adw.ComboRow(title=_("Browser account"))
         self._profile_options: list[str | None] = [None]
         self._custom_browser_expander.add_row(self._profile_row)
 
         browser_group.add(self._custom_browser_expander)
 
         self._mobile_expander = Adw.ExpanderRow(
-            title="Abrir em modo mobile",
-            subtitle="Usa identificação e janela de um celular ou tablet.",
+            title=_("Open in mobile mode"),
+            subtitle=_("Uses the identification and window of a phone or tablet."),
         )
         self._mobile_expander.set_show_enable_switch(True)
         self._mobile_expander.set_enable_expansion(False)
         self._mobile_expander.connect("notify::enable-expansion", self._on_mobile_toggled)
 
-        self._device_row = Adw.ComboRow(title="Dispositivo")
+        self._device_row = Adw.ComboRow(title=_("Device"))
         device_labels = Gtk.StringList()
         for device in devices.DEVICES:
             device_labels.append(device.label)
@@ -288,25 +289,25 @@ class EditorPage(Adw.NavigationPage):
 
         resolution_group = Adw.PreferencesGroup()
         self._resolution_expander = Adw.ExpanderRow(
-            title="Personalizar resolução da janela",
-            subtitle="Se desativado, usa o tamanho padrão do navegador.",
+            title=_("Customize window resolution"),
+            subtitle=_("If disabled, uses the browser's default size."),
         )
         self._resolution_expander.set_show_enable_switch(True)
         self._resolution_expander.set_enable_expansion(False)
 
-        self._resolution_row = Adw.ComboRow(title="Tamanho da janela")
+        self._resolution_row = Adw.ComboRow(title=_("Window size"))
         resolution_modes = Gtk.StringList()
-        for mode_label in ("Por dispositivo", "Tamanho padrão", "Personalizada"):
+        for mode_label in (_("By device"), _("Default size"), _("Custom")):
             resolution_modes.append(mode_label)
         self._resolution_row.set_model(resolution_modes)
         self._resolution_row.connect("notify::selected", self._on_resolution_mode_changed)
         self._resolution_expander.add_row(self._resolution_row)
 
-        self._resolution_device_row = Adw.ComboRow(title="Dispositivo")
+        self._resolution_device_row = Adw.ComboRow(title=_("Device"))
         self._resolution_device_row.set_model(device_labels)
         self._resolution_expander.add_row(self._resolution_device_row)
 
-        self._resolution_preset_row = Adw.ComboRow(title="Tamanho")
+        self._resolution_preset_row = Adw.ComboRow(title=_("Size"))
         preset_sizes = Gtk.StringList()
         for size in devices.STANDARD_SIZES:
             preset_sizes.append(size.label)
@@ -314,10 +315,10 @@ class EditorPage(Adw.NavigationPage):
         self._resolution_expander.add_row(self._resolution_preset_row)
 
         self._resolution_width_row = Adw.SpinRow(
-            title="Largura", adjustment=Gtk.Adjustment(lower=200, upper=4000, step_increment=10, value=1024)
+            title=_("Width"), adjustment=Gtk.Adjustment(lower=200, upper=4000, step_increment=10, value=1024)
         )
         self._resolution_height_row = Adw.SpinRow(
-            title="Altura", adjustment=Gtk.Adjustment(lower=200, upper=4000, step_increment=10, value=768)
+            title=_("Height"), adjustment=Gtk.Adjustment(lower=200, upper=4000, step_increment=10, value=768)
         )
         self._resolution_expander.add_row(self._resolution_width_row)
         self._resolution_expander.add_row(self._resolution_height_row)
@@ -328,8 +329,10 @@ class EditorPage(Adw.NavigationPage):
 
         icon_group = Adw.PreferencesGroup()
         self._icon_expander = Adw.ExpanderRow(
-            title="Personalizar ícone e atalho",
-            subtitle="Se desativado, o ícone é buscado automaticamente e nenhum atalho é criado na Área de Trabalho.",
+            title=_("Customize icon and shortcut"),
+            subtitle=_(
+                "If disabled, the icon is fetched automatically and no Desktop shortcut is created."
+            ),
         )
         self._icon_expander.set_show_enable_switch(True)
         self._icon_expander.set_enable_expansion(False)
@@ -343,11 +346,11 @@ class EditorPage(Adw.NavigationPage):
         icon_box.append(self._icon_preview)
 
         button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6, halign=Gtk.Align.CENTER)
-        search_button = Gtk.Button(label="Buscar na internet")
+        search_button = Gtk.Button(label=_("Search online"))
         search_button.connect("clicked", self._on_search_icons)
-        choose_button = Gtk.Button(label="Do computador")
+        choose_button = Gtk.Button(label=_("From computer"))
         choose_button.connect("clicked", self._on_choose_icon)
-        gallery_button = Gtk.Button(label="Da galeria")
+        gallery_button = Gtk.Button(label=_("From gallery"))
         gallery_button.connect("clicked", self._on_open_gallery)
         button_box.append(search_button)
         button_box.append(choose_button)
@@ -356,14 +359,14 @@ class EditorPage(Adw.NavigationPage):
 
         self._icon_expander.add_row(icon_box)
 
-        self._desktop_switch_row = Adw.SwitchRow(title="Criar também na Área de Trabalho")
+        self._desktop_switch_row = Adw.SwitchRow(title=_("Also create on the Desktop"))
         self._icon_expander.add_row(self._desktop_switch_row)
 
         icon_group.add(self._icon_expander)
         page.add(icon_group)
 
         actions_group = Adw.PreferencesGroup()
-        self._save_button = Gtk.Button(label="Criar app")
+        self._save_button = Gtk.Button(label=_("Create app"))
         self._save_button.add_css_class("suggested-action")
         self._save_button.add_css_class("pill")
         self._save_button.set_halign(Gtk.Align.CENTER)
@@ -379,8 +382,8 @@ class EditorPage(Adw.NavigationPage):
             self._load_existing(existing)
 
     def _load_existing(self, app: entries.WebApp) -> None:
-        self.set_title("Editar app")
-        self._save_button.set_label("Salvar alterações")
+        self.set_title(_("Edit app"))
+        self._save_button.set_label(_("Save changes"))
         self._name_row.set_text(app.name)
         self._url_row.set_text(app.url)
         self._desktop_switch_row.set_active(app.desktop_shortcut)
@@ -467,17 +470,19 @@ class EditorPage(Adw.NavigationPage):
         if not supported:
             self._mobile_expander.set_enable_expansion(False)
             self._mobile_expander.set_subtitle(
-                f"{browser.label} não suporta modo mobile." if browser else "Escolha um navegador."
+                _("%(browser)s doesn't support mobile mode.") % {"browser": browser.label}
+                if browser
+                else _("Choose a browser.")
             )
         else:
-            self._mobile_expander.set_subtitle("Usa identificação e janela de um celular ou tablet.")
+            self._mobile_expander.set_subtitle(_("Uses the identification and window of a phone or tablet."))
 
     def _update_profile_options(self) -> None:
         browser = self._current_browser()
         found = profiles.list_profiles(browser) if browser and browser.supports_account_profile else []
 
         labels = Gtk.StringList()
-        labels.append("Perfil isolado (novo, sem login)")
+        labels.append(_("Isolated profile (new, no login)"))
         self._profile_options = [None]
         for profile in found:
             labels.append(profile.label)
@@ -490,11 +495,11 @@ class EditorPage(Adw.NavigationPage):
     def _on_fetch_favicon(self, _button: Gtk.Button) -> None:
         url = self._url_row.get_text().strip()
         if not url:
-            self._toast("Digite a URL antes de buscar o ícone.")
+            self._toast(_("Enter the URL before searching for the icon."))
             return
         data = icons.fetch_favicon(url)
         if not data:
-            self._toast("Não foi possível buscar o ícone automaticamente.")
+            self._toast(_("Could not fetch the icon automatically."))
             return
         temp_path = Path(GLib.get_tmp_dir()) / "casca-favicon-preview.png"
         temp_path.write_bytes(data)
@@ -505,7 +510,7 @@ class EditorPage(Adw.NavigationPage):
     def _on_search_icons(self, _button: Gtk.Button) -> None:
         url = self._url_row.get_text().strip()
         if not url:
-            self._toast("Digite a URL antes de buscar o ícone.")
+            self._toast(_("Enter the URL before searching for the icon."))
             return
         dialog = IconSearchDialog(url, on_pick=self._on_search_icon_picked)
         dialog.present(self)
@@ -516,9 +521,9 @@ class EditorPage(Adw.NavigationPage):
         self._set_icon_preview(str(path))
 
     def _on_choose_icon(self, _button: Gtk.Button) -> None:
-        dialog = Gtk.FileDialog(title="Escolher imagem do ícone")
+        dialog = Gtk.FileDialog(title=_("Choose icon image"))
         filter_images = Gtk.FileFilter()
-        filter_images.set_name("Imagens")
+        filter_images.set_name(_("Images"))
         filter_images.add_mime_type("image/png")
         filter_images.add_mime_type("image/jpeg")
         filter_images.add_mime_type("image/svg+xml")
@@ -581,21 +586,21 @@ class EditorPage(Adw.NavigationPage):
         url = self._url_row.get_text().strip()
 
         if not name or not url:
-            self._toast("Preencha o nome e a URL do site.")
+            self._toast(_("Fill in the site's name and URL."))
             return
         if has_dangerous_scheme(url):
-            self._toast("Use um endereço http:// ou https://.")
+            self._toast(_("Use an http:// or https:// address."))
             return
         if "://" not in url:
             url = f"https://{url}"
         if urlparse(url).scheme not in ("http", "https"):
-            self._toast("Use um endereço http:// ou https://.")
+            self._toast(_("Use an http:// or https:// address."))
             return
 
         if self._custom_browser_expander.get_enable_expansion():
             selected = self._browser_row.get_selected()
             if selected == Gtk.INVALID_LIST_POSITION or not self._detected_browsers:
-                self._toast("Escolha um navegador.")
+                self._toast(_("Choose a browser."))
                 return
             browser_key = self._detected_browsers[selected].key
             profile_selected = self._profile_row.get_selected()
@@ -605,7 +610,7 @@ class EditorPage(Adw.NavigationPage):
         else:
             webkit_browser = next((b for b in self._detected_browsers if b.key == "webkit:casca"), None)
             if webkit_browser is None:
-                self._toast("Janela própria do Casca não disponível. Marque 'Usar navegador personalizado'.")
+                self._toast(_("Casca's own window isn't available. Enable 'Use a custom browser'."))
                 return
             browser_key = webkit_browser.key
             browser_profile = None
@@ -618,8 +623,8 @@ class EditorPage(Adw.NavigationPage):
             desktop_shortcut = self._desktop_switch_row.get_active()
             icon_source = self._picked_icon_path or self._auto_icon_path
         else:
-            # personalização desativada: ignora escolha manual, mantém o que já foi
-            # resolvido automaticamente (ex.: ícone de um predefinido) e sem atalho.
+            # customization disabled: ignore the manual choice, keep whatever was
+            # already resolved automatically (e.g. a preset's icon), and no shortcut.
             desktop_shortcut = False
             icon_source = self._auto_icon_path
 
@@ -644,7 +649,7 @@ class EditorPage(Adw.NavigationPage):
                     slug_guess = entries.slugify(name)
                     icon_source = icons.save_icon_from_bytes(data, slug_guess) if data else None
                 if icon_source is None:
-                    self._toast("Não foi possível definir um ícone. Escolha uma imagem manualmente.")
+                    self._toast(_("Could not set an icon. Choose an image manually."))
                     return
                 entries.create_app(
                     name,
@@ -659,7 +664,7 @@ class EditorPage(Adw.NavigationPage):
                     height,
                 )
         except (ValueError, KeyError, OSError) as error:
-            self._toast(f"Erro ao salvar: {error}")
+            self._toast(_("Error saving: %(error)s") % {"error": error})
             return
 
         self._on_saved()
@@ -667,17 +672,17 @@ class EditorPage(Adw.NavigationPage):
 
 
 class PresetsPage(Adw.NavigationPage):
-    """Tela com a lista de sites pré-definidos, agrupados por categoria."""
+    """Screen with the list of preset sites, grouped by category."""
 
     def __init__(self, nav_view: Adw.NavigationView, on_refresh_list):
-        super().__init__(title="Site pré-definido")
+        super().__init__(title=_("Preset site"))
         self._nav_view = nav_view
         self._on_refresh_list = on_refresh_list
 
         toolbar = Adw.ToolbarView()
         toolbar.add_top_bar(Adw.HeaderBar())
 
-        self._search_entry = Gtk.SearchEntry(placeholder_text="Buscar por nome ou categoria…")
+        self._search_entry = Gtk.SearchEntry(placeholder_text=_("Search by name or category…"))
         self._search_entry.set_margin_start(12)
         self._search_entry.set_margin_end(12)
         self._search_entry.set_margin_top(12)
@@ -689,7 +694,8 @@ class PresetsPage(Adw.NavigationPage):
         self.category_expanders: list[Adw.ExpanderRow] = []
         self._category_rows: list[tuple[presets.PresetCategory, Adw.ExpanderRow, list[tuple[presets.Preset, Adw.ActionRow]]]] = []
         for category in presets.PRESET_CATEGORIES:
-            expander = Adw.ExpanderRow(title=category.title, subtitle=f"{len(category.presets)} sites")
+            subtitle = ngettext("%(n)d site", "%(n)d sites", len(category.presets)) % {"n": len(category.presets)}
+            expander = Adw.ExpanderRow(title=category.title, subtitle=subtitle)
             rows = []
             for preset in category.presets:
                 row = self._build_preset_row(preset)
@@ -814,57 +820,57 @@ _PACKAGE_ICON_KEYS = {
     "Google Workspace": "google",
     "Microsoft 365": "microsoft-office",
     "YouTube": "youtube2",
-    "Inteligência Artificial": "chatgpt",
-    "Redes Sociais": "instagram",
+    "Artificial Intelligence": "chatgpt",
+    "Social Media": "instagram",
 }
 
 _COUNTRY_FLAGS = {
-    "Brasil": "🇧🇷",
-    "Estados Unidos": "🇺🇸",
-    "Alemanha": "🇩🇪",
-    "Polônia": "🇵🇱",
-    "Países Baixos": "🇳🇱",
-    "França": "🇫🇷",
-    "Reino Unido": "🇬🇧",
-    "Europa": "🇪🇺",
+    "Brazil": "🇧🇷",
+    "United States": "🇺🇸",
+    "Germany": "🇩🇪",
+    "Poland": "🇵🇱",
+    "Netherlands": "🇳🇱",
+    "France": "🇫🇷",
+    "United Kingdom": "🇬🇧",
+    "Europe": "🇪🇺",
     "Argentina": "🇦🇷",
-    "Uruguai": "🇺🇾",
-    "Paraguai": "🇵🇾",
-    "Colômbia": "🇨🇴",
+    "Uruguay": "🇺🇾",
+    "Paraguay": "🇵🇾",
+    "Colombia": "🇨🇴",
     "Chile": "🇨🇱",
-    "México": "🇲🇽",
-    "Espanha": "🇪🇸",
-    "Internacional": "🌐",
+    "Mexico": "🇲🇽",
+    "Spain": "🇪🇸",
+    "International": "🌐",
     "Global": "🌐",
 }
 
 _KIND_ICON_NAMES = {
-    "Mensageiro": "system-users-symbolic",
-    "Rede social": "face-smile-big-symbolic",
-    "Streaming de vídeo": "multimedia-player-symbolic",
-    "Streaming de música": "audio-headphones-symbolic",
-    "Inteligência Artificial": "starred-symbolic",
-    "Buscador": "system-search-symbolic",
-    "Produtividade": "view-list-symbolic",
+    "Messenger": "system-users-symbolic",
+    "Social Network": "face-smile-big-symbolic",
+    "Video Streaming": "multimedia-player-symbolic",
+    "Music Streaming": "audio-headphones-symbolic",
+    "Artificial Intelligence": "starred-symbolic",
+    "Search Engine": "system-search-symbolic",
+    "Productivity": "view-list-symbolic",
     "PDF": "text-x-generic-symbolic",
-    "Financeiro": "org.gnome.Calculator-symbolic",
-    "Utilidade": "preferences-system-symbolic",
-    "Conversão e Compartilhamento": "send-to-symbolic",
-    "Segurança": "channel-secure-symbolic",
-    "Criatividade": "insert-image-symbolic",
-    "Computação em Nuvem": "network-server-symbolic",
+    "Finance": "org.gnome.Calculator-symbolic",
+    "Utility": "preferences-system-symbolic",
+    "Conversion & Sharing": "send-to-symbolic",
+    "Security": "channel-secure-symbolic",
+    "Creativity": "insert-image-symbolic",
+    "Cloud Computing": "network-server-symbolic",
 }
 
-# facets que, na Loja, são seu próprio "modo" (não uma faceta do catálogo comum) e
-# sempre aparecem agrupadas por país.
+# Facets that, in the Store, are their own "mode" (not a facet of the regular
+# catalog) and always show grouped by country.
 _COUNTRY_GROUPED_KINDS = {
     "marketplace": "Marketplace",
-    "news": "Notícias",
+    "news": "News",
 }
 
 
 class StoreWindow(Adw.ApplicationWindow):
-    """Loja: janela própria com catálogo de sites prontos, agrupados por Empresa/Tipo/Pacote."""
+    """Store: its own window with a catalog of ready-made sites, grouped by Company/Type/Package."""
 
     def __init__(self, parent: Adw.ApplicationWindow, nav_view: Adw.NavigationView, on_refresh_list):
         super().__init__(
@@ -872,7 +878,7 @@ class StoreWindow(Adw.ApplicationWindow):
             transient_for=parent,
             default_width=560,
             default_height=760,
-            title="Loja",
+            title=_("Store"),
         )
         self._nav_view = nav_view
         self._on_refresh_list = on_refresh_list
@@ -900,11 +906,11 @@ class StoreWindow(Adw.ApplicationWindow):
         self._facet_buttons: dict[str, Gtk.ToggleButton] = {}
         first = None
         for key, label in (
-            ("company", "Empresa"),
-            ("kind", "Tipo"),
-            ("package", "Pacote"),
-            ("marketplace", "Marketplace"),
-            ("news", "Notícias"),
+            ("company", _("Company")),
+            ("kind", _("Type")),
+            ("package", _("Package")),
+            ("marketplace", _("Marketplace")),
+            ("news", _("News")),
         ):
             toggle = Gtk.ToggleButton(label=label)
             if first is None:
@@ -917,7 +923,7 @@ class StoreWindow(Adw.ApplicationWindow):
             self._facet_buttons[key] = toggle
         top_box.append(facet_box)
 
-        self._search_entry = Gtk.SearchEntry(placeholder_text="Buscar por nome…")
+        self._search_entry = Gtk.SearchEntry(placeholder_text=_("Search by name…"))
         self._search_entry.connect("changed", self._on_search_changed)
         top_box.append(self._search_entry)
 
@@ -953,17 +959,24 @@ class StoreWindow(Adw.ApplicationWindow):
         if package_icon is None:
             package_icon = store.save_icon_to_temp(items[0])
         if package_icon is None:
-            self._toast(f"Não foi possível definir um ícone para {package_name}.")
+            self._toast(_("Could not set an icon for %(name)s.") % {"name": package_name})
             return
 
         try:
             entries.create_package(package_name, sub_apps, package_icon)
         except ValueError as error:
-            self._toast(f"Erro ao instalar pacote: {error}")
+            self._toast(_("Error installing package: %(error)s") % {"error": error})
             return
 
         self._on_refresh_list()
-        self._toast(f"Pacote “{package_name}” instalado com {len(items)} apps.")
+        self._toast(
+            ngettext(
+                "Package “%(name)s” installed with %(n)d app.",
+                "Package “%(name)s” installed with %(n)d apps.",
+                len(items),
+            )
+            % {"name": package_name, "n": len(items)}
+        )
 
     def _on_facet_toggled(self, toggle: Gtk.ToggleButton, key: str) -> None:
         if toggle.get_active():
@@ -984,8 +997,8 @@ class StoreWindow(Adw.ApplicationWindow):
         if not items_pool:
             status = Adw.StatusPage(
                 icon_name="org.gnome.Software-symbolic",
-                title="Nada por aqui ainda",
-                description="Verifique o catálogo local ou a conexão com a internet.",
+                title=_("Nothing here yet"),
+                description=_("Check the local catalog or your internet connection."),
             )
             group = Adw.PreferencesGroup()
             group.add(status)
@@ -996,11 +1009,12 @@ class StoreWindow(Adw.ApplicationWindow):
         grouped = store.group_by(items_pool, group_key)
         group = Adw.PreferencesGroup()
         for key, items in grouped.items():
-            expander = Adw.ExpanderRow(title=key, subtitle=f"{len(items)} sites")
+            subtitle = ngettext("%(n)d site", "%(n)d sites", len(items)) % {"n": len(items)}
+            expander = Adw.ExpanderRow(title=_(key), subtitle=subtitle)
             expander.add_prefix(self._group_icon_widget(key))
-            if group_key == "package" and key != "Apps independentes":
+            if group_key == "package" and key != _("Independent apps"):
                 install_button = Gtk.Button(
-                    label="Instalar pacote completo", valign=Gtk.Align.CENTER
+                    label=_("Install full package"), valign=Gtk.Align.CENTER
                 )
                 install_button.add_css_class("flat")
                 install_button.connect("clicked", self._on_install_package, key, items)
@@ -1022,9 +1036,10 @@ class StoreWindow(Adw.ApplicationWindow):
         self._apply_search()
 
     def _on_group_expanded(self, expander: Adw.ExpanderRow, _pspec) -> None:
-        """Só busca/decodifica os ícones de um grupo (base64 -> PNG em disco) na primeira
-        vez que ele é expandido — evita fazer isso pra todos os itens do catálogo (incl.
-        grupos que o usuário nunca abre) toda vez que a Loja é aberta ou a aba é trocada."""
+        """Only fetches/decodes a group's icons (base64 -> PNG on disk) the first
+        time it's expanded — avoids doing this for every catalog item (including
+        groups the user never opens) every time the Store is opened or the tab is
+        switched."""
         if not expander.get_expanded():
             return
         pending = self._pending_icons.pop(expander, None)
@@ -1095,9 +1110,9 @@ class StoreWindow(Adw.ApplicationWindow):
             expander.set_expanded(any_visible)
 
     def _build_item_row(self, item: store.StoreItem) -> tuple[Adw.ActionRow, Gtk.Box]:
-        """Monta a linha com um placeholder leve (Avatar com iniciais, sem tocar disco).
-        O ícone real (decodificado do base64 do catálogo) só é carregado quando o grupo
-        é expandido — ver `_on_group_expanded`."""
+        """Builds the row with a lightweight placeholder (initials Avatar, no disk access).
+        The real icon (decoded from the catalog's base64) only loads once the group
+        is expanded — see `_on_group_expanded`."""
         row = Adw.ActionRow(title=item.name, activatable=True)
 
         icon_slot = Gtk.Box()
@@ -1116,7 +1131,7 @@ class StoreWindow(Adw.ApplicationWindow):
 
 
 class HelpWindow(Adw.ApplicationWindow):
-    """Manual de uso do Casca, renderizado a partir do help.html incluído no pacote."""
+    """Casca's user guide, rendered from help_content.py in the app's active language."""
 
     def __init__(self, parent: Adw.ApplicationWindow):
         super().__init__(
@@ -1124,25 +1139,24 @@ class HelpWindow(Adw.ApplicationWindow):
             transient_for=parent,
             default_width=780,
             default_height=760,
-            title="Manual do Casca",
+            title=_("Casca Manual"),
         )
 
         toolbar = Adw.ToolbarView()
         toolbar.add_top_bar(Adw.HeaderBar())
 
-        help_path = Path(__file__).parent / "data" / "help.html"
+        data_dir = Path(__file__).parent / "data"
         try:
             gi.require_version("WebKit", "6.0")
             from gi.repository import WebKit
 
             web_view = WebKit.WebView()
-            web_view.load_uri(f"file://{help_path}")
+            web_view.load_html(help_content.render_help_html(), f"file://{data_dir}/")
             toolbar.set_content(web_view)
         except (ValueError, ImportError):
             status = Adw.StatusPage(
                 icon_name="help-about-symbolic",
-                title="Não foi possível abrir o manual embutido",
-                description=str(help_path),
+                title=_("Could not open the built-in manual"),
             )
             toolbar.set_content(status)
 
@@ -1150,11 +1164,11 @@ class HelpWindow(Adw.ApplicationWindow):
 
 
 class ImportSelectionDialog(Adw.Dialog):
-    """Lista os apps encontrados num JSON de importação com um interruptor por item —
-    nada é importado sem seleção explícita."""
+    """Lists the apps found in an import JSON with a switch per item —
+    nothing is imported without explicit selection."""
 
     def __init__(self, app_entries: list[dict], on_confirm):
-        super().__init__(title="Escolher o que importar", content_width=440, content_height=560)
+        super().__init__(title=_("Choose what to import"), content_width=440, content_height=560)
         self._app_entries = app_entries
         self._on_confirm = on_confirm
         self._switches: list[Adw.SwitchRow] = []
@@ -1163,12 +1177,13 @@ class ImportSelectionDialog(Adw.Dialog):
         toolbar.add_top_bar(Adw.HeaderBar())
 
         page = Adw.PreferencesPage()
+        title = ngettext("%(n)d site found", "%(n)d sites found", len(app_entries)) % {"n": len(app_entries)}
         group = Adw.PreferencesGroup(
-            title=f"{len(app_entries)} site(s) encontrados",
-            description="Desmarque o que não quiser importar.",
+            title=title,
+            description=_("Uncheck anything you don't want to import."),
         )
         for entry in app_entries:
-            name = entry.get("name") or "(sem nome)"
+            name = entry.get("name") or _("(no name)")
             url = entry.get("url") or ""
             row = Adw.SwitchRow(title=name, subtitle=url, active=True)
             group.add(row)
@@ -1176,7 +1191,7 @@ class ImportSelectionDialog(Adw.Dialog):
         page.add(group)
 
         actions = Adw.PreferencesGroup()
-        import_button = Gtk.Button(label="Importar selecionados")
+        import_button = Gtk.Button(label=_("Import selected"))
         import_button.add_css_class("suggested-action")
         import_button.add_css_class("pill")
         import_button.set_halign(Gtk.Align.CENTER)
@@ -1195,7 +1210,7 @@ class ImportSelectionDialog(Adw.Dialog):
 
 
 class ListPage(Adw.NavigationPage):
-    """Página com a lista de web apps já criados."""
+    """Page with the list of web apps already created."""
 
     def __init__(self, nav_view: Adw.NavigationView):
         super().__init__(title="Casca")
@@ -1209,9 +1224,9 @@ class ListPage(Adw.NavigationPage):
         header.pack_start(app_icon)
 
         menu = Gio.Menu()
-        menu.append("Manual de uso", "page.help")
-        menu.append("Sobre o Casca", "page.about")
-        menu_button = Gtk.MenuButton(icon_name="open-menu-symbolic", tooltip_text="Menu")
+        menu.append(_("User guide"), "page.help")
+        menu.append(_("About Casca"), "page.about")
+        menu_button = Gtk.MenuButton(icon_name="open-menu-symbolic", tooltip_text=_("Menu"))
         menu_button.set_menu_model(menu)
         header.pack_end(menu_button)
         toolbar.add_top_bar(header)
@@ -1236,13 +1251,13 @@ class ListPage(Adw.NavigationPage):
         bottom_bar.set_margin_start(12)
         bottom_bar.set_margin_end(12)
 
-        store_button = Gtk.Button(icon_name="org.gnome.Software-symbolic", tooltip_text="Loja")
+        store_button = Gtk.Button(icon_name="org.gnome.Software-symbolic", tooltip_text=_("Store"))
         store_button.add_css_class("pill")
         store_button.connect("clicked", self._on_open_store_page)
         bottom_bar.set_start_widget(store_button)
 
-        create_button = Gtk.Button(tooltip_text="Criar um novo web app")
-        create_button.set_child(Adw.ButtonContent(icon_name="list-add-symbolic", label="Criar"))
+        create_button = Gtk.Button(tooltip_text=_("Create a new web app"))
+        create_button.set_child(Adw.ButtonContent(icon_name="list-add-symbolic", label=_("Create")))
         create_button.add_css_class("suggested-action")
         create_button.add_css_class("pill")
         create_button.connect("clicked", self._on_add)
@@ -1251,11 +1266,11 @@ class ListPage(Adw.NavigationPage):
         import_export_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         import_export_box.add_css_class("linked")
 
-        import_button = Gtk.Button(icon_name="document-open-symbolic", tooltip_text="Importar apps")
+        import_button = Gtk.Button(icon_name="document-open-symbolic", tooltip_text=_("Import apps"))
         import_button.connect("clicked", self._on_import)
         import_export_box.append(import_button)
 
-        export_button = Gtk.Button(icon_name="document-save-symbolic", tooltip_text="Exportar apps")
+        export_button = Gtk.Button(icon_name="document-save-symbolic", tooltip_text=_("Export apps"))
         export_button.connect("clicked", self._on_export)
         import_export_box.append(export_button)
 
@@ -1284,7 +1299,7 @@ class ListPage(Adw.NavigationPage):
             application_icon="io.github.oliverhubtech_source.Casca",
             version="1.0",
             developer_name="OliverHub",
-            comments="Transforma qualquer site num app do GNOME.",
+            comments=_("Turns any website into a GNOME app."),
         )
         about.present(self)
 
@@ -1295,9 +1310,9 @@ class ListPage(Adw.NavigationPage):
 
     def _on_export(self, *_args) -> None:
         if not entries.list_apps():
-            self._toast("Nenhum app criado ainda para exportar.")
+            self._toast(_("No app created yet to export."))
             return
-        dialog = Gtk.FileDialog(title="Exportar apps", initial_name="casca-apps.json")
+        dialog = Gtk.FileDialog(title=_("Export apps"), initial_name="casca-apps.json")
         filter_json = Gtk.FileFilter()
         filter_json.set_name("JSON")
         filter_json.add_pattern("*.json")
@@ -1319,18 +1334,21 @@ class ListPage(Adw.NavigationPage):
         try:
             count = entries.export_apps(path)
         except OSError as error:
-            self._toast(f"Erro ao exportar: {error}")
+            self._toast(_("Error exporting: %(error)s") % {"error": error})
             return
-        self._toast(f"{count} app(s) exportado(s) para {path.name}.")
+        self._toast(
+            ngettext("%(count)d app exported to %(name)s.", "%(count)d apps exported to %(name)s.", count)
+            % {"count": count, "name": path.name}
+        )
 
     def _on_import(self, *_args) -> None:
         dialog = Adw.AlertDialog(
-            heading="Importar de onde?",
-            body='Escolha um arquivo .json local ou uma URL (ex.: um link "raw" do GitHub).',
+            heading=_("Import from where?"),
+            body=_('Choose a local .json file or a URL (e.g. a GitHub "raw" link).'),
         )
-        dialog.add_response("cancel", "Cancelar")
-        dialog.add_response("url", "De uma URL")
-        dialog.add_response("file", "Arquivo local")
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("url", _("From a URL"))
+        dialog.add_response("file", _("Local file"))
         dialog.set_response_appearance("file", Adw.ResponseAppearance.SUGGESTED)
         dialog.set_default_response("file")
         dialog.set_close_response("cancel")
@@ -1344,7 +1362,7 @@ class ListPage(Adw.NavigationPage):
             self._on_import_pick_url()
 
     def _on_import_pick_file(self) -> None:
-        dialog = Gtk.FileDialog(title="Importar apps")
+        dialog = Gtk.FileDialog(title=_("Import apps"))
         filter_json = Gtk.FileFilter()
         filter_json.set_name("JSON")
         filter_json.add_pattern("*.json")
@@ -1363,19 +1381,19 @@ class ListPage(Adw.NavigationPage):
         try:
             data = Path(gfile.get_path()).read_bytes()
         except OSError as error:
-            self._toast(f"Erro ao ler o arquivo: {error}")
+            self._toast(_("Error reading the file: %(error)s") % {"error": error})
             return
         self._open_import_selection(data)
 
     def _on_import_pick_url(self) -> None:
         dialog = Adw.AlertDialog(
-            heading="Importar de uma URL",
-            body='Cole o link "raw" do arquivo JSON (ex.: de um repositório no GitHub).',
+            heading=_("Import from a URL"),
+            body=_('Paste the JSON file\'s "raw" link (e.g. from a GitHub repository).'),
         )
         entry = Adw.EntryRow(title="URL")
         dialog.set_extra_child(entry)
-        dialog.add_response("cancel", "Cancelar")
-        dialog.add_response("fetch", "Buscar")
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("fetch", _("Fetch"))
         dialog.set_response_appearance("fetch", Adw.ResponseAppearance.SUGGESTED)
         dialog.set_default_response("fetch")
         dialog.set_close_response("cancel")
@@ -1387,16 +1405,16 @@ class ListPage(Adw.NavigationPage):
             return
         url = entry.get_text().strip()
         if not url:
-            self._toast("Informe uma URL.")
+            self._toast(_("Enter a URL."))
             return
-        self._toast("Buscando arquivo…")
+        self._toast(_("Fetching file…"))
         threading.Thread(target=self._fetch_import_url_worker, args=(url,), daemon=True).start()
 
     def _fetch_import_url_worker(self, url: str) -> None:
         try:
             data = entries.fetch_import_payload(url)
         except ValueError as error:
-            GLib.idle_add(self._toast, f"Erro ao baixar: {error}")
+            GLib.idle_add(self._toast, _("Error downloading: %(error)s") % {"error": error})
             return
         GLib.idle_add(self._open_import_selection, data)
 
@@ -1404,10 +1422,10 @@ class ListPage(Adw.NavigationPage):
         try:
             app_entries = entries.parse_import_candidates(data)
         except ValueError as error:
-            self._toast(f"Erro ao importar: {error}")
+            self._toast(_("Error importing: %(error)s") % {"error": error})
             return False
         if not app_entries:
-            self._toast("Nenhum app encontrado no arquivo.")
+            self._toast(_("No app found in the file."))
             return False
         dialog = ImportSelectionDialog(app_entries, on_confirm=self._on_import_selection_confirmed)
         dialog.present(self)
@@ -1415,22 +1433,29 @@ class ListPage(Adw.NavigationPage):
 
     def _on_import_selection_confirmed(self, app_entries: list[dict], selected_indices: set[int]) -> None:
         if not selected_indices:
-            self._toast("Nada selecionado para importar.")
+            self._toast(_("Nothing selected to import."))
             return
         result = entries.import_selected(app_entries, selected_indices)
         self.refresh()
         if result.failures:
             self._show_import_errors(result)
         else:
-            self._toast(f"{len(result.created)} app(s) importado(s).")
+            self._toast(
+                ngettext("%(n)d app imported.", "%(n)d apps imported.", len(result.created))
+                % {"n": len(result.created)}
+            )
 
     def _show_import_errors(self, result: entries.ImportResult) -> None:
-        lines = "\n".join(f"• {failure.name}: {failure.reason}" for failure in result.failures)
-        dialog = Adw.AlertDialog(
-            heading=f"{len(result.created)} importado(s), {len(result.failures)} com erro",
-            body=f"Revise e ajuste manualmente pelo botão “Criar”:\n\n{lines}",
+        lines = "\n".join(
+            _("• %(name)s: %(reason)s") % {"name": failure.name, "reason": failure.reason}
+            for failure in result.failures
         )
-        dialog.add_response("ok", "Entendi")
+        dialog = Adw.AlertDialog(
+            heading=_("%(created)d imported, %(failed)d with errors")
+            % {"created": len(result.created), "failed": len(result.failures)},
+            body=_('Review and adjust manually via the "Create" button:\n\n%(lines)s') % {"lines": lines},
+        )
+        dialog.add_response("ok", _("Got it"))
         dialog.present(self)
 
     def refresh(self) -> None:
@@ -1444,8 +1469,8 @@ class ListPage(Adw.NavigationPage):
         if not apps and not packages:
             status = Adw.StatusPage(
                 icon_name="io.github.oliverhubtech_source.Casca",
-                title="Nenhum web app ainda",
-                description="Toque em “Criar de predefinido” ou “Criar novo webapp” para começar.",
+                title=_("No web apps yet"),
+                description=_("Tap “Create” to make your first app, or open the Store for ready-made sites."),
             )
             group = Adw.PreferencesGroup()
             group.add(status)
@@ -1454,7 +1479,7 @@ class ListPage(Adw.NavigationPage):
             return
 
         if apps:
-            group = Adw.PreferencesGroup(title="Meus web apps")
+            group = Adw.PreferencesGroup(title=_("My web apps"))
             for app in apps:
                 row = Adw.ActionRow(title=app.name, subtitle=app.url)
                 row.add_prefix(_row_leading_widget(app.icon_path))
@@ -1476,7 +1501,7 @@ class ListPage(Adw.NavigationPage):
             self._groups.append(group)
 
         if packages:
-            pkg_group = Adw.PreferencesGroup(title="Pacotes instalados")
+            pkg_group = Adw.PreferencesGroup(title=_("Installed packages"))
             for package in packages:
                 row = Adw.ActionRow(
                     title=package.name, subtitle=", ".join(package.app_names)
@@ -1497,11 +1522,11 @@ class ListPage(Adw.NavigationPage):
 
     def _on_delete(self, _button: Gtk.Button, app: entries.WebApp) -> None:
         dialog = Adw.AlertDialog(
-            heading=f"Excluir “{app.name}”?",
-            body="O atalho será removido do menu de aplicativos e da área de trabalho, se existir.",
+            heading=_("Delete “%(name)s”?") % {"name": app.name},
+            body=_("The shortcut will be removed from the applications menu and the desktop, if it exists."),
         )
-        dialog.add_response("cancel", "Cancelar")
-        dialog.add_response("delete", "Excluir")
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("delete", _("Delete"))
         dialog.set_response_appearance("delete", Adw.ResponseAppearance.DESTRUCTIVE)
         dialog.set_default_response("cancel")
         dialog.set_close_response("cancel")
@@ -1515,11 +1540,16 @@ class ListPage(Adw.NavigationPage):
 
     def _on_delete_package(self, _button: Gtk.Button, package: entries.PackageInfo) -> None:
         dialog = Adw.AlertDialog(
-            heading=f"Excluir pacote “{package.name}”?",
-            body=f"Remove o atalho e os {len(package.app_names)} apps dentro dele ({', '.join(package.app_names)}).",
+            heading=_("Delete package “%(name)s”?") % {"name": package.name},
+            body=ngettext(
+                "Removes the shortcut and the %(n)d app inside it (%(names)s).",
+                "Removes the shortcut and the %(n)d apps inside it (%(names)s).",
+                len(package.app_names),
+            )
+            % {"n": len(package.app_names), "names": ", ".join(package.app_names)},
         )
-        dialog.add_response("cancel", "Cancelar")
-        dialog.add_response("delete", "Excluir")
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("delete", _("Delete"))
         dialog.set_response_appearance("delete", Adw.ResponseAppearance.DESTRUCTIVE)
         dialog.set_default_response("cancel")
         dialog.set_close_response("cancel")

@@ -1,4 +1,4 @@
-"""Detecção de navegadores instalados e montagem do comando de modo app."""
+"""Detection of installed browsers and building the app-mode command."""
 
 import os
 import shlex
@@ -8,6 +8,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from . import devices
+from .i18n import _
 
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 _WEBVIEW_RUNNER = _PROJECT_ROOT / "run_webview.py"
@@ -19,12 +20,12 @@ def in_flatpak() -> bool:
 
 
 def _host_which(binary: str) -> str | None:
-    """Localiza um binário no HOST. Dentro de um Flatpak o sandbox não enxerga os
-    binários do sistema diretamente, e o Casca não pede a permissão de flatpak-spawn
-    (--talk-name=org.freedesktop.Flatpak) de propósito — essa permissão dá acesso a
-    rodar qualquer comando no host e é fortemente escrutinada no review do Flathub.
-    Sandboxado, o Casca só oferece a "janela própria" (WebKitGTK), sem navegadores
-    externos — isso continua funcionando normalmente na instalação local (install.sh)."""
+    """Locate a binary on the HOST. Inside a Flatpak the sandbox doesn't see the
+    system's binaries directly, and Casca deliberately doesn't request the flatpak-spawn
+    permission (--talk-name=org.freedesktop.Flatpak) — that permission grants access to
+    run arbitrary commands on the host and is heavily scrutinized in Flathub review.
+    Sandboxed, Casca only offers its "own window" (WebKitGTK), no external browsers —
+    this keeps working normally in the local install (install.sh)."""
     if in_flatpak():
         return None
     return shutil.which(binary)
@@ -40,7 +41,7 @@ def _webkit_available() -> bool:
         return False
     return True
 
-# app_mode: "chromium" (--app=URL), "epiphany" (--application-mode) ou "firefox" (sem modo app real)
+# app_mode: "chromium" (--app=URL), "epiphany" (--application-mode) or "firefox" (no real app mode)
 NATIVE_CANDIDATES = [
     ("google-chrome-stable", "Google Chrome", "chromium"),
     ("google-chrome", "Google Chrome", "chromium"),
@@ -72,11 +73,11 @@ FLATPAK_CANDIDATES = [
 
 @dataclass(frozen=True)
 class Browser:
-    key: str  # identificador estável salvo no app criado
-    label: str  # nome mostrado na interface
-    kind: str  # "native" ou "flatpak"
-    target: str  # binário ou app-id do flatpak
-    app_mode: str  # "chromium", "epiphany" ou "firefox"
+    key: str  # stable identifier saved in the created app
+    label: str  # name shown in the UI
+    kind: str  # "native" or "flatpak"
+    target: str  # binary or flatpak app-id
+    app_mode: str  # "chromium", "epiphany" or "firefox"
 
     def build_exec(
         self,
@@ -93,9 +94,9 @@ class Browser:
         text_color: str | None = None,
     ) -> str:
         if self.app_mode == "webkit":
-            # Esse comando vai pro Exec= de um .desktop que o HOST (GNOME Shell) executa
-            # diretamente — se o próprio Casca estiver rodando como Flatpak, "python3
-            # <caminho>" não existe fora do sandbox, então precisa reentrar via `flatpak run`.
+            # This command goes into the Exec= of a .desktop that the HOST (GNOME Shell)
+            # runs directly — if Casca itself is running as a Flatpak, "python3 <path>"
+            # doesn't exist outside the sandbox, so it needs to re-enter via `flatpak run`.
             if in_flatpak():
                 runner = f"flatpak run --command=casca-webview {_FLATPAK_APP_ID}"
             else:
@@ -132,9 +133,9 @@ class Browser:
                 command += f' --window-size={width},{height}'
             return command
         if self.app_mode == "epiphany":
-            # WebKitGTK/Epiphany não expõe flag de user-agent, tamanho de janela ou perfil/conta via CLI.
+            # WebKitGTK/Epiphany doesn't expose a user-agent, window size, or profile/account flag via CLI.
             return f'{launcher} --application-mode --profile={shlex.quote(profile_dir)} {shlex.quote(url)}'
-        # firefox: não existe modo app nativo, abre em janela nova comum
+        # firefox: no native app mode exists, opens in a regular new window
         command = f'{launcher} --new-window {shlex.quote(url)}'
         if width and height:
             command += f' --width {width} --height {height}'
@@ -158,9 +159,9 @@ class Browser:
 
 
 def _installed_flatpaks() -> set[str]:
-    # Sandboxado, "flatpak list" só veria o próprio Casca — sem flatpak-spawn (ver
-    # _host_which), não tem como perguntar ao host. Nesse caso nunca há Flatpaks externos
-    # candidatos.
+    # Sandboxed, "flatpak list" would only see Casca itself — without flatpak-spawn (see
+    # _host_which), there's no way to ask the host. In that case there are never any
+    # external Flatpak candidates.
     if in_flatpak():
         return set()
     if not shutil.which("flatpak"):
@@ -179,13 +180,13 @@ _detected_cache: list[Browser] | None = None
 
 
 def detect_browsers(force_refresh: bool = False) -> list[Browser]:
-    """Retorna os navegadores disponíveis: a janela própria do Casca (se houver WebKitGTK)
-    primeiro, como padrão, seguida dos navegadores instalados (nativos e Flatpak).
+    """Returns the available browsers: Casca's own window (if WebKitGTK is present)
+    first, as the default, followed by the installed browsers (native and Flatpak).
 
-    O resultado é cacheado em memória — a varredura envolve `shutil.which` para ~14
-    candidatos e um `flatpak list` via subprocess, então repetir isso a cada criação/edição
-    de app tem custo real. Passe `force_refresh=True` só se o usuário instalar/remover algo
-    durante a sessão."""
+    The result is cached in memory — the scan involves `shutil.which` for ~14
+    candidates and a `flatpak list` via subprocess, so repeating this on every app
+    creation/edit has a real cost. Pass `force_refresh=True` only if the user
+    installs/removes something during the session."""
     global _detected_cache
     if _detected_cache is not None and not force_refresh:
         return _detected_cache
@@ -195,7 +196,7 @@ def detect_browsers(force_refresh: bool = False) -> list[Browser]:
 
     if _webkit_available():
         found.append(
-            Browser(key="webkit:casca", label="Janela própria do Casca", kind="native", target="", app_mode="webkit")
+            Browser(key="webkit:casca", label=_("Casca's own window"), kind="native", target="", app_mode="webkit")
         )
 
     for binary, label, app_mode in NATIVE_CANDIDATES:

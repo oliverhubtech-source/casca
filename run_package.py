@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Executa o launcher de um pacote instalado pelo Casca."""
+"""Runs the launcher for a package installed by Casca."""
 
 import sys
 

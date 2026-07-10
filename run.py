@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Atalho para rodar o Casca a partir da raiz do projeto: python3 run.py"""
+"""Shortcut to run Casca from the project root: python3 run.py"""
 
 import sys
 

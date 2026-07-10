@@ -1,0 +1,1074 @@
+# Hindi translations for Casca package.
+# Copyright (C) 2026 THE Casca'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Casca package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Casca 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/oliverhubtech-source/casca/issues\n"
+"POT-Creation-Date: 2026-07-09 21:14-0300\n"
+"PO-Revision-Date: 2026-07-09 16:07-0300\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: casca/browsers.py:199
+msgid "Casca's own window"
+msgstr "Casca की अपनी विंडो"
+
+#: casca/catalog_strings.py:16 casca/help_content.py:67 casca/presets.py:51
+msgid "Artificial Intelligence"
+msgstr "कृत्रिम बुद्धिमत्ता"
+
+#: casca/catalog_strings.py:17
+msgid "Cloud Computing"
+msgstr "क्लाउड कंप्यूटिंग"
+
+#: casca/catalog_strings.py:18 casca/help_content.py:77 casca/presets.py:166
+msgid "Conversion & Sharing"
+msgstr "रूपांतरण और साझाकरण"
+
+#: casca/catalog_strings.py:19
+msgid "Creativity"
+msgstr "रचनात्मकता"
+
+#: casca/catalog_strings.py:20
+msgid "Finance"
+msgstr "वित्त"
+
+#: casca/catalog_strings.py:21 casca/window.py:912
+msgid "Marketplace"
+msgstr "मार्केटप्लेस"
+
+#: casca/catalog_strings.py:22
+msgid "Messenger"
+msgstr "मैसेंजर"
+
+#: casca/catalog_strings.py:23
+msgid "Music Streaming"
+msgstr "संगीत स्ट्रीमिंग"
+
+#: casca/catalog_strings.py:24 casca/window.py:913
+msgid "News"
+msgstr "समाचार"
+
+#: casca/catalog_strings.py:25
+msgid "PDF"
+msgstr "PDF"
+
+#: casca/catalog_strings.py:26
+msgid "Productivity"
+msgstr "उत्पादकता"
+
+#: casca/catalog_strings.py:27
+msgid "Search Engine"
+msgstr "खोज इंजन"
+
+#: casca/catalog_strings.py:28
+msgid "Security"
+msgstr "सुरक्षा"
+
+#: casca/catalog_strings.py:29
+msgid "Social Network"
+msgstr "सोशल नेटवर्क"
+
+#: casca/catalog_strings.py:30
+msgid "Utility"
+msgstr "उपयोगिता"
+
+#: casca/catalog_strings.py:31
+msgid "Video Streaming"
+msgstr "वीडियो स्ट्रीमिंग"
+
+#: casca/catalog_strings.py:33
+msgid "Argentina"
+msgstr "अर्जेंटीना"
+
+#: casca/catalog_strings.py:34
+msgid "Brazil"
+msgstr "ब्राज़ील"
+
+#: casca/catalog_strings.py:35
+msgid "Chile"
+msgstr "चिली"
+
+#: casca/catalog_strings.py:36
+msgid "Colombia"
+msgstr "कोलंबिया"
+
+#: casca/catalog_strings.py:37
+msgid "Europe"
+msgstr "यूरोप"
+
+#: casca/catalog_strings.py:38
+msgid "France"
+msgstr "फ़्रांस"
+
+#: casca/catalog_strings.py:39
+msgid "Germany"
+msgstr "जर्मनी"
+
+#: casca/catalog_strings.py:40
+msgid "International"
+msgstr "अंतर्राष्ट्रीय"
+
+#: casca/catalog_strings.py:41
+msgid "Mexico"
+msgstr "मेक्सिको"
+
+#: casca/catalog_strings.py:42
+msgid "Netherlands"
+msgstr "नीदरलैंड"
+
+#: casca/catalog_strings.py:43
+msgid "Paraguay"
+msgstr "पैराग्वे"
+
+#: casca/catalog_strings.py:44
+msgid "Poland"
+msgstr "पोलैंड"
+
+#: casca/catalog_strings.py:45
+msgid "Spain"
+msgstr "स्पेन"
+
+#: casca/catalog_strings.py:46
+msgid "United Kingdom"
+msgstr "यूनाइटेड किंगडम"
+
+#: casca/catalog_strings.py:47
+msgid "United States"
+msgstr "संयुक्त राज्य अमेरिका"
+
+#: casca/catalog_strings.py:48
+msgid "Uruguay"
+msgstr "उरुग्वे"
+
+#: casca/catalog_strings.py:50
+msgid "Google Workspace"
+msgstr "Google Workspace"
+
+#: casca/catalog_strings.py:51
+msgid "Microsoft 365"
+msgstr "Microsoft 365"
+
+#: casca/catalog_strings.py:52
+msgid "Social Media"
+msgstr "सोशल मीडिया"
+
+#: casca/catalog_strings.py:53
+msgid "YouTube"
+msgstr "YouTube"
+
+#: casca/devices.py:79
+msgid "Small (800×600)"
+msgstr "छोटा (800×600)"
+
+#: casca/devices.py:80
+msgid "Medium (1024×768)"
+msgstr "मध्यम (1024×768)"
+
+#: casca/devices.py:81
+msgid "Laptop (1280×800)"
+msgstr "लैपटॉप (1280×800)"
+
+#: casca/devices.py:82
+msgid "Laptop HD (1366×768)"
+msgstr "लैपटॉप एचडी (1366×768)"
+
+#: casca/devices.py:83
+msgid "Large (1600×900)"
+msgstr "बड़ा (1600×900)"
+
+#: casca/devices.py:84
+msgid "Full HD (1920×1080)"
+msgstr "फुल एचडी (1920×1080)"
+
+#: casca/entries.py:203 casca/entries.py:245
+#, python-format
+msgid "Browser not found: %(key)s"
+msgstr "ब्राउज़र नहीं मिला: %(key)s"
+
+#: casca/entries.py:249
+#, python-format
+msgid "App not found: %(slug)s"
+msgstr "ऐप नहीं मिला: %(slug)s"
+
+#: casca/entries.py:337
+msgid "remote file too large"
+msgstr "रिमोट फ़ाइल बहुत बड़ी है"
+
+#: casca/entries.py:341
+#, python-format
+msgid "could not download the file (%(error)s)"
+msgstr "फ़ाइल डाउनलोड नहीं की जा सकी (%(error)s)"
+
+#: casca/entries.py:350
+#, python-format
+msgid "could not read the file (%(error)s)"
+msgstr "फ़ाइल पढ़ी नहीं जा सकी (%(error)s)"
+
+#: casca/entries.py:354
+msgid "unexpected format: no 'apps' list found"
+msgstr "अप्रत्याशित प्रारूप: 'apps' सूची नहीं मिली"
+
+#: casca/entries.py:388
+#, python-format
+msgid "item %(n)d"
+msgstr "आइटम %(n)d"
+
+#: casca/entries.py:390
+msgid "missing name or URL"
+msgstr "नाम या URL गायब है"
+
+#: casca/entries.py:393 casca/entries.py:398
+msgid "unsupported URL scheme"
+msgstr "असमर्थित URL स्कीम"
+
+#: casca/entries.py:404
+msgid "no browser available"
+msgstr "कोई ब्राउज़र उपलब्ध नहीं है"
+
+#: casca/entries.py:423
+msgid "could not get an icon"
+msgstr "आइकन प्राप्त नहीं हो सका"
+
+#: casca/entries.py:481
+msgid "No browser available to assemble the package."
+msgstr "पैकेज बनाने के लिए कोई ब्राउज़र उपलब्ध नहीं है।"
+
+#: casca/entries.py:553
+msgid "Package of web apps created by Casca"
+msgstr "Casca द्वारा बनाया गया वेब ऐप्स का पैकेज"
+
+#: casca/help_content.py:24
+msgid "User Guide"
+msgstr "उपयोगकर्ता मार्गदर्शिका"
+
+#: casca/help_content.py:28
+msgid "Casca — User Guide"
+msgstr "Casca — उपयोगकर्ता मार्गदर्शिका"
+
+#: casca/help_content.py:29
+msgid "Casca icon"
+msgstr "Casca आइकन"
+
+#: casca/help_content.py:31
+msgid "Websites, turned into apps. No fuss."
+msgstr "वेबसाइटें, ऐप्स में बदल गईं। बिना किसी झंझट के।"
+
+#: casca/help_content.py:33
+msgid ""
+"Casca turns any address into a GNOME app: icon in the menu, its own window, "
+"no leftover browser bar. This guide covers every option on the creation "
+"screen."
+msgstr ""
+"Casca किसी भी पते को GNOME ऐप में बदल देता है: मेनू में आइकन, अपनी खुद की "
+"विंडो, कोई बचा हुआ ब्राउज़र बार नहीं। यह मार्गदर्शिका निर्माण स्क्रीन के हर "
+"विकल्प को कवर करती है।"
+
+#: casca/help_content.py:36
+msgid "First app"
+msgstr "पहला ऐप"
+
+#: casca/help_content.py:37
+msgid "Presets"
+msgstr "प्रीसेट"
+
+#: casca/help_content.py:38 casca/help_content.py:80
+msgid "Icon"
+msgstr "आइकन"
+
+#: casca/help_content.py:39
+msgid "Shortcut"
+msgstr "शॉर्टकट"
+
+#: casca/help_content.py:40 casca/window.py:235
+msgid "Browser"
+msgstr "ब्राउज़र"
+
+#: casca/help_content.py:41 casca/help_content.py:118
+msgid "Mobile mode"
+msgstr "मोबाइल मोड"
+
+#: casca/help_content.py:42
+msgid "Resolution"
+msgstr "रिज़ॉल्यूशन"
+
+#: casca/help_content.py:43
+msgid "Edit"
+msgstr "संपादित करें"
+
+#: casca/help_content.py:44
+msgid "Creating your first app"
+msgstr "अपना पहला ऐप बनाना"
+
+#: casca/help_content.py:45
+msgid "Two buttons on the home screen, two paths."
+msgstr "होम स्क्रीन पर दो बटन, दो रास्ते।"
+
+#: casca/help_content.py:47
+msgid ""
+"<strong>Create from preset</strong> — pick an already-cataloged site (Gmail,"
+" WhatsApp, Netflix, ChatGPT…), with name, address and icon ready to go."
+msgstr ""
+"<strong>प्रीसेट से बनाएँ</strong> — पहले से सूचीबद्ध साइट (Gmail, WhatsApp, "
+"Netflix, ChatGPT…) चुनें, जिसका नाम, पता और आइकन पहले से तैयार होता है।"
+
+#: casca/help_content.py:51
+msgid ""
+"<strong>Create new web app</strong> — start from scratch: you type in the "
+"name and address."
+msgstr ""
+"<strong>नया वेब ऐप बनाएँ</strong> — शुरुआत से बनाएँ: नाम और पता खुद टाइप "
+"करें।"
+
+#: casca/help_content.py:54
+msgid ""
+"Everything below the name and address is <strong>optional</strong>. Without "
+"touching anything, Casca figures it out on its own: fetches the icon, "
+"doesn't create a Desktop shortcut, opens in its own window at normal size."
+msgstr ""
+"नाम और पते के नीचे सब कुछ <strong>वैकल्पिक</strong> है। बिना कुछ बदले, Casca"
+" खुद ही तय कर लेता है: आइकन प्राप्त करता है, डेस्कटॉप शॉर्टकट नहीं बनाता, और"
+" सामान्य आकार में अपनी खुद की विंडो में खुलता है।"
+
+#: casca/help_content.py:58
+msgid "Preset sites"
+msgstr "प्रीसेट साइटें"
+
+#: casca/help_content.py:60
+msgid ""
+"A search field at the top filters by site name (<code class=\"eyebrow "
+"text-[13px] bg-shell-mist dark:bg-[#2a2836] px-1.5 py-0.5 "
+"rounded\">gmail</code>) or by category (<code class=\"eyebrow text-[13px] "
+"bg-shell-mist dark:bg-[#2a2836] px-1.5 py-0.5 rounded\">microsoft</code>). "
+"Categories start collapsed — tap one to expand it."
+msgstr ""
+"ऊपर दिया गया खोज फ़ील्ड साइट के नाम (<code class=\"eyebrow text-[13px] bg-"
+"shell-mist dark:bg-[#2a2836] px-1.5 py-0.5 rounded\">gmail</code>) या श्रेणी"
+" (<code class=\"eyebrow text-[13px] bg-shell-mist dark:bg-[#2a2836] px-1.5 "
+"py-0.5 rounded\">microsoft</code>) के अनुसार फ़िल्टर करता है। श्रेणियाँ शुरू"
+" में संक्षिप्त रहती हैं — किसी एक पर टैप करके उसे विस्तृत करें।"
+
+#: casca/help_content.py:65 casca/presets.py:23
+msgid "Google Products"
+msgstr "Google उत्पाद"
+
+#: casca/help_content.py:66 casca/presets.py:39
+msgid "Microsoft Products"
+msgstr "Microsoft उत्पाद"
+
+#: casca/help_content.py:68 casca/presets.py:66
+msgid "Search Engines"
+msgstr "खोज इंजन"
+
+#: casca/help_content.py:69 casca/presets.py:78
+msgid "Messengers"
+msgstr "मैसेंजर"
+
+#: casca/help_content.py:70 casca/presets.py:88
+msgid "Social Networks"
+msgstr "सोशल नेटवर्क"
+
+#: casca/help_content.py:71 casca/presets.py:99
+msgid "Streaming"
+msgstr "स्ट्रीमिंग"
+
+#: casca/help_content.py:72 casca/presets.py:111
+msgid "Music"
+msgstr "संगीत"
+
+#: casca/help_content.py:73 casca/presets.py:123
+msgid "Productivity & Organization"
+msgstr "उत्पादकता और संगठन"
+
+#: casca/help_content.py:74 casca/presets.py:136
+msgid "PDF Tools"
+msgstr "PDF उपकरण"
+
+#: casca/help_content.py:75 casca/presets.py:145
+msgid "Calculations & Finance"
+msgstr "गणना और वित्त"
+
+#: casca/help_content.py:76 casca/presets.py:157
+msgid "Generators & Utilities"
+msgstr "जनरेटर और उपयोगिताएँ"
+
+#: casca/help_content.py:78 casca/presets.py:176
+msgid "Security & Diagnostics"
+msgstr "सुरक्षा और निदान"
+
+#: casca/help_content.py:79 casca/presets.py:186
+msgid "Creativity & Content"
+msgstr "रचनात्मकता और सामग्री"
+
+#: casca/help_content.py:81
+msgid "Check <strong>Customize icon and shortcut</strong> to choose manually."
+msgstr ""
+"मैन्युअल रूप से चुनने के लिए <strong>आइकन और शॉर्टकट अनुकूलित करें</strong> "
+"को चेक करें।"
+
+#: casca/help_content.py:82 casca/window.py:349
+msgid "Search online"
+msgstr "ऑनलाइन खोजें"
+
+#: casca/help_content.py:84
+msgid ""
+"Checks several sources — Google, DuckDuckGo, apple-touch-icon, PWA manifest "
+"— and shows the results in a grid."
+msgstr ""
+"कई स्रोतों की जाँच करता है — Google, DuckDuckGo, apple-touch-icon, PWA "
+"मेनिफ़ेस्ट — और परिणामों को ग्रिड में दिखाता है।"
+
+#: casca/help_content.py:87 casca/window.py:351
+msgid "From computer"
+msgstr "कंप्यूटर से"
+
+#: casca/help_content.py:88
+msgid "Picks a PNG, JPG or SVG file already saved on your computer."
+msgstr "आपके कंप्यूटर पर पहले से सहेजी गई PNG, JPG या SVG फ़ाइल चुनता है।"
+
+#: casca/help_content.py:89 casca/window.py:353
+msgid "From gallery"
+msgstr "गैलरी से"
+
+#: casca/help_content.py:90
+msgid "Over 160 brand icons already included, no internet needed."
+msgstr "160 से अधिक ब्रांड आइकन पहले से शामिल हैं, इंटरनेट की ज़रूरत नहीं।"
+
+#: casca/help_content.py:92
+msgid ""
+"Without checking anything, Casca fetches an icon automatically on save — or "
+"uses the icon that's already set, if the app came from a preset."
+msgstr ""
+"कुछ भी चेक किए बिना, Casca सहेजते समय स्वतः आइकन प्राप्त करता है — या यदि ऐप"
+" किसी प्रीसेट से आया है तो पहले से सेट आइकन का उपयोग करता है।"
+
+#: casca/help_content.py:95
+msgid "Desktop Shortcut"
+msgstr "डेस्कटॉप शॉर्टकट"
+
+#: casca/help_content.py:97
+msgid ""
+"Every app already shows up in the GNOME applications menu. To also get an "
+"icon on the Desktop, check <strong>Customize icon and shortcut</strong> and "
+"turn on <strong>Also create on the Desktop</strong>."
+msgstr ""
+"हर ऐप पहले से ही GNOME एप्लिकेशन मेनू में दिखता है। डेस्कटॉप पर भी आइकन पाने"
+" के लिए, <strong>आइकन और शॉर्टकट अनुकूलित करें</strong> को चेक करें और "
+"<strong>डेस्कटॉप पर भी बनाएँ</strong> को चालू करें।"
+
+#: casca/help_content.py:101
+msgid "Custom browser"
+msgstr "कस्टम ब्राउज़र"
+
+#: casca/help_content.py:103
+msgid ""
+"By default, every app opens in <strong>Casca's own window</strong>: lighter,"
+" top bar automatically colored to match the icon, isolated session per app."
+msgstr ""
+"डिफ़ॉल्ट रूप से, हर ऐप <strong>Casca की अपनी विंडो</strong> में खुलता है: "
+"हल्की, टॉप बार आइकन से मेल खाने के लिए स्वतः रंगीन, और हर ऐप के लिए अलग "
+"सत्र।"
+
+#: casca/help_content.py:107
+msgid ""
+"<strong>Heads up:</strong> sites with Google login (Gmail, Drive, Calendar, "
+"Meet…) tend to refuse login in the built-in window — a Google restriction "
+"against unrecognized browsers, with no workaround. Check <strong>Use a "
+"custom browser</strong> and pick Chrome, Helium, GNOME Web or another "
+"installed browser."
+msgstr ""
+"<strong>ध्यान दें:</strong> Google लॉगिन वाली साइटें (Gmail, Drive, "
+"Calendar, Meet…) आमतौर पर बिल्ट-इन विंडो में लॉगिन करने से मना कर देती हैं —"
+" यह अपरिचित ब्राउज़रों पर Google का प्रतिबंध है, जिसका कोई तोड़ नहीं है। "
+"<strong>कस्टम ब्राउज़र का उपयोग करें</strong> चेक करें और Chrome, Helium, "
+"GNOME Web या कोई अन्य इंस्टॉल किया गया ब्राउज़र चुनें।"
+
+#: casca/help_content.py:113
+msgid ""
+"With a Chromium-based browser (Chrome, Chromium, Brave, Edge, Vivaldi, "
+"Helium…) and more than one account configured in it, <strong>Browser "
+"account</strong> also shows up — choose which already-logged-in account "
+"opens the app, instead of a new profile with no login."
+msgstr ""
+"Chromium-आधारित ब्राउज़र (Chrome, Chromium, Brave, Edge, Vivaldi, Helium…) "
+"में यदि एक से अधिक खाते कॉन्फ़िगर हैं, तो <strong>ब्राउज़र खाता</strong> भी "
+"दिखाई देता है — चुनें कि पहले से लॉग-इन कौन सा खाता ऐप को खोले, बजाय बिना "
+"लॉगिन वाली नई प्रोफ़ाइल के।"
+
+#: casca/help_content.py:120
+msgid ""
+"Check <strong>Open in mobile mode</strong> and pick a device — Google Pixel,"
+" iPhone, Galaxy, iPad. The app identifies itself to the site as that device,"
+" unlocking the mobile layout (usually simpler and faster)."
+msgstr ""
+"<strong>मोबाइल मोड में खोलें</strong> चेक करें और एक डिवाइस चुनें — Google "
+"Pixel, iPhone, Galaxy, iPad। ऐप खुद को साइट के सामने उस डिवाइस के रूप में "
+"पहचान देता है, जिससे मोबाइल लेआउट (आमतौर पर सरल और तेज़) खुल जाता है।"
+
+#: casca/help_content.py:124
+msgid "Window resolution"
+msgstr "विंडो रिज़ॉल्यूशन"
+
+#: casca/help_content.py:126
+msgid ""
+"Check <strong>Customize window resolution</strong> — three ways to set the "
+"size, works with or without mobile mode enabled."
+msgstr ""
+"<strong>विंडो रिज़ॉल्यूशन अनुकूलित करें</strong> चेक करें — आकार सेट करने के"
+" तीन तरीके, मोबाइल मोड चालू या बंद दोनों स्थितियों में काम करता है।"
+
+#: casca/help_content.py:130
+msgid ""
+"<strong>By device</strong> — uses the screen size of the device chosen in "
+"mobile mode."
+msgstr ""
+"<strong>डिवाइस के अनुसार</strong> — मोबाइल मोड में चुने गए डिवाइस के स्क्रीन"
+" आकार का उपयोग करता है।"
+
+#: casca/help_content.py:132
+msgid "<strong>Default size</strong> — common resolutions (laptop, Full HD…)."
+msgstr ""
+"<strong>डिफ़ॉल्ट आकार</strong> — सामान्य रिज़ॉल्यूशन (लैपटॉप, फुल एचडी…)।"
+
+#: casca/help_content.py:133
+msgid "<strong>Custom</strong> — you type in width and height in pixels."
+msgstr "<strong>कस्टम</strong> — पिक्सेल में चौड़ाई और ऊँचाई खुद टाइप करें।"
+
+#: casca/help_content.py:134
+msgid "Edit and delete"
+msgstr "संपादित करना और हटाना"
+
+#: casca/help_content.py:136
+msgid ""
+"On the home screen, every app has a pencil to <strong>edit</strong> (changes"
+" any setting, including ones that were disabled at creation) and a trash "
+"icon to <strong>delete</strong> (removes the shortcut from the menu, the "
+"Desktop, and the saved icon)."
+msgstr ""
+"होम स्क्रीन पर, हर ऐप में <strong>संपादित करने</strong> के लिए एक पेंसिल "
+"आइकन (कोई भी सेटिंग बदलता है, जिसमें वे भी शामिल हैं जो बनाते समय अक्षम थीं)"
+" और <strong>हटाने</strong> के लिए एक ट्रैश आइकन (मेनू, डेस्कटॉप से शॉर्टकट "
+"और सहेजा गया आइकन हटा देता है) होता है।"
+
+#: casca/help_content.py:141
+msgid "Casca — built to turn websites into GNOME apps."
+msgstr "Casca — वेबसाइटों को GNOME ऐप्स में बदलने के लिए बनाया गया।"
+
+#: casca/icons.py:171
+msgid "Site icon (.ico)"
+msgstr "साइट आइकन (.ico)"
+
+#: casca/icons.py:172
+msgid "Site icon (32px)"
+msgstr "साइट आइकन (32px)"
+
+#: casca/icons.py:173
+msgid "Apple touch icon"
+msgstr "Apple टच आइकन"
+
+#: casca/icons.py:179
+msgid "PWA Manifest"
+msgstr "PWA मेनिफ़ेस्ट"
+
+#: casca/package_launcher.py:72 casca/package_launcher.py:113
+#: casca/window.py:911
+msgid "Package"
+msgstr "पैकेज"
+
+#: casca/store.py:80
+msgid "Independent"
+msgstr "स्वतंत्र"
+
+#: casca/store.py:81 casca/store.py:97
+msgid "Other"
+msgstr "अन्य"
+
+#: casca/store.py:92 casca/window.py:1015
+msgid "Independent apps"
+msgstr "स्वतंत्र ऐप्स"
+
+#: casca/store.py:92
+msgid "Global"
+msgstr "वैश्विक"
+
+#: casca/window.py:86
+msgid "Choose icon"
+msgstr "आइकन चुनें"
+
+#: casca/window.py:121
+msgid "Icons found"
+msgstr "मिले आइकन"
+
+#: casca/window.py:144
+msgid "Searching for icons online…"
+msgstr "ऑनलाइन आइकन खोजे जा रहे हैं…"
+
+#: casca/window.py:155
+msgid "No icon found"
+msgstr "कोई आइकन नहीं मिला"
+
+#: casca/window.py:156
+msgid "Try choosing an image from your computer or the gallery."
+msgstr "अपने कंप्यूटर या गैलरी से एक छवि चुनने का प्रयास करें।"
+
+#: casca/window.py:208 casca/window.py:385
+msgid "Edit app"
+msgstr "ऐप संपादित करें"
+
+#: casca/window.py:208
+msgid "New app"
+msgstr "नया ऐप"
+
+#: casca/window.py:228
+msgid "Site"
+msgstr "साइट"
+
+#: casca/window.py:229
+msgid "App name"
+msgstr "ऐप का नाम"
+
+#: casca/window.py:230
+msgid "Address (URL)"
+msgstr "पता (URL)"
+
+#: casca/window.py:238
+msgid "Use a custom browser"
+msgstr "कस्टम ब्राउज़र का उपयोग करें"
+
+#: casca/window.py:239
+msgid "If disabled, opens in Casca's own window."
+msgstr "यदि अक्षम है, तो Casca की अपनी विंडो में खुलता है।"
+
+#: casca/window.py:245
+msgid "Open with"
+msgstr "इसके साथ खोलें"
+
+#: casca/window.py:252
+msgid "No compatible browser was found on the system."
+msgstr "सिस्टम पर कोई संगत ब्राउज़र नहीं मिला।"
+
+#: casca/window.py:259
+msgid ""
+"Not available in the Flatpak version — use the local install for external "
+"browsers."
+msgstr ""
+"Flatpak संस्करण में उपलब्ध नहीं है — बाहरी ब्राउज़रों के लिए स्थानीय इंस्टॉल"
+" का उपयोग करें।"
+
+#: casca/window.py:264
+msgid "Browser account"
+msgstr "ब्राउज़र खाता"
+
+#: casca/window.py:271
+msgid "Open in mobile mode"
+msgstr "मोबाइल मोड में खोलें"
+
+#: casca/window.py:272 casca/window.py:478
+msgid "Uses the identification and window of a phone or tablet."
+msgstr "फ़ोन या टैबलेट की पहचान और विंडो का उपयोग करता है।"
+
+#: casca/window.py:278 casca/window.py:306
+msgid "Device"
+msgstr "डिवाइस"
+
+#: casca/window.py:292
+msgid "Customize window resolution"
+msgstr "विंडो रिज़ॉल्यूशन अनुकूलित करें"
+
+#: casca/window.py:293
+msgid "If disabled, uses the browser's default size."
+msgstr "यदि अक्षम है, तो ब्राउज़र के डिफ़ॉल्ट आकार का उपयोग होता है।"
+
+#: casca/window.py:298
+msgid "Window size"
+msgstr "विंडो आकार"
+
+#: casca/window.py:300
+msgid "By device"
+msgstr "डिवाइस के अनुसार"
+
+#: casca/window.py:300
+msgid "Default size"
+msgstr "डिफ़ॉल्ट आकार"
+
+#: casca/window.py:300
+msgid "Custom"
+msgstr "कस्टम"
+
+#: casca/window.py:310
+msgid "Size"
+msgstr "आकार"
+
+#: casca/window.py:318
+msgid "Width"
+msgstr "चौड़ाई"
+
+#: casca/window.py:321
+msgid "Height"
+msgstr "ऊँचाई"
+
+#: casca/window.py:332
+msgid "Customize icon and shortcut"
+msgstr "आइकन और शॉर्टकट अनुकूलित करें"
+
+#: casca/window.py:334
+msgid ""
+"If disabled, the icon is fetched automatically and no Desktop shortcut is "
+"created."
+msgstr ""
+"यदि अक्षम है, तो आइकन स्वतः प्राप्त होता है और कोई डेस्कटॉप शॉर्टकट नहीं "
+"बनाया जाता।"
+
+#: casca/window.py:362
+msgid "Also create on the Desktop"
+msgstr "डेस्कटॉप पर भी बनाएँ"
+
+#: casca/window.py:369
+msgid "Create app"
+msgstr "ऐप बनाएँ"
+
+#: casca/window.py:386
+msgid "Save changes"
+msgstr "परिवर्तन सहेजें"
+
+#: casca/window.py:473
+#, python-format
+msgid "%(browser)s doesn't support mobile mode."
+msgstr "%(browser)s मोबाइल मोड का समर्थन नहीं करता है।"
+
+#: casca/window.py:475 casca/window.py:603
+msgid "Choose a browser."
+msgstr "एक ब्राउज़र चुनें।"
+
+#: casca/window.py:485
+msgid "Isolated profile (new, no login)"
+msgstr "पृथक प्रोफ़ाइल (नई, कोई लॉगिन नहीं)"
+
+#: casca/window.py:498 casca/window.py:513
+msgid "Enter the URL before searching for the icon."
+msgstr "आइकन खोजने से पहले URL दर्ज करें।"
+
+#: casca/window.py:502
+msgid "Could not fetch the icon automatically."
+msgstr "आइकन स्वतः प्राप्त नहीं किया जा सका।"
+
+#: casca/window.py:524
+msgid "Choose icon image"
+msgstr "आइकन छवि चुनें"
+
+#: casca/window.py:526
+msgid "Images"
+msgstr "छवियाँ"
+
+#: casca/window.py:589
+msgid "Fill in the site's name and URL."
+msgstr "साइट का नाम और URL भरें।"
+
+#: casca/window.py:592 casca/window.py:597
+msgid "Use an http:// or https:// address."
+msgstr "http:// या https:// पता उपयोग करें।"
+
+#: casca/window.py:613
+msgid "Casca's own window isn't available. Enable 'Use a custom browser'."
+msgstr ""
+"Casca की अपनी विंडो उपलब्ध नहीं है। 'कस्टम ब्राउज़र का उपयोग करें' सक्षम "
+"करें।"
+
+#: casca/window.py:652
+msgid "Could not set an icon. Choose an image manually."
+msgstr "आइकन सेट नहीं किया जा सका। मैन्युअल रूप से एक छवि चुनें।"
+
+#: casca/window.py:667
+#, python-format
+msgid "Error saving: %(error)s"
+msgstr "सहेजने में त्रुटि: %(error)s"
+
+#: casca/window.py:678
+msgid "Preset site"
+msgstr "पूर्वनिर्धारित साइट"
+
+#: casca/window.py:685
+msgid "Search by name or category…"
+msgstr "नाम या श्रेणी से खोजें…"
+
+#: casca/window.py:697 casca/window.py:1012
+#, python-format
+msgid "%(n)d site"
+msgid_plural "%(n)d sites"
+msgstr[0] "%(n)d साइट"
+msgstr[1] "%(n)d साइटें"
+
+#: casca/window.py:881 casca/window.py:1254
+msgid "Store"
+msgstr "स्टोर"
+
+#: casca/window.py:909
+msgid "Company"
+msgstr "कंपनी"
+
+#: casca/window.py:910
+msgid "Type"
+msgstr "प्रकार"
+
+#: casca/window.py:926
+msgid "Search by name…"
+msgstr "नाम से खोजें…"
+
+#: casca/window.py:962
+#, python-format
+msgid "Could not set an icon for %(name)s."
+msgstr "%(name)s के लिए आइकन सेट नहीं किया जा सका।"
+
+#: casca/window.py:968
+#, python-format
+msgid "Error installing package: %(error)s"
+msgstr "पैकेज स्थापित करने में त्रुटि: %(error)s"
+
+#: casca/window.py:974
+#, python-format
+msgid "Package “%(name)s” installed with %(n)d app."
+msgid_plural "Package “%(name)s” installed with %(n)d apps."
+msgstr[0] "पैकेज “%(name)s” %(n)d ऐप के साथ स्थापित किया गया।"
+msgstr[1] "पैकेज “%(name)s” %(n)d ऐप्स के साथ स्थापित किया गया।"
+
+#: casca/window.py:1000
+msgid "Nothing here yet"
+msgstr "यहाँ अभी तक कुछ नहीं है"
+
+#: casca/window.py:1001
+msgid "Check the local catalog or your internet connection."
+msgstr "स्थानीय सूची या अपने इंटरनेट कनेक्शन की जाँच करें।"
+
+#: casca/window.py:1017
+msgid "Install full package"
+msgstr "पूरा पैकेज स्थापित करें"
+
+#: casca/window.py:1142
+msgid "Casca Manual"
+msgstr "Casca मैनुअल"
+
+#: casca/window.py:1159
+msgid "Could not open the built-in manual"
+msgstr "अंतर्निहित मैनुअल नहीं खोला जा सका"
+
+#: casca/window.py:1171
+msgid "Choose what to import"
+msgstr "आयात करने के लिए चुनें"
+
+#: casca/window.py:1180
+#, python-format
+msgid "%(n)d site found"
+msgid_plural "%(n)d sites found"
+msgstr[0] "%(n)d साइट मिली"
+msgstr[1] "%(n)d साइटें मिलीं"
+
+#: casca/window.py:1183
+msgid "Uncheck anything you don't want to import."
+msgstr "जो कुछ आप आयात नहीं करना चाहते, उसे अनचेक करें।"
+
+#: casca/window.py:1186
+msgid "(no name)"
+msgstr "(कोई नाम नहीं)"
+
+#: casca/window.py:1194
+msgid "Import selected"
+msgstr "चयनित आयात करें"
+
+#: casca/window.py:1227
+msgid "User guide"
+msgstr "उपयोगकर्ता मार्गदर्शिका"
+
+#: casca/window.py:1228
+msgid "About Casca"
+msgstr "Casca के बारे में"
+
+#: casca/window.py:1229
+msgid "Menu"
+msgstr "मेनू"
+
+#: casca/window.py:1259
+msgid "Create a new web app"
+msgstr "एक नया वेब ऐप बनाएँ"
+
+#: casca/window.py:1260
+msgid "Create"
+msgstr "बनाएँ"
+
+#: casca/window.py:1269 casca/window.py:1365
+msgid "Import apps"
+msgstr "ऐप्स आयात करें"
+
+#: casca/window.py:1273 casca/window.py:1315
+msgid "Export apps"
+msgstr "ऐप्स निर्यात करें"
+
+#: casca/window.py:1302
+msgid "Turns any website into a GNOME app."
+msgstr "किसी भी वेबसाइट को GNOME ऐप में बदल देता है।"
+
+#: casca/window.py:1313
+msgid "No app created yet to export."
+msgstr "निर्यात करने के लिए अभी तक कोई ऐप नहीं बनाया गया।"
+
+#: casca/window.py:1337
+#, python-format
+msgid "Error exporting: %(error)s"
+msgstr "निर्यात करने में त्रुटि: %(error)s"
+
+#: casca/window.py:1340
+#, python-format
+msgid "%(count)d app exported to %(name)s."
+msgid_plural "%(count)d apps exported to %(name)s."
+msgstr[0] "%(count)d ऐप %(name)s में निर्यात किया गया।"
+msgstr[1] "%(count)d ऐप्स %(name)s में निर्यात किए गए।"
+
+#: casca/window.py:1346
+msgid "Import from where?"
+msgstr "कहाँ से आयात करें?"
+
+#: casca/window.py:1347
+msgid "Choose a local .json file or a URL (e.g. a GitHub \"raw\" link)."
+msgstr "एक स्थानीय .json फ़ाइल या URL चुनें (जैसे, GitHub का \"raw\" लिंक)।"
+
+#: casca/window.py:1349 casca/window.py:1395 casca/window.py:1528
+#: casca/window.py:1551
+msgid "Cancel"
+msgstr "रद्द करें"
+
+#: casca/window.py:1350
+msgid "From a URL"
+msgstr "URL से"
+
+#: casca/window.py:1351
+msgid "Local file"
+msgstr "स्थानीय फ़ाइल"
+
+#: casca/window.py:1384
+#, python-format
+msgid "Error reading the file: %(error)s"
+msgstr "फ़ाइल पढ़ने में त्रुटि: %(error)s"
+
+#: casca/window.py:1390
+msgid "Import from a URL"
+msgstr "URL से आयात करें"
+
+#: casca/window.py:1391
+msgid "Paste the JSON file's \"raw\" link (e.g. from a GitHub repository)."
+msgstr "JSON फ़ाइल का \"raw\" लिंक पेस्ट करें (जैसे, किसी GitHub रिपॉज़िटरी से)।"
+
+#: casca/window.py:1396
+msgid "Fetch"
+msgstr "प्राप्त करें"
+
+#: casca/window.py:1408
+msgid "Enter a URL."
+msgstr "एक URL दर्ज करें।"
+
+#: casca/window.py:1410
+msgid "Fetching file…"
+msgstr "फ़ाइल प्राप्त की जा रही है…"
+
+#: casca/window.py:1417
+#, python-format
+msgid "Error downloading: %(error)s"
+msgstr "डाउनलोड करने में त्रुटि: %(error)s"
+
+#: casca/window.py:1425
+#, python-format
+msgid "Error importing: %(error)s"
+msgstr "आयात करने में त्रुटि: %(error)s"
+
+#: casca/window.py:1428
+msgid "No app found in the file."
+msgstr "फ़ाइल में कोई ऐप नहीं मिला।"
+
+#: casca/window.py:1436
+msgid "Nothing selected to import."
+msgstr "आयात करने के लिए कुछ भी चयनित नहीं है।"
+
+#: casca/window.py:1444
+#, python-format
+msgid "%(n)d app imported."
+msgid_plural "%(n)d apps imported."
+msgstr[0] "%(n)d ऐप आयात किया गया।"
+msgstr[1] "%(n)d ऐप्स आयात किए गए।"
+
+#: casca/window.py:1450
+#, python-format
+msgid "• %(name)s: %(reason)s"
+msgstr "• %(name)s: %(reason)s"
+
+#: casca/window.py:1454
+#, python-format
+msgid "%(created)d imported, %(failed)d with errors"
+msgstr "%(created)d आयात किए गए, %(failed)d में त्रुटियाँ"
+
+#: casca/window.py:1456
+#, python-format
+msgid ""
+"Review and adjust manually via the \"Create\" button:\n"
+"\n"
+"%(lines)s"
+msgstr ""
+"\"बनाएँ\" बटन के ज़रिए मैन्युअल रूप से समीक्षा करें और समायोजित करें:\n"
+"\n"
+"%(lines)s"
+
+#: casca/window.py:1458
+msgid "Got it"
+msgstr "समझ गया"
+
+#: casca/window.py:1472
+msgid "No web apps yet"
+msgstr "अभी तक कोई वेब ऐप नहीं"
+
+#: casca/window.py:1473
+msgid ""
+"Tap “Create” to make your first app, or open the Store for ready-made sites."
+msgstr ""
+"अपना पहला ऐप बनाने के लिए “बनाएँ” पर टैप करें, या तैयार साइटों के लिए स्टोर "
+"खोलें।"
+
+#: casca/window.py:1482
+msgid "My web apps"
+msgstr "मेरे वेब ऐप्स"
+
+#: casca/window.py:1504
+msgid "Installed packages"
+msgstr "स्थापित पैकेज"
+
+#: casca/window.py:1525
+#, python-format
+msgid "Delete “%(name)s”?"
+msgstr "“%(name)s” हटाएँ?"
+
+#: casca/window.py:1526
+msgid ""
+"The shortcut will be removed from the applications menu and the desktop, if "
+"it exists."
+msgstr ""
+"शॉर्टकट को एप्लिकेशन मेनू और डेस्कटॉप से हटा दिया जाएगा, यदि वह मौजूद है।"
+
+#: casca/window.py:1529 casca/window.py:1552
+msgid "Delete"
+msgstr "हटाएँ"
+
+#: casca/window.py:1543
+#, python-format
+msgid "Delete package “%(name)s”?"
+msgstr "पैकेज “%(name)s” हटाएँ?"
+
+#: casca/window.py:1545
+#, python-format
+msgid "Removes the shortcut and the %(n)d app inside it (%(names)s)."
+msgid_plural "Removes the shortcut and the %(n)d apps inside it (%(names)s)."
+msgstr[0] "शॉर्टकट और उसमें मौजूद %(n)d ऐप हटा देता है (%(names)s)।"
+msgstr[1] "शॉर्टकट और उसमें मौजूद %(n)d ऐप्स हटा देता है (%(names)s)।"

@@ -2,7 +2,26 @@
 <component type="desktop-application">
   <id>io.github.oliverhubtech_source.Casca</id>
   <name>Casca</name>
-  <summary>Transforme qualquer site num app do GNOME</summary>
+  <summary>Turn any website into a GNOME app</summary>
+  <summary xml:lang="pt-BR">Transforme qualquer site num app do GNOME</summary>
+  <summary xml:lang="es">Convierte cualquier sitio web en una app de GNOME</summary>
+  <summary xml:lang="fr">Transformez n'importe quel site web en application GNOME</summary>
+  <summary xml:lang="it">Trasforma qualsiasi sito web in un'app GNOME</summary>
+  <summary xml:lang="de">Verwandelt jede Website in eine GNOME-App</summary>
+  <summary xml:lang="ru">Превращает любой сайт в приложение GNOME</summary>
+  <summary xml:lang="uk">Перетворює будь-який сайт на застосунок GNOME</summary>
+  <summary xml:lang="pl">Zamienia dowolną stronę internetową w aplikację GNOME</summary>
+  <summary xml:lang="nl">Maak van elke website een GNOME-app</summary>
+  <summary xml:lang="tr">Herhangi bir web sitesini GNOME uygulamasına dönüştürün</summary>
+  <summary xml:lang="zh-Hans">将任意网站变成 GNOME 应用</summary>
+  <summary xml:lang="ja">あらゆるウェブサイトを GNOME アプリに変換</summary>
+  <summary xml:lang="ko">모든 웹사이트를 GNOME 앱으로 전환</summary>
+  <summary xml:lang="vi">Biến bất kỳ trang web nào thành ứng dụng GNOME</summary>
+  <summary xml:lang="id">Ubah situs web apa pun menjadi aplikasi GNOME</summary>
+  <summary xml:lang="hi">किसी भी वेबसाइट को GNOME ऐप में बदलें</summary>
+  <summary xml:lang="ar">حوّل أي موقع ويب إلى تطبيق GNOME</summary>
+  <summary xml:lang="bn">যেকোনো ওয়েবসাইটকে GNOME অ্যাপে রূপান্তর করুন</summary>
+  <summary xml:lang="th">เปลี่ยนเว็บไซต์ใดก็ได้ให้เป็นแอป GNOME</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MIT</project_license>
   <developer id="io.github.oliverhubtech_source">
@@ -11,19 +30,32 @@
 
   <description>
     <p>
+      Casca turns any website into a native GNOME app: pick the address,
+      Casca fetches the icon automatically and creates a shortcut in the
+      applications menu (and, if you want, on the desktop). Each app opens
+      in Casca's own window, with no leftover browser bar — including a
+      title bar colored to match the site's icon.
+    </p>
+    <p xml:lang="pt-BR">
       Casca transforma qualquer site num app nativo do GNOME: escolha o
       endereço, o Casca busca o ícone automaticamente e cria um atalho no
       menu de aplicativos (e, se quiser, na área de trabalho). Cada app
       abre na própria janela do Casca, sem barra de navegação sobrando —
       inclusive com a barra de título colorida pela cor do ícone do site.
     </p>
-    <p>Principais recursos:</p>
+    <p>Main features:</p>
+    <p xml:lang="pt-BR">Principais recursos:</p>
     <ul>
-      <li>Loja com centenas de sites prontos, organizados por empresa, tipo, pacote, marketplace e notícias</li>
-      <li>Pacotes: agrupe vários sites relacionados (ex. Microsoft 365, IA) num único ícone com uma grade de acesso</li>
-      <li>Modo mobile, com simulação de dispositivo e resolução de janela personalizável</li>
-      <li>Importação e exportação de apps via arquivo JSON local ou URL remota</li>
-      <li>Suporte a perfis/contas de navegador para apps que exigem login isolado</li>
+      <li>Store with hundreds of ready-made sites, organized by company, type, package, marketplace and news</li>
+      <li xml:lang="pt-BR">Loja com centenas de sites prontos, organizados por empresa, tipo, pacote, marketplace e notícias</li>
+      <li>Packages: group several related sites (e.g. Microsoft 365, AI) into a single icon with an access grid</li>
+      <li xml:lang="pt-BR">Pacotes: agrupe vários sites relacionados (ex. Microsoft 365, IA) num único ícone com uma grade de acesso</li>
+      <li>Mobile mode, with device simulation and customizable window resolution</li>
+      <li xml:lang="pt-BR">Modo mobile, com simulação de dispositivo e resolução de janela personalizável</li>
+      <li>Import and export apps via a local JSON file or a remote URL</li>
+      <li xml:lang="pt-BR">Importação e exportação de apps via arquivo JSON local ou URL remota</li>
+      <li>Support for browser profiles/accounts for apps that require an isolated login</li>
+      <li xml:lang="pt-BR">Suporte a perfis/contas de navegador para apps que exigem login isolado</li>
     </ul>
   </description>
 
@@ -40,19 +72,23 @@
 
   <screenshots>
     <screenshot type="default">
-      <caption>Tela inicial do Casca</caption>
+      <caption>Casca's home screen</caption>
+      <caption xml:lang="pt-BR">Tela inicial do Casca</caption>
       <image>https://raw.githubusercontent.com/oliverhubtech-source/casca/main/screenshots/inicio.png</image>
     </screenshot>
     <screenshot>
-      <caption>Loja com sites e serviços prontos para instalar</caption>
+      <caption>Store with ready-made sites and services to install</caption>
+      <caption xml:lang="pt-BR">Loja com sites e serviços prontos para instalar</caption>
       <image>https://raw.githubusercontent.com/oliverhubtech-source/casca/main/screenshots/loja.png</image>
     </screenshot>
     <screenshot>
-      <caption>Criando um app a partir de um site</caption>
+      <caption>Creating an app from a website</caption>
+      <caption xml:lang="pt-BR">Criando um app a partir de um site</caption>
       <image>https://raw.githubusercontent.com/oliverhubtech-source/casca/main/screenshots/criar.png</image>
     </screenshot>
     <screenshot>
-      <caption>Site rodando como app nativo, criado com o Casca</caption>
+      <caption>A website running as a native app, created with Casca</caption>
+      <caption xml:lang="pt-BR">Site rodando como app nativo, criado com o Casca</caption>
       <image>https://raw.githubusercontent.com/oliverhubtech-source/casca/main/screenshots/rodando.png</image>
     </screenshot>
   </screenshots>
@@ -63,7 +99,8 @@
   <releases>
     <release version="1.0.0" date="2026-07-08">
       <description>
-        <p>Primeira versão pública do Casca.</p>
+        <p>First public release of Casca.</p>
+        <p xml:lang="pt-BR">Primeira versão pública do Casca.</p>
       </description>
     </release>
   </releases>

@@ -1,6 +1,10 @@
-"""Ponto de entrada do Casca."""
+"""Casca entry point."""
 
 import sys
+
+from . import i18n
+
+i18n.install()
 
 import gi
 

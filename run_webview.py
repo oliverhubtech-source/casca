@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Executa a janela própria de um web app criado pelo Casca (motor WebKitGTK)."""
+"""Runs a web app's own window as created by Casca (WebKitGTK engine)."""
 
 import sys
 

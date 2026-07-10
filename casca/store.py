@@ -1,8 +1,8 @@
-"""Loja: catálogo de sites prontos para importar — local por padrão, ou de uma URL remota.
+"""Store: catalog of ready-made sites to import — local by default, or from a remote URL.
 
-Para usar um catálogo hospedado no GitHub, defina STORE_URL com a URL "raw" do JSON
-(ex.: "https://raw.githubusercontent.com/usuario/repo/main/store_catalog.json").
-Enquanto STORE_URL for None, a Loja usa o catálogo local em data/store_catalog.json.
+To use a catalog hosted on GitHub, set STORE_URL to the JSON's "raw" URL
+(e.g. "https://raw.githubusercontent.com/user/repo/main/store_catalog.json").
+While STORE_URL is None, the Store uses the local catalog in data/store_catalog.json.
 """
 
 import base64
@@ -15,6 +15,7 @@ from pathlib import Path
 import requests
 
 from .fileutils import safe_ext, slugify
+from .i18n import _
 
 STORE_URL: str | None = None
 LOCAL_CATALOG_PATH = Path(__file__).parent / "data" / "store_catalog.json"
@@ -46,11 +47,11 @@ _catalog_cache: list[StoreItem] | None = None
 
 
 def fetch_catalog(force_refresh: bool = False) -> list[StoreItem]:
-    """Busca o catálogo da Loja (remoto, se STORE_URL estiver definida; local, senão).
+    """Fetch the Store catalog (remote if STORE_URL is set; local otherwise).
 
-    O catálogo local tem alguns MB (ícones embutidos em base64), então o resultado é
-    cacheado em memória — sem isso, cada abertura da janela da Loja releria e reparsearia
-    o JSON inteiro do disco."""
+    The local catalog is a few MB (icons embedded as base64), so the result is
+    cached in memory — without this, every time the Store window opens it would
+    re-read and re-parse the whole JSON file from disk."""
     global _catalog_cache
     if _catalog_cache is not None and not force_refresh:
         return _catalog_cache
@@ -76,8 +77,8 @@ def fetch_catalog(force_refresh: bool = False) -> list[StoreItem]:
             StoreItem(
                 name=name,
                 url=url,
-                company=entry.get("company") or "Independente",
-                kind=entry.get("kind") or "Outros",
+                company=entry.get("company") or _("Independent"),
+                kind=entry.get("kind") or _("Other"),
                 package=entry.get("package"),
                 country=entry.get("country"),
                 icon_base64=entry.get("icon_base64"),
@@ -88,13 +89,12 @@ def fetch_catalog(force_refresh: bool = False) -> list[StoreItem]:
     return items
 
 
-FACET_LABELS = {"company": "Empresa", "kind": "Tipo", "package": "Pacote", "country": "País"}
-_FACET_FALLBACK = {"package": "Apps independentes", "country": "Global"}
+_FACET_FALLBACK = {"package": _("Independent apps"), "country": _("Global")}
 
 
 def group_by(items: list[StoreItem], facet: str) -> dict[str, list[StoreItem]]:
-    """Agrupa os itens por uma das facetas (company/kind/package/country)."""
-    fallback = _FACET_FALLBACK.get(facet, "Outros")
+    """Group items by one of the facets (company/kind/package/country)."""
+    fallback = _FACET_FALLBACK.get(facet, _("Other"))
     groups: dict[str, list[StoreItem]] = {}
     for item in items:
         key = getattr(item, facet) or fallback
@@ -103,7 +103,7 @@ def group_by(items: list[StoreItem], facet: str) -> dict[str, list[StoreItem]]:
 
 
 def save_icon_to_temp(item: StoreItem) -> Path | None:
-    """Decodifica o ícone embutido do item pra um arquivo temporário, se houver."""
+    """Decode the item's embedded icon into a temporary file, if any."""
     if not item.icon_base64:
         return None
     path = Path(tempfile.gettempdir()) / f"casca-store-{slugify(item.name)}.{safe_ext(item.icon_ext)}"

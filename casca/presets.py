@@ -1,13 +1,15 @@
-"""Catálogo de sites populares sem app nativo para Linux, agrupados por categoria."""
+"""Catalog of popular sites with no native Linux app, grouped by category."""
 
 from dataclasses import dataclass
+
+from .i18n import _
 
 
 @dataclass(frozen=True)
 class Preset:
     name: str
     url: str
-    icon_key: str | None = None  # nome do arquivo em casca/data/social_icons, sem extensão
+    icon_key: str | None = None  # filename in casca/data/social_icons, without extension
 
 
 @dataclass(frozen=True)
@@ -18,7 +20,7 @@ class PresetCategory:
 
 PRESET_CATEGORIES: tuple[PresetCategory, ...] = (
     PresetCategory(
-        "Produtos Google",
+        _("Google Products"),
         (
             Preset("Gmail", "https://mail.google.com/", icon_key="mail"),
             Preset("Google Agenda", "https://calendar.google.com/", icon_key="google-agenda"),
@@ -34,7 +36,7 @@ PRESET_CATEGORIES: tuple[PresetCategory, ...] = (
         ),
     ),
     PresetCategory(
-        "Produtos Microsoft",
+        _("Microsoft Products"),
         (
             Preset("Outlook", "https://outlook.office.com/mail/", icon_key="outlook"),
             Preset("Microsoft Teams", "https://teams.microsoft.com/", icon_key="microsoft-teams"),
@@ -46,7 +48,7 @@ PRESET_CATEGORIES: tuple[PresetCategory, ...] = (
         ),
     ),
     PresetCategory(
-        "Inteligência Artificial",
+        _("Artificial Intelligence"),
         (
             Preset("ChatGPT", "https://chat.openai.com/", icon_key="chatgpt"),
             Preset("Claude", "https://claude.ai/", icon_key="claude"),
@@ -61,7 +63,7 @@ PRESET_CATEGORIES: tuple[PresetCategory, ...] = (
         ),
     ),
     PresetCategory(
-        "Buscadores",
+        _("Search Engines"),
         (
             Preset("Google", "https://www.google.com/", icon_key="google"),
             Preset("Bing", "https://www.bing.com/", icon_key="bing"),
@@ -73,7 +75,7 @@ PRESET_CATEGORIES: tuple[PresetCategory, ...] = (
         ),
     ),
     PresetCategory(
-        "Mensageiros",
+        _("Messengers"),
         (
             Preset("WhatsApp Web", "https://web.whatsapp.com/", icon_key="whatsapp"),
             Preset("Telegram Web", "https://web.telegram.org/", icon_key="telegram-web"),
@@ -83,7 +85,7 @@ PRESET_CATEGORIES: tuple[PresetCategory, ...] = (
         ),
     ),
     PresetCategory(
-        "Redes sociais",
+        _("Social Networks"),
         (
             Preset("Instagram", "https://www.instagram.com/", icon_key="instagram"),
             Preset("Facebook", "https://www.facebook.com/", icon_key="facebook"),
@@ -94,7 +96,7 @@ PRESET_CATEGORIES: tuple[PresetCategory, ...] = (
         ),
     ),
     PresetCategory(
-        "Streaming",
+        _("Streaming"),
         (
             Preset("Netflix", "https://www.netflix.com/", icon_key="netflix"),
             Preset("Disney+", "https://www.disneyplus.com/", icon_key="disney-plus"),
@@ -106,7 +108,7 @@ PRESET_CATEGORIES: tuple[PresetCategory, ...] = (
         ),
     ),
     PresetCategory(
-        "Música",
+        _("Music"),
         (
             Preset("Spotify", "https://open.spotify.com/", icon_key="spotify"),
             Preset("YouTube Music", "https://music.youtube.com/", icon_key="youtube2"),
@@ -118,7 +120,7 @@ PRESET_CATEGORIES: tuple[PresetCategory, ...] = (
         ),
     ),
     PresetCategory(
-        "Produtividade e Organização",
+        _("Productivity & Organization"),
         (
             Preset("Notion", "https://www.notion.so/", icon_key="notion"),
             Preset("Trello", "https://trello.com/", icon_key="trello"),
@@ -131,7 +133,7 @@ PRESET_CATEGORIES: tuple[PresetCategory, ...] = (
         ),
     ),
     PresetCategory(
-        "Facilitadores de PDF",
+        _("PDF Tools"),
         (
             Preset("PDF24 Tools", "https://tools.pdf24.org/en/", icon_key="pdf24-tools"),
             Preset("iLovePDF", "https://www.ilovepdf.com/pt", icon_key="ilovepdf"),
@@ -140,7 +142,7 @@ PRESET_CATEGORIES: tuple[PresetCategory, ...] = (
         ),
     ),
     PresetCategory(
-        "Cálculos e Finanças",
+        _("Calculations & Finance"),
         (
             Preset("Omni Calculator", "https://www.omnicalculator.com/pt", icon_key="omni-calculator"),
             Preset("Calculadora do Cidadão (BCB)", "https://www3.bcb.gov.br/CALCIDADAO", icon_key="calculadora-cidadao"),
@@ -152,7 +154,7 @@ PRESET_CATEGORIES: tuple[PresetCategory, ...] = (
         ),
     ),
     PresetCategory(
-        "Geradores e Utilidades",
+        _("Generators & Utilities"),
         (
             Preset("QRCode Monkey", "https://www.qrcode-monkey.com/", icon_key="qrcode-monkey"),
             Preset("ME-QR", "https://me-qr.com/", icon_key="me-qr"),
@@ -161,7 +163,7 @@ PRESET_CATEGORIES: tuple[PresetCategory, ...] = (
         ),
     ),
     PresetCategory(
-        "Conversão e Compartilhamento",
+        _("Conversion & Sharing"),
         (
             Preset("CloudConvert", "https://cloudconvert.com/", icon_key="cloudconvert"),
             Preset("Photopea", "https://www.photopea.com/", icon_key="photopea"),
@@ -171,7 +173,7 @@ PRESET_CATEGORIES: tuple[PresetCategory, ...] = (
         ),
     ),
     PresetCategory(
-        "Segurança e Diagnóstico",
+        _("Security & Diagnostics"),
         (
             Preset("UnshortLink", "https://unshortlink.com/", icon_key="unshortlink"),
             Preset("Unshorten.it", "https://unshorten.it/"),
@@ -181,7 +183,7 @@ PRESET_CATEGORIES: tuple[PresetCategory, ...] = (
         ),
     ),
     PresetCategory(
-        "Criatividade e Conteúdo",
+        _("Creativity & Content"),
         (
             Preset("Zest", "https://zest.is/", icon_key="zest"),
             Preset("Google Trends", "https://trends.google.com/trends/", icon_key="google-trends"),

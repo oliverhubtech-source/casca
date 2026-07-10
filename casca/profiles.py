@@ -1,4 +1,4 @@
-"""Detecção de perfis (contas) já configurados nos navegadores instalados."""
+"""Detection of profiles (accounts) already configured in the installed browsers."""
 
 import json
 from dataclasses import dataclass
@@ -6,8 +6,8 @@ from pathlib import Path
 
 from .browsers import Browser
 
-# subpath dentro de ~/.config (nativo) ou ~/.var/app/<flatpak-id>/config (flatpak) —
-# o Flatpak espelha o mesmo subpath relativo usado pelo navegador nativo.
+# subpath inside ~/.config (native) or ~/.var/app/<flatpak-id>/config (flatpak) —
+# Flatpak mirrors the same relative subpath used by the native browser.
 _CONFIG_SUBPATH = {
     "google-chrome-stable": "google-chrome",
     "google-chrome": "google-chrome",
@@ -31,8 +31,8 @@ _CONFIG_SUBPATH = {
 
 @dataclass(frozen=True)
 class BrowserProfile:
-    directory: str  # valor usado em --profile-directory (ex.: "Default", "Profile 1")
-    label: str  # nome mostrado na interface
+    directory: str  # value used in --profile-directory (e.g. "Default", "Profile 1")
+    label: str  # name shown in the UI
 
 
 def _config_dir(browser: Browser) -> Path | None:
@@ -48,7 +48,7 @@ def _config_dir(browser: Browser) -> Path | None:
 
 
 def list_profiles(browser: Browser) -> list[BrowserProfile]:
-    """Lê o Local State do navegador e retorna as contas/perfis já configurados nele."""
+    """Read the browser's Local State and return the accounts/profiles already configured in it."""
     config_dir = _config_dir(browser)
     if not config_dir:
         return []

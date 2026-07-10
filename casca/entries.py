@@ -1,4 +1,4 @@
-"""Criação, listagem e remoção dos web apps (registro + arquivos .desktop)."""
+"""Creation, listing and removal of web apps (registry + .desktop files)."""
 
 import base64
 import binascii
@@ -20,6 +20,7 @@ from gi.repository import GLib
 from . import icons
 from .browsers import Browser, detect_browsers, find_by_key
 from .fileutils import has_dangerous_scheme, safe_ext, slugify
+from .i18n import _
 
 DATA_DIR = Path.home() / ".local" / "share" / "casca"
 PROFILES_DIR = DATA_DIR / "profiles"
@@ -35,9 +36,9 @@ _PACKAGE_RUNNER = _PROJECT_ROOT / "run_package.py"
 
 
 def _package_runner_command() -> str:
-    """Comando pro Exec= do .desktop do pacote — igual ao webkit em browsers.py,
-    reentra no Flatpak via `flatpak run` quando o próprio Casca está sandboxado,
-    já que esse Exec= é executado pelo host, fora do sandbox do Casca."""
+    """Command for the package's .desktop Exec= — same as webkit in browsers.py,
+    re-enters the Flatpak via `flatpak run` when Casca itself is sandboxed,
+    since this Exec= is run by the host, outside Casca's sandbox."""
     if "FLATPAK_ID" in os.environ:
         return "flatpak run --command=casca-package io.github.oliverhubtech_source.Casca"
     return f"python3 {_PACKAGE_RUNNER}"
@@ -49,9 +50,9 @@ def _desktop_dir() -> Path:
 
 
 def _as_positive_int(value) -> int | None:
-    """Converte um valor de largura/altura vindo de um JSON importado, descartando
-    qualquer coisa que não seja um inteiro positivo plausível (evita repassar strings
-    arbitrárias para o comando do navegador)."""
+    """Convert a width/height value coming from an imported JSON, discarding
+    anything that isn't a plausible positive integer (avoids passing arbitrary
+    strings through to the browser command)."""
     try:
         number = int(value)
     except (TypeError, ValueError):
@@ -199,7 +200,7 @@ def create_app(
 ) -> str:
     browser = find_by_key(browser_key)
     if browser is None:
-        raise ValueError(f"Navegador não encontrado: {browser_key}")
+        raise ValueError(_("Browser not found: %(key)s") % {"key": browser_key})
 
     registry = _load_json_registry(REGISTRY_PATH)
     slug = _unique_slug(name, registry)
@@ -241,11 +242,11 @@ def update_app(
 ) -> None:
     browser = find_by_key(browser_key)
     if browser is None:
-        raise ValueError(f"Navegador não encontrado: {browser_key}")
+        raise ValueError(_("Browser not found: %(key)s") % {"key": browser_key})
 
     registry = _load_json_registry(REGISTRY_PATH)
     if slug not in registry:
-        raise KeyError(f"App não encontrado: {slug}")
+        raise KeyError(_("App not found: %(slug)s") % {"slug": slug})
 
     current = WebApp(**registry[slug])
     icon = str(icons.save_icon_from_file(icon_path, slug)) if icon_path else current.icon_path
@@ -293,8 +294,8 @@ def delete_app(slug: str) -> None:
 
 
 def export_apps(dest: Path, slugs: list[str] | None = None) -> int:
-    """Exporta apps (todos, ou só os slugs indicados) para um JSON com o ícone embutido.
-    Retorna quantos apps foram exportados."""
+    """Export apps (all, or just the given slugs) to a JSON with the icon embedded.
+    Returns how many apps were exported."""
     registry = _load_json_registry(REGISTRY_PATH)
     selected = [data for slug, data in registry.items() if slugs is None or slug in slugs]
 
@@ -320,11 +321,11 @@ def export_apps(dest: Path, slugs: list[str] | None = None) -> int:
 
 
 _IMPORT_URL_TIMEOUT = 10
-_MAX_IMPORT_BYTES = 20 * 1024 * 1024  # um export com vários ícones em base64 pode passar de alguns MB
+_MAX_IMPORT_BYTES = 20 * 1024 * 1024  # an export with several base64 icons can add up to a few MB
 
 
 def fetch_import_payload(url: str) -> bytes:
-    """Baixa um JSON de exportação de uma URL (ex.: link "raw" do GitHub)."""
+    """Download an export JSON from a URL (e.g. a GitHub "raw" link)."""
     try:
         with requests.get(url, timeout=_IMPORT_URL_TIMEOUT, stream=True) as response:
             response.raise_for_status()
@@ -333,24 +334,24 @@ def fetch_import_payload(url: str) -> bytes:
             for chunk in response.iter_content(chunk_size=65536):
                 total += len(chunk)
                 if total > _MAX_IMPORT_BYTES:
-                    raise ValueError("arquivo remoto muito grande")
+                    raise ValueError(_("remote file too large"))
                 chunks.append(chunk)
             return b"".join(chunks)
     except requests.RequestException as error:
-        raise ValueError(f"não foi possível baixar o arquivo ({error})") from error
+        raise ValueError(_("could not download the file (%(error)s)") % {"error": error}) from error
 
 
 def parse_import_candidates(data: bytes) -> list[dict]:
-    """Lê os bytes de um JSON de exportação e retorna a lista crua de entradas 'apps',
-    pra exibir numa tela de seleção antes de importar de fato."""
+    """Read the bytes of an export JSON and return the raw list of 'apps' entries,
+    to show on a selection screen before actually importing."""
     try:
         payload = json.loads(data)
     except (json.JSONDecodeError, UnicodeDecodeError) as error:
-        raise ValueError(f"não foi possível ler o arquivo ({error})") from error
+        raise ValueError(_("could not read the file (%(error)s)") % {"error": error}) from error
 
     app_entries = payload.get("apps")
     if not isinstance(app_entries, list):
-        raise ValueError("formato inesperado: nenhuma lista 'apps' encontrada")
+        raise ValueError(_("unexpected format: no 'apps' list found"))
     return app_entries
 
 
@@ -367,10 +368,10 @@ class ImportResult:
 
 
 def import_selected(app_entries: list[dict], selected_indices: set[int]) -> ImportResult:
-    """Importa só as entradas de `app_entries` cujo índice está em `selected_indices`.
-    Uma entrada com problema (URL inválida, navegador indisponível, ícone impossível de
-    obter, erro ao criar o app) vira um `ImportFailure` em vez de abortar as demais —
-    dá pra revisar depois e resolver esses casos na mão."""
+    """Import only the entries in `app_entries` whose index is in `selected_indices`.
+    An entry with a problem (invalid URL, no browser available, icon impossible to
+    fetch, error creating the app) becomes an `ImportFailure` instead of aborting the
+    rest — those cases can be reviewed and fixed by hand afterward."""
     browsers_available = detect_browsers()
     fallback_browser = next((b for b in browsers_available if b.key == "webkit:casca"), None) or (
         browsers_available[0] if browsers_available else None
@@ -384,23 +385,23 @@ def import_selected(app_entries: list[dict], selected_indices: set[int]) -> Impo
 
         name = (entry.get("name") or "").strip()
         raw_url = (entry.get("url") or "").strip()
-        display_name = name or f"item {index + 1}"
+        display_name = name or _("item %(n)d") % {"n": index + 1}
         if not name or not raw_url:
-            failures.append(ImportFailure(display_name, "nome ou URL ausente"))
+            failures.append(ImportFailure(display_name, _("missing name or URL")))
             continue
         if has_dangerous_scheme(raw_url):
-            failures.append(ImportFailure(name, "esquema de URL não suportado"))
+            failures.append(ImportFailure(name, _("unsupported URL scheme")))
             continue
 
         url = raw_url if "://" in raw_url else f"https://{raw_url}"
         if urlparse(url).scheme not in ("http", "https"):
-            failures.append(ImportFailure(name, "esquema de URL não suportado"))
+            failures.append(ImportFailure(name, _("unsupported URL scheme")))
             continue
 
         browser_key = entry.get("browser_key")
         if not browser_key or find_by_key(browser_key, browsers_available) is None:
             if fallback_browser is None:
-                failures.append(ImportFailure(name, "nenhum navegador disponível"))
+                failures.append(ImportFailure(name, _("no browser available")))
                 continue
             browser_key = fallback_browser.key
 
@@ -419,7 +420,7 @@ def import_selected(app_entries: list[dict], selected_indices: set[int]) -> Impo
             if data:
                 icon_source = icons.save_preview(data, f"casca-import-{slugify(name)}")
         if icon_source is None:
-            failures.append(ImportFailure(name, "não foi possível obter um ícone"))
+            failures.append(ImportFailure(name, _("could not get an icon")))
             continue
 
         try:
@@ -460,11 +461,11 @@ def list_packages() -> list[PackageInfo]:
 
 
 def create_package(name: str, sub_apps: list[dict], icon_path: Path) -> str:
-    """Cria um pacote: uma janela própria que lista os apps de `sub_apps`
-    (cada um com name/url) e abre o app correspondente ao clicar.
+    """Create a package: its own window listing the apps in `sub_apps`
+    (each with a name/url) that opens the corresponding app on click.
 
-    Cada sub-app abre na janela própria do Casca (webkit), com sessão isolada
-    e a barra colorida pelo ícone daquele app especificamente.
+    Each sub-app opens in Casca's own window (webkit), with an isolated
+    session and its title bar colored from that specific app's icon.
     """
     registry = _load_json_registry(PACKAGES_REGISTRY_PATH)
     slug = _unique_slug(name, registry)
@@ -477,7 +478,7 @@ def create_package(name: str, sub_apps: list[dict], icon_path: Path) -> str:
     available = detect_browsers()
     browser = find_by_key("webkit:casca", available) or (available[0] if available else None)
     if browser is None:
-        raise ValueError("Nenhum navegador disponível para montar o pacote.")
+        raise ValueError(_("No browser available to assemble the package."))
 
     sub_app_configs = []
     app_names = []
@@ -549,7 +550,7 @@ def create_package(name: str, sub_apps: list[dict], icon_path: Path) -> str:
         "Version=1.0\n"
         "Type=Application\n"
         f"Name={name}\n"
-        "Comment=Pacote de web apps criado pelo Casca\n"
+        "Comment=" + _("Package of web apps created by Casca") + "\n"
         f"Exec={_package_runner_command()} --config {config_path}\n"
         f"Icon={package_icon_path}\n"
         "Terminal=false\n"

@@ -1,4 +1,4 @@
-"""Utilitários de nome de arquivo compartilhados entre o registro de apps e o catálogo da Loja."""
+"""Filename utilities shared between the app registry and the Store catalog."""
 
 import re
 import unicodedata
@@ -13,8 +13,8 @@ def slugify(name: str) -> str:
 
 
 def safe_ext(ext: str | None) -> str:
-    """Restringe a uma extensão de imagem conhecida. Nunca repassa um valor externo cru
-    para dentro de um nome de arquivo — evita path traversal via campos como '../../x'."""
+    """Restrict to a known image extension. Never passes an external raw value
+    straight into a filename — avoids path traversal via fields like '../../x'."""
     ext = (ext or "").lower().lstrip(".")
     return ext if ext in SAFE_ICON_EXTENSIONS else "png"
 
@@ -23,14 +23,14 @@ _DANGEROUS_URL_SCHEMES = ("javascript:", "data:", "vbscript:", "file:")
 
 
 def has_dangerous_scheme(raw_url: str) -> bool:
-    """Detecta esquemas perigosos mesmo sem '://' (ex.: 'javascript:alert(1)'), que do
-    contrário escapariam da normalização "sem esquema -> prefixa com https://" e só
-    seriam barrados (com um motivo enganoso) na etapa seguinte."""
+    """Detect dangerous schemes even without '://' (e.g. 'javascript:alert(1)'), which
+    would otherwise slip past the "no scheme -> prefix with https://" normalization and
+    only get blocked (with a misleading reason) at the next step."""
     return raw_url.strip().lower().startswith(_DANGEROUS_URL_SCHEMES)
 
 
 def ascii_app_id_component(text: str) -> str:
-    """Reduz um texto livre a um componente ASCII válido para application_id do GLib
-    (que rejeita caracteres não-ASCII, ex.: 'Inteligência' vira 'Inteligncia')."""
+    """Reduce free text to a component valid for GLib's application_id
+    (which rejects non-ASCII characters, e.g. 'Inteligência' becomes 'Inteligncia')."""
     normalized = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii")
     return "".join(c if c.isalnum() else "_" for c in normalized)

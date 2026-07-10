@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="{lang}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title}</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {{
+    darkMode: 'media',
+    theme: {{
+      extend: {{
+        colors: {{
+          shell: {{ violet: '#8a6bff', blue: '#4d7dff', mist: '#e7ecf5', slate: '#c9d3e6' }},
+          ink: {{ DEFAULT: '#1c1a24', soft: '#57536b' }},
+          paper: '#faf9fc',
+        }},
+        fontFamily: {{
+          display: ['Cantarell', 'Inter', '-apple-system', 'Segoe UI', 'sans-serif'],
+          mono: ['Cascadia Code', 'Source Code Pro', 'ui-monospace', 'monospace'],
+        }},
+        boxShadow: {{
+          group: '0 1px 2px rgba(28,26,36,0.04), 0 1px 1px rgba(28,26,36,0.03)',
+        }},
+      }},
+    }},
+  }};
+</script>
+<style>
+  html {{ scroll-behavior: smooth; }}
+  body {{ font-family: Cantarell, Inter, -apple-system, "Segoe UI", sans-serif; }}
+  .balance {{ text-wrap: balance; }}
+  .titlebar-dot {{ width: 9px; height: 9px; border-radius: 999px; }}
+  .group-card {{
+    background: #ffffff;
+    border: 1px solid #e5e2ee;
+  }}
+  @media (prefers-color-scheme: dark) {{
+    .group-card {{ background: #211f2b; border-color: #33303f; }}
+  }}
+  .eyebrow {{
+    font-family: 'Cascadia Code', 'Source Code Pro', ui-monospace, monospace;
+    letter-spacing: 0.08em;
+  }}
+  ::selection {{ background: #8a6bff; color: white; }}
+  a.toc-chip {{ transition: transform .12s ease, border-color .12s ease; }}
+  a.toc-chip:hover {{ transform: translateY(-1px); border-color: #8a6bff; }}
+  @media (prefers-reduced-motion: reduce) {{
+    a.toc-chip {{ transition: none; }}
+    a.toc-chip:hover {{ transform: none; }}
+  }}
+</style>
+</head>
+<body class="bg-paper text-ink dark:bg-[#17151f] dark:text-[#efeef5] antialiased">
+<div class="max-w-[700px] mx-auto px-6 pb-24">
+
+  <!-- "Title bar" — the same idea as the colored bar Casca draws on each app -->
+  <header class="mt-10 mb-8 rounded-2xl overflow-hidden shadow-group">
+    <div class="flex items-center gap-2 px-4 py-3 bg-gradient-to-br from-shell-violet to-shell-blue">
+      <span class="titlebar-dot bg-white/40"></span>
+      <span class="titlebar-dot bg-white/40"></span>
+      <span class="titlebar-dot bg-white/40"></span>
+      <span class="ml-3 text-white/90 text-sm font-medium">Casca 🐚</span>
+    </div>
+    <div class="bg-white dark:bg-[#211f2b] px-7 py-8 flex items-center gap-5">
+      <img src="icons/io.github.oliverhubtech_source.Casca.png" width="56" height="56"
+           class="shrink-0 rounded-2xl" alt="{casca_icon_alt}" />
+
+      <div>
+        <p class="eyebrow text-xs uppercase text-shell-blue dark:text-shell-slate mb-1">{eyebrow}</p>
+        <h1 class="text-2xl font-bold balance leading-tight">{hero_title}</h1>
+      </div>
+    </div>
+  </header>
+
+  <p class="text-[15px] leading-relaxed text-ink-soft dark:text-[#c7c4d6] max-w-[62ch]">
+    {intro}
+  </p>
+
+  <!-- table of contents as chips, like the app's own buttons -->
+  <nav class="flex flex-wrap gap-2 mt-6 mb-2" aria-label="Table of contents">
+    <a href="#comecar" class="toc-chip text-sm px-3 py-1.5 rounded-full border border-shell-slate dark:border-[#3d3a4d] text-ink-soft dark:text-[#c7c4d6] no-underline">{nav_first_app}</a>
+    <a href="#predefinidos" class="toc-chip text-sm px-3 py-1.5 rounded-full border border-shell-slate dark:border-[#3d3a4d] text-ink-soft dark:text-[#c7c4d6] no-underline">{nav_presets}</a>
+    <a href="#icone" class="toc-chip text-sm px-3 py-1.5 rounded-full border border-shell-slate dark:border-[#3d3a4d] text-ink-soft dark:text-[#c7c4d6] no-underline">{nav_icon}</a>
+    <a href="#atalho" class="toc-chip text-sm px-3 py-1.5 rounded-full border border-shell-slate dark:border-[#3d3a4d] text-ink-soft dark:text-[#c7c4d6] no-underline">{nav_shortcut}</a>
+    <a href="#navegador" class="toc-chip text-sm px-3 py-1.5 rounded-full border border-shell-slate dark:border-[#3d3a4d] text-ink-soft dark:text-[#c7c4d6] no-underline">{nav_browser}</a>
+    <a href="#mobile" class="toc-chip text-sm px-3 py-1.5 rounded-full border border-shell-slate dark:border-[#3d3a4d] text-ink-soft dark:text-[#c7c4d6] no-underline">{nav_mobile}</a>
+    <a href="#resolucao" class="toc-chip text-sm px-3 py-1.5 rounded-full border border-shell-slate dark:border-[#3d3a4d] text-ink-soft dark:text-[#c7c4d6] no-underline">{nav_resolution}</a>
+    <a href="#editar" class="toc-chip text-sm px-3 py-1.5 rounded-full border border-shell-slate dark:border-[#3d3a4d] text-ink-soft dark:text-[#c7c4d6] no-underline">{nav_edit}</a>
+  </nav>
+
+  <!-- each block imitates an Adw.PreferencesGroup: same visual language as the app itself -->
+
+  <section id="comecar" class="group-card rounded-2xl shadow-group mt-8 p-6">
+    <h2 class="text-lg font-semibold mb-1">{first_app_title}</h2>
+    <p class="text-sm text-ink-soft dark:text-[#c7c4d6] mb-4">{first_app_subtitle}</p>
+    <ul class="space-y-2.5 text-[15px]">
+      <li class="flex gap-3"><span class="text-shell-violet font-semibold">→</span><span>{first_app_li_preset}</span></li>
+      <li class="flex gap-3"><span class="text-shell-blue font-semibold">→</span><span>{first_app_li_new}</span></li>
+    </ul>
+    <div class="mt-4 rounded-xl bg-shell-mist/60 dark:bg-[#2a2836] px-4 py-3 text-sm text-ink-soft dark:text-[#c7c4d6]">
+      {first_app_note}
+    </div>
+  </section>
+
+  <section id="predefinidos" class="group-card rounded-2xl shadow-group mt-5 p-6">
+    <h2 class="text-lg font-semibold mb-1">{presets_title}</h2>
+    <p class="text-[15px] text-ink-soft dark:text-[#c7c4d6]">
+      {presets_intro}
+    </p>
+    <div class="flex flex-wrap gap-1.5 mt-4">
+      <span class="text-xs px-2.5 py-1 rounded-full bg-shell-mist dark:bg-[#2a2836] text-ink-soft dark:text-[#c7c4d6]">{cat_google}</span>
+      <span class="text-xs px-2.5 py-1 rounded-full bg-shell-mist dark:bg-[#2a2836] text-ink-soft dark:text-[#c7c4d6]">{cat_microsoft}</span>
+      <span class="text-xs px-2.5 py-1 rounded-full bg-shell-mist dark:bg-[#2a2836] text-ink-soft dark:text-[#c7c4d6]">{cat_ai}</span>
+      <span class="text-xs px-2.5 py-1 rounded-full bg-shell-mist dark:bg-[#2a2836] text-ink-soft dark:text-[#c7c4d6]">{cat_search}</span>
+      <span class="text-xs px-2.5 py-1 rounded-full bg-shell-mist dark:bg-[#2a2836] text-ink-soft dark:text-[#c7c4d6]">{cat_messengers}</span>
+      <span class="text-xs px-2.5 py-1 rounded-full bg-shell-mist dark:bg-[#2a2836] text-ink-soft dark:text-[#c7c4d6]">{cat_social}</span>
+      <span class="text-xs px-2.5 py-1 rounded-full bg-shell-mist dark:bg-[#2a2836] text-ink-soft dark:text-[#c7c4d6]">{cat_streaming}</span>
+      <span class="text-xs px-2.5 py-1 rounded-full bg-shell-mist dark:bg-[#2a2836] text-ink-soft dark:text-[#c7c4d6]">{cat_music}</span>
+      <span class="text-xs px-2.5 py-1 rounded-full bg-shell-mist dark:bg-[#2a2836] text-ink-soft dark:text-[#c7c4d6]">{cat_productivity}</span>
+      <span class="text-xs px-2.5 py-1 rounded-full bg-shell-mist dark:bg-[#2a2836] text-ink-soft dark:text-[#c7c4d6]">{cat_pdf}</span>
+      <span class="text-xs px-2.5 py-1 rounded-full bg-shell-mist dark:bg-[#2a2836] text-ink-soft dark:text-[#c7c4d6]">{cat_finance}</span>
+      <span class="text-xs px-2.5 py-1 rounded-full bg-shell-mist dark:bg-[#2a2836] text-ink-soft dark:text-[#c7c4d6]">{cat_utilities}</span>
+      <span class="text-xs px-2.5 py-1 rounded-full bg-shell-mist dark:bg-[#2a2836] text-ink-soft dark:text-[#c7c4d6]">{cat_conversion}</span>
+      <span class="text-xs px-2.5 py-1 rounded-full bg-shell-mist dark:bg-[#2a2836] text-ink-soft dark:text-[#c7c4d6]">{cat_security}</span>
+      <span class="text-xs px-2.5 py-1 rounded-full bg-shell-mist dark:bg-[#2a2836] text-ink-soft dark:text-[#c7c4d6]">{cat_creativity}</span>
+    </div>
+  </section>
+
+  <section id="icone" class="group-card rounded-2xl shadow-group mt-5 p-6">
+    <h2 class="text-lg font-semibold mb-1">{icon_title}</h2>
+    <p class="text-sm text-ink-soft dark:text-[#c7c4d6] mb-4">
+      {icon_intro}
+    </p>
+    <div class="grid sm:grid-cols-3 gap-3">
+      <div class="rounded-xl border border-shell-slate/70 dark:border-[#3d3a4d] p-3.5">
+        <p class="font-semibold text-sm mb-1">{icon_card_search_title}</p>
+        <p class="text-[13px] text-ink-soft dark:text-[#c7c4d6]">{icon_card_search_desc}</p>
+      </div>
+      <div class="rounded-xl border border-shell-slate/70 dark:border-[#3d3a4d] p-3.5">
+        <p class="font-semibold text-sm mb-1">{icon_card_computer_title}</p>
+        <p class="text-[13px] text-ink-soft dark:text-[#c7c4d6]">{icon_card_computer_desc}</p>
+      </div>
+      <div class="rounded-xl border border-shell-slate/70 dark:border-[#3d3a4d] p-3.5">
+        <p class="font-semibold text-sm mb-1">{icon_card_gallery_title}</p>
+        <p class="text-[13px] text-ink-soft dark:text-[#c7c4d6]">{icon_card_gallery_desc}</p>
+      </div>
+    </div>
+    <p class="text-sm text-ink-soft dark:text-[#c7c4d6] mt-4">
+      {icon_outro}
+    </p>
+  </section>
+
+  <section id="atalho" class="group-card rounded-2xl shadow-group mt-5 p-6">
+    <h2 class="text-lg font-semibold mb-1">{shortcut_title}</h2>
+    <p class="text-[15px] text-ink-soft dark:text-[#c7c4d6]">
+      {shortcut_body}
+    </p>
+  </section>
+
+  <section id="navegador" class="group-card rounded-2xl shadow-group mt-5 p-6">
+    <h2 class="text-lg font-semibold mb-1">{browser_title}</h2>
+    <p class="text-[15px] text-ink-soft dark:text-[#c7c4d6] mb-4">
+      {browser_intro}
+    </p>
+    <div class="rounded-xl bg-amber-50 dark:bg-[#332b1a] border border-amber-200 dark:border-[#4d4020] px-4 py-3 text-sm text-amber-900 dark:text-amber-200">
+      {browser_warning}
+    </div>
+    <p class="text-[15px] text-ink-soft dark:text-[#c7c4d6] mt-4">
+      {browser_outro}
+    </p>
+  </section>
+
+  <section id="mobile" class="group-card rounded-2xl shadow-group mt-5 p-6">
+    <h2 class="text-lg font-semibold mb-1">{mobile_title}</h2>
+    <p class="text-[15px] text-ink-soft dark:text-[#c7c4d6]">
+      {mobile_body}
+    </p>
+  </section>
+
+  <section id="resolucao" class="group-card rounded-2xl shadow-group mt-5 p-6">
+    <h2 class="text-lg font-semibold mb-1">{resolution_title}</h2>
+    <p class="text-sm text-ink-soft dark:text-[#c7c4d6] mb-4">
+      {resolution_intro}
+    </p>
+    <ol class="space-y-2 text-[15px]">
+      <li class="flex gap-3"><span class="eyebrow text-xs text-shell-violet mt-0.5">01</span><span>{resolution_li_device}</span></li>
+      <li class="flex gap-3"><span class="eyebrow text-xs text-shell-violet mt-0.5">02</span><span>{resolution_li_default}</span></li>
+      <li class="flex gap-3"><span class="eyebrow text-xs text-shell-violet mt-0.5">03</span><span>{resolution_li_custom}</span></li>
+    </ol>
+  </section>
+
+  <section id="editar" class="group-card rounded-2xl shadow-group mt-5 p-6">
+    <h2 class="text-lg font-semibold mb-1">{edit_title}</h2>
+    <p class="text-[15px] text-ink-soft dark:text-[#c7c4d6]">
+      {edit_body}
+    </p>
+  </section>
+
+  <footer class="mt-10 text-center text-sm text-ink-soft/70 dark:text-[#8b87a0]">
+    {footer}
+  </footer>
+
+</div>
+</body>
+</html>

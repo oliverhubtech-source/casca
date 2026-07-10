@@ -1,4 +1,4 @@
-"""Busca e preparo de ícones para os web apps criados."""
+"""Fetching and preparing icons for the web apps created."""
 
 import hashlib
 import io
@@ -19,16 +19,18 @@ import requests
 import urllib3.util.connection as _urllib3_connection
 from PIL import Image
 
-# Em redes com IPv6 mal roteado (sem saída real), o Python tenta o endereço IPv6
-# primeiro e trava por vários segundos antes de cair para IPv4 — diferente do curl,
-# que já faz Happy Eyeballs. Forçar IPv4 evita esse travamento.
+from .i18n import _
+
+# On networks with broken IPv6 routing (no real path out), Python tries the IPv6
+# address first and hangs for several seconds before falling back to IPv4 — unlike
+# curl, which already does Happy Eyeballs. Forcing IPv4 avoids that stall.
 _urllib3_connection.allowed_gai_family = lambda: socket.AF_INET
 
 ICON_SIZE = 256
 ICONS_DIR = Path.home() / ".local" / "share" / "icons" / "casca"
 PREVIEWS_DIR = Path(tempfile.gettempdir()) / "casca-previews"
 _REQUEST_TIMEOUT = 6
-_MAX_ICON_BYTES = 8 * 1024 * 1024  # generoso pra um ícone, evita reter uma resposta gigante em memória
+_MAX_ICON_BYTES = 8 * 1024 * 1024  # generous for an icon, avoids holding a giant response in memory
 
 
 def _normalize_to_png(data: bytes, dest: Path) -> Path:
@@ -39,8 +41,8 @@ def _normalize_to_png(data: bytes, dest: Path) -> Path:
 
 
 def _svg_pixels(path: Path) -> list[tuple[int, int, int]]:
-    """Rasteriza um SVG via GdkPixbuf (librsvg) pra poder amostrar a cor dominante —
-    o Pillow não decodifica SVG diretamente."""
+    """Rasterize an SVG via GdkPixbuf (librsvg) so its dominant color can be sampled —
+    Pillow doesn't decode SVG directly."""
     pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(str(path), 48, 48)
     if not pixbuf.get_has_alpha():
         pixbuf = pixbuf.add_alpha(False, 0, 0, 0)
@@ -59,7 +61,7 @@ def _svg_pixels(path: Path) -> list[tuple[int, int, int]]:
 
 
 def dominant_color(path: Path) -> tuple[int, int, int]:
-    """Cor mais frequente e "viva" do ícone (ignora transparência e tons quase preto/branco)."""
+    """Most frequent, "vivid" color of the icon (ignores transparency and near-black/white tones)."""
     try:
         if path.suffix.lower() == ".svg":
             pixels = _svg_pixels(path)
@@ -85,7 +87,7 @@ def to_hex(rgb: tuple[int, int, int]) -> str:
 
 
 def contrasting_text_color(rgb: tuple[int, int, int]) -> str:
-    """Branco em cores escuras, cinza-escuro em cores claras, pra manter texto legível."""
+    """White on dark colors, dark grey on light colors, to keep text legible."""
     red, green, blue = rgb
     luminance = (0.299 * red + 0.587 * green + 0.114 * blue) / 255
     return "#ffffff" if luminance < 0.55 else "#1c1c1c"
@@ -122,7 +124,7 @@ def _is_valid_image(data: bytes) -> bool:
 
 
 def fetch_favicon(url: str) -> bytes | None:
-    """Busca o favicon do site via serviço público do Google. Retorna imagem em bytes ou None."""
+    """Fetch the site's favicon via Google's public service. Returns image bytes or None."""
     domain = _domain_of(url)
     if not domain:
         return None
@@ -130,7 +132,7 @@ def fetch_favicon(url: str) -> bytes | None:
 
 
 def _fetch_from_manifest(domain: str) -> bytes | None:
-    """Lê o manifest.json/webmanifest do site e busca o maior ícone PWA declarado nele."""
+    """Read the site's manifest.json/webmanifest and fetch the largest PWA icon declared in it."""
     for manifest_path in ("/manifest.json", "/manifest.webmanifest", "/site.webmanifest"):
         raw = _get(f"https://{domain}{manifest_path}")
         if not raw:
@@ -166,20 +168,20 @@ def _fetch_from_manifest(domain: str) -> bytes | None:
 
 _SEARCH_SOURCES = (
     ("Google", lambda domain: _get("https://www.google.com/s2/favicons", domain=domain, sz=ICON_SIZE)),
-    ("Ícone do site (.ico)", lambda domain: _get(f"https://{domain}/favicon.ico")),
-    ("Ícone do site (32px)", lambda domain: _get(f"https://{domain}/favicon-32x32.png")),
-    ("Apple touch icon", lambda domain: _get(f"https://{domain}/apple-touch-icon.png")),
+    (_("Site icon (.ico)"), lambda domain: _get(f"https://{domain}/favicon.ico")),
+    (_("Site icon (32px)"), lambda domain: _get(f"https://{domain}/favicon-32x32.png")),
+    (_("Apple touch icon"), lambda domain: _get(f"https://{domain}/apple-touch-icon.png")),
     ("DuckDuckGo", lambda domain: _get(f"https://icons.duckduckgo.com/ip3/{domain}.ico")),
     ("Clearbit", lambda domain: _get(f"https://logo.clearbit.com/{domain}")),
     ("Yandex", lambda domain: _get(f"https://favicon.yandex.net/favicon/v2/{domain}", size=ICON_SIZE)),
     ("Icon Horse", lambda domain: _get(f"https://icon.horse/icon/{domain}")),
     ("FaviconKit", lambda domain: _get(f"https://api.faviconkit.com/{domain}/{ICON_SIZE}")),
-    ("Manifest PWA", _fetch_from_manifest),
+    (_("PWA Manifest"), _fetch_from_manifest),
 )
 
 
 def search_icons(url: str) -> list[tuple[str, bytes]]:
-    """Busca candidatos a ícone em várias fontes da internet, em paralelo. Retorna (fonte, bytes) sem duplicados."""
+    """Look for icon candidates across several internet sources, in parallel. Returns (source, bytes), deduplicated."""
     domain = _domain_of(url)
     if not domain:
         return []
@@ -208,12 +210,12 @@ def save_icon_from_bytes(data: bytes, slug: str) -> Path:
 
 
 def save_preview(data: bytes, key: str) -> Path:
-    """Salva um candidato a ícone (ainda não confirmado) num PNG temporário para pré-visualização."""
+    """Save an icon candidate (not yet confirmed) to a temporary PNG for preview."""
     return _normalize_to_png(data, PREVIEWS_DIR / f"{key}.png")
 
 
 def save_icon_from_file(source: Path, slug: str) -> Path:
-    """Copia/normaliza um arquivo de imagem escolhido pelo usuário para ICONS_DIR/<slug>.<ext>."""
+    """Copy/normalize an image file chosen by the user to ICONS_DIR/<slug>.<ext>."""
     ICONS_DIR.mkdir(parents=True, exist_ok=True)
     if source.suffix.lower() == ".svg":
         dest = ICONS_DIR / f"{slug}.svg"

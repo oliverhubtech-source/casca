@@ -1,6 +1,6 @@
-"""CSS que colore a barra de título com a cor dominante do ícone do site — usado tanto
-pelo editor principal quanto pelos runtimes standalone (janela própria de um app e
-launcher de pacote), por isso fica num módulo só com dependências de stdlib."""
+"""CSS that colors the title bar with the site icon's dominant color — used both
+by the main editor and the standalone runtimes (an app's own window and the
+package launcher), which is why it lives in its own module with only stdlib deps."""
 
 
 def build_header_css(css_class: str, color: str, text_color: str) -> str:

@@ -1,0 +1,1031 @@
+# Chinese translations for Casca package.
+# Copyright (C) 2026 THE Casca'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Casca package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Casca 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/oliverhubtech-source/casca/issues\n"
+"POT-Creation-Date: 2026-07-09 21:14-0300\n"
+"PO-Revision-Date: 2026-07-09 16:07-0300\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: zh_Hans\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: casca/browsers.py:199
+msgid "Casca's own window"
+msgstr "Casca 自带窗口"
+
+#: casca/catalog_strings.py:16 casca/help_content.py:67 casca/presets.py:51
+msgid "Artificial Intelligence"
+msgstr "人工智能"
+
+#: casca/catalog_strings.py:17
+msgid "Cloud Computing"
+msgstr "云计算"
+
+#: casca/catalog_strings.py:18 casca/help_content.py:77 casca/presets.py:166
+msgid "Conversion & Sharing"
+msgstr "转换与分享"
+
+#: casca/catalog_strings.py:19
+msgid "Creativity"
+msgstr "创意"
+
+#: casca/catalog_strings.py:20
+msgid "Finance"
+msgstr "金融"
+
+#: casca/catalog_strings.py:21 casca/window.py:912
+msgid "Marketplace"
+msgstr "应用市场"
+
+#: casca/catalog_strings.py:22
+msgid "Messenger"
+msgstr "即时通讯"
+
+#: casca/catalog_strings.py:23
+msgid "Music Streaming"
+msgstr "音乐流媒体"
+
+#: casca/catalog_strings.py:24 casca/window.py:913
+msgid "News"
+msgstr "新闻"
+
+#: casca/catalog_strings.py:25
+msgid "PDF"
+msgstr "PDF"
+
+#: casca/catalog_strings.py:26
+msgid "Productivity"
+msgstr "生产力"
+
+#: casca/catalog_strings.py:27
+msgid "Search Engine"
+msgstr "搜索引擎"
+
+#: casca/catalog_strings.py:28
+msgid "Security"
+msgstr "安全"
+
+#: casca/catalog_strings.py:29
+msgid "Social Network"
+msgstr "社交网络"
+
+#: casca/catalog_strings.py:30
+msgid "Utility"
+msgstr "实用工具"
+
+#: casca/catalog_strings.py:31
+msgid "Video Streaming"
+msgstr "视频流媒体"
+
+#: casca/catalog_strings.py:33
+msgid "Argentina"
+msgstr "阿根廷"
+
+#: casca/catalog_strings.py:34
+msgid "Brazil"
+msgstr "巴西"
+
+#: casca/catalog_strings.py:35
+msgid "Chile"
+msgstr "智利"
+
+#: casca/catalog_strings.py:36
+msgid "Colombia"
+msgstr "哥伦比亚"
+
+#: casca/catalog_strings.py:37
+msgid "Europe"
+msgstr "欧洲"
+
+#: casca/catalog_strings.py:38
+msgid "France"
+msgstr "法国"
+
+#: casca/catalog_strings.py:39
+msgid "Germany"
+msgstr "德国"
+
+#: casca/catalog_strings.py:40
+msgid "International"
+msgstr "国际"
+
+#: casca/catalog_strings.py:41
+msgid "Mexico"
+msgstr "墨西哥"
+
+#: casca/catalog_strings.py:42
+msgid "Netherlands"
+msgstr "荷兰"
+
+#: casca/catalog_strings.py:43
+msgid "Paraguay"
+msgstr "巴拉圭"
+
+#: casca/catalog_strings.py:44
+msgid "Poland"
+msgstr "波兰"
+
+#: casca/catalog_strings.py:45
+msgid "Spain"
+msgstr "西班牙"
+
+#: casca/catalog_strings.py:46
+msgid "United Kingdom"
+msgstr "英国"
+
+#: casca/catalog_strings.py:47
+msgid "United States"
+msgstr "美国"
+
+#: casca/catalog_strings.py:48
+msgid "Uruguay"
+msgstr "乌拉圭"
+
+#: casca/catalog_strings.py:50
+msgid "Google Workspace"
+msgstr "Google Workspace"
+
+#: casca/catalog_strings.py:51
+msgid "Microsoft 365"
+msgstr "Microsoft 365"
+
+#: casca/catalog_strings.py:52
+msgid "Social Media"
+msgstr "社交媒体"
+
+#: casca/catalog_strings.py:53
+msgid "YouTube"
+msgstr "YouTube"
+
+#: casca/devices.py:79
+msgid "Small (800×600)"
+msgstr "小（800×600）"
+
+#: casca/devices.py:80
+msgid "Medium (1024×768)"
+msgstr "中（1024×768）"
+
+#: casca/devices.py:81
+msgid "Laptop (1280×800)"
+msgstr "笔记本电脑（1280×800）"
+
+#: casca/devices.py:82
+msgid "Laptop HD (1366×768)"
+msgstr "笔记本电脑高清（1366×768）"
+
+#: casca/devices.py:83
+msgid "Large (1600×900)"
+msgstr "大（1600×900）"
+
+#: casca/devices.py:84
+msgid "Full HD (1920×1080)"
+msgstr "全高清（1920×1080）"
+
+#: casca/entries.py:203 casca/entries.py:245
+#, python-format
+msgid "Browser not found: %(key)s"
+msgstr "未找到浏览器：%(key)s"
+
+#: casca/entries.py:249
+#, python-format
+msgid "App not found: %(slug)s"
+msgstr "未找到应用：%(slug)s"
+
+#: casca/entries.py:337
+msgid "remote file too large"
+msgstr "远程文件过大"
+
+#: casca/entries.py:341
+#, python-format
+msgid "could not download the file (%(error)s)"
+msgstr "无法下载文件（%(error)s）"
+
+#: casca/entries.py:350
+#, python-format
+msgid "could not read the file (%(error)s)"
+msgstr "无法读取文件（%(error)s）"
+
+#: casca/entries.py:354
+msgid "unexpected format: no 'apps' list found"
+msgstr "格式异常：未找到 “apps” 列表"
+
+#: casca/entries.py:388
+#, python-format
+msgid "item %(n)d"
+msgstr "第 %(n)d 项"
+
+#: casca/entries.py:390
+msgid "missing name or URL"
+msgstr "缺少名称或 URL"
+
+#: casca/entries.py:393 casca/entries.py:398
+msgid "unsupported URL scheme"
+msgstr "不支持的 URL 协议"
+
+#: casca/entries.py:404
+msgid "no browser available"
+msgstr "没有可用的浏览器"
+
+#: casca/entries.py:423
+msgid "could not get an icon"
+msgstr "无法获取图标"
+
+#: casca/entries.py:481
+msgid "No browser available to assemble the package."
+msgstr "没有可用于组装包的浏览器。"
+
+#: casca/entries.py:553
+msgid "Package of web apps created by Casca"
+msgstr "由 Casca 创建的网页应用包"
+
+#: casca/help_content.py:24
+msgid "User Guide"
+msgstr "用户指南"
+
+#: casca/help_content.py:28
+msgid "Casca — User Guide"
+msgstr "Casca — 用户指南"
+
+#: casca/help_content.py:29
+msgid "Casca icon"
+msgstr "Casca 图标"
+
+#: casca/help_content.py:31
+msgid "Websites, turned into apps. No fuss."
+msgstr "网站，变身应用。轻松无忧。"
+
+#: casca/help_content.py:33
+msgid ""
+"Casca turns any address into a GNOME app: icon in the menu, its own window, "
+"no leftover browser bar. This guide covers every option on the creation "
+"screen."
+msgstr "Casca 可将任意网址转变为 GNOME 应用：菜单中有图标、拥有独立窗口，且不会残留浏览器地址栏。本指南将介绍创建界面中的每一个选项。"
+
+#: casca/help_content.py:36
+msgid "First app"
+msgstr "第一个应用"
+
+#: casca/help_content.py:37
+msgid "Presets"
+msgstr "预设"
+
+#: casca/help_content.py:38 casca/help_content.py:80
+msgid "Icon"
+msgstr "图标"
+
+#: casca/help_content.py:39
+msgid "Shortcut"
+msgstr "快捷方式"
+
+#: casca/help_content.py:40 casca/window.py:235
+msgid "Browser"
+msgstr "浏览器"
+
+#: casca/help_content.py:41 casca/help_content.py:118
+msgid "Mobile mode"
+msgstr "移动模式"
+
+#: casca/help_content.py:42
+msgid "Resolution"
+msgstr "分辨率"
+
+#: casca/help_content.py:43
+msgid "Edit"
+msgstr "编辑"
+
+#: casca/help_content.py:44
+msgid "Creating your first app"
+msgstr "创建您的第一个应用"
+
+#: casca/help_content.py:45
+msgid "Two buttons on the home screen, two paths."
+msgstr "主界面上有两个按钮，对应两种方式。"
+
+#: casca/help_content.py:47
+msgid ""
+"<strong>Create from preset</strong> — pick an already-cataloged site (Gmail,"
+" WhatsApp, Netflix, ChatGPT…), with name, address and icon ready to go."
+msgstr ""
+"<strong>从预设创建</strong> — 从已收录的网站（Gmail、WhatsApp、Netflix、ChatGPT "
+"等）中选择，名称、网址和图标均已备好。"
+
+#: casca/help_content.py:51
+msgid ""
+"<strong>Create new web app</strong> — start from scratch: you type in the "
+"name and address."
+msgstr "<strong>创建新的网页应用</strong> — 从零开始：自行输入名称和网址。"
+
+#: casca/help_content.py:54
+msgid ""
+"Everything below the name and address is <strong>optional</strong>. Without "
+"touching anything, Casca figures it out on its own: fetches the icon, "
+"doesn't create a Desktop shortcut, opens in its own window at normal size."
+msgstr ""
+"名称和网址下方的所有内容都是<strong>可选的</strong>。即使不做任何调整，Casca "
+"也会自动处理：获取图标、不创建桌面快捷方式、以正常大小在其自带窗口中打开。"
+
+#: casca/help_content.py:58
+msgid "Preset sites"
+msgstr "预设网站"
+
+#: casca/help_content.py:60
+msgid ""
+"A search field at the top filters by site name (<code class=\"eyebrow "
+"text-[13px] bg-shell-mist dark:bg-[#2a2836] px-1.5 py-0.5 "
+"rounded\">gmail</code>) or by category (<code class=\"eyebrow text-[13px] "
+"bg-shell-mist dark:bg-[#2a2836] px-1.5 py-0.5 rounded\">microsoft</code>). "
+"Categories start collapsed — tap one to expand it."
+msgstr ""
+"顶部的搜索框可按网站名称（<code class=\"eyebrow text-[13px] bg-shell-mist "
+"dark:bg-[#2a2836] px-1.5 py-0.5 rounded\">gmail</code>）或按分类（<code "
+"class=\"eyebrow text-[13px] bg-shell-mist dark:bg-[#2a2836] px-1.5 py-0.5 "
+"rounded\">microsoft</code>）进行筛选。分类默认折叠 — 点按即可展开。"
+
+#: casca/help_content.py:65 casca/presets.py:23
+msgid "Google Products"
+msgstr "谷歌产品"
+
+#: casca/help_content.py:66 casca/presets.py:39
+msgid "Microsoft Products"
+msgstr "微软产品"
+
+#: casca/help_content.py:68 casca/presets.py:66
+msgid "Search Engines"
+msgstr "搜索引擎"
+
+#: casca/help_content.py:69 casca/presets.py:78
+msgid "Messengers"
+msgstr "即时通讯软件"
+
+#: casca/help_content.py:70 casca/presets.py:88
+msgid "Social Networks"
+msgstr "社交网络"
+
+#: casca/help_content.py:71 casca/presets.py:99
+msgid "Streaming"
+msgstr "流媒体"
+
+#: casca/help_content.py:72 casca/presets.py:111
+msgid "Music"
+msgstr "音乐"
+
+#: casca/help_content.py:73 casca/presets.py:123
+msgid "Productivity & Organization"
+msgstr "生产力与组织"
+
+#: casca/help_content.py:74 casca/presets.py:136
+msgid "PDF Tools"
+msgstr "PDF 工具"
+
+#: casca/help_content.py:75 casca/presets.py:145
+msgid "Calculations & Finance"
+msgstr "计算与财务"
+
+#: casca/help_content.py:76 casca/presets.py:157
+msgid "Generators & Utilities"
+msgstr "生成器与实用工具"
+
+#: casca/help_content.py:78 casca/presets.py:176
+msgid "Security & Diagnostics"
+msgstr "安全与诊断"
+
+#: casca/help_content.py:79 casca/presets.py:186
+msgid "Creativity & Content"
+msgstr "创意与内容"
+
+#: casca/help_content.py:81
+msgid "Check <strong>Customize icon and shortcut</strong> to choose manually."
+msgstr "勾选<strong>自定义图标和快捷方式</strong>即可手动选择。"
+
+#: casca/help_content.py:82 casca/window.py:349
+msgid "Search online"
+msgstr "在线搜索"
+
+#: casca/help_content.py:84
+msgid ""
+"Checks several sources — Google, DuckDuckGo, apple-touch-icon, PWA manifest "
+"— and shows the results in a grid."
+msgstr "会检查多个来源 — Google、DuckDuckGo、apple-touch-icon、PWA 清单 — 并以网格形式显示结果。"
+
+#: casca/help_content.py:87 casca/window.py:351
+msgid "From computer"
+msgstr "从电脑"
+
+#: casca/help_content.py:88
+msgid "Picks a PNG, JPG or SVG file already saved on your computer."
+msgstr "选择已保存在您电脑上的 PNG、JPG 或 SVG 文件。"
+
+#: casca/help_content.py:89 casca/window.py:353
+msgid "From gallery"
+msgstr "从图库"
+
+#: casca/help_content.py:90
+msgid "Over 160 brand icons already included, no internet needed."
+msgstr "内置超过 160 个品牌图标，无需联网。"
+
+#: casca/help_content.py:92
+msgid ""
+"Without checking anything, Casca fetches an icon automatically on save — or "
+"uses the icon that's already set, if the app came from a preset."
+msgstr "若不勾选任何选项，Casca 会在保存时自动获取图标 — 若该应用来自预设，则使用已设置好的图标。"
+
+#: casca/help_content.py:95
+msgid "Desktop Shortcut"
+msgstr "桌面快捷方式"
+
+#: casca/help_content.py:97
+msgid ""
+"Every app already shows up in the GNOME applications menu. To also get an "
+"icon on the Desktop, check <strong>Customize icon and shortcut</strong> and "
+"turn on <strong>Also create on the Desktop</strong>."
+msgstr ""
+"每个应用都会自动出现在 GNOME "
+"应用程序菜单中。若还想在桌面上显示图标，请勾选<strong>自定义图标和快捷方式</strong>并开启<strong>同时在桌面创建</strong>。"
+
+#: casca/help_content.py:101
+msgid "Custom browser"
+msgstr "自定义浏览器"
+
+#: casca/help_content.py:103
+msgid ""
+"By default, every app opens in <strong>Casca's own window</strong>: lighter,"
+" top bar automatically colored to match the icon, isolated session per app."
+msgstr ""
+"默认情况下，每个应用都会在<strong>Casca 自带窗口</strong>中打开：更轻量，顶部栏会自动配色以匹配图标，且每个应用都拥有独立的会话。"
+
+#: casca/help_content.py:107
+msgid ""
+"<strong>Heads up:</strong> sites with Google login (Gmail, Drive, Calendar, "
+"Meet…) tend to refuse login in the built-in window — a Google restriction "
+"against unrecognized browsers, with no workaround. Check <strong>Use a "
+"custom browser</strong> and pick Chrome, Helium, GNOME Web or another "
+"installed browser."
+msgstr ""
+"<strong>请注意：</strong>使用 Google 登录的网站（Gmail、Drive、日历、Meet 等）通常会拒绝在内置窗口中登录 — "
+"这是 Google 针对未识别浏览器的限制，无法绕过。请勾选<strong>使用自定义浏览器</strong>并选择 "
+"Chrome、Helium、GNOME Web 或其他已安装的浏览器。"
+
+#: casca/help_content.py:113
+msgid ""
+"With a Chromium-based browser (Chrome, Chromium, Brave, Edge, Vivaldi, "
+"Helium…) and more than one account configured in it, <strong>Browser "
+"account</strong> also shows up — choose which already-logged-in account "
+"opens the app, instead of a new profile with no login."
+msgstr ""
+"使用基于 Chromium 的浏览器（Chrome、Chromium、Brave、Edge、Vivaldi、Helium "
+"等）且其中配置了多个账号时，还会显示<strong>浏览器账号</strong>选项 — "
+"可选择使用哪个已登录的账号打开应用，而不是使用未登录的新配置文件。"
+
+#: casca/help_content.py:120
+msgid ""
+"Check <strong>Open in mobile mode</strong> and pick a device — Google Pixel,"
+" iPhone, Galaxy, iPad. The app identifies itself to the site as that device,"
+" unlocking the mobile layout (usually simpler and faster)."
+msgstr ""
+"勾选<strong>以移动模式打开</strong>并选择一个设备 — Google "
+"Pixel、iPhone、Galaxy、iPad。应用会向网站标识为该设备，从而启用移动版布局（通常更简洁、更快速）。"
+
+#: casca/help_content.py:124
+msgid "Window resolution"
+msgstr "窗口分辨率"
+
+#: casca/help_content.py:126
+msgid ""
+"Check <strong>Customize window resolution</strong> — three ways to set the "
+"size, works with or without mobile mode enabled."
+msgstr "勾选<strong>自定义窗口分辨率</strong> — 有三种设置大小的方式，无论是否启用移动模式均可使用。"
+
+#: casca/help_content.py:130
+msgid ""
+"<strong>By device</strong> — uses the screen size of the device chosen in "
+"mobile mode."
+msgstr "<strong>按设备</strong> — 使用移动模式中所选设备的屏幕尺寸。"
+
+#: casca/help_content.py:132
+msgid "<strong>Default size</strong> — common resolutions (laptop, Full HD…)."
+msgstr "<strong>默认大小</strong> — 常见分辨率（笔记本电脑、全高清等）。"
+
+#: casca/help_content.py:133
+msgid "<strong>Custom</strong> — you type in width and height in pixels."
+msgstr "<strong>自定义</strong> — 自行输入以像素为单位的宽度和高度。"
+
+#: casca/help_content.py:134
+msgid "Edit and delete"
+msgstr "编辑与删除"
+
+#: casca/help_content.py:136
+msgid ""
+"On the home screen, every app has a pencil to <strong>edit</strong> (changes"
+" any setting, including ones that were disabled at creation) and a trash "
+"icon to <strong>delete</strong> (removes the shortcut from the menu, the "
+"Desktop, and the saved icon)."
+msgstr ""
+"在主界面上，每个应用都配有一个铅笔图标用于<strong>编辑</strong>（可更改任何设置，包括创建时未启用的选项），以及一个垃圾桶图标用于<strong>删除</strong>（会从菜单、桌面中移除快捷方式，并删除已保存的图标）。"
+
+#: casca/help_content.py:141
+msgid "Casca — built to turn websites into GNOME apps."
+msgstr "Casca — 专为将网站转变为 GNOME 应用而生。"
+
+#: casca/icons.py:171
+msgid "Site icon (.ico)"
+msgstr "网站图标（.ico）"
+
+#: casca/icons.py:172
+msgid "Site icon (32px)"
+msgstr "网站图标（32px）"
+
+#: casca/icons.py:173
+msgid "Apple touch icon"
+msgstr "Apple Touch 图标"
+
+#: casca/icons.py:179
+msgid "PWA Manifest"
+msgstr "PWA 清单"
+
+#: casca/package_launcher.py:72 casca/package_launcher.py:113
+#: casca/window.py:911
+msgid "Package"
+msgstr "包"
+
+#: casca/store.py:80
+msgid "Independent"
+msgstr "独立"
+
+#: casca/store.py:81 casca/store.py:97
+msgid "Other"
+msgstr "其他"
+
+#: casca/store.py:92 casca/window.py:1015
+msgid "Independent apps"
+msgstr "独立应用"
+
+#: casca/store.py:92
+msgid "Global"
+msgstr "全球"
+
+#: casca/window.py:86
+msgid "Choose icon"
+msgstr "选择图标"
+
+#: casca/window.py:121
+msgid "Icons found"
+msgstr "找到的图标"
+
+#: casca/window.py:144
+msgid "Searching for icons online…"
+msgstr "正在联网搜索图标…"
+
+#: casca/window.py:155
+msgid "No icon found"
+msgstr "未找到图标"
+
+#: casca/window.py:156
+msgid "Try choosing an image from your computer or the gallery."
+msgstr "请尝试从您的电脑或图库中选择一张图片。"
+
+#: casca/window.py:208 casca/window.py:385
+msgid "Edit app"
+msgstr "编辑应用"
+
+#: casca/window.py:208
+msgid "New app"
+msgstr "新建应用"
+
+#: casca/window.py:228
+msgid "Site"
+msgstr "网站"
+
+#: casca/window.py:229
+msgid "App name"
+msgstr "应用名称"
+
+#: casca/window.py:230
+msgid "Address (URL)"
+msgstr "地址（URL）"
+
+#: casca/window.py:238
+msgid "Use a custom browser"
+msgstr "使用自定义浏览器"
+
+#: casca/window.py:239
+msgid "If disabled, opens in Casca's own window."
+msgstr "如果禁用，将在 Casca 自带窗口中打开。"
+
+#: casca/window.py:245
+msgid "Open with"
+msgstr "打开方式"
+
+#: casca/window.py:252
+msgid "No compatible browser was found on the system."
+msgstr "系统中未找到兼容的浏览器。"
+
+#: casca/window.py:259
+msgid ""
+"Not available in the Flatpak version — use the local install for external "
+"browsers."
+msgstr "Flatpak 版本中不可用 — 如需使用外部浏览器，请使用本地安装版本。"
+
+#: casca/window.py:264
+msgid "Browser account"
+msgstr "浏览器账号"
+
+#: casca/window.py:271
+msgid "Open in mobile mode"
+msgstr "以移动模式打开"
+
+#: casca/window.py:272 casca/window.py:478
+msgid "Uses the identification and window of a phone or tablet."
+msgstr "使用手机或平板电脑的标识和窗口。"
+
+#: casca/window.py:278 casca/window.py:306
+msgid "Device"
+msgstr "设备"
+
+#: casca/window.py:292
+msgid "Customize window resolution"
+msgstr "自定义窗口分辨率"
+
+#: casca/window.py:293
+msgid "If disabled, uses the browser's default size."
+msgstr "如果禁用，将使用浏览器的默认大小。"
+
+#: casca/window.py:298
+msgid "Window size"
+msgstr "窗口大小"
+
+#: casca/window.py:300
+msgid "By device"
+msgstr "按设备"
+
+#: casca/window.py:300
+msgid "Default size"
+msgstr "默认大小"
+
+#: casca/window.py:300
+msgid "Custom"
+msgstr "自定义"
+
+#: casca/window.py:310
+msgid "Size"
+msgstr "大小"
+
+#: casca/window.py:318
+msgid "Width"
+msgstr "宽度"
+
+#: casca/window.py:321
+msgid "Height"
+msgstr "高度"
+
+#: casca/window.py:332
+msgid "Customize icon and shortcut"
+msgstr "自定义图标和快捷方式"
+
+#: casca/window.py:334
+msgid ""
+"If disabled, the icon is fetched automatically and no Desktop shortcut is "
+"created."
+msgstr "如果禁用，图标将自动获取，且不会创建桌面快捷方式。"
+
+#: casca/window.py:362
+msgid "Also create on the Desktop"
+msgstr "同时在桌面创建"
+
+#: casca/window.py:369
+msgid "Create app"
+msgstr "创建应用"
+
+#: casca/window.py:386
+msgid "Save changes"
+msgstr "保存更改"
+
+#: casca/window.py:473
+#, python-format
+msgid "%(browser)s doesn't support mobile mode."
+msgstr "%(browser)s 不支持移动模式。"
+
+#: casca/window.py:475 casca/window.py:603
+msgid "Choose a browser."
+msgstr "选择一个浏览器。"
+
+#: casca/window.py:485
+msgid "Isolated profile (new, no login)"
+msgstr "隔离配置文件（全新，未登录）"
+
+#: casca/window.py:498 casca/window.py:513
+msgid "Enter the URL before searching for the icon."
+msgstr "请先输入 URL 再搜索图标。"
+
+#: casca/window.py:502
+msgid "Could not fetch the icon automatically."
+msgstr "无法自动获取图标。"
+
+#: casca/window.py:524
+msgid "Choose icon image"
+msgstr "选择图标图片"
+
+#: casca/window.py:526
+msgid "Images"
+msgstr "图片"
+
+#: casca/window.py:589
+msgid "Fill in the site's name and URL."
+msgstr "请填写网站名称和 URL。"
+
+#: casca/window.py:592 casca/window.py:597
+msgid "Use an http:// or https:// address."
+msgstr "请使用 http:// 或 https:// 地址。"
+
+#: casca/window.py:613
+msgid "Casca's own window isn't available. Enable 'Use a custom browser'."
+msgstr "Casca 自带窗口不可用。请启用“使用自定义浏览器”。"
+
+#: casca/window.py:652
+msgid "Could not set an icon. Choose an image manually."
+msgstr "无法设置图标。请手动选择一张图片。"
+
+#: casca/window.py:667
+#, python-format
+msgid "Error saving: %(error)s"
+msgstr "保存出错：%(error)s"
+
+#: casca/window.py:678
+msgid "Preset site"
+msgstr "预设网站"
+
+#: casca/window.py:685
+msgid "Search by name or category…"
+msgstr "按名称或分类搜索…"
+
+#: casca/window.py:697 casca/window.py:1012
+#, python-format
+msgid "%(n)d site"
+msgid_plural "%(n)d sites"
+msgstr[0] "%(n)d 个网站"
+
+#: casca/window.py:881 casca/window.py:1254
+msgid "Store"
+msgstr "商店"
+
+#: casca/window.py:909
+msgid "Company"
+msgstr "公司"
+
+#: casca/window.py:910
+msgid "Type"
+msgstr "类型"
+
+#: casca/window.py:926
+msgid "Search by name…"
+msgstr "按名称搜索…"
+
+#: casca/window.py:962
+#, python-format
+msgid "Could not set an icon for %(name)s."
+msgstr "无法为 %(name)s 设置图标。"
+
+#: casca/window.py:968
+#, python-format
+msgid "Error installing package: %(error)s"
+msgstr "安装包出错：%(error)s"
+
+#: casca/window.py:974
+#, python-format
+msgid "Package “%(name)s” installed with %(n)d app."
+msgid_plural "Package “%(name)s” installed with %(n)d apps."
+msgstr[0] "包“%(name)s”已安装，包含 %(n)d 个应用。"
+
+#: casca/window.py:1000
+msgid "Nothing here yet"
+msgstr "这里还没有内容"
+
+#: casca/window.py:1001
+msgid "Check the local catalog or your internet connection."
+msgstr "请检查本地目录或您的网络连接。"
+
+#: casca/window.py:1017
+msgid "Install full package"
+msgstr "安装完整包"
+
+#: casca/window.py:1142
+msgid "Casca Manual"
+msgstr "Casca 手册"
+
+#: casca/window.py:1159
+msgid "Could not open the built-in manual"
+msgstr "无法打开内置手册"
+
+#: casca/window.py:1171
+msgid "Choose what to import"
+msgstr "选择要导入的内容"
+
+#: casca/window.py:1180
+#, python-format
+msgid "%(n)d site found"
+msgid_plural "%(n)d sites found"
+msgstr[0] "找到 %(n)d 个网站"
+
+#: casca/window.py:1183
+msgid "Uncheck anything you don't want to import."
+msgstr "取消勾选您不想导入的项目。"
+
+#: casca/window.py:1186
+msgid "(no name)"
+msgstr "（无名称）"
+
+#: casca/window.py:1194
+msgid "Import selected"
+msgstr "导入所选项"
+
+#: casca/window.py:1227
+msgid "User guide"
+msgstr "用户指南"
+
+#: casca/window.py:1228
+msgid "About Casca"
+msgstr "关于 Casca"
+
+#: casca/window.py:1229
+msgid "Menu"
+msgstr "菜单"
+
+#: casca/window.py:1259
+msgid "Create a new web app"
+msgstr "创建新的网页应用"
+
+#: casca/window.py:1260
+msgid "Create"
+msgstr "创建"
+
+#: casca/window.py:1269 casca/window.py:1365
+msgid "Import apps"
+msgstr "导入应用"
+
+#: casca/window.py:1273 casca/window.py:1315
+msgid "Export apps"
+msgstr "导出应用"
+
+#: casca/window.py:1302
+msgid "Turns any website into a GNOME app."
+msgstr "将任意网站转变为 GNOME 应用。"
+
+#: casca/window.py:1313
+msgid "No app created yet to export."
+msgstr "尚未创建可导出的应用。"
+
+#: casca/window.py:1337
+#, python-format
+msgid "Error exporting: %(error)s"
+msgstr "导出出错：%(error)s"
+
+#: casca/window.py:1340
+#, python-format
+msgid "%(count)d app exported to %(name)s."
+msgid_plural "%(count)d apps exported to %(name)s."
+msgstr[0] "已将 %(count)d 个应用导出到 %(name)s。"
+
+#: casca/window.py:1346
+msgid "Import from where?"
+msgstr "从何处导入？"
+
+#: casca/window.py:1347
+msgid "Choose a local .json file or a URL (e.g. a GitHub \"raw\" link)."
+msgstr "选择本地 .json 文件或输入 URL（例如 GitHub 的“raw”链接）。"
+
+#: casca/window.py:1349 casca/window.py:1395 casca/window.py:1528
+#: casca/window.py:1551
+msgid "Cancel"
+msgstr "取消"
+
+#: casca/window.py:1350
+msgid "From a URL"
+msgstr "来自 URL"
+
+#: casca/window.py:1351
+msgid "Local file"
+msgstr "本地文件"
+
+#: casca/window.py:1384
+#, python-format
+msgid "Error reading the file: %(error)s"
+msgstr "读取文件出错：%(error)s"
+
+#: casca/window.py:1390
+msgid "Import from a URL"
+msgstr "从 URL 导入"
+
+#: casca/window.py:1391
+msgid "Paste the JSON file's \"raw\" link (e.g. from a GitHub repository)."
+msgstr "粘贴 JSON 文件的“raw”链接（例如来自 GitHub 仓库）。"
+
+#: casca/window.py:1396
+msgid "Fetch"
+msgstr "获取"
+
+#: casca/window.py:1408
+msgid "Enter a URL."
+msgstr "请输入 URL。"
+
+#: casca/window.py:1410
+msgid "Fetching file…"
+msgstr "正在获取文件…"
+
+#: casca/window.py:1417
+#, python-format
+msgid "Error downloading: %(error)s"
+msgstr "下载出错：%(error)s"
+
+#: casca/window.py:1425
+#, python-format
+msgid "Error importing: %(error)s"
+msgstr "导入出错：%(error)s"
+
+#: casca/window.py:1428
+msgid "No app found in the file."
+msgstr "文件中未找到应用。"
+
+#: casca/window.py:1436
+msgid "Nothing selected to import."
+msgstr "未选择要导入的内容。"
+
+#: casca/window.py:1444
+#, python-format
+msgid "%(n)d app imported."
+msgid_plural "%(n)d apps imported."
+msgstr[0] "已导入 %(n)d 个应用。"
+
+#: casca/window.py:1450
+#, python-format
+msgid "• %(name)s: %(reason)s"
+msgstr "• %(name)s：%(reason)s"
+
+#: casca/window.py:1454
+#, python-format
+msgid "%(created)d imported, %(failed)d with errors"
+msgstr "已导入 %(created)d 个，%(failed)d 个出错"
+
+#: casca/window.py:1456
+#, python-format
+msgid ""
+"Review and adjust manually via the \"Create\" button:\n"
+"\n"
+"%(lines)s"
+msgstr ""
+"请通过“创建”按钮手动查看并调整：\n"
+"\n"
+"%(lines)s"
+
+#: casca/window.py:1458
+msgid "Got it"
+msgstr "知道了"
+
+#: casca/window.py:1472
+msgid "No web apps yet"
+msgstr "尚无网页应用"
+
+#: casca/window.py:1473
+msgid ""
+"Tap “Create” to make your first app, or open the Store for ready-made sites."
+msgstr "点按“创建”来制作您的第一个应用，或打开商店选择现成的网站。"
+
+#: casca/window.py:1482
+msgid "My web apps"
+msgstr "我的网页应用"
+
+#: casca/window.py:1504
+msgid "Installed packages"
+msgstr "已安装的包"
+
+#: casca/window.py:1525
+#, python-format
+msgid "Delete “%(name)s”?"
+msgstr "删除“%(name)s”？"
+
+#: casca/window.py:1526
+msgid ""
+"The shortcut will be removed from the applications menu and the desktop, if "
+"it exists."
+msgstr "该快捷方式将从应用程序菜单和桌面（如果存在）中移除。"
+
+#: casca/window.py:1529 casca/window.py:1552
+msgid "Delete"
+msgstr "删除"
+
+#: casca/window.py:1543
+#, python-format
+msgid "Delete package “%(name)s”?"
+msgstr "删除包“%(name)s”？"
+
+#: casca/window.py:1545
+#, python-format
+msgid "Removes the shortcut and the %(n)d app inside it (%(names)s)."
+msgid_plural "Removes the shortcut and the %(n)d apps inside it (%(names)s)."
+msgstr[0] "将移除该快捷方式及其中的 %(n)d 个应用（%(names)s）。"
