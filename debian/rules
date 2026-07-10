@@ -8,6 +8,8 @@
 # snap/snapcraft.yaml): casca/browsers.py and casca/entries.py locate
 # run_webview.py/run_package.py as siblings of the installed "casca" package
 # directory, so that layout has to be preserved verbatim under /usr/share/casca.
+override_dh_auto_configure:
+
 override_dh_auto_build:
 
 override_dh_auto_test:
