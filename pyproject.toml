@@ -1,6 +1,6 @@
 [project]
 name = "casca"
-version = "1.1.0"
+version = "1.2.0"
 description = "Turns any website into a native GNOME app"
 readme = "README.md"
 license = "MIT"

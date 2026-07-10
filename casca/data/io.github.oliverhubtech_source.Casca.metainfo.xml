@@ -97,6 +97,14 @@
   <url type="bugtracker">https://github.com/oliverhubtech-source/casca/issues</url>
 
   <releases>
+    <release version="1.2.0" date="2026-07-10">
+      <description>
+        <p>Casca now checks for new releases in the background (once a day at most) and lets you know with a system notification — no action needed for Flatpak/Snap installs, which already update themselves.</p>
+        <p>The About dialog now shows the license, a link to the source code, whether you're on a release/beta/alpha build, and a proper "What's New" page with each version's changelog.</p>
+        <p xml:lang="pt-BR">O Casca agora verifica por novas versões em segundo plano (no máximo uma vez por dia) e avisa com uma notificação do sistema — sem necessidade de ação nas instalações via Flatpak/Snap, que já se atualizam sozinhas.</p>
+        <p xml:lang="pt-BR">A janela "Sobre" agora mostra a licença, um link pro código-fonte, se você está numa versão release/beta/alfa, e uma página de "novidades" de verdade com as mudanças de cada versão.</p>
+      </description>
+    </release>
     <release version="1.1.0" date="2026-07-09">
       <description>
         <p>Casca now speaks 20 languages, picked automatically from the system locale: English, Portuguese (Brazil), Spanish, French, Italian, German, Russian, Ukrainian, Polish, Dutch, Turkish, Simplified Chinese, Japanese, Korean, Vietnamese, Indonesian, Hindi, Arabic, Bengali and Thai.</p>
