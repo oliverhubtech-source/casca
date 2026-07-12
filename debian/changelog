@@ -1,3 +1,15 @@
+casca (1.3.0) unstable; urgency=medium
+
+  * Casca Store rebuilt in the GNOME Software style: featured apps carousel,
+    colorful category tiles, Editor's Choice, and a detail page for each app
+    with usage tags, the Bronze/Silver/Gold Casca seal, estimated disk
+    savings, possible PC access, security info and company pages.
+  * Region selector next to the search: detects the country automatically and
+    filters marketplaces/news by region (or Global to see everything).
+  * All new Store strings translated into the 20 supported languages.
+
+ -- OliverHub <282591028+oliverhubtech-source@users.noreply.github.com>  Sat, 11 Jul 2026 00:00:00 -0300
+
 casca (1.2.0) unstable; urgency=medium
 
   * Background check for new releases (throttled, once a day at most), with

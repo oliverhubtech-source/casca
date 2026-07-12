@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Casca 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/oliverhubtech-source/casca/issues\n"
-"POT-Creation-Date: 2026-07-10 16:23-0300\n"
+"POT-Creation-Date: 2026-07-11 22:09-0300\n"
 "PO-Revision-Date: 2026-07-09 16:07-0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,6 +18,7 @@ msgid "Casca's own window"
 msgstr "Casca 자체 창"
 
 #: casca/catalog_strings.py:16 casca/help_content.py:76 casca/presets.py:51
+#: casca/store.py:166 casca/store.py:184
 msgid "Artificial Intelligence"
 msgstr "인공지능"
 
@@ -33,11 +34,11 @@ msgstr "변환 및 공유"
 msgid "Creativity"
 msgstr "창의성"
 
-#: casca/catalog_strings.py:20
+#: casca/catalog_strings.py:20 casca/store.py:168 casca/store.py:185
 msgid "Finance"
 msgstr "금융"
 
-#: casca/catalog_strings.py:21 casca/window.py:935
+#: casca/catalog_strings.py:21
 msgid "Marketplace"
 msgstr "마켓플레이스"
 
@@ -45,11 +46,11 @@ msgstr "마켓플레이스"
 msgid "Messenger"
 msgstr "메신저"
 
-#: casca/catalog_strings.py:23
+#: casca/catalog_strings.py:23 casca/store.py:165 casca/store.py:186
 msgid "Music Streaming"
 msgstr "음악 스트리밍"
 
-#: casca/catalog_strings.py:24 casca/window.py:936
+#: casca/catalog_strings.py:24 casca/store.py:171 casca/store.py:183
 msgid "News"
 msgstr "뉴스"
 
@@ -65,7 +66,8 @@ msgstr "생산성"
 msgid "Search Engine"
 msgstr "검색 엔진"
 
-#: casca/catalog_strings.py:28
+#: casca/catalog_strings.py:28 casca/store.py:169 casca/store.py:182
+#: casca/window.py:1922
 msgid "Security"
 msgstr "보안"
 
@@ -77,7 +79,7 @@ msgstr "소셜 네트워크"
 msgid "Utility"
 msgstr "유틸리티"
 
-#: casca/catalog_strings.py:31
+#: casca/catalog_strings.py:31 casca/store.py:164 casca/store.py:193
 msgid "Video Streaming"
 msgstr "동영상 스트리밍"
 
@@ -628,25 +630,174 @@ msgid "PWA Manifest"
 msgstr "PWA 매니페스트"
 
 #: casca/package_launcher.py:73 casca/package_launcher.py:119
-#: casca/window.py:934
 msgid "Package"
 msgstr "패키지"
 
-#: casca/store.py:80
+#: casca/store.py:82 casca/store.py:365
 msgid "Independent"
 msgstr "독립형"
 
-#: casca/store.py:81 casca/store.py:97
+#: casca/store.py:83 casca/store.py:100
 msgid "Other"
 msgstr "기타"
 
-#: casca/store.py:92 casca/window.py:1038
+#: casca/store.py:95 casca/window.py:1303 casca/window.py:1544
 msgid "Independent apps"
 msgstr "독립형 앱"
 
-#: casca/store.py:92
+#: casca/store.py:95 casca/store.py:108
 msgid "Global"
 msgstr "글로벌"
+
+#: casca/store.py:158 casca/store.py:180 casca/store.py:187
+msgid "Communication"
+msgstr "커뮤니케이션"
+
+#: casca/store.py:159 casca/store.py:180 casca/store.py:187
+msgid "Social"
+msgstr "소셜"
+
+#: casca/store.py:160 casca/store.py:194
+msgid "Business"
+msgstr "비즈니스"
+
+#: casca/store.py:161 casca/updater.py:90
+msgid "Development"
+msgstr "개발판"
+
+#: casca/store.py:162 casca/store.py:181 casca/store.py:189 casca/store.py:194
+msgid "Office"
+msgstr "오피스"
+
+#: casca/store.py:163 casca/store.py:186 casca/store.py:193
+msgid "Entertainment"
+msgstr "엔터테인먼트"
+
+#: casca/store.py:167 casca/store.py:192
+msgid "Design"
+msgstr "디자인"
+
+#: casca/store.py:170 casca/store.py:181 casca/store.py:182 casca/store.py:185
+#: casca/store.py:188 casca/store.py:191 casca/store.py:192 casca/store.py:195
+msgid "Utilities"
+msgstr "유틸리티"
+
+#: casca/store.py:172 casca/store.py:190
+msgid "Shopping"
+msgstr "쇼핑"
+
+#: casca/store.py:173 casca/store.py:189
+msgid "Cloud"
+msgstr "클라우드"
+
+#: casca/store.py:174 casca/store.py:195
+msgid "Search"
+msgstr "검색"
+
+#: casca/store.py:175
+msgid "Education"
+msgstr "교육"
+
+#: casca/store.py:222
+msgid "Messaging app for real-time conversations with people or groups."
+msgstr "사람이나 그룹과 실시간으로 대화하는 메시지 앱입니다."
+
+#: casca/store.py:226
+msgid "Tool to create, edit, convert or sign PDF files right from the browser."
+msgstr "브라우저에서 바로 PDF를 만들고 편집하고 변환하고 서명하는 도구입니다."
+
+#: casca/store.py:230
+msgid "Digital security tool: checks links, data breaches or account safety."
+msgstr "디지털 보안 도구: 링크, 데이터 유출, 계정 안전을 확인합니다."
+
+#: casca/store.py:234
+msgid "News portal with up-to-date journalistic content."
+msgstr "최신 저널리즘 콘텐츠를 제공하는 뉴스 포털입니다."
+
+#: casca/store.py:238
+msgid "AI assistant to chat, or generate text, images or code."
+msgstr "대화하거나 텍스트·이미지·코드를 생성하는 AI 어시스턴트입니다."
+
+#: casca/store.py:242
+msgid "Financial tool: calculator, value correction or money management."
+msgstr "금융 도구: 계산기, 금액 보정, 돈 관리 등을 제공합니다."
+
+#: casca/store.py:246
+msgid "Music and podcast streaming service."
+msgstr "음악과 팟캐스트 스트리밍 서비스입니다."
+
+#: casca/store.py:250
+msgid "Social network to post, follow people and interact with content."
+msgstr "게시하고 사람을 팔로우하며 콘텐츠와 소통하는 소셜 네트워크입니다."
+
+#: casca/store.py:254
+msgid "Everyday utility for a specific task, right in the browser."
+msgstr "특정 작업을 위한 일상 유틸리티로, 브라우저에서 바로 사용합니다."
+
+#: casca/store.py:258
+msgid "Cloud storage and services to keep and reach files from anywhere."
+msgstr "어디서든 파일을 보관하고 접근하는 클라우드 저장소와 서비스입니다."
+
+#: casca/store.py:262
+msgid "Online marketplace to buy and sell products."
+msgstr "상품을 사고파는 온라인 마켓플레이스입니다."
+
+#: casca/store.py:266
+msgid "File conversion tool or quick content sharing."
+msgstr "파일 변환 또는 빠른 콘텐츠 공유 도구입니다."
+
+#: casca/store.py:270
+msgid "Creative tool for images, text or ideas."
+msgstr "이미지, 텍스트, 아이디어를 위한 창작 도구입니다."
+
+#: casca/store.py:274
+msgid "Video, movie and TV show streaming service."
+msgstr "동영상, 영화, TV 프로그램 스트리밍 서비스입니다."
+
+#: casca/store.py:278
+msgid "Productivity tool to organize tasks, documents or meetings."
+msgstr "작업, 문서, 회의를 정리하는 생산성 도구입니다."
+
+#: casca/store.py:282
+msgid "Search engine to find information on the internet."
+msgstr "인터넷에서 정보를 찾는 검색 엔진입니다."
+
+#: casca/store.py:288
+msgid "Site added to Casca as a web app."
+msgstr "웹 앱으로 Casca에 추가된 사이트입니다."
+
+#: casca/store.py:300
+msgid "Camera"
+msgstr "카메라"
+
+#: casca/store.py:301
+msgid "Microphone"
+msgstr "마이크"
+
+#: casca/store.py:302
+msgid "Notifications"
+msgstr "알림"
+
+#: casca/store.py:303
+msgid "Files"
+msgstr "파일"
+
+#: casca/store.py:304
+msgid "Location"
+msgstr "위치"
+
+#: casca/store.py:377 casca/window.py:1089 casca/window.py:1110
+#: casca/window.py:1639
+msgid "Gold"
+msgstr "골드"
+
+#: casca/store.py:377 casca/window.py:1641
+msgid "Silver"
+msgstr "실버"
+
+#: casca/store.py:377
+msgid "Bronze"
+msgstr "브론즈"
 
 #: casca/updater.py:90 casca/updater.py:91
 msgid "Release"
@@ -659,10 +810,6 @@ msgstr "베타"
 #: casca/updater.py:90
 msgid "Alpha"
 msgstr "알파"
-
-#: casca/updater.py:90
-msgid "Development"
-msgstr "개발판"
 
 #: casca/updater.py:106
 msgid "Casca"
@@ -904,119 +1051,275 @@ msgstr "사전 설정 사이트"
 msgid "Search by name or category…"
 msgstr "이름이나 카테고리로 검색…"
 
-#: casca/window.py:720 casca/window.py:1035
+#: casca/window.py:720 casca/window.py:1290 casca/window.py:1325
+#: casca/window.py:1541
 #, python-format
 msgid "%(n)d site"
 msgid_plural "%(n)d sites"
 msgstr[0] "사이트 %(n)d개"
 
-#: casca/window.py:904 casca/window.py:1287
-msgid "Store"
-msgstr "스토어"
+#: casca/window.py:1131 casca/window.py:1208
+msgid "Casca Store"
+msgstr "Casca 스토어"
 
-#: casca/window.py:932
-msgid "Company"
-msgstr "회사"
-
-#: casca/window.py:933
-msgid "Type"
-msgstr "종류"
-
-#: casca/window.py:949
-msgid "Search by name…"
-msgstr "이름으로 검색…"
-
-#: casca/window.py:985
+#: casca/window.py:1183
 #, python-format
 msgid "Could not set an icon for %(name)s."
 msgstr "%(name)s의 아이콘을 설정할 수 없습니다."
 
-#: casca/window.py:991
+#: casca/window.py:1189
 #, python-format
 msgid "Error installing package: %(error)s"
 msgstr "패키지 설치 오류: %(error)s"
 
-#: casca/window.py:997
+#: casca/window.py:1195
 #, python-format
 msgid "Package “%(name)s” installed with %(n)d app."
 msgid_plural "Package “%(name)s” installed with %(n)d apps."
 msgstr[0] "패키지 “%(name)s”을(를) 앱 %(n)d개와 함께 설치했습니다."
 
-#: casca/window.py:1023
-msgid "Nothing here yet"
-msgstr "아직 아무것도 없습니다"
+#: casca/window.py:1221
+msgid "Search apps and sites…"
+msgstr "앱과 사이트 검색…"
 
-#: casca/window.py:1024
-msgid "Check the local catalog or your internet connection."
-msgstr "로컬 카탈로그나 인터넷 연결을 확인하세요."
+#: casca/window.py:1243
+msgid "Region"
+msgstr "지역"
 
-#: casca/window.py:1040
+#: casca/window.py:1307
+#, python-format
+msgid "%(n)d package"
+msgid_plural "%(n)d packages"
+msgstr[0] "패키지 %(n)d개"
+
+#: casca/window.py:1313 casca/window.py:1316
+msgid "Packages"
+msgstr "패키지"
+
+#: casca/window.py:1339
+msgid "Categories"
+msgstr "카테고리"
+
+#: casca/window.py:1344
+msgid "Editor's Choice"
+msgstr "에디터 추천"
+
+#: casca/window.py:1465
+msgid "No results"
+msgstr "결과 없음"
+
+#: casca/window.py:1508
+msgid "Search by name…"
+msgstr "이름으로 검색…"
+
+#: casca/window.py:1545
 msgid "Install full package"
 msgstr "전체 패키지 설치"
 
-#: casca/window.py:1165
+#: casca/window.py:1678
+msgid "Verified"
+msgstr "인증됨"
+
+#: casca/window.py:1688
+msgid "Add to Casca"
+msgstr "Casca에 추가"
+
+#: casca/window.py:1689
+msgid "Add"
+msgstr "추가"
+
+#: casca/window.py:1707
+#, python-format
+msgid "Casca Seal: %(tier)s"
+msgstr "Casca 실: %(tier)s"
+
+#: casca/window.py:1729
+#, python-format
+msgid ""
+"%(name)s, by %(company)s, opens straight from %(domain)s in its own window — "
+"no installation and no downloads. Casca creates the menu shortcut and keeps "
+"the site's data in a profile that's separate from your browser."
+msgstr "%(company)s의 %(name)s은(는) %(domain)s에서 전용 창으로 바로 열립니다. 설치도 다운로드도 없습니다. Casca가 메뉴 바로가기를 만들고 사이트 데이터를 브라우저와 분리된 프로필에 보관합니다."
+
+#: casca/window.py:1794
+msgid "Estimated disk savings"
+msgstr "예상 디스크 절약"
+
+#: casca/window.py:1797
+msgid "Isolated"
+msgstr "격리됨"
+
+#: casca/window.py:1797
+msgid "HTTPS and its own profile"
+msgstr "HTTPS와 전용 프로필"
+
+#: casca/window.py:1808
+#, python-format
+msgid "%(n)d possible access"
+msgid_plural "%(n)d possible accesses"
+msgstr[0] "가능한 접근 %(n)d개"
+
+#: casca/window.py:1816
+msgid "No special access"
+msgstr "특별한 접근 없음"
+
+#: casca/window.py:1816
+msgid "Doesn't typically ask for any"
+msgstr "보통 아무것도 요청하지 않습니다"
+
+#: casca/window.py:1824
+#, python-format
+msgid "%(tier)s Seal"
+msgstr "%(tier)s 실"
+
+#: casca/window.py:1825
+msgid "Click for details"
+msgstr "자세히 보려면 클릭"
+
+#: casca/window.py:1849
+msgid "Casca-estimated quality seal"
+msgstr "Casca가 추정한 품질 실"
+
+#: casca/window.py:1854
+msgid "Updates"
+msgstr "업데이트"
+
+#: casca/window.py:1855
+msgid "Usability"
+msgstr "사용성"
+
+#: casca/window.py:1856
+msgid "Speed"
+msgstr "속도"
+
+#: casca/window.py:1857
+msgid "Community"
+msgstr "커뮤니티"
+
+#: casca/window.py:1867
+msgid ""
+"Estimate calculated by Casca from the company's recognition and the app's "
+"category — not an official rating from the site."
+msgstr "회사의 인지도와 앱 카테고리를 바탕으로 Casca가 계산한 추정치이며, 사이트의 공식 평가가 아닙니다."
+
+#: casca/window.py:1891
+msgid "Company"
+msgstr "회사"
+
+#: casca/window.py:1894
+msgid "See all apps from this company"
+msgstr "이 회사의 모든 앱 보기"
+
+#: casca/window.py:1905
+msgid "Possible access to your computer"
+msgstr "컴퓨터에 대한 가능한 접근"
+
+#: casca/window.py:1906
+msgid "Typical pattern for this category — not a scan of this specific site."
+msgstr "이 카테고리의 일반적인 패턴이며, 이 사이트를 검사한 결과가 아닙니다."
+
+#: casca/window.py:1916
+msgid "Doesn't typically request special access"
+msgstr "보통 특별한 접근을 요청하지 않습니다"
+
+#: casca/window.py:1926
+msgid "HTTPS connection"
+msgstr "HTTPS 연결"
+
+#: casca/window.py:1927
+msgid "Casca only opens sites over an encrypted connection."
+msgstr "Casca는 암호화된 연결로만 사이트를 엽니다."
+
+#: casca/window.py:1931
+msgid "Isolated browser profile"
+msgstr "격리된 브라우저 프로필"
+
+#: casca/window.py:1933
+msgid ""
+"Each app you create gets its own profile, separate from your main browser "
+"and from your other apps."
+msgstr "만드는 각 앱은 기본 브라우저 및 다른 앱과 분리된 전용 프로필을 받습니다."
+
+#: casca/window.py:1939
+msgid "No native executable installed"
+msgstr "네이티브 실행 파일이 설치되지 않음"
+
+#: casca/window.py:1940
+msgid "Only a shortcut is created — nothing runs outside the browser engine."
+msgstr "바로가기만 만들어지며, 브라우저 엔진 밖에서는 아무것도 실행되지 않습니다."
+
+#: casca/window.py:1957
+#, python-format
+msgid "More from %(company)s"
+msgstr "%(company)s의 다른 앱"
+
+#: casca/window.py:1984
 msgid "Casca Manual"
 msgstr "Casca 설명서"
 
-#: casca/window.py:1185
+#: casca/window.py:2004
 msgid "Could not open the built-in manual"
 msgstr "내장 설명서를 열 수 없습니다"
 
-#: casca/window.py:1204
+#: casca/window.py:2023
 msgid "Choose what to import"
 msgstr "가져올 항목 선택"
 
-#: casca/window.py:1213
+#: casca/window.py:2032
 #, python-format
 msgid "%(n)d site found"
 msgid_plural "%(n)d sites found"
 msgstr[0] "사이트 %(n)d개 찾음"
 
-#: casca/window.py:1216
+#: casca/window.py:2035
 msgid "Uncheck anything you don't want to import."
 msgstr "가져오지 않을 항목의 선택을 해제하세요."
 
-#: casca/window.py:1219
+#: casca/window.py:2038
 msgid "(no name)"
 msgstr "(이름 없음)"
 
-#: casca/window.py:1227
+#: casca/window.py:2046
 msgid "Import selected"
 msgstr "선택 항목 가져오기"
 
-#: casca/window.py:1260
+#: casca/window.py:2079
 msgid "User guide"
 msgstr "사용자 안내서"
 
-#: casca/window.py:1261
+#: casca/window.py:2080
 msgid "About Casca"
 msgstr "Casca 정보"
 
-#: casca/window.py:1262
+#: casca/window.py:2081
 msgid "Menu"
 msgstr "메뉴"
 
-#: casca/window.py:1292
+#: casca/window.py:2106
+msgid "Store"
+msgstr "스토어"
+
+#: casca/window.py:2111
 msgid "Create a new web app"
 msgstr "새 웹 앱 만들기"
 
-#: casca/window.py:1293
+#: casca/window.py:2112
 msgid "Create"
 msgstr "만들기"
 
-#: casca/window.py:1302 casca/window.py:1429
+#: casca/window.py:2121 casca/window.py:2249
 msgid "Import apps"
 msgstr "앱 가져오기"
 
-#: casca/window.py:1306 casca/window.py:1379
+#: casca/window.py:2125 casca/window.py:2199
 msgid "Export apps"
 msgstr "앱 내보내기"
 
-#: casca/window.py:1337
+#: casca/window.py:2156
 msgid "Turns any website into a GNOME app."
 msgstr "모든 웹사이트를 GNOME 앱으로 만들어 줍니다."
 
-#: casca/window.py:1341
+#: casca/window.py:2160
 #, python-format
 msgid ""
 "Version %(latest)s is available — an update notification with a way to "
@@ -1025,120 +1328,121 @@ msgstr ""
 "%(latest)s 버전을 사용할 수 있습니다 — 업데이트할 수 있는 알림이 방금 떴습니"
 "다."
 
-#: casca/window.py:1356
+#: casca/window.py:2175
 msgid ""
-"Casca now checks for new releases in the background (once a day at most) and "
-"lets you know with a system notification — no action needed for Flatpak/Snap "
-"installs, which already update themselves."
-msgstr "Casca가 이제 백그라운드에서 새 버전을 확인합니다(최대 하루에 한 번). 새 버전이 있으면 시스템 알림으로 알려드립니다 — Flatpak/Snap 설치판은 이미 자동으로 업데이트되므로 별도 조치가 필요 없습니다."
+"The Store is now the Casca Store, in the style of GNOME Software: a featured "
+"apps carousel, colorful category tiles, Editor's Choice, and a page for each "
+"app with usage tags, the Bronze/Silver/Gold Casca seal, estimated disk "
+"savings, possible PC access and security info."
+msgstr "스토어가 GNOME 소프트웨어 스타일의 Casca 스토어로 바뀌었습니다. 추천 앱 캐러셀, 다채로운 카테고리 타일, 에디터 추천, 그리고 각 앱 페이지에서 사용 태그, 브론즈/실버/골드 Casca 실, 예상 디스크 절약, 컴퓨터 접근 가능성, 보안 정보를 볼 수 있습니다."
 
-#: casca/window.py:1361
+#: casca/window.py:2181
 msgid ""
-"The About dialog now shows the license, a link to the source code, whether "
-"you're on a release/beta/alpha build, and a proper “What's New” page with "
-"each version's changelog."
-msgstr "Casca 정보 대화상자에 라이선스, 소스 코드 링크, 정식판/베타/알파 빌드 여부, 그리고 각 버전의 변경 사항을 담은 제대로 된 “새로운 기능” 페이지가 표시됩니다."
+"A region selector next to the search detects your country automatically and "
+"filters marketplaces and news to your region — or choose Global to see "
+"everything. All of it translated into the 20 supported languages."
+msgstr "검색 옆의 지역 선택기가 국가를 자동으로 감지해 마켓플레이스와 뉴스를 지역별로 걸러 줍니다. 전체를 보려면 글로벌을 선택하세요. 모두 지원되는 20개 언어로 번역되었습니다."
 
-#: casca/window.py:1367
+#: casca/window.py:2187
 msgid "Source Code"
 msgstr "소스 코드"
 
-#: casca/window.py:1377
+#: casca/window.py:2197
 msgid "No app created yet to export."
 msgstr "내보낼 앱이 아직 없습니다."
 
-#: casca/window.py:1401
+#: casca/window.py:2221
 #, python-format
 msgid "Error exporting: %(error)s"
 msgstr "내보내기 오류: %(error)s"
 
-#: casca/window.py:1404
+#: casca/window.py:2224
 #, python-format
 msgid "%(count)d app exported to %(name)s."
 msgid_plural "%(count)d apps exported to %(name)s."
 msgstr[0] "%(name)s(으)로 앱 %(count)d개를 내보냈습니다."
 
-#: casca/window.py:1410
+#: casca/window.py:2230
 msgid "Import from where?"
 msgstr "어디서 가져올까요?"
 
-#: casca/window.py:1411
+#: casca/window.py:2231
 msgid "Choose a local .json file or a URL (e.g. a GitHub \"raw\" link)."
 msgstr "로컬 .json 파일이나 URL을 선택하세요(예: GitHub \"raw\" 링크)."
 
-#: casca/window.py:1413 casca/window.py:1459 casca/window.py:1592
-#: casca/window.py:1615
+#: casca/window.py:2233 casca/window.py:2279 casca/window.py:2412
+#: casca/window.py:2435
 msgid "Cancel"
 msgstr "취소"
 
-#: casca/window.py:1414
+#: casca/window.py:2234
 msgid "From a URL"
 msgstr "URL에서"
 
-#: casca/window.py:1415
+#: casca/window.py:2235
 msgid "Local file"
 msgstr "로컬 파일"
 
-#: casca/window.py:1448
+#: casca/window.py:2268
 #, python-format
 msgid "Error reading the file: %(error)s"
 msgstr "파일 읽기 오류: %(error)s"
 
-#: casca/window.py:1454
+#: casca/window.py:2274
 msgid "Import from a URL"
 msgstr "URL에서 가져오기"
 
-#: casca/window.py:1455
+#: casca/window.py:2275
 msgid "Paste the JSON file's \"raw\" link (e.g. from a GitHub repository)."
 msgstr "JSON 파일의 \"raw\" 링크를 붙여넣으세요(예: GitHub 저장소에서)."
 
-#: casca/window.py:1460
+#: casca/window.py:2280
 msgid "Fetch"
 msgstr "가져오기"
 
-#: casca/window.py:1472
+#: casca/window.py:2292
 msgid "Enter a URL."
 msgstr "URL을 입력하세요."
 
-#: casca/window.py:1474
+#: casca/window.py:2294
 msgid "Fetching file…"
 msgstr "파일 가져오는 중…"
 
-#: casca/window.py:1481
+#: casca/window.py:2301
 #, python-format
 msgid "Error downloading: %(error)s"
 msgstr "다운로드 오류: %(error)s"
 
-#: casca/window.py:1489
+#: casca/window.py:2309
 #, python-format
 msgid "Error importing: %(error)s"
 msgstr "가져오기 오류: %(error)s"
 
-#: casca/window.py:1492
+#: casca/window.py:2312
 msgid "No app found in the file."
 msgstr "파일에서 앱을 찾을 수 없습니다."
 
-#: casca/window.py:1500
+#: casca/window.py:2320
 msgid "Nothing selected to import."
 msgstr "가져올 항목이 선택되지 않았습니다."
 
-#: casca/window.py:1508
+#: casca/window.py:2328
 #, python-format
 msgid "%(n)d app imported."
 msgid_plural "%(n)d apps imported."
 msgstr[0] "앱 %(n)d개를 가져왔습니다."
 
-#: casca/window.py:1514
+#: casca/window.py:2334
 #, python-format
 msgid "• %(name)s: %(reason)s"
 msgstr "• %(name)s: %(reason)s"
 
-#: casca/window.py:1518
+#: casca/window.py:2338
 #, python-format
 msgid "%(created)d imported, %(failed)d with errors"
 msgstr "%(created)d개 가져옴, %(failed)d개는 오류 발생"
 
-#: casca/window.py:1520
+#: casca/window.py:2340
 #, python-format
 msgid ""
 "Review and adjust manually via the \"Create\" button:\n"
@@ -1149,54 +1453,81 @@ msgstr ""
 "\n"
 "%(lines)s"
 
-#: casca/window.py:1522
+#: casca/window.py:2342
 msgid "Got it"
 msgstr "확인"
 
-#: casca/window.py:1536
+#: casca/window.py:2356
 msgid "No web apps yet"
 msgstr "아직 웹 앱이 없습니다"
 
-#: casca/window.py:1537
+#: casca/window.py:2357
 msgid ""
 "Tap “Create” to make your first app, or open the Store for ready-made sites."
 msgstr ""
 "“만들기”를 눌러 첫 앱을 만들거나, 스토어에서 미리 만들어진 사이트를 확인해 보"
 "세요."
 
-#: casca/window.py:1546
+#: casca/window.py:2366
 msgid "My web apps"
 msgstr "내 웹 앱"
 
-#: casca/window.py:1568
+#: casca/window.py:2388
 msgid "Installed packages"
 msgstr "설치된 패키지"
 
-#: casca/window.py:1589
+#: casca/window.py:2409
 #, python-format
 msgid "Delete “%(name)s”?"
 msgstr "“%(name)s”을(를) 삭제할까요?"
 
-#: casca/window.py:1590
+#: casca/window.py:2410
 msgid ""
 "The shortcut will be removed from the applications menu and the desktop, if "
 "it exists."
 msgstr "바로 가기가 있다면 프로그램 메뉴와 바탕화면에서 제거됩니다."
 
-#: casca/window.py:1593 casca/window.py:1616
+#: casca/window.py:2413 casca/window.py:2436
 msgid "Delete"
 msgstr "삭제"
 
-#: casca/window.py:1607
+#: casca/window.py:2427
 #, python-format
 msgid "Delete package “%(name)s”?"
 msgstr "패키지 “%(name)s”을(를) 삭제할까요?"
 
-#: casca/window.py:1609
+#: casca/window.py:2429
 #, python-format
 msgid "Removes the shortcut and the %(n)d app inside it (%(names)s)."
 msgid_plural "Removes the shortcut and the %(n)d apps inside it (%(names)s)."
 msgstr[0] "바로 가기와 그 안의 앱 %(n)d개(%(names)s)를 제거합니다."
+
+#~ msgid ""
+#~ "Casca now checks for new releases in the background (once a day at most) "
+#~ "and lets you know with a system notification — no action needed for "
+#~ "Flatpak/Snap installs, which already update themselves."
+#~ msgstr ""
+#~ "Casca가 이제 백그라운드에서 새 버전을 확인합니다(최대 하루에 한 번). 새 버"
+#~ "전이 있으면 시스템 알림으로 알려드립니다 — Flatpak/Snap 설치판은 이미 자동"
+#~ "으로 업데이트되므로 별도 조치가 필요 없습니다."
+
+#~ msgid ""
+#~ "The About dialog now shows the license, a link to the source code, "
+#~ "whether you're on a release/beta/alpha build, and a proper “What's New” "
+#~ "page with each version's changelog."
+#~ msgstr ""
+#~ "Casca 정보 대화상자에 라이선스, 소스 코드 링크, 정식판/베타/알파 빌드 여"
+#~ "부, 그리고 각 버전의 변경 사항을 담은 제대로 된 “새로운 기능” 페이지가 표"
+#~ "시됩니다."
+
+#~ msgid "Type"
+#~ msgstr "종류"
+
+#~ msgid "Nothing here yet"
+#~ msgstr "아직 아무것도 없습니다"
+
+#~ msgid "Check the local catalog or your internet connection."
+#~ msgstr "로컬 카탈로그나 인터넷 연결을 확인하세요."
 
 #~ msgid ""
 #~ "Casca now speaks 20 languages, picked automatically from the system "

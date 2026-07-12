@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Casca 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/oliverhubtech-source/casca/issues\n"
-"POT-Creation-Date: 2026-07-10 16:23-0300\n"
+"POT-Creation-Date: 2026-07-11 22:09-0300\n"
 "PO-Revision-Date: 2026-07-09 16:07-0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,6 +18,7 @@ msgid "Casca's own window"
 msgstr "Casca की अपनी विंडो"
 
 #: casca/catalog_strings.py:16 casca/help_content.py:76 casca/presets.py:51
+#: casca/store.py:166 casca/store.py:184
 msgid "Artificial Intelligence"
 msgstr "कृत्रिम बुद्धिमत्ता"
 
@@ -33,11 +34,11 @@ msgstr "रूपांतरण और साझाकरण"
 msgid "Creativity"
 msgstr "रचनात्मकता"
 
-#: casca/catalog_strings.py:20
+#: casca/catalog_strings.py:20 casca/store.py:168 casca/store.py:185
 msgid "Finance"
 msgstr "वित्त"
 
-#: casca/catalog_strings.py:21 casca/window.py:935
+#: casca/catalog_strings.py:21
 msgid "Marketplace"
 msgstr "मार्केटप्लेस"
 
@@ -45,11 +46,11 @@ msgstr "मार्केटप्लेस"
 msgid "Messenger"
 msgstr "मैसेंजर"
 
-#: casca/catalog_strings.py:23
+#: casca/catalog_strings.py:23 casca/store.py:165 casca/store.py:186
 msgid "Music Streaming"
 msgstr "संगीत स्ट्रीमिंग"
 
-#: casca/catalog_strings.py:24 casca/window.py:936
+#: casca/catalog_strings.py:24 casca/store.py:171 casca/store.py:183
 msgid "News"
 msgstr "समाचार"
 
@@ -65,7 +66,8 @@ msgstr "उत्पादकता"
 msgid "Search Engine"
 msgstr "खोज इंजन"
 
-#: casca/catalog_strings.py:28
+#: casca/catalog_strings.py:28 casca/store.py:169 casca/store.py:182
+#: casca/window.py:1922
 msgid "Security"
 msgstr "सुरक्षा"
 
@@ -77,7 +79,7 @@ msgstr "सोशल नेटवर्क"
 msgid "Utility"
 msgstr "उपयोगिता"
 
-#: casca/catalog_strings.py:31
+#: casca/catalog_strings.py:31 casca/store.py:164 casca/store.py:193
 msgid "Video Streaming"
 msgstr "वीडियो स्ट्रीमिंग"
 
@@ -623,25 +625,174 @@ msgid "PWA Manifest"
 msgstr "PWA मेनिफ़ेस्ट"
 
 #: casca/package_launcher.py:73 casca/package_launcher.py:119
-#: casca/window.py:934
 msgid "Package"
 msgstr "पैकेज"
 
-#: casca/store.py:80
+#: casca/store.py:82 casca/store.py:365
 msgid "Independent"
 msgstr "स्वतंत्र"
 
-#: casca/store.py:81 casca/store.py:97
+#: casca/store.py:83 casca/store.py:100
 msgid "Other"
 msgstr "अन्य"
 
-#: casca/store.py:92 casca/window.py:1038
+#: casca/store.py:95 casca/window.py:1303 casca/window.py:1544
 msgid "Independent apps"
 msgstr "स्वतंत्र ऐप्स"
 
-#: casca/store.py:92
+#: casca/store.py:95 casca/store.py:108
 msgid "Global"
 msgstr "वैश्विक"
+
+#: casca/store.py:158 casca/store.py:180 casca/store.py:187
+msgid "Communication"
+msgstr "संचार"
+
+#: casca/store.py:159 casca/store.py:180 casca/store.py:187
+msgid "Social"
+msgstr "सोशल"
+
+#: casca/store.py:160 casca/store.py:194
+msgid "Business"
+msgstr "व्यवसाय"
+
+#: casca/store.py:161 casca/updater.py:90
+msgid "Development"
+msgstr "डेवलपमेंट"
+
+#: casca/store.py:162 casca/store.py:181 casca/store.py:189 casca/store.py:194
+msgid "Office"
+msgstr "कार्यालय"
+
+#: casca/store.py:163 casca/store.py:186 casca/store.py:193
+msgid "Entertainment"
+msgstr "मनोरंजन"
+
+#: casca/store.py:167 casca/store.py:192
+msgid "Design"
+msgstr "डिज़ाइन"
+
+#: casca/store.py:170 casca/store.py:181 casca/store.py:182 casca/store.py:185
+#: casca/store.py:188 casca/store.py:191 casca/store.py:192 casca/store.py:195
+msgid "Utilities"
+msgstr "उपयोगिताएँ"
+
+#: casca/store.py:172 casca/store.py:190
+msgid "Shopping"
+msgstr "खरीदारी"
+
+#: casca/store.py:173 casca/store.py:189
+msgid "Cloud"
+msgstr "क्लाउड"
+
+#: casca/store.py:174 casca/store.py:195
+msgid "Search"
+msgstr "खोज"
+
+#: casca/store.py:175
+msgid "Education"
+msgstr "शिक्षा"
+
+#: casca/store.py:222
+msgid "Messaging app for real-time conversations with people or groups."
+msgstr "लोगों या समूहों से रीयल-टाइम बातचीत के लिए मैसेजिंग ऐप।"
+
+#: casca/store.py:226
+msgid "Tool to create, edit, convert or sign PDF files right from the browser."
+msgstr "ब्राउज़र से सीधे PDF बनाने, संपादित करने, बदलने या हस्ताक्षर करने का उपकरण।"
+
+#: casca/store.py:230
+msgid "Digital security tool: checks links, data breaches or account safety."
+msgstr "डिजिटल सुरक्षा उपकरण: लिंक, डेटा लीक या खाते की सुरक्षा जाँचता है।"
+
+#: casca/store.py:234
+msgid "News portal with up-to-date journalistic content."
+msgstr "ताज़ा पत्रकारिता सामग्री वाला समाचार पोर्टल।"
+
+#: casca/store.py:238
+msgid "AI assistant to chat, or generate text, images or code."
+msgstr "बातचीत करने या टेक्स्ट, चित्र और कोड बनाने के लिए AI सहायक।"
+
+#: casca/store.py:242
+msgid "Financial tool: calculator, value correction or money management."
+msgstr "वित्तीय उपकरण: कैलकुलेटर, मूल्य समायोजन या धन प्रबंधन।"
+
+#: casca/store.py:246
+msgid "Music and podcast streaming service."
+msgstr "संगीत और पॉडकास्ट स्ट्रीमिंग सेवा।"
+
+#: casca/store.py:250
+msgid "Social network to post, follow people and interact with content."
+msgstr "पोस्ट करने, लोगों को फ़ॉलो करने और सामग्री से जुड़ने का सोशल नेटवर्क।"
+
+#: casca/store.py:254
+msgid "Everyday utility for a specific task, right in the browser."
+msgstr "किसी खास काम के लिए रोज़मर्रा की उपयोगिता, सीधे ब्राउज़र में।"
+
+#: casca/store.py:258
+msgid "Cloud storage and services to keep and reach files from anywhere."
+msgstr "कहीं से भी फ़ाइलें रखने और पाने के लिए क्लाउड स्टोरेज और सेवाएँ।"
+
+#: casca/store.py:262
+msgid "Online marketplace to buy and sell products."
+msgstr "उत्पाद खरीदने-बेचने का ऑनलाइन बाज़ार।"
+
+#: casca/store.py:266
+msgid "File conversion tool or quick content sharing."
+msgstr "फ़ाइल रूपांतरण या तेज़ सामग्री साझाकरण उपकरण।"
+
+#: casca/store.py:270
+msgid "Creative tool for images, text or ideas."
+msgstr "चित्रों, टेक्स्ट या विचारों के लिए रचनात्मक उपकरण।"
+
+#: casca/store.py:274
+msgid "Video, movie and TV show streaming service."
+msgstr "वीडियो, फ़िल्म और टीवी शो स्ट्रीमिंग सेवा।"
+
+#: casca/store.py:278
+msgid "Productivity tool to organize tasks, documents or meetings."
+msgstr "कार्य, दस्तावेज़ या बैठकें व्यवस्थित करने का उत्पादकता उपकरण।"
+
+#: casca/store.py:282
+msgid "Search engine to find information on the internet."
+msgstr "इंटरनेट पर जानकारी खोजने का सर्च इंजन।"
+
+#: casca/store.py:288
+msgid "Site added to Casca as a web app."
+msgstr "वेब ऐप के रूप में Casca में जोड़ी गई साइट।"
+
+#: casca/store.py:300
+msgid "Camera"
+msgstr "कैमरा"
+
+#: casca/store.py:301
+msgid "Microphone"
+msgstr "माइक्रोफ़ोन"
+
+#: casca/store.py:302
+msgid "Notifications"
+msgstr "सूचनाएँ"
+
+#: casca/store.py:303
+msgid "Files"
+msgstr "फ़ाइलें"
+
+#: casca/store.py:304
+msgid "Location"
+msgstr "स्थान"
+
+#: casca/store.py:377 casca/window.py:1089 casca/window.py:1110
+#: casca/window.py:1639
+msgid "Gold"
+msgstr "स्वर्ण"
+
+#: casca/store.py:377 casca/window.py:1641
+msgid "Silver"
+msgstr "रजत"
+
+#: casca/store.py:377
+msgid "Bronze"
+msgstr "कांस्य"
 
 #: casca/updater.py:90 casca/updater.py:91
 msgid "Release"
@@ -654,10 +805,6 @@ msgstr "बीटा"
 #: casca/updater.py:90
 msgid "Alpha"
 msgstr "अल्फा"
-
-#: casca/updater.py:90
-msgid "Development"
-msgstr "डेवलपमेंट"
 
 #: casca/updater.py:106
 msgid "Casca"
@@ -896,244 +1043,403 @@ msgstr "पूर्वनिर्धारित साइट"
 msgid "Search by name or category…"
 msgstr "नाम या श्रेणी से खोजें…"
 
-#: casca/window.py:720 casca/window.py:1035
+#: casca/window.py:720 casca/window.py:1290 casca/window.py:1325
+#: casca/window.py:1541
 #, python-format
 msgid "%(n)d site"
 msgid_plural "%(n)d sites"
 msgstr[0] "%(n)d साइट"
 msgstr[1] "%(n)d साइटें"
 
-#: casca/window.py:904 casca/window.py:1287
-msgid "Store"
-msgstr "स्टोर"
+#: casca/window.py:1131 casca/window.py:1208
+msgid "Casca Store"
+msgstr "Casca स्टोर"
 
-#: casca/window.py:932
-msgid "Company"
-msgstr "कंपनी"
-
-#: casca/window.py:933
-msgid "Type"
-msgstr "प्रकार"
-
-#: casca/window.py:949
-msgid "Search by name…"
-msgstr "नाम से खोजें…"
-
-#: casca/window.py:985
+#: casca/window.py:1183
 #, python-format
 msgid "Could not set an icon for %(name)s."
 msgstr "%(name)s के लिए आइकन सेट नहीं किया जा सका।"
 
-#: casca/window.py:991
+#: casca/window.py:1189
 #, python-format
 msgid "Error installing package: %(error)s"
 msgstr "पैकेज स्थापित करने में त्रुटि: %(error)s"
 
-#: casca/window.py:997
+#: casca/window.py:1195
 #, python-format
 msgid "Package “%(name)s” installed with %(n)d app."
 msgid_plural "Package “%(name)s” installed with %(n)d apps."
 msgstr[0] "पैकेज “%(name)s” %(n)d ऐप के साथ स्थापित किया गया।"
 msgstr[1] "पैकेज “%(name)s” %(n)d ऐप्स के साथ स्थापित किया गया।"
 
-#: casca/window.py:1023
-msgid "Nothing here yet"
-msgstr "यहाँ अभी तक कुछ नहीं है"
+#: casca/window.py:1221
+msgid "Search apps and sites…"
+msgstr "ऐप और साइटें खोजें…"
 
-#: casca/window.py:1024
-msgid "Check the local catalog or your internet connection."
-msgstr "स्थानीय सूची या अपने इंटरनेट कनेक्शन की जाँच करें।"
+#: casca/window.py:1243
+msgid "Region"
+msgstr "क्षेत्र"
 
-#: casca/window.py:1040
+#: casca/window.py:1307
+#, python-format
+msgid "%(n)d package"
+msgid_plural "%(n)d packages"
+msgstr[0] "%(n)d पैकेज"
+msgstr[1] "%(n)d पैकेज"
+
+#: casca/window.py:1313 casca/window.py:1316
+msgid "Packages"
+msgstr "पैकेज"
+
+#: casca/window.py:1339
+msgid "Categories"
+msgstr "श्रेणियाँ"
+
+#: casca/window.py:1344
+msgid "Editor's Choice"
+msgstr "संपादक की पसंद"
+
+#: casca/window.py:1465
+msgid "No results"
+msgstr "कोई परिणाम नहीं"
+
+#: casca/window.py:1508
+msgid "Search by name…"
+msgstr "नाम से खोजें…"
+
+#: casca/window.py:1545
 msgid "Install full package"
 msgstr "पूरा पैकेज स्थापित करें"
 
-#: casca/window.py:1165
+#: casca/window.py:1678
+msgid "Verified"
+msgstr "सत्यापित"
+
+#: casca/window.py:1688
+msgid "Add to Casca"
+msgstr "Casca में जोड़ें"
+
+#: casca/window.py:1689
+msgid "Add"
+msgstr "जोड़ें"
+
+#: casca/window.py:1707
+#, python-format
+msgid "Casca Seal: %(tier)s"
+msgstr "Casca मुहर: %(tier)s"
+
+#: casca/window.py:1729
+#, python-format
+msgid ""
+"%(name)s, by %(company)s, opens straight from %(domain)s in its own window — "
+"no installation and no downloads. Casca creates the menu shortcut and keeps "
+"the site's data in a profile that's separate from your browser."
+msgstr "%(company)s का %(name)s सीधे %(domain)s से अपनी विंडो में खुलता है — न इंस्टॉल, न डाउनलोड। Casca मेनू शॉर्टकट बनाता है और साइट का डेटा आपके ब्राउज़र से अलग प्रोफ़ाइल में रखता है।"
+
+#: casca/window.py:1794
+msgid "Estimated disk savings"
+msgstr "अनुमानित डिस्क बचत"
+
+#: casca/window.py:1797
+msgid "Isolated"
+msgstr "पृथक"
+
+#: casca/window.py:1797
+msgid "HTTPS and its own profile"
+msgstr "HTTPS और अपनी प्रोफ़ाइल"
+
+#: casca/window.py:1808
+#, python-format
+msgid "%(n)d possible access"
+msgid_plural "%(n)d possible accesses"
+msgstr[0] "%(n)d संभावित पहुँच"
+msgstr[1] "%(n)d संभावित पहुँच"
+
+#: casca/window.py:1816
+msgid "No special access"
+msgstr "कोई विशेष पहुँच नहीं"
+
+#: casca/window.py:1816
+msgid "Doesn't typically ask for any"
+msgstr "आमतौर पर कुछ नहीं माँगता"
+
+#: casca/window.py:1824
+#, python-format
+msgid "%(tier)s Seal"
+msgstr "%(tier)s मुहर"
+
+#: casca/window.py:1825
+msgid "Click for details"
+msgstr "विवरण के लिए क्लिक करें"
+
+#: casca/window.py:1849
+msgid "Casca-estimated quality seal"
+msgstr "Casca द्वारा अनुमानित गुणवत्ता मुहर"
+
+#: casca/window.py:1854
+msgid "Updates"
+msgstr "अपडेट"
+
+#: casca/window.py:1855
+msgid "Usability"
+msgstr "उपयोगिता"
+
+#: casca/window.py:1856
+msgid "Speed"
+msgstr "गति"
+
+#: casca/window.py:1857
+msgid "Community"
+msgstr "समुदाय"
+
+#: casca/window.py:1867
+msgid ""
+"Estimate calculated by Casca from the company's recognition and the app's "
+"category — not an official rating from the site."
+msgstr "कंपनी की पहचान और ऐप की श्रेणी के आधार पर Casca द्वारा गणना किया गया अनुमान — यह साइट की आधिकारिक रेटिंग नहीं है।"
+
+#: casca/window.py:1891
+msgid "Company"
+msgstr "कंपनी"
+
+#: casca/window.py:1894
+msgid "See all apps from this company"
+msgstr "इस कंपनी के सभी ऐप देखें"
+
+#: casca/window.py:1905
+msgid "Possible access to your computer"
+msgstr "आपके कंप्यूटर तक संभावित पहुँच"
+
+#: casca/window.py:1906
+msgid "Typical pattern for this category — not a scan of this specific site."
+msgstr "इस श्रेणी का सामान्य पैटर्न — यह इस साइट की विशेष जाँच नहीं है।"
+
+#: casca/window.py:1916
+msgid "Doesn't typically request special access"
+msgstr "आमतौर पर विशेष पहुँच नहीं माँगता"
+
+#: casca/window.py:1926
+msgid "HTTPS connection"
+msgstr "HTTPS कनेक्शन"
+
+#: casca/window.py:1927
+msgid "Casca only opens sites over an encrypted connection."
+msgstr "Casca साइटें केवल एन्क्रिप्टेड कनेक्शन से खोलता है।"
+
+#: casca/window.py:1931
+msgid "Isolated browser profile"
+msgstr "पृथक ब्राउज़र प्रोफ़ाइल"
+
+#: casca/window.py:1933
+msgid ""
+"Each app you create gets its own profile, separate from your main browser "
+"and from your other apps."
+msgstr "आपका बनाया हर ऐप अपनी अलग प्रोफ़ाइल पाता है, जो मुख्य ब्राउज़र और आपके अन्य ऐप से अलग होती है।"
+
+#: casca/window.py:1939
+msgid "No native executable installed"
+msgstr "कोई नेटिव निष्पादन-योग्य फ़ाइल इंस्टॉल नहीं होती"
+
+#: casca/window.py:1940
+msgid "Only a shortcut is created — nothing runs outside the browser engine."
+msgstr "केवल एक शॉर्टकट बनता है — ब्राउज़र इंजन के बाहर कुछ नहीं चलता।"
+
+#: casca/window.py:1957
+#, python-format
+msgid "More from %(company)s"
+msgstr "%(company)s से और"
+
+#: casca/window.py:1984
 msgid "Casca Manual"
 msgstr "Casca मैनुअल"
 
-#: casca/window.py:1185
+#: casca/window.py:2004
 msgid "Could not open the built-in manual"
 msgstr "अंतर्निहित मैनुअल नहीं खोला जा सका"
 
-#: casca/window.py:1204
+#: casca/window.py:2023
 msgid "Choose what to import"
 msgstr "आयात करने के लिए चुनें"
 
-#: casca/window.py:1213
+#: casca/window.py:2032
 #, python-format
 msgid "%(n)d site found"
 msgid_plural "%(n)d sites found"
 msgstr[0] "%(n)d साइट मिली"
 msgstr[1] "%(n)d साइटें मिलीं"
 
-#: casca/window.py:1216
+#: casca/window.py:2035
 msgid "Uncheck anything you don't want to import."
 msgstr "जो कुछ आप आयात नहीं करना चाहते, उसे अनचेक करें।"
 
-#: casca/window.py:1219
+#: casca/window.py:2038
 msgid "(no name)"
 msgstr "(कोई नाम नहीं)"
 
-#: casca/window.py:1227
+#: casca/window.py:2046
 msgid "Import selected"
 msgstr "चयनित आयात करें"
 
-#: casca/window.py:1260
+#: casca/window.py:2079
 msgid "User guide"
 msgstr "उपयोगकर्ता मार्गदर्शिका"
 
-#: casca/window.py:1261
+#: casca/window.py:2080
 msgid "About Casca"
 msgstr "Casca के बारे में"
 
-#: casca/window.py:1262
+#: casca/window.py:2081
 msgid "Menu"
 msgstr "मेनू"
 
-#: casca/window.py:1292
+#: casca/window.py:2106
+msgid "Store"
+msgstr "स्टोर"
+
+#: casca/window.py:2111
 msgid "Create a new web app"
 msgstr "एक नया वेब ऐप बनाएँ"
 
-#: casca/window.py:1293
+#: casca/window.py:2112
 msgid "Create"
 msgstr "बनाएँ"
 
-#: casca/window.py:1302 casca/window.py:1429
+#: casca/window.py:2121 casca/window.py:2249
 msgid "Import apps"
 msgstr "ऐप्स आयात करें"
 
-#: casca/window.py:1306 casca/window.py:1379
+#: casca/window.py:2125 casca/window.py:2199
 msgid "Export apps"
 msgstr "ऐप्स निर्यात करें"
 
-#: casca/window.py:1337
+#: casca/window.py:2156
 msgid "Turns any website into a GNOME app."
 msgstr "किसी भी वेबसाइट को GNOME ऐप में बदल देता है।"
 
-#: casca/window.py:1341
+#: casca/window.py:2160
 #, python-format
 msgid ""
 "Version %(latest)s is available — an update notification with a way to "
 "update just popped up."
 msgstr "संस्करण %(latest)s उपलब्ध है — अभी एक सूचना दिखी है जिससे आप अपडेट कर सकते हैं।"
 
-#: casca/window.py:1356
+#: casca/window.py:2175
 msgid ""
-"Casca now checks for new releases in the background (once a day at most) and "
-"lets you know with a system notification — no action needed for Flatpak/Snap "
-"installs, which already update themselves."
-msgstr "Casca अब बैकग्राउंड में नए संस्करणों की जांच करता है (दिन में ज़्यादा से ज़्यादा एक बार) और सिस्टम सूचना के ज़रिए आपको बताता है — Flatpak/Snap इंस्टॉलेशन के लिए किसी कार्रवाई की ज़रूरत नहीं, क्योंकि वे पहले से ही अपने आप अपडेट हो जाते हैं।"
+"The Store is now the Casca Store, in the style of GNOME Software: a featured "
+"apps carousel, colorful category tiles, Editor's Choice, and a page for each "
+"app with usage tags, the Bronze/Silver/Gold Casca seal, estimated disk "
+"savings, possible PC access and security info."
+msgstr "स्टोर अब GNOME सॉफ़्टवेयर की शैली में Casca स्टोर है: चुनिंदा ऐप्स का कैरोसेल, रंगीन श्रेणियाँ, संपादक की पसंद, और हर ऐप का पृष्ठ जिसमें उपयोग टैग, कांस्य/रजत/स्वर्ण Casca मुहर, अनुमानित डिस्क बचत, कंप्यूटर तक संभावित पहुँच और सुरक्षा जानकारी है।"
 
-#: casca/window.py:1361
+#: casca/window.py:2181
 msgid ""
-"The About dialog now shows the license, a link to the source code, whether "
-"you're on a release/beta/alpha build, and a proper “What's New” page with "
-"each version's changelog."
-msgstr "About डायलॉग अब लाइसेंस, सोर्स कोड का लिंक, आप रिलीज़/बीटा/अल्फा बिल्ड पर हैं या नहीं, और हर संस्करण के बदलावों के साथ एक असली “नया क्या है” पेज दिखाता है।"
+"A region selector next to the search detects your country automatically and "
+"filters marketplaces and news to your region — or choose Global to see "
+"everything. All of it translated into the 20 supported languages."
+msgstr "खोज के बगल का क्षेत्र चयनकर्ता आपका देश अपने आप पहचानता है और बाज़ार व समाचार आपके क्षेत्र के अनुसार छाँटता है — या सब कुछ देखने के लिए वैश्विक चुनें। सब कुछ समर्थित 20 भाषाओं में अनुवादित।"
 
-#: casca/window.py:1367
+#: casca/window.py:2187
 msgid "Source Code"
 msgstr "सोर्स कोड"
 
-#: casca/window.py:1377
+#: casca/window.py:2197
 msgid "No app created yet to export."
 msgstr "निर्यात करने के लिए अभी तक कोई ऐप नहीं बनाया गया।"
 
-#: casca/window.py:1401
+#: casca/window.py:2221
 #, python-format
 msgid "Error exporting: %(error)s"
 msgstr "निर्यात करने में त्रुटि: %(error)s"
 
-#: casca/window.py:1404
+#: casca/window.py:2224
 #, python-format
 msgid "%(count)d app exported to %(name)s."
 msgid_plural "%(count)d apps exported to %(name)s."
 msgstr[0] "%(count)d ऐप %(name)s में निर्यात किया गया।"
 msgstr[1] "%(count)d ऐप्स %(name)s में निर्यात किए गए।"
 
-#: casca/window.py:1410
+#: casca/window.py:2230
 msgid "Import from where?"
 msgstr "कहाँ से आयात करें?"
 
-#: casca/window.py:1411
+#: casca/window.py:2231
 msgid "Choose a local .json file or a URL (e.g. a GitHub \"raw\" link)."
 msgstr "एक स्थानीय .json फ़ाइल या URL चुनें (जैसे, GitHub का \"raw\" लिंक)।"
 
-#: casca/window.py:1413 casca/window.py:1459 casca/window.py:1592
-#: casca/window.py:1615
+#: casca/window.py:2233 casca/window.py:2279 casca/window.py:2412
+#: casca/window.py:2435
 msgid "Cancel"
 msgstr "रद्द करें"
 
-#: casca/window.py:1414
+#: casca/window.py:2234
 msgid "From a URL"
 msgstr "URL से"
 
-#: casca/window.py:1415
+#: casca/window.py:2235
 msgid "Local file"
 msgstr "स्थानीय फ़ाइल"
 
-#: casca/window.py:1448
+#: casca/window.py:2268
 #, python-format
 msgid "Error reading the file: %(error)s"
 msgstr "फ़ाइल पढ़ने में त्रुटि: %(error)s"
 
-#: casca/window.py:1454
+#: casca/window.py:2274
 msgid "Import from a URL"
 msgstr "URL से आयात करें"
 
-#: casca/window.py:1455
+#: casca/window.py:2275
 msgid "Paste the JSON file's \"raw\" link (e.g. from a GitHub repository)."
 msgstr "JSON फ़ाइल का \"raw\" लिंक पेस्ट करें (जैसे, किसी GitHub रिपॉज़िटरी से)।"
 
-#: casca/window.py:1460
+#: casca/window.py:2280
 msgid "Fetch"
 msgstr "प्राप्त करें"
 
-#: casca/window.py:1472
+#: casca/window.py:2292
 msgid "Enter a URL."
 msgstr "एक URL दर्ज करें।"
 
-#: casca/window.py:1474
+#: casca/window.py:2294
 msgid "Fetching file…"
 msgstr "फ़ाइल प्राप्त की जा रही है…"
 
-#: casca/window.py:1481
+#: casca/window.py:2301
 #, python-format
 msgid "Error downloading: %(error)s"
 msgstr "डाउनलोड करने में त्रुटि: %(error)s"
 
-#: casca/window.py:1489
+#: casca/window.py:2309
 #, python-format
 msgid "Error importing: %(error)s"
 msgstr "आयात करने में त्रुटि: %(error)s"
 
-#: casca/window.py:1492
+#: casca/window.py:2312
 msgid "No app found in the file."
 msgstr "फ़ाइल में कोई ऐप नहीं मिला।"
 
-#: casca/window.py:1500
+#: casca/window.py:2320
 msgid "Nothing selected to import."
 msgstr "आयात करने के लिए कुछ भी चयनित नहीं है।"
 
-#: casca/window.py:1508
+#: casca/window.py:2328
 #, python-format
 msgid "%(n)d app imported."
 msgid_plural "%(n)d apps imported."
 msgstr[0] "%(n)d ऐप आयात किया गया।"
 msgstr[1] "%(n)d ऐप्स आयात किए गए।"
 
-#: casca/window.py:1514
+#: casca/window.py:2334
 #, python-format
 msgid "• %(name)s: %(reason)s"
 msgstr "• %(name)s: %(reason)s"
 
-#: casca/window.py:1518
+#: casca/window.py:2338
 #, python-format
 msgid "%(created)d imported, %(failed)d with errors"
 msgstr "%(created)d आयात किए गए, %(failed)d में त्रुटियाँ"
 
-#: casca/window.py:1520
+#: casca/window.py:2340
 #, python-format
 msgid ""
 "Review and adjust manually via the \"Create\" button:\n"
@@ -1144,53 +1450,79 @@ msgstr ""
 "\n"
 "%(lines)s"
 
-#: casca/window.py:1522
+#: casca/window.py:2342
 msgid "Got it"
 msgstr "समझ गया"
 
-#: casca/window.py:1536
+#: casca/window.py:2356
 msgid "No web apps yet"
 msgstr "अभी तक कोई वेब ऐप नहीं"
 
-#: casca/window.py:1537
+#: casca/window.py:2357
 msgid ""
 "Tap “Create” to make your first app, or open the Store for ready-made sites."
 msgstr "अपना पहला ऐप बनाने के लिए “बनाएँ” पर टैप करें, या तैयार साइटों के लिए स्टोर खोलें।"
 
-#: casca/window.py:1546
+#: casca/window.py:2366
 msgid "My web apps"
 msgstr "मेरे वेब ऐप्स"
 
-#: casca/window.py:1568
+#: casca/window.py:2388
 msgid "Installed packages"
 msgstr "स्थापित पैकेज"
 
-#: casca/window.py:1589
+#: casca/window.py:2409
 #, python-format
 msgid "Delete “%(name)s”?"
 msgstr "“%(name)s” हटाएँ?"
 
-#: casca/window.py:1590
+#: casca/window.py:2410
 msgid ""
 "The shortcut will be removed from the applications menu and the desktop, if "
 "it exists."
 msgstr "शॉर्टकट को एप्लिकेशन मेनू और डेस्कटॉप से हटा दिया जाएगा, यदि वह मौजूद है।"
 
-#: casca/window.py:1593 casca/window.py:1616
+#: casca/window.py:2413 casca/window.py:2436
 msgid "Delete"
 msgstr "हटाएँ"
 
-#: casca/window.py:1607
+#: casca/window.py:2427
 #, python-format
 msgid "Delete package “%(name)s”?"
 msgstr "पैकेज “%(name)s” हटाएँ?"
 
-#: casca/window.py:1609
+#: casca/window.py:2429
 #, python-format
 msgid "Removes the shortcut and the %(n)d app inside it (%(names)s)."
 msgid_plural "Removes the shortcut and the %(n)d apps inside it (%(names)s)."
 msgstr[0] "शॉर्टकट और उसमें मौजूद %(n)d ऐप हटा देता है (%(names)s)।"
 msgstr[1] "शॉर्टकट और उसमें मौजूद %(n)d ऐप्स हटा देता है (%(names)s)।"
+
+#~ msgid ""
+#~ "Casca now checks for new releases in the background (once a day at most) "
+#~ "and lets you know with a system notification — no action needed for "
+#~ "Flatpak/Snap installs, which already update themselves."
+#~ msgstr ""
+#~ "Casca अब बैकग्राउंड में नए संस्करणों की जांच करता है (दिन में ज़्यादा से ज़्यादा एक बार) "
+#~ "और सिस्टम सूचना के ज़रिए आपको बताता है — Flatpak/Snap इंस्टॉलेशन के लिए किसी "
+#~ "कार्रवाई की ज़रूरत नहीं, क्योंकि वे पहले से ही अपने आप अपडेट हो जाते हैं।"
+
+#~ msgid ""
+#~ "The About dialog now shows the license, a link to the source code, "
+#~ "whether you're on a release/beta/alpha build, and a proper “What's New” "
+#~ "page with each version's changelog."
+#~ msgstr ""
+#~ "About डायलॉग अब लाइसेंस, सोर्स कोड का लिंक, आप रिलीज़/बीटा/अल्फा बिल्ड पर हैं या "
+#~ "नहीं, और हर संस्करण के बदलावों के साथ एक असली “नया क्या है” पेज दिखाता है।"
+
+#~ msgid "Type"
+#~ msgstr "प्रकार"
+
+#~ msgid "Nothing here yet"
+#~ msgstr "यहाँ अभी तक कुछ नहीं है"
+
+#~ msgid "Check the local catalog or your internet connection."
+#~ msgstr "स्थानीय सूची या अपने इंटरनेट कनेक्शन की जाँच करें।"
 
 #~ msgid ""
 #~ "Casca now speaks 20 languages, picked automatically from the system "

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Casca 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/oliverhubtech-source/casca/issues\n"
-"POT-Creation-Date: 2026-07-10 16:23-0300\n"
+"POT-Creation-Date: 2026-07-11 22:09-0300\n"
 "PO-Revision-Date: 2026-07-09 16:07-0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,6 +18,7 @@ msgid "Casca's own window"
 msgstr "Cửa sổ riêng của Casca"
 
 #: casca/catalog_strings.py:16 casca/help_content.py:76 casca/presets.py:51
+#: casca/store.py:166 casca/store.py:184
 msgid "Artificial Intelligence"
 msgstr "Trí tuệ nhân tạo"
 
@@ -33,11 +34,11 @@ msgstr "Chuyển đổi & Chia sẻ"
 msgid "Creativity"
 msgstr "Sáng tạo"
 
-#: casca/catalog_strings.py:20
+#: casca/catalog_strings.py:20 casca/store.py:168 casca/store.py:185
 msgid "Finance"
 msgstr "Tài chính"
 
-#: casca/catalog_strings.py:21 casca/window.py:935
+#: casca/catalog_strings.py:21
 msgid "Marketplace"
 msgstr "Chợ ứng dụng"
 
@@ -45,11 +46,11 @@ msgstr "Chợ ứng dụng"
 msgid "Messenger"
 msgstr "Ứng dụng nhắn tin"
 
-#: casca/catalog_strings.py:23
+#: casca/catalog_strings.py:23 casca/store.py:165 casca/store.py:186
 msgid "Music Streaming"
 msgstr "Phát nhạc trực tuyến"
 
-#: casca/catalog_strings.py:24 casca/window.py:936
+#: casca/catalog_strings.py:24 casca/store.py:171 casca/store.py:183
 msgid "News"
 msgstr "Tin tức"
 
@@ -65,7 +66,8 @@ msgstr "Năng suất"
 msgid "Search Engine"
 msgstr "Công cụ tìm kiếm"
 
-#: casca/catalog_strings.py:28
+#: casca/catalog_strings.py:28 casca/store.py:169 casca/store.py:182
+#: casca/window.py:1922
 msgid "Security"
 msgstr "Bảo mật"
 
@@ -77,7 +79,7 @@ msgstr "Mạng xã hội"
 msgid "Utility"
 msgstr "Tiện ích"
 
-#: casca/catalog_strings.py:31
+#: casca/catalog_strings.py:31 casca/store.py:164 casca/store.py:193
 msgid "Video Streaming"
 msgstr "Phát video trực tuyến"
 
@@ -634,25 +636,174 @@ msgid "PWA Manifest"
 msgstr "PWA Manifest"
 
 #: casca/package_launcher.py:73 casca/package_launcher.py:119
-#: casca/window.py:934
 msgid "Package"
 msgstr "Gói"
 
-#: casca/store.py:80
+#: casca/store.py:82 casca/store.py:365
 msgid "Independent"
 msgstr "Độc lập"
 
-#: casca/store.py:81 casca/store.py:97
+#: casca/store.py:83 casca/store.py:100
 msgid "Other"
 msgstr "Khác"
 
-#: casca/store.py:92 casca/window.py:1038
+#: casca/store.py:95 casca/window.py:1303 casca/window.py:1544
 msgid "Independent apps"
 msgstr "Ứng dụng độc lập"
 
-#: casca/store.py:92
+#: casca/store.py:95 casca/store.py:108
 msgid "Global"
 msgstr "Toàn cầu"
+
+#: casca/store.py:158 casca/store.py:180 casca/store.py:187
+msgid "Communication"
+msgstr "Liên lạc"
+
+#: casca/store.py:159 casca/store.py:180 casca/store.py:187
+msgid "Social"
+msgstr "Mạng xã hội"
+
+#: casca/store.py:160 casca/store.py:194
+msgid "Business"
+msgstr "Doanh nghiệp"
+
+#: casca/store.py:161 casca/updater.py:90
+msgid "Development"
+msgstr "Phát triển"
+
+#: casca/store.py:162 casca/store.py:181 casca/store.py:189 casca/store.py:194
+msgid "Office"
+msgstr "Văn phòng"
+
+#: casca/store.py:163 casca/store.py:186 casca/store.py:193
+msgid "Entertainment"
+msgstr "Giải trí"
+
+#: casca/store.py:167 casca/store.py:192
+msgid "Design"
+msgstr "Thiết kế"
+
+#: casca/store.py:170 casca/store.py:181 casca/store.py:182 casca/store.py:185
+#: casca/store.py:188 casca/store.py:191 casca/store.py:192 casca/store.py:195
+msgid "Utilities"
+msgstr "Tiện ích"
+
+#: casca/store.py:172 casca/store.py:190
+msgid "Shopping"
+msgstr "Mua sắm"
+
+#: casca/store.py:173 casca/store.py:189
+msgid "Cloud"
+msgstr "Đám mây"
+
+#: casca/store.py:174 casca/store.py:195
+msgid "Search"
+msgstr "Tìm kiếm"
+
+#: casca/store.py:175
+msgid "Education"
+msgstr "Giáo dục"
+
+#: casca/store.py:222
+msgid "Messaging app for real-time conversations with people or groups."
+msgstr "Ứng dụng nhắn tin để trò chuyện theo thời gian thực với mọi người hoặc nhóm."
+
+#: casca/store.py:226
+msgid "Tool to create, edit, convert or sign PDF files right from the browser."
+msgstr "Công cụ tạo, chỉnh sửa, chuyển đổi hoặc ký PDF ngay trong trình duyệt."
+
+#: casca/store.py:230
+msgid "Digital security tool: checks links, data breaches or account safety."
+msgstr "Công cụ bảo mật số: kiểm tra liên kết, rò rỉ dữ liệu hoặc an toàn tài khoản."
+
+#: casca/store.py:234
+msgid "News portal with up-to-date journalistic content."
+msgstr "Cổng tin tức với nội dung báo chí cập nhật."
+
+#: casca/store.py:238
+msgid "AI assistant to chat, or generate text, images or code."
+msgstr "Trợ lý AI để trò chuyện hoặc tạo văn bản, hình ảnh và mã."
+
+#: casca/store.py:242
+msgid "Financial tool: calculator, value correction or money management."
+msgstr "Công cụ tài chính: máy tính, điều chỉnh giá trị hoặc quản lý tiền."
+
+#: casca/store.py:246
+msgid "Music and podcast streaming service."
+msgstr "Dịch vụ phát trực tuyến nhạc và podcast."
+
+#: casca/store.py:250
+msgid "Social network to post, follow people and interact with content."
+msgstr "Mạng xã hội để đăng bài, theo dõi mọi người và tương tác với nội dung."
+
+#: casca/store.py:254
+msgid "Everyday utility for a specific task, right in the browser."
+msgstr "Tiện ích hằng ngày cho một việc cụ thể, ngay trong trình duyệt."
+
+#: casca/store.py:258
+msgid "Cloud storage and services to keep and reach files from anywhere."
+msgstr "Lưu trữ và dịch vụ đám mây để giữ và truy cập tệp từ mọi nơi."
+
+#: casca/store.py:262
+msgid "Online marketplace to buy and sell products."
+msgstr "Chợ trực tuyến để mua và bán sản phẩm."
+
+#: casca/store.py:266
+msgid "File conversion tool or quick content sharing."
+msgstr "Công cụ chuyển đổi tệp hoặc chia sẻ nội dung nhanh."
+
+#: casca/store.py:270
+msgid "Creative tool for images, text or ideas."
+msgstr "Công cụ sáng tạo cho hình ảnh, văn bản hoặc ý tưởng."
+
+#: casca/store.py:274
+msgid "Video, movie and TV show streaming service."
+msgstr "Dịch vụ phát trực tuyến video, phim và chương trình TV."
+
+#: casca/store.py:278
+msgid "Productivity tool to organize tasks, documents or meetings."
+msgstr "Công cụ năng suất để sắp xếp công việc, tài liệu hoặc cuộc họp."
+
+#: casca/store.py:282
+msgid "Search engine to find information on the internet."
+msgstr "Công cụ tìm kiếm để tìm thông tin trên Internet."
+
+#: casca/store.py:288
+msgid "Site added to Casca as a web app."
+msgstr "Trang web được thêm vào Casca dưới dạng ứng dụng web."
+
+#: casca/store.py:300
+msgid "Camera"
+msgstr "Máy ảnh"
+
+#: casca/store.py:301
+msgid "Microphone"
+msgstr "Micrô"
+
+#: casca/store.py:302
+msgid "Notifications"
+msgstr "Thông báo"
+
+#: casca/store.py:303
+msgid "Files"
+msgstr "Tệp"
+
+#: casca/store.py:304
+msgid "Location"
+msgstr "Vị trí"
+
+#: casca/store.py:377 casca/window.py:1089 casca/window.py:1110
+#: casca/window.py:1639
+msgid "Gold"
+msgstr "Vàng"
+
+#: casca/store.py:377 casca/window.py:1641
+msgid "Silver"
+msgstr "Bạc"
+
+#: casca/store.py:377
+msgid "Bronze"
+msgstr "Đồng"
 
 #: casca/updater.py:90 casca/updater.py:91
 msgid "Release"
@@ -665,10 +816,6 @@ msgstr "Beta"
 #: casca/updater.py:90
 msgid "Alpha"
 msgstr "Alpha"
-
-#: casca/updater.py:90
-msgid "Development"
-msgstr "Phát triển"
 
 #: casca/updater.py:106
 msgid "Casca"
@@ -911,119 +1058,275 @@ msgstr "Trang web dựng sẵn"
 msgid "Search by name or category…"
 msgstr "Tìm theo tên hoặc danh mục…"
 
-#: casca/window.py:720 casca/window.py:1035
+#: casca/window.py:720 casca/window.py:1290 casca/window.py:1325
+#: casca/window.py:1541
 #, python-format
 msgid "%(n)d site"
 msgid_plural "%(n)d sites"
 msgstr[0] "%(n)d trang web"
 
-#: casca/window.py:904 casca/window.py:1287
-msgid "Store"
-msgstr "Cửa hàng"
+#: casca/window.py:1131 casca/window.py:1208
+msgid "Casca Store"
+msgstr "Cửa hàng Casca"
 
-#: casca/window.py:932
-msgid "Company"
-msgstr "Công ty"
-
-#: casca/window.py:933
-msgid "Type"
-msgstr "Loại"
-
-#: casca/window.py:949
-msgid "Search by name…"
-msgstr "Tìm theo tên…"
-
-#: casca/window.py:985
+#: casca/window.py:1183
 #, python-format
 msgid "Could not set an icon for %(name)s."
 msgstr "Không thể đặt biểu tượng cho %(name)s."
 
-#: casca/window.py:991
+#: casca/window.py:1189
 #, python-format
 msgid "Error installing package: %(error)s"
 msgstr "Lỗi khi cài đặt gói: %(error)s"
 
-#: casca/window.py:997
+#: casca/window.py:1195
 #, python-format
 msgid "Package “%(name)s” installed with %(n)d app."
 msgid_plural "Package “%(name)s” installed with %(n)d apps."
 msgstr[0] "Đã cài đặt gói \"%(name)s\" với %(n)d ứng dụng."
 
-#: casca/window.py:1023
-msgid "Nothing here yet"
-msgstr "Chưa có gì ở đây"
+#: casca/window.py:1221
+msgid "Search apps and sites…"
+msgstr "Tìm ứng dụng và trang web…"
 
-#: casca/window.py:1024
-msgid "Check the local catalog or your internet connection."
-msgstr "Kiểm tra danh mục cục bộ hoặc kết nối internet của bạn."
+#: casca/window.py:1243
+msgid "Region"
+msgstr "Khu vực"
 
-#: casca/window.py:1040
+#: casca/window.py:1307
+#, python-format
+msgid "%(n)d package"
+msgid_plural "%(n)d packages"
+msgstr[0] "%(n)d gói"
+
+#: casca/window.py:1313 casca/window.py:1316
+msgid "Packages"
+msgstr "Gói"
+
+#: casca/window.py:1339
+msgid "Categories"
+msgstr "Danh mục"
+
+#: casca/window.py:1344
+msgid "Editor's Choice"
+msgstr "Lựa chọn của biên tập viên"
+
+#: casca/window.py:1465
+msgid "No results"
+msgstr "Không có kết quả"
+
+#: casca/window.py:1508
+msgid "Search by name…"
+msgstr "Tìm theo tên…"
+
+#: casca/window.py:1545
 msgid "Install full package"
 msgstr "Cài đặt toàn bộ gói"
 
-#: casca/window.py:1165
+#: casca/window.py:1678
+msgid "Verified"
+msgstr "Đã xác minh"
+
+#: casca/window.py:1688
+msgid "Add to Casca"
+msgstr "Thêm vào Casca"
+
+#: casca/window.py:1689
+msgid "Add"
+msgstr "Thêm"
+
+#: casca/window.py:1707
+#, python-format
+msgid "Casca Seal: %(tier)s"
+msgstr "Dấu Casca: %(tier)s"
+
+#: casca/window.py:1729
+#, python-format
+msgid ""
+"%(name)s, by %(company)s, opens straight from %(domain)s in its own window — "
+"no installation and no downloads. Casca creates the menu shortcut and keeps "
+"the site's data in a profile that's separate from your browser."
+msgstr "%(name)s, của %(company)s, mở thẳng từ %(domain)s trong cửa sổ riêng — không cần cài đặt hay tải về. Casca tạo lối tắt trong menu và giữ dữ liệu trang web trong một hồ sơ tách biệt với trình duyệt của bạn."
+
+#: casca/window.py:1794
+msgid "Estimated disk savings"
+msgstr "Dung lượng đĩa tiết kiệm ước tính"
+
+#: casca/window.py:1797
+msgid "Isolated"
+msgstr "Cách ly"
+
+#: casca/window.py:1797
+msgid "HTTPS and its own profile"
+msgstr "HTTPS và hồ sơ riêng"
+
+#: casca/window.py:1808
+#, python-format
+msgid "%(n)d possible access"
+msgid_plural "%(n)d possible accesses"
+msgstr[0] "%(n)d quyền truy cập có thể"
+
+#: casca/window.py:1816
+msgid "No special access"
+msgstr "Không có quyền truy cập đặc biệt"
+
+#: casca/window.py:1816
+msgid "Doesn't typically ask for any"
+msgstr "Thường không yêu cầu gì"
+
+#: casca/window.py:1824
+#, python-format
+msgid "%(tier)s Seal"
+msgstr "Dấu %(tier)s"
+
+#: casca/window.py:1825
+msgid "Click for details"
+msgstr "Nhấn để xem chi tiết"
+
+#: casca/window.py:1849
+msgid "Casca-estimated quality seal"
+msgstr "Dấu chất lượng do Casca ước tính"
+
+#: casca/window.py:1854
+msgid "Updates"
+msgstr "Cập nhật"
+
+#: casca/window.py:1855
+msgid "Usability"
+msgstr "Tính dễ dùng"
+
+#: casca/window.py:1856
+msgid "Speed"
+msgstr "Tốc độ"
+
+#: casca/window.py:1857
+msgid "Community"
+msgstr "Cộng đồng"
+
+#: casca/window.py:1867
+msgid ""
+"Estimate calculated by Casca from the company's recognition and the app's "
+"category — not an official rating from the site."
+msgstr "Ước tính do Casca tính từ độ nhận diện của công ty và danh mục ứng dụng — không phải điểm chính thức của trang web."
+
+#: casca/window.py:1891
+msgid "Company"
+msgstr "Công ty"
+
+#: casca/window.py:1894
+msgid "See all apps from this company"
+msgstr "Xem tất cả ứng dụng của công ty này"
+
+#: casca/window.py:1905
+msgid "Possible access to your computer"
+msgstr "Các quyền truy cập có thể vào máy tính của bạn"
+
+#: casca/window.py:1906
+msgid "Typical pattern for this category — not a scan of this specific site."
+msgstr "Mẫu điển hình của danh mục này — không phải bản quét trang web cụ thể này."
+
+#: casca/window.py:1916
+msgid "Doesn't typically request special access"
+msgstr "Thường không yêu cầu quyền truy cập đặc biệt"
+
+#: casca/window.py:1926
+msgid "HTTPS connection"
+msgstr "Kết nối HTTPS"
+
+#: casca/window.py:1927
+msgid "Casca only opens sites over an encrypted connection."
+msgstr "Casca chỉ mở trang web qua kết nối được mã hóa."
+
+#: casca/window.py:1931
+msgid "Isolated browser profile"
+msgstr "Hồ sơ trình duyệt cách ly"
+
+#: casca/window.py:1933
+msgid ""
+"Each app you create gets its own profile, separate from your main browser "
+"and from your other apps."
+msgstr "Mỗi ứng dụng bạn tạo có hồ sơ riêng, tách biệt với trình duyệt chính và các ứng dụng khác của bạn."
+
+#: casca/window.py:1939
+msgid "No native executable installed"
+msgstr "Không cài tệp thực thi gốc nào"
+
+#: casca/window.py:1940
+msgid "Only a shortcut is created — nothing runs outside the browser engine."
+msgstr "Chỉ tạo một lối tắt — không có gì chạy ngoài động cơ trình duyệt."
+
+#: casca/window.py:1957
+#, python-format
+msgid "More from %(company)s"
+msgstr "Thêm từ %(company)s"
+
+#: casca/window.py:1984
 msgid "Casca Manual"
 msgstr "Hướng dẫn sử dụng Casca"
 
-#: casca/window.py:1185
+#: casca/window.py:2004
 msgid "Could not open the built-in manual"
 msgstr "Không thể mở hướng dẫn sử dụng tích hợp"
 
-#: casca/window.py:1204
+#: casca/window.py:2023
 msgid "Choose what to import"
 msgstr "Chọn nội dung cần nhập"
 
-#: casca/window.py:1213
+#: casca/window.py:2032
 #, python-format
 msgid "%(n)d site found"
 msgid_plural "%(n)d sites found"
 msgstr[0] "Tìm thấy %(n)d trang web"
 
-#: casca/window.py:1216
+#: casca/window.py:2035
 msgid "Uncheck anything you don't want to import."
 msgstr "Bỏ chọn những mục bạn không muốn nhập."
 
-#: casca/window.py:1219
+#: casca/window.py:2038
 msgid "(no name)"
 msgstr "(không có tên)"
 
-#: casca/window.py:1227
+#: casca/window.py:2046
 msgid "Import selected"
 msgstr "Nhập mục đã chọn"
 
-#: casca/window.py:1260
+#: casca/window.py:2079
 msgid "User guide"
 msgstr "Hướng dẫn sử dụng"
 
-#: casca/window.py:1261
+#: casca/window.py:2080
 msgid "About Casca"
 msgstr "Giới thiệu về Casca"
 
-#: casca/window.py:1262
+#: casca/window.py:2081
 msgid "Menu"
 msgstr "Trình đơn"
 
-#: casca/window.py:1292
+#: casca/window.py:2106
+msgid "Store"
+msgstr "Cửa hàng"
+
+#: casca/window.py:2111
 msgid "Create a new web app"
 msgstr "Tạo ứng dụng web mới"
 
-#: casca/window.py:1293
+#: casca/window.py:2112
 msgid "Create"
 msgstr "Tạo"
 
-#: casca/window.py:1302 casca/window.py:1429
+#: casca/window.py:2121 casca/window.py:2249
 msgid "Import apps"
 msgstr "Nhập ứng dụng"
 
-#: casca/window.py:1306 casca/window.py:1379
+#: casca/window.py:2125 casca/window.py:2199
 msgid "Export apps"
 msgstr "Xuất ứng dụng"
 
-#: casca/window.py:1337
+#: casca/window.py:2156
 msgid "Turns any website into a GNOME app."
 msgstr "Biến bất kỳ trang web nào thành ứng dụng GNOME."
 
-#: casca/window.py:1341
+#: casca/window.py:2160
 #, python-format
 msgid ""
 "Version %(latest)s is available — an update notification with a way to "
@@ -1031,121 +1334,122 @@ msgid ""
 msgstr ""
 "Đã có phiên bản %(latest)s — một thông báo kèm cách cập nhật vừa xuất hiện."
 
-#: casca/window.py:1356
+#: casca/window.py:2175
 msgid ""
-"Casca now checks for new releases in the background (once a day at most) and "
-"lets you know with a system notification — no action needed for Flatpak/Snap "
-"installs, which already update themselves."
-msgstr "Casca giờ đây kiểm tra phiên bản mới trong nền (tối đa mỗi ngày một lần) và báo cho bạn biết bằng thông báo hệ thống — không cần thao tác gì với bản cài qua Flatpak/Snap, vì các bản đó đã tự cập nhật."
+"The Store is now the Casca Store, in the style of GNOME Software: a featured "
+"apps carousel, colorful category tiles, Editor's Choice, and a page for each "
+"app with usage tags, the Bronze/Silver/Gold Casca seal, estimated disk "
+"savings, possible PC access and security info."
+msgstr "Cửa hàng giờ là Cửa hàng Casca, theo phong cách GNOME Software: băng chuyền ứng dụng nổi bật, ô danh mục nhiều màu, Lựa chọn của biên tập viên và trang riêng cho từng ứng dụng với thẻ sử dụng, dấu Casca Đồng/Bạc/Vàng, dung lượng đĩa tiết kiệm ước tính, các quyền truy cập máy tính có thể và thông tin bảo mật."
 
-#: casca/window.py:1361
+#: casca/window.py:2181
 msgid ""
-"The About dialog now shows the license, a link to the source code, whether "
-"you're on a release/beta/alpha build, and a proper “What's New” page with "
-"each version's changelog."
-msgstr "Hộp thoại Giới thiệu giờ đây hiển thị giấy phép, liên kết đến mã nguồn, cho biết bạn đang dùng bản phát hành/beta/alpha, và một trang “Có gì mới” thực sự với nhật ký thay đổi của từng phiên bản."
+"A region selector next to the search detects your country automatically and "
+"filters marketplaces and news to your region — or choose Global to see "
+"everything. All of it translated into the 20 supported languages."
+msgstr "Bộ chọn khu vực cạnh ô tìm kiếm tự động nhận diện quốc gia của bạn và lọc chợ trực tuyến cùng tin tức theo khu vực — hoặc chọn Toàn cầu để xem tất cả. Tất cả được dịch sang 20 ngôn ngữ được hỗ trợ."
 
-#: casca/window.py:1367
+#: casca/window.py:2187
 msgid "Source Code"
 msgstr "Mã nguồn"
 
-#: casca/window.py:1377
+#: casca/window.py:2197
 msgid "No app created yet to export."
 msgstr "Chưa có ứng dụng nào được tạo để xuất."
 
-#: casca/window.py:1401
+#: casca/window.py:2221
 #, python-format
 msgid "Error exporting: %(error)s"
 msgstr "Lỗi khi xuất: %(error)s"
 
-#: casca/window.py:1404
+#: casca/window.py:2224
 #, python-format
 msgid "%(count)d app exported to %(name)s."
 msgid_plural "%(count)d apps exported to %(name)s."
 msgstr[0] "Đã xuất %(count)d ứng dụng sang %(name)s."
 
-#: casca/window.py:1410
+#: casca/window.py:2230
 msgid "Import from where?"
 msgstr "Nhập từ đâu?"
 
-#: casca/window.py:1411
+#: casca/window.py:2231
 msgid "Choose a local .json file or a URL (e.g. a GitHub \"raw\" link)."
 msgstr ""
 "Chọn một tệp .json cục bộ hoặc một URL (ví dụ: liên kết \"raw\" trên GitHub)."
 
-#: casca/window.py:1413 casca/window.py:1459 casca/window.py:1592
-#: casca/window.py:1615
+#: casca/window.py:2233 casca/window.py:2279 casca/window.py:2412
+#: casca/window.py:2435
 msgid "Cancel"
 msgstr "Hủy"
 
-#: casca/window.py:1414
+#: casca/window.py:2234
 msgid "From a URL"
 msgstr "Từ một URL"
 
-#: casca/window.py:1415
+#: casca/window.py:2235
 msgid "Local file"
 msgstr "Tệp cục bộ"
 
-#: casca/window.py:1448
+#: casca/window.py:2268
 #, python-format
 msgid "Error reading the file: %(error)s"
 msgstr "Lỗi khi đọc tệp: %(error)s"
 
-#: casca/window.py:1454
+#: casca/window.py:2274
 msgid "Import from a URL"
 msgstr "Nhập từ URL"
 
-#: casca/window.py:1455
+#: casca/window.py:2275
 msgid "Paste the JSON file's \"raw\" link (e.g. from a GitHub repository)."
 msgstr "Dán liên kết \"raw\" của tệp JSON (ví dụ: từ một kho lưu trữ GitHub)."
 
-#: casca/window.py:1460
+#: casca/window.py:2280
 msgid "Fetch"
 msgstr "Tải về"
 
-#: casca/window.py:1472
+#: casca/window.py:2292
 msgid "Enter a URL."
 msgstr "Nhập một URL."
 
-#: casca/window.py:1474
+#: casca/window.py:2294
 msgid "Fetching file…"
 msgstr "Đang tải tệp…"
 
-#: casca/window.py:1481
+#: casca/window.py:2301
 #, python-format
 msgid "Error downloading: %(error)s"
 msgstr "Lỗi khi tải xuống: %(error)s"
 
-#: casca/window.py:1489
+#: casca/window.py:2309
 #, python-format
 msgid "Error importing: %(error)s"
 msgstr "Lỗi khi nhập: %(error)s"
 
-#: casca/window.py:1492
+#: casca/window.py:2312
 msgid "No app found in the file."
 msgstr "Không tìm thấy ứng dụng nào trong tệp."
 
-#: casca/window.py:1500
+#: casca/window.py:2320
 msgid "Nothing selected to import."
 msgstr "Chưa chọn gì để nhập."
 
-#: casca/window.py:1508
+#: casca/window.py:2328
 #, python-format
 msgid "%(n)d app imported."
 msgid_plural "%(n)d apps imported."
 msgstr[0] "Đã nhập %(n)d ứng dụng."
 
-#: casca/window.py:1514
+#: casca/window.py:2334
 #, python-format
 msgid "• %(name)s: %(reason)s"
 msgstr "• %(name)s: %(reason)s"
 
-#: casca/window.py:1518
+#: casca/window.py:2338
 #, python-format
 msgid "%(created)d imported, %(failed)d with errors"
 msgstr "Đã nhập %(created)d, %(failed)d bị lỗi"
 
-#: casca/window.py:1520
+#: casca/window.py:2340
 #, python-format
 msgid ""
 "Review and adjust manually via the \"Create\" button:\n"
@@ -1156,54 +1460,81 @@ msgstr ""
 "\n"
 "%(lines)s"
 
-#: casca/window.py:1522
+#: casca/window.py:2342
 msgid "Got it"
 msgstr "Đã hiểu"
 
-#: casca/window.py:1536
+#: casca/window.py:2356
 msgid "No web apps yet"
 msgstr "Chưa có ứng dụng web nào"
 
-#: casca/window.py:1537
+#: casca/window.py:2357
 msgid ""
 "Tap “Create” to make your first app, or open the Store for ready-made sites."
 msgstr ""
 "Nhấn \"Tạo\" để tạo ứng dụng đầu tiên của bạn, hoặc mở Cửa hàng để xem các "
 "trang web dựng sẵn."
 
-#: casca/window.py:1546
+#: casca/window.py:2366
 msgid "My web apps"
 msgstr "Ứng dụng web của tôi"
 
-#: casca/window.py:1568
+#: casca/window.py:2388
 msgid "Installed packages"
 msgstr "Các gói đã cài đặt"
 
-#: casca/window.py:1589
+#: casca/window.py:2409
 #, python-format
 msgid "Delete “%(name)s”?"
 msgstr "Xóa \"%(name)s\"?"
 
-#: casca/window.py:1590
+#: casca/window.py:2410
 msgid ""
 "The shortcut will be removed from the applications menu and the desktop, if "
 "it exists."
 msgstr "Lối tắt sẽ bị xóa khỏi trình đơn ứng dụng và màn hình nền, nếu có."
 
-#: casca/window.py:1593 casca/window.py:1616
+#: casca/window.py:2413 casca/window.py:2436
 msgid "Delete"
 msgstr "Xóa"
 
-#: casca/window.py:1607
+#: casca/window.py:2427
 #, python-format
 msgid "Delete package “%(name)s”?"
 msgstr "Xóa gói \"%(name)s\"?"
 
-#: casca/window.py:1609
+#: casca/window.py:2429
 #, python-format
 msgid "Removes the shortcut and the %(n)d app inside it (%(names)s)."
 msgid_plural "Removes the shortcut and the %(n)d apps inside it (%(names)s)."
 msgstr[0] "Xóa lối tắt và %(n)d ứng dụng bên trong (%(names)s)."
+
+#~ msgid ""
+#~ "Casca now checks for new releases in the background (once a day at most) "
+#~ "and lets you know with a system notification — no action needed for "
+#~ "Flatpak/Snap installs, which already update themselves."
+#~ msgstr ""
+#~ "Casca giờ đây kiểm tra phiên bản mới trong nền (tối đa mỗi ngày một lần) "
+#~ "và báo cho bạn biết bằng thông báo hệ thống — không cần thao tác gì với "
+#~ "bản cài qua Flatpak/Snap, vì các bản đó đã tự cập nhật."
+
+#~ msgid ""
+#~ "The About dialog now shows the license, a link to the source code, "
+#~ "whether you're on a release/beta/alpha build, and a proper “What's New” "
+#~ "page with each version's changelog."
+#~ msgstr ""
+#~ "Hộp thoại Giới thiệu giờ đây hiển thị giấy phép, liên kết đến mã nguồn, "
+#~ "cho biết bạn đang dùng bản phát hành/beta/alpha, và một trang “Có gì mới” "
+#~ "thực sự với nhật ký thay đổi của từng phiên bản."
+
+#~ msgid "Type"
+#~ msgstr "Loại"
+
+#~ msgid "Nothing here yet"
+#~ msgstr "Chưa có gì ở đây"
+
+#~ msgid "Check the local catalog or your internet connection."
+#~ msgstr "Kiểm tra danh mục cục bộ hoặc kết nối internet của bạn."
 
 #~ msgid ""
 #~ "Casca now speaks 20 languages, picked automatically from the system "

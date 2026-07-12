@@ -11,7 +11,7 @@ import gi
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 gi.require_version("Gdk", "4.0")
-from gi.repository import Adw, Gdk, Gio, GLib, Gtk
+from gi.repository import Adw, Gdk, Gio, GLib, Gtk, Pango
 
 _header_class_counter = itertools.count()
 
@@ -892,85 +892,283 @@ _COUNTRY_GROUPED_KINDS = {
 }
 
 
+def _group_icon_widget(facet: str, key: str) -> Gtk.Widget:
+    """Small leading icon for a group (company/package/country/kind bucket)."""
+    if facet == "company":
+        icon_path = social_icons.get_icon_path(_COMPANY_ICON_KEYS.get(key))
+        if icon_path:
+            image = Gtk.Image.new_from_file(str(icon_path))
+            image.set_pixel_size(28)
+            return image
+        return Adw.Avatar(text=key, show_initials=True, size=28)
+
+    if facet == "package":
+        icon_path = social_icons.get_icon_path(_PACKAGE_ICON_KEYS.get(key))
+        if icon_path:
+            image = Gtk.Image.new_from_file(str(icon_path))
+            image.set_pixel_size(28)
+            return image
+        return Gtk.Image.new_from_icon_name("view-grid-symbolic")
+
+    if facet == "country":
+        flag = _COUNTRY_FLAGS.get(key, "🌐")
+        label = Gtk.Label()
+        label.set_markup(f'<span font_desc="24">{GLib.markup_escape_text(flag)}</span>')
+        return label
+
+    icon_name = _KIND_ICON_NAMES.get(key, "view-grid-symbolic")
+    image = Gtk.Image.new_from_icon_name(icon_name)
+    image.set_pixel_size(24)
+    return image
+
+
+def _new_app_flowbox(compact: bool = False) -> Gtk.FlowBox:
+    """Grid of horizontal app cards (icon left, name/description right), like
+    GNOME Software's app tiles. Margin-less — the page hosting it sets margins."""
+    flow = Gtk.FlowBox()
+    if compact:
+        flow.set_margin_top(6)
+        flow.set_margin_bottom(6)
+        flow.set_margin_start(6)
+        flow.set_margin_end(6)
+    flow.set_selection_mode(Gtk.SelectionMode.NONE)
+    flow.set_homogeneous(True)
+    flow.set_row_spacing(12)
+    flow.set_column_spacing(12)
+    flow.set_min_children_per_line(2)
+    flow.set_max_children_per_line(3)
+    return flow
+
+
+def _new_category_flowbox() -> Gtk.FlowBox:
+    """3-per-row grid for the Store home's category pills, like GNOME Software's."""
+    flow = Gtk.FlowBox()
+    flow.set_selection_mode(Gtk.SelectionMode.NONE)
+    flow.set_homogeneous(True)
+    flow.set_row_spacing(12)
+    flow.set_column_spacing(12)
+    flow.set_min_children_per_line(3)
+    flow.set_max_children_per_line(3)
+    return flow
+
+
+def _section_label(text: str) -> Gtk.Label:
+    """Bold left-aligned section header, like GNOME Software's "Editor's Choice"."""
+    label = Gtk.Label(label=text, xalign=0)
+    label.add_css_class("title-4")
+    return label
+
+
+# Gradient pairs cycled across category tiles — GNOME Software colors each category
+# button distinctly instead of using flat/neutral cards, so we mirror that instead
+# of the plain "card" style class used elsewhere in Casca.
+_TILE_GRADIENTS: tuple[tuple[str, str], ...] = (
+    ("#7c6cf6", "#a86ef0"),
+    ("#e4c341", "#cf9a2e"),
+    ("#f857a6", "#a75cf5"),
+    ("#ef6c6c", "#f0a15c"),
+    ("#33b679", "#1f8f5a"),
+    ("#4a4a52", "#2e2e33"),
+    ("#4aa3e0", "#2e6fcf"),
+    ("#e05fae", "#b13ea0"),
+    ("#58c4c0", "#2f9490"),
+    ("#d97b3f", "#b85a2a"),
+)
+
+_store_css_loaded = False
+
+
+def _ensure_store_css() -> None:
+    """Loads the Store's gradient tile classes once per process."""
+    global _store_css_loaded
+    if _store_css_loaded:
+        return
+    _store_css_loaded = True
+
+    rules = [
+        ".casca-category-tile { border-radius: 12px; padding: 16px; }",
+        ".casca-category-tile label { color: #ffffff; }",
+        # Circular colored badges used by the detail page's context tiles, in the
+        # style of GNOME Software's size/safety/adaptive/age row. alpha() keeps the
+        # background readable in both light and dark themes.
+        ".casca-circle { border-radius: 9999px; padding: 10px; }",
+        ".casca-circle-grey { background: alpha(#77767b, 0.25); }",
+        ".casca-circle-green { background: alpha(#33d17a, 0.22); color: #2ec27e; }",
+        ".casca-circle-orange { background: alpha(#ff7800, 0.22); color: #e66100; }",
+        ".casca-circle-gold { background: alpha(#f5c211, 0.28); }",
+        ".casca-circle-silver { background: alpha(#c0bfbc, 0.30); }",
+        ".casca-circle-bronze { background: alpha(#b5835a, 0.32); }",
+    ]
+    for index, (start, end) in enumerate(_TILE_GRADIENTS):
+        rules.append(f".casca-cat-{index} {{ background: linear-gradient(135deg, {start}, {end}); }}")
+
+    provider = Gtk.CssProvider()
+    provider.load_from_data("\n".join(rules).encode())
+    Gtk.StyleContext.add_provider_for_display(
+        Gdk.Display.get_default(), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+    )
+
+
+def _build_category_tile(icon_widget: Gtk.Widget, title: str, tooltip: str, gradient_index: int, on_click) -> Gtk.Widget:
+    """Colorful gradient pill — icon and label centered side by side, exactly like
+    GNOME Software's category buttons on the Explore page."""
+    _ensure_store_css()
+    button = Gtk.Button(tooltip_text=tooltip)
+    button.add_css_class("flat")
+    button.add_css_class("casca-category-tile")
+    button.add_css_class(f"casca-cat-{gradient_index % len(_TILE_GRADIENTS)}")
+    button.set_hexpand(True)
+    button.set_size_request(-1, 60)
+    button.connect("clicked", lambda _btn: on_click())
+
+    box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10, halign=Gtk.Align.CENTER, valign=Gtk.Align.CENTER)
+    box.append(icon_widget)
+    title_label = Gtk.Label(label=title)
+    title_label.set_ellipsize(Pango.EllipsizeMode.END)
+    title_label.add_css_class("heading")
+    box.append(title_label)
+
+    button.set_child(box)
+    return button
+
+
+def _build_app_tile(item: store.StoreItem, on_click) -> Gtk.Widget:
+    """Horizontal app card — icon on the left, name and short description on the
+    right — like GNOME Software's "Editor's Choice" tiles."""
+    icon_path = store.save_icon_to_temp(item)
+    if icon_path:
+        image = Gtk.Image.new_from_file(str(icon_path))
+        image.set_pixel_size(48)
+    else:
+        image = Adw.Avatar(text=item.name, show_initials=True, size=48)
+    image.set_valign(Gtk.Align.CENTER)
+
+    button = Gtk.Button(tooltip_text=f"{item.name} — {item.company}")
+    button.add_css_class("flat")
+    button.add_css_class("card")
+    button.set_hexpand(True)
+    button.set_size_request(-1, 88)
+    button.connect("clicked", lambda _btn: on_click())
+
+    box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=12, valign=Gtk.Align.CENTER)
+    box.set_margin_top(12)
+    box.set_margin_bottom(12)
+    box.set_margin_start(12)
+    box.set_margin_end(12)
+    box.append(image)
+
+    text_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=2, valign=Gtk.Align.CENTER, hexpand=True)
+    name_label = Gtk.Label(label=item.name, xalign=0)
+    name_label.set_ellipsize(Pango.EllipsizeMode.END)
+    name_label.add_css_class("heading")
+    text_box.append(name_label)
+
+    description_label = Gtk.Label(label=store.kind_info(item.kind).blurb, xalign=0, wrap=True)
+    description_label.set_lines(2)
+    description_label.set_ellipsize(Pango.EllipsizeMode.END)
+    description_label.add_css_class("caption")
+    description_label.add_css_class("dim-label")
+    text_box.append(description_label)
+
+    box.append(text_box)
+    button.set_child(box)
+    return button
+
+
+def _pick_featured(items: list[store.StoreItem], count: int = 6) -> list[store.StoreItem]:
+    """A handful of Gold-tier, well-known apps for the Store home's featured
+    carousel — at most one per category AND one per company, for variety."""
+    featured: list[store.StoreItem] = []
+    seen_kinds: set[str] = set()
+    seen_companies: set[str] = set()
+    for item in items:
+        if item.company not in store.VERIFIED_COMPANIES:
+            continue
+        if item.kind in seen_kinds or item.company in seen_companies:
+            continue
+        if store.rank_badge(item).tier != _("Gold"):
+            continue
+        seen_kinds.add(item.kind)
+        seen_companies.add(item.company)
+        featured.append(item)
+        if len(featured) >= count:
+            break
+    return featured
+
+
+def _pick_editor_choice(items: list[store.StoreItem], exclude: list[store.StoreItem], count: int = 9) -> list[store.StoreItem]:
+    """Gold-tier verified apps for the home's "Editor's Choice" grid — one per
+    company, skipping anything already in the featured carousel."""
+    exclude_names = {item.name for item in exclude}
+    seen_companies = {item.company for item in exclude}
+    picks: list[store.StoreItem] = []
+    for item in items:
+        if item.name in exclude_names or item.company in seen_companies:
+            continue
+        if item.company not in store.VERIFIED_COMPANIES:
+            continue
+        if store.rank_badge(item).tier != _("Gold"):
+            continue
+        seen_companies.add(item.company)
+        picks.append(item)
+        if len(picks) >= count:
+            break
+    return picks
+
+
 class StoreWindow(Adw.ApplicationWindow):
-    """Store: its own window with a catalog of ready-made sites, grouped by Company/Type/Package."""
+    """Casca Store: its own window, browsed by category grid (Play Store/App Store
+    style) instead of the old company/type/package facet tabs. Owns the catalog and
+    acts as the shared controller for its internal navigation stack (home → category
+    → app detail / company), so every page just holds a reference back to it."""
 
     def __init__(self, parent: Adw.ApplicationWindow, nav_view: Adw.NavigationView, on_refresh_list):
         super().__init__(
             application=parent.get_application(),
             transient_for=parent,
-            default_width=560,
-            default_height=760,
-            title=_("Store"),
+            default_width=640,
+            default_height=800,
+            title=_("Casca Store"),
         )
-        self._nav_view = nav_view
+        self._app_nav_view = nav_view
         self._on_refresh_list = on_refresh_list
-        all_items = store.fetch_catalog()
+
+        self.all_items = store.fetch_catalog()
         special_kinds = set(_COUNTRY_GROUPED_KINDS.values())
-        self._catalog_items = [item for item in all_items if item.kind not in special_kinds]
-        self._kind_pools = {
-            facet_key: [item for item in all_items if item.kind == kind]
+        self.catalog_items = [item for item in self.all_items if item.kind not in special_kinds]
+        self.kind_pools = {
+            facet_key: [item for item in self.all_items if item.kind == kind]
             for facet_key, kind in _COUNTRY_GROUPED_KINDS.items()
         }
-        self._facet = "company"
-        self._group_rows: list[tuple[str, Adw.ExpanderRow, list[tuple[store.StoreItem, Adw.ActionRow]]]] = []
-        self._pending_icons: dict[Adw.ExpanderRow, list[tuple[store.StoreItem, Gtk.Box]]] = {}
 
-        toolbar = Adw.ToolbarView()
-        toolbar.add_top_bar(Adw.HeaderBar())
+        self.regions = [store.GLOBAL_REGION] + store.available_regions(self.all_items)
+        self.region = store.detect_default_region(self.regions)
 
-        top_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=8)
-        top_box.set_margin_start(12)
-        top_box.set_margin_end(12)
-        top_box.set_margin_top(12)
-
-        facet_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, halign=Gtk.Align.CENTER)
-        facet_box.add_css_class("linked")
-        self._facet_buttons: dict[str, Gtk.ToggleButton] = {}
-        first = None
-        for key, label in (
-            ("company", _("Company")),
-            ("kind", _("Type")),
-            ("package", _("Package")),
-            ("marketplace", _("Marketplace")),
-            ("news", _("News")),
-        ):
-            toggle = Gtk.ToggleButton(label=label)
-            if first is None:
-                first = toggle
-            else:
-                toggle.set_group(first)
-            toggle.set_active(key == self._facet)
-            toggle.connect("toggled", self._on_facet_toggled, key)
-            facet_box.append(toggle)
-            self._facet_buttons[key] = toggle
-        top_box.append(facet_box)
-
-        self._search_entry = Gtk.SearchEntry(placeholder_text=_("Search by name…"))
-        self._search_entry.connect("changed", self._on_search_changed)
-        top_box.append(self._search_entry)
-
-        self._page = Adw.PreferencesPage()
-        self._page.set_vexpand(True)
-        self._current_group: Adw.PreferencesGroup | None = None
-
-        content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        content_box.append(top_box)
-        content_box.append(self._page)
-
-        toolbar.set_content(content_box)
         self._toast_overlay = Adw.ToastOverlay()
-        self._toast_overlay.set_child(toolbar)
+        self._store_nav = Adw.NavigationView()
+        self._store_nav.push(StoreHomePage(self))
+        self._toast_overlay.set_child(self._store_nav)
         self.set_content(self._toast_overlay)
 
-        self._rebuild_rows()
-
-    def _toast(self, message: str) -> None:
+    def toast(self, message: str) -> None:
         self._toast_overlay.add_toast(Adw.Toast(title=message, timeout=4))
 
-    def _on_install_package(
-        self, _button: Gtk.Button, package_name: str, items: list[store.StoreItem]
-    ) -> None:
+    def push(self, page: Adw.NavigationPage) -> None:
+        self._store_nav.push(page)
+
+    def filtered_catalog_items(self) -> list[store.StoreItem]:
+        return [item for item in self.catalog_items if store.region_matches(item, self.region)]
+
+    def filtered_kind_pool(self, facet_key: str) -> list[store.StoreItem]:
+        return [item for item in self.kind_pools.get(facet_key, []) if store.region_matches(item, self.region)]
+
+    def open_editor_for(self, item: store.StoreItem) -> None:
+        editor = EditorPage(self._app_nav_view, on_saved=self._on_refresh_list)
+        self._app_nav_view.push(editor)
+        editor._on_store_item_picked(item)
+        self.close()
+
+    def install_package(self, package_name: str, items: list[store.StoreItem]) -> None:
         sub_apps = []
         for item in items:
             icon_path = store.save_icon_to_temp(item)
@@ -982,17 +1180,17 @@ class StoreWindow(Adw.ApplicationWindow):
         if package_icon is None:
             package_icon = store.save_icon_to_temp(items[0])
         if package_icon is None:
-            self._toast(_("Could not set an icon for %(name)s.") % {"name": package_name})
+            self.toast(_("Could not set an icon for %(name)s.") % {"name": package_name})
             return
 
         try:
             entries.create_package(package_name, sub_apps, package_icon)
         except ValueError as error:
-            self._toast(_("Error installing package: %(error)s") % {"error": error})
+            self.toast(_("Error installing package: %(error)s") % {"error": error})
             return
 
         self._on_refresh_list()
-        self._toast(
+        self.toast(
             ngettext(
                 "Package “%(name)s” installed with %(n)d app.",
                 "Package “%(name)s” installed with %(n)d apps.",
@@ -1001,156 +1199,777 @@ class StoreWindow(Adw.ApplicationWindow):
             % {"name": package_name, "n": len(items)}
         )
 
-    def _on_facet_toggled(self, toggle: Gtk.ToggleButton, key: str) -> None:
-        if toggle.get_active():
-            self._facet = key
-            self._rebuild_rows()
 
-    def _rebuild_rows(self) -> None:
-        if self._current_group is not None:
-            self._page.remove(self._current_group)
-            self._current_group = None
-        self._group_rows.clear()
-        self._pending_icons.clear()
+class StoreHomePage(Adw.NavigationPage):
+    """Store home: a grid of categories to browse (icons separated by area), plus a
+    global search across the whole catalog."""
 
-        is_special = self._facet in _COUNTRY_GROUPED_KINDS
-        items_pool = self._kind_pools[self._facet] if is_special else self._catalog_items
-        group_key = "country" if is_special else self._facet
+    def __init__(self, store_window: StoreWindow):
+        super().__init__(title=_("Casca Store"))
+        self._store_window = store_window
+        self._carousel_timeout_id: int | None = None
 
-        if not items_pool:
-            status = Adw.StatusPage(
-                icon_name="org.gnome.Software-symbolic",
-                title=_("Nothing here yet"),
-                description=_("Check the local catalog or your internet connection."),
+        toolbar = Adw.ToolbarView()
+        toolbar.add_top_bar(Adw.HeaderBar())
+
+        top_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=8)
+        top_box.set_margin_start(12)
+        top_box.set_margin_end(12)
+        top_box.set_margin_top(12)
+
+        search_row = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
+        self._search_entry = Gtk.SearchEntry(placeholder_text=_("Search apps and sites…"), hexpand=True)
+        self._search_entry.connect("changed", self._on_search_changed)
+        search_row.append(self._search_entry)
+        search_row.append(self._build_region_dropdown())
+        top_box.append(search_row)
+
+        self._scrolled = Gtk.ScrolledWindow(vexpand=True)
+        content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        content_box.append(top_box)
+        content_box.append(self._scrolled)
+        toolbar.set_content(content_box)
+        self.set_child(toolbar)
+        self.connect("destroy", self._on_destroy)
+
+        self._show_categories()
+
+    def _build_region_dropdown(self) -> Gtk.DropDown:
+        labels = Gtk.StringList()
+        for region in self._store_window.regions:
+            flag = _COUNTRY_FLAGS.get(region, "🌐")
+            labels.append(f"{flag} {_(region)}")
+
+        dropdown = Gtk.DropDown(model=labels, tooltip_text=_("Region"))
+        try:
+            dropdown.set_selected(self._store_window.regions.index(self._store_window.region))
+        except ValueError:
+            dropdown.set_selected(0)
+        dropdown.connect("notify::selected", self._on_region_changed)
+        return dropdown
+
+    def _on_region_changed(self, dropdown: Gtk.DropDown, _pspec) -> None:
+        index = dropdown.get_selected()
+        if 0 <= index < len(self._store_window.regions):
+            self._store_window.region = self._store_window.regions[index]
+        if self._search_entry.get_text().strip():
+            self._on_search_changed(self._search_entry)
+        else:
+            self._show_categories()
+
+    def _cancel_carousel_autoplay(self) -> None:
+        if self._carousel_timeout_id is not None:
+            GLib.source_remove(self._carousel_timeout_id)
+            self._carousel_timeout_id = None
+
+    def _on_destroy(self, _widget) -> None:
+        self._cancel_carousel_autoplay()
+
+    def _show_categories(self) -> None:
+        self._cancel_carousel_autoplay()
+        body = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=18)
+        body.set_margin_start(12)
+        body.set_margin_end(12)
+        body.set_margin_top(6)
+        body.set_margin_bottom(18)
+
+        catalog_items = self._store_window.filtered_catalog_items()
+
+        featured = _pick_featured(catalog_items)
+        if featured:
+            body.append(self._build_carousel(featured))
+
+        flow = _new_category_flowbox()
+        gradient_index = 0
+
+        grouped_kind = store.group_by(catalog_items, "kind")
+        for kind, icon_name in _KIND_ICON_NAMES.items():
+            items = grouped_kind.get(kind, [])
+            if not items:
+                continue
+            tooltip = ngettext("%(n)d site", "%(n)d sites", len(items)) % {"n": len(items)}
+            image = Gtk.Image.new_from_icon_name(icon_name)
+            image.set_pixel_size(20)
+            flow.append(
+                _build_category_tile(
+                    image, _(kind), tooltip, gradient_index, lambda k=kind, i=items: self._open_category(_(k), i)
+                )
             )
-            group = Adw.PreferencesGroup()
-            group.add(status)
-            self._page.add(group)
-            self._current_group = group
+            gradient_index += 1
+
+        packages = {
+            key: items
+            for key, items in store.group_by(catalog_items, "package").items()
+            if key != _("Independent apps")
+        }
+        if packages:
+            package_items = [item for items in packages.values() for item in items]
+            tooltip = ngettext("%(n)d package", "%(n)d packages", len(packages)) % {"n": len(packages)}
+            image = Gtk.Image.new_from_icon_name("view-grid-symbolic")
+            image.set_pixel_size(20)
+            flow.append(
+                _build_category_tile(
+                    image,
+                    _("Packages"),
+                    tooltip,
+                    gradient_index,
+                    lambda i=package_items: self._open_grouped(_("Packages"), i, "package"),
+                )
+            )
+            gradient_index += 1
+
+        for facet_key, kind_label in _COUNTRY_GROUPED_KINDS.items():
+            items = self._store_window.filtered_kind_pool(facet_key)
+            if not items:
+                continue
+            tooltip = ngettext("%(n)d site", "%(n)d sites", len(items)) % {"n": len(items)}
+            label = Gtk.Label()
+            label.set_markup('<span font_desc="16">🌐</span>')
+            flow.append(
+                _build_category_tile(
+                    label,
+                    _(kind_label),
+                    tooltip,
+                    gradient_index,
+                    lambda i=items, l=kind_label: self._open_grouped(_(l), i, "country"),
+                )
+            )
+            gradient_index += 1
+
+        body.append(_section_label(_("Categories")))
+        body.append(flow)
+
+        editor_picks = _pick_editor_choice(catalog_items, exclude=featured)
+        if editor_picks:
+            body.append(_section_label(_("Editor's Choice")))
+            picks_flow = _new_app_flowbox()
+            for item in editor_picks:
+                picks_flow.append(_build_app_tile(item, lambda i=item: self._open_detail(i)))
+            body.append(picks_flow)
+
+        self._scrolled.set_child(body)
+
+    def _build_carousel(self, featured: list[store.StoreItem]) -> Gtk.Widget:
+        carousel = Adw.Carousel()
+        carousel.set_size_request(-1, 220)
+        for item in featured:
+            carousel.append(self._build_carousel_page(item))
+
+        dots = Adw.CarouselIndicatorDots(carousel=carousel)
+        dots.set_halign(Gtk.Align.CENTER)
+
+        overlay = Gtk.Overlay()
+        overlay.set_child(carousel)
+
+        prev_button = Gtk.Button(icon_name="go-previous-symbolic", valign=Gtk.Align.CENTER, halign=Gtk.Align.START)
+        prev_button.add_css_class("circular")
+        prev_button.add_css_class("osd")
+        prev_button.set_margin_start(8)
+        prev_button.connect("clicked", lambda _b: self._scroll_carousel(carousel, -1))
+        overlay.add_overlay(prev_button)
+
+        next_button = Gtk.Button(icon_name="go-next-symbolic", valign=Gtk.Align.CENTER, halign=Gtk.Align.END)
+        next_button.add_css_class("circular")
+        next_button.add_css_class("osd")
+        next_button.set_margin_end(8)
+        next_button.connect("clicked", lambda _b: self._scroll_carousel(carousel, 1))
+        overlay.add_overlay(next_button)
+
+        wrapper = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=8)
+        wrapper.append(overlay)
+        wrapper.append(dots)
+
+        if carousel.get_n_pages() > 1:
+            self._carousel_timeout_id = GLib.timeout_add_seconds(5, self._autoplay_tick, carousel)
+        return wrapper
+
+    def _autoplay_tick(self, carousel: Adw.Carousel) -> bool:
+        if carousel.get_root() is None:
+            self._carousel_timeout_id = None
+            return GLib.SOURCE_REMOVE
+        self._scroll_carousel(carousel, 1)
+        return GLib.SOURCE_CONTINUE
+
+    def _build_carousel_page(self, item: store.StoreItem) -> Gtk.Widget:
+        icon_path = store.save_icon_to_temp(item)
+        rgb = icons.dominant_color(icon_path) if icon_path else (90, 90, 90)
+        text_color = icons.contrasting_text_color(rgb)
+        css_class = f"casca-featured-{next(_header_class_counter)}"
+        provider = Gtk.CssProvider()
+        provider.load_from_data(
+            (
+                f".{css_class} {{ background: {icons.to_hex(rgb)}; border-radius: 16px; }}"
+                f".{css_class} label {{ color: {text_color}; }}"
+            ).encode()
+        )
+        Gtk.StyleContext.add_provider_for_display(
+            Gdk.Display.get_default(), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        )
+
+        button = Gtk.Button()
+        button.add_css_class("flat")
+        button.add_css_class(css_class)
+        button.connect("clicked", lambda _b, i=item: self._open_detail(i))
+
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6, halign=Gtk.Align.CENTER, valign=Gtk.Align.CENTER)
+        box.set_margin_top(16)
+        box.set_margin_bottom(16)
+        if icon_path:
+            image = Gtk.Image.new_from_file(str(icon_path))
+            image.set_pixel_size(64)
+        else:
+            image = Adw.Avatar(text=item.name, show_initials=True, size=64)
+        box.append(image)
+
+        name_label = Gtk.Label(label=item.name)
+        name_label.add_css_class("title-1")
+        box.append(name_label)
+
+        blurb_label = Gtk.Label(
+            label=store.kind_info(item.kind).blurb, wrap=True, justify=Gtk.Justification.CENTER
+        )
+        blurb_label.set_max_width_chars(44)
+        blurb_label.add_css_class("caption")
+        box.append(blurb_label)
+
+        button.set_child(box)
+        return button
+
+    def _scroll_carousel(self, carousel: Adw.Carousel, delta: int) -> None:
+        n_pages = carousel.get_n_pages()
+        if n_pages == 0:
+            return
+        target = (round(carousel.get_position()) + delta) % n_pages
+        carousel.scroll_to(carousel.get_nth_page(target), True)
+
+    def _open_category(self, title: str, items: list[store.StoreItem]) -> None:
+        self._store_window.push(CategoryPage(self._store_window, title, items))
+
+    def _open_grouped(self, title: str, items: list[store.StoreItem], group_facet: str) -> None:
+        self._store_window.push(CategoryPage(self._store_window, title, items, group_facet=group_facet))
+
+    def _on_search_changed(self, entry: Gtk.SearchEntry) -> None:
+        query = _fold(entry.get_text().strip())
+        if not query:
+            self._show_categories()
             return
 
-        grouped = store.group_by(items_pool, group_key)
+        self._cancel_carousel_autoplay()
+        all_items = self._store_window.filtered_catalog_items() + [
+            item
+            for facet_key in _COUNTRY_GROUPED_KINDS
+            for item in self._store_window.filtered_kind_pool(facet_key)
+        ]
+        matches = [item for item in all_items if query in _fold(item.name) or query in _fold(item.company)]
+        if not matches:
+            status = Adw.StatusPage(icon_name="system-search-symbolic", title=_("No results"))
+            self._scrolled.set_child(status)
+            return
+
+        flow = _new_app_flowbox()
+        flow.set_margin_top(6)
+        flow.set_margin_bottom(12)
+        flow.set_margin_start(12)
+        flow.set_margin_end(12)
+        for item in matches:
+            flow.append(_build_app_tile(item, lambda i=item: self._open_detail(i)))
+        self._scrolled.set_child(flow)
+
+    def _open_detail(self, item: store.StoreItem) -> None:
+        self._store_window.push(AppDetailPage(self._store_window, item))
+
+
+class CategoryPage(Adw.NavigationPage):
+    """One area of the Store: either a flat grid of app icons (a category, a
+    company, or search results) or — for the "Packages"/"Marketplaces"/"News" home
+    tiles — an accordion of sub-groups, each with its own grid inside."""
+
+    def __init__(
+        self,
+        store_window: StoreWindow,
+        title: str,
+        items: list[store.StoreItem],
+        group_facet: str | None = None,
+    ):
+        super().__init__(title=title)
+        self._store_window = store_window
+        self._items = items
+        self._group_facet = group_facet
+        self._flat_entries: list[tuple[store.StoreItem, Gtk.Widget]] = []
+        self._grouped_entries: list[tuple[str, Adw.ExpanderRow, list[tuple[store.StoreItem, Gtk.Widget]]]] = []
+
+        toolbar = Adw.ToolbarView()
+        toolbar.add_top_bar(Adw.HeaderBar())
+
+        top_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=8)
+        top_box.set_margin_start(12)
+        top_box.set_margin_end(12)
+        top_box.set_margin_top(12)
+        self._search_entry = Gtk.SearchEntry(placeholder_text=_("Search by name…"))
+        self._search_entry.connect("changed", self._on_search_changed)
+        top_box.append(self._search_entry)
+
+        self._scrolled = Gtk.ScrolledWindow(vexpand=True)
+        content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        content_box.append(top_box)
+        content_box.append(self._scrolled)
+        toolbar.set_content(content_box)
+        self.set_child(toolbar)
+
+        if group_facet is None:
+            self._build_flat()
+        else:
+            self._build_grouped()
+
+    def _build_flat(self) -> None:
+        flow = _new_app_flowbox()
+        flow.set_margin_top(6)
+        flow.set_margin_bottom(12)
+        flow.set_margin_start(12)
+        flow.set_margin_end(12)
+        for item in self._items:
+            tile = _build_app_tile(item, lambda i=item: self._open_detail(i))
+            flow.append(tile)
+            self._flat_entries.append((item, tile))
+        self._scrolled.set_child(flow)
+
+    def _build_grouped(self) -> None:
+        page = Adw.PreferencesPage()
         group = Adw.PreferencesGroup()
+        grouped = store.group_by(self._items, self._group_facet)
         for key, items in grouped.items():
             subtitle = ngettext("%(n)d site", "%(n)d sites", len(items)) % {"n": len(items)}
             expander = Adw.ExpanderRow(title=_(key), subtitle=subtitle)
-            expander.add_prefix(self._group_icon_widget(key))
-            if group_key == "package" and key != _("Independent apps"):
-                install_button = Gtk.Button(
-                    label=_("Install full package"), valign=Gtk.Align.CENTER
-                )
+            expander.add_prefix(_group_icon_widget(self._group_facet, key))
+            if self._group_facet == "package" and key != _("Independent apps"):
+                install_button = Gtk.Button(label=_("Install full package"), valign=Gtk.Align.CENTER)
                 install_button.add_css_class("flat")
                 install_button.connect("clicked", self._on_install_package, key, items)
                 expander.add_suffix(install_button)
-            rows = []
-            pending_icons = []
+
+            flow = _new_app_flowbox(compact=True)
+            entries_for_group: list[tuple[store.StoreItem, Gtk.Widget]] = []
             for item in items:
-                row, icon_slot = self._build_item_row(item)
-                expander.add_row(row)
-                rows.append((item, row))
-                pending_icons.append((item, icon_slot))
-            self._pending_icons[expander] = pending_icons
-            expander.connect("notify::expanded", self._on_group_expanded)
+                tile = _build_app_tile(item, lambda i=item: self._open_detail(i))
+                flow.append(tile)
+                entries_for_group.append((item, tile))
+            expander.add_row(flow)
+
             group.add(expander)
-            self._group_rows.append((key, expander, rows))
-        self._page.add(group)
-        self._current_group = group
+            self._grouped_entries.append((key, expander, entries_for_group))
+        page.add(group)
+        self._scrolled.set_child(page)
 
-        self._apply_search()
+    def _on_install_package(self, _button: Gtk.Button, package_name: str, items: list[store.StoreItem]) -> None:
+        self._store_window.install_package(package_name, items)
 
-    def _on_group_expanded(self, expander: Adw.ExpanderRow, _pspec) -> None:
-        """Only fetches/decodes a group's icons (base64 -> PNG on disk) the first
-        time it's expanded — avoids doing this for every catalog item (including
-        groups the user never opens) every time the Store is opened or the tab is
-        switched."""
-        if not expander.get_expanded():
-            return
-        pending = self._pending_icons.pop(expander, None)
-        if not pending:
-            return
-        for item, icon_slot in pending:
-            placeholder = icon_slot.get_first_child()
-            if placeholder is not None:
-                icon_slot.remove(placeholder)
-            icon_path = store.save_icon_to_temp(item)
-            if icon_path:
-                image = Gtk.Image.new_from_file(str(icon_path))
-                image.set_pixel_size(32)
-                icon_slot.append(image)
-            else:
-                icon_slot.append(Adw.Avatar(text=item.name, show_initials=True, size=32))
+    def _on_search_changed(self, entry: Gtk.SearchEntry) -> None:
+        query = _fold(entry.get_text().strip())
 
-    def _group_icon_widget(self, key: str) -> Gtk.Widget:
-        if self._facet == "company":
-            icon_path = social_icons.get_icon_path(_COMPANY_ICON_KEYS.get(key))
-            if icon_path:
-                image = Gtk.Image.new_from_file(str(icon_path))
-                image.set_pixel_size(28)
-                return image
-            return Adw.Avatar(text=key, show_initials=True, size=28)
-
-        if self._facet == "package":
-            icon_path = social_icons.get_icon_path(_PACKAGE_ICON_KEYS.get(key))
-            if icon_path:
-                image = Gtk.Image.new_from_file(str(icon_path))
-                image.set_pixel_size(28)
-                return image
-            return Gtk.Image.new_from_icon_name("view-grid-symbolic")
-
-        if self._facet == "country" or self._facet in _COUNTRY_GROUPED_KINDS:
-            flag = _COUNTRY_FLAGS.get(key, "🌐")
-            label = Gtk.Label(label=flag)
-            label.set_markup(f'<span font_desc="24">{GLib.markup_escape_text(flag)}</span>')
-            return label
-
-        icon_name = _KIND_ICON_NAMES.get(key, "view-grid-symbolic")
-        image = Gtk.Image.new_from_icon_name(icon_name)
-        image.set_pixel_size(24)
-        return image
-
-    def _on_search_changed(self, _entry: Gtk.SearchEntry) -> None:
-        self._apply_search()
-
-    def _apply_search(self) -> None:
-        query = _fold(self._search_entry.get_text().strip())
-
-        if not query:
-            for _key, expander, rows in self._group_rows:
-                expander.set_visible(True)
-                expander.set_expanded(False)
-                for _item, row in rows:
-                    row.set_visible(True)
+        if self._flat_entries:
+            for item, tile in self._flat_entries:
+                tile.set_visible(not query or query in _fold(item.name) or query in _fold(item.company))
             return
 
-        for key, expander, rows in self._group_rows:
-            group_matches = query in _fold(key)
+        for key, expander, entries_for_group in self._grouped_entries:
+            group_matches = not query or query in _fold(key)
             any_visible = False
-            for item, row in rows:
+            for item, tile in entries_for_group:
                 visible = group_matches or query in _fold(item.name)
-                row.set_visible(visible)
+                tile.set_visible(visible)
                 any_visible = any_visible or visible
             expander.set_visible(any_visible)
-            expander.set_expanded(any_visible)
+            expander.set_expanded(any_visible and bool(query))
 
-    def _build_item_row(self, item: store.StoreItem) -> tuple[Adw.ActionRow, Gtk.Box]:
-        """Builds the row with a lightweight placeholder (initials Avatar, no disk access).
-        The real icon (decoded from the catalog's base64) only loads once the group
-        is expanded — see `_on_group_expanded`."""
-        row = Adw.ActionRow(title=item.name, activatable=True)
+    def _open_detail(self, item: store.StoreItem) -> None:
+        self._store_window.push(AppDetailPage(self._store_window, item))
 
-        icon_slot = Gtk.Box()
-        icon_slot.append(Adw.Avatar(text=item.name, show_initials=True, size=32))
-        row.add_prefix(icon_slot)
 
-        row.add_suffix(Gtk.Image.new_from_icon_name("go-next-symbolic"))
-        row.connect("activated", self._on_item_row_activated, item)
-        return row, icon_slot
+class AppDetailPage(Adw.NavigationPage):
+    """App detail: header bar colored from the app's own icon, plus everything the
+    Store knows about the site — what it is, its usage tags, the Casca quality
+    seal, disk-space savings, possible PC access and security properties."""
 
-    def _on_item_row_activated(self, _row: Adw.ActionRow, item: store.StoreItem) -> None:
-        editor = EditorPage(self._nav_view, on_saved=self._on_refresh_list)
-        self._nav_view.push(editor)
-        editor._on_store_item_picked(item)
-        self.close()
+    _BADGE_EMOJI = {"Gold": "🥇", "Silver": "🥈", "Bronze": "🥉"}
+
+    def __init__(self, store_window: StoreWindow, item: store.StoreItem):
+        super().__init__(title=item.name)
+        self._store_window = store_window
+        self._item = item
+
+        toolbar = Adw.ToolbarView()
+        header = Adw.HeaderBar()
+        header_css_class = f"casca-header-{next(_header_class_counter)}"
+        header.add_css_class(header_css_class)
+        header_css_provider = Gtk.CssProvider()
+        Gtk.StyleContext.add_provider_for_display(
+            Gdk.Display.get_default(), header_css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        )
+
+        icon_path = store.save_icon_to_temp(item)
+        if icon_path:
+            header_icon = Gtk.Image.new_from_file(str(icon_path))
+            header_icon.set_pixel_size(20)
+            header.pack_start(header_icon)
+            rgb = icons.dominant_color(icon_path)
+            css = build_header_css(header_css_class, icons.to_hex(rgb), icons.contrasting_text_color(rgb))
+            header_css_provider.load_from_data(css.encode())
+        toolbar.add_top_bar(header)
+
+        page = Adw.PreferencesPage()
+        page.add(self._build_header_section(item, icon_path))
+        page.add(self._build_summary_group(item))
+
+        info_group = Adw.PreferencesGroup()
+        info_group.add(self._build_info_tiles_row(item))
+        page.add(info_group)
+
+        page.add(self._build_pc_access_group(item))
+        page.add(self._build_security_group())
+        page.add(self._build_about_group(item))
+
+        more_group = self._build_more_from_company_group(item)
+        if more_group is not None:
+            page.add(more_group)
+
+        toolbar.set_content(page)
+        self.set_child(toolbar)
+
+    def _badge_tier_key(self, badge: store.BadgeInfo) -> str:
+        if badge.tier == _("Gold"):
+            return "gold"
+        if badge.tier == _("Silver"):
+            return "silver"
+        return "bronze"
+
+    def _build_header_section(self, item: store.StoreItem, icon_path: Path | None) -> Adw.PreferencesGroup:
+        """Icon + name + company/verified + seal + Add button, in a row like GNOME
+        Software's app header band."""
+        group = Adw.PreferencesGroup()
+        row = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=18, valign=Gtk.Align.CENTER)
+        row.set_margin_top(12)
+        row.set_margin_bottom(4)
+
+        if icon_path:
+            image = Gtk.Image.new_from_file(str(icon_path))
+            image.set_pixel_size(96)
+        else:
+            image = Adw.Avatar(text=item.name, show_initials=True, size=96)
+        image.set_valign(Gtk.Align.CENTER)
+        row.append(image)
+
+        text_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=4, hexpand=True, valign=Gtk.Align.CENTER)
+        name_label = Gtk.Label(label=item.name, xalign=0)
+        name_label.set_ellipsize(Pango.EllipsizeMode.END)
+        name_label.add_css_class("title-1")
+        text_box.append(name_label)
+
+        company_label = Gtk.Label(label=item.company, xalign=0)
+        company_label.add_css_class("dim-label")
+        text_box.append(company_label)
+
+        badges_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
+        if item.company in store.VERIFIED_COMPANIES:
+            verified_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=4)
+            verified_icon = Gtk.Image.new_from_icon_name("emblem-ok-symbolic")
+            verified_icon.set_pixel_size(14)
+            verified_icon.add_css_class("accent")
+            verified_box.append(verified_icon)
+            verified_label = Gtk.Label(label=_("Verified"))
+            verified_label.add_css_class("caption")
+            verified_label.add_css_class("accent")
+            verified_box.append(verified_label)
+            badges_box.append(verified_box)
+        badges_box.append(self._build_seal_chip(store.rank_badge(item)))
+        text_box.append(badges_box)
+
+        row.append(text_box)
+
+        add_button = Gtk.Button(tooltip_text=_("Add to Casca"), valign=Gtk.Align.CENTER)
+        add_button.set_child(Adw.ButtonContent(icon_name="list-add-symbolic", label=_("Add")))
+        add_button.add_css_class("suggested-action")
+        add_button.add_css_class("pill")
+        add_button.connect("clicked", self._on_add_clicked)
+        row.append(add_button)
+
+        group.add(row)
+        return group
+
+    def _build_seal_chip(self, badge: store.BadgeInfo) -> Gtk.Widget:
+        """Small inline seal indicator under the app name — GNOME shows the star
+        rating there; Casca shows its Bronze/Silver/Gold seal, with the sub-score
+        popover a click away."""
+        button = Gtk.MenuButton()
+        button.add_css_class("flat")
+        content = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=4)
+        emoji_label = Gtk.Label(label=self._BADGE_EMOJI.get(badge.tier, "🥉"))
+        content.append(emoji_label)
+        text_label = Gtk.Label(label=_("Casca Seal: %(tier)s") % {"tier": badge.tier})
+        text_label.add_css_class("caption")
+        content.append(text_label)
+        button.set_child(content)
+        popover = Gtk.Popover()
+        popover.set_child(self._build_badge_popover(badge))
+        button.set_popover(popover)
+        return button
+
+    def _build_summary_group(self, item: store.StoreItem) -> Adw.PreferencesGroup:
+        """Bold summary + description paragraph + tag chips, like the "what it
+        does" block under GNOME Software's screenshots."""
+        group = Adw.PreferencesGroup()
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=8)
+
+        summary_label = Gtk.Label(label=store.kind_info(item.kind).blurb, xalign=0, wrap=True)
+        summary_label.add_css_class("title-4")
+        box.append(summary_label)
+
+        domain = urlparse(item.url).netloc or item.url
+        description_label = Gtk.Label(
+            label=_(
+                "%(name)s, by %(company)s, opens straight from %(domain)s in its own "
+                "window — no installation and no downloads. Casca creates the menu "
+                "shortcut and keeps the site's data in a profile that's separate from "
+                "your browser."
+            )
+            % {"name": item.name, "company": item.company, "domain": domain},
+            xalign=0,
+            wrap=True,
+        )
+        description_label.add_css_class("dim-label")
+        box.append(description_label)
+
+        tags = store.usage_tags(item)
+        if tags:
+            box.append(self._build_tags_row(tags))
+
+        group.add(box)
+        return group
+
+    def _build_context_tile(
+        self, circle_css: str, icon_name: str | None, title: str, caption: str, emoji: str | None = None
+    ) -> Gtk.Widget:
+        """One column of the context row: colored circular badge on top, bold
+        title, small caption — GNOME Software's size/safety/age-rating tile."""
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6, halign=Gtk.Align.CENTER, hexpand=True)
+        box.set_margin_top(14)
+        box.set_margin_bottom(14)
+        box.set_margin_start(8)
+        box.set_margin_end(8)
+
+        circle = Gtk.Box(halign=Gtk.Align.CENTER)
+        circle.add_css_class("casca-circle")
+        circle.add_css_class(circle_css)
+        if emoji is not None:
+            emoji_label = Gtk.Label()
+            emoji_label.set_markup(f'<span font_desc="14">{emoji}</span>')
+            circle.append(emoji_label)
+        elif icon_name:
+            image = Gtk.Image.new_from_icon_name(icon_name)
+            image.set_pixel_size(16)
+            circle.append(image)
+        box.append(circle)
+
+        title_label = Gtk.Label(label=title, wrap=True, justify=Gtk.Justification.CENTER)
+        title_label.add_css_class("heading")
+        box.append(title_label)
+
+        caption_label = Gtk.Label(label=caption, wrap=True, justify=Gtk.Justification.CENTER)
+        caption_label.set_max_width_chars(18)
+        caption_label.add_css_class("caption")
+        caption_label.add_css_class("dim-label")
+        box.append(caption_label)
+        return box
+
+    def _build_info_tiles_row(self, item: store.StoreItem) -> Gtk.Widget:
+        """One card with 4 columns split by hairlines — the glanceable context row
+        from GNOME Software (size/safety/adaptive/age), with what Casca knows."""
+        _ensure_store_css()
+        card = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        card.add_css_class("card")
+        info = store.kind_info(item.kind)
+
+        low, high = info.space_range_mb
+        tiles: list[Gtk.Widget] = [
+            self._build_context_tile(
+                "casca-circle-grey", "drive-harddisk-symbolic", f"~{low}–{high} MB", _("Estimated disk savings")
+            ),
+            self._build_context_tile(
+                "casca-circle-green", "channel-secure-symbolic", _("Isolated"), _("HTTPS and its own profile")
+            ),
+        ]
+
+        if info.pc_access:
+            access_labels = [store.PC_ACCESS_LABELS.get(key, (None, key))[1] for key in info.pc_access]
+            caption = ", ".join(access_labels[:3]) + ("…" if len(access_labels) > 3 else "")
+            tiles.append(
+                self._build_context_tile(
+                    "casca-circle-orange",
+                    "dialog-warning-symbolic",
+                    ngettext("%(n)d possible access", "%(n)d possible accesses", len(info.pc_access))
+                    % {"n": len(info.pc_access)},
+                    caption,
+                )
+            )
+        else:
+            tiles.append(
+                self._build_context_tile(
+                    "casca-circle-green", "emblem-ok-symbolic", _("No special access"), _("Doesn't typically ask for any")
+                )
+            )
+
+        badge = store.rank_badge(item)
+        seal_content = self._build_context_tile(
+            f"casca-circle-{self._badge_tier_key(badge)}",
+            None,
+            _("%(tier)s Seal") % {"tier": badge.tier},
+            _("Click for details"),
+            emoji=self._BADGE_EMOJI.get(badge.tier, "🥉"),
+        )
+        seal_button = Gtk.MenuButton(hexpand=True)
+        seal_button.add_css_class("flat")
+        seal_button.set_child(seal_content)
+        popover = Gtk.Popover()
+        popover.set_child(self._build_badge_popover(badge))
+        seal_button.set_popover(popover)
+        tiles.append(seal_button)
+
+        for index, tile in enumerate(tiles):
+            if index:
+                card.append(Gtk.Separator(orientation=Gtk.Orientation.VERTICAL))
+            card.append(tile)
+        return card
+
+    def _build_badge_popover(self, badge: store.BadgeInfo) -> Gtk.Widget:
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
+        box.set_margin_top(10)
+        box.set_margin_bottom(10)
+        box.set_margin_start(12)
+        box.set_margin_end(12)
+
+        title = Gtk.Label(label=_("Casca-estimated quality seal"), wrap=True)
+        title.add_css_class("heading")
+        box.append(title)
+
+        for key, label in (
+            ("updates", _("Updates")),
+            ("usability", _("Usability")),
+            ("speed", _("Speed")),
+            ("community", _("Community")),
+        ):
+            score = badge.scores[key]
+            row = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
+            row.append(Gtk.Label(label=label, xalign=0, hexpand=True))
+            row.append(Gtk.Label(label="●" * score + "○" * (3 - score)))
+            box.append(row)
+
+        disclaimer = Gtk.Label(
+            label=_(
+                "Estimate calculated by Casca from the company's recognition and the "
+                "app's category — not an official rating from the site."
+            ),
+            wrap=True,
+        )
+        disclaimer.set_max_width_chars(28)
+        disclaimer.add_css_class("caption")
+        disclaimer.add_css_class("dim-label")
+        box.append(disclaimer)
+        return box
+
+    def _build_tags_row(self, tags: tuple[str, ...]) -> Gtk.Widget:
+        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6, halign=Gtk.Align.START)
+        box.set_margin_top(4)
+        for tag in tags:
+            label = Gtk.Label(label=tag)
+            label.add_css_class("caption")
+            label.add_css_class("card")
+            label.set_margin_start(2)
+            label.set_margin_end(2)
+            box.append(label)
+        return box
+
+    def _build_about_group(self, item: store.StoreItem) -> Adw.PreferencesGroup:
+        group = Adw.PreferencesGroup(title=_("Company"))
+        company_row = Adw.ActionRow(
+            title=item.company,
+            subtitle=_("See all apps from this company"),
+            activatable=True,
+        )
+        company_row.add_prefix(_group_icon_widget("company", item.company))
+        company_row.add_suffix(Gtk.Image.new_from_icon_name("go-next-symbolic"))
+        company_row.connect("activated", self._on_company_activated)
+        group.add(company_row)
+        return group
+
+    def _build_pc_access_group(self, item: store.StoreItem) -> Adw.PreferencesGroup:
+        group = Adw.PreferencesGroup(
+            title=_("Possible access to your computer"),
+            description=_("Typical pattern for this category — not a scan of this specific site."),
+        )
+        access = store.kind_info(item.kind).pc_access
+        if access:
+            for key in access:
+                icon_name, label = store.PC_ACCESS_LABELS.get(key, ("dialog-question-symbolic", key))
+                row = Adw.ActionRow(title=label)
+                row.add_prefix(Gtk.Image.new_from_icon_name(icon_name))
+                group.add(row)
+        else:
+            row = Adw.ActionRow(title=_("Doesn't typically request special access"))
+            row.add_prefix(Gtk.Image.new_from_icon_name("emblem-ok-symbolic"))
+            group.add(row)
+        return group
+
+    def _build_security_group(self) -> Adw.PreferencesGroup:
+        group = Adw.PreferencesGroup(title=_("Security"))
+        for icon_name, title, subtitle in (
+            (
+                "channel-secure-symbolic",
+                _("HTTPS connection"),
+                _("Casca only opens sites over an encrypted connection."),
+            ),
+            (
+                "system-users-symbolic",
+                _("Isolated browser profile"),
+                _(
+                    "Each app you create gets its own profile, separate from your main "
+                    "browser and from your other apps."
+                ),
+            ),
+            (
+                "package-x-generic-symbolic",
+                _("No native executable installed"),
+                _("Only a shortcut is created — nothing runs outside the browser engine."),
+            ),
+        ):
+            row = Adw.ActionRow(title=title, subtitle=subtitle)
+            row.add_prefix(Gtk.Image.new_from_icon_name(icon_name))
+            group.add(row)
+        return group
+
+    def _build_more_from_company_group(self, item: store.StoreItem) -> Adw.PreferencesGroup | None:
+        others = [
+            other
+            for other in store.group_by(self._store_window.all_items, "company").get(item.company, [])
+            if other.name != item.name
+        ]
+        if not others:
+            return None
+
+        group = Adw.PreferencesGroup(title=_("More from %(company)s") % {"company": item.company})
+        flow = _new_app_flowbox(compact=True)
+        for other in others[:6]:
+            flow.append(_build_app_tile(other, lambda i=other: self._open_other(i)))
+        group.add(flow)
+        return group
+
+    def _on_company_activated(self, _row: Adw.ActionRow) -> None:
+        items = store.group_by(self._store_window.all_items, "company").get(self._item.company, [])
+        self._store_window.push(CategoryPage(self._store_window, self._item.company, items))
+
+    def _on_add_clicked(self, _button: Gtk.Button) -> None:
+        self._store_window.open_editor_for(self._item)
+
+    def _open_other(self, item: store.StoreItem) -> None:
+        self._store_window.push(AppDetailPage(self._store_window, item))
 
 
 class HelpWindow(Adw.ApplicationWindow):
@@ -1350,17 +2169,18 @@ class ListPage(Adw.NavigationPage):
             website="https://github.com/oliverhubtech-source/casca",
             issue_url="https://github.com/oliverhubtech-source/casca/issues",
             license_type=Gtk.License.MIT_X11,
-            release_notes_version="1.2.0",
+            release_notes_version="1.3.0",
             release_notes=(
                 "<p>" + _(
-                    "Casca now checks for new releases in the background (once a day at most) and "
-                    "lets you know with a system notification — no action needed for Flatpak/Snap "
-                    "installs, which already update themselves."
+                    "The Store is now the Casca Store, in the style of GNOME Software: a featured "
+                    "apps carousel, colorful category tiles, Editor's Choice, and a page for each "
+                    "app with usage tags, the Bronze/Silver/Gold Casca seal, estimated disk "
+                    "savings, possible PC access and security info."
                 ) + "</p>"
                 "<p>" + _(
-                    "The About dialog now shows the license, a link to the source code, whether "
-                    "you're on a release/beta/alpha build, and a proper “What's New” page "
-                    "with each version's changelog."
+                    "A region selector next to the search detects your country automatically and "
+                    "filters marketplaces and news to your region — or choose Global to see "
+                    "everything. All of it translated into the 20 supported languages."
                 ) + "</p>"
             ),
         )

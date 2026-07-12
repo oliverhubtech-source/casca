@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Casca 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/oliverhubtech-source/casca/issues\n"
-"POT-Creation-Date: 2026-07-10 16:23-0300\n"
+"POT-Creation-Date: 2026-07-11 22:09-0300\n"
 "PO-Revision-Date: 2026-07-09 16:07-0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,6 +18,7 @@ msgid "Casca's own window"
 msgstr "Jendela bawaan Casca"
 
 #: casca/catalog_strings.py:16 casca/help_content.py:76 casca/presets.py:51
+#: casca/store.py:166 casca/store.py:184
 msgid "Artificial Intelligence"
 msgstr "Kecerdasan Buatan"
 
@@ -33,11 +34,11 @@ msgstr "Konversi & Berbagi"
 msgid "Creativity"
 msgstr "Kreativitas"
 
-#: casca/catalog_strings.py:20
+#: casca/catalog_strings.py:20 casca/store.py:168 casca/store.py:185
 msgid "Finance"
 msgstr "Keuangan"
 
-#: casca/catalog_strings.py:21 casca/window.py:935
+#: casca/catalog_strings.py:21
 msgid "Marketplace"
 msgstr "Marketplace"
 
@@ -45,11 +46,11 @@ msgstr "Marketplace"
 msgid "Messenger"
 msgstr "Perpesanan"
 
-#: casca/catalog_strings.py:23
+#: casca/catalog_strings.py:23 casca/store.py:165 casca/store.py:186
 msgid "Music Streaming"
 msgstr "Streaming Musik"
 
-#: casca/catalog_strings.py:24 casca/window.py:936
+#: casca/catalog_strings.py:24 casca/store.py:171 casca/store.py:183
 msgid "News"
 msgstr "Berita"
 
@@ -65,7 +66,8 @@ msgstr "Produktivitas"
 msgid "Search Engine"
 msgstr "Mesin Pencari"
 
-#: casca/catalog_strings.py:28
+#: casca/catalog_strings.py:28 casca/store.py:169 casca/store.py:182
+#: casca/window.py:1922
 msgid "Security"
 msgstr "Keamanan"
 
@@ -77,7 +79,7 @@ msgstr "Jejaring Sosial"
 msgid "Utility"
 msgstr "Utilitas"
 
-#: casca/catalog_strings.py:31
+#: casca/catalog_strings.py:31 casca/store.py:164 casca/store.py:193
 msgid "Video Streaming"
 msgstr "Streaming Video"
 
@@ -638,25 +640,174 @@ msgid "PWA Manifest"
 msgstr "Manifes PWA"
 
 #: casca/package_launcher.py:73 casca/package_launcher.py:119
-#: casca/window.py:934
 msgid "Package"
 msgstr "Paket"
 
-#: casca/store.py:80
+#: casca/store.py:82 casca/store.py:365
 msgid "Independent"
 msgstr "Independen"
 
-#: casca/store.py:81 casca/store.py:97
+#: casca/store.py:83 casca/store.py:100
 msgid "Other"
 msgstr "Lainnya"
 
-#: casca/store.py:92 casca/window.py:1038
+#: casca/store.py:95 casca/window.py:1303 casca/window.py:1544
 msgid "Independent apps"
 msgstr "Aplikasi independen"
 
-#: casca/store.py:92
+#: casca/store.py:95 casca/store.py:108
 msgid "Global"
 msgstr "Global"
+
+#: casca/store.py:158 casca/store.py:180 casca/store.py:187
+msgid "Communication"
+msgstr "Komunikasi"
+
+#: casca/store.py:159 casca/store.py:180 casca/store.py:187
+msgid "Social"
+msgstr "Sosial"
+
+#: casca/store.py:160 casca/store.py:194
+msgid "Business"
+msgstr "Bisnis"
+
+#: casca/store.py:161 casca/updater.py:90
+msgid "Development"
+msgstr "Pengembangan"
+
+#: casca/store.py:162 casca/store.py:181 casca/store.py:189 casca/store.py:194
+msgid "Office"
+msgstr "Perkantoran"
+
+#: casca/store.py:163 casca/store.py:186 casca/store.py:193
+msgid "Entertainment"
+msgstr "Hiburan"
+
+#: casca/store.py:167 casca/store.py:192
+msgid "Design"
+msgstr "Desain"
+
+#: casca/store.py:170 casca/store.py:181 casca/store.py:182 casca/store.py:185
+#: casca/store.py:188 casca/store.py:191 casca/store.py:192 casca/store.py:195
+msgid "Utilities"
+msgstr "Utilitas"
+
+#: casca/store.py:172 casca/store.py:190
+msgid "Shopping"
+msgstr "Belanja"
+
+#: casca/store.py:173 casca/store.py:189
+msgid "Cloud"
+msgstr "Cloud"
+
+#: casca/store.py:174 casca/store.py:195
+msgid "Search"
+msgstr "Pencarian"
+
+#: casca/store.py:175
+msgid "Education"
+msgstr "Pendidikan"
+
+#: casca/store.py:222
+msgid "Messaging app for real-time conversations with people or groups."
+msgstr "Aplikasi perpesanan untuk percakapan waktu nyata dengan orang atau grup."
+
+#: casca/store.py:226
+msgid "Tool to create, edit, convert or sign PDF files right from the browser."
+msgstr "Alat untuk membuat, menyunting, mengonversi, atau menandatangani PDF langsung dari peramban."
+
+#: casca/store.py:230
+msgid "Digital security tool: checks links, data breaches or account safety."
+msgstr "Alat keamanan digital: memeriksa tautan, kebocoran data, atau keamanan akun."
+
+#: casca/store.py:234
+msgid "News portal with up-to-date journalistic content."
+msgstr "Portal berita dengan konten jurnalistik terkini."
+
+#: casca/store.py:238
+msgid "AI assistant to chat, or generate text, images or code."
+msgstr "Asisten AI untuk mengobrol atau membuat teks, gambar, dan kode."
+
+#: casca/store.py:242
+msgid "Financial tool: calculator, value correction or money management."
+msgstr "Alat keuangan: kalkulator, penyesuaian nilai, atau pengelolaan uang."
+
+#: casca/store.py:246
+msgid "Music and podcast streaming service."
+msgstr "Layanan streaming musik dan podcast."
+
+#: casca/store.py:250
+msgid "Social network to post, follow people and interact with content."
+msgstr "Jejaring sosial untuk memposting, mengikuti orang, dan berinteraksi dengan konten."
+
+#: casca/store.py:254
+msgid "Everyday utility for a specific task, right in the browser."
+msgstr "Utilitas sehari-hari untuk tugas tertentu, langsung di peramban."
+
+#: casca/store.py:258
+msgid "Cloud storage and services to keep and reach files from anywhere."
+msgstr "Penyimpanan dan layanan cloud untuk menyimpan dan mengakses berkas dari mana saja."
+
+#: casca/store.py:262
+msgid "Online marketplace to buy and sell products."
+msgstr "Marketplace daring untuk membeli dan menjual produk."
+
+#: casca/store.py:266
+msgid "File conversion tool or quick content sharing."
+msgstr "Alat konversi berkas atau berbagi konten dengan cepat."
+
+#: casca/store.py:270
+msgid "Creative tool for images, text or ideas."
+msgstr "Alat kreatif untuk gambar, teks, atau ide."
+
+#: casca/store.py:274
+msgid "Video, movie and TV show streaming service."
+msgstr "Layanan streaming video, film, dan serial TV."
+
+#: casca/store.py:278
+msgid "Productivity tool to organize tasks, documents or meetings."
+msgstr "Alat produktivitas untuk mengatur tugas, dokumen, atau rapat."
+
+#: casca/store.py:282
+msgid "Search engine to find information on the internet."
+msgstr "Mesin pencari untuk menemukan informasi di internet."
+
+#: casca/store.py:288
+msgid "Site added to Casca as a web app."
+msgstr "Situs yang ditambahkan ke Casca sebagai aplikasi web."
+
+#: casca/store.py:300
+msgid "Camera"
+msgstr "Kamera"
+
+#: casca/store.py:301
+msgid "Microphone"
+msgstr "Mikrofon"
+
+#: casca/store.py:302
+msgid "Notifications"
+msgstr "Notifikasi"
+
+#: casca/store.py:303
+msgid "Files"
+msgstr "Berkas"
+
+#: casca/store.py:304
+msgid "Location"
+msgstr "Lokasi"
+
+#: casca/store.py:377 casca/window.py:1089 casca/window.py:1110
+#: casca/window.py:1639
+msgid "Gold"
+msgstr "Emas"
+
+#: casca/store.py:377 casca/window.py:1641
+msgid "Silver"
+msgstr "Perak"
+
+#: casca/store.py:377
+msgid "Bronze"
+msgstr "Perunggu"
 
 #: casca/updater.py:90 casca/updater.py:91
 msgid "Release"
@@ -669,10 +820,6 @@ msgstr "Beta"
 #: casca/updater.py:90
 msgid "Alpha"
 msgstr "Alfa"
-
-#: casca/updater.py:90
-msgid "Development"
-msgstr "Pengembangan"
 
 #: casca/updater.py:106
 msgid "Casca"
@@ -915,119 +1062,275 @@ msgstr "Situs prasetel"
 msgid "Search by name or category…"
 msgstr "Cari berdasarkan nama atau kategori…"
 
-#: casca/window.py:720 casca/window.py:1035
+#: casca/window.py:720 casca/window.py:1290 casca/window.py:1325
+#: casca/window.py:1541
 #, python-format
 msgid "%(n)d site"
 msgid_plural "%(n)d sites"
 msgstr[0] "%(n)d situs"
 
-#: casca/window.py:904 casca/window.py:1287
-msgid "Store"
-msgstr "Toko"
+#: casca/window.py:1131 casca/window.py:1208
+msgid "Casca Store"
+msgstr "Toko Casca"
 
-#: casca/window.py:932
-msgid "Company"
-msgstr "Perusahaan"
-
-#: casca/window.py:933
-msgid "Type"
-msgstr "Jenis"
-
-#: casca/window.py:949
-msgid "Search by name…"
-msgstr "Cari berdasarkan nama…"
-
-#: casca/window.py:985
+#: casca/window.py:1183
 #, python-format
 msgid "Could not set an icon for %(name)s."
 msgstr "Tidak dapat mengatur ikon untuk %(name)s."
 
-#: casca/window.py:991
+#: casca/window.py:1189
 #, python-format
 msgid "Error installing package: %(error)s"
 msgstr "Galat saat memasang paket: %(error)s"
 
-#: casca/window.py:997
+#: casca/window.py:1195
 #, python-format
 msgid "Package “%(name)s” installed with %(n)d app."
 msgid_plural "Package “%(name)s” installed with %(n)d apps."
 msgstr[0] "Paket \"%(name)s\" terpasang dengan %(n)d aplikasi."
 
-#: casca/window.py:1023
-msgid "Nothing here yet"
-msgstr "Belum ada apa-apa di sini"
+#: casca/window.py:1221
+msgid "Search apps and sites…"
+msgstr "Cari aplikasi dan situs…"
 
-#: casca/window.py:1024
-msgid "Check the local catalog or your internet connection."
-msgstr "Periksa katalog lokal atau koneksi internet Anda."
+#: casca/window.py:1243
+msgid "Region"
+msgstr "Wilayah"
 
-#: casca/window.py:1040
+#: casca/window.py:1307
+#, python-format
+msgid "%(n)d package"
+msgid_plural "%(n)d packages"
+msgstr[0] "%(n)d paket"
+
+#: casca/window.py:1313 casca/window.py:1316
+msgid "Packages"
+msgstr "Paket"
+
+#: casca/window.py:1339
+msgid "Categories"
+msgstr "Kategori"
+
+#: casca/window.py:1344
+msgid "Editor's Choice"
+msgstr "Pilihan Editor"
+
+#: casca/window.py:1465
+msgid "No results"
+msgstr "Tidak ada hasil"
+
+#: casca/window.py:1508
+msgid "Search by name…"
+msgstr "Cari berdasarkan nama…"
+
+#: casca/window.py:1545
 msgid "Install full package"
 msgstr "Pasang paket lengkap"
 
-#: casca/window.py:1165
+#: casca/window.py:1678
+msgid "Verified"
+msgstr "Terverifikasi"
+
+#: casca/window.py:1688
+msgid "Add to Casca"
+msgstr "Tambahkan ke Casca"
+
+#: casca/window.py:1689
+msgid "Add"
+msgstr "Tambah"
+
+#: casca/window.py:1707
+#, python-format
+msgid "Casca Seal: %(tier)s"
+msgstr "Segel Casca: %(tier)s"
+
+#: casca/window.py:1729
+#, python-format
+msgid ""
+"%(name)s, by %(company)s, opens straight from %(domain)s in its own window — "
+"no installation and no downloads. Casca creates the menu shortcut and keeps "
+"the site's data in a profile that's separate from your browser."
+msgstr "%(name)s, dari %(company)s, terbuka langsung dari %(domain)s di jendelanya sendiri — tanpa instalasi dan tanpa unduhan. Casca membuat pintasan menu dan menyimpan data situs di profil yang terpisah dari peramban Anda."
+
+#: casca/window.py:1794
+msgid "Estimated disk savings"
+msgstr "Perkiraan penghematan disk"
+
+#: casca/window.py:1797
+msgid "Isolated"
+msgstr "Terisolasi"
+
+#: casca/window.py:1797
+msgid "HTTPS and its own profile"
+msgstr "HTTPS dan profil sendiri"
+
+#: casca/window.py:1808
+#, python-format
+msgid "%(n)d possible access"
+msgid_plural "%(n)d possible accesses"
+msgstr[0] "%(n)d kemungkinan akses"
+
+#: casca/window.py:1816
+msgid "No special access"
+msgstr "Tanpa akses khusus"
+
+#: casca/window.py:1816
+msgid "Doesn't typically ask for any"
+msgstr "Biasanya tidak meminta apa pun"
+
+#: casca/window.py:1824
+#, python-format
+msgid "%(tier)s Seal"
+msgstr "Segel %(tier)s"
+
+#: casca/window.py:1825
+msgid "Click for details"
+msgstr "Klik untuk detail"
+
+#: casca/window.py:1849
+msgid "Casca-estimated quality seal"
+msgstr "Segel kualitas perkiraan Casca"
+
+#: casca/window.py:1854
+msgid "Updates"
+msgstr "Pembaruan"
+
+#: casca/window.py:1855
+msgid "Usability"
+msgstr "Kegunaan"
+
+#: casca/window.py:1856
+msgid "Speed"
+msgstr "Kecepatan"
+
+#: casca/window.py:1857
+msgid "Community"
+msgstr "Komunitas"
+
+#: casca/window.py:1867
+msgid ""
+"Estimate calculated by Casca from the company's recognition and the app's "
+"category — not an official rating from the site."
+msgstr "Perkiraan yang dihitung Casca dari popularitas perusahaan dan kategori aplikasi — bukan penilaian resmi dari situs."
+
+#: casca/window.py:1891
+msgid "Company"
+msgstr "Perusahaan"
+
+#: casca/window.py:1894
+msgid "See all apps from this company"
+msgstr "Lihat semua aplikasi dari perusahaan ini"
+
+#: casca/window.py:1905
+msgid "Possible access to your computer"
+msgstr "Kemungkinan akses ke komputer Anda"
+
+#: casca/window.py:1906
+msgid "Typical pattern for this category — not a scan of this specific site."
+msgstr "Pola umum kategori ini — bukan pemindaian situs tertentu ini."
+
+#: casca/window.py:1916
+msgid "Doesn't typically request special access"
+msgstr "Biasanya tidak meminta akses khusus"
+
+#: casca/window.py:1926
+msgid "HTTPS connection"
+msgstr "Koneksi HTTPS"
+
+#: casca/window.py:1927
+msgid "Casca only opens sites over an encrypted connection."
+msgstr "Casca hanya membuka situs melalui koneksi terenkripsi."
+
+#: casca/window.py:1931
+msgid "Isolated browser profile"
+msgstr "Profil peramban terisolasi"
+
+#: casca/window.py:1933
+msgid ""
+"Each app you create gets its own profile, separate from your main browser "
+"and from your other apps."
+msgstr "Setiap aplikasi yang Anda buat mendapat profil sendiri, terpisah dari peramban utama dan aplikasi Anda yang lain."
+
+#: casca/window.py:1939
+msgid "No native executable installed"
+msgstr "Tidak ada berkas eksekusi asli yang dipasang"
+
+#: casca/window.py:1940
+msgid "Only a shortcut is created — nothing runs outside the browser engine."
+msgstr "Hanya pintasan yang dibuat — tidak ada yang berjalan di luar mesin peramban."
+
+#: casca/window.py:1957
+#, python-format
+msgid "More from %(company)s"
+msgstr "Lainnya dari %(company)s"
+
+#: casca/window.py:1984
 msgid "Casca Manual"
 msgstr "Manual Casca"
 
-#: casca/window.py:1185
+#: casca/window.py:2004
 msgid "Could not open the built-in manual"
 msgstr "Tidak dapat membuka manual bawaan"
 
-#: casca/window.py:1204
+#: casca/window.py:2023
 msgid "Choose what to import"
 msgstr "Pilih yang akan diimpor"
 
-#: casca/window.py:1213
+#: casca/window.py:2032
 #, python-format
 msgid "%(n)d site found"
 msgid_plural "%(n)d sites found"
 msgstr[0] "%(n)d situs ditemukan"
 
-#: casca/window.py:1216
+#: casca/window.py:2035
 msgid "Uncheck anything you don't want to import."
 msgstr "Hilangkan centang pada yang tidak ingin Anda impor."
 
-#: casca/window.py:1219
+#: casca/window.py:2038
 msgid "(no name)"
 msgstr "(tanpa nama)"
 
-#: casca/window.py:1227
+#: casca/window.py:2046
 msgid "Import selected"
 msgstr "Impor yang dipilih"
 
-#: casca/window.py:1260
+#: casca/window.py:2079
 msgid "User guide"
 msgstr "Panduan pengguna"
 
-#: casca/window.py:1261
+#: casca/window.py:2080
 msgid "About Casca"
 msgstr "Tentang Casca"
 
-#: casca/window.py:1262
+#: casca/window.py:2081
 msgid "Menu"
 msgstr "Menu"
 
-#: casca/window.py:1292
+#: casca/window.py:2106
+msgid "Store"
+msgstr "Toko"
+
+#: casca/window.py:2111
 msgid "Create a new web app"
 msgstr "Buat aplikasi web baru"
 
-#: casca/window.py:1293
+#: casca/window.py:2112
 msgid "Create"
 msgstr "Buat"
 
-#: casca/window.py:1302 casca/window.py:1429
+#: casca/window.py:2121 casca/window.py:2249
 msgid "Import apps"
 msgstr "Impor aplikasi"
 
-#: casca/window.py:1306 casca/window.py:1379
+#: casca/window.py:2125 casca/window.py:2199
 msgid "Export apps"
 msgstr "Ekspor aplikasi"
 
-#: casca/window.py:1337
+#: casca/window.py:2156
 msgid "Turns any website into a GNOME app."
 msgstr "Mengubah situs web apa pun menjadi aplikasi GNOME."
 
-#: casca/window.py:1341
+#: casca/window.py:2160
 #, python-format
 msgid ""
 "Version %(latest)s is available — an update notification with a way to "
@@ -1036,120 +1339,121 @@ msgstr ""
 "Versi %(latest)s tersedia — notifikasi dengan cara memperbarui baru saja "
 "muncul."
 
-#: casca/window.py:1356
+#: casca/window.py:2175
 msgid ""
-"Casca now checks for new releases in the background (once a day at most) and "
-"lets you know with a system notification — no action needed for Flatpak/Snap "
-"installs, which already update themselves."
-msgstr "Casca kini memeriksa rilis baru di latar belakang (paling banyak sekali sehari) dan memberi tahu Anda lewat notifikasi sistem — tidak perlu tindakan apa pun untuk instalasi Flatpak/Snap, yang sudah memperbarui dirinya sendiri."
+"The Store is now the Casca Store, in the style of GNOME Software: a featured "
+"apps carousel, colorful category tiles, Editor's Choice, and a page for each "
+"app with usage tags, the Bronze/Silver/Gold Casca seal, estimated disk "
+"savings, possible PC access and security info."
+msgstr "Toko kini menjadi Toko Casca, bergaya GNOME Software: korsel aplikasi unggulan, ubin kategori berwarna, Pilihan Editor, dan halaman untuk tiap aplikasi dengan tag penggunaan, segel Casca Perunggu/Perak/Emas, perkiraan penghematan disk, kemungkinan akses ke PC, dan info keamanan."
 
-#: casca/window.py:1361
+#: casca/window.py:2181
 msgid ""
-"The About dialog now shows the license, a link to the source code, whether "
-"you're on a release/beta/alpha build, and a proper “What's New” page with "
-"each version's changelog."
-msgstr "Dialog Tentang kini menampilkan lisensi, tautan ke kode sumber, apakah Anda menggunakan build rilis/beta/alfa, dan halaman “Yang Baru” dengan catatan perubahan tiap versi."
+"A region selector next to the search detects your country automatically and "
+"filters marketplaces and news to your region — or choose Global to see "
+"everything. All of it translated into the 20 supported languages."
+msgstr "Pemilih wilayah di samping pencarian mendeteksi negara Anda secara otomatis dan menyaring marketplace serta berita sesuai wilayah — atau pilih Global untuk melihat semuanya. Semuanya diterjemahkan ke 20 bahasa yang didukung."
 
-#: casca/window.py:1367
+#: casca/window.py:2187
 msgid "Source Code"
 msgstr "Kode sumber"
 
-#: casca/window.py:1377
+#: casca/window.py:2197
 msgid "No app created yet to export."
 msgstr "Belum ada aplikasi yang dibuat untuk diekspor."
 
-#: casca/window.py:1401
+#: casca/window.py:2221
 #, python-format
 msgid "Error exporting: %(error)s"
 msgstr "Galat saat mengekspor: %(error)s"
 
-#: casca/window.py:1404
+#: casca/window.py:2224
 #, python-format
 msgid "%(count)d app exported to %(name)s."
 msgid_plural "%(count)d apps exported to %(name)s."
 msgstr[0] "%(count)d aplikasi diekspor ke %(name)s."
 
-#: casca/window.py:1410
+#: casca/window.py:2230
 msgid "Import from where?"
 msgstr "Impor dari mana?"
 
-#: casca/window.py:1411
+#: casca/window.py:2231
 msgid "Choose a local .json file or a URL (e.g. a GitHub \"raw\" link)."
 msgstr "Pilih berkas .json lokal atau URL (mis. tautan \"raw\" GitHub)."
 
-#: casca/window.py:1413 casca/window.py:1459 casca/window.py:1592
-#: casca/window.py:1615
+#: casca/window.py:2233 casca/window.py:2279 casca/window.py:2412
+#: casca/window.py:2435
 msgid "Cancel"
 msgstr "Batal"
 
-#: casca/window.py:1414
+#: casca/window.py:2234
 msgid "From a URL"
 msgstr "Dari URL"
 
-#: casca/window.py:1415
+#: casca/window.py:2235
 msgid "Local file"
 msgstr "Berkas lokal"
 
-#: casca/window.py:1448
+#: casca/window.py:2268
 #, python-format
 msgid "Error reading the file: %(error)s"
 msgstr "Galat saat membaca berkas: %(error)s"
 
-#: casca/window.py:1454
+#: casca/window.py:2274
 msgid "Import from a URL"
 msgstr "Impor dari URL"
 
-#: casca/window.py:1455
+#: casca/window.py:2275
 msgid "Paste the JSON file's \"raw\" link (e.g. from a GitHub repository)."
 msgstr "Tempel tautan \"raw\" berkas JSON (mis. dari repositori GitHub)."
 
-#: casca/window.py:1460
+#: casca/window.py:2280
 msgid "Fetch"
 msgstr "Ambil"
 
-#: casca/window.py:1472
+#: casca/window.py:2292
 msgid "Enter a URL."
 msgstr "Masukkan URL."
 
-#: casca/window.py:1474
+#: casca/window.py:2294
 msgid "Fetching file…"
 msgstr "Mengambil berkas…"
 
-#: casca/window.py:1481
+#: casca/window.py:2301
 #, python-format
 msgid "Error downloading: %(error)s"
 msgstr "Galat saat mengunduh: %(error)s"
 
-#: casca/window.py:1489
+#: casca/window.py:2309
 #, python-format
 msgid "Error importing: %(error)s"
 msgstr "Galat saat mengimpor: %(error)s"
 
-#: casca/window.py:1492
+#: casca/window.py:2312
 msgid "No app found in the file."
 msgstr "Tidak ada aplikasi yang ditemukan dalam berkas."
 
-#: casca/window.py:1500
+#: casca/window.py:2320
 msgid "Nothing selected to import."
 msgstr "Tidak ada yang dipilih untuk diimpor."
 
-#: casca/window.py:1508
+#: casca/window.py:2328
 #, python-format
 msgid "%(n)d app imported."
 msgid_plural "%(n)d apps imported."
 msgstr[0] "%(n)d aplikasi diimpor."
 
-#: casca/window.py:1514
+#: casca/window.py:2334
 #, python-format
 msgid "• %(name)s: %(reason)s"
 msgstr "• %(name)s: %(reason)s"
 
-#: casca/window.py:1518
+#: casca/window.py:2338
 #, python-format
 msgid "%(created)d imported, %(failed)d with errors"
 msgstr "%(created)d diimpor, %(failed)d dengan galat"
 
-#: casca/window.py:1520
+#: casca/window.py:2340
 #, python-format
 msgid ""
 "Review and adjust manually via the \"Create\" button:\n"
@@ -1160,54 +1464,82 @@ msgstr ""
 "\n"
 "%(lines)s"
 
-#: casca/window.py:1522
+#: casca/window.py:2342
 msgid "Got it"
 msgstr "Mengerti"
 
-#: casca/window.py:1536
+#: casca/window.py:2356
 msgid "No web apps yet"
 msgstr "Belum ada aplikasi web"
 
-#: casca/window.py:1537
+#: casca/window.py:2357
 msgid ""
 "Tap “Create” to make your first app, or open the Store for ready-made sites."
 msgstr ""
 "Ketuk \"Buat\" untuk membuat aplikasi pertama Anda, atau buka Toko untuk "
 "situs siap pakai."
 
-#: casca/window.py:1546
+#: casca/window.py:2366
 msgid "My web apps"
 msgstr "Aplikasi web saya"
 
-#: casca/window.py:1568
+#: casca/window.py:2388
 msgid "Installed packages"
 msgstr "Paket terpasang"
 
-#: casca/window.py:1589
+#: casca/window.py:2409
 #, python-format
 msgid "Delete “%(name)s”?"
 msgstr "Hapus \"%(name)s\"?"
 
-#: casca/window.py:1590
+#: casca/window.py:2410
 msgid ""
 "The shortcut will be removed from the applications menu and the desktop, if "
 "it exists."
 msgstr "Pintasan akan dihapus dari menu aplikasi dan desktop, jika ada."
 
-#: casca/window.py:1593 casca/window.py:1616
+#: casca/window.py:2413 casca/window.py:2436
 msgid "Delete"
 msgstr "Hapus"
 
-#: casca/window.py:1607
+#: casca/window.py:2427
 #, python-format
 msgid "Delete package “%(name)s”?"
 msgstr "Hapus paket \"%(name)s\"?"
 
-#: casca/window.py:1609
+#: casca/window.py:2429
 #, python-format
 msgid "Removes the shortcut and the %(n)d app inside it (%(names)s)."
 msgid_plural "Removes the shortcut and the %(n)d apps inside it (%(names)s)."
 msgstr[0] "Menghapus pintasan dan %(n)d aplikasi di dalamnya (%(names)s)."
+
+#~ msgid ""
+#~ "Casca now checks for new releases in the background (once a day at most) "
+#~ "and lets you know with a system notification — no action needed for "
+#~ "Flatpak/Snap installs, which already update themselves."
+#~ msgstr ""
+#~ "Casca kini memeriksa rilis baru di latar belakang (paling banyak sekali "
+#~ "sehari) dan memberi tahu Anda lewat notifikasi sistem — tidak perlu "
+#~ "tindakan apa pun untuk instalasi Flatpak/Snap, yang sudah memperbarui "
+#~ "dirinya sendiri."
+
+#~ msgid ""
+#~ "The About dialog now shows the license, a link to the source code, "
+#~ "whether you're on a release/beta/alpha build, and a proper “What's New” "
+#~ "page with each version's changelog."
+#~ msgstr ""
+#~ "Dialog Tentang kini menampilkan lisensi, tautan ke kode sumber, apakah "
+#~ "Anda menggunakan build rilis/beta/alfa, dan halaman “Yang Baru” dengan "
+#~ "catatan perubahan tiap versi."
+
+#~ msgid "Type"
+#~ msgstr "Jenis"
+
+#~ msgid "Nothing here yet"
+#~ msgstr "Belum ada apa-apa di sini"
+
+#~ msgid "Check the local catalog or your internet connection."
+#~ msgstr "Periksa katalog lokal atau koneksi internet Anda."
 
 #~ msgid ""
 #~ "Casca now speaks 20 languages, picked automatically from the system "

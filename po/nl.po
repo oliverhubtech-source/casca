@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Casca 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/oliverhubtech-source/casca/issues\n"
-"POT-Creation-Date: 2026-07-10 16:23-0300\n"
+"POT-Creation-Date: 2026-07-11 22:09-0300\n"
 "PO-Revision-Date: 2026-07-09 16:07-0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,6 +18,7 @@ msgid "Casca's own window"
 msgstr "Casca's eigen venster"
 
 #: casca/catalog_strings.py:16 casca/help_content.py:76 casca/presets.py:51
+#: casca/store.py:166 casca/store.py:184
 msgid "Artificial Intelligence"
 msgstr "Kunstmatige intelligentie"
 
@@ -33,11 +34,11 @@ msgstr "Conversie & Delen"
 msgid "Creativity"
 msgstr "Creativiteit"
 
-#: casca/catalog_strings.py:20
+#: casca/catalog_strings.py:20 casca/store.py:168 casca/store.py:185
 msgid "Finance"
 msgstr "Financiën"
 
-#: casca/catalog_strings.py:21 casca/window.py:935
+#: casca/catalog_strings.py:21
 msgid "Marketplace"
 msgstr "Marktplaats"
 
@@ -45,11 +46,11 @@ msgstr "Marktplaats"
 msgid "Messenger"
 msgstr "Chat"
 
-#: casca/catalog_strings.py:23
+#: casca/catalog_strings.py:23 casca/store.py:165 casca/store.py:186
 msgid "Music Streaming"
 msgstr "Muziekstreaming"
 
-#: casca/catalog_strings.py:24 casca/window.py:936
+#: casca/catalog_strings.py:24 casca/store.py:171 casca/store.py:183
 msgid "News"
 msgstr "Nieuws"
 
@@ -65,7 +66,8 @@ msgstr "Productiviteit"
 msgid "Search Engine"
 msgstr "Zoekmachine"
 
-#: casca/catalog_strings.py:28
+#: casca/catalog_strings.py:28 casca/store.py:169 casca/store.py:182
+#: casca/window.py:1922
 msgid "Security"
 msgstr "Beveiliging"
 
@@ -77,7 +79,7 @@ msgstr "Sociaal netwerk"
 msgid "Utility"
 msgstr "Hulpprogramma"
 
-#: casca/catalog_strings.py:31
+#: casca/catalog_strings.py:31 casca/store.py:164 casca/store.py:193
 msgid "Video Streaming"
 msgstr "Videostreaming"
 
@@ -640,25 +642,174 @@ msgid "PWA Manifest"
 msgstr "PWA-manifest"
 
 #: casca/package_launcher.py:73 casca/package_launcher.py:119
-#: casca/window.py:934
 msgid "Package"
 msgstr "Pakket"
 
-#: casca/store.py:80
+#: casca/store.py:82 casca/store.py:365
 msgid "Independent"
 msgstr "Onafhankelijk"
 
-#: casca/store.py:81 casca/store.py:97
+#: casca/store.py:83 casca/store.py:100
 msgid "Other"
 msgstr "Overig"
 
-#: casca/store.py:92 casca/window.py:1038
+#: casca/store.py:95 casca/window.py:1303 casca/window.py:1544
 msgid "Independent apps"
 msgstr "Onafhankelijke apps"
 
-#: casca/store.py:92
+#: casca/store.py:95 casca/store.py:108
 msgid "Global"
 msgstr "Wereldwijd"
+
+#: casca/store.py:158 casca/store.py:180 casca/store.py:187
+msgid "Communication"
+msgstr "Communicatie"
+
+#: casca/store.py:159 casca/store.py:180 casca/store.py:187
+msgid "Social"
+msgstr "Sociaal"
+
+#: casca/store.py:160 casca/store.py:194
+msgid "Business"
+msgstr "Zakelijk"
+
+#: casca/store.py:161 casca/updater.py:90
+msgid "Development"
+msgstr "Ontwikkeling"
+
+#: casca/store.py:162 casca/store.py:181 casca/store.py:189 casca/store.py:194
+msgid "Office"
+msgstr "Kantoor"
+
+#: casca/store.py:163 casca/store.py:186 casca/store.py:193
+msgid "Entertainment"
+msgstr "Entertainment"
+
+#: casca/store.py:167 casca/store.py:192
+msgid "Design"
+msgstr "Ontwerp"
+
+#: casca/store.py:170 casca/store.py:181 casca/store.py:182 casca/store.py:185
+#: casca/store.py:188 casca/store.py:191 casca/store.py:192 casca/store.py:195
+msgid "Utilities"
+msgstr "Hulpmiddelen"
+
+#: casca/store.py:172 casca/store.py:190
+msgid "Shopping"
+msgstr "Winkelen"
+
+#: casca/store.py:173 casca/store.py:189
+msgid "Cloud"
+msgstr "Cloud"
+
+#: casca/store.py:174 casca/store.py:195
+msgid "Search"
+msgstr "Zoeken"
+
+#: casca/store.py:175
+msgid "Education"
+msgstr "Onderwijs"
+
+#: casca/store.py:222
+msgid "Messaging app for real-time conversations with people or groups."
+msgstr "Berichtenapp voor realtimegesprekken met personen of groepen."
+
+#: casca/store.py:226
+msgid "Tool to create, edit, convert or sign PDF files right from the browser."
+msgstr "Hulpmiddel om pdf's rechtstreeks in de browser te maken, bewerken, converteren of ondertekenen."
+
+#: casca/store.py:230
+msgid "Digital security tool: checks links, data breaches or account safety."
+msgstr "Digitaal beveiligingshulpmiddel: controleert links, datalekken of accountveiligheid."
+
+#: casca/store.py:234
+msgid "News portal with up-to-date journalistic content."
+msgstr "Nieuwsportaal met actuele journalistieke inhoud."
+
+#: casca/store.py:238
+msgid "AI assistant to chat, or generate text, images or code."
+msgstr "AI-assistent om te chatten of tekst, afbeeldingen en code te genereren."
+
+#: casca/store.py:242
+msgid "Financial tool: calculator, value correction or money management."
+msgstr "Financieel hulpmiddel: rekenmachine, waardecorrectie of geldbeheer."
+
+#: casca/store.py:246
+msgid "Music and podcast streaming service."
+msgstr "Streamingdienst voor muziek en podcasts."
+
+#: casca/store.py:250
+msgid "Social network to post, follow people and interact with content."
+msgstr "Sociaal netwerk om te posten, mensen te volgen en met inhoud te interageren."
+
+#: casca/store.py:254
+msgid "Everyday utility for a specific task, right in the browser."
+msgstr "Alledaags hulpmiddel voor een specifieke taak, rechtstreeks in de browser."
+
+#: casca/store.py:258
+msgid "Cloud storage and services to keep and reach files from anywhere."
+msgstr "Cloudopslag en -diensten om bestanden overal te bewaren en te bereiken."
+
+#: casca/store.py:262
+msgid "Online marketplace to buy and sell products."
+msgstr "Onlinemarktplaats om producten te kopen en verkopen."
+
+#: casca/store.py:266
+msgid "File conversion tool or quick content sharing."
+msgstr "Hulpmiddel voor bestandsconversie of het snel delen van inhoud."
+
+#: casca/store.py:270
+msgid "Creative tool for images, text or ideas."
+msgstr "Creatief hulpmiddel voor afbeeldingen, teksten of ideeën."
+
+#: casca/store.py:274
+msgid "Video, movie and TV show streaming service."
+msgstr "Streamingdienst voor video's, films en series."
+
+#: casca/store.py:278
+msgid "Productivity tool to organize tasks, documents or meetings."
+msgstr "Productiviteitshulpmiddel om taken, documenten of vergaderingen te organiseren."
+
+#: casca/store.py:282
+msgid "Search engine to find information on the internet."
+msgstr "Zoekmachine om informatie op internet te vinden."
+
+#: casca/store.py:288
+msgid "Site added to Casca as a web app."
+msgstr "Website als web-app aan Casca toegevoegd."
+
+#: casca/store.py:300
+msgid "Camera"
+msgstr "Camera"
+
+#: casca/store.py:301
+msgid "Microphone"
+msgstr "Microfoon"
+
+#: casca/store.py:302
+msgid "Notifications"
+msgstr "Meldingen"
+
+#: casca/store.py:303
+msgid "Files"
+msgstr "Bestanden"
+
+#: casca/store.py:304
+msgid "Location"
+msgstr "Locatie"
+
+#: casca/store.py:377 casca/window.py:1089 casca/window.py:1110
+#: casca/window.py:1639
+msgid "Gold"
+msgstr "Goud"
+
+#: casca/store.py:377 casca/window.py:1641
+msgid "Silver"
+msgstr "Zilver"
+
+#: casca/store.py:377
+msgid "Bronze"
+msgstr "Brons"
 
 #: casca/updater.py:90 casca/updater.py:91
 msgid "Release"
@@ -671,10 +822,6 @@ msgstr "Beta"
 #: casca/updater.py:90
 msgid "Alpha"
 msgstr "Alpha"
-
-#: casca/updater.py:90
-msgid "Development"
-msgstr "Ontwikkeling"
 
 #: casca/updater.py:106
 msgid "Casca"
@@ -918,122 +1065,280 @@ msgstr "Vooraf ingestelde site"
 msgid "Search by name or category…"
 msgstr "Zoeken op naam of categorie…"
 
-#: casca/window.py:720 casca/window.py:1035
+#: casca/window.py:720 casca/window.py:1290 casca/window.py:1325
+#: casca/window.py:1541
 #, python-format
 msgid "%(n)d site"
 msgid_plural "%(n)d sites"
 msgstr[0] "%(n)d site"
 msgstr[1] "%(n)d sites"
 
-#: casca/window.py:904 casca/window.py:1287
-msgid "Store"
-msgstr "Winkel"
+#: casca/window.py:1131 casca/window.py:1208
+msgid "Casca Store"
+msgstr "Casca Store"
 
-#: casca/window.py:932
-msgid "Company"
-msgstr "Bedrijf"
-
-#: casca/window.py:933
-msgid "Type"
-msgstr "Type"
-
-#: casca/window.py:949
-msgid "Search by name…"
-msgstr "Zoeken op naam…"
-
-#: casca/window.py:985
+#: casca/window.py:1183
 #, python-format
 msgid "Could not set an icon for %(name)s."
 msgstr "Er kon geen pictogram worden ingesteld voor %(name)s."
 
-#: casca/window.py:991
+#: casca/window.py:1189
 #, python-format
 msgid "Error installing package: %(error)s"
 msgstr "Fout bij installeren van pakket: %(error)s"
 
-#: casca/window.py:997
+#: casca/window.py:1195
 #, python-format
 msgid "Package “%(name)s” installed with %(n)d app."
 msgid_plural "Package “%(name)s” installed with %(n)d apps."
 msgstr[0] "Pakket “%(name)s” geïnstalleerd met %(n)d app."
 msgstr[1] "Pakket “%(name)s” geïnstalleerd met %(n)d apps."
 
-#: casca/window.py:1023
-msgid "Nothing here yet"
-msgstr "Hier is nog niets"
+#: casca/window.py:1221
+msgid "Search apps and sites…"
+msgstr "Apps en websites zoeken…"
 
-#: casca/window.py:1024
-msgid "Check the local catalog or your internet connection."
-msgstr "Controleer de lokale catalogus of je internetverbinding."
+#: casca/window.py:1243
+msgid "Region"
+msgstr "Regio"
 
-#: casca/window.py:1040
+#: casca/window.py:1307
+#, python-format
+msgid "%(n)d package"
+msgid_plural "%(n)d packages"
+msgstr[0] "%(n)d pakket"
+msgstr[1] "%(n)d pakketten"
+
+#: casca/window.py:1313 casca/window.py:1316
+msgid "Packages"
+msgstr "Pakketten"
+
+#: casca/window.py:1339
+msgid "Categories"
+msgstr "Categorieën"
+
+#: casca/window.py:1344
+msgid "Editor's Choice"
+msgstr "Keuze van de redactie"
+
+#: casca/window.py:1465
+msgid "No results"
+msgstr "Geen resultaten"
+
+#: casca/window.py:1508
+msgid "Search by name…"
+msgstr "Zoeken op naam…"
+
+#: casca/window.py:1545
 msgid "Install full package"
 msgstr "Volledig pakket installeren"
 
-#: casca/window.py:1165
+#: casca/window.py:1678
+msgid "Verified"
+msgstr "Geverifieerd"
+
+#: casca/window.py:1688
+msgid "Add to Casca"
+msgstr "Toevoegen aan Casca"
+
+#: casca/window.py:1689
+msgid "Add"
+msgstr "Toevoegen"
+
+#: casca/window.py:1707
+#, python-format
+msgid "Casca Seal: %(tier)s"
+msgstr "Casca-keurmerk: %(tier)s"
+
+#: casca/window.py:1729
+#, python-format
+msgid ""
+"%(name)s, by %(company)s, opens straight from %(domain)s in its own window — "
+"no installation and no downloads. Casca creates the menu shortcut and keeps "
+"the site's data in a profile that's separate from your browser."
+msgstr "%(name)s, van %(company)s, opent rechtstreeks vanaf %(domain)s in een eigen venster — zonder installatie en zonder downloads. Casca maakt de menusnelkoppeling aan en bewaart de gegevens van de website in een profiel dat gescheiden is van uw browser."
+
+#: casca/window.py:1794
+msgid "Estimated disk savings"
+msgstr "Geschatte schijfbesparing"
+
+#: casca/window.py:1797
+msgid "Isolated"
+msgstr "Geïsoleerd"
+
+#: casca/window.py:1797
+msgid "HTTPS and its own profile"
+msgstr "HTTPS en een eigen profiel"
+
+#: casca/window.py:1808
+#, python-format
+msgid "%(n)d possible access"
+msgid_plural "%(n)d possible accesses"
+msgstr[0] "%(n)d mogelijke toegang"
+msgstr[1] "%(n)d mogelijke toegangen"
+
+#: casca/window.py:1816
+msgid "No special access"
+msgstr "Geen speciale toegang"
+
+#: casca/window.py:1816
+msgid "Doesn't typically ask for any"
+msgstr "Vraagt er doorgaans geen"
+
+#: casca/window.py:1824
+#, python-format
+msgid "%(tier)s Seal"
+msgstr "Keurmerk %(tier)s"
+
+#: casca/window.py:1825
+msgid "Click for details"
+msgstr "Klik voor details"
+
+#: casca/window.py:1849
+msgid "Casca-estimated quality seal"
+msgstr "Door Casca geschat kwaliteitskeurmerk"
+
+#: casca/window.py:1854
+msgid "Updates"
+msgstr "Updates"
+
+#: casca/window.py:1855
+msgid "Usability"
+msgstr "Gebruiksgemak"
+
+#: casca/window.py:1856
+msgid "Speed"
+msgstr "Snelheid"
+
+#: casca/window.py:1857
+msgid "Community"
+msgstr "Gemeenschap"
+
+#: casca/window.py:1867
+msgid ""
+"Estimate calculated by Casca from the company's recognition and the app's "
+"category — not an official rating from the site."
+msgstr "Schatting berekend door Casca op basis van de bekendheid van het bedrijf en de categorie van de app — geen officiële beoordeling van de website."
+
+#: casca/window.py:1891
+msgid "Company"
+msgstr "Bedrijf"
+
+#: casca/window.py:1894
+msgid "See all apps from this company"
+msgstr "Alle apps van dit bedrijf bekijken"
+
+#: casca/window.py:1905
+msgid "Possible access to your computer"
+msgstr "Mogelijke toegang tot uw computer"
+
+#: casca/window.py:1906
+msgid "Typical pattern for this category — not a scan of this specific site."
+msgstr "Typisch patroon voor deze categorie — geen analyse van deze specifieke website."
+
+#: casca/window.py:1916
+msgid "Doesn't typically request special access"
+msgstr "Vraagt doorgaans geen speciale toegang"
+
+#: casca/window.py:1926
+msgid "HTTPS connection"
+msgstr "HTTPS-verbinding"
+
+#: casca/window.py:1927
+msgid "Casca only opens sites over an encrypted connection."
+msgstr "Casca opent websites alleen via een versleutelde verbinding."
+
+#: casca/window.py:1931
+msgid "Isolated browser profile"
+msgstr "Geïsoleerd browserprofiel"
+
+#: casca/window.py:1933
+msgid ""
+"Each app you create gets its own profile, separate from your main browser "
+"and from your other apps."
+msgstr "Elke app die u maakt krijgt een eigen profiel, gescheiden van uw hoofdbrowser en uw andere apps."
+
+#: casca/window.py:1939
+msgid "No native executable installed"
+msgstr "Geen native uitvoerbaar bestand geïnstalleerd"
+
+#: casca/window.py:1940
+msgid "Only a shortcut is created — nothing runs outside the browser engine."
+msgstr "Er wordt alleen een snelkoppeling gemaakt — niets draait buiten de browser-engine."
+
+#: casca/window.py:1957
+#, python-format
+msgid "More from %(company)s"
+msgstr "Meer van %(company)s"
+
+#: casca/window.py:1984
 msgid "Casca Manual"
 msgstr "Casca-handleiding"
 
-#: casca/window.py:1185
+#: casca/window.py:2004
 msgid "Could not open the built-in manual"
 msgstr "De ingebouwde handleiding kon niet worden geopend"
 
-#: casca/window.py:1204
+#: casca/window.py:2023
 msgid "Choose what to import"
 msgstr "Kies wat je wilt importeren"
 
-#: casca/window.py:1213
+#: casca/window.py:2032
 #, python-format
 msgid "%(n)d site found"
 msgid_plural "%(n)d sites found"
 msgstr[0] "%(n)d site gevonden"
 msgstr[1] "%(n)d sites gevonden"
 
-#: casca/window.py:1216
+#: casca/window.py:2035
 msgid "Uncheck anything you don't want to import."
 msgstr "Vink alles uit wat je niet wilt importeren."
 
-#: casca/window.py:1219
+#: casca/window.py:2038
 msgid "(no name)"
 msgstr "(geen naam)"
 
-#: casca/window.py:1227
+#: casca/window.py:2046
 msgid "Import selected"
 msgstr "Selectie importeren"
 
-#: casca/window.py:1260
+#: casca/window.py:2079
 msgid "User guide"
 msgstr "Gebruikershandleiding"
 
-#: casca/window.py:1261
+#: casca/window.py:2080
 msgid "About Casca"
 msgstr "Over Casca"
 
-#: casca/window.py:1262
+#: casca/window.py:2081
 msgid "Menu"
 msgstr "Menu"
 
-#: casca/window.py:1292
+#: casca/window.py:2106
+msgid "Store"
+msgstr "Winkel"
+
+#: casca/window.py:2111
 msgid "Create a new web app"
 msgstr "Een nieuwe webapp aanmaken"
 
-#: casca/window.py:1293
+#: casca/window.py:2112
 msgid "Create"
 msgstr "Aanmaken"
 
-#: casca/window.py:1302 casca/window.py:1429
+#: casca/window.py:2121 casca/window.py:2249
 msgid "Import apps"
 msgstr "Apps importeren"
 
-#: casca/window.py:1306 casca/window.py:1379
+#: casca/window.py:2125 casca/window.py:2199
 msgid "Export apps"
 msgstr "Apps exporteren"
 
-#: casca/window.py:1337
+#: casca/window.py:2156
 msgid "Turns any website into a GNOME app."
 msgstr "Maakt van elke website een GNOME-app."
 
-#: casca/window.py:1341
+#: casca/window.py:2160
 #, python-format
 msgid ""
 "Version %(latest)s is available — an update notification with a way to "
@@ -1042,124 +1347,125 @@ msgstr ""
 "Versie %(latest)s is beschikbaar — er verscheen zojuist een melding met een "
 "manier om bij te werken."
 
-#: casca/window.py:1356
+#: casca/window.py:2175
 msgid ""
-"Casca now checks for new releases in the background (once a day at most) and "
-"lets you know with a system notification — no action needed for Flatpak/Snap "
-"installs, which already update themselves."
-msgstr "Casca controleert nu op de achtergrond op nieuwe versies (hooguit één keer per dag) en laat het je weten met een systeemmelding — geen actie nodig bij Flatpak-/Snap-installaties, die zichzelf al bijwerken."
+"The Store is now the Casca Store, in the style of GNOME Software: a featured "
+"apps carousel, colorful category tiles, Editor's Choice, and a page for each "
+"app with usage tags, the Bronze/Silver/Gold Casca seal, estimated disk "
+"savings, possible PC access and security info."
+msgstr "De winkel is nu de Casca Store, in de stijl van GNOME Software: een carrousel met uitgelichte apps, kleurrijke categorieën, Keuze van de redactie en een pagina per app met gebruikstags, het Casca-keurmerk Brons/Zilver/Goud, geschatte schijfbesparing, mogelijke toegang tot de pc en beveiligingsinformatie."
 
-#: casca/window.py:1361
+#: casca/window.py:2181
 msgid ""
-"The About dialog now shows the license, a link to the source code, whether "
-"you're on a release/beta/alpha build, and a proper “What's New” page with "
-"each version's changelog."
-msgstr "Het Info-venster toont nu de licentie, een link naar de broncode, of je een release-, beta- of alpha-versie gebruikt, en een echte “Wat is er nieuw”-pagina met de wijzigingen van elke versie."
+"A region selector next to the search detects your country automatically and "
+"filters marketplaces and news to your region — or choose Global to see "
+"everything. All of it translated into the 20 supported languages."
+msgstr "Een regiokiezer naast de zoekbalk detecteert uw land automatisch en filtert marktplaatsen en nieuws op uw regio — of kies Globaal om alles te zien. Alles vertaald in de 20 ondersteunde talen."
 
-#: casca/window.py:1367
+#: casca/window.py:2187
 msgid "Source Code"
 msgstr "Broncode"
 
-#: casca/window.py:1377
+#: casca/window.py:2197
 msgid "No app created yet to export."
 msgstr "Er is nog geen app aangemaakt om te exporteren."
 
-#: casca/window.py:1401
+#: casca/window.py:2221
 #, python-format
 msgid "Error exporting: %(error)s"
 msgstr "Fout bij exporteren: %(error)s"
 
-#: casca/window.py:1404
+#: casca/window.py:2224
 #, python-format
 msgid "%(count)d app exported to %(name)s."
 msgid_plural "%(count)d apps exported to %(name)s."
 msgstr[0] "%(count)d app geëxporteerd naar %(name)s."
 msgstr[1] "%(count)d apps geëxporteerd naar %(name)s."
 
-#: casca/window.py:1410
+#: casca/window.py:2230
 msgid "Import from where?"
 msgstr "Vanaf waar importeren?"
 
-#: casca/window.py:1411
+#: casca/window.py:2231
 msgid "Choose a local .json file or a URL (e.g. a GitHub \"raw\" link)."
 msgstr ""
 "Kies een lokaal .json-bestand of een URL (bijv. een \"raw\"-link van GitHub)."
 
-#: casca/window.py:1413 casca/window.py:1459 casca/window.py:1592
-#: casca/window.py:1615
+#: casca/window.py:2233 casca/window.py:2279 casca/window.py:2412
+#: casca/window.py:2435
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: casca/window.py:1414
+#: casca/window.py:2234
 msgid "From a URL"
 msgstr "Van een URL"
 
-#: casca/window.py:1415
+#: casca/window.py:2235
 msgid "Local file"
 msgstr "Lokaal bestand"
 
-#: casca/window.py:1448
+#: casca/window.py:2268
 #, python-format
 msgid "Error reading the file: %(error)s"
 msgstr "Fout bij lezen van het bestand: %(error)s"
 
-#: casca/window.py:1454
+#: casca/window.py:2274
 msgid "Import from a URL"
 msgstr "Importeren vanaf een URL"
 
-#: casca/window.py:1455
+#: casca/window.py:2275
 msgid "Paste the JSON file's \"raw\" link (e.g. from a GitHub repository)."
 msgstr ""
 "Plak de \"raw\"-link van het JSON-bestand (bijv. van een GitHub-repository)."
 
-#: casca/window.py:1460
+#: casca/window.py:2280
 msgid "Fetch"
 msgstr "Ophalen"
 
-#: casca/window.py:1472
+#: casca/window.py:2292
 msgid "Enter a URL."
 msgstr "Voer een URL in."
 
-#: casca/window.py:1474
+#: casca/window.py:2294
 msgid "Fetching file…"
 msgstr "Bestand ophalen…"
 
-#: casca/window.py:1481
+#: casca/window.py:2301
 #, python-format
 msgid "Error downloading: %(error)s"
 msgstr "Fout bij downloaden: %(error)s"
 
-#: casca/window.py:1489
+#: casca/window.py:2309
 #, python-format
 msgid "Error importing: %(error)s"
 msgstr "Fout bij importeren: %(error)s"
 
-#: casca/window.py:1492
+#: casca/window.py:2312
 msgid "No app found in the file."
 msgstr "Geen app gevonden in het bestand."
 
-#: casca/window.py:1500
+#: casca/window.py:2320
 msgid "Nothing selected to import."
 msgstr "Niets geselecteerd om te importeren."
 
-#: casca/window.py:1508
+#: casca/window.py:2328
 #, python-format
 msgid "%(n)d app imported."
 msgid_plural "%(n)d apps imported."
 msgstr[0] "%(n)d app geïmporteerd."
 msgstr[1] "%(n)d apps geïmporteerd."
 
-#: casca/window.py:1514
+#: casca/window.py:2334
 #, python-format
 msgid "• %(name)s: %(reason)s"
 msgstr "• %(name)s: %(reason)s"
 
-#: casca/window.py:1518
+#: casca/window.py:2338
 #, python-format
 msgid "%(created)d imported, %(failed)d with errors"
 msgstr "%(created)d geïmporteerd, %(failed)d met fouten"
 
-#: casca/window.py:1520
+#: casca/window.py:2340
 #, python-format
 msgid ""
 "Review and adjust manually via the \"Create\" button:\n"
@@ -1170,35 +1476,35 @@ msgstr ""
 "\n"
 "%(lines)s"
 
-#: casca/window.py:1522
+#: casca/window.py:2342
 msgid "Got it"
 msgstr "Begrepen"
 
-#: casca/window.py:1536
+#: casca/window.py:2356
 msgid "No web apps yet"
 msgstr "Nog geen webapps"
 
-#: casca/window.py:1537
+#: casca/window.py:2357
 msgid ""
 "Tap “Create” to make your first app, or open the Store for ready-made sites."
 msgstr ""
 "Tik op “Aanmaken” om je eerste app te maken, of open de Winkel voor kant-en-"
 "klare sites."
 
-#: casca/window.py:1546
+#: casca/window.py:2366
 msgid "My web apps"
 msgstr "Mijn webapps"
 
-#: casca/window.py:1568
+#: casca/window.py:2388
 msgid "Installed packages"
 msgstr "Geïnstalleerde pakketten"
 
-#: casca/window.py:1589
+#: casca/window.py:2409
 #, python-format
 msgid "Delete “%(name)s”?"
 msgstr "“%(name)s” verwijderen?"
 
-#: casca/window.py:1590
+#: casca/window.py:2410
 msgid ""
 "The shortcut will be removed from the applications menu and the desktop, if "
 "it exists."
@@ -1206,21 +1512,48 @@ msgstr ""
 "De snelkoppeling wordt verwijderd uit het toepassingenmenu en van het "
 "bureaublad, indien aanwezig."
 
-#: casca/window.py:1593 casca/window.py:1616
+#: casca/window.py:2413 casca/window.py:2436
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: casca/window.py:1607
+#: casca/window.py:2427
 #, python-format
 msgid "Delete package “%(name)s”?"
 msgstr "Pakket “%(name)s” verwijderen?"
 
-#: casca/window.py:1609
+#: casca/window.py:2429
 #, python-format
 msgid "Removes the shortcut and the %(n)d app inside it (%(names)s)."
 msgid_plural "Removes the shortcut and the %(n)d apps inside it (%(names)s)."
 msgstr[0] "Verwijdert de snelkoppeling en de %(n)d app erin (%(names)s)."
 msgstr[1] "Verwijdert de snelkoppeling en de %(n)d apps erin (%(names)s)."
+
+#~ msgid ""
+#~ "Casca now checks for new releases in the background (once a day at most) "
+#~ "and lets you know with a system notification — no action needed for "
+#~ "Flatpak/Snap installs, which already update themselves."
+#~ msgstr ""
+#~ "Casca controleert nu op de achtergrond op nieuwe versies (hooguit één "
+#~ "keer per dag) en laat het je weten met een systeemmelding — geen actie "
+#~ "nodig bij Flatpak-/Snap-installaties, die zichzelf al bijwerken."
+
+#~ msgid ""
+#~ "The About dialog now shows the license, a link to the source code, "
+#~ "whether you're on a release/beta/alpha build, and a proper “What's New” "
+#~ "page with each version's changelog."
+#~ msgstr ""
+#~ "Het Info-venster toont nu de licentie, een link naar de broncode, of je "
+#~ "een release-, beta- of alpha-versie gebruikt, en een echte “Wat is er "
+#~ "nieuw”-pagina met de wijzigingen van elke versie."
+
+#~ msgid "Type"
+#~ msgstr "Type"
+
+#~ msgid "Nothing here yet"
+#~ msgstr "Hier is nog niets"
+
+#~ msgid "Check the local catalog or your internet connection."
+#~ msgstr "Controleer de lokale catalogus of je internetverbinding."
 
 #~ msgid ""
 #~ "Casca now speaks 20 languages, picked automatically from the system "
