@@ -34,6 +34,19 @@ PACKAGE_DESKTOP_PREFIX = "casca-pkg-"
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 _PACKAGE_RUNNER = _PROJECT_ROOT / "run_package.py"
 
+ENVIRONMENTS_DIR = DATA_DIR / "environments"
+ENVIRONMENTS_REGISTRY_PATH = DATA_DIR / "environments.json"
+ENV_DESKTOP_PREFIX = "casca-env-"
+_ENVIRONMENT_RUNNER = _PROJECT_ROOT / "run_environment.py"
+
+DEFAULT_ENVIRONMENT = "default"
+
+# Fallback for an environment with no chosen icon/banner: a real bundled file,
+# not the "io.github.oliverhubtech_source.Casca" theme icon name — that name
+# only resolves when Casca is installed into an icon theme (Flatpak/RPM/Snap),
+# so a dev/git checkout run would otherwise show a broken icon in the menu.
+_APP_ICON_PATH = Path(__file__).resolve().parent / "data" / "icons" / "io.github.oliverhubtech_source.Casca.png"
+
 
 def _package_runner_command() -> str:
     """Command for the package's .desktop Exec= — same as webkit in browsers.py,
@@ -44,6 +57,15 @@ def _package_runner_command() -> str:
     if "SNAP_NAME" in os.environ:
         return f"{os.environ['SNAP_NAME']}.casca-package"
     return f"python3 {_PACKAGE_RUNNER}"
+
+
+def _environment_runner_command() -> str:
+    """Same idea as _package_runner_command(), for the environment "superapp"."""
+    if "FLATPAK_ID" in os.environ:
+        return "flatpak run --command=casca-environment io.github.oliverhubtech_source.Casca"
+    if "SNAP_NAME" in os.environ:
+        return f"{os.environ['SNAP_NAME']}.casca-environment"
+    return f"python3 {_ENVIRONMENT_RUNNER}"
 
 
 def _desktop_dir() -> Path:
@@ -75,6 +97,8 @@ class WebApp:
     browser_profile: str | None = None
     width: int | None = None
     height: int | None = None
+    environment: str = DEFAULT_ENVIRONMENT
+    blocked: bool = False
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -149,7 +173,23 @@ def _refresh_desktop_database() -> None:
     )
 
 
+def _remove_desktop_files(slug: str) -> None:
+    for path in (
+        APPLICATIONS_DIR / f"{DESKTOP_PREFIX}{slug}.desktop",
+        _desktop_dir() / f"{DESKTOP_PREFIX}{slug}.desktop",
+    ):
+        if path.exists():
+            path.unlink()
+
+
 def _write_all(app: WebApp, browser: Browser) -> None:
+    if app.blocked:
+        # A blocked app keeps its registry entry, icon and profile, but must not
+        # exist in the applications menu / desktop until unblocked.
+        _remove_desktop_files(app.slug)
+        _refresh_desktop_database()
+        return
+
     profile_dir = PROFILES_DIR / app.slug
     if browser.supports_isolated_profile:
         profile_dir.mkdir(parents=True, exist_ok=True)
@@ -199,6 +239,7 @@ def create_app(
     browser_profile: str | None = None,
     width: int | None = None,
     height: int | None = None,
+    environment: str = DEFAULT_ENVIRONMENT,
 ) -> str:
     browser = find_by_key(browser_key)
     if browser is None:
@@ -221,6 +262,7 @@ def create_app(
         browser_profile=browser_profile,
         width=width,
         height=height,
+        environment=environment,
     )
     _write_all(app, browser)
 
@@ -241,6 +283,7 @@ def update_app(
     browser_profile: str | None = None,
     width: int | None = None,
     height: int | None = None,
+    environment: str = DEFAULT_ENVIRONMENT,
 ) -> None:
     browser = find_by_key(browser_key)
     if browser is None:
@@ -265,8 +308,66 @@ def update_app(
         browser_profile=browser_profile,
         width=width,
         height=height,
+        environment=environment,
+        blocked=current.blocked,
     )
     _write_all(app, browser)
+
+    registry[slug] = app.to_dict()
+    _save_json_registry(REGISTRY_PATH, registry)
+
+
+def clone_app(slug: str) -> str:
+    """Duplicates an app: new unique slug, "(copy)" name, same icon and options,
+    fresh isolated profile (the clone starts logged out)."""
+    registry = _load_json_registry(REGISTRY_PATH)
+    if slug not in registry:
+        raise KeyError(_("App not found: %(slug)s") % {"slug": slug})
+
+    source = WebApp(**registry[slug])
+    browser = find_by_key(source.browser_key)
+    if browser is None:
+        raise ValueError(_("Browser not found: %(key)s") % {"key": source.browser_key})
+
+    clone_name = _("%(name)s (copy)") % {"name": source.name}
+    clone_slug = _unique_slug(clone_name, registry)
+
+    icon = source.icon_path
+    if icon and Path(icon).exists():
+        icon = str(icons.save_icon_from_file(Path(icon), clone_slug))
+
+    clone = WebApp(
+        **{
+            **source.to_dict(),
+            "slug": clone_slug,
+            "name": clone_name,
+            "icon_path": icon,
+            "blocked": False,
+        }
+    )
+    _write_all(clone, browser)
+
+    registry[clone_slug] = clone.to_dict()
+    _save_json_registry(REGISTRY_PATH, registry)
+    return clone_slug
+
+
+def set_app_blocked(slug: str, blocked: bool) -> None:
+    """Blocked = the shortcut leaves the applications menu/desktop (greyed out in
+    Casca's list), but nothing is uninstalled: registry, icon and profile stay."""
+    registry = _load_json_registry(REGISTRY_PATH)
+    if slug not in registry:
+        raise KeyError(_("App not found: %(slug)s") % {"slug": slug})
+
+    app = WebApp(**registry[slug])
+    app.blocked = blocked
+    browser = find_by_key(app.browser_key)
+
+    if blocked or browser is None:
+        _remove_desktop_files(slug)
+        _refresh_desktop_database()
+    else:
+        _write_all(app, browser)
 
     registry[slug] = app.to_dict()
     _save_json_registry(REGISTRY_PATH, registry)
@@ -452,6 +553,7 @@ class PackageInfo:
     name: str
     icon_path: str
     app_names: list[str]
+    environment: str = DEFAULT_ENVIRONMENT
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -462,15 +564,11 @@ def list_packages() -> list[PackageInfo]:
     return [PackageInfo(**data) for data in registry.values()]
 
 
-def create_package(name: str, sub_apps: list[dict], icon_path: Path) -> str:
-    """Create a package: its own window listing the apps in `sub_apps`
-    (each with a name/url) that opens the corresponding app on click.
-
-    Each sub-app opens in Casca's own window (webkit), with an isolated
-    session and its title bar colored from that specific app's icon.
-    """
-    registry = _load_json_registry(PACKAGES_REGISTRY_PATH)
-    slug = _unique_slug(name, registry)
+def _build_package_dir(slug: str, name: str, sub_apps: list[dict], icon_path: Path | None) -> PackageInfo:
+    """(Re)builds PACKAGES_DIR/<slug>: sub-app icons, config.json, package icon
+    and the menu .desktop. Existing profiles/<sub-slug>/ dirs are preserved, so
+    rebuilding a package (update) keeps the sessions of the sub-apps that stayed.
+    `icon_path=None` keeps the current package icon (update without changing it)."""
     package_dir = PACKAGES_DIR / slug
     icons_dir = package_dir / "icons"
     profiles_dir = package_dir / "profiles"
@@ -484,18 +582,20 @@ def create_package(name: str, sub_apps: list[dict], icon_path: Path) -> str:
 
     sub_app_configs = []
     app_names = []
+    kept_sub_slugs = set()
     for sub_app in sub_apps:
         sub_name = sub_app["name"]
         sub_url = sub_app["url"]
         sub_slug = slugify(sub_name)
         app_names.append(sub_name)
+        kept_sub_slugs.add(sub_slug)
 
         icon_source = sub_app.get("icon_source")
         if icon_source and Path(icon_source).exists():
             sub_icon = icons.save_icon_from_file(Path(icon_source), f"{slug}-{sub_slug}")
             shutil.copy(sub_icon, icons_dir / f"{sub_slug}.png")
             icons.delete_icon(f"{slug}-{sub_slug}")
-        else:
+        elif not (icons_dir / f"{sub_slug}.png").exists():
             data = icons.fetch_favicon(sub_url)
             if data:
                 icons._normalize_to_png(data, icons_dir / f"{sub_slug}.png")
@@ -520,14 +620,35 @@ def create_package(name: str, sub_apps: list[dict], icon_path: Path) -> str:
         sub_app_configs.append(
             {
                 "name": sub_name,
+                "url": sub_url,
                 "icon": str(sub_icon_path) if sub_icon_path.exists() else None,
                 "exec": exec_cmd,
             }
         )
 
+    # Leftovers from sub-apps that were removed on an update: their profile
+    # (session) and icon have no owner anymore.
+    for leftover in profiles_dir.iterdir():
+        if leftover.is_dir() and leftover.name not in kept_sub_slugs:
+            shutil.rmtree(leftover, ignore_errors=True)
+    for leftover in icons_dir.glob("*.png"):
+        if leftover.stem not in kept_sub_slugs and leftover.stem != "package":
+            leftover.unlink()
+
+    if icon_path is not None:
+        package_icon_path = icons_dir / "package.png"
+        if icon_path.suffix.lower() == ".svg":
+            package_icon_path = icons_dir / "package.svg"
+            package_icon_path.write_bytes(icon_path.read_bytes())
+        else:
+            shutil.copy(icon_path, package_icon_path)
+    else:
+        existing_svg = icons_dir / "package.svg"
+        package_icon_path = existing_svg if existing_svg.exists() else icons_dir / "package.png"
+
     package_color = package_text_color = None
-    if icon_path.exists():
-        rgb = icons.dominant_color(icon_path)
+    if package_icon_path.exists():
+        rgb = icons.dominant_color(package_icon_path)
         package_color = icons.to_hex(rgb)
         package_text_color = icons.contrasting_text_color(rgb)
 
@@ -539,13 +660,6 @@ def create_package(name: str, sub_apps: list[dict], icon_path: Path) -> str:
     }
     config_path = package_dir / "config.json"
     config_path.write_text(json.dumps(config, indent=2, ensure_ascii=False))
-
-    package_icon_path = icons_dir / "package.png"
-    if icon_path.suffix.lower() == ".svg":
-        package_icon_path = icons_dir / "package.svg"
-        package_icon_path.write_bytes(icon_path.read_bytes())
-    else:
-        shutil.copy(icon_path, package_icon_path)
 
     desktop_content = (
         "[Desktop Entry]\n"
@@ -565,11 +679,48 @@ def create_package(name: str, sub_apps: list[dict], icon_path: Path) -> str:
     _write_desktop_file(menu_path, desktop_content)
     _refresh_desktop_database()
 
-    registry[slug] = PackageInfo(
-        slug=slug, name=name, icon_path=str(package_icon_path), app_names=app_names
-    ).to_dict()
+    return PackageInfo(slug=slug, name=name, icon_path=str(package_icon_path), app_names=app_names)
+
+
+def create_package(
+    name: str, sub_apps: list[dict], icon_path: Path, environment: str = DEFAULT_ENVIRONMENT
+) -> str:
+    """Create a package: its own window listing the apps in `sub_apps`
+    (each with a name/url) that opens the corresponding app on click.
+
+    Each sub-app opens in Casca's own window (webkit), with an isolated
+    session and its title bar colored from that specific app's icon.
+    """
+    registry = _load_json_registry(PACKAGES_REGISTRY_PATH)
+    slug = _unique_slug(name, registry)
+
+    info = _build_package_dir(slug, name, sub_apps, icon_path)
+    info.environment = environment
+
+    registry[slug] = info.to_dict()
     _save_json_registry(PACKAGES_REGISTRY_PATH, registry)
     return slug
+
+
+def update_package(
+    slug: str,
+    name: str,
+    sub_apps: list[dict],
+    icon_path: Path | None,
+    environment: str = DEFAULT_ENVIRONMENT,
+) -> None:
+    """Rebuilds an existing package in place (same slug/menu entry). Sub-apps
+    that stayed keep their session; removed ones have profile/icon cleaned up.
+    `icon_path=None` keeps the current package icon."""
+    registry = _load_json_registry(PACKAGES_REGISTRY_PATH)
+    if slug not in registry:
+        raise KeyError(_("Package not found: %(slug)s") % {"slug": slug})
+
+    info = _build_package_dir(slug, name, sub_apps, icon_path)
+    info.environment = environment
+
+    registry[slug] = info.to_dict()
+    _save_json_registry(PACKAGES_REGISTRY_PATH, registry)
 
 
 def delete_package(slug: str) -> None:
@@ -587,4 +738,176 @@ def delete_package(slug: str) -> None:
 
     del registry[slug]
     _save_json_registry(PACKAGES_REGISTRY_PATH, registry)
+    _refresh_desktop_database()
+
+
+@dataclass
+class EnvironmentInfo:
+    """A user-created environment: groups apps/packages, provides creation
+    defaults, and shows up in the applications menu as its own "superapp"
+    launcher (banner + info + grid of the environment's apps).
+
+    The "default" environment is NOT stored here — it always exists, holds
+    everything not assigned elsewhere, and has no launcher/banner/defaults."""
+
+    slug: str
+    name: str
+    banner_path: str | None = None
+    icon_path: str | None = None
+    description: str = ""
+    notes: str = ""
+    # browser_key/browser_profile/mobile/device_key/width/height — prefill for
+    # the editor when creating an app in this environment (all optional).
+    defaults: dict = None
+
+    def __post_init__(self):
+        if self.defaults is None:
+            self.defaults = {}
+
+    def to_dict(self) -> dict:
+        return asdict(self)
+
+
+def list_environments() -> list[EnvironmentInfo]:
+    registry = _load_json_registry(ENVIRONMENTS_REGISTRY_PATH)
+    return [EnvironmentInfo(**data) for data in registry.values()]
+
+
+def get_environment(slug: str) -> EnvironmentInfo | None:
+    registry = _load_json_registry(ENVIRONMENTS_REGISTRY_PATH)
+    data = registry.get(slug)
+    return EnvironmentInfo(**data) if data else None
+
+
+def _copy_environment_asset(env_slug: str, source: Path, stem: str) -> str:
+    """Copies a banner/icon image into ENVIRONMENTS_DIR/<slug>/ (its own copy,
+    so the environment doesn't break if the original file moves)."""
+    dest_dir = ENVIRONMENTS_DIR / env_slug
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    dest = dest_dir / f"{stem}{source.suffix.lower() or '.png'}"
+    shutil.copy(source, dest)
+    return str(dest)
+
+
+def _environment_icon_for_desktop(env: EnvironmentInfo) -> str:
+    if env.icon_path and Path(env.icon_path).exists():
+        return env.icon_path
+    if env.banner_path and Path(env.banner_path).exists():
+        return env.banner_path
+    return str(_APP_ICON_PATH)
+
+
+def _write_environment_launcher(env: EnvironmentInfo) -> None:
+    desktop_content = (
+        "[Desktop Entry]\n"
+        "Version=1.0\n"
+        "Type=Application\n"
+        f"Name={env.name}\n"
+        "Comment=" + _("Casca environment") + "\n"
+        f"Exec={_environment_runner_command()} --slug {env.slug}\n"
+        f"Icon={_environment_icon_for_desktop(env)}\n"
+        "Terminal=false\n"
+        "Categories=Network;WebBrowser;\n"
+        f"StartupWMClass=casca_env_{env.slug.replace('-', '_')}\n"
+        "X-Casca=true\n"
+        "X-CascaEnvironment=true\n"
+    )
+    menu_path = APPLICATIONS_DIR / f"{ENV_DESKTOP_PREFIX}{env.slug}.desktop"
+    _write_desktop_file(menu_path, desktop_content)
+    _refresh_desktop_database()
+
+
+def create_environment(
+    name: str,
+    description: str = "",
+    notes: str = "",
+    banner_source: Path | None = None,
+    icon_source: Path | None = None,
+    defaults: dict | None = None,
+) -> str:
+    registry = _load_json_registry(ENVIRONMENTS_REGISTRY_PATH)
+    slug = _unique_slug(name, registry)
+    if slug == DEFAULT_ENVIRONMENT:
+        slug = f"{DEFAULT_ENVIRONMENT}-2"
+
+    env = EnvironmentInfo(
+        slug=slug,
+        name=name,
+        description=description,
+        notes=notes,
+        defaults=dict(defaults or {}),
+    )
+    if banner_source and banner_source.exists():
+        env.banner_path = _copy_environment_asset(slug, banner_source, "banner")
+    if icon_source and icon_source.exists():
+        env.icon_path = _copy_environment_asset(slug, icon_source, "icon")
+
+    _write_environment_launcher(env)
+
+    registry[slug] = env.to_dict()
+    _save_json_registry(ENVIRONMENTS_REGISTRY_PATH, registry)
+    return slug
+
+
+def update_environment(
+    slug: str,
+    name: str,
+    description: str = "",
+    notes: str = "",
+    banner_source: Path | None = None,
+    icon_source: Path | None = None,
+    defaults: dict | None = None,
+) -> None:
+    """banner_source/icon_source = None keep the current image."""
+    registry = _load_json_registry(ENVIRONMENTS_REGISTRY_PATH)
+    if slug not in registry:
+        raise KeyError(_("Environment not found: %(slug)s") % {"slug": slug})
+
+    env = EnvironmentInfo(**registry[slug])
+    env.name = name
+    env.description = description
+    env.notes = notes
+    env.defaults = dict(defaults or {})
+    if banner_source and banner_source.exists():
+        env.banner_path = _copy_environment_asset(slug, banner_source, "banner")
+    if icon_source and icon_source.exists():
+        env.icon_path = _copy_environment_asset(slug, icon_source, "icon")
+
+    _write_environment_launcher(env)
+
+    registry[slug] = env.to_dict()
+    _save_json_registry(ENVIRONMENTS_REGISTRY_PATH, registry)
+
+
+def _reassign_environment(registry_path: Path, from_env: str, to_env: str) -> None:
+    registry = _load_json_registry(registry_path)
+    changed = False
+    for data in registry.values():
+        if data.get("environment") == from_env:
+            data["environment"] = to_env
+            changed = True
+    if changed:
+        _save_json_registry(registry_path, registry)
+
+
+def delete_environment(slug: str) -> None:
+    """Removes the environment and its launcher; its apps and packages are NOT
+    uninstalled — they just move back to the default environment."""
+    registry = _load_json_registry(ENVIRONMENTS_REGISTRY_PATH)
+    if slug not in registry:
+        return
+
+    _reassign_environment(REGISTRY_PATH, slug, DEFAULT_ENVIRONMENT)
+    _reassign_environment(PACKAGES_REGISTRY_PATH, slug, DEFAULT_ENVIRONMENT)
+
+    menu_path = APPLICATIONS_DIR / f"{ENV_DESKTOP_PREFIX}{slug}.desktop"
+    if menu_path.exists():
+        menu_path.unlink()
+
+    env_dir = ENVIRONMENTS_DIR / slug
+    if env_dir.exists():
+        shutil.rmtree(env_dir, ignore_errors=True)
+
+    del registry[slug]
+    _save_json_registry(ENVIRONMENTS_REGISTRY_PATH, registry)
     _refresh_desktop_database()

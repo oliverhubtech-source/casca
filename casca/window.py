@@ -230,6 +230,16 @@ class EditorPage(Adw.NavigationPage):
         self._url_row = Adw.EntryRow(title=_("Address (URL)"))
         site_group.add(self._name_row)
         site_group.add(self._url_row)
+
+        self._environments = entries.list_environments()
+        self._environment_row = Adw.ComboRow(title=_("Environment"))
+        environment_labels = Gtk.StringList()
+        environment_labels.append(_("Default"))
+        for env in self._environments:
+            environment_labels.append(env.name)
+        self._environment_row.set_model(environment_labels)
+        self._environment_row.connect("notify::selected", self._on_environment_changed)
+        site_group.add(self._environment_row)
         page.add(site_group)
 
         browser_group = Adw.PreferencesGroup(title=_("Browser"))
@@ -391,11 +401,60 @@ class EditorPage(Adw.NavigationPage):
         if existing:
             self._load_existing(existing)
 
+    def _selected_environment(self) -> str:
+        index = self._environment_row.get_selected()
+        if index <= 0 or index > len(self._environments):
+            return entries.DEFAULT_ENVIRONMENT
+        return self._environments[index - 1].slug
+
+    def _on_environment_changed(self, *_args) -> None:
+        """Creating an app inside an environment prefills the editor with that
+        environment's defaults; editing an existing app never gets overwritten."""
+        if self._existing is not None:
+            return
+        index = self._environment_row.get_selected()
+        if index <= 0 or index > len(self._environments):
+            return
+        defaults = self._environments[index - 1].defaults or {}
+
+        browser_key = defaults.get("browser_key")
+        if browser_key:
+            self._custom_browser_expander.set_enable_expansion(browser_key != "webkit:casca")
+            for i, browser in enumerate(self._detected_browsers):
+                if browser.key == browser_key:
+                    self._browser_row.set_selected(i)
+                    break
+        self._update_profile_options()
+        browser_profile = defaults.get("browser_profile")
+        if browser_profile and browser_profile in self._profile_options:
+            self._profile_row.set_selected(self._profile_options.index(browser_profile))
+
+        self._update_mobile_switch_availability()
+        self._mobile_expander.set_enable_expansion(bool(defaults.get("mobile")))
+        device_key = defaults.get("device_key")
+        if device_key:
+            for i, device in enumerate(devices.DEVICES):
+                if device.key == device_key:
+                    self._device_row.set_selected(i)
+                    break
+
+        width, height = defaults.get("width"), defaults.get("height")
+        if width and height:
+            self._resolution_expander.set_enable_expansion(True)
+            self._resolution_row.set_selected(2)
+            self._resolution_width_row.set_value(width)
+            self._resolution_height_row.set_value(height)
+            self._update_resolution_visibility()
+
     def _load_existing(self, app: entries.WebApp) -> None:
         self.set_title(_("Edit app"))
         self._save_button.set_label(_("Save changes"))
         self._name_row.set_text(app.name)
         self._url_row.set_text(app.url)
+        for index, env in enumerate(self._environments):
+            if env.slug == app.environment:
+                self._environment_row.set_selected(index + 1)
+                break
         self._desktop_switch_row.set_active(app.desktop_shortcut)
         self._custom_browser_expander.set_enable_expansion(app.browser_key != "webkit:casca")
         for index, browser in enumerate(self._detected_browsers):
@@ -651,6 +710,7 @@ class EditorPage(Adw.NavigationPage):
             desktop_shortcut = False
             icon_source = self._auto_icon_path
 
+        environment = self._selected_environment()
         try:
             if self._existing:
                 entries.update_app(
@@ -665,6 +725,7 @@ class EditorPage(Adw.NavigationPage):
                     browser_profile,
                     width,
                     height,
+                    environment,
                 )
             else:
                 if icon_source is None:
@@ -685,6 +746,630 @@ class EditorPage(Adw.NavigationPage):
                     browser_profile,
                     width,
                     height,
+                    environment,
+                )
+        except (ValueError, KeyError, OSError) as error:
+            self._toast(_("Error saving: %(error)s") % {"error": error})
+            return
+
+        self._on_saved()
+        self._nav_view.pop()
+
+
+def _environment_combo(preselect_slug: str | None = None) -> tuple[Adw.ComboRow, list["entries.EnvironmentInfo"]]:
+    """ComboRow "Environment" with Default + created environments, shared by the
+    app, package and (future) editors."""
+    environments = entries.list_environments()
+    row = Adw.ComboRow(title=_("Environment"))
+    labels = Gtk.StringList()
+    labels.append(_("Default"))
+    for env in environments:
+        labels.append(env.name)
+    row.set_model(labels)
+    if preselect_slug:
+        for index, env in enumerate(environments):
+            if env.slug == preselect_slug:
+                row.set_selected(index + 1)
+                break
+    return row, environments
+
+
+def _combo_environment_slug(row: Adw.ComboRow, environments: list["entries.EnvironmentInfo"]) -> str:
+    index = row.get_selected()
+    if index <= 0 or index > len(environments):
+        return entries.DEFAULT_ENVIRONMENT
+    return environments[index - 1].slug
+
+
+class StoreItemPickerDialog(Adw.Dialog):
+    """Searchable list of the Store catalog (name + company, no icons decoded)
+    to pick a site for a package."""
+
+    def __init__(self, on_pick):
+        super().__init__(title=_("Add from the Store"), content_width=440, content_height=560)
+        self._on_pick = on_pick
+        self._entries: list[tuple[store.StoreItem, Adw.ActionRow]] = []
+
+        toolbar = Adw.ToolbarView()
+        toolbar.add_top_bar(Adw.HeaderBar())
+
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=8)
+        box.set_margin_top(8)
+        box.set_margin_start(12)
+        box.set_margin_end(12)
+        box.set_margin_bottom(12)
+
+        search = Gtk.SearchEntry(placeholder_text=_("Search by name…"))
+        search.connect("changed", self._on_search_changed)
+        box.append(search)
+
+        scrolled = Gtk.ScrolledWindow(vexpand=True)
+        listbox = Gtk.ListBox()
+        listbox.add_css_class("boxed-list")
+        listbox.set_selection_mode(Gtk.SelectionMode.NONE)
+        for item in store.fetch_catalog():
+            row = Adw.ActionRow(title=item.name, subtitle=item.company, activatable=True)
+            row.connect("activated", self._on_row_activated, item)
+            listbox.append(row)
+            self._entries.append((item, row))
+        scrolled.set_child(listbox)
+        box.append(scrolled)
+
+        toolbar.set_content(box)
+        self.set_child(toolbar)
+
+    def _on_search_changed(self, entry: Gtk.SearchEntry) -> None:
+        query = _fold(entry.get_text().strip())
+        for item, row in self._entries:
+            row.set_visible(not query or query in _fold(item.name) or query in _fold(item.company))
+
+    def _on_row_activated(self, _row: Adw.ActionRow, item: store.StoreItem) -> None:
+        self._on_pick(item)
+        self.close()
+
+
+class CustomSiteDialog(Adw.Dialog):
+    """Name + URL form to add a custom site to a package."""
+
+    def __init__(self, on_confirm):
+        super().__init__(title=_("Add site"), content_width=420, content_height=300)
+        self._on_confirm = on_confirm
+
+        toolbar = Adw.ToolbarView()
+        toolbar.add_top_bar(Adw.HeaderBar())
+
+        page = Adw.PreferencesPage()
+        group = Adw.PreferencesGroup()
+        self._name_row = Adw.EntryRow(title=_("App name"))
+        self._url_row = Adw.EntryRow(title=_("Address (URL)"))
+        group.add(self._name_row)
+        group.add(self._url_row)
+        page.add(group)
+
+        actions = Adw.PreferencesGroup()
+        add_button = Gtk.Button(label=_("Add"))
+        add_button.add_css_class("suggested-action")
+        add_button.add_css_class("pill")
+        add_button.set_halign(Gtk.Align.CENTER)
+        add_button.connect("clicked", self._on_add_clicked)
+        actions.add(add_button)
+        page.add(actions)
+
+        toolbar.set_content(page)
+        self.set_child(toolbar)
+        self._error_label = Gtk.Label()
+        self._error_label.add_css_class("error")
+        actions.add(self._error_label)
+
+    def _on_add_clicked(self, _button: Gtk.Button) -> None:
+        name = self._name_row.get_text().strip()
+        url = self._url_row.get_text().strip()
+        if not name or not url:
+            self._error_label.set_label(_("Fill in the site's name and URL."))
+            return
+        if has_dangerous_scheme(url):
+            self._error_label.set_label(_("Use an http:// or https:// address."))
+            return
+        if "://" not in url:
+            url = f"https://{url}"
+        if urlparse(url).scheme not in ("http", "https"):
+            self._error_label.set_label(_("Use an http:// or https:// address."))
+            return
+        self._on_confirm(name, url)
+        self.close()
+
+
+class PackageEditorPage(Adw.NavigationPage):
+    """Creates or edits a package: one launcher in the menu that opens a window
+    with several apps inside. Contents come from the Store catalog or custom
+    name+URL sites — independent copies, never linked to installed apps."""
+
+    def __init__(self, nav_view: Adw.NavigationView, on_saved, existing: entries.PackageInfo | None = None):
+        super().__init__(title=_("Edit package") if existing else _("New package"))
+        self._nav_view = nav_view
+        self._on_saved = on_saved
+        self._existing = existing
+        self._picked_icon_path: Path | None = None
+        # each entry: {"name": str, "url": str, "icon_source": str | None}
+        self._sub_apps: list[dict] = []
+        self._sub_app_rows: list[Adw.ActionRow] = []
+
+        toolbar = Adw.ToolbarView()
+        toolbar.add_top_bar(Adw.HeaderBar())
+
+        page = Adw.PreferencesPage()
+
+        package_group = Adw.PreferencesGroup(title=_("Package"))
+        self._name_row = Adw.EntryRow(title=_("Package name"))
+        package_group.add(self._name_row)
+
+        self._environment_row, self._environments = _environment_combo(
+            existing.environment if existing else None
+        )
+        package_group.add(self._environment_row)
+
+        icon_row = Adw.ActionRow(
+            title=_("Package icon"),
+            subtitle=_("Without a chosen image, the first app's icon is used."),
+        )
+        self._icon_preview = Gtk.Image.new_from_icon_name("image-missing-symbolic")
+        self._icon_preview.set_pixel_size(32)
+        icon_row.add_prefix(self._icon_preview)
+        choose_button = Gtk.Button(icon_name="document-open-symbolic", valign=Gtk.Align.CENTER,
+                                   tooltip_text=_("Choose an image file"))
+        choose_button.add_css_class("flat")
+        choose_button.connect("clicked", self._on_choose_icon)
+        icon_row.add_suffix(choose_button)
+        gallery_button = Gtk.Button(icon_name="view-grid-symbolic", valign=Gtk.Align.CENTER,
+                                    tooltip_text=_("Choose from the icon gallery"))
+        gallery_button.add_css_class("flat")
+        gallery_button.connect("clicked", self._on_open_gallery)
+        icon_row.add_suffix(gallery_button)
+        package_group.add(icon_row)
+        page.add(package_group)
+
+        self._apps_group = Adw.PreferencesGroup(title=_("Apps in the package"))
+        add_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
+        store_button = Gtk.Button(valign=Gtk.Align.CENTER)
+        store_button.set_child(Adw.ButtonContent(icon_name="org.gnome.Software-symbolic", label=_("Add from the Store")))
+        store_button.add_css_class("flat")
+        store_button.connect("clicked", self._on_add_from_store)
+        add_box.append(store_button)
+        custom_button = Gtk.Button(valign=Gtk.Align.CENTER)
+        custom_button.set_child(Adw.ButtonContent(icon_name="list-add-symbolic", label=_("Add site")))
+        custom_button.add_css_class("flat")
+        custom_button.connect("clicked", self._on_add_custom)
+        add_box.append(custom_button)
+        self._apps_group.set_header_suffix(add_box)
+        page.add(self._apps_group)
+
+        actions_group = Adw.PreferencesGroup()
+        self._save_button = Gtk.Button(label=_("Save changes") if existing else _("Create package"))
+        self._save_button.add_css_class("suggested-action")
+        self._save_button.add_css_class("pill")
+        self._save_button.set_halign(Gtk.Align.CENTER)
+        self._save_button.set_margin_top(12)
+        self._save_button.connect("clicked", self._on_save)
+        actions_group.add(self._save_button)
+        page.add(actions_group)
+
+        toolbar.set_content(page)
+        self.set_child(toolbar)
+
+        if existing:
+            self._load_existing(existing)
+
+    def _load_existing(self, package: entries.PackageInfo) -> None:
+        self._name_row.set_text(package.name)
+        if package.icon_path and Path(package.icon_path).exists():
+            self._icon_preview.set_from_file(package.icon_path)
+
+        config_path = entries.PACKAGES_DIR / package.slug / "config.json"
+        try:
+            config = json.loads(config_path.read_text())
+        except (OSError, json.JSONDecodeError):
+            config = {"apps": []}
+        for sub_app in config.get("apps", []):
+            url = sub_app.get("url") or _url_from_exec(sub_app.get("exec", ""))
+            if not url:
+                continue
+            icon = sub_app.get("icon")
+            self._add_sub_app(sub_app.get("name", ""), url, icon if icon and Path(icon).exists() else None)
+
+    def _add_sub_app(self, name: str, url: str, icon_source: str | None) -> None:
+        entry = {"name": name, "url": url, "icon_source": icon_source}
+        self._sub_apps.append(entry)
+
+        row = Adw.ActionRow(title=name, subtitle=url)
+        if icon_source:
+            image = Gtk.Image.new_from_file(icon_source)
+            image.set_pixel_size(28)
+            row.add_prefix(image)
+        else:
+            row.add_prefix(Adw.Avatar(text=name, show_initials=True, size=28))
+        remove_button = Gtk.Button(icon_name="user-trash-symbolic", valign=Gtk.Align.CENTER)
+        remove_button.add_css_class("flat")
+        remove_button.connect("clicked", self._on_remove_sub_app, entry, row)
+        row.add_suffix(remove_button)
+
+        self._apps_group.add(row)
+        self._sub_app_rows.append(row)
+
+    def _on_remove_sub_app(self, _button: Gtk.Button, entry: dict, row: Adw.ActionRow) -> None:
+        self._sub_apps.remove(entry)
+        self._sub_app_rows.remove(row)
+        self._apps_group.remove(row)
+
+    def _on_add_from_store(self, _button: Gtk.Button) -> None:
+        dialog = StoreItemPickerDialog(on_pick=self._on_store_item_picked)
+        dialog.present(self)
+
+    def _on_store_item_picked(self, item: store.StoreItem) -> None:
+        icon_path = store.save_icon_to_temp(item)
+        self._add_sub_app(item.name, item.url, str(icon_path) if icon_path else None)
+
+    def _on_add_custom(self, _button: Gtk.Button) -> None:
+        dialog = CustomSiteDialog(on_confirm=lambda name, url: self._add_sub_app(name, url, None))
+        dialog.present(self)
+
+    def _on_choose_icon(self, _button: Gtk.Button) -> None:
+        dialog = Gtk.FileDialog(title=_("Choose the icon"))
+        filters = Gio.ListStore.new(Gtk.FileFilter)
+        image_filter = Gtk.FileFilter()
+        image_filter.set_name(_("Images"))
+        image_filter.add_mime_type("image/*")
+        filters.append(image_filter)
+        dialog.set_filters(filters)
+        dialog.open(self.get_ancestor(Gtk.Window), None, self._on_icon_chosen)
+
+    def _on_icon_chosen(self, dialog: Gtk.FileDialog, result: Gio.AsyncResult) -> None:
+        try:
+            file = dialog.open_finish(result)
+        except GLib.Error:
+            return
+        if file and file.get_path():
+            self._picked_icon_path = Path(file.get_path())
+            self._icon_preview.set_from_file(file.get_path())
+
+    def _on_open_gallery(self, _button: Gtk.Button) -> None:
+        dialog = IconGalleryDialog(on_pick=self._on_gallery_icon_picked)
+        dialog.present(self)
+
+    def _on_gallery_icon_picked(self, path: Path) -> None:
+        self._picked_icon_path = path
+        self._icon_preview.set_from_file(str(path))
+
+    def _toast(self, message: str) -> None:
+        toast = Adw.Toast(title=message, timeout=3)
+        root = self.get_ancestor(Gtk.Window)
+        if isinstance(root, CascaWindow):
+            root.toast_overlay.add_toast(toast)
+
+    def _resolve_package_icon(self) -> Path | None:
+        if self._picked_icon_path:
+            return self._picked_icon_path
+        for sub_app in self._sub_apps:
+            icon = sub_app.get("icon_source")
+            if icon and Path(icon).exists():
+                return Path(icon)
+        first_url = self._sub_apps[0]["url"]
+        data = icons.fetch_favicon(first_url)
+        if data:
+            return icons.save_preview(data, "casca-package-icon")
+        return None
+
+    def _on_save(self, _button: Gtk.Button) -> None:
+        name = self._name_row.get_text().strip()
+        if not name:
+            self._toast(_("Fill in the package name."))
+            return
+        if not self._sub_apps:
+            self._toast(_("Add at least one app to the package."))
+            return
+
+        environment = _combo_environment_slug(self._environment_row, self._environments)
+        try:
+            if self._existing:
+                entries.update_package(
+                    self._existing.slug, name, self._sub_apps, self._picked_icon_path, environment
+                )
+            else:
+                icon_path = self._resolve_package_icon()
+                if icon_path is None:
+                    self._toast(_("Could not set an icon. Choose an image manually."))
+                    return
+                entries.create_package(name, self._sub_apps, icon_path, environment)
+        except (ValueError, KeyError, OSError) as error:
+            self._toast(_("Error saving: %(error)s") % {"error": error})
+            return
+
+        self._on_saved()
+        self._nav_view.pop()
+
+
+def _url_from_exec(exec_cmd: str) -> str | None:
+    """Recovers the site URL from an old package config.json (before packages
+    stored "url" per sub-app) — the webkit Exec always carries --url=…"""
+    match = re.search(r"--url=(\S+)", exec_cmd)
+    return match.group(1).strip("'\"") if match else None
+
+
+class EnvironmentEditorPage(Adw.NavigationPage):
+    """Creates or edits an environment: name, banner/icon, info, notes and the
+    defaults that prefill the editor for apps created inside it."""
+
+    def __init__(self, nav_view: Adw.NavigationView, on_saved, existing: entries.EnvironmentInfo | None = None):
+        super().__init__(title=_("Edit environment") if existing else _("New environment"))
+        self._nav_view = nav_view
+        self._on_saved = on_saved
+        self._existing = existing
+        self._detected_browsers = browsers.detect_browsers()
+        self._banner_source: Path | None = None
+        self._icon_source: Path | None = None
+
+        toolbar = Adw.ToolbarView()
+        toolbar.add_top_bar(Adw.HeaderBar())
+
+        page = Adw.PreferencesPage()
+
+        info_group = Adw.PreferencesGroup(title=_("Environment"))
+        self._name_row = Adw.EntryRow(title=_("Environment name"))
+        info_group.add(self._name_row)
+        self._description_row = Adw.EntryRow(title=_("Description"))
+        info_group.add(self._description_row)
+
+        notes_row = Adw.ActionRow(title=_("Notes"))
+        notes_row.set_activatable(False)
+        info_group.add(notes_row)
+        self._notes_view = Gtk.TextView(wrap_mode=Gtk.WrapMode.WORD_CHAR)
+        self._notes_view.set_size_request(-1, 90)
+        notes_frame = Gtk.Frame()
+        notes_frame.set_child(self._notes_view)
+        notes_frame.set_margin_start(12)
+        notes_frame.set_margin_end(12)
+        notes_frame.set_margin_bottom(12)
+        notes_holder = Gtk.ListBoxRow(activatable=False, selectable=False, child=notes_frame)
+        info_group.add(notes_holder)
+        page.add(info_group)
+
+        appearance_group = Adw.PreferencesGroup(title=_("Appearance"))
+        banner_row = Adw.ActionRow(
+            title=_("Banner"),
+            subtitle=_("Wide image shown at the top of the environment window."),
+        )
+        self._banner_preview = Gtk.Image.new_from_icon_name("image-missing-symbolic")
+        self._banner_preview.set_pixel_size(32)
+        banner_row.add_prefix(self._banner_preview)
+        banner_button = Gtk.Button(icon_name="document-open-symbolic", valign=Gtk.Align.CENTER,
+                                   tooltip_text=_("Choose an image file"))
+        banner_button.add_css_class("flat")
+        banner_button.connect("clicked", self._on_choose_banner)
+        banner_row.add_suffix(banner_button)
+        appearance_group.add(banner_row)
+
+        icon_row = Adw.ActionRow(
+            title=_("Launcher icon"),
+            subtitle=_("Shown in the applications menu; without one, the banner or Casca's icon is used."),
+        )
+        self._icon_preview = Gtk.Image.new_from_icon_name("image-missing-symbolic")
+        self._icon_preview.set_pixel_size(32)
+        icon_row.add_prefix(self._icon_preview)
+        icon_file_button = Gtk.Button(icon_name="document-open-symbolic", valign=Gtk.Align.CENTER,
+                                      tooltip_text=_("Choose an image file"))
+        icon_file_button.add_css_class("flat")
+        icon_file_button.connect("clicked", self._on_choose_icon)
+        icon_row.add_suffix(icon_file_button)
+        icon_gallery_button = Gtk.Button(icon_name="view-grid-symbolic", valign=Gtk.Align.CENTER,
+                                         tooltip_text=_("Choose from the icon gallery"))
+        icon_gallery_button.add_css_class("flat")
+        icon_gallery_button.connect("clicked", self._on_open_gallery)
+        icon_row.add_suffix(icon_gallery_button)
+        appearance_group.add(icon_row)
+        page.add(appearance_group)
+
+        defaults_group = Adw.PreferencesGroup(
+            title=_("Defaults for new apps"),
+            description=_("Prefills the editor when you create an app in this environment."),
+        )
+        self._d_browser_row = Adw.ComboRow(title=_("Open with"))
+        browser_labels = Gtk.StringList()
+        for browser in self._detected_browsers:
+            browser_labels.append(browser.label)
+        self._d_browser_row.set_model(browser_labels)
+        self._d_browser_row.connect("notify::selected", self._on_default_browser_changed)
+        defaults_group.add(self._d_browser_row)
+
+        self._d_profile_row = Adw.ComboRow(title=_("Browser account"))
+        self._d_profile_options: list[str | None] = [None]
+        defaults_group.add(self._d_profile_row)
+
+        self._d_mobile_expander = Adw.ExpanderRow(title=_("Open in mobile mode"))
+        self._d_mobile_expander.set_show_enable_switch(True)
+        self._d_mobile_expander.set_enable_expansion(False)
+        self._d_device_row = Adw.ComboRow(title=_("Device"))
+        device_labels = Gtk.StringList()
+        for device in devices.DEVICES:
+            device_labels.append(device.label)
+        self._d_device_row.set_model(device_labels)
+        self._d_mobile_expander.add_row(self._d_device_row)
+        defaults_group.add(self._d_mobile_expander)
+
+        self._d_resolution_expander = Adw.ExpanderRow(title=_("Set window size"))
+        self._d_resolution_expander.set_show_enable_switch(True)
+        self._d_resolution_expander.set_enable_expansion(False)
+        self._d_width_row = Adw.SpinRow(
+            title=_("Width"), adjustment=Gtk.Adjustment(lower=200, upper=10000, step_increment=10, value=1280)
+        )
+        self._d_height_row = Adw.SpinRow(
+            title=_("Height"), adjustment=Gtk.Adjustment(lower=200, upper=10000, step_increment=10, value=800)
+        )
+        self._d_resolution_expander.add_row(self._d_width_row)
+        self._d_resolution_expander.add_row(self._d_height_row)
+        defaults_group.add(self._d_resolution_expander)
+        page.add(defaults_group)
+
+        actions_group = Adw.PreferencesGroup()
+        self._save_button = Gtk.Button(label=_("Save changes") if existing else _("Create environment"))
+        self._save_button.add_css_class("suggested-action")
+        self._save_button.add_css_class("pill")
+        self._save_button.set_halign(Gtk.Align.CENTER)
+        self._save_button.set_margin_top(12)
+        self._save_button.connect("clicked", self._on_save)
+        actions_group.add(self._save_button)
+        page.add(actions_group)
+
+        toolbar.set_content(page)
+        self.set_child(toolbar)
+
+        self._update_default_profile_options()
+        if existing:
+            self._load_existing(existing)
+
+    def _load_existing(self, env: entries.EnvironmentInfo) -> None:
+        self._name_row.set_text(env.name)
+        self._description_row.set_text(env.description)
+        self._notes_view.get_buffer().set_text(env.notes)
+        if env.banner_path and Path(env.banner_path).exists():
+            self._banner_preview.set_from_file(env.banner_path)
+        if env.icon_path and Path(env.icon_path).exists():
+            self._icon_preview.set_from_file(env.icon_path)
+
+        defaults = env.defaults or {}
+        browser_key = defaults.get("browser_key")
+        if browser_key:
+            for index, browser in enumerate(self._detected_browsers):
+                if browser.key == browser_key:
+                    self._d_browser_row.set_selected(index)
+                    break
+        self._update_default_profile_options()
+        browser_profile = defaults.get("browser_profile")
+        if browser_profile and browser_profile in self._d_profile_options:
+            self._d_profile_row.set_selected(self._d_profile_options.index(browser_profile))
+        self._d_mobile_expander.set_enable_expansion(bool(defaults.get("mobile")))
+        device_key = defaults.get("device_key")
+        if device_key:
+            for index, device in enumerate(devices.DEVICES):
+                if device.key == device_key:
+                    self._d_device_row.set_selected(index)
+                    break
+        if defaults.get("width") and defaults.get("height"):
+            self._d_resolution_expander.set_enable_expansion(True)
+            self._d_width_row.set_value(defaults["width"])
+            self._d_height_row.set_value(defaults["height"])
+
+    def _on_default_browser_changed(self, *_args) -> None:
+        self._update_default_profile_options()
+
+    def _update_default_profile_options(self) -> None:
+        selected = self._d_browser_row.get_selected()
+        browser = (
+            self._detected_browsers[selected]
+            if self._detected_browsers and selected != Gtk.INVALID_LIST_POSITION
+            else None
+        )
+        found = profiles.list_profiles(browser) if browser and browser.supports_account_profile else []
+        labels = Gtk.StringList()
+        labels.append(_("Isolated profile (new, no login)"))
+        self._d_profile_options = [None]
+        for profile in found:
+            labels.append(profile.label)
+            self._d_profile_options.append(profile.directory)
+        self._d_profile_row.set_model(labels)
+        self._d_profile_row.set_selected(0)
+        self._d_profile_row.set_sensitive(browser is not None and browser.supports_account_profile)
+
+    def _on_choose_banner(self, _button: Gtk.Button) -> None:
+        self._open_image_dialog(self._on_banner_chosen)
+
+    def _on_choose_icon(self, _button: Gtk.Button) -> None:
+        self._open_image_dialog(self._on_icon_chosen)
+
+    def _open_image_dialog(self, callback) -> None:
+        dialog = Gtk.FileDialog(title=_("Choose an image file"))
+        filters = Gio.ListStore.new(Gtk.FileFilter)
+        image_filter = Gtk.FileFilter()
+        image_filter.set_name(_("Images"))
+        image_filter.add_mime_type("image/*")
+        filters.append(image_filter)
+        dialog.set_filters(filters)
+        dialog.open(self.get_ancestor(Gtk.Window), None, callback)
+
+    def _on_banner_chosen(self, dialog: Gtk.FileDialog, result: Gio.AsyncResult) -> None:
+        try:
+            file = dialog.open_finish(result)
+        except GLib.Error:
+            return
+        if file and file.get_path():
+            self._banner_source = Path(file.get_path())
+            self._banner_preview.set_from_file(file.get_path())
+
+    def _on_icon_chosen(self, dialog: Gtk.FileDialog, result: Gio.AsyncResult) -> None:
+        try:
+            file = dialog.open_finish(result)
+        except GLib.Error:
+            return
+        if file and file.get_path():
+            self._icon_source = Path(file.get_path())
+            self._icon_preview.set_from_file(file.get_path())
+
+    def _on_open_gallery(self, _button: Gtk.Button) -> None:
+        dialog = IconGalleryDialog(on_pick=self._on_gallery_icon_picked)
+        dialog.present(self)
+
+    def _on_gallery_icon_picked(self, path: Path) -> None:
+        self._icon_source = path
+        self._icon_preview.set_from_file(str(path))
+
+    def _toast(self, message: str) -> None:
+        toast = Adw.Toast(title=message, timeout=3)
+        root = self.get_ancestor(Gtk.Window)
+        if isinstance(root, CascaWindow):
+            root.toast_overlay.add_toast(toast)
+
+    def _collect_defaults(self) -> dict:
+        defaults: dict = {}
+        selected = self._d_browser_row.get_selected()
+        if self._detected_browsers and selected != Gtk.INVALID_LIST_POSITION:
+            defaults["browser_key"] = self._detected_browsers[selected].key
+        profile_selected = self._d_profile_row.get_selected()
+        if profile_selected not in (0, Gtk.INVALID_LIST_POSITION) and profile_selected < len(self._d_profile_options):
+            defaults["browser_profile"] = self._d_profile_options[profile_selected]
+        if self._d_mobile_expander.get_enable_expansion():
+            defaults["mobile"] = True
+            defaults["device_key"] = devices.DEVICES[self._d_device_row.get_selected()].key
+        if self._d_resolution_expander.get_enable_expansion():
+            defaults["width"] = int(self._d_width_row.get_value())
+            defaults["height"] = int(self._d_height_row.get_value())
+        return defaults
+
+    def _on_save(self, _button: Gtk.Button) -> None:
+        name = self._name_row.get_text().strip()
+        if not name:
+            self._toast(_("Fill in the environment name."))
+            return
+
+        buffer = self._notes_view.get_buffer()
+        notes = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), False).strip()
+
+        try:
+            if self._existing:
+                entries.update_environment(
+                    self._existing.slug,
+                    name,
+                    description=self._description_row.get_text().strip(),
+                    notes=notes,
+                    banner_source=self._banner_source,
+                    icon_source=self._icon_source,
+                    defaults=self._collect_defaults(),
+                )
+            else:
+                entries.create_environment(
+                    name,
+                    description=self._description_row.get_text().strip(),
+                    notes=notes,
+                    banner_source=self._banner_source,
+                    icon_source=self._icon_source,
+                    defaults=self._collect_defaults(),
                 )
         except (ValueError, KeyError, OSError) as error:
             self._toast(_("Error saving: %(error)s") % {"error": error})
@@ -2093,6 +2778,17 @@ class ListPage(Adw.NavigationPage):
             actions.add_action(action)
         self.insert_action_group("page", actions)
 
+        create_actions = Gio.SimpleActionGroup()
+        for name, handler in (
+            ("app", self._on_create_app),
+            ("package", self._on_create_package),
+            ("environment", self._on_create_environment),
+        ):
+            action = Gio.SimpleAction.new(name, None)
+            action.connect("activate", handler)
+            create_actions.add_action(action)
+        self.insert_action_group("create", create_actions)
+
         self._page = Adw.PreferencesPage()
         self._groups: list[Adw.PreferencesGroup] = []
         toolbar.set_content(self._page)
@@ -2108,11 +2804,15 @@ class ListPage(Adw.NavigationPage):
         store_button.connect("clicked", self._on_open_store_page)
         bottom_bar.set_start_widget(store_button)
 
-        create_button = Gtk.Button(tooltip_text=_("Create a new web app"))
+        create_button = Gtk.MenuButton(tooltip_text=_("Create a new app, package or environment"))
         create_button.set_child(Adw.ButtonContent(icon_name="list-add-symbolic", label=_("Create")))
         create_button.add_css_class("suggested-action")
         create_button.add_css_class("pill")
-        create_button.connect("clicked", self._on_add)
+        create_menu = Gio.Menu()
+        create_menu.append(_("App"), "create.app")
+        create_menu.append(_("Package"), "create.package")
+        create_menu.append(_("Environment"), "create.environment")
+        create_button.set_menu_model(create_menu)
         bottom_bar.set_center_widget(create_button)
 
         import_export_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
@@ -2133,8 +2833,16 @@ class ListPage(Adw.NavigationPage):
 
         self.refresh()
 
-    def _on_add(self, *_args) -> None:
+    def _on_create_app(self, *_args) -> None:
         editor = EditorPage(self._nav_view, on_saved=self.refresh)
+        self._nav_view.push(editor)
+
+    def _on_create_package(self, *_args) -> None:
+        editor = PackageEditorPage(self._nav_view, on_saved=self.refresh)
+        self._nav_view.push(editor)
+
+    def _on_create_environment(self, *_args) -> None:
+        editor = EnvironmentEditorPage(self._nav_view, on_saved=self.refresh)
         self._nav_view.push(editor)
 
     def _on_open_store_page(self, *_args) -> None:
@@ -2349,8 +3057,9 @@ class ListPage(Adw.NavigationPage):
 
         apps = entries.list_apps()
         packages = entries.list_packages()
+        environments = entries.list_environments()
 
-        if not apps and not packages:
+        if not apps and not packages and not environments:
             status = Adw.StatusPage(
                 icon_name="io.github.oliverhubtech_source.Casca",
                 title=_("No web apps yet"),
@@ -2400,6 +3109,28 @@ class ListPage(Adw.NavigationPage):
             self._page.add(pkg_group)
             self._groups.append(pkg_group)
 
+        if environments:
+            env_group = Adw.PreferencesGroup(title=_("Environments"))
+            for env in environments:
+                row = Adw.ActionRow(title=env.name, subtitle=env.description or None)
+                row.add_prefix(_row_leading_widget(env.icon_path or env.banner_path))
+
+                edit_button = Gtk.Button(icon_name="document-edit-symbolic", valign=Gtk.Align.CENTER)
+                edit_button.add_css_class("flat")
+                edit_button.connect("clicked", self._on_edit_environment, env)
+
+                delete_button = Gtk.Button(icon_name="user-trash-symbolic", valign=Gtk.Align.CENTER)
+                delete_button.add_css_class("flat")
+                delete_button.connect("clicked", self._on_delete_environment, env)
+
+                box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
+                box.append(edit_button)
+                box.append(delete_button)
+                row.add_suffix(box)
+                env_group.add(row)
+            self._page.add(env_group)
+            self._groups.append(env_group)
+
     def _on_edit(self, _button: Gtk.Button, app: entries.WebApp) -> None:
         editor = EditorPage(self._nav_view, on_saved=self.refresh, existing=app)
         self._nav_view.push(editor)
@@ -2445,6 +3176,30 @@ class ListPage(Adw.NavigationPage):
     ) -> None:
         if response == "delete":
             entries.delete_package(package.slug)
+            self.refresh()
+
+    def _on_edit_environment(self, _button: Gtk.Button, env: entries.EnvironmentInfo) -> None:
+        editor = EnvironmentEditorPage(self._nav_view, on_saved=self.refresh, existing=env)
+        self._nav_view.push(editor)
+
+    def _on_delete_environment(self, _button: Gtk.Button, env: entries.EnvironmentInfo) -> None:
+        dialog = Adw.AlertDialog(
+            heading=_("Delete environment “%(name)s”?") % {"name": env.name},
+            body=_("Its apps and packages are not removed — they move back to the Default environment."),
+        )
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("delete", _("Delete"))
+        dialog.set_response_appearance("delete", Adw.ResponseAppearance.DESTRUCTIVE)
+        dialog.set_default_response("cancel")
+        dialog.set_close_response("cancel")
+        dialog.connect("response", self._on_delete_environment_response, env)
+        dialog.present(self)
+
+    def _on_delete_environment_response(
+        self, _dialog: Adw.AlertDialog, response: str, env: entries.EnvironmentInfo
+    ) -> None:
+        if response == "delete":
+            entries.delete_environment(env.slug)
             self.refresh()
 
 
