@@ -97,6 +97,14 @@
   <url type="bugtracker">https://github.com/oliverhubtech-source/casca/issues</url>
 
   <releases>
+    <release version="1.4.0" date="2026-07-13">
+      <description>
+        <p>Casca now has Environments: group any number of apps and packages under a shared context — its own name, banner, icon, notes and creation defaults — with a single launcher that opens a window listing everything inside it.</p>
+        <p>The Create button is now a menu with three options — App, Package or Environment — and the main list shows your environments alongside your apps and packages, ready to edit or remove.</p>
+        <p xml:lang="pt-BR">O Casca agora tem Ambientes: agrupe qualquer quantidade de apps e pacotes sob um contexto compartilhado — com nome, banner, ícone, notas e padrões de criação próprios — com um único atalho que abre uma janela listando tudo que está dentro dele.</p>
+        <p xml:lang="pt-BR">O botão Criar agora é um menu com três opções — App, Pacote ou Ambiente — e a lista principal mostra seus ambientes junto dos apps e pacotes, prontos pra editar ou remover.</p>
+      </description>
+    </release>
     <release version="1.3.0" date="2026-07-11">
       <description>
         <p>The Store is now the Casca Store, in the style of GNOME Software: a featured apps carousel, colorful category tiles, Editor's Choice, and a page for each app with usage tags, the Bronze/Silver/Gold Casca seal, estimated disk savings, possible PC access and security info.</p>

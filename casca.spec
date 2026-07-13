@@ -1,5 +1,5 @@
 Name:           casca
-Version:        1.3.0
+Version:        1.4.0
 Release:        1%{?dist}
 Summary:        Turn any website into a native GNOME app
 
@@ -79,6 +79,13 @@ appstreamcli validate --pedantic --explain %{buildroot}%{_datadir}/metainfo/io.g
 %{_datadir}/icons/hicolor/256x256/apps/io.github.oliverhubtech_source.Casca.png
 
 %changelog
+* Mon Jul 13 2026 OliverHub <282591028+oliverhubtech-source@users.noreply.github.com> - 1.4.0-1
+- Environments: group any number of apps and packages under a shared context
+  (name, banner, icon, notes and creation defaults), with one launcher that
+  opens a window listing everything inside it
+- The Create button is now a menu: App, Package or Environment
+- The main list shows environments alongside apps and packages, ready to edit
+  or remove
 * Sat Jul 11 2026 OliverHub <282591028+oliverhubtech-source@users.noreply.github.com> - 1.3.0-1
 - Casca Store rebuilt in the GNOME Software style: featured carousel, colorful
   categories, Editor's Choice and a detail page per app (usage tags, Casca seal,
